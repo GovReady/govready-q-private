@@ -97,6 +97,9 @@ urlpatterns = [
     url(r'^health/request-headers$', views_health.request_headers),
     url(r'^health/request$', views_health.request),
     url(r'^health/debug$', views.debug, name="debug"),
+
+    # world's smallest oscal application
+    url(r'^wsoa/(?P<system_uuid>.*)/$', views.wsoa, name="wsoa"),
 ]
 
 if 'django.contrib.auth.backends.ModelBackend' in settings.AUTHENTICATION_BACKENDS:

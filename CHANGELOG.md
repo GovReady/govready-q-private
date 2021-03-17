@@ -4,6 +4,12 @@ GovReady-Q Release Notes
 v999 (March XX, 2021)
 ----------------------------
 
+Created WSOA (World's Smallest OSCAL Application) demonstration to retrieve OSCAL bits when the IP address of remote machine that is part of a system deployment requests information using the UUID of the system.
+
+**UI changes**
+
+* Display the system UUID (technically, the system.root_element UUID) on the project page.
+* Display inventory-item IP address on deployment inventory-item page.
 
 v0.9.3.0rc1 (March 16, 2021)
 ----------------------------

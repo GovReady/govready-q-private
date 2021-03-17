@@ -2254,7 +2254,6 @@ def sso_logout(request):
     html = "<html><body><pre>{}</pre></body></html>".format(output)
     return HttpResponse(html)
 
-
 # @project_admin_login_post_required
 def update_project_asset(request, project_id, asset_id):
     try:
@@ -2270,3 +2269,56 @@ def update_project_asset(request, project_id, asset_id):
     import json
     response_data = json.loads(serializers.serialize('json', [asset]))[0]
     return JsonResponse({ "status": "ok", "data": response_data})
+
+# WSOA
+def wsoa(request, system_uuid):
+    """Return content for world's smallest oscal application"""
+
+    # Get IP address of request
+    remote_addr = request.META['REMOTE_ADDR']
+    meta = request.META
+    # Look up system based on uuid
+    # system_uuid = "eef76f3d-f396-494e-aac3-946e461fb8c8"
+    # Try to reverse get system and project from root_element uuid
+    try:
+        # Get system if exists else 404
+        element = Element.objects.get(uuid=system_uuid)
+        # Temporarily assume only one system for element and get first system if it exists
+        system = element.system.all()[0]
+        # Temporarily assume only one project and get first project
+        project = system.projects.all()[0]
+
+        # Determine if IP address is in inventory asset list
+        matched_deployment = None
+        # Loop through deployments to see if ip address is listed
+        for d in system.deployments.all():
+            d.name
+            inventory_items = [item for item in d.inventory_items] if d.inventory_items != None else []
+            for i in inventory_items:
+                if remote_addr == i['ip']:
+                    matched_deployment = d.name
+    except:
+        element = None
+        system = None
+        project = None
+        matched_deployment = None
+
+    output = f"<p>Hello, {remote_addr}.<p>"
+    # output += f"<p>{request.META.keys()}</p>"
+    if matched_deployment:
+        output += f'<p>This asset is part of the "{project.title}" system "{matched_deployment}" deployment.</p>'
+        border_color = "green"
+    else:
+        output += f'<p>This asset is not associated with "{system_uuid}."'
+        border_color = "red"
+
+    html = f"""<html>
+    <head>
+        <style>
+            body {{ padding-top:24px; font-size: 24pt; text-align: center; border: 8px solid {border_color}; }}
+        </style>
+    </head>
+    <body>
+    {output}
+    </body></html>"""
+    return HttpResponse(html)

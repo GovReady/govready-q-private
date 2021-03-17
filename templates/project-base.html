@@ -39,6 +39,8 @@
   .link-black { color: black; }
   .link-black:hover { color: black; }
 
+  .project-system-uuid { color: #888; margin-top: 12px;}
+
 </style>
 {% endblock %}
 
@@ -221,6 +223,8 @@
             {% block title_suffix_text %}
             {% endblock %}
           </h1>
+
+          <div class="help project-system-uuid">System UUID: {{project.system.root_element.uuid}}</div>
 
           {% if title != project.root_task.module.spec.title %}
           <div class="">
