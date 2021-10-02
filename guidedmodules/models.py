@@ -1,5 +1,8 @@
 import logging
 import structlog
+import os.path
+import yaml
+import rtyaml
 from django.utils.functional import cached_property
 from structlog import get_logger
 
@@ -14,6 +17,7 @@ import uuid
 
 from api.base.models import BaseModel
 from siteapp.enums.assets import AssetTypeEnum
+from guidedmodules.enums.inputs import InputTypeEnum
 from .module_logic import ModuleAnswers, render_content
 from .answer_validation import validator
 from siteapp.models import User, Organization, Project, ProjectMembership
@@ -299,6 +303,8 @@ class AppInput(BaseModel):
                                   help_text="A slug-like identifier for the input that is unique within the AppVersion app.")
     content_hash = models.CharField(max_length=64,
                                     help_text="A hash of the input binary content, as provided by the source.")
+    input_type = models.CharField(max_length=64, unique=False, blank=True, null=True, choices=InputTypeEnum.choices(),
+                                    help_text="Type of input (oscal, poam)")
     file = models.FileField(upload_to='guidedmodules/app-inputs', help_text="The input file.")
 
     class Meta:
@@ -490,10 +496,6 @@ class Module(BaseModel):
     def serialize(self):
         """Write out the in-memory module specification."""
 
-        import os.path
-        import yaml
-        import rtyaml
-
         spec = OrderedDict(self.spec)
         if self.module_name == "app" and self.app:
             # Add back compliance app catalog information!
@@ -515,41 +517,19 @@ class Module(BaseModel):
             qspec = OrderedDict(q.spec)
             if q.answer_type_module:
                 qspec["module-id"] = self.getReferenceTo(q.answer_type_module)
-
             spec["questions"].append(qspec)
+        return spec
+
+    def serialize_to_yaml(self):
+        """Dump the in-memory module specification to YAML."""
+
+        spec = self.serialize()
         return rtyaml.dump(spec)
 
     def serialize_to_disk(self):
         """Write out the in-memory module specification to disk."""
 
-        import os.path
-        import rtyaml
-        from django.http import HttpResponse, Http404
-
-        spec = OrderedDict(self.spec)
-        if self.module_name == "app" and self.app:
-            # Add back compliance app catalog information!
-            spec['catalog'] = recombine_catalog_metadata(self)
-        spec["questions"] = []
-        for i, q in enumerate(self.questions.order_by('definition_order')):
-            if i == 0 and q.key == "_introduction":
-                spec["introduction"] = {"format": "markdown", "template": q.spec["prompt"]}
-                continue
-
-            # TODO: get RTYAML fixed to recognize '\r\n' as well as '\n'
-            # Then we can remove this temporary fix to help out RTYAML
-            # to give us nice output
-            for q_key in ['prompt', 'help', 'default']:
-                if q_key in q.spec:
-                    q.spec[q_key] = q.spec[q_key].replace("\r\n", "\n")
-
-            # Rewrite some fields that get rewritten during module-loading.
-            qspec = OrderedDict(q.spec)
-            if q.answer_type_module:
-                qspec["module-id"] = self.getReferenceTo(q.answer_type_module)
-            spec["questions"].append(qspec)
-        # TODO Add a message that appears on page that questionnaire has been updated.
-
+        spec = self.serialize()
         # Write update to disk if source is local and file is writeable
         if self.source.spec["type"] == "local" and self.source.spec["path"]:
             fn = os.path.join(self.source.spec["path"], self.app.appname, self.module_name + ".yaml")
@@ -558,11 +538,15 @@ class Module(BaseModel):
                     f.write(rtyaml.dump(spec))
 
 
-class ModuleAsset(BaseModel):
+class ModuleAsset(models.Model):
     source = models.ForeignKey(AppSource, on_delete=models.CASCADE, help_text="The source of the asset.")
     content_hash = models.CharField(max_length=64,
                                     help_text="A hash of the asset binary content, as provided by the source.")
     file = models.FileField(upload_to='guidedmodules/module-assets', help_text="The attached file.")
+
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
+
     extra = JSONField(blank=True, help_text="Additional information stored with this object.")
 
     class Meta:
@@ -1133,14 +1117,10 @@ class Task(BaseModel):
         # elsewhere, sent from the user.
         from siteapp.models import Invitation
         invs = Invitation.get_for(self).filter(from_user=user)
-        for inv in invs:
-            inv.from_user.preload_profile()
         return invs
 
     def get_source_invitation(self, user):
         inv = self.invitation_history.filter(accepted_user=user).order_by('-created').first()
-        if inv:
-            inv.from_user.preload_profile()
         return inv
 
     # NOTIFICATION TARGET HELEPRS
@@ -1986,13 +1966,12 @@ class TaskAnswer(BaseModel):
     # required to attach a Discussion to it
     def get_discussion_autocompletes(self, discussion):
         # Get a list of all users who can be @-mentioned. It includes the discussion
-        # participants (i.e. people working on the same project and disussion guests)
+        # participants (i.e. people working on the same project and discussion guests)
         # plus anyone in the same organization.
-        organization = self.task.project.organization
+        organization = discussion.organization
         mentionable_users = set(discussion.get_all_participants()) \
                             | set(
-            User.objects.filter(projectmembership__project__organization=self.task.project.organization).distinct())
-        User.preload_profiles(mentionable_users)
+            User.objects.filter(projectmembership__project__organization=organization).distinct())
         return {
             # @-mention participants in the discussion and other
             # users in mentionable_users.
@@ -2000,7 +1979,7 @@ class TaskAnswer(BaseModel):
                 {
                     "user_id": user.id,
                     "tag": user.username,
-                    "display": user.render_context_dict()["name"],
+                    "display": user.name,
                 }
                 for user in mentionable_users
             ],

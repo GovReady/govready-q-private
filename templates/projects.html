@@ -105,7 +105,7 @@ Your Compliance Projects
 <div class="container">
 
 <div class="project-main">
-  <a id="new-project" onclick="show_select_portfolio_modal(); return false;" href="#" class=" btn btn-success">Start a project</a>
+  <a id="new-project" href="{% url 'store' %}?start=true" class=" btn btn-success">Start a project</a>
 </div>
 
 <h2 class="">Projects</h2>
@@ -128,14 +128,12 @@ Your Compliance Projects
 {% for project in projects %}
 <div class="row projects-row">
   <div class="col-xs-10 col-md-5">
-    {% if project.root_task.get_app_icon_url %}
-      <span class="project-image">
+    <span class="project-image">
+      {% if project.root_task.get_app_icon_url %}
         <img src="{{project.root_task.get_app_icon_url}}" class="img-responsive" alt="App Icon">
-      </span>
-      &nbsp;&nbsp;&nbsp;
-    {% else %}
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    {% endif %}
+      {% endif %}
+    </span>
+    &nbsp;&nbsp;&nbsp;
     <a href="{{project.get_absolute_url}}" class="projects-link">{{project.title}}</a>
   </div>
 

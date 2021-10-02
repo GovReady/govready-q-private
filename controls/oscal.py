@@ -6,59 +6,53 @@ import re
 from pathlib import Path
 import sys
 
+import auto_prefetch
+from django.db import models
+from django.utils.functional import cached_property
+from controls.utilities import *
+
+
 CATALOG_PATH = os.path.join(os.path.dirname(__file__), 'data', 'catalogs')
-EXTERNAL_CATALOG_PATH = os.path.join(f"{os.getcwd()}",'local', 'controls', 'data', 'catalogs')
+BASELINE_PATH = os.path.join(os.path.dirname(__file__),'data','baselines')
+
+class CatalogData(auto_prefetch.Model):
+    catalog_key = models.CharField(max_length=100, help_text="Unique key for catalog", unique=True, blank=False, null=False)
+    catalog_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the OSCAL-formatted control catalog.")
+    baselines_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the baselines for the catalog.")
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
+
+    def __str__(self):
+        return "'%s id=%d'" % (self.catalog_key, self.id)
+
+    def __repr__(self):
+        # For debugging.
+        return "'%s id=%d'" % (self.catalog_key, self.id)
 
 class Catalogs(object):
     """Represent list of catalogs"""
 
     # well known catalog identifiers
-
     NIST_SP_800_53_rev4 = 'NIST_SP-800-53_rev4'
     NIST_SP_800_53_rev5 = 'NIST_SP-800-53_rev5'
     NIST_SP_800_171_rev1 = 'NIST_SP-800-171_rev1'
+    CMMC_ver1 = 'CMMC_ver1'
 
     def __init__(self):
-        self.catalog_path = CATALOG_PATH
-        # self.catalog = None
         self.catalog_keys = self._list_catalog_keys()
         self.index = self._build_index()
 
-    def extend_external_catalogs(self, catalog_info, extendtype):
-        """
-        Add external catalogs to list of catalogs
-        """
-        os.makedirs(EXTERNAL_CATALOG_PATH, exist_ok=True)
-        external_catalogs = [file for file in os.listdir(EXTERNAL_CATALOG_PATH) if
-                  file.endswith('.json')]
-        catalog_info = check_and_extend(catalog_info, external_catalogs, extendtype, "_catalog")
-
-        return catalog_info
-
-    def _list_catalog_files(self):
-        return self.extend_external_catalogs([
-            'NIST_SP-800-53_rev4_catalog.json',
-            'NIST_SP-800-53_rev5_catalog.json',
-            'NIST_SP-800-171_rev1_catalog.json'
-        ], "files")
-
     def _list_catalog_keys(self):
-
-        return self.extend_external_catalogs([
-            Catalogs.NIST_SP_800_53_rev4,
-            Catalogs.NIST_SP_800_53_rev5,
-            Catalogs.NIST_SP_800_171_rev1
-        ], "keys")
+        return list(CatalogData.objects.order_by('catalog_key').values_list('catalog_key', flat=True).distinct())
 
     def _load_catalog_json(self, catalog_key):
         catalog = Catalog(catalog_key)
-        #print(catalog_key, catalog._load_catalog_json())
         return catalog._load_catalog_json()
 
     def _build_index(self):
         """Build a small catalog_index from metadata"""
         index = []
-        for catalog_key in self._list_catalog_keys():
+        for catalog_key in self.catalog_keys:
             catalog = self._load_catalog_json(catalog_key)
             index.append(
                 {'id': catalog['id'], 'catalog_key': catalog_key, 'catalog_key_display': catalog_key.replace("_", " "),
@@ -73,35 +67,17 @@ class Catalogs(object):
         """
         List catalog objects
         """
-        return [Catalog(key) for key in Catalogs()._list_catalog_keys()]
-
-
-def uhash(obj):
-    """Return a positive hash code"""
-    h = hash(obj)
-    return h + sys.maxsize + 1
-
-def check_and_extend(values, external_values, extendtype, splitter):
-    """
-    Modularize value to extend
-    """
-    if extendtype == "keys":
-        keys = [key.split(f'{splitter}.json')[0] for key in external_values]
-        values.extend(keys)
-    elif extendtype == "files":
-        files = [file for file in external_values]
-        values.extend(files)
-    return values
+        return [Catalog.GetInstance(catalog_key=key) for key in self.catalog_keys]
 
 class Catalog(object):
     """Represent a catalog"""
 
     # Create a singleton instance of this class per catalog. GetInstance returns
     # that singleton instance. Instead of doing
-    # `cg = Catalog(catalog_key=Catalogs.NIST_SP_800_53_rev4)`,
-    # do `cg = Catalog.GetInstance(catalog_key=Catalogs.NIST_SP_800_53_rev4')`.
+    # `cg = Catalog(catalog_key='NIST_SP-800-53_rev4')`,
+    # do `cg = Catalog.GetInstance(catalog_key='NIST_SP-800-53_rev4')`.
     @classmethod
-    def GetInstance(cls, catalog_key=Catalogs.NIST_SP_800_53_rev4, parameter_values=dict()):
+    def GetInstance(cls, catalog_key='NIST_SP-800-53_rev4', parameter_values=dict()):
         # Create a new instance of Catalog() the first time for each
         # catalog key / parameter combo
         # this method is called. Keep it in memory indefinitely.
@@ -122,11 +98,10 @@ class Catalog(object):
             catalog_instance_key += '_' + str(parameter_values_hash)
         return catalog_instance_key.replace('-', '_')
 
-    def __init__(self, catalog_key=Catalogs.NIST_SP_800_53_rev4, parameter_values=dict()):
+    def __init__(self, catalog_key='NIST_SP-800-53_rev4', parameter_values=dict()):
         self.catalog_key = catalog_key
         self.catalog_key_display = catalog_key.replace("_", " ")
         self.catalog_path = CATALOG_PATH
-        self.external_catalog_path = EXTERNAL_CATALOG_PATH
         self.catalog_file = catalog_key + "_catalog.json"
         try:
             self.oscal = self._load_catalog_json()
@@ -153,23 +128,17 @@ class Catalog(object):
 
     def _load_catalog_json(self):
         """Read catalog file - JSON"""
-        catalog_file = os.path.join(self.catalog_path, self.catalog_file)
-        # Does file exist?
-        if not os.path.isfile(catalog_file):
-            # Check if there any external oscal catalog files
-            try:
-                catalog_file = os.path.join(self.external_catalog_path, self.catalog_file)
-            except:
-                print(f"ERROR: {catalog_file} does not exist")
-                return False
-        # Load file as json
-        with open(catalog_file, 'r') as json_file:
-            data = json.load(json_file)
-            oscal = data['catalog']
+
+        # Get catalog from database
+        # TODO: check for DB miss
+        catalog_record = CatalogData.objects.get(catalog_key=self.catalog_key)
+        oscal = catalog_record.catalog_json['catalog']
         return oscal
 
     def find_dict_by_value(self, search_array, search_key, search_value):
         """Return the dictionary in an array of dictionaries with a key matching a value"""
+        if search_array is None:
+            return None
         result_dict = next((sub for sub in search_array if sub[search_key] == search_value), None)
         return result_dict
 
@@ -178,7 +147,10 @@ class Catalog(object):
     #     return [item['id'] for item in search_collection if 'id' in item]
 
     def get_groups(self):
-        return self.oscal['groups']
+        if self.oscal and "groups" in self.oscal:
+            return self.oscal['groups']
+        else:
+            return []
 
     def get_group_ids(self):
         search_collection = self.get_groups()
@@ -193,11 +165,14 @@ class Catalog(object):
     def get_group_id_by_control_id(self, control_id):
         """Return group id given id of a control"""
 
-        # For 800-53, 800-171, we can match by first few characters of control ID
+        # For 800-53, 800-171, CMMC, we can match by first few characters of control ID
         group_ids = self.get_group_ids()
-        for group_id in group_ids:
-            if group_id.lower() in control_id.lower():
-                return group_id
+        if group_ids:
+            for group_id in group_ids:
+                if group_id.lower() == control_id[:2].lower():
+                    return group_id
+        else:
+            return None
 
         # Group ID was not matched
         return None
@@ -235,10 +210,38 @@ class Catalog(object):
 
     def get_control_property_by_name(self, control, property_name):
         """Return value of a property of a control by name of property"""
+        if control is None:
+            return None
         prop = self.find_dict_by_value(control['properties'], "name", property_name)
         if prop is None:
             return None
         return prop['value']
+
+    def get_control_part_by_name(self, control, part_name):
+        """Return value of a part of a control by name of part"""
+        if "parts" in control:
+            part = self.find_dict_by_value(control['parts'], "name", part_name)
+            return part
+        else:
+            return None
+
+    def get_control_guidance_links(self, control):
+        """Return the links in the guidance section of a control"""
+        guidance = self.get_control_part_by_name(control, "guidance")
+        if guidance and "links" in guidance:
+            return guidance["links"]
+        else:
+            return []
+
+    def get_guidance_related_links_by_value_in_href(self, control, value):
+        """Return objects from 'rel': 'related' links with particular value found in the 'href' string"""
+        links = [ l for l in self.get_control_guidance_links(control) if l['rel']=="related" and value in l['href'] ]
+        return links
+
+    def get_guidance_related_links_text_by_value_in_href(self, control, value):
+        """Return 'text' from rel': 'related' links with particular value found in the 'href' string"""
+        links_text = [ l['text'] for l in self.get_control_guidance_links(control) if l['rel']=="related" and value in l['href'] ]
+        return links_text
 
     def get_control_parameter_label_by_id(self, control, param_id):
         """Return value of a parameter of a control by id of parameter"""
@@ -275,6 +278,8 @@ class Catalog(object):
 
         # If this part has a label (i.e. "a."), get the label.
         label = ""
+        if part is None:
+            return ""
         label_property = self.find_dict_by_value(part.get('properties', []), 'name', 'label')
         if label_property:
             label = label_property['value'] + " "
@@ -339,6 +344,8 @@ class Catalog(object):
         # parameters that are not specified.
         parameter_values = dict(parameter_values)  # clone so that we don't modify the caller's dict
 
+        if control is None:
+            return text
         if "parameters" not in control:
             return text
 
@@ -357,26 +364,50 @@ class Catalog(object):
         If parameter_values is supplied, it will override any paramters set
         in the catalog.
         """
-        family_id = self.get_group_id_by_control_id(control['id'])
-        description = self.get_control_prose_as_markdown(control, part_types={"statement"},
-                                                        parameter_values=self.parameter_values)
-        description_print = description.replace("\n", "<br/>")
-        cl_dict = {
-            "id": control['id'],
-            "id_display": re.sub(r'^([A-Za-z][A-Za-z]-)([0-9]*)\.([0-9]*)$', r'\1\2 (\3)', control['id']),
-            "title": control['title'],
-            "family_id": family_id,
-            "family_title": self.get_group_title_by_id(family_id),
-            "class": control['class'],
-            "description": description,
-            "description_print": description_print,
-            "guidance": self.get_control_prose_as_markdown(control, part_types={"guidance"}),
-            "catalog_file": self.catalog_file,
-            "catalog_key": self.catalog_file.split('_catalog.json')[0],
-            "catalog_id": self.catalog_id,
-            "sort_id": self.get_control_property_by_name(control, "sort-id"),
-            "label": self.get_control_property_by_name(control, "label")
-        }
+        if control is None:
+            family_id = None
+            description = self.get_control_prose_as_markdown(control, part_types={"statement"},
+                                                            parameter_values=self.parameter_values)
+            description_print = description.replace("\n", "<br/>")
+            cl_dict = {
+                "id": None,
+                "id_display": None,
+                "title": None,
+                "family_id": family_id,
+                "family_title": None,
+                "class": None,
+                "description": description,
+                "description_print": description_print,
+                "guidance": None,
+                "catalog_file": None,
+                "catalog_key": None,
+                "catalog_id": None,
+                "sort_id": None,
+                "label": None,
+                "guidance_links": None
+            }
+        else:
+            family_id = self.get_group_id_by_control_id(control['id'])
+            description = self.get_control_prose_as_markdown(control, part_types={"statement"},
+                                                            parameter_values=self.parameter_values)
+            description_print = description.replace("\n", "<br/>")
+            cl_dict = {
+                "id": control['id'],
+                "id_display": de_oscalize_control_id(control['id']),
+                "title": control['title'],
+                "family_id": family_id,
+                "family_title": self.get_group_title_by_id(family_id),
+                "class": control['class'],
+                "description": description,
+                "description_print": description_print,
+                "guidance": self.get_control_prose_as_markdown(control, part_types={"guidance"}),
+                "catalog_file": self.catalog_file,
+                "catalog_key": self.catalog_file.split('_catalog.json')[0],
+                "catalog_id": self.catalog_id,
+                "sort_id": self.get_control_property_by_name(control, "sort-id"),
+                "label": self.get_control_property_by_name(control, "label"),
+                "guidance_links": self.get_control_guidance_links(control)
+            }
         return cl_dict
 
     def get_flattened_controls_all_as_dict(self):
@@ -400,6 +431,7 @@ class Catalog(object):
             cl_dict = self.get_flattened_control_as_dict(cl)
             cl_all_list.append(cl_dict)
         return cl_all_list
+
     def _cache_parameters_by_control(self):
         cache = defaultdict(list)
         if self.oscal:

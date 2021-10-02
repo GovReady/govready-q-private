@@ -21,6 +21,8 @@ class Discussion(BaseModel):
     guests = models.ManyToManyField(User, related_name="guest_in_discussions", blank=True,
                                     help_text="Additional Users who are participating in this chat, besides those that are implicit discussion members via the Discussion's attached_to object.")
 
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
     extra = JSONField(blank=True, help_text="Additional information stored with this object.")
 
     class Meta:
@@ -109,7 +111,7 @@ class Discussion(BaseModel):
         # Batch load user information. For the user's own draft, load the requesting user's info too.
         # Don't use a set to uniquify Users since the comments may have different User instances and
         # we want to fill in info for all of them.
-        User.preload_profiles([c.user for c in comments] + [user])
+        # User.preload_profiles([ c.user for c in comments ] + [ user ])
 
         # Add.
         events.extend([
@@ -125,8 +127,8 @@ class Discussion(BaseModel):
         if user:
             draft = self.comments.filter(user=user, draft=True).first()
             if draft:
-                draft.user = user  # reuse instance for caching via User.preload_profiles
-                draft.discussion = self  # reuse instance for caching
+                draft.user = user # reuse instance
+                draft.discussion = self # reuse instance for caching
                 draft = draft.render_context_dict(user)
 
         # Get the initial state of the discussion to populate the HTML.
@@ -179,6 +181,11 @@ class Discussion(BaseModel):
 
     def is_public(self):
         return getattr(self.attached_to_obj, 'is_discussion_public', lambda: False)
+
+    def is_discussion_inactive(self):
+
+        if self.attached_to_obj is not None:
+            return True if self.attached_to_obj.title == "<Deleted Discussion>" else False
 
     def can_comment(self, user):
         return user is not None and self.is_participant(user)
@@ -251,12 +258,21 @@ class Discussion(BaseModel):
             self._get_autocompletes = self.attached_to_obj.get_discussion_autocompletes(self)
         return self._get_autocompletes
 
+    @property
+    def get_task(self):
+        """
+        Retrieves the task for the given discussion's attached object. For example Projects have root_task while TaskAnswer discussion would have a task.
+        """
+        if hasattr(self.attached_to_obj, 'root_task'):
+            return self.attached_to_obj.root_task
+        elif hasattr(self.attached_to_obj, 'task'):
+            return self.attached_to_obj.task
+        else:
+            return False#TODO: not sure what to do if the model isn't related to a Task
 
-class Comment(BaseModel):
-    discussion = models.ForeignKey(Discussion, related_name="comments", on_delete=models.CASCADE,
-                                   help_text="The Discussion that this comment is attached to.")
-    replies_to = models.ForeignKey('self', blank=True, null=True, related_name="replies", on_delete=models.CASCADE,
-                                   help_text="If this is a reply to a Comment, the Comment that this is in reply to.")
+class Comment(models.Model):
+    discussion = models.ForeignKey(Discussion, related_name="comments", on_delete=models.CASCADE, help_text="The Discussion that this comment is attached to.")
+    replies_to = models.ForeignKey('self', blank=True, null=True, related_name="replies", on_delete=models.CASCADE, help_text="If this is a reply to a Comment, the Comment that this is in reply to.")
     user = models.ForeignKey(User, on_delete=models.PROTECT, help_text="The user making a comment.")
 
     emojis = models.CharField(max_length=256, blank=True, null=True,
@@ -267,6 +283,8 @@ class Comment(BaseModel):
     draft = models.BooleanField(default=False, help_text="Set to true if the comment is a draft.")
     deleted = models.BooleanField(default=False, help_text="Set to true if the comment has been 'deleted'.")
 
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
     extra = JSONField(blank=True, help_text="Additional information stored with this object.")
 
     class Meta:

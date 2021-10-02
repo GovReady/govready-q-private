@@ -9,16 +9,8 @@ from core.utils import Runner
 
 
 class DockerCompose(Runner):
-    REQUIRED_PORTS = [5432, 8000]
-
+    REQUIRED_PORTS = [8000, 5432]
     compose_files = ['docker-compose.yml']
-
-    def wait_for_service_to_be_ready(self, name):
-        while True:
-            status = self.check_if_container_is_ready(name)
-            if status == '"healthy"':
-                break
-            time.sleep(1)
 
     def build_docker_compose_command(self):
         return f"docker-compose {' '.join([f'-f {x}' for x in self.compose_files])}"
@@ -35,14 +27,22 @@ class DockerCompose(Runner):
             "govready-url": "http://localhost:8000",
             "mailgun_api_key": "",
             "memcached": False,
+            "okta": {},
             "secret-key": self.create_secret(),
             "gr-pdf-generator": "wkhtmltopdf",
             "gr-img-generator": "wkhtmltopdf",
+            "session_security_expire_at_browser_close": True,
+            "session_security_warn_after": 1200,
+            "session_security_expire_after": 1800,
             "single-organization": "",
             "static": "static_root",
             "syslog": "",
-            "selenium-headless": True,
-            "selenium-grid-browser": "chrome",
+# <<<<<<< HEAD
+#             "selenium-headless": True,
+#             "selenium-grid-browser": "chrome",
+# =======
+            "test_browser": "chrome",
+            "test_visible": False,
             "trust-user-authentication-headers": {}
         }
         with open("docker/environment.json", 'w') as f:
@@ -113,8 +113,7 @@ class DockerCompose(Runner):
                 self.config = json.load(f)
 
         os.chdir(f"docker")
-        self.execute(
-            cmd=f"{self.build_docker_compose_command()} down --remove-orphans  --rmi all")
+        self.execute(cmd=f"{self.build_docker_compose_command()} down --remove-orphans  --rmi all")
 
         selenium_grid_map = {
             "grid": {"port": 4444, "file": "selenium/selenium-hub.yml"},
@@ -124,8 +123,12 @@ class DockerCompose(Runner):
             "opera": {"port": 6903, "file": "selenium/selenium-opera.yml"},
         }
 
-        if not self.config['selenium-headless']:
-            browser = self.config.get('selenium-grid-browser')
+# <<<<<<< HEAD
+#         if not self.config['selenium-headless']:
+#             browser = self.config.get('selenium-grid-browser')
+# =======
+        if self.config['test_visible']:
+            browser = self.config.get('test_browser')
             if not browser or browser not in selenium_grid_map:
                 del selenium_grid_map['grid']
                 Prompt.error(f"If Selenium isn't running as Headless, then you must declare a valid browser type: "
@@ -138,11 +141,12 @@ class DockerCompose(Runner):
 
         self.check_ports()
         self.execute(cmd=f"{self.build_docker_compose_command()} build --parallel", show_env=True)
-        self.execute(cmd=f"{self.build_docker_compose_command()} up -d",
-                     show_env=True)
+        self.execute(cmd=f"{self.build_docker_compose_command()} up -d", show_env=True)
         self.execute(cmd=f"docker-compose logs -f", show_env=True, threaded=True)
 
         Prompt.warning("Waiting for stack to come up...")
-        self.wait_for_service_to_be_ready("govready-q-dev")
-        self.wait_for_service_to_be_ready("frontend")
-
+        while True:
+            status = self.check_if_container_is_ready("govready-q-dev")
+            if status == '"healthy"':
+                break
+            time.sleep(1)

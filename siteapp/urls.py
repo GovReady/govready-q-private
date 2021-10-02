@@ -1,7 +1,13 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.urls import path
+from django.conf import settings
+from django.urls import path, re_path
+from django.views.generic import RedirectView
+from rest_framework import routers
+from rest_framework import serializers
+from siteapp.views import UserViewSet
+from siteapp.views import ProjectViewSet
 
 from .model_mixins.tags import build_tag_urls
 from .models import Project
@@ -43,16 +49,22 @@ urlpatterns = [
 
     # app store
     url(r'^store$', views.apps_catalog, name="store"),
+    url(r'^store/(?P<source_slug>.*)/(?P<app_name>.*)/zip$', views.apps_catalog_item_zip),
     url(r'^store/(?P<source_slug>.*)/(?P<app_name>.*)$', views.apps_catalog_item),
+
     # app store
     url(r'^library$', views.apps_catalog),
+    url(r'^library/(?P<source_slug>.*)/(?P<app_name>.*)/zip$', views.apps_catalog_item_zip),
     url(r'^library/(?P<source_slug>.*)/(?P<app_name>.*)$', views.apps_catalog_item),
 
-    # projects
+    # profile
+    url(r'account/settings$', views.account_settings, name="account_settings"),
 
+    # projects
     url(r"^projects$", views.ProjectList.as_view(), name="projects"),
     url(r"^projects/lifecycle$", views.project_list_lifecycle, name="projects_lifecycle"),
     url(r'^projects/(?P<project_id>.*)/__edit$', views.project_edit, name="edit_project"),
+    url(r'^projects/(?P<project_id>.*)/__edit_security_obj$', views.project_security_objs_edit, name="edit_project_security_objs"),
     url(r'^projects/(\d+)/__delete$', views.delete_project, name="delete_project"),
     url(r'^projects/(\d+)/__admins$', views.make_revoke_project_admin, name="make_revoke_project_admin"),
     url(r'^projects/(\d+)/__export$', views.export_project_questionnaire, name="export_project_questionnaire"),
@@ -62,8 +74,8 @@ urlpatterns = [
     *build_tag_urls(r"^projects/(\d+)/", model=Project),  # Tag Urls
     url(r'^projects/(\d+)/assets/(\d+)/__update$', views.update_project_asset,
         name="update_project_assets"),
-    url(r'^projects/(\d+)/(?:[\w\-]+)()$', views.project, name="view_project"),
-    # must be last because regex matches some previous URLs
+    url(r'^projects/(\d+)/$', views.project, name="view_project_id"),
+    url(r'^projects/(\d+)/(?:[\w\-]+)()$', views.project, name="view_project"), # must be last because regex matches some previous URLs
     url(r'^projects/(\d+)/(?:[\w\-]+)(/settings)$', views.project_settings, name="project_settings"),
     url(r'^projects/(\d+)/(?:[\w\-]+)(/startapps)$', views.project_start_apps),
     # must be last because regex matches some previous URLs
@@ -116,9 +128,19 @@ urlpatterns = [
     url(r'^tags/_save$', views.create_tag),
     url(r'^tags/(\d+)/_delete$', views.delete_tag),
     url(r'^tags/$', views.list_tags),
+
+    # Session
+    url(r'session_security/', include('session_security.urls')),
 ]
 
 urlpatterns += [url(r'^api/v2/', include('api.urls'))]
+
+if settings.OKTA_CONFIG:
+    urlpatterns += [
+        path('oidc/', include('mozilla_django_oidc.urls')),
+        url(r'^accounts/logout/$', views.logged_out, name="logged_out"),
+        re_path(r'^accounts/login/$', RedirectView.as_view(url='/oidc/authenticate', permanent=False), name='login2')
+    ]
 
 if 'django.contrib.auth.backends.ModelBackend' in settings.AUTHENTICATION_BACKENDS:
     # If username/pwd logins are enabled, add the login pages.

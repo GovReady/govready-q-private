@@ -70,7 +70,7 @@ class ElementForm(ModelForm):
 
     class Meta:
         model = Element
-        fields = ['name', 'full_name', 'description', 'element_type']
+        fields = ['name', 'full_name', 'description', 'element_type', 'component_type', 'component_state']
 
     def clean(self):
         """Extend clean to validate element name is not reused."""
@@ -155,3 +155,4 @@ class SystemAssessmentResultForm(ModelForm):
 
     assessment_results = forms.CharField(label='System assessment result items (JSON)', required=False, widget=forms.Textarea(),
             help_text="Listing of assessment items in JSON")
+

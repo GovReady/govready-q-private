@@ -1,5 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+import os
+
+from datetime import datetime
+from zipfile import ZipFile
+from zipfile import BadZipFile
+from django.shortcuts import render,  get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect, HttpResponseForbidden, JsonResponse, HttpResponseNotAllowed
+from controls.utilities import de_oscalize_control_id
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 from django.conf import settings
@@ -8,20 +14,26 @@ from django.db import transaction
 
 import re
 
+from pathlib import PurePath
+from django.utils.text import slugify
+
+from controls.enums.statements import StatementTypeEnum
 from discussion.validators import validate_file_extension
-from .models import Module, ModuleQuestion, Task, TaskAnswer, TaskAnswerHistory, InstrumentationEvent
+from .models import AppVersion, Module, ModuleQuestion, Task, TaskAnswer, TaskAnswerHistory, InstrumentationEvent
 
 import guidedmodules.module_logic as module_logic
 import guidedmodules.answer_validation as answer_validation
+
 from discussion.models import Discussion
 from siteapp.models import User, Invitation, Project, ProjectMembership
-from siteapp.forms import AddProjectForm
-from controls.models import Element, ElementRole, Statement
+from guidedmodules.forms import ExportCSVTemplateSSPForm
+from controls.models import Element, ElementRole, Statement, System
 
 import fs, fs.errors
 
 import logging
 logging.basicConfig()
+import csv
 import structlog
 from structlog import get_logger
 from structlog.stdlib import LoggerFactory
@@ -242,15 +254,17 @@ def save_answer(request, task, answered, context, __):
 
     # validate question
     q = task.module.questions.get(id=request.POST.get("question"))
+    # store question/tasks for back button
+    back_url = task.get_absolute_url() + f"/question/{q.key}"
 
     # make a function that gets the URL to the next page
     def redirect_to():
         next_q = get_next_question(q, task)
         if next_q:
             # Redirect to the next question.
-            return task.get_absolute_url_to_question(next_q) + "?previous=nquestion"
+            return task.get_absolute_url_to_question(next_q) + f"?back_url={back_url}&previous=nquestion"
         # Redirect to the module finished page because there are no more questions to answer.
-        return task.get_absolute_url() + "/finished?previous=nquestion"
+        return task.get_absolute_url() + f"/finished?back_url={back_url}&previous=nquestion"
 
     # validate and parse value
     if request.POST.get("method") == "clear":
@@ -459,7 +473,7 @@ def save_answer(request, task, answered, context, __):
                 # The system actions are currently supported:
                 #   1. `system/assign_baseline/<value>` - Automatically sets the system baseline controls to the selected impact value
                 #   2. `system/update_system_and_project_name/<value>` - Automatically sets the system, project names
-                if a_obj == 'system':
+                if a_obj == 'system' and skipped_reason is None:
 
                     # Assign baseline set of controls to a root_element
                     if a_verb == "assign_baseline":
@@ -480,16 +494,16 @@ def save_answer(request, task, answered, context, __):
                             object={"object": "system", "id": system.id, "name": system.root_element.name},
                             user={"id": request.user.id, "username": request.user.username}
                         )
-                        # Set fisma_impact_level statement
+                        # Set security_sensitivity_level statement
                         if baseline.lower() in ["low", "moderate", "high"]:
-                            fisma_impact_level = system.set_fisma_impact_level(baseline)
-                            if fisma_impact_level == baseline.lower():
+                            security_sensitivity_level, smt = system.set_security_sensitivity_level(baseline)
+                            if security_sensitivity_level == baseline.lower():
                                 messages.add_message(request, messages.INFO,
-                                                              f'I\'ve set the system FISMA impact level to "{fisma_impact_level}.')
-                                # Log setting fisma_impact_level
+                                                              f'I\'ve set the system FISMA impact level to "{security_sensitivity_level}.')
+                                # Log setting security_sensitivity_level
                                 logger.info(
-                                    event=f"system assign_fisma_impact_level {fisma_impact_level}",
-                                    object={"object": "system", "id": system.id, "name": system.root_element.name},
+                                    event=f"system assign_security_sensitivity_level {security_sensitivity_level}",
+                                    object={"object": "system", "id": system.id, "name": system.root_element.name, "statementid": smt.id},
                                     user={"id": request.user.id, "username": request.user.username}
                                 )
                             else:
@@ -513,13 +527,12 @@ def save_answer(request, task, answered, context, __):
                         messages.add_message(request, messages.INFO,
                                                      f'I\'ve updated the system and project name.')
 
-
                 # Process element actions
                 # -----------------------------------
                 # Only two actions are currently supported:
                 #   1. `element/add_role/<role_value>` - Automatically add elements to the selected components of a system
                 #   2. `element/del_role/<role_value>` - Automatically delete elements from the selected components of a system
-                if a_obj == 'element':
+                if a_obj == 'element' and skipped_reason is None:
 
                     # Get all elements assigned role specified in the action
                     elements_with_role = Element.objects.filter(element_type="system_element").filter(roles__role=a_filter)
@@ -550,7 +563,7 @@ def save_answer(request, task, answered, context, __):
                                 # Go to next element
                                 continue
 
-                            smts = Statement.objects.filter(producer_element_id = producer_element.id, statement_type="control_implementation_prototype")
+                            smts = Statement.objects.filter(producer_element_id = producer_element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name)
 
                             # Component does not have any statements of type control_implementation_prototype to
                             # add to system. So we cannot add the component (element) to the system.
@@ -561,17 +574,14 @@ def save_answer(request, task, answered, context, __):
                                 # Go to next element
                                 continue
 
-                            # If we get here, we are going to add the element to the system
-                            # We add an element to a system by adding copies of the element's statements
-                            # Loop through element's prototype statements and add to control implementation statements
-                            for smt in Statement.objects.filter(producer_element_id = producer_element.id, statement_type="control_implementation_prototype"):
-                                # Add all existing control statements for a component to a system even if system does not use controls.
-                                # This guarantees that control statements are associated.
-                                # The selected controls will serve as the primary filter on what content to display.
-                                smt.create_instance_from_prototype(system.root_element.id)
+                            # Add the element to the system by adding copies of the element's statements associated with system's root element
+                            # Loop through all element's prototype statements and add to control implementation statements.
+                            # System's selected controls will filter what controls and control statements to display.
+                            for smt in Statement.objects.filter(producer_element_id = producer_element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name):
+                                smt.create_system_control_smt_from_component_prototype_smt(system.root_element.id)
 
                             # Get a count of control statements added to the system.
-                            smts_added = Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type="control_implementation")
+                            smts_added = Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name)
                             smts_added_count = len(smts_added)
                             # Prepare message
                             if smts_added_count > 0:
@@ -582,15 +592,34 @@ def save_answer(request, task, answered, context, __):
                                                  f'Oops. I tried adding "{producer_element.name}" to the system, but no control implementation statements were found.')
 
                     # Delete elements matching role from the selected components of a system
-                    if a_verb == "del_role":
+                    if a_verb == "del_role" and skipped_reason is None:
                         for producer_element in elements_with_role:
                             # Delete component from system
-                            smts_assigned_count = len(Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type="control_implementation"))
+                            smts_assigned_count = len(Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name))
                             if smts_assigned_count > 0:
-                                Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type="control_implementation").delete()
+                                Statement.objects.filter(producer_element_id = producer_element.id, consumer_element_id = system.root_element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name).delete()
                                 messages.add_message(request, messages.INFO,
                                                      f'I\'ve deleted "{producer_element.name}" and its {smts_assigned_count} control implementation statements from the system.')
 
+                # Process project actions
+                # -----------------------------------
+                if a_obj == 'project' and skipped_reason is None:
+
+                    # Get all elements assigned role specified in the action
+                    # elements_with_role = Element.objects.filter(element_type="system_element").filter(roles__role=a_filter)
+
+                    # Add elements matching role to the selected components of a system
+                    if a_verb == "view_project":
+
+                        if a_filter == "project":
+                            # Redirect to the project's home page.
+                            response = JsonResponse({ "status": "ok", "redirect": project.get_absolute_url() })
+                            return response
+
+                        if a_filter == "components":
+                            # Redirect to the new project's components.
+                            response = JsonResponse({ "status": "ok", "redirect": f"/systems/{system_id}/components/selected" })
+                            return response
 
     # Form a JSON response to the AJAX request and indicate the
     # URL to redirect to, to load the next question.
@@ -646,6 +675,9 @@ def show_question(request, task, answered, context, q):
 
     # Is there a TaskAnswer for this yet?
     taskq = TaskAnswer.objects.filter(task=task, question=q).first()
+
+    # Get previous question for back button
+    back_url =  request.GET.get('back_url')
 
     # Display requested question.
 
@@ -930,8 +962,56 @@ def show_question(request, task, answered, context, q):
     # get context of questions in module
     context_sorted = module_logic.get_question_context(answered, q)
 
-    # Split the `context.update` into smaller parts so it is possible to add in timing code
-    # to examine performance of certain embedded calls.
+
+
+    # Process any actions to get data for the question.
+    # -------------------------------------------------
+    # Can we automatically set question answers based on data from other sources?
+    # For example, can choices from a filter of systems in the database?
+    # Can we get a list of roles from Active Directory?
+    # This block processes any actions specified for generating the question.
+
+    # This requires a tightly controlled vocabulary.
+    #
+    # We assume user has sufficient permission because user is answering question.
+    #
+    if q.spec['type'] == "choice-from-data" or q.spec['type'] == "multiple-choice-from-data":
+        choices_from_data = []
+        choices_from_data_keys = {}
+        for action in q.spec['choices_from_data']:
+            a_obj, a_verb, a_filter = action['action'].split("/")
+            # Process system actions for generating question option choices
+            # -------------------------------------------------------------
+            # The system actions are currently supported:
+            #   1. `system/add_role/<value>` - Automatically makes choices from filter list of systems
+            if a_obj == "system":
+                if a_verb == "add_role":
+                    # Get all elements assigned role specified in the action
+                    c_items = Element.objects.filter(element_type="system", roles__role=a_filter).order_by("name")
+                    for c_item in c_items:
+                        if str(c_item.uuid) not in choices_from_data_keys:
+                            choices_from_data.append(OrderedDict([
+                                            ('key', str(c_item.uuid)), ('text', c_item.name),
+                                            # ('help', f"str(c_item.uuid): {str(c_item.uuid)}")
+                                            ]))
+                            choices_from_data_keys[str(c_item.uuid)] = 1
+            # Process element actions for generating question option choices
+            # --------------------------------------------------------------
+            # The system actions are currently supported:
+            #   1. `element/add_role/<value>` - Automatically makes choices from filter list of elements
+            if a_obj == "element":
+                if a_verb == "add_role":
+                    # Get all elements assigned role specified in the action
+                    c_items = Element.objects.filter(element_type="system_element", roles__role=a_filter).order_by("name")
+                    for c_item in c_items:
+                        if str(c_item.uuid) not in choices_from_data_keys:
+                            choices_from_data.append(OrderedDict([
+                                            ('key', str(c_item.uuid)), ('text', c_item.name),
+                                            # ('help', f"str(c_item.uuid): {str(c_item.uuid)}")
+                                            ]))
+                            choices_from_data_keys[str(c_item.uuid)] = 1
+        q.spec.update({"choices": choices_from_data})
+
     context.update({
         "header_col_active": "start" if (len(answered.as_dict()) == 0 and q.spec["type"] == "interstitial") else "questions",
         "q": q,
@@ -996,8 +1076,9 @@ def show_question(request, task, answered, context, q):
         "is_question_page": True,
     })
     context.update({
-        "project_form": AddProjectForm(request.user),
+         "back_url": back_url,
     })
+
     return render(request, "question.html", context)
 
 @task_view
@@ -1186,6 +1267,16 @@ def task_finished(request, task, answered, context, *unused_args):
         if output.get("display") == "top":
             top_of_page_output = output
             del outputs[i]
+    if request.method == "POST":
+        export_csv_form = ExportCSVTemplateSSPForm(request.POST)
+        if export_csv_form.is_valid():
+            response = export_ssp_csv(export_csv_form.data, task.project.system)
+            logger.info(
+                event="export_ssp_csv",
+                object={"object": "ssp_csv"},
+                user={"id": request.user.id, "username": request.user.username}
+            )
+            return response
 
     context.update({
         "had_any_questions": len(set(answered.as_dict()) - answered.was_imputed) > 0,
@@ -1205,7 +1296,7 @@ def task_finished(request, task, answered, context, *unused_args):
         "next_module": next_module,
         "next_module_spec": next_module_spec,
         "gr_pdf_generator": settings.GR_PDF_GENERATOR,
-        "project_form": AddProjectForm(request.user, initial={'portfolio': task.project.portfolio.id}) if task.project.portfolio else AddProjectForm(request.user)
+        "export_csv_form": ExportCSVTemplateSSPForm(),
     })
     return render(request, "task-finished.html", context)
 
@@ -1264,9 +1355,16 @@ def download_module_output(request, task, answered, context, question, document_
     if document_id in (None, ""):
         raise Http404()
     try:
+        # Force refresh of content associated with this Task.
+        # Clear module questions since ModuleQuestions may have changed.
+        module_logic.clear_module_question_cache()
+
+        # Since impute conditions, output documents, and other generated
+        # data may have changed, clear all cached Task state for project.
+        Task.clear_state(Task.objects.filter(module__app=task.project.root_task.module.app.id))
         blob, filename, mime_type= task.download_output_document(document_id, download_format, answers=answered)
     except ValueError:
-        raise Http404()
+        raise Http404("Problem processing document request.")
 
     resp = HttpResponse(blob, mime_type)
     resp['Content-Disposition'] = 'inline; filename=' + filename
@@ -1344,6 +1442,45 @@ def authoring_tool_auth(f):
 
 @login_required
 @transaction.atomic
+def authoring_import_appsource(request):
+    from guidedmodules.models import AppSource
+    from collections import OrderedDict
+
+    appsource_zipfile = request.FILES.get("file")
+    if appsource_zipfile:
+        try:
+            appsource_name = os.path.splitext(appsource_zipfile.name)[0]
+            # Extract AppSource file
+            with ZipFile(appsource_zipfile, 'r') as zipObj:
+               zipObj.extractall("local/appsources/")
+            # TODO:
+            # Check if file is Appsource directory format
+            #   - has "apps" directory
+            #   - apps.yaml files exist in directories
+            # Create a new AppSource.
+            appsrc = AppSource.objects.create(
+                slug=appsource_name,
+                spec={ "type": "local", "path": f"local/appsources/{appsource_name}/apps" }
+            )
+            # Log uploaded app source
+            logger.info(
+                event=f"govready appsource_added {appsrc.slug}",
+                object={"object": "appsource", "id": appsrc.id, "slug": appsrc.slug},
+                user={"id": request.user.id, "username": request.user.username}
+            )
+            return JsonResponse({ "status": "ok", "redirect": f"/admin/guidedmodules/appsource/{appsrc.id}/change" })
+        except BadZipFile as err:
+            messages.add_message(request, messages.ERROR, f"Bad zip file: {appsource_zipfile}")
+            return JsonResponse({ "status": "ok", "redirect": "/store" })
+        except ValueError:
+            messages.add_message(request, messages.ERROR, f"Failure processing: {ValueError}")
+            return JsonResponse({ "status": "ok", "redirect": "/store" })
+    else:
+        messages.add_message(request, messages.ERROR, f"AppSource file required.")
+        return JsonResponse({ "status": "ok", "redirect": "/store" })
+
+@login_required
+@transaction.atomic
 def authoring_create_q(request):
     from guidedmodules.models import AppSource
     from collections import OrderedDict
@@ -1379,10 +1516,9 @@ def authoring_create_q(request):
     except Exception as e:
         raise
 
-    from django.contrib import messages
     messages.add_message(request, messages.INFO, 'New Project "{}" added into the catalog.'.format(new_q["title"]))
 
-    return JsonResponse({ "status": "ok", "redirect": "{% url 'store' %}" })
+    return JsonResponse({ "status": "ok", "redirect": "/store" })
 
 @login_required
 def refresh_output_doc(request):
@@ -1470,97 +1606,6 @@ def upgrade_app(request):
     return JsonResponse({ "status": "ok" })
 
 @authoring_tool_auth
-@transaction.atomic
-def authoring_download_app(request, task):
-    question = get_object_or_404(ModuleQuestion, module=task.module, key=request.POST['question'])
-
-    # Download current questionnaire.
-    print("In `authoring_download_app` and attempting to download question/app")
-    try:
-        questionnaire_yaml = question.module.serialize()
-    except Exception as e:
-        return JsonResponse({ "status": "error", "message": "Could not download YAML file: " + str(e) })
-
-    # Clear cache...
-    from .module_logic import clear_module_question_cache
-    clear_module_question_cache()
-
-    # ////////////////////
-    # GET DOWNLOAD TO WORK
-    # mime_type = "text/x-yaml"
-    # disposition = "inline"
-    # resp = HttpResponse(questionnaire_yaml, content_type=mime_type)
-    # resp['Content-Disposition'] = disposition + '; filename=' + "q-file.yaml"
-
-    # # Browsers may guess the MIME type if it thinks it is wrong. Prevent
-    # # that so that if we are forcing application/octet-stream, it
-    # # doesn't guess around it and make the content executable.
-    # resp['X-Content-Type-Options'] = 'nosniff'
-
-    # # Browsers may still allow HTML to be rendered in the browser. IE8
-    # # apparently rendered HTML in the context of the domain even when a
-    # # user clicks "Open" in an attachment-disposition response. This
-    # # prevents that. Doesn't seem to affect anything else (like images).
-    # resp['X-Download-Options'] = 'noopen'
-
-    # return resp
-    # ////////////////////
-
-    # Return status. The browser will reload/redirect --- if the question key
-    # changed, this sends the new key.
-    return JsonResponse({ "status": "ok",
-                          "data": questionnaire_yaml,
-                          "redirect": task.get_absolute_url_to_question(question)
-                        })
-
-@authoring_tool_auth
-@transaction.atomic
-def authoring_download_app_project(request, task):
-    # Download a project
-#    print("Calling to download task: {}".format(task))
-    # Get project that this Task is a part of
-    project_obj = task.project
-#    print("project is {}".format(project_obj))
-
-    # Get module that this task is answering
-    # module_obj = task.module
-    # print("module_obj is {}".format(module_obj))
-    # print("module_obj.spec is {}".format(module_obj.spec))
-    # print("module.serialize: ")
-    # print("{}".format(module_obj.serialize()))
-    # Recreate the yaml of the module (e.g, app-project)
-#    print("text {}".format(task.module.serialize()))
-
-    # Download current project_app (.e.g, module) in use.
-#    print("In `authoring_download_app_project` and attempting to download project-app")
-    try:
-        module_yaml = task.module.serialize()
-    except Exception as e:
-        return JsonResponse({ "status": "error", "message": "Could not download YAML file: " + str(e) })
-
-    # Do I need something similar?
-    # Clear cache...
-    # from .module_logic import clear_module_question_cache
-    # clear_module_question_cache()
-
-    # As a project app, There also exists:
-    # - asset directory with assets
-    # - state information
-
-    # Get the app (AppVersion) connected to this module
-    # appversion_obj =  module_obj.app
-    # print("appversion_obj is {}".format(appversion_obj))
-    # print("appversion_obj version_name is {}".format(appversion_obj.version_name))
-    # print("appversion_obj version_number is {}".format(appversion_obj.version_number))
-
-    # Download current questionnaire.
-
-    # How do I dump the entire app?
-    return JsonResponse({ "status": "ok",
-                          "data": module_yaml,
-                        })
-
-@authoring_tool_auth
 def authoring_new_question(request, task):
     # Find a new unused question identifier.
     ids_in_use = set(task.module.questions.values_list("key", flat=True))
@@ -1572,50 +1617,63 @@ def authoring_new_question(request, task):
     definition_order = max([0] + list(task.module.questions.values_list("definition_order", flat=True))) + 1
 
     # Make a new spec.
+    # import ipdb; ipdb.set_trace()
     if task.module.spec.get("type") == "project":
+        spec = {
+                  "id": "example",
+                  "title": "Example Module2",
+                  "output": [
+                    {
+                      "format": "markdown",
+                      "title": "What You Chose",
+                      "template": "{{q1111}}"
+                    }
+                  ]
+                }
+
         # Probably in app.yaml
         spec = {
             "id": entry,
             "type": "module",
             "title": "New Question Title",
-            "protocol": ["choose-a-module-or-enter-a-protocol-id"],
+            "module-id": entry
+            # "protocol": ["choose-a-module-or-enter-a-protocol-id"],
         }
-        # # Make a new modular spec
-        # mspec = {"id": entry,
-        #          "title": entry.replace("_"," ").title(),
-        #          "questions": [
-        #             {"id": "mqo",
-        #              "type": "text",
-        #              "title": "New Question Title",
-        #              "prompt": "Enter some text.",
-        #              },
-        #          ],
-        #          "output": []
-        #          }
-        # # Make a new modular instance
-        # new_module = Module(
-        #     source=task.module.app.source,
-        #     app=task.module.app,
-        #     module_name=entry,
-        #     spec=mspec
-        # )
-        # new_module.save()
+        # Make a new modular spec
+        mspec = {"id": f"example-{entry}",
+                 "title": "Example Module " + entry.replace("_"," ").title(),
+                 "output": [
+                    {
+                      "format": "markdown",
+                      "title": "What You Chose",
+                      "template": "{{q1111}}"
+                    }
+                  ]
+                 }
+        # Make a new modular instance
+        new_module = Module(
+            source=task.module.app.source,
+            app=task.module.app,
+            module_name=f"example-{entry}",
+            spec=mspec
+        )
+        new_module.save()
 
-        # spec = {
-        #    "id": entry,
-        #    "type": "module",
-        #    "title": "New Question Title",
-        #    "module-id": entry,
-        # }
+        spec = {
+           "id": entry,
+           "type": "module",
+           "title": "New Question Title",
+           "module-id": entry,
+        }
 
-        # # Make a new question instance.
-        # question = ModuleQuestion(
-        #     module=task.module,
-        #     entry=entry,
-        #     definition_order=definition_order,
-        #     spec=spec
-        #     )
-        # question.save()
+        # Make a new question instance.
+        question = ModuleQuestion(
+            module=task.module,
+            key=entry,
+            definition_order=definition_order,
+            spec=spec
+            )
+        question.save()
 
     else:
         spec = {
@@ -1951,14 +2009,14 @@ def start_a_discussion(request):
 
         # Get the TaskAnswer for this task. It may not exist yet.
         tq, isnew = TaskAnswer.objects.get_or_create(**tq_filter)
-
+    # Filter for discussion and return the first entry (if it doesn't exist it returns None)
     discussion = Discussion.get_for(task.project.organization, tq)
     if not discussion:
         # Validate user can create discussion.
         if not task.has_read_priv(request.user):
             return JsonResponse({ "status": "error", "message": "You do not have permission!" })
 
-        # Get the Discussion.
+        # Create a Discussion.
         discussion = Discussion.get_for(task.project.organization, tq, create=True)
 
     return JsonResponse(discussion.render_context_dict(request.user))
@@ -2060,3 +2118,52 @@ def analytics(request):
 
         ]
     })
+
+def export_ssp_csv(form_data, system):
+    """
+    Export an SSP's control implementations with the submitted headers
+    """
+
+    smts = system.root_element.statements_consumed.filter(
+        statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name).order_by('pid')
+
+    selected_controls = list(smts.values_list('sid', flat=True))
+    # If the user selected to format the control id in OSCAL this will be skipped
+    if not form_data.get('oscal_format'):
+        # De-oscalize every control id (sid)
+        selected_controls = [de_oscalize_control_id(control) for control in selected_controls]
+    db_catalog_keys = list(smts.values_list('sid_class', flat=True))
+    catalog_keys = []
+    # XYZ_3_0 --> XYZ 3.0
+    for catalog in db_catalog_keys:
+        if catalog.count("_") == 3:
+            catalog_keys.append(" ".join(catalog.split("_")[:2]) + " " + ".".join(catalog.split("_")[-2:]))
+        else:
+            catalog_keys.append(catalog)
+    imps = list(smts.values_list('body', flat=True))
+    headers = [form_data.get('info_system'), form_data.get('control_id'), form_data.get('catalog'), form_data.get('shared_imps'), form_data.get('private_imps')]
+    system_name = system.root_element.name # TODO: Should this come from questionnaire answer or project name as we have it?
+
+    data = [
+        [system_name] * len(selected_controls),
+        selected_controls,
+        catalog_keys,
+        [""] * len(selected_controls),# shared imps are not implemented
+        imps
+    ]
+    filename = str(PurePath(slugify(system_name+ "-" + datetime.now().strftime("%Y-%m-%d-%H-%M"))).with_suffix('.csv'))
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename=' + filename},
+    )
+
+    writer = csv.writer(response)
+    writer.writerow(headers)
+    # spread and write rows
+    writer.writerows(zip(*data))
+
+    return response
+  
+  

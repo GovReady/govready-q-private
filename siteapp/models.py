@@ -3,6 +3,7 @@ from itertools import chain
 import logging
 import structlog
 import uuid as uuid
+import auto_prefetch
 from structlog import get_logger
 from structlog.stdlib import LoggerFactory
 from typing import Dict
@@ -24,6 +25,8 @@ from siteapp.enums.access_level import AccessLevelEnum
 from siteapp.model_mixins.tags import TagModelMixin
 from siteapp.enums.assets import AssetTypeEnum
 from siteapp.utils.uploads import hash_file
+from controls.models import ImportRecord
+from controls.utilities import *
 
 logging.basicConfig()
 structlog.configure(logger_factory=LoggerFactory())
@@ -33,7 +36,10 @@ logger = get_logger()
 
 class User(AbstractUser, BaseModel):
     # Additional user profile data.
-
+    name = models.CharField(max_length=200, blank=True, null=True, unique=True,
+                                  help_text="Full name to display.")
+    title = models.CharField(max_length=200, blank=True, null=True, unique=False,
+                                  help_text="Position title.")
     notifemails_enabled = models.IntegerField(default=0, choices=[(0, "As They Happen"), (1, "Don't Email")],
                                               help_text="How often to email the user notification emails.")
     notifemails_last_notif_id = models.PositiveIntegerField(default=0,
@@ -47,6 +53,9 @@ class User(AbstractUser, BaseModel):
                                   help_text="The user's API key with read-write permission.")
     api_key_wo = models.CharField(max_length=32, blank=True, null=True, unique=True,
                                   help_text="The user's API key with write-only permission.")
+    default_portfolio = models.ForeignKey('Portfolio', blank=True, null=True, related_name="default_for", on_delete=models.RESTRICT,
+                                  help_text="Default Portfolio of the User.")
+
 
     # Methods
     def __init__(self, *args, **kwargs):
@@ -54,145 +63,21 @@ class User(AbstractUser, BaseModel):
         self.access_level = AccessLevelEnum.READ_WRITE  # Default Login Setting.  API overrides to token specific access
 
     def __str__(self):
-        # name = self._get_setting("name")
-        # if name: # question might be skipped
-        #     return name
-        # User has not entered their name.
-        return self.username or "Anonymous User"
-
-    def name(self):
-        return self._get_setting("name")
+        if self.name:
+            return self.name
+        else:
+            return self.username or "Anonymous User"
 
     def name_and_email(self):
-        name = self._get_setting("name")
-        if name:
+        if self.name:
             if self.email:
-                return "{} <{}>".format(name, self.email)
+                return "{} <{}>".format(self.name, self.email)
             else:
-                return name
+                return self.name
         elif self.email:
             return self.email
         else:
             return "Anonymous User Without Email Address"
-
-    @property
-    def access_level(self):
-        return self._access_level
-
-    @access_level.setter
-    def access_level(self, value):
-        self._access_level = value
-
-    @staticmethod
-    def preload_profiles(users, sort=False):
-        # For each user, set:
-        # * user_settings_task, which holds the account project's settings Task, if created
-        # * user_settings_dict, which holds that Task's current answers as a dict, if the Task was created
-
-        # Get the account projects of all of the users in batch.
-        account_project_root_tasks = {}
-
-        for pm in ProjectMembership.objects.filter(
-                user__in=users,
-                project__is_account_project=True) \
-                .select_related("project", "project__root_task", "user"):
-            account_project_root_tasks[pm.user] = pm.project.root_task
-
-        # Get the account_settings answer object for all of the account projects in batch.
-        # Load all TaskAnswerHistory objects that answer the "account_settings" question
-        # in each account project. This gives us the whole history of answers. Take the
-        # most recent (reverse sort + take first) for each project.
-        from guidedmodules.models import TaskAnswerHistory
-        account_project_settings = {}
-
-        history = TaskAnswerHistory.objects.select_related("taskanswer__task") \
-            .prefetch_related("answered_by_task") \
-            .filter(taskanswer__task__in=account_project_root_tasks.values(),
-                    taskanswer__question__key="account_settings") \
-            .order_by('-id').values('taskanswer__task', 'answered_by_task')
-
-        from guidedmodules.models import Task
-        tasks = {task.id: task for task in Task.objects.filter(id__in=[x['taskanswer__task'] for x in history])}
-        answered_by_tasks = {task.id: task for task in Task.objects.select_related('module').filter(
-            id__in=[x['answered_by_task'] for x in history])}
-        for ansh in history:
-            account_project_settings.setdefault(
-                tasks[ansh['taskanswer__task']],
-                answered_by_tasks[ansh['answered_by_task']],
-            )
-
-        # Get all of the current answers for the settings tasks.
-
-        from guidedmodules.models import Task
-        settings = {}
-        for task, question, answer in Task.get_all_current_answer_records(account_project_settings.values()):
-            settings.setdefault(task, {})[question.key] = (answer.get_value() if answer else None)
-
-        # Set attributes on each user instance.
-        for user in users:
-            user.user_settings_task = account_project_settings.get(account_project_root_tasks.get(user))
-            user.user_settings_task_answers = settings.get(user.user_settings_task, None)
-
-        # Apply a standard sort.
-        if sort:
-            users.sort(key=lambda user: user.name_and_email())
-
-    def preload_profile(self):
-        # Prep this user's cached state.
-        User.preload_profiles([self])
-
-    def user_settings_task_create_if_doesnt_exist(self):
-        # If a task is set, return it.
-        if getattr(self, 'user_settings_task', None):
-            return self.user_settings_task
-
-        # Otherwise, create it.
-        return self.get_settings_task()
-
-    def _get_setting(self, key):
-        if not hasattr(self, 'user_settings_task'):
-            self.preload_profile()
-        if getattr(self, 'user_settings_task_answers', None):
-            return self.user_settings_task_answers.get(key)
-        return None
-
-    def get_account_project(self):
-        p = getattr(self, "_account_project", None)
-        if p is None:
-            p = self.get_account_project_()
-            self._account_project = p
-        return p
-
-    @transaction.atomic
-    def get_account_project_(self):
-        # TODO: There's a race condition here.
-
-        # Get an existing account project.
-        pm = ProjectMembership.objects.filter(
-            user=self,
-            project__is_account_project=True) \
-            .select_related("project", "project__root_task", "project__root_task__module") \
-            .first()
-        if pm:
-            return pm.project
-
-        # Create a new one.
-        p = Project.objects.create(
-            is_account_project=True,
-        )
-        ProjectMembership.objects.create(
-            project=p,
-            user=self,
-            is_admin=True)
-
-        # Construct the root task.
-        p.set_system_task("account", self)
-        return p
-
-    @transaction.atomic
-    def get_settings_task(self):
-        p = self.get_account_project()
-        return p.root_task.get_or_create_subtask(self, "account_settings")
 
     def get_profile_picture_absolute_url(self):
         # Because of invitations, profile photos are not protected by
@@ -221,32 +106,15 @@ class User(AbstractUser, BaseModel):
         )
 
     def render_context_dict(self):
-        # Get the user's account settings task's answers as a dict.
-        if getattr(self, 'user_settings_task', None):
-            profile = dict(self.user_settings_task_answers)
-        else:
-            profile = self.get_settings_task().get_answers().as_dict()
+        """Get user profile as dictionary"""
 
-        # Add some information.
-        profile.update({
+        profile = {
             "id": self.id,
+            "username": self.username,
+            "name": self.name or self.username,
             "fallback_avatar": self.get_avatar_fallback_css(),
-        })
-        if not profile.get("name"):
-            profile["name"] = self.email or "Anonymous User"
-        profile["name_and_email"] = self.name_and_email()
-
-        # If set, remove the profile picture content_dataurl since it can
-        # be quite large and will unexpectedly blow up the response size of
-        # e.g. AJAX requests that get user info.
-        try:
-            del profile["picture"]["content_dataurl"]
-        except:
-            logger.warning(event="render_context_dict",
-                           msg="Failed to delete profile picture content_dataurl")
-
-        # Add username to profile
-        profile["username"] = self.username
+            "name_and_email": self.name_and_email()
+        }
 
         return profile
 
@@ -312,6 +180,8 @@ class User(AbstractUser, BaseModel):
         portfolio = Portfolio.objects.create(title=title)
         portfolio.save()
         portfolio.assign_owner_permissions(self)
+        self.default_portfolio = portfolio
+        self.save()
         logger.info(
             event="new_portfolio",
             object={"object": "portfolio", "id": portfolio.id, "title": portfolio.title},
@@ -522,7 +392,7 @@ class Portfolio(BaseModel):
         for user in users_with_perms:
             user_perms = (get_user_perms(user, self))
             owner = True if user_perms.filter(codename='can_grant_portfolio_owner_permission') else False
-            name = user.name() if user.name() else str(user)
+            name = user.name if user.name else str(user)
             user = {'name': name, 'id': user.id, 'owner': owner}
             users.append(user)
         sorted_users = sorted(users, key=lambda k: (-k['owner'], k['name'].lower()))
@@ -620,6 +490,8 @@ class Project(TagModelMixin, BaseModel):
                                help_text="Project's version identifier")
     version_comment = models.TextField(unique=False, blank=True, null=True,
                                        help_text="Project's version comment")
+    import_record = auto_prefetch.ForeignKey(ImportRecord, related_name="import_record_projects", on_delete=models.CASCADE,
+                                      unique=False, blank=True, null=True, help_text="The Import Record which created this Project.")
 
     class Meta:
         unique_together = [('organization', 'is_organization_project')]  # ensures only one can be true
@@ -649,8 +521,7 @@ class Project(TagModelMixin, BaseModel):
 
     @property
     def title(self):
-        if not self.root_task: return "???"
-        return self.root_task.title
+        return self.root_task.title if self.root_task else f"Project {self.id}"
 
     def organization_and_title(self):
         parts = [str(self.organization)]
@@ -869,7 +740,7 @@ class Project(TagModelMixin, BaseModel):
     def get_parent_projects(self):
         parents = []
         project = self
-        while project.root_task.is_answer_to.count():
+        while project.root_task is not None and project.root_task.is_answer_to.count():
             ans = project.root_task.is_answer_to.select_related("taskanswer__task__project__root_task__module").first()
             project = ans.taskanswer.task.project
             parents.append(project)

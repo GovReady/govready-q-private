@@ -35,12 +35,15 @@ urlpatterns = [
     url(r'^related_system_components/', views.RelatedComponentStatements.as_view(), name="related_system_components"),
     url(r'^(?P<system_id>.*)/components/add_system_component$', views.add_system_component, name="add_system_component"),
     url(r'^(?P<system_id>.*)/components/editor_autocomplete$',  views.EditorAutocomplete.as_view(), name="editor_autocomplete"),
+    url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)/edit_component_state$',  views.edit_component_state, name="edit_component_state"),
+    url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)/edit_component_type$',  views.edit_component_type, name="edit_component_type"),
     url(r'^(?P<system_id>.)/profile/oscal/json', views.system_profile_oscal_json, name="profile_oscal_json"),
     url(r'^statement_history/(?P<smt_id>.*)/$', views.statement_history, name="statement_history"),
     url(r'^restore_to/(?P<smt_id>.*)/(?P<history_id>.*)/$', views.restore_to_history, name="restore_to"),
 
     # Systems Assessment Results
     url(r'^(?P<system_id>.*)/assessments$', views.system_assessment_results_list, name="system_assessment_results_list"),
+    url(r'^(?P<system_id>.*)/assessments/new/wazuh$', views.new_system_assessment_result_wazuh, name="new_system_assessment_result_wazuh"),
     url(r'^(?P<system_id>.*)/assessment/new$', views.manage_system_assessment_result, name="new_system_assessment_result"),
     url(r'^(?P<system_id>.*)/sar/(?P<sar_id>.*)/view$', views.view_system_assessment_result_summary, name="view_system_assessment_result_summary"),
     url(r'^(?P<system_id>.*)/sar/(?P<sar_id>.*)/edit$', views.manage_system_assessment_result, name="manage_system_assessment_result"),
@@ -65,11 +68,14 @@ urlpatterns = [
         views.system_element_download_oscal_json,
         name="system_element_download_oscal_json"),
     url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)/_remove$', views.system_element_remove, name="system_element_remove"),
+    url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)/(?P<catalog_key>.*)/(?P<control_id>.*)$', views.system_element_control, name="system_element_control"),
     url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)$', views.system_element, name="system_element"),
     url(r'^(?P<system_id>.*)/controls/updated$', views.controls_updated, name="controls_updated"),
 
     # Component Library
+
     url(r'^components$', views.component_library, name="component_library"),
+    url(r'^components/compare$', views.compare_components, name="compare_components"),
     url(r'^components/new$', views.new_element, name="new_element"),
     url(r'^components/(?P<element_id>.*)/_copy$', views.component_library_component_copy, name="component_library_component_copy"),
     url(r'^components/(?P<element_id>.*)$', views.component_library_component, name="component_library_component"),
@@ -87,6 +93,9 @@ urlpatterns = [
     url(r'^catalogs/(?P<catalog_key>.*)/group/(?P<g_id>.*)', views.group, name="control_group"),
     url(r'^catalogs/(?P<catalog_key>.*)/control/(?P<cl_id>.*)', views.control, name="control_info"),
     url(r'^api/controlsselect/', views.api_controls_select, name="api_controls_select"),
+
+    # System Security plan
+    url(r'^(?P<system_id>.*)/export/oscal', views.OSCAL_ssp_export, name="ssp_export_oscal"),
 
     # Baselines
     url(r'^(?P<system_id>.*)/controls/baseline/(?P<catalog_key>.*)/(?P<baseline_name>.*)/_assign$', views.assign_baseline, name="assign_baseline"),
