@@ -13,7 +13,6 @@ from datetime import datetime
 
 from django.contrib import messages
 from django.contrib.auth.models import Permission
-from django.core import serializers
 from django.db import IntegrityError
 from django.db import transaction
 from django.db.models import Q
@@ -23,8 +22,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
-# <<<<<<< HEAD
-# from guardian.shortcuts import get_perms_for_model, get_perms, assign_perm
 
 from api.siteapp.serializers.tags import SimpleTagSerializer
 from guardian.core import ObjectPermissionChecker
@@ -36,11 +33,6 @@ from controls.forms import ImportProjectForm
 from controls.models import Element, System, Deployment
 from controls.views import add_selected_components
 from discussion.models import Discussion
-# <<<<<<< HEAD
-# from system_settings.models import SystemSettings, Classification, Sitename
-# from .forms import PortfolioForm, AddProjectForm, EditProjectForm
-# from .forms import PortfolioSignupForm
-# =======
 from guidedmodules.models import (AppSource, AppVersion, Module, ModuleQuestion,
                                   ProjectMembership, Task)
 
@@ -50,7 +42,6 @@ from system_settings.models import SystemSettings, Classification, Sitename
 from .forms import PortfolioForm, EditProjectForm, AccountSettingsForm
 from .good_settings_helpers import \
     AllauthAccountAdapter  # ensure monkey-patch is loaded
-# >>>>>>> develop
 from .models import Folder, Invitation, Portfolio, Project, User, Organization, Support, Tag, ProjectAsset
 from .notifications_helpers import *
 
@@ -68,7 +59,6 @@ from structlog.stdlib import LoggerFactory
 structlog.configure(logger_factory=LoggerFactory())
 structlog.configure(processors=[structlog.processors.JSONRenderer()])
 logger = get_logger()
-# logger = logging.getLogger(__name__)
 
 LOGIN = "login"
 SIGNUP = "signup"
@@ -173,7 +163,7 @@ def homepage(request):
         return HttpResponseRedirect("/oidc/authenticate")
     return render(request, "index.html", {
         "hide_registration":  SystemSettings.hide_registration,
-        # "sitename": Sitename.objects.last(),
+        "sitename": Sitename.objects.last(),
         "signup_form": signup_form,
         "login_form": login_form,
         "member_of_orgs": Organization.get_all_readable_by(request.user) if request.user.is_authenticated else None,

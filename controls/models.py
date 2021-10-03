@@ -235,6 +235,7 @@ class Statement(auto_prefetch.Model):
         self.save()
         return True
 
+
 class StatementRemote(auto_prefetch.Model):
     statement = models.ForeignKey(Statement, related_name="remotes", unique=False, blank=True, null=True, on_delete=models.CASCADE,
                                   help_text="Descendent or cloned Statement.")
@@ -246,6 +247,7 @@ class StatementRemote(auto_prefetch.Model):
     updated = models.DateTimeField(auto_now=True, db_index=True)
     import_record = auto_prefetch.ForeignKey(ImportRecord, related_name="import_record_statement_remotes", on_delete=models.CASCADE,
                                              unique=False, blank=True, null=True, help_text="The Import Record which created this record.")
+
 
 class Element(auto_prefetch.Model, TagModelMixin):
     name = models.CharField(max_length=250, help_text="Common name or acronym of the element", unique=True, blank=False, null=False)
@@ -1054,28 +1056,3 @@ class SystemAssessmentResult(auto_prefetch.Model, BaseModel):
         # For debugging.
         return "<SystemAssesmentResult %s id=%d>" % (self.system, self.id)
 
-# Individual statement Model
-# class AssessmentResult(BaseModel):
-#     statement = models.OneToOneField(Statement, related_name="assessment_result",
-#         unique=False, blank=True, null=True, on_delete=models.CASCADE,
-#         help_text="The assessment results details for this statement. Statement must be type 'assessment_result'.")
-#     deployment = auto_prefetch.ForeignKey(Deployment, related_name="assessment_results",
-#         unique=False, blank=True, null=True, on_delete=models.SET_NULL,
-#         help_text="The deployment associated with the assessment result.")
-#     # reporter = auto_prefetch.ForeignKey(Reporter, on_delete=models.CASCADE)
-#     # inventory_item_uuid = models.UUIDField(default=None, editable=True, unique=False, blank=True, null=True,
-#         # help_text="UUID of the inventory item.")
-#     # data = JSONField(blank=True, null=True,
-#     #     help_text="JSON object representing the inventory item's assessment results.")
-#     ar_type = models.CharField(max_length=150, unique=False, blank=True, null=True,
-#         help_text="Assessment results type.")
-#     generated = models.DateTimeField(db_index=True)
-#     # history = HistoricalRecords(cascade_delete_history=True)
-
-
-#     def __str__(self):
-#         return "<AssesmentResult %s id=%d>" % (self.statement, self.id)
-
-#     def __repr__(self):
-#         # For debugging.
-#         return "<AssesmentResult %s id=%d>" % (self.statement, self.id)
