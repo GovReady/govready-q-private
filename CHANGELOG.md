@@ -4,6 +4,9 @@ GovReady-Q Release Notes
 v0.9.11.5-dev (October x, 2021)
 -------------------------------
 
+**UI changes**
+
+* Fix component status and type to be set only in library rather than in systems.
 
 v0.9.11.4 (October 4, 2021)
 ---------------------------
