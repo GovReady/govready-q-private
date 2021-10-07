@@ -1,6 +1,14 @@
 GovReady-Q Release Notes
 ========================
 
+v0.9.11.4.1 (October 7, 2021)
+-----------------------------
+
+**Feature changes**
+
+* Insert new questions after current question in authoring tool.
+
+
 v0.9.11.4 (September 28, 2021)
 ------------------------------
 
