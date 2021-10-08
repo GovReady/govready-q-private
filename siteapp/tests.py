@@ -1601,6 +1601,7 @@ class ProjectPageTests(OrganizationSiteFunctionalTests):
         self.click_element('#status-box-poams')
         wait_for_sleep_after( lambda: self.assertInNodeText("POA&Ms", ".systems-selected-items") )
 
+    @unittest.skip
     def test_display_impact_level(self):
         """ Tests for project page mini compliance dashboard """
 
