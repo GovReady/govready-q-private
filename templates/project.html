@@ -196,28 +196,35 @@
           <br/>
         </div>
       </div>
-
+    </div>
+    <!-- TODO: Make sure categorizations work and can be set
+    <div class="row" style="margin-top: 12px;">
       <div class="col-md-3">
         <div id="systems-security-confidentiality-level" class="status-box status-small" onclick="show_edit_security_objs_modal(); return false;" style="cursor: pointer;">
-          confidentiality objective: <b>{% if confidentiality %}{{ confidentiality|lower }}{% else %} Not Categorized{% endif %}</b>
+          confidentiality objective<br/>
+          {% if confidentiality %}{{ confidentiality|lower }}{% else %} --{% endif %}
         </div>
       </div>
       <div class="col-md-3">
         <div id="systems-security-integrity-level" class="status-box status-small" onclick="show_edit_security_objs_modal(); return false;" style="cursor: pointer;">
-          integrity objective: <b>{% if integrity %}{{ integrity|lower }}{% else %} Not Categorized{% endif %}</b>
+          integrity objective<br/>
+          {% if integrity %}{{ integrity|lower }}{% else %} --{% endif %}
         </div>
       </div>
       <div class="col-md-3">
         <div id="systems-security-availability-level" class="status-box status-small" onclick="show_edit_security_objs_modal(); return false;" style="cursor: pointer;">
-          availability objective: <b>{% if availability %}{{ availability|lower }}{% else %} Not Categorized{% endif %}</b>
+          availability objective<br/>
+          {% if availability %}{{ availability|lower }}{% else %} --{% endif %}
         </div>
       </div>
       <div class="col-md-3">
         <div id="systems-security-sensitivity-level" class="status-box status-small" onclick="" style="">
-          Mission Impact: <b>{% if security_sensitivity %}{{ security_sensitivity|lower }}{% else %} Not Categorized{% endif %}</b>
+          mission impact<br/>
+          {% if security_sensitivity %}{{ security_sensitivity|lower }}{% else %} --{% endif %}
         </div>
       </div>
-</div>
+    </div>
+    -->
 
 
   {% if enable_experimental_evidence %}
@@ -289,8 +296,8 @@
   {% endif %}
   <div class="col-md-12"><p>&nbsp;</p></div>
     <div class="row">
-      <div class="col-sm-12" class="project-row-style">
-        <span class="status-section-header">Questionnaires / Compliance App</span>
+      <!-- <div class="col-sm-12" class="project-row-style"> -->
+        <!-- <span class="status-section-header">Questionnaires / Compliance App</span> -->
         {% if project.root_task.module.spec.introduction %}
             {#<p class="project-text">#}
               {#{{project.root_task.render_introduction|safe}}#}
@@ -302,7 +309,7 @@
           <h2>Activate App</h2>
           <p>This app must be activated by an administrator of your organization. Send them <a href="javascript:invite_user_into_project()">an invitation</a> to join this project. When they get here, they&rsquo;ll be able to activate the app.</p>
         {% endif %}
-      </div>
+      <!-- </div> -->
     </div>
     <div class="row">
     {% with ncolumns=columns|length %}
@@ -331,6 +338,7 @@
                     {% if layout_mode == "grid" %}col-sm-3 col-lg-2{% else %}col-xs-12{% endif %}
                     question
                     "
+                  style="width:700px;"
                     >
 
                     {# The user may not have permission to actually start a Task, however. If not, show the same UI but without the form element that actually makes the request to start the Task. #}
