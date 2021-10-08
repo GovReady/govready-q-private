@@ -75,10 +75,8 @@ urlpatterns = [
     url(r'^components$', views.component_library, name="component_library"),
     url(r'^components/compare$', views.compare_components, name="compare_components"),
     url(r'^components/new$', views.new_element, name="new_element"),
-
     url(r'^components/(?P<element_id>.*)/edit_component_state$',  views.edit_component_state, name="edit_component_state"),
     url(r'^components/(?P<element_id>.*)/edit_component_type$',  views.edit_component_type, name="edit_component_type"),
-
     url(r'^components/(?P<element_id>.*)/_copy$', views.component_library_component_copy, name="component_library_component_copy"),
     url(r'^components/(?P<element_id>.*)$', views.component_library_component, name="component_library_component"),
     url(r'^import_component$', views.import_component, name="import_component"),
