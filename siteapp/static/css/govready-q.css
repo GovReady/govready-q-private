@@ -129,7 +129,7 @@ div.question-answer[data-reviewed] a { text-decoration: underline; }
 .task-progress-project-title { color: black; font-size: 1.0em; text-align: left; }
 .task-progress-project-truncate-link { color: black; }
 
-.task-question-debug-links { color: #999; font-size: 80%; margin-top: 20px; border:1px; solid black;}
+.task-question-debug-links { color: #999; font-size: 80%; margin-top: 20px; border:1px solid black;}
 
 .question-source-invitation { margin-bottom: 2em; }
 .question-source-invitation-show { text-align: right; margin-bottom: -1.5em; }
@@ -347,7 +347,7 @@ form #id_appsource_compapp { width: 100%; overflow: auto !important; }
 .pagination a { color: rgb(88, 144, 191); }
 
 /* systems */
-.systems-top { margin-top: 30px; }
+.systems-top { margin-top: 10px; }
 .systems-title { float: left;}
 .systems-link { color: black; }
 .systems-control-lookup { float: right; }
