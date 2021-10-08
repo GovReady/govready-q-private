@@ -116,6 +116,9 @@
                 State: {{ element.component_state }}<br/>
                 Type: {{ element.component_type }}
               </p>
+              <div id="show-tags">
+              {% for tag in element.tags.all %}<span class="component-tag"><a href="{% url 'component_library' %}?search={{ tag.label }}">{{ tag.label }}</a></span> {% endfor %}
+            </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 description-text">
               <a href="{% url 'component_library_component' element.id %}" target="_blank">Read more about {{ element.name }} in component library <span class="glyphicon glyphicon-new-window" style="color: #aaa;"></span></a>
