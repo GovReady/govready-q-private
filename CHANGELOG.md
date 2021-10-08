@@ -7,6 +7,8 @@ v0.9.11.4.2 (October 8, 2021)
 **UI changes**
 
 * Fix component status and type to be set only in library rather than in systems.
+* Hide impact levels from project mini-dashboard until UI can be improved.
+* Improve look of modules.
 
 
 v0.9.11.4.1 (October 7, 2021)
