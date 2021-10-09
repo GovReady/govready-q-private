@@ -1624,7 +1624,8 @@ class ProjectPageTests(OrganizationSiteFunctionalTests):
         # mini-dashboard content
         self.assertInNodeText("controls", "#status-box-controls")
         self.assertInNodeText("components", "#status-box-components")
-        self.assertInNodeText("POA&Ms", "#status-box-poams")
+        # TODO: Restore tests if #status-box-poam is displayed
+        # self.assertInNodeText("POA&Ms", "#status-box-poams")
         self.assertInNodeText("compliance", "#status-box-compliance-piechart")
 
         # mini-dashbard links
