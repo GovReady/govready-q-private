@@ -668,11 +668,11 @@ function make_admin(is_admin, user_id, user_name) {
   show_modal_confirm(
     (is_admin ? "Make Project Administrator" : "Revoke Administrator Privilege"),
     "Do you want to "
-		+ (is_admin ? "make" : "revoke the administrator privilege from")
-		+ " "
-		+ user_name
-		+ (is_admin ? " an administrator" : "")
-		+ " for this project?",
+    + (is_admin ? "make" : "revoke the administrator privilege from")
+    + " "
+    + user_name
+    + (is_admin ? " an administrator" : "")
+    + " for this project?",
     (is_admin ? "Make Admin" : "Revoke Privilege"),
     function() {
       ajax_with_indicator({
