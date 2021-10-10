@@ -6,6 +6,10 @@ v0.9.11.6-dev (October x, 2021)
 
 Remove GPL3 License from repository.
 
+**UI changes**
+
+* Improve appearance of statement editing forms: better shading, better setting of textarea height, overall appearance.
+
 
 v0.9.11.5 (October 9, 2021)
 ---------------------------
