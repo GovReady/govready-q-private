@@ -8,7 +8,9 @@ Remove GPL3 License from repository.
 
 **UI changes**
 
-- Use left side vertical nav menu for project.
+* Use left side vertical nav menu for project.
+* Improve appearance of statement editing forms: better shading, better setting of textarea height, overall appearance.
+* Remove adding component or new control from a project's control listing.
 
 
 v0.9.11.5 (October 9, 2021)
