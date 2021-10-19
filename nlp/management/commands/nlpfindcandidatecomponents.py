@@ -52,13 +52,10 @@ class Command(BaseCommand):
     help = 'NLP find candidate components in legacy implementation statements'
 
     def add_arguments(self, parser):
+        parser.add_argument('--importname', metavar='import_name', nargs='?', type=str, default="NLP Candidate components in legacy impl smts", help="Name to identify the batch creation of statements")
+        parser.add_argument('--project_ids', metavar='project_ids', nargs='+', required=True, type=int, help="Space delimited list of Project IDs")
         # parser.add_argument('--format', metavar='format', nargs='?', default="oscal", help="File format")
         # parser.add_argument('--path', metavar='dir_or_pdf', nargs='?', default="local/export/components", help="The directory path containing component files to import.")
-
-        parser.add_argument('--importname', metavar='import_name', nargs='?', type=str, default="NLP Candidate components in legacy impl smts", help="Name to identify the batch creation of statements")
-
-        parser.add_argument('--project_ids', metavar='project_ids', nargs='+', required=True, type=int, help="Space delimited list of Project IDs")
-
         # parser.add_argument('--stopinvalid', default=True, action='store_true')
         # parser.add_argument('--no-stopinvalid', dest='stopinvalid', action='store_false')
 
@@ -80,7 +77,7 @@ class Command(BaseCommand):
         # When the loop is complete, return the list of Entities
         return Entities
 
-    def get_EntitySentence(self, nlp_text):
+    def get_EntitySentence(self, nlp_text, control_id, control_key, ssp_id):
         """Return sentence containing candidate entity"""
 
         # First we make sure that the input is of correct type
@@ -92,8 +89,16 @@ class Command(BaseCommand):
 
         # We begin then begin looping over the Doc object
         for entity in nlp_text.ents:
+            entity_sentence_dict = {
+                "control_id": control_id,
+                "control_key": control_key,
+                "entity": entity.text,
+                "sentence": (entity.sent).text
+            }
+
             # Create a key and value
-            EntitiesSentencesDict[entity.text]= (entity.sent).text  # (add.text to untokenize sentences)
+            # EntitiesSentencesDict[entity.text]= (entity.sent).text  # (add.text to untokenize sentences)
+            EntitiesSentencesDict[entity.text]= entity_sentence_dict
 
         # When the loop is complete, return the list of Entities
         return EntitiesSentencesDict
@@ -110,16 +115,11 @@ class Command(BaseCommand):
 
 
     def handle(self, *args, **options):
+        """Execute script"""
 
-        # Set up
         # Create import record so we easily bulk delete
         import_name = options['importname']
         project_ids = options['project_ids']
-
-        # # Set up
-        # # Create import record so we easily bulk delete
-        # import_name = options['importname']
-        # project_ids = options['project_ids']
 
         import_rec = ImportRecord.objects.create(name=import_name)
         impl_type = StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name
@@ -140,49 +140,31 @@ class Command(BaseCommand):
             proj_impl_smts = Statement.objects.filter(statement_type=impl_type, consumer_element=project.system.root_element)
             print(2,"====", proj_impl_smts)
 
-        # Process components and their statements
-        # emt_smts = Statement.objects.filter(consumer_element__in=project_ids, statement_type=impl_type).order_by('producer_element')
+            # Process components and their statements
+            # emt_smts = Statement.objects.filter(consumer_element__in=project_ids, statement_type=impl_type).order_by('producer_element')
 
-        for smt in proj_impl_smts:
-            print(f"\n3", "===", smt.id, smt.body[0:150])
-            # NLP
-            # df['Implementation Statement'].apply(nlp)
-            text = self.string_clean_up(smt.body)
-            nlp_text = nlp(text)
-            print(4, "===", type(nlp_text)) #<class 'spacy.tokens.doc.Doc'>
+            # Loop through statements
+            for smt in proj_impl_smts:
+                print(f"\n3", "===", smt.id, smt.body[0:150])
 
-            # Extracting Entities from NLP
-            candidate_entities = self.get_Entity(nlp_text)
-            print(5, "candidate entities: ", candidate_entities)
+                # Get data from statements
+                text = self.string_clean_up(smt.body)
+                control_id = smt.sid
+                catalog_key = smt.sid_class
+                # TODO: improve ssp_id
+                ssp_id = project.id
 
-            # Extracting entity surrounding text
-            sentences = self.get_EntitySentence(nlp_text)
-            print(6, "sentences: ", sentences)
-            print(json.dumps(sentences, sort_keys=True, indent=4))
+                # NLP
+                nlp_text = nlp(text)
+                print(4, "===", type(nlp_text)) #<class 'spacy.tokens.doc.Doc'>
 
+                # Extracting Entities from NLP
+                candidate_entities = self.get_Entity(nlp_text)
+                print(5, "candidate entities: ", candidate_entities)
+
+                # Extracting entity surrounding text
+                sentences = self.get_EntitySentence(nlp_text, control_id, catalog_key, ssp_id)
+                print(6, "sentences: ", sentences)
+                print(json.dumps(sentences, sort_keys=True, indent=4))
 
         print("\n==========\nScript end")
-        sys.exit()
-
-        # list unique candidate entities in document
-
-        # df['Candidate_Entities'].apply(pd.Series).stack().unique()
-
-
-        #define our own Python function to fetch Spacy Entity and Related Sentence for each Implementation Statement
-
-        # create new dataframe of Candidate Entities and Related Sentences
-        df3 = df['Candidate_Entities_with_Sentences'].apply(pd.Series)
-        df3
-
-
-        # In[21]:
-
-
-        df3.dtypes
-
-        print(df3.dtypes)
-
-        # In[ ]:
-
-        print("End of script")
