@@ -197,9 +197,13 @@ class Command(BaseCommand):
 
                     # Get or create component from database
                     if CREATE_COMPONENTS:
-                        new_component, new_component_created = Element.objects.get_or_create(name=item, element_type="system_element")
+                        # Handle when a system exists with name of component
+                        if Element.objects.filter(name=item, element_type="system").exists():
+                            sentences[item]['entity'] = item + " Component"
+
+                        new_component, new_component_created = Element.objects.get_or_create(name=sentences[item]['entity'], element_type="system_element")
                         if new_component_created:
-                            new_component.full_name = item
+                            new_component.full_name = sentences[item]['entity']
                             new_component.import_record = import_rec
                             new_component.save()
                             # Tag compnent
