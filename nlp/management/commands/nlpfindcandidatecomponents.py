@@ -2,7 +2,8 @@
 # coding: utf-8
 
 # usage
-#   python3 manage.py findcandidatecomponents
+#   python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1
+#   docker exec -it govready-q-dev python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1
 
 
 import sys
@@ -27,7 +28,8 @@ from controls.enums.remotes import RemoteTypeEnum
 from controls.oscal import *
 from controls.utilities import oscalize_control_id
 from controls.views import OSCALComponentSerializer, ComponentImporter
-from siteapp.models import User, Project, Organization
+from siteapp.models import User, Project, Organization, Tag
+
 
 import fs, fs.errors
 # import xlsxio
@@ -47,6 +49,30 @@ nlp = spacy.load('en_core_web_sm')  # choose Spacy English Library small
 # nlp = spacy.load('en_core_web_lg') # large model
 # import pandas as pd  # panda library to create dataframes
 
+# Add entities - https://spacy.io/api/entityruler#add_patterns
+patterns = [
+    {"label": "ORG", "pattern": "Apple"},
+    {"label": "GPE", "pattern": [{"lower": "san"}, {"lower": "francisco"}]},
+    {"label": "COMPONENT", "pattern": "Compliance Docs"},
+    {"label": "COMPONENT", "pattern": "Project System Security Policy"},
+    {"label": "COMPONENT", "pattern": "PyramidIT"},
+    {"label": "COMPONENT", "pattern": "Cybrary"},
+]
+
+ruler = nlp.add_pipe("entity_ruler")
+ruler.add_patterns(patterns)
+
+doc = nlp("A text about Apple and PyramidIT and Greg")
+ents = [(ent.text, ent.label_) for ent in doc.ents]
+print(10,"=====", ents)
+# sys.exit()
+
+NON_COMPONENTS = ['ISO', 'UTC', 'None', 'Project', 'annual']
+
+# Settings
+CI = StatementTypeEnum.CONTROL_IMPLEMENTATION.name
+CIP = StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name
+CIL = StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name
 
 class Command(BaseCommand):
     help = 'NLP find candidate components in legacy implementation statements'
@@ -54,10 +80,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--importname', metavar='import_name', nargs='?', type=str, default="NLP Candidate components in legacy impl smts", help="Name to identify the batch creation of statements")
         parser.add_argument('--project_ids', metavar='project_ids', nargs='+', required=True, type=int, help="Space delimited list of Project IDs")
-        # parser.add_argument('--format', metavar='format', nargs='?', default="oscal", help="File format")
-        # parser.add_argument('--path', metavar='dir_or_pdf', nargs='?', default="local/export/components", help="The directory path containing component files to import.")
-        # parser.add_argument('--stopinvalid', default=True, action='store_true')
-        # parser.add_argument('--no-stopinvalid', dest='stopinvalid', action='store_false')
+        parser.add_argument('--create-components', dest='create_components', required=False, action='store_true', help="Space delimited list of Project IDs")
 
     def get_Entity(self, nlp_text):
         """Return list of candidate spaCy entities in text block"""
@@ -71,8 +94,10 @@ class Command(BaseCommand):
 
         # We begin then begin looping over the Doc object
         for entity in nlp_text.ents:
-                # Append entity to the list of entities
-                Entities.append(entity.text)
+            if entity.text in NON_COMPONENTS:
+                continue
+            # Append entity to the list of entities
+            Entities.append(entity.text)
 
         # When the loop is complete, return the list of Entities
         return Entities
@@ -80,19 +105,21 @@ class Command(BaseCommand):
     def get_EntitySentence(self, nlp_text, control_id, control_key, ssp_id):
         """Return sentence containing candidate entity"""
 
-        # First we make sure that the input is of correct type
-        # by using the assert command to check the input type
+        # Make sure input is of correct type
         assert type(nlp_text) == spacy.tokens.doc.Doc
 
-        # Let's set up a placeholder dictionary for our Entities
+        # Placeholder dictionary for Entities
         EntitiesSentencesDict = dict()
 
-        # We begin then begin looping over the Doc object
+        # Loop over the Doc object
         for entity in nlp_text.ents:
+            if entity.text in NON_COMPONENTS:
+                continue
             entity_sentence_dict = {
                 "control_id": control_id,
                 "control_key": control_key,
                 "entity": entity.text,
+                "label": entity.label_,
                 "sentence": (entity.sent).text
             }
 
@@ -107,7 +134,7 @@ class Command(BaseCommand):
         """Return a string with unicode removed"""
 
         str_hard_space='17\xa0kg on 23rd\xa0June 2021'
-        print (str_hard_space)
+        # print (str_hard_space)
         xa=u'\xa0'
 
         clean_string = unicodedata.normalize("NFKD", text)
@@ -118,11 +145,12 @@ class Command(BaseCommand):
         """Execute script"""
 
         # Create import record so we easily bulk delete
-        import_name = options['importname']
-        project_ids = options['project_ids']
+        IMPORT_NAME = options['importname']
+        PROJECT_IDS = options['project_ids']
+        CREATE_COMPONENTS = options['create_components']
 
-        import_rec = ImportRecord.objects.create(name=import_name)
-        impl_type = StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name
+        import_rec = ImportRecord.objects.create(name=IMPORT_NAME)
+        impl_type = CIL
 
         # Statement.objects.filter(statement_type=impl_type, consumer_element=p.system.root_element)
 
@@ -133,19 +161,16 @@ class Command(BaseCommand):
 
         # Start main section
         print("\nScript start\n============\n")
-        projects = Project.objects.filter(id__in=project_ids)
+        projects = Project.objects.filter(id__in=PROJECT_IDS)
 
         for project in projects:
             print(1,"====", project)
             proj_impl_smts = Statement.objects.filter(statement_type=impl_type, consumer_element=project.system.root_element)
             print(2,"====", proj_impl_smts)
 
-            # Process components and their statements
-            # emt_smts = Statement.objects.filter(consumer_element__in=project_ids, statement_type=impl_type).order_by('producer_element')
-
-            # Loop through statements
+            # Loop through project legacy statements
             for smt in proj_impl_smts:
-                print(f"\n3", "===", smt.id, smt.body[0:150])
+                print(f"\nLegacy Statement {smt.sid}:", smt.id, smt.body[0:350], "...")
 
                 # Get data from statements
                 text = self.string_clean_up(smt.body)
@@ -156,15 +181,89 @@ class Command(BaseCommand):
 
                 # NLP
                 nlp_text = nlp(text)
-                print(4, "===", type(nlp_text)) #<class 'spacy.tokens.doc.Doc'>
+                # print(4, "===", type(nlp_text)) #<class 'spacy.tokens.doc.Doc'>
 
                 # Extracting Entities from NLP
                 candidate_entities = self.get_Entity(nlp_text)
-                print(5, "candidate entities: ", candidate_entities)
+                print(f"{len(candidate_entities)} candidate entities:", candidate_entities,"\n")
 
                 # Extracting entity surrounding text
                 sentences = self.get_EntitySentence(nlp_text, control_id, catalog_key, ssp_id)
-                print(6, "sentences: ", sentences)
-                print(json.dumps(sentences, sort_keys=True, indent=4))
+                # print(6, "sentences: ", sentences)
+                # print(json.dumps(sentences, sort_keys=True, indent=4))
+
+                for item in sentences.keys():
+                    print(f"'{item}':", sentences[item]['sentence'])
+
+                    # Get or create component from database
+                    if CREATE_COMPONENTS:
+                        new_component, new_component_created = Element.objects.get_or_create(name=item, element_type="system_element")
+                        if new_component_created:
+                            new_component.full_name = item
+                            new_component.import_record = import_rec
+                            new_component.save()
+                            # Tag compnent
+                            desired_tags = set(['NLP generated', 'draft'])
+                            existing_tags = Tag.objects.filter(label__in=desired_tags).values('id', 'label')
+                            tags_to_create = desired_tags.difference(set([tag['label'] for tag in existing_tags]))
+                            new_tags = Tag.objects.bulk_create([Tag(label=tag) for tag in tags_to_create])
+                            all_tag_ids = [tag.id for tag in new_tags] + [tag['id'] for tag in existing_tags]
+                            new_component.add_tags(all_tag_ids)
+                            new_component.save()
+                            logger.info(event=f"new_element_from_auto_nlp component",
+                                object={"object": "element", "id": new_component.id},
+                                user={"id": None, "username": None})
+
+                    # TODO: oscalize id?
+                    smt_prototype, smt_created= Statement.objects.get_or_create(
+                        sid=sentences[item]['control_id'],
+                        sid_class=sentences[item]['control_key'],
+                        producer_element=new_component,
+                        statement_type=CIP)
+                    if smt_created:
+                        smt_prototype.body = sentences[item]['sentence']
+                        smt_prototype.import_record = import_rec
+                        # update statement changelog
+                        smt_prototype.change_log = { "change_log": {"changes": []} }
+                        change = {
+                            "datetimestamp": smt_prototype.updated.isoformat(),
+                            "event": None,
+                            "source": None,
+                            "user_id": "admin",
+                            "fields": {
+                                "sid": smt_prototype.sid,
+                                "sid_class": smt_prototype.sid_class,
+                                "body": smt_prototype.body
+                            }
+                        }
+                        if smt_created:
+                            change['event'] = 'created'
+                        else:
+                            change['event'] = 'updated'
+                            change['fields']['body'] = smt_prototype.body
+                        smt_prototype.change_log_add_entry(change)
+
+                        smt_prototype.save()
+                        # tag existing components that get new statements as 'NLP-added statements'
+                        if not new_component_created:
+                            desired_tags = set(['NLP-added statements'])
+                            existing_tags = Tag.objects.filter(label__in=desired_tags).values('id', 'label')
+                            tags_to_create = desired_tags.difference(set([tag['label'] for tag in existing_tags]))
+                            new_tags = Tag.objects.bulk_create([Tag(label=tag) for tag in tags_to_create])
+                            all_tag_ids = [tag.id for tag in new_tags] + [tag['id'] for tag in existing_tags]
+                            new_component.add_tags(all_tag_ids)
+                            new_component.save()
+
+                        print(f"Prototype smt created {smt_prototype.id}")
+                        logger.info(event=f"new_statement_from_auto_nlp control_implentation_prototype",
+                                object={"object": "statement", "id": smt_prototype.id},
+                                user={"id": None, "username": None})
+
+                        new_smt_project = smt_prototype.create_system_control_smt_from_component_prototype_smt(project.system.root_element.id)
+                        print(f"Project smt created {new_smt_project.id}")
+                        logger.info(event=f"new_statement_from_auto_nlp control_implentation",
+                                object={"object": "statement", "id": new_smt_project.id},
+                                user={"id": None, "username": None})
+
 
         print("\n==========\nScript end")
