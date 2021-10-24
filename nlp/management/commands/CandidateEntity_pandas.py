@@ -43,7 +43,7 @@ import pandas as pd  # panda library to create dataframes
 
 #import excel sheet into pandas
 
-file_name = 'nlp/data/mock_ssp_data.xlsx'  # ENTER YOUR REAL FILENAME HERE!!!!
+file_name = 'nlp/data/test_ssp_data.xlsx'  # ENTER YOUR REAL FILENAME HERE!!!!
 df = pd.read_excel(file_name)
 df
 
