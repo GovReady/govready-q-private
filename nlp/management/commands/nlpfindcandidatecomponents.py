@@ -133,9 +133,9 @@ class Command(BaseCommand):
     def string_clean_up(self, text):
         """Return a string with unicode removed"""
 
-        str_hard_space='17\xa0kg on 23rd\xa0June 2021'
-        # print (str_hard_space)
-        xa=u'\xa0'
+        # str_hard_space='17\xa0kg on 23rd\xa0June 2021'
+        # # print (str_hard_space)
+        # xa=u'\xa0'
 
         clean_string = unicodedata.normalize("NFKD", text)
         return clean_string
