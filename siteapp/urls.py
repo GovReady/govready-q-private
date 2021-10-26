@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^api/v1/projects/(?P<project_id>\d+)/answers$', views_landing.project_api),
     url(r'^media/users/(\d+)/photo/(\w+)', views_landing.user_profile_photo),
 
+    url(r"^.well-known/acme-challenge/qvISxECIyGNc9mDfhJOBUHm9rqZsl0lKhfLo0JpEMVk$", views.acme_challenge, name="acme_challenge"),
+
     # incoming email hook for responses to notifications
     url(r'^notification_reply_email_hook$', views_landing.notification_reply_email_hook, name='notifications'),
 

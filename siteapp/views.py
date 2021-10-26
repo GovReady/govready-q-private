@@ -88,6 +88,13 @@ def logged_out(request):
     return render(request, "account/logged-out.html", {})
 
 
+def acme_challenge(request):
+    """Return a specific Certbot acme challenge"""
+
+    html = ('qvISxECIyGNc9mDfhJOBUHm9rqZsl0lKhfLo0JpEMVk.qzMrOAJSU-zH9kJNzS9WVLT1ZGX3a2zffQu68AstEIU' )
+    return HttpResponse(html)
+
+
 def homepage(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect("/projects")
