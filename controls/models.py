@@ -23,6 +23,7 @@ import uuid
 import tools.diff_match_patch.python3 as dmp_module
 from copy import deepcopy
 from django.db import transaction
+from django.db.models import Q
 
 BASELINE_PATH = os.path.join(os.path.dirname(__file__), 'data', 'baselines')
 EXTERNAL_BASELINE_PATH = os.path.join(f"{os.getcwd()}", 'local', 'controls', 'data', 'baselines')
@@ -889,7 +890,7 @@ class Baselines(object):
         return list(CatalogData.objects.order_by('catalog_key').values_list('catalog_key', flat=True).distinct())
 
     def _load_json(self, baselines_key):
-        """Read baseline file - JSON"""
+        """Read baseline data - JSON"""
 
         catalog_record = CatalogData.objects.get(catalog_key=baselines_key)
         baselines = catalog_record.baselines_json
@@ -911,6 +912,32 @@ class Baselines(object):
             print("Requested baseline name not found in baselines_key data file")
             return False
 
+class Monitoring(object):
+    """Represent control monitoring"""
+
+    def __init__(self):
+
+        # self.file_path = BASELINE_PATH
+        # self.baselines_keys = self._list_keys()
+        pass
+
+    def _load_json(self, catalog_key):
+        """Read monitoring data - JSON"""
+
+        catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
+        monitoring_json = catalog_record.monitoring_json
+        if monitoring_json:
+            return monitoring_json
+        else:
+            return False
+
+    def get_control_monitoring_profile(self, catalog_key, control_id):
+        catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
+        monitoring_dicts = catalog_record.monitoring_json
+        key = 'rmf_control_oscal'
+        val = oscalize_control_id(controll_id)
+        monitoring_profile = next(filter(lambda d: d.get(key) == val, monitoring_dicts), None)
+        return monitoring_profile
 
 class OrgParams(object):
     """

@@ -1886,18 +1886,21 @@ def editor(request, system_id, catalog_key, cl_id):
         # oscalize key
         cl_id = oscalize_control_id(cl_id)
 
-        # Build combined statement if it exists
-        if cl_id in system.control_implementation_as_dict:
-            combined_smt = system.control_implementation_as_dict[cl_id]['combined_smt']
-        else:
-            combined_smt = ""
-
         # Define status options
         impl_statuses = ["Not implemented", "Planned", "Partially implemented", "Implemented", "Unknown"]
 
-      # Only elements for the given control id, sid, and statement type
-
+        # Only elements for the given control id, sid, and statement type
         elements =  Element.objects.all().exclude(element_type='system')
+
+        # Get control monitoring info
+        # TODO: Better suited to REACT
+        # from controls.models import Monitoring
+        # monitoring_profile = Monitoring.get_control_monitoring_profile(catalog_key, cl_id)
+        catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
+        monitoring_dicts = catalog_record.monitoring_json
+        key = 'rmf_control_oscal'
+        val = oscalize_control_id(cl_id)
+        monitoring_profile = next(filter(lambda d: d.get(key) == val, monitoring_dicts), None)
 
         context = {
             "system": system,
@@ -1907,10 +1910,10 @@ def editor(request, system_id, catalog_key, cl_id):
             "impl_smts": impl_smts,
             "impl_statuses": impl_statuses,
             "impl_smts_legacy": impl_smts_legacy,
-            "combined_smt": combined_smt,
             "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
             "opencontrol": "opencontrol_string",
             "elements": elements,
+            "monitoring_profile": monitoring_profile,
             "display_urls": project_context(project)
         }
         return render(request, "controls/editor.html", context)

@@ -98,6 +98,53 @@
             border-radius: 0px;
             padding: 0px 0px 8px 12px;
         }
+
+        .ctl-info-box {
+            background-color: rgb(242, 242, 242);
+            border-top: 0.5px solid rgb(164, 164, 164);
+            border-bottom: 0.5px solid rgb(164, 164, 164);
+            padding: 12px;
+            margin: 16px 0px 16px 0px;
+        }
+
+        .ctl-id {
+            font-weight: bold;
+        }
+
+        .ctl-title {
+            font-weight: 200;
+            font-family: arial;
+        }
+
+        .ctl-heading {
+            color: rgb(104, 104, 104);
+            font-size: 0.6em;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-family: arial, sans-serif;
+        }
+
+        .ctl-text {
+            font-size: 0.8em;
+            font-family: arial, sans-serif;
+            white-space: pre-wrap;
+        }
+
+        .ctl-name {
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .ctl-cm {
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .ctl-catalog-key {
+            color: rgb(104, 104, 104);
+            font-weight: 200;
+        }
+
     </style>
 {% endblock %}
 
@@ -110,26 +157,48 @@
 
         <div id="above-tab-content" class="row">
             <div class="systems-control-heading">
-                <h2 class="control-heading">
+                <!-- <h2 class="control-heading">
                     System Control: {{ control.id_display|upper }} {{ control.title }}
-                </h2>
-                <h2 class="control-heading" style="">
+                </h2> -->
+                <!-- <h2 class="control-heading" style="">
                     {% if control.title is not None %}
                         <small style="color: #888;">{{ catalog.catalog_key_display }}</small>
                     {% else %}
                         <p>The control {{ control.id }} was not found in the control catalog.</p>
                     {% endif %}
-                </h2>
+                </h2> -->
             </div>
             <!-- Control Lookup-->
             <div class="systems-control-lookup">
                 <form id="control-lookup" method="get" action="/controls/" onsubmit="show_control_by_id(); return false;">
                     <input type="text" name="id" placeholder="Enter control id" title="Enter control id" value="{% if control %}{{ control.id_display|upper }}{% endif %}">
                     <button type="submit" class="btn btn-success">Look up</button>
-                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/">families</a> -->
                 </form>
             </div>
+        </div>
+
+        <div class="ctl-info-box" style="">
+
+            <div><span class="ctl-id">{{ control.id_display|upper }}</span> <span class="ctl-title">({{ control.title }})</span></div>
+
+            <div class="ctl-heading">Description</div>
+            <div class="ctl-text">{{ control.description }}</div>
+            <!-- <div>{{ control.guidance }}</div> -->
+
+            <div class="ctl-heading">Part of</div>
+            <div class="ctl-name">{{ control.family_title }} <span class="ctl-catalog-key">({{ catalog.catalog_key_display }})</span></div>
+
+            <div class="ctl-heading">Continuous Monitoring</div>
+            <div class="ctl-cm">This control's review frequency is {{ monitoring_profile.review_frequency }} and {% if monitoring_profile.automated == "YES" %}should be automated{% else %} can be manual{% endif %}.</div>
+
+            <div class="ctl-heading">Tier</div>
+            <div class="ctl-cm">{{ monitoring_profile.tier }}</div>
+
+            <div class="ctl-heading">Commonly Used in Baselines</div>
+            <div class="ctl-cm">{{ monitoring_profile.baseline_impact }}</div>
+
+            <!-- <div class="ctl-heading">{{ monitoring_profile }}</div> -->
+
         </div>
 
         <!-- Tab panels -->

@@ -19,6 +19,7 @@ class CatalogData(auto_prefetch.Model):
     catalog_key = models.CharField(max_length=100, help_text="Unique key for catalog", unique=True, blank=False, null=False)
     catalog_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the OSCAL-formatted control catalog.")
     baselines_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the baselines for the catalog.")
+    monitoring_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the monitoring for the catalog.")
     created = models.DateTimeField(auto_now_add=True, db_index=True)
     updated = models.DateTimeField(auto_now=True, db_index=True)
 
