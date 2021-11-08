@@ -189,13 +189,31 @@
             <div class="ctl-name">{{ control.family_title }} <span class="ctl-catalog-key">({{ catalog.catalog_key_display }})</span></div>
 
             <div class="ctl-heading">Continuous Monitoring</div>
-            <div class="ctl-cm">This control's review frequency is {{ monitoring_profile.review_frequency }} and {% if monitoring_profile.automated == "YES" %}should be automated{% else %} can be manual{% endif %}.</div>
+            <div class="ctl-cm">
+                {% if monitoring_profile %}
+                    This control's review frequency is {{ monitoring_profile.review_frequency }} and {% if monitoring_profile.automated == "YES" %}should be automated{% else %} can be manual{% endif %}.
+                {% else %}
+                    No information available.
+                {% endif %}
+            </div>
 
             <div class="ctl-heading">Tier</div>
-            <div class="ctl-cm">{{ monitoring_profile.tier }}</div>
+            <div class="ctl-cm">
+                {% if monitoring_profile %}
+                    {{ monitoring_profile.tier }}
+                {% else %}
+                    No information available.
+                {% endif %}
+                </div>
 
             <div class="ctl-heading">Commonly Used in Baselines</div>
-            <div class="ctl-cm">{{ monitoring_profile.baseline_impact }}</div>
+            <div class="ctl-cm">
+                {% if monitoring_profile %}
+                    {{ monitoring_profile.baseline_impact }}
+                {% else %}
+                    No information available.
+                {% endif %}
+            </div>
 
             <!-- <div class="ctl-heading">{{ monitoring_profile }}</div> -->
 

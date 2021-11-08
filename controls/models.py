@@ -925,15 +925,15 @@ class Monitoring(object):
         """Read monitoring data - JSON"""
 
         catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
-        monitoring_json = catalog_record.monitoring_json
-        if monitoring_json:
-            return monitoring_json
+        controlmatrix_json = catalog_record.controlmatrix_json
+        if controlmatrix_json:
+            return controlmatrix_json
         else:
             return False
 
     def get_control_monitoring_profile(self, catalog_key, control_id):
         catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
-        monitoring_dicts = catalog_record.monitoring_json
+        monitoring_dicts = catalog_record.controlmatrix_json
         key = 'rmf_control_oscal'
         val = oscalize_control_id(controll_id)
         monitoring_profile = next(filter(lambda d: d.get(key) == val, monitoring_dicts), None)

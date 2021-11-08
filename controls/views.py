@@ -1897,10 +1897,12 @@ def editor(request, system_id, catalog_key, cl_id):
         # from controls.models import Monitoring
         # monitoring_profile = Monitoring.get_control_monitoring_profile(catalog_key, cl_id)
         catalog_record = CatalogData.objects.get(catalog_key=catalog_key)
-        monitoring_dicts = catalog_record.monitoring_json
-        key = 'rmf_control_oscal'
-        val = oscalize_control_id(cl_id)
-        monitoring_profile = next(filter(lambda d: d.get(key) == val, monitoring_dicts), None)
+        monitoring_profile = None
+        monitoring_dicts = catalog_record.controlmatrix_json
+        if monitoring_dicts is not None:
+            key = 'rmf_control_oscal'
+            val = oscalize_control_id(cl_id)
+            monitoring_profile = next(filter(lambda d: d.get(key) == val, monitoring_dicts), None)
 
         context = {
             "system": system,
