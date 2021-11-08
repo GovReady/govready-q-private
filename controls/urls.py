@@ -15,6 +15,11 @@ from controls import views
 
 from siteapp.settings import *
 
+# DEV new for serializer
+from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+from controls import views
+
 urlpatterns = [
     # Docs
     url('doc/', include('django.contrib.admindocs.urls')),
@@ -22,6 +27,8 @@ urlpatterns = [
     # Catalogs
     url(r'^$', views.catalogs),
     url(r'^catalogs$', views.catalogs),
+    path('catalogs/controlmatrix/', views.ControlMatrixList.as_view(), name="controlmatrix_list"),
+    path('catalogs/controlmatrix/<str:catalog_key>/', views.ControlMatrixDetail.as_view(), name="controlmatrix_detail"),
     url(r'^catalogs/(?P<catalog_key>.*)/$', views.catalog),
 
     # Systems
@@ -71,7 +78,6 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/controls/updated$', views.controls_updated, name="controls_updated"),
 
     # Component Library
-
     url(r'^components$', views.component_library, name="component_library"),
     url(r'^components/compare$', views.compare_components, name="compare_components"),
     url(r'^components/new$', views.new_element, name="new_element"),
@@ -111,3 +117,5 @@ urlpatterns = [
     url(r'^(?P<project_id>.*)/import', views.project_import, name="project_import"),
     url(r'^(?P<project_id>.*)/export', views.project_export, name="project_export"),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

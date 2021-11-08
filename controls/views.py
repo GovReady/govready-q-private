@@ -49,6 +49,12 @@ from .models import *
 from .utilities import *
 from siteapp.utils.views_helper import project_context
 
+from .oscal import CatalogData
+from .serializers import ControlMatrixSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
 logging.basicConfig()
 import structlog
 from structlog import get_logger
@@ -1405,7 +1411,6 @@ def import_component(request):
     result = ComponentImporter().import_components_as_json(import_name, oscal_component_json, request)
     return component_library(request)
 
-
 def raise_404_if_not_permitted_to_statement(request, statement, system_permission='view_system'):
     """Raises a 404 if the user doesn't have the statement system permission"""
     while True:
@@ -1983,7 +1988,6 @@ def editor_compare(request, system_id, catalog_key, cl_id):
         # User does not have permission to this system
         raise Http404
 
-
 # @task_view
 @login_required
 def save_smt(request):
@@ -2288,6 +2292,50 @@ def delete_smt(request):
         #     return JsonResponse({ "status": "error", "message": statement_msg + " " + producer_element_msg + " " +statement_element_msg })
 
         return JsonResponse({"status": "success", "message": statement_msg})
+
+class ControlMatrixList(APIView):
+    """
+    List all control matrix, or create a new control matrix.
+    """
+    def get(self, request, format=None):
+        catalogdatas = CatalogData.objects.all()
+        serializer = ControlMatrixSerializer(catalogdatas, many=True)
+        return Response(serializer.data)
+
+    # def post(self, request, format=None):
+    #     serializer = ControlMatrixSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ControlMatrixDetail(APIView):
+    """
+    Retrieve, update or delete a control matix instance.
+    """
+    def get_object(self, catalog_key):
+        try:
+            return CatalogData.objects.get(catalog_key=catalog_key)
+        except CatalogData.DoesNotExist:
+            raise Http404
+
+    def get(self, request, catalog_key, format=None):
+        cd = self.get_object(catalog_key)
+        serializer = ControlMatrixSerializer(cd)
+        return Response(serializer.data)
+
+    # def put(self, request, pk, format=None):
+    #     cd = self.get_object(pk)
+    #     serializer = ControlMatrixSerializer(cd, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # def delete(self, request, pk, format=None):
+    #     cd = self.get_object(pk)
+    #     cd.delete()
+    #     return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 # Components
