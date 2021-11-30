@@ -3234,7 +3234,7 @@ def system_deployments(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
+        project = system.projects.first()
 
         # Retrieve list of deployments for the system
         deployments = system.deployments.all().order_by(Lower('name'))

@@ -18,6 +18,9 @@ Deployments List
 <!-- authoring_tool_enabled included from project-base.html -->
 
 {% block body_content %}
+<div id="data-table"></div>
+<br>
+<br>
 <div class="systems-top">
     <div id="tab-content" class="row rows-header">
         <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 systems-poam">Deployments</div>
@@ -61,6 +64,9 @@ Deployments List
 
 {% block scripts %}
     {{ block.super }}
+    <script>
+      window.deploymentTable({{ system.id }});
+    </script>
 <script>
 </script>
 

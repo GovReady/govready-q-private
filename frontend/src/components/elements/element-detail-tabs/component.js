@@ -10,7 +10,6 @@ const { setTags } = componentTagsStateSlice.actions;
 
 window.renderElementTags = (elementID, existingTags) => {
     store.dispatch(setTags(existingTags));
-
     $(window).on('load', function () {
         $("#content").show();
     });

@@ -25,7 +25,6 @@ import ReactDOM from 'react-dom';
 
 
 // const { setTags } = projectTagsStateSlice.actions;
-
 window.projectMenu = (data) => {
     // store.dispatch(setTags(existingTags));
     $(window).on('load', function () {
@@ -37,7 +36,6 @@ window.projectMenu = (data) => {
     }
 
 
-    console.log(data)
     // console.log(displayMap.urls)
 
     ReactDOM.render(
