@@ -35,7 +35,8 @@ body, blockquote {
 
 .navbar-new { background-color:#F5F5F5; border-bottom:1px solid #ccc;}
 .navbar-new a { color: #444444;}
-
+.navbar-toggle { background-color:#DCDCDC; }
+.navbar-toggle .icon-bar { background-color:#ADADAD; }
 
 .glyphicon-globe { color: #888; }
 
