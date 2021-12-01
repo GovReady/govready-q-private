@@ -33,6 +33,10 @@ body, blockquote {
   color: black;
 }
 
+.navbar-new { background-color:#F5F5F5; border-bottom:1px solid #ccc;}
+.navbar-new a { color: #444444;}
+
+
 .glyphicon-globe { color: #888; }
 
 h1, h2 {
@@ -160,7 +164,8 @@ div.question-answer[data-reviewed] a { text-decoration: underline; }
 .question-glyphicon-comment { color: #56A; }
 
 /* within navbar and base.html */
-.navbar-brand img { margin: -1px 20px; width:160px; }
+.navbar-brand { padding:15px 0 0 5px;}
+.navbar-brand img { margin: -1px 0; width:160px;}
 .dropdown-menu { width: 300px; }
 .nav-dropdown-item-text { margin: 0px 12px 8px 20px; }
 .nav-profile { margin: -5px 5px; }
