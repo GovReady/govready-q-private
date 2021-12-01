@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
+import { makeStyles } from "@mui/styles";
+import moment from 'moment';
+
+const useStyles = makeStyles((theme) => ({
+    name:
+    {
+        color: 'black'
+    }
+}))
 
 export const DeploymentTable = ({ systemId }) => {
-    const [sortby, setSortBy] = useState(["created", "desc"]);
+    const classes = useStyles();
+    const [sortby, setSortBy] = useState(["name", "asc"]);
     const [columns, setColumns] = useState([
-        // {
-        //   display: "Type",
-        //   property: "document_type.display",
-        //   sortKey: "document_type",
-        //   dataType: columnDataTypes.STRING,
-        // },
         {
             display: "Name",
             sortKey: "name",
             renderCell: (obj) => {
-                return <span>{obj.name}</span>
+                return <a className={classes.name} href={`/systems/${systemId}/deployment/${obj.id}/inventory`} >
+                    {obj.name}
+                </a>
             }
         },
         {
@@ -25,13 +31,25 @@ export const DeploymentTable = ({ systemId }) => {
                 return <span>{obj.description}</span>
             }
         },
+        {
+            display: "Updated",
+            sortKey: "updated",
+            renderCell: (obj) => {
+                return <span>{moment(obj.updated).fromNow()}</span>
+            }
+        },
+        {
+            display: "Actions",
+            renderCell: (obj) => {
+                return <><button>Test </button><button>Test2</button></>
+            }
+        },
     ]);
-
-    const endpoint = () => axios.get(`/api/v2/systems/${systemId}/deployments/`);
-
+    const endpoint = (querystrings) => {
+        return axios.get(`/api/v2/systems/${systemId}/deployments/`, { params: querystrings});
+    };
     return <DataTable
         sortby={sortby}
-        sortKey={"name"}
         columns={columns}
         endpoint={endpoint} />
 }

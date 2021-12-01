@@ -51,12 +51,14 @@ class CustomListModelMixin(ListModelMixin):
 
     def list(self, request, *args, **kwargs):
         serializer_class = self.get_serializer_class('list')
+        # import ipdb; ipdb.set_trace()
         queryset = self.get_queryset(serializer_class=serializer_class)
         if not kwargs.pop('skip_ordering', False):
             queryset = self.filter_queryset(queryset)
 
         post_filter = kwargs.get('post_filter')
         if post_filter:
+            
             queryset = queryset.filter(post_filter)
 
         rollup = self.get_rollup(request, queryset)
@@ -71,7 +73,7 @@ class CustomSearchModelMixin(object):
         pass
 
     def _search(self, request):
-        keyword = request.GET.get('keyword')
+        keyword = request.GET.get('search')
         if keyword:
             return self.search(request, keyword)
 

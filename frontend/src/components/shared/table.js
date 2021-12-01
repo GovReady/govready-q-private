@@ -3,7 +3,6 @@
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 import { makeStyles } from "@mui/styles";
@@ -110,7 +109,7 @@ export const DataTable = (props) => {
         cleanedArgs[prop] = args[prop];
       }
     });
-    return props.endpoint(cleanedArgs).then((resp) => {
+    return props.endpoint(cleanedArgs).then((resp) => {      
       setResponse(resp.data);
     });
   };
@@ -130,9 +129,11 @@ export const DataTable = (props) => {
     setQuerystrings({ ...querystrings, count: event.target.value });
   };
   const handleSetSorting = (str) => {
-    let sortTmp = [str, sorting[1] === "desc" ? "asc" : "desc"];
-    setSorting(sortTmp);
-    setQuerystrings({ ...querystrings, ordering: formatOrderBy(sortTmp) });
+    if(str !== 'undefined') {
+      let sortTmp = [str, sorting[1] === "desc" ? "asc" : "desc"];
+      setSorting(sortTmp);
+      setQuerystrings({ ...querystrings, orderBy: formatOrderBy(sortTmp) });
+    }   
   };
 
   const doSearch = (val) => {
@@ -194,19 +195,20 @@ export const DataTable = (props) => {
                         }}
                       >
                         <span>{item.display}</span>
-                        <Typography
+                        {item.sortKey !== undefined && <Typography
                           className={classes.arrow}
                           variant="body2"
                           component="span"
                         >
-                          {sorting[0] === item.property ? (
+                          {sorting[0] === item.sortKey ? (
                             sorting[1] === "desc" ? (
                               <KeyboardArrowDownIcon />
                             ) : (
                               <KeyboardArrowUpIcon />
                             )
                           ) : null}
-                        </Typography>
+                        </Typography>}
+                        
                       </TableCell>
                     ))}
                   </TableRow>
