@@ -208,7 +208,6 @@ $('.comment-form').on('submit', function(e) {
   var data = formElm.serializeArray();
   data.push( { name: "task", value: {{ task.id }} } );
   data.push( { name: "question", value: formElm.find('input[name="key"]').val() } );
-  console.log(data);
   ajax_with_indicator({
       url: "/tasks/_authoring_tool/edit-question-new",
       method: "POST",

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
 import moment from 'moment';
-import { IconButton, Link } from '@mui/material';
+import { IconButton, Link, Button } from '@mui/material';
 
 import EditIcon from '@mui/icons-material/Edit';
 import HistoryIcon from '@mui/icons-material/History';
@@ -13,15 +13,23 @@ const useStyles = makeStyles((theme) => ({
     name:
     {
         color: 'black'
-    }
+    },
+    headerButton: {
+        float: 'right',
+        marginRight: "20px",
+        // marginLeft: "90rem",
+        backgroundColor: '#5cb85c',
+        background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
+        width: '20rem',
+        ".MuiButton-root&:hover": {
+            color: "#fff"
+        },
+
+    },
 }))
 
 export const DeploymentTable = ({ systemId }) => {
     const classes = useStyles();
-    const headerButton = {
-        title: 'New Deployment',
-        link: `/systems/${systemId}/deployment/new`
-    }
     const [sortby, setSortBy] = useState(["name", "asc"]);
     const [columns, setColumns] = useState([
         {
@@ -66,14 +74,24 @@ export const DeploymentTable = ({ systemId }) => {
         },
     ]);
 
-    <a class="portfolio-project-link" href="/systems/1/deployment/1/edit" title="Edit deployment" aria-label="Edit deployment"><span class="glyphicon glyphicon-pencil"></span></a>
     const endpoint = (querystrings) => {
-        return axios.get(`/api/v2/systems/${systemId}/deployments/`, { params: querystrings});
+        return axios.get(`/api/v2/systems/${systemId}/deployments/`, { params: querystrings });
     };
     return <DataTable
         sortby={sortby}
         columns={columns}
         endpoint={endpoint}
-        headerButton={headerButton} 
-        />
+        header={<div style={{ display: "block" }}>
+            <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> Deployments </span>
+            <Button
+                className={classes.headerButton}
+                variant="contained"
+                color="success"
+                // style={{width: '20rem'}} 
+                href={`/systems/${systemId}/deployment/new`}
+            >
+                {'New Deployment'}
+            </Button>
+        </div>}
+    />
 }

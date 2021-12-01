@@ -3237,7 +3237,7 @@ def system_deployments(request, system_id):
         project = system.projects.first()
 
         # Retrieve list of deployments for the system
-        deployments = system.deployments.all().order_by(Lower('name'))
+        # deployments = system.deployments.all().order_by(Lower('name'))
         # controls = system.root_element.controls.all()
         # poam_smts = system.root_element.statements_consumed.filter(statement_type="POAM").order_by('-updated')
 
@@ -3245,7 +3245,6 @@ def system_deployments(request, system_id):
         context = {
             "system": system,
             "project": project,
-            "deployments": deployments,
             "display_urls": project_context(project)
         }
         return render(request, "systems/deployments_list.html", context)
