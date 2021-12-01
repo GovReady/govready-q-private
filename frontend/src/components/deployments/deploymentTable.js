@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
 import moment from 'moment';
-import { IconButton, Link, Button } from '@mui/material';
+import { Button, IconButton, Link, Tooltip } from '@mui/material';
 
 import EditIcon from '@mui/icons-material/Edit';
 import HistoryIcon from '@mui/icons-material/History';
@@ -60,14 +60,18 @@ export const DeploymentTable = ({ systemId }) => {
             renderCell: (obj) => {
                 return <>
                     <Link href={`/systems/${systemId}/deployment/${obj.id}/edit`}>
-                        <IconButton>
-                            <EditIcon />
-                        </IconButton>
+                        <Tooltip title="Edit" placement="top">
+                            <IconButton>
+                                <EditIcon />
+                            </IconButton>
+                        </Tooltip>
                     </Link>
                     <Link href={`/systems/${systemId}/deployment/${obj.id}/history`}>
-                        <IconButton>
-                            <HistoryIcon />
-                        </IconButton>
+                        <Tooltip title="History" placement="top">
+                            <IconButton>
+                                <HistoryIcon />
+                            </IconButton>
+                        </Tooltip>
                     </Link>
                 </>
             }
