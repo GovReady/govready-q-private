@@ -10,6 +10,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardHeader,
   Grid,
   Table,
   TableBody,
@@ -91,6 +92,8 @@ export const DataTable = (props) => {
   const [response, setResponse] = useState({ data: [], rollup: {} });
   const debounceDuration = 250;
 
+
+
   useEffect(() => {
     debouncedFetch(querystrings);
   }, [querystrings]);
@@ -109,7 +112,7 @@ export const DataTable = (props) => {
         cleanedArgs[prop] = args[prop];
       }
     });
-    return props.endpoint(cleanedArgs).then((resp) => {      
+    return props.endpoint(cleanedArgs).then((resp) => {
       setResponse(resp.data);
     });
   };
@@ -129,11 +132,11 @@ export const DataTable = (props) => {
     setQuerystrings({ ...querystrings, count: event.target.value });
   };
   const handleSetSorting = (str) => {
-    if(str !== 'undefined') {
+    if (str !== 'undefined') {
       let sortTmp = [str, sorting[1] === "desc" ? "asc" : "desc"];
       setSorting(sortTmp);
       setQuerystrings({ ...querystrings, orderBy: formatOrderBy(sortTmp) });
-    }   
+    }
   };
 
   const doSearch = (val) => {
@@ -156,7 +159,23 @@ export const DataTable = (props) => {
   };
 
   return (
-      <Card padding={"0"}>
+    <Card>
+      <CardHeader
+        style={{
+          border: "0.5px solid #bbb",
+          backgroundColor: "#eee",
+          // textAlign: "left",
+          color: "#373737b"
+        }}
+
+        titleTypographyProps={{
+          // variant: 'h4',
+          marginLeft: "20px",
+          fontSize: "25px"
+        }}
+        title="Deployments"
+      />
+      <Card padding={"0"} style={{ border: "0.5px solid #bbb", borderRadius: "0px" }}>
         <CardContent className={classes.content}>
           <PerfectScrollbar>
             {props.searchEnabled && (
@@ -193,8 +212,9 @@ export const DataTable = (props) => {
                         onClick={() => {
                           handleSetSorting(`${item.sortKey}`);
                         }}
+                        style={{ fontSize: "17px", fontWeight: "bold", color: "#151515de" }}
                       >
-                        <span>{item.display}</span>
+                        <span style={{ marginLeft: "15px" }}>{item.display}</span>
                         {item.sortKey !== undefined && <Typography
                           className={classes.arrow}
                           variant="body2"
@@ -208,7 +228,7 @@ export const DataTable = (props) => {
                             )
                           ) : null}
                         </Typography>}
-                        
+
                       </TableCell>
                     ))}
                   </TableRow>
@@ -224,8 +244,8 @@ export const DataTable = (props) => {
                       >
                         {columns.map((col, index) => {
                           return (
-                            <TableCell key={index}>
-                              {col.renderCell(obj)}
+                            <TableCell key={index} style={{ fontSize: "15px" }}>
+                              <span style={{ marginLeft: "15px" }}>{col.renderCell(obj)}</span>
                             </TableCell>
                           )
                         })}
@@ -250,13 +270,15 @@ export const DataTable = (props) => {
           />
         </CardActions>
       </Card>
+
+    </Card >
   );
 };
 
 DataTable.defaultProps = {
   searchEnabled: true,
   rollups: [],
-  onRowClick: (row) => {},
+  onRowClick: (row) => { },
 };
 
 DataTable.propTypes = {
