@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
-import { makeStyles } from "@mui/styles";
 import moment from 'moment';
+import { IconButton, Link } from '@mui/material';
+
+import EditIcon from '@mui/icons-material/Edit';
+import HistoryIcon from '@mui/icons-material/History';
+
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     name:
@@ -13,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
 
 export const DeploymentTable = ({ systemId }) => {
     const classes = useStyles();
+    const headerButton = {
+        title: 'New Deployment',
+        link: `/systems/${systemId}/deployment/new`
+    }
     const [sortby, setSortBy] = useState(["name", "asc"]);
     const [columns, setColumns] = useState([
         {
@@ -41,15 +50,30 @@ export const DeploymentTable = ({ systemId }) => {
         {
             display: "Actions",
             renderCell: (obj) => {
-                return <><button>Test </button><button>Test2</button></>
+                return <>
+                    <Link href={`/systems/${systemId}/deployment/${obj.id}/edit`}>
+                        <IconButton>
+                            <EditIcon />
+                        </IconButton>
+                    </Link>
+                    <Link href={`/systems/${systemId}/deployment/${obj.id}/history`}>
+                        <IconButton>
+                            <HistoryIcon />
+                        </IconButton>
+                    </Link>
+                </>
             }
         },
     ]);
+
+    <a class="portfolio-project-link" href="/systems/1/deployment/1/edit" title="Edit deployment" aria-label="Edit deployment"><span class="glyphicon glyphicon-pencil"></span></a>
     const endpoint = (querystrings) => {
         return axios.get(`/api/v2/systems/${systemId}/deployments/`, { params: querystrings});
     };
     return <DataTable
         sortby={sortby}
         columns={columns}
-        endpoint={endpoint} />
+        endpoint={endpoint}
+        headerButton={headerButton} 
+        />
 }

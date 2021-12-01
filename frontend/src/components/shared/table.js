@@ -7,6 +7,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 
 import { makeStyles } from "@mui/styles";
 import {
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -39,6 +40,15 @@ export const columnDataTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: 0,
+  },
+  headerButton: {
+    marginLeft: "2rem",
+    backgroundColor: '#5cb85c',
+    background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
+    width: '20rem',
+    ".MuiButton-root&:hover":{
+      color: "#fff"
+    },
   },
   content: {
     padding: 0,
@@ -158,6 +168,9 @@ export const DataTable = (props) => {
     return obj;
   };
 
+
+  console.log('headerButton: ', props.headerButton)
+
   return (
     <Card>
       <CardHeader
@@ -175,7 +188,7 @@ export const DataTable = (props) => {
         }}
         title="Deployments"
       />
-      <Card padding={"0"} style={{ border: "0.5px solid #bbb", borderRadius: "0px" }}>
+      <Card padding={"0"} style={{ border: "0.5px solid #bbb", borderRadius: "0px",  }}>
         <CardContent className={classes.content}>
           <PerfectScrollbar>
             {props.searchEnabled && (
@@ -191,12 +204,33 @@ export const DataTable = (props) => {
                     <Search />
                   </Grid>
                   <Grid item style={{ width: "calc(100% - 1rem - 25px" }}>
-                    <TextField
-                      variant="standard"
-                      label="Search"
-                      fullWidth={true}
-                      onChange={(e) => doSearch(e.target.value)}
-                    />
+                    {props.headerButton !== undefined 
+                    ? 
+                      <div style={{ display: "flex" }}>
+                        <TextField
+                          variant="standard"
+                          label="Search"
+                          fullWidth={true}
+                          onChange={(e) => doSearch(e.target.value)}
+                        />
+                        <Button
+                          className={classes.headerButton}
+                          variant="contained" 
+                          color="success" 
+                          // style={{width: '20rem'}} 
+                          href={props.headerButton.link}
+                        >
+                          {props.headerButton.title}
+                        </Button>
+                      </div>
+                    : 
+                      <TextField
+                        variant="standard"
+                        label="Search"
+                        fullWidth={true}
+                        onChange={(e) => doSearch(e.target.value)}
+                      />
+                    }
                   </Grid>
                 </Grid>
               </div>
