@@ -56,20 +56,24 @@
         body {
             border-bottom: 0px !important;
             padding-bottom: 0px !important;
-            height: 100vh;
-            width: 100vw;
+
         }
     </style>
 {% endblock %}
 
 {% block contextbar %}{% endblock %}
 
-{% block body %}
-    {{ block.super }}
-    <div class="row" style="height:100%;">
 
-        <div class="col-md-3" style="margin:0px;padding:0px 0px 0px 0px;height:100%;">
-            <div id="focus-area-wrapper" style="padding:0px; margin-top:0px;height:100%;">
+
+{% block body %}
+<!--<div class="row">
+  <div class="col-md-12" style="padding:1em 0 1em 1em;">Breadcrumb here?</div>
+</div>-->
+    {{ block.super }}
+
+<div class="row">
+        <div class="col-md-3" style="margin:0; padding:0;">
+            <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
                 {% block above_title %}
                     {% if authoring_tool_enabled %}
                         <center class="authoring-tool-hidden authoring-tool-box">
@@ -99,7 +103,73 @@
 
                 {# if is_project_page #}
 
-                <div id="menu" style="height: 100%;"></div>
+
+                  <style>
+                  /* move this up or to css file. */
+
+                  h2.project-title { margin:0; font-size:1.3em;}
+                  .project-title a { color:#333; text-decoration:none;}
+                  h3.port-hed { margin:0; font-size: .8em; color:#737373;}
+                  .project-info { border-top:1px solid #ccc; border-bottom:1px solid #ccc; display:block; margin:1em 0; padding:.5em 0; font-size:.8em; max-width:350px; min-width:200px; color:#999999;}
+                  .unassessed { color: #BFBFBF;}
+                  .project-info-compliance { font-size:1.1em;}
+                  .project-info-controls { font-size:1.1em;}
+                  .project-info-components { font-size:1.1em;}
+                  .project-info-systemcomponents { font-size: .8em;}
+                  .project-info-systemcomponents a:link{ color: #999999; }
+
+
+                  .fake-bar { display:block; height: 15px; width: 200px; background-color:#F2F2F2; margin-bottom:1.5em;}
+
+                  .sidebar-navigation { font-size: 1.2em; display:block; margin-top:3em;}
+                  .sidebar-nav { display:block; padding:0; margin:0;}
+                  .sidebar-nav a {color:#666666; text-decoration:none;}
+                  .sidebar-nav li { list-style:none; padding-bottom:1em;}
+                  .sidebar-icon { padding-right:.3em;}
+                  .sidebar-block { padding:1em 1em; position:fixed;}
+
+                  </style>
+
+
+
+
+
+
+                  <div class="sidebar-block">
+                  <h3 class="port-hed">Portfolio: XXXXXXX</h3>
+                  <h2 class="project-title"><a href="{{project.get_absolute_url}}">{{ project.title }}</a></h2>
+
+                  <div class="project-info">
+                    System ID: {{ project.system.id }} | Project ID: {{project.id}}
+                  </div>
+
+
+                  <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:2 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
+                  <div class="fake-bar"></div>
+
+
+                  <span class="project-info-controls" onclick="window.location.assign('{% url 'controls_selected' system_id=project.system.id %}')" style="cursor: pointer;">Controls Addressed ({{ controls_status_count.Addressed }} of {{ project.system.root_element.controls.all|length }})</span>
+                  <br />
+                  <div class="fake-bar"></div>
+
+
+                  <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
+
+                    <span class="project-info-systemcomponents"><a href="#">Cybrary</a>, <a href="#">ILIAS</a></span>
+
+                  <br />
+                  <div class="sidebar-navigation">
+                  <ul class="sidebar-nav">
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-tag"></span> Components</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> POA&Ms</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-duplicate"></span> Deployments</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-check"></span> Assessments</a></li>
+                  </ul>
+                  </div>
+
+
+
                 {% block action_buttons %}
                     {% if action_buttons %}
                         {% for q in action_buttons %}
@@ -134,18 +204,26 @@
             </div> <!-- /focus-area-wrapper -->
         </div> <!-- /col -->
 
-        <div class="col-md-8 project-body-block" style="margin-top: 60px;">
-            {% block body_content %}
-            {% endblock %}
 
-        <footer>
-            <div class="row footer-row" style="margin-left: -20px;">
+</div>
+
+        <div class="col-md-9" style="padding-right:75px; padding-top:30px;">
+
+              {% block body_content %}
+              {% endblock %}
+
+        </div>
+
+      </div>
+         <!-- /row -->
+
+      <footer>
+            <div class="row footer-row">
                 {% include "footer.html" %}
             </div>
         </footer>
 
-        </div>
-    </div> <!-- /row -->
+
 
     {% include "edit-project-modal.html" %}
     {% include "edit-project-security-impact-levels-modal.html" %}
