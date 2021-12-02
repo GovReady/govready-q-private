@@ -2770,7 +2770,7 @@ def poams_list(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
+        project = system.projects.first()
         controls = system.root_element.controls.all()
         poam_smts = system.root_element.statements_consumed.filter(statement_type="POAM").order_by('-updated')
 
@@ -2807,7 +2807,6 @@ def new_poam(request, system_id):
         # Temporarily assume only one project and get first project
         project = system.projects.all()[0]
         controls = system.root_element.controls.all()
-
         if request.method == 'POST':
             statement_form = StatementPoamForm(request.POST)
             # if statement_form.is_valid() and poam_form.is_valid():
