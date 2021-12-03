@@ -107,23 +107,26 @@
                   <style>
                   /* move this up or to css file. */
 
-                  h2.project-title { margin:0; font-size:1.3em;}
+                  h2.project-title { margin:0; font-size:1.1em;}
                   .project-title a { color:#333; text-decoration:none;}
-                  h3.port-hed { margin:0; font-size: .8em; color:#737373;}
-                  .project-info { border-top:1px solid #ccc; border-bottom:1px solid #ccc; display:block; margin:1em 0; padding:.5em 0; font-size:.8em; max-width:350px; min-width:200px; color:#999999;}
-                  .unassessed { color: #BFBFBF;}
-                  .project-info-compliance { font-size:1.1em;}
-                  .project-info-controls { font-size:1.1em;}
-                  .project-info-components { font-size:1.1em;}
+                  h3.port-hed { margin:0; font-size: .7em; color:#333;}
+                  .project-info { border-top:1px solid #C0E6C0; border-bottom:1px solid #C0E6C0; display:block; margin:1.2em 0 1.5em 0; padding:.5em 0; font-size:.7em; max-width:350px; min-width:200px; color:#333;}
+                  .unassessed { color: #333; font-weight:light;}
+                  .project-info-compliance { font-size:.9em;}
+                  .project-info-controls { font-size:.9em;}
+                  .project-info-components { font-size:.9em;}
                   .project-info-systemcomponents { font-size: .8em;}
-                  .project-info-systemcomponents a:link{ color: #999999; }
+                  .project-info-systemcomponents a:link{ color: #95999B; }
 
+                  .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; }
 
-                  .fake-bar { display:block; height: 15px; width: 200px; background-color:#F2F2F2; margin-bottom:1.5em;}
+                  .fake-bar { display:block; height: 15px; width: 200px; background-color:#80CC80; margin-bottom:1em;}
 
-                  .sidebar-navigation { font-size: 1.2em; display:block; margin-top:3em;}
+                  .sidebar-navigation { font-size: 1.2em; display:block; margin-top:1.5em; padding:0 15px;}
                   .sidebar-nav { display:block; padding:0; margin:0;}
                   .sidebar-nav a {color:#666666; text-decoration:none;}
+                  .sidebar-nav a:hover {color:#337ab7; text-decoration:none;}
+
                   .sidebar-nav li { list-style:none; padding-bottom:1em;}
                   .sidebar-icon { padding-right:.3em;}
                   .sidebar-block { padding:1em 1em; position:fixed;}
@@ -135,12 +138,14 @@
 
 
 
-                  <div class="sidebar-block">
+                  <div class="sidebar-block" style="background-color: #FFFFFF;">
+
+                  <div class="sidebar-info-block">
                   <h3 class="port-hed">Portfolio: XXXXXXX</h3>
                   <h2 class="project-title"><a href="{{project.get_absolute_url}}">{{ project.title }}</a></h2>
 
                   <div class="project-info">
-                    System ID: {{ project.system.id }} | Project ID: {{project.id}}
+                    System ID: {{ project.system.id }}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Project ID: {{project.id}}
                   </div>
 
 
@@ -157,7 +162,8 @@
 
                     <span class="project-info-systemcomponents"><a href="#">Cybrary</a>, <a href="#">ILIAS</a></span>
 
-                  <br />
+
+                  </div>
                   <div class="sidebar-navigation">
                   <ul class="sidebar-nav">
                     <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>
