@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# About
+# NLP find candidate components in legacy implementation statements
+
 # usage
 #   python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1
-#   python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1 --entity_file nlp/data/test_entity_file --nonentity_file nlp/data/test_nonentity_file
-#   docker exec -it govready-q-dev python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1 --entity_file nlp/data/test_entity_file --nonentity_file nlp/data/test_nonentity_file
+#   python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1 --entity_file nlp/data/test_entity_file.txt --nonentity_file nlp/data/test_nonentity_file.py
+#   docker exec -it govready-q-dev python3 manage.py nlpfindcandidatecomponents --importname nlpcomponents --create-components --project_ids 1 --entity_file nlp/data/test_entity_file --nonentity_file nlp/data/test_nonentity_file.py
 
 
 import sys
@@ -54,7 +57,6 @@ CIL = StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name
 class Command(BaseCommand):
     help = 'NLP find candidate components in legacy implementation statements'
 
-
     def add_arguments(self, parser):
         parser.add_argument('--importname', metavar='import_name', nargs='?', type=str, default="NLP Candidate components in legacy impl smts", help="Name to identify the batch creation of statements")
         parser.add_argument('--project_ids', metavar='project_ids', nargs='+', required=True, type=int, help="Space delimited list of Project IDs")
@@ -70,12 +72,8 @@ class Command(BaseCommand):
                 lines = file.readlines()
                 entities = [line.rstrip() for line in lines]
         except:
-            if not file.is_file():
-                print(f"File {filename} not found")
-                entities = None
-            else:
-                print(f"File {filename} exists but problems opening")
-                entities = None
+            print(f"Problem opening {filename}")
+            entities = None
 
         print('entities read from file',entities)
 
@@ -159,14 +157,12 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """Execute script"""
 
-        # Create import record so we easily bulk delete
+        # Create import record so we easily bulk delete created components
         IMPORT_NAME = options['importname']
         PROJECT_IDS = options['project_ids']
         CREATE_COMPONENTS = options['create_components']
         ENTITY_FILE = options['entity_file']
         NONENTITY_FILE = options['nonentity_file']
-
-        print("NONENTITY_FILE", NONENTITY_FILE)
 
         import_rec = ImportRecord.objects.create(name=IMPORT_NAME)
         impl_type = CIL
@@ -179,9 +175,8 @@ class Command(BaseCommand):
         # c_dict= cmmc.get_flattened_controls_all_as_dict()
 
         # Start main section
-        print("\nScript start\n============\n")
+        print("\nStart main section\n============\n")
         projects = Project.objects.filter(id__in=PROJECT_IDS)
-
 
         # Prepare NLP
         # Import NLP Libraries
@@ -192,19 +187,19 @@ class Command(BaseCommand):
         if ENTITY_FILE:
             pre_identified_entities_list = self.get_entities_from_file(ENTITY_FILE)
 
-        # Make a loop that adds pre-identified entities list to the Entity Ruler
-        ruler = nlp.add_pipe("entity_ruler")
-        patterns=[]
-        for item in pre_identified_entities_list:
-            pattern = {"label":"Identified_Ent","pattern":item}
-            # pattern = {"label":"COMPONENT","pattern":item}
-            patterns.append(pattern)
-        ruler.add_patterns(patterns)
+            # Make a loop that adds pre-identified entities list to the Entity Ruler
+            ruler = nlp.add_pipe("entity_ruler")
+            patterns=[]
+            for item in pre_identified_entities_list:
+                pattern = {"label":"Identified_Ent","pattern":item}
+                # pattern = {"label":"COMPONENT","pattern":item}
+                patterns.append(pattern)
+            ruler.add_patterns(patterns)
 
         # Quick test of added entities
         doc = nlp("A text about Apple and PyramidIT and Greg")
         ents = [(ent.text, ent.label_) for ent in doc.ents]
-        print(10,"=====", ents)
+        print(2,"=====", ents)
         # sys.exit()
 
         # NONENTITIES = ['ISO', 'UTC', 'None', 'Project', 'annual']
@@ -212,9 +207,9 @@ class Command(BaseCommand):
             NONENTITIES = self.get_entities_from_file(NONENTITY_FILE)
 
         for project in projects:
-            print(1,"====", project)
+            print(3,"==== project", project)
             proj_impl_smts = Statement.objects.filter(statement_type=impl_type, consumer_element=project.system.root_element)
-            print(2,"====", proj_impl_smts)
+            print(4,"==== proj_impl_smts", proj_impl_smts)
 
             # Loop through project legacy statements
             for smt in proj_impl_smts:
