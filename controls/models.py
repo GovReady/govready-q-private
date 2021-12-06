@@ -774,13 +774,7 @@ class System(auto_prefetch.Model, TagModelMixin):
 
     # @property (See below for creation of property from method)
     def get_producer_elements(self):
-        smts = self.root_element.statements_consumed.all()
-        components = set()
-        for smt in smts:
-            if smt.producer_element:
-                components.add(smt.producer_element)
-        components = list(components)
-        components.sort(key=lambda component: component.name)
+        components = Element.objects.filter(statements_produced__consumer_element = self.root_element).distinct().order_by('name')
         return components
 
     producer_elements = cached_property(get_producer_elements)
