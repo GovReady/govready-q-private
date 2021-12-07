@@ -19,7 +19,7 @@
 
 {% block body_content %}
 
-<div id="controls-table"></div>
+<div id="systems-controls-table"></div>
 
 
   <div class="systems-top">
@@ -210,8 +210,9 @@
       if (result) {
         window.location.href = cnt_rm_url;
       }
-    }
-    window.controlTable({{ system.id }});
+    }  
+    window.systemsControlTable({{ system.id }});
+  
 </script>
 
 {% endblock %}

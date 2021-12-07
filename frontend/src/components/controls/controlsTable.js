@@ -9,9 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import DeleteIcon from '@mui/icons-material/Delete';
-
 import { makeStyles } from "@mui/styles";
-
 const useStyles = makeStyles((theme) => ({
     name:
     {
@@ -27,12 +25,9 @@ const useStyles = makeStyles((theme) => ({
         ".MuiButton-root&:hover": {
             color: "#fff"
         },
-
     },
 }))
-
 export const ControlsTable = () => {
-
     
     const classes = useStyles();
     const [sortby, setSortBy] = useState(["catalog_key", "asc"]);
@@ -57,7 +52,6 @@ export const ControlsTable = () => {
     const endpoint = (querystrings) => {
         return axios.get(`/api/v2/controls/`, { params: querystrings });
     };
-
     return <DataTable
         sortby={sortby}
         columns={columns}
