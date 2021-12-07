@@ -164,6 +164,9 @@ def controls_selected(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
+        project = system.projects.first()
+        controls = system.root_element.controls.all()
+        impl_smts = system.root_element.statements_consumed.all()
         project = system.projects.all()[0]
         # controls = system.root_element.controls.all()
         controls = ElementControl.objects.filter(element=system.root_element)

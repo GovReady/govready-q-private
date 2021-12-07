@@ -52,7 +52,7 @@ export const ComponentsTable = ({ systemId }) => {
             renderCell: (obj) => {
                 console.log(obj)
                 return <Stack spacing={1}>
-                    <Chip label={"software "} variant="outlined"/>
+                    <Chip label={"software"} variant="outlined"/>
                 </Stack>
             }
         },
