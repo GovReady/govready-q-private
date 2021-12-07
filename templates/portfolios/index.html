@@ -16,20 +16,26 @@ Your Compliance Portfolios
 
 <div class="portfolio-top">
   <div class="container">
-    <div class="portfolio-main">
+    {% comment %} <div class="portfolio-main">
       <a id="new-portfolio" href="/portfolios/new" class="btn btn-success">Create a portfolio</a>
     </div>
-
-    <h2 class="">Portfolios</h2>
-    {% if portfolios|length > 0 %}
+    
+    <h2 class="">Portfolios</h2> {% endcomment %}
+    <div id="portfolio-table"></div>
+    {% comment %} {% if portfolios|length > 0 %}
     <p>You have access to {{ portfolios|length }} portfolio{{ portfolios|pluralize }}</p>
     {% else %}
     <p>You do not have access to any portfolios.</p>
     {% endif %}
 
-    {% include "portfolios/portfolios_table.html" with portfolios=portfolios %}
+    {% include "portfolios/portfolios_table.html" with portfolios=portfolios %} {% endcomment %}
 
   </div>
 </div>
 
-    {% endblock %}
+{% endblock %}
+{% block scripts %}
+  <script>
+    window.portfolioTable({});
+  </script>
+{% endblock %}

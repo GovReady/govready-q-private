@@ -14,7 +14,10 @@ const useStyles = makeStyles((theme) => ({
         color: 'black'
     },
     headerButton: {
-        float: 'right',
+        float: "right",
+    },
+    newButton: {
+        // float: 'right',
         marginRight: "20px",
         // marginLeft: "90rem",
         backgroundColor: '#5cb85c',
@@ -23,8 +26,10 @@ const useStyles = makeStyles((theme) => ({
         ".MuiButton-root&:hover": {
             color: "#fff"
         },
+        marginRight: "10rem",
 
     },
+    
 }))
 
 export const PoamsTable = ({ systemId }) => {
@@ -34,9 +39,7 @@ export const PoamsTable = ({ systemId }) => {
         {
             display: "ID",
             renderCell: (obj) => {
-                // console.log(obj)
-                // http://localhost:8000/controls/1/poams/18/edit
-                return <a className={classes.name} href={`/controls/${systemId}/controls/${obj.id}/edit`} >
+                return <a className={classes.name} href={`/controls/${systemId}/poams/${obj.id}/edit`} >
                     V-{obj.poam?.poam_id}
                 </a>
             }
@@ -72,22 +75,29 @@ export const PoamsTable = ({ systemId }) => {
         endpoint={endpoint}
         header={<div style={{ display: "block" }}>
             <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> POA&Ms </span>
-            <Button
+            <div
                 className={classes.headerButton}
-                variant="contained"
-                color="success"
-                // style={{width: '20rem'}} 
-                href={`/controls/${systemId}/poams/new`}
             >
-                {'New POA&M'}
-            </Button>
-            <Link href={`/#`}>
-                <Tooltip title="History" placement="top">
-                    <IconButton>
+                <Button
+                    className={classes.newButton}
+                    variant="contained"
+                    color="success"
+                    // style={{width: '20rem'}} 
+                    href={`/controls/${systemId}/poams/new`}
+                >
+                    {'New POA&M'}
+                </Button>
+                <Tooltip title="Download" placement="top">
+                    <IconButton
+                        onClick={(event) => {
+                            event.preventDefault();
+                            download_document('{{document.id|escapejs}}', {systemId})
+                        }}
+                    >
                         <DownloadIcon />
                     </IconButton>
                 </Tooltip>
-            </Link>
+            </div>
         </div>}
     />
 }

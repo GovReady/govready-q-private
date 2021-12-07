@@ -1,8 +1,8 @@
 from api.base.serializers.types import ReadOnlySerializer
 from api.controls.serializers.element import DetailedElementSerializer
 from controls.models import CommonControlProvider, CommonControl, ElementCommonControl
-
-
+from controls.oscal import CatalogData
+from rest_framework import serializers
 class SimpleCommonControlProviderSerializer(ReadOnlySerializer):
     class Meta:
         model = CommonControlProvider
@@ -36,3 +36,15 @@ class DetailedElementCommonControlSerializer(SimpleElementCommonControlSerialize
     class Meta:
         model = ElementCommonControl
         fields = SimpleElementCommonControlSerializer.Meta.fields + ['element', 'common_control']
+
+
+class CatalogDataReadSerializer(ReadOnlySerializer):
+
+    title = serializers.SerializerMethodField()
+
+    def get_title(self, obj):
+        return obj.catalog_json['catalog']['metadata']['title'].strip()
+    class Meta:
+        model = CatalogData
+        fields = ['catalog_key', 'title']
+
