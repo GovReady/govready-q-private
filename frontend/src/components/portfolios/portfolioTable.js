@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
 import moment from 'moment';
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const PortfolioTable = () => {
     const classes = useStyles();
+    const [records, setRecords] = useState(0);
     const [sortby, setSortBy] = useState(["title", "asc"]);
     const [columns, setColumns] = useState([
         {
@@ -95,11 +96,26 @@ export const PortfolioTable = () => {
             }
         },
     ]);
-    
+    useEffect(()=> {
+        newItem();
+    });
+
     const endpoint = (querystrings) => {
         return axios.get(`/api/v2/portfolios/`, { params: querystrings });
     };
     
+    const newItem = async () => {
+      try {
+          const item = await endpoint().then((response) => {
+            setRecords(response.data.pages.total_records)
+          });
+          ;
+        } catch (err) {
+            console.log(err)
+        }
+    };
+    
+    console.log('recordsaxs: ', records);
     return <DataTable
         sortby={sortby}
         columns={columns}
@@ -110,7 +126,7 @@ export const PortfolioTable = () => {
                     <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> Portfolios </span>
                 </div>
                 <div className={classes.subheader}>
-                    <span>You have access to ...TODO portfolios</span>
+                    <span>You have access to {records} portfolios</span>
                     <Button
                         className={classes.newButton}
                         variant="contained"
