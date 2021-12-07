@@ -115,7 +115,6 @@ export const PortfolioTable = () => {
         }
     };
     
-    console.log('recordsaxs: ', records);
     return <DataTable
         sortby={sortby}
         columns={columns}
