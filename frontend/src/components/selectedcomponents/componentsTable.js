@@ -3,7 +3,11 @@ import { DataTable } from '../shared/table';
 import axios from 'axios';
 import moment from 'moment';
 import { Button, Chip, IconButton, Link, Stack, Tooltip } from '@mui/material';
-
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 import { makeStyles } from "@mui/styles";
@@ -28,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export const ComponentsTable = ({ systemId }) => {
+
+    
     const classes = useStyles();
     const [sortby, setSortBy] = useState(["name", "asc"]);
     const [columns, setColumns] = useState([
@@ -35,7 +41,7 @@ export const ComponentsTable = ({ systemId }) => {
             display: "ID",
             sortKey: "poam_id",
             renderCell: (obj) => {
-                return <a className={classes.poam_id} href={`/systems/${systemId}/deployment/${obj.id}/inventory`} >
+                return <a className={classes.poam_id} href={`/controls/${systemId}/component/${obj.id}`} >
                     {obj.poam_id}
                 </a>
             }
@@ -91,24 +97,36 @@ export const ComponentsTable = ({ systemId }) => {
     ]);
     
     const endpoint = (querystrings) => {
-        return axios.get(`/api/v2/systems/${systemId}/controls/`, { params: querystrings });
+        return axios.get(`/api/v2/systems/${systemId}/components/`, { params: querystrings });
     };
+
+    const [availableComponentsToAdd, setAvailableComponentsToAdd] = React.useState('');
+
+  const handleChange = (event) => {
+    setAvailableComponentsToAdd(event.target.value);
+  };
     return <DataTable
         sortby={sortby}
         columns={columns}
         endpoint={endpoint}
         header={<div style={{ display: "block" }}>
             <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> Selected components </span>
-            <span>Add component</span>
-            {/* <Button
-                className={classes.headerButton}
-                variant="contained"
-                color="success"
-                // style={{width: '20rem'}} 
-                href={`/systems/${systemId}/deployment/new`}
-            >
-                {'New Deployment'}
-            </Button> */}
+            <Box sx={{ minWidth: 300 }}>
+                <FormControl sx={{ minWidth: 300 }}>
+                    <InputLabel id="component-select-label">Selected Component</InputLabel>
+                    <Select
+                        labelId="component-select-label"
+                        id="component-select"
+                        value={availableComponentsToAdd}
+                        label="Available Components to add"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                </FormControl>
+            </Box>
         </div>}
     />
 }
