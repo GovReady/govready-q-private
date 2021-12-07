@@ -167,6 +167,11 @@ def controls_selected(request, system_id):
         project = system.projects.first()
         controls = system.root_element.controls.all()
         impl_smts = system.root_element.statements_consumed.all()
+        project = system.projects.all()[0]
+        # controls = system.root_element.controls.all()
+        controls = ElementControl.objects.filter(element=system.root_element)
+        # impl_smts = system.root_element.statements_consumed.all()
+        impl_smts = Statement.objects.filter(consumer_element=system.root_element, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name)
 
         # sort controls
         controls = list(controls)
