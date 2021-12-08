@@ -16,6 +16,13 @@ class SimpleProjectsSerializer(ReadOnlySerializer):
         model = Project
         fields = ['is_account_project', 'is_deletable', 'extra', 'version', 'version_comment']
 
+class ListProjectsSerializer(SimpleProjectsSerializer):
+    portfolio = SimplePortfolioSerializer()
+    root_task = TaskSerializer()
+
+    class Meta:
+        model = Project
+        fields = SimpleProjectsSerializer.Meta.fields +  ['portfolio', 'root_task']
 
 class DetailedProjectsSerializer(SimpleProjectsSerializer):
     organization = DetailedOrganizationSerializer()

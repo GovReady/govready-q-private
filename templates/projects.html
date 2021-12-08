@@ -99,6 +99,7 @@ Your Compliance Projects
 {% block contextbar %}{% endblock %}
 
 {% block body %}
+<div id="system-projects"></div>
 
 <div class="projects-top">
 
@@ -169,5 +170,14 @@ Your Compliance Projects
     &nbsp;
   </div>
 {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+
+<script>
+  {% comment %} window.projectsTable({{ system.id }}); {% endcomment %}
+
+</script>
 
 {% endblock %}
