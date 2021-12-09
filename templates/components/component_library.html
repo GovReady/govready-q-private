@@ -60,9 +60,10 @@
             {% csrf_token %}
         <input type="hidden" name="hiddenChecks" id="hiddenChecks" value="" />
             <div id="" class="row">
-                <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>
-                 <button id="compare-select" onclick="select_all(true); return false;" href="#" class="btn btn-default">Select all</button>
-                 <button id="compare-deselect" onclick="select_all(false); return false;" href="#" class=" btn btn-default">Deselect all</button>
+              <div class="col-md-12" style="text-align:right; padding: 0 0 10px 0;">
+                <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>&nbsp;&nbsp;
+                 <a id="compare-select" onclick="select_all(true); return false;" href="#">Select all</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="compare-deselect" onclick="select_all(false); return false;" href="#" >Deselect all</a>
+                 </div>
                 <div id="" class="col-xs-12"><span>{% include 'components/paginate_comp.html' %}</span></div>
             </div>
 
