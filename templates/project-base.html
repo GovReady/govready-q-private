@@ -141,7 +141,7 @@
                   <div class="sidebar-block" style="background-color: #FFFFFF;">
 
                   <div class="sidebar-info-block">
-                  <h3 class="port-hed">Portfolio: XXXXXXX</h3>
+                  <h3 class="port-hed">Portfolio: <a href="{% url 'portfolio_projects' project.portfolio.id %}">{{ project.portfolio.title }}</a></h3>
                   <h2 class="project-title"><a href="{{project.get_absolute_url}}">{{ project.title }}</a></h2>
 
                   <div class="project-info">
@@ -160,8 +160,11 @@
 
                   <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
 
-                    <span class="project-info-systemcomponents"><a href="#">Cybrary</a>, <a href="#">ILIAS</a></span>
-
+                    <span class="project-info-systemcomponents">
+                        {% for component in project.system.get_producer_elements %}
+                            <a href={% url 'system_element' system_id=system.id element_id=component.id %}>{{ component.name }}</a>{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
 
                   </div>
                   <div class="sidebar-navigation">
