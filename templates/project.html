@@ -17,17 +17,17 @@
   }
 
   .question-column {
-    padding: 0px 30px 0px 30px;
-    padding: 10px;
+    /* padding: 0px 30px 0px 30px; */
+    padding: 0 10px 0 10px;
     /*background-color: rgb(247,247,247);*/
     /*border-radius: 5px;*/
-    max-width:66vw;
+    /* max-width:66vw; */
     /*box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);*/
   }
 
   {% if layout_mode == "rows" %}
     .question-column {
-      padding: 0px 30px 0px 30px;
+      /* padding: 0px 30px 0px 30px; */
   }
   {% endif %}
   {% if layout_mode == "columns" %}
@@ -67,9 +67,9 @@
     color: black;
     text-align: center;
     font-weight: bold;
-    padding: 0 18px 14px 0;
+    padding: 0 0 14px 0;
     margin: 0;
-    width: 700px;
+
   }
 
   .question {
@@ -100,7 +100,7 @@
 
   .question-title {
     text-align: center;
-    margin: 0px 0px 0px -60px;
+  /*  margin: 0px 0px 0px -60px; */
   }
 
   .question-title:hover span {display:none}
@@ -196,15 +196,7 @@
 
 {% block body_content %}
 
-<div class="col-md-12">
-      <h3 id="project-title" class="question-group-title hr" style="margin-left: 50px; font-size: 1.5em;">
-        <span></span>
-        &nbsp;&nbsp;
-        {{ project.title }}
-        &nbsp;&nbsp;
-        <span></span>
-      </h3>
-</div>
+
 <!--
       <div class="col-md-3">
         <div id="status-box-controls" class="status-box" onclick="window.location.assign('{% url 'controls_selected' system_id=project.system.id %}')" style="cursor: pointer;">
@@ -330,7 +322,7 @@
       </div>
 
   {% endif %}
-  <div class="col-md-12"><p>&nbsp;</p></div>
+
 
       <!-- <div class="col-sm-12" class="project-row-style"> -->
         <!-- <span class="status-section-header">Questionnaires / Compliance App</span> -->
@@ -352,15 +344,15 @@
       <div class="col-md-{{12|div:ncolumns|floatformat:0}}">
         <div class="question-column">
             {% if column.title %}
-              <h2 class="question-column-title">{{column.title}}</h2>
+              <h2 class="question-column-title" >{{column.title}}</h2>
             {% endif %}
 
             {% for group in column.groups %}
-            {% if group.title %}<div><a id="{{group.title}}"></a>&nbsp;</div>{% endif %}
+            {% if group.title %}<a id="{{group.title}}"></a>&nbsp;{% endif %}
             <div class="question-group">
 
               {% if group.title %}
-              <h3 class="question-group-title hr">
+              <h3 class="question-group-title">
                 <span></span>
                 &nbsp;
                 {{group.title}}
@@ -379,7 +371,7 @@
                     {% if layout_mode == "grid" %}col-sm-3 col-lg-2{% else %}col-xs-12{% endif %}
                     question
                     "
-                  style="width:51%;"
+                  style="width:100%;"
                     >
 
                     {# The user may not have permission to actually start a Task, however. If not, show the same UI but without the form element that actually makes the request to start the Task. #}

@@ -70,7 +70,7 @@
   <div class="col-md-12" style="padding:1em 0 1em 1em;">Breadcrumb here?</div>
 </div>-->
     {{ block.super }}
-
+<div class="container">
 <div class="row">
         <div class="col-md-3" style="margin:0; padding:0;">
             <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
@@ -110,17 +110,17 @@
                   h2.project-title { margin:0; font-size:1.1em;}
                   .project-title a { color:#333; text-decoration:none;}
                   h3.port-hed { margin:0; font-size: .7em; color:#333;}
-                  .project-info { border-top:1px solid #C0E6C0; border-bottom:1px solid #C0E6C0; display:block; margin:1.2em 0 1.5em 0; padding:.5em 0; font-size:.7em; max-width:350px; min-width:200px; color:#333;}
+                  .project-info { border-top:1px solid #C0E6C0; border-bottom:1px solid #C0E6C0; display:block; margin:1.2em 0 1.5em 0; padding:.5em 0; font-size:.7em; width:95%; color:#333;}
                   .unassessed { color: #333; font-weight:light;}
-                  .project-info-compliance { font-size:.9em;}
-                  .project-info-controls { font-size:.9em;}
-                  .project-info-components { font-size:.9em;}
+                  .project-info-compliance { font-size:.8em;}
+                  .project-info-controls { font-size:.8em;}
+                  .project-info-components { font-size:.8em;}
                   .project-info-systemcomponents { font-size: .8em;}
                   .project-info-systemcomponents a:link{ color: #95999B; }
 
                   .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; }
 
-                  .fake-bar { display:block; height: 15px; width: 200px; background-color:#80CC80; margin-bottom:1em;}
+                  .fake-bar { display:block; height: 15px; width:100%; background-color:#80CC80; margin-bottom:1em;}
 
                   .sidebar-navigation { font-size: 1.2em; display:block; margin-top:1.5em; padding:0 15px;}
                   .sidebar-nav { display:block; padding:0; margin:0;}
@@ -129,7 +129,7 @@
 
                   .sidebar-nav li { list-style:none; padding-bottom:1em;}
                   .sidebar-icon { padding-right:.3em;}
-                  .sidebar-block { padding:1em 1em; position:fixed;}
+                  .sidebar-block { padding:1em 1em 1em 0; background-color: #FFFFFF;}
 
                   </style>
 
@@ -138,7 +138,7 @@
 
 
 
-                  <div class="sidebar-block" style="background-color: #FFFFFF;">
+                  <div class="sidebar-block">
 
                   <div class="sidebar-info-block">
                   <h3 class="port-hed">Portfolio: XXXXXXX</h3>
@@ -149,7 +149,7 @@
                   </div>
 
 
-                  <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:2 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
+                  <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:1 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
                   <div class="fake-bar"></div>
 
 
@@ -213,15 +213,17 @@
 
 </div>
 
-        <div class="col-md-9" style="padding-right:75px; padding-top:30px;">
+        <div class="col-md-9">
 
               {% block body_content %}
               {% endblock %}
 
         </div>
 
+
+
       </div>
-         <!-- /row -->
+
 
       <footer>
             <div class="row footer-row">
