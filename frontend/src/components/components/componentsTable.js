@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
-import moment from 'moment';
-import { Button, Checkbox, FormControlLabel , FormGroup , Chip, Link, Stack, Tooltip } from '@mui/material';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, Checkbox, FormControlLabel , FormGroup , Chip, Stack, Tooltip } from '@mui/material';
 
 import { makeStyles } from "@mui/styles";
 
@@ -20,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     headerButton: {
         float: 'right',
         marginRight: "20px",
-        // marginLeft: "90rem",
         backgroundColor: '#5cb85c',
         background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
         width: '20rem',
@@ -30,18 +22,13 @@ const useStyles = makeStyles((theme) => ({
 
     },
     newButton: {
-        // float: 'right',
-        // marginRight: "20px",
         marginLeft: "1rem",
         marginRight: "1rem",
         backgroundColor: '#5cb85c',
         background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
-        // width: '20rem',
         ".MuiButton-root&:hover": {
             color: "#fff"
         },
-        // marginRight: "10rem",
-
     },
     compareButton: {
         backgroundColor: '#1976d2',
@@ -63,7 +50,6 @@ export const ComponentsTable = () => {
             display: "Component",
             sortKey: "catalog_key",
             renderCell: (obj) => {
-                console.log(obj)
                 return <a className={classes.name} href={`/controls/components/${obj.id}`} >
                     {obj.name}
                 </a>
@@ -75,8 +61,9 @@ export const ComponentsTable = () => {
                 return <div>
                         <span>{obj.description}</span>
                         <Stack>
-                            {obj.tags.map((tag) => (
-                                <Chip 
+                            {obj.tags.map((tag, index) => (
+                                <Chip
+                                    key={index}
                                     label={tag.label}
                                     sx={{width: '100px', margin: '5px'}}
                                     onClick={handleClick}
