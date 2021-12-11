@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export const ComponentsTable = ({ systemId }) => {
+export const SelectedComponentsTable = ({ systemId }) => {
 
     
     const classes = useStyles();

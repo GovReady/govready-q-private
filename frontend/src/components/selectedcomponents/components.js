@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import { ComponentsTable } from './componentsTable';
+import { SelectedComponentsTable } from './selectedComponentsTable';
 
-window.componentsTable = (systemId) => {
+window.systemsComponentsTable = (systemId) => {
   
     $(window).on('load', function () {
         $("#content").show();
         ReactDOM.render(
-            <ComponentsTable systemId={systemId}/>,
-            document.getElementById('components-table')
+            <SelectedComponentsTable systemId={systemId}/>,
+            document.getElementById('systems-components-table')
         );
     });
 };

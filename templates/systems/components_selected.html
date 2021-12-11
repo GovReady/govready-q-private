@@ -19,7 +19,7 @@
 <!-- authoring_tool_enabled included from project-base.html -->
 
 {% block body_content %}
-    {% comment %} <div id="components-table"></div> {% endcomment %}
+    {% comment %} <div id="systems-components-table"></div> {% endcomment %}
 
 
     <div class="systems-top">
@@ -85,7 +85,7 @@
 {% block scripts %}
 {{ block.super }}
 <script>
-    window.componentsTable({{ system.id }});
+    window.systemsComponentsTable({{ system.id }});
 </script>
 <script>
   // Convert select field for Add Component to jQuery Select2 box

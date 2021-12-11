@@ -11,7 +11,7 @@ from api.controls.views.controls import ControlsViewSet
 router = routers.DefaultRouter()
 router.register(r'elements', ElementViewSet)
 router.register(r'systems', SystemViewSet)
-
+router.register(r'components', ComponentsViewSet)
 router.register(r'controls', ControlsViewSet)
 
 systems_router = NestedSimpleRouter(router, r'systems', lookup='systems')
@@ -19,7 +19,7 @@ systems_router.register(r'system-controls', SystemControlsViewSet, basename='sys
 systems_router.register(r'assessments', SystemAssessmentViewSet, basename='systems-assessments')
 systems_router.register(r'poam-statements', SystemPoamStatementsViewSet, basename='systems-poams')
 systems_router.register(r'deployments', DeploymentViewSet, basename='systems-deployments')
-# systems_router.register(r'components', ComponentsViewSet, basename='systems-components')
+#systems_router.register(r'components', ComponentsViewSet, basename='systems-components')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
