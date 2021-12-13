@@ -73,13 +73,9 @@
 
 {% block body %}
 
-<div class="row" style="height:100%;">
+<div class="container">
+<div class="row" style="">
 
-  <div class="col-md-3" style="margin:0px;padding:0px 0px 0px 0px;height:100%;">
-    <div id="menu" style="height: 100%;"></div>
-  </div>
-
-  <div class="col-md-9">
 
     <div id="context-bar">
       {% if is_admin %}
@@ -108,7 +104,7 @@
       {% endif %}
     </div><!-- div wrapper -->
 
-    <div class="" style="max-width: 75%; text-align: left; border:0px solid pink;padding:0px 0px 0px 10px; ">
+    <div class="" style="">
       {{task.title}}
     </div>
 
@@ -176,6 +172,7 @@
 </div><!-- col-md-9 -->
 
 </div><!-- /div class row -->
+
     {% block scripts %}
         <script>
             window.projectMenu({{ display_urls | json }});
@@ -201,5 +198,3 @@
         </script>
 
     {% endblock %}
-
-
