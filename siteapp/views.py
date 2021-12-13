@@ -534,7 +534,57 @@ def apps_catalog(request):
 
     # Get the app catalog. If the user is answering a question, then filter to
     # just the apps that can answer that question.
+    # QUERY PROCESS TOO SLOW!
     catalog, filter_description = filter_app_catalog(get_compliance_apps_catalog_for_user(request.user), request)
+
+    from django.db.models import Q
+
+    print(1, "======= catalog",catalog)
+
+    # filter_description = None
+    # organization = Organization.objects.first()
+
+    AppVersions = AppVersion.objects.filter(show_in_catalog=True, source__is_system_source=False)
+    # print([app.id for app in AppVersions])
+    # user = request.user
+    # role_bool = user.has_perm("guidedmodules.view_appsource")
+    # catalog = list(AppVersion.objects \
+    #         .prefetch_related('modules') \
+    #         .select_related('source') \
+    #         .filter(show_in_catalog=True) \
+    #         .filter(source__is_system_source=False) \
+    #         .filter(Q(source__available_to_role=role_bool)) \
+    #         .filter(Q(source__available_to_all_individuals=True) | Q(source__available_to_individual=user.id)) \
+    #         .filter(Q(source__available_to_all=True) | Q(source__available_to_orgs=organization))
+    #         )
+
+    from collections import OrderedDict
+    catalog2 = []
+    for av in AppVersions:
+        ci = {}
+        # ci = OrderedDict()
+        ci['appversion_id'] = av.id
+        ci['appsource_id'] = av.source.id
+        ci['key'] = 'key/other',
+        ci['description'] =  av.catalog_metadata.get('description', None)
+        # ci['vendor'] = description.get('vendor', None)
+        # ci['status'] = description.get('status', None)
+        ci['categories'] = ['IT System Template']
+        ci['search_haystak'] = "string"
+        catalog2.append(ci)
+
+        # 1 ===== catalog:  dict_values([{'appversion_id': 2,
+        # 'appsource_id': 4,
+        # 'key': 'govready-q-files-startpack/blank',
+        # 'title': 'Blank Project',
+        # 'description': {'short': '<p>Blank project</p>',
+        # 'long': '<p>Blank Project</p>\n<p><strong>What App Does:</strong></p>\n<ul>\n<li>Used to batch create projects</li>\n</ul>\n<p><strong>Support:</strong></p>\n<p>This app ismaintained by GovReady PBC.</p>\n<h3>Version 0.1 June 19,
+        # 2021</h3>\n<ul>\n<li>Created</li>\n</ul>'},
+        # 'categories': ['IT System Template'],
+        # 'search_haystak': 'blankBlank ProjectGovReadyBlank project\nBlank Project\n\n**What App Does:**\n\n- Used to batch create projects\n\n**Support:**\n\nThis app is maintained byGovReady PBC.\n\n\nVersion 0.1 June 19,
+        # 2021\n-------------------------\n\n* Created\n\n',
+        # 'icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAB6CAYAAAB3N1u0AAAOKUlEQVR4nO2de3Qc1X3Hv797Z1art1e2kGxsy7be6GEojgOucUsdQkzshNcpFrYlWVIEtryzOvS0/
+
     # Group by category from catalog metadata.
     from collections import defaultdict
     catalog_by_category = defaultdict(lambda: {"title": None, "apps": []})
@@ -626,6 +676,7 @@ def apps_catalog(request):
         "filter_description": filter_description,
         "forward_qsargs": ("?" + urlencode(forward_qsargs)) if forward_qsargs else "",
         "authoring_tool_enabled": authoring_tool_enabled,
+        "apps2": catalog2,
     })
 
 
