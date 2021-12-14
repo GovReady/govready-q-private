@@ -70,7 +70,7 @@
   <div class="col-md-12" style="padding:1em 0 1em 1em;">Breadcrumb here?</div>
 </div>-->
     {{ block.super }}
-
+<div class="container">
 <div class="row">
         <div class="col-md-3" style="margin:0; padding:0;">
             <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
@@ -122,14 +122,16 @@
 
                   .fake-bar { display:block; height: 15px; width: 200px; background-color:#80CC80; margin-bottom:1em;}
 
-                  .sidebar-navigation { font-size: 1.2em; display:block; margin-top:1.5em; padding:0 15px;}
-                  .sidebar-nav { display:block; padding:0; margin:0;}
-                  .sidebar-nav a {color:#666666; text-decoration:none;}
-                  .sidebar-nav a:hover {color:#337ab7; text-decoration:none;}
+                  .sidebar-artifacts-box { font-size: 1em; display:block; margin-top:1em; padding:0 15px;}
+                  .sidebar-artifacts { display:block; padding:0; margin:0;}
+                  .sidebar-artifacts a {color:#666666; text-decoration:none;}
+                  .sidebar-artifacts a:hover {color:#337ab7; text-decoration:none;}
 
-                  .sidebar-nav li { list-style:none; padding-bottom:1em;}
+                  .sidebar-artifacts li { list-style:none; padding-bottom:.5em;}
                   .sidebar-icon { padding-right:.3em;}
                   .sidebar-block { padding:1em 1em; position:fixed;}
+
+                  .sidebar-syscomp { padding:15px;}
 
                   </style>
 
@@ -158,22 +160,35 @@
                   <div class="fake-bar"></div>
 
 
-                  <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
+
+                  <span class="project-info-poams">- POA&Ms (X)</span>
+
+
+                  </div>
+
+                  <div class="sidebar-syscomp" style="margin-top:1em;">
+                    <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
 
                     <span class="project-info-systemcomponents">
+
                         {% for component in project.system.get_producer_elements %}
                             <a href={% url 'system_element' system_id=system.id element_id=component.id %}>{{ component.name }}</a>{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </span>
 
                   </div>
-                  <div class="sidebar-navigation">
-                  <ul class="sidebar-nav">
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-tag"></span> Components</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> POA&Ms</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-duplicate"></span> Deployments</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-check"></span> Assessments</a></li>
+
+
+                  <div class="sidebar-artifacts-box">
+                  <ul class="sidebar-artifacts">
+
+                    <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>-->
+                    <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-tag"></span> Components</a></li>-->
+                    <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> POA&Ms</a></li>-->
+                    <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-duplicate"></span> Deployments</a></li>-->
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> Assessments</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> PTA</a></li>
+                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> SSPs</a></li>
                   </ul>
                   </div>
 
