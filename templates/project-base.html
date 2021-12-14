@@ -70,9 +70,9 @@
   <div class="col-md-12" style="padding:1em 0 1em 1em;">Breadcrumb here?</div>
 </div>-->
     {{ block.super }}
-<div class="container">
+<div class="container" style="border:1px solid;" >
 <div class="row">
-        <div class="col-md-3" style="margin:0; padding:0;">
+        <div class="col-md-3" style="margin:0; padding:0; border:1px solid;">
             <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
                 {% block above_title %}
                     {% if authoring_tool_enabled %}
@@ -114,6 +114,7 @@
                   .unassessed { color: #333; font-weight:light;}
                   .project-info-compliance { font-size:.9em;}
                   .project-info-controls { font-size:.9em;}
+                  .project-info-poams { font-size:.9em;}
                   .project-info-components { font-size:.9em;}
                   .project-info-systemcomponents { font-size: .8em;}
                   .project-info-systemcomponents a:link{ color: #95999B; }
@@ -134,9 +135,6 @@
                   .sidebar-syscomp { padding:15px;}
 
                   </style>
-
-
-
 
 
 
@@ -161,7 +159,7 @@
 
 
 
-                  <span class="project-info-poams">- POA&Ms (X)</span>
+                  <span class="project-info-poams">- Plan of Action & Milestones</span>
 
 
                   </div>
