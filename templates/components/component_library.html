@@ -30,9 +30,9 @@
     <div class="portfolio-top">
         <div class="container">
             <div class="portfolio-main">
-                <a id="component-new" href="{% url 'new_element' %}" class="btn btn-success">Create a Component</a>
-                <a id="component-import-oscal" class="btn btn-success" onclick="show_import_component_modal(); return false;" href="#">Import OSCAL Component</a>
-                <a id="import_records_link" href="{% url 'import_records' %}" class="btn btn-success">Manage Import Records</a>
+                <a id="component-new" href="{% url 'new_element' %}" class="btn btn-default">Create a Component</a>
+                <a id="component-import-oscal" class="btn btn-default" onclick="show_import_component_modal(); return false;" href="#">Import OSCAL Component</a>
+                <a id="import_records_link" href="{% url 'import_records' %}" class="btn btn-default">Manage Import Records</a>
             </div>
 
             <h2 class="">Component Library</h2>
@@ -60,9 +60,10 @@
             {% csrf_token %}
         <input type="hidden" name="hiddenChecks" id="hiddenChecks" value="" />
             <div id="" class="row">
-                <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>
-                 <button id="compare-select" onclick="select_all(true); return false;" href="#" class="btn btn-success">Select all</button>
-                 <button id="compare-deselect" onclick="select_all(false); return false;" href="#" class=" btn btn-danger">Deselect all</button>
+              <div class="col-md-12" style="text-align:right; padding: 0 0 10px 0;">
+                <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>&nbsp;&nbsp;
+                 <a id="compare-select" onclick="select_all(true); return false;" href="#">Select all</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="compare-deselect" onclick="select_all(false); return false;" href="#" >Deselect all</a>
+                 </div>
                 <div id="" class="col-xs-12"><span>{% include 'components/paginate_comp.html' %}</span></div>
             </div>
 
