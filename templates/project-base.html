@@ -70,36 +70,9 @@
   <div class="col-md-12" style="padding:1em 0 1em 1em;">Breadcrumb here?</div>
 </div>-->
     {{ block.super }}
-<div class="container" style="border:1px solid;" >
-<div class="row">
+
         <div class="col-md-3" style="margin:0; padding:0; border:1px solid;">
-            <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
-                {% block above_title %}
-                    {% if authoring_tool_enabled %}
-                        <center class="authoring-tool-hidden authoring-tool-box">
-                            <p class="text-info">
-                                You are in author mode. Authoring tools have been enabled for this module.
-                            </p>
-                        </center>
 
-                        <center class="authoring-tool-hidden authoring-tool-box">
-                            <p>
-                                <a href="#" onclick="show_authoring_tool_module_editor(); return false;"
-                                   class="authoring-tool-style">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                    Edit App
-                                </a>
-
-                                <a href="#"
-                                   onclick="authoring_tool_new_question({{ project.root_task.id }}, true); return false;"
-                                   class="authoring-tool-style">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    Add Module
-                                </a>
-                            </p>
-                        </center>
-                    {% endif %}
-                {% endblock %}
 
                 {# if is_project_page #}
 
@@ -190,6 +163,36 @@
                   </ul>
                   </div>
 
+                  <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
+
+                  <!-- Authoring mode code here for now -->
+
+                      {% block above_title %}
+                          {% if authoring_tool_enabled %}
+                              <center class="authoring-tool-hidden authoring-tool-box">
+                                  <p class="text-info">
+                                      You are in author mode. Authoring tools have been enabled for this module.
+                                  </p>
+                              </center>
+
+                              <center class="authoring-tool-hidden authoring-tool-box">
+                                  <p>
+                                      <a href="#" onclick="show_authoring_tool_module_editor(); return false;"
+                                         class="authoring-tool-style">
+                                          <span class="glyphicon glyphicon-pencil"></span>
+                                          Edit App
+                                      </a>
+
+                                      <a href="#"
+                                         onclick="authoring_tool_new_question({{ project.root_task.id }}, true); return false;"
+                                         class="authoring-tool-style">
+                                          <span class="glyphicon glyphicon-plus"></span>
+                                          Add Module
+                                      </a>
+                                  </p>
+                              </center>
+                          {% endif %}
+                      {% endblock %}
 
 
                 {% block action_buttons %}
@@ -237,8 +240,6 @@
 
         </div>
 
-      </div>
-         <!-- /row -->
     </div> <!-- /container -->
       <footer>
             <div class="row footer-row">
