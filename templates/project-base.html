@@ -103,10 +103,12 @@
 
                   .sidebar-artifacts li { list-style:none; padding-bottom:.5em; font-size:.8em;}
                   .sidebar-icon { padding-right:.3em;}
-                  .sidebar-block { padding:1em 1em 1em 0; background-color: #FFFFFF;}
+                  .sidebar-block { padding:2em 1em 1em 0; background-color: #FFFFFF;}
 
                   .sidebar-syscomp { padding:15px;}
-
+                  .lighter { color:#666666;}
+                  .bar-box { background-color:#E3EBE3; width:100%; height:12px;font-size:.5em; display:block; margin-bottom:1.5em;}
+                  .bar-box-bar { background:#80CC80; height:12px; }
                   </style>
 
 
@@ -123,27 +125,25 @@
 
 
                   <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:1 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
-                  <div class="fake-bar"></div>
-
+                  <div class="bar-box"><div class="bar-box-bar" style="width:{{ percent_compliant_100|floatformat:1 }}%;"></div></div>
 
                   <span class="project-info-controls" onclick="window.location.assign('{% url 'controls_selected' system_id=project.system.id %}')" style="cursor: pointer;">Controls Addressed ({{ controls_status_count.Addressed }} of {{ project.system.root_element.controls.all|length }})</span>
-                  <br />
-                  <div class="fake-bar"></div>
+
+                  <div class="bar-box"><div class="bar-box-bar" style="width:15%;"></div></div>
 
 
-
-                  <span class="project-info-poams">- Plan of Action & Milestones</span>
-
+                  <span class="project-info-poams">Plan of Action & Milestones (7 of 28)</span>
+                  <div class="bar-box"><div class="bar-box-bar" style="width:25%;"></div></div>
 
                   </div>
 
                   <div class="sidebar-syscomp" style="margin-top:1em;">
 
                     <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:.5em;">
-                  <span style="font-size:1em; font-weight:bold;">Components</span>
+                  <span class="sidebar-icon glyphicon glyphicon-wrench"></span><span style="font-size:1em; font-weight:bold;">Components</span>
                     </div>
 
-                    <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
+                    <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">System Components ({{ project.system.get_producer_elements|length }})</span><br />
 
                     <span class="project-info-systemcomponents">
 
@@ -157,7 +157,7 @@
 
                   <div class="sidebar-artifacts-box">
                     <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:1em;">
-                  <span style="font-size:1em; font-weight:bold;">Artifacts</span>
+                  <span class="sidebar-icon glyphicon glyphicon-list"></span><span style="font-size:1em; font-weight:bold;">Artifacts</span>
                     </div>
                   <ul class="sidebar-artifacts">
 
@@ -165,9 +165,9 @@
                     <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-tag"></span> Components</a></li>-->
                     <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> POA&Ms</a></li>-->
                     <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-duplicate"></span> Deployments</a></li>-->
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> Assessments</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> PTA</a></li>
-                    <li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> SSPs</a></li>
+                    <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">Assessments</a></li>
+                    <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">PTA</a></li>
+                    <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">SSPs</a></li>
                   </ul>
                   </div>
 
