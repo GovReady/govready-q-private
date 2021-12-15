@@ -71,7 +71,7 @@
 </div>-->
     {{ block.super }}
 
-        <div class="col-md-3" style="margin:0; padding:0; border:1px solid;">
+        <div class="col-md-3 col-lg-2">
 
 
                 {# if is_project_page #}
@@ -85,11 +85,11 @@
                   h3.port-hed { margin:0; font-size: .7em; color:#333;}
                   .project-info { border-top:1px solid #C0E6C0; border-bottom:1px solid #C0E6C0; display:block; margin:1.2em 0 1.5em 0; padding:.5em 0; font-size:.7em; width:95%; color:#333;}
                   .unassessed { color: #333; font-weight:light;}
-                  .project-info-compliance { font-size:.9em;}
-                  .project-info-controls { font-size:.9em;}
-                  .project-info-poams { font-size:.9em;}
-                  .project-info-components { font-size:.9em;}
-                  .project-info-systemcomponents { font-size: .8em;}
+                  .project-info-compliance { font-size:.8em;}
+                  .project-info-controls { font-size:.8em;}
+                  .project-info-poams { font-size:.8em;}
+                  .project-info-components { font-size:.8em;}
+                  .project-info-systemcomponents { font-size: .7em;}
                   .project-info-systemcomponents a:link{ color: #95999B; }
 
                   .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; }
@@ -101,7 +101,7 @@
                   .sidebar-artifacts a {color:#666666; text-decoration:none;}
                   .sidebar-artifacts a:hover {color:#337ab7; text-decoration:none;}
 
-                  .sidebar-artifacts li { list-style:none; padding-bottom:.5em;}
+                  .sidebar-artifacts li { list-style:none; padding-bottom:.5em; font-size:.8em;}
                   .sidebar-icon { padding-right:.3em;}
                   .sidebar-block { padding:1em 1em 1em 0; background-color: #FFFFFF;}
 
@@ -138,6 +138,11 @@
                   </div>
 
                   <div class="sidebar-syscomp" style="margin-top:1em;">
+
+                    <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:.5em;">
+                  <span style="font-size:1em; font-weight:bold;">Components</span>
+                    </div>
+
                     <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">- System Components ({{ project.system.get_producer_elements|length }})</span><br />
 
                     <span class="project-info-systemcomponents">
@@ -151,6 +156,9 @@
 
 
                   <div class="sidebar-artifacts-box">
+                    <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:1em;">
+                  <span style="font-size:1em; font-weight:bold;">Artifacts</span>
+                    </div>
                   <ul class="sidebar-artifacts">
 
                     <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>-->
@@ -233,14 +241,20 @@
 
 </div>
 
-        <div class="col-md-9">
+        <div class="col-md-7 col-lg-8" style="margin-top:30px;">
 
               {% block body_content %}
               {% endblock %}
 
         </div>
 
-    </div> <!-- /container -->
+          <div class="col-md-2 col-lg-2">
+<div style="padding:30px 0;">
+            right sidebar functions go here sometimes but not always.
+          </div>
+            </div>
+
+</div>
       <footer>
             <div class="row footer-row">
                 {% include "footer.html" %}

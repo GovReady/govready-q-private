@@ -452,7 +452,7 @@
                     {# Once again, different HTML depending on the layout mode being used. For row mode, move to the second column for the question's title. #}
                     {% if layout_mode == "rows" %}
                       </div> <!-- /col -->
-                      <div class="col-sm-9">
+                      <div class="col-md-8">
                     {% endif %}
 
                     {# The label for the icon is the title of the question in the question's specification. #}
@@ -479,6 +479,7 @@
                     {% if layout_mode == "rows" %}
                       </div> <!-- /col -->
                       </div> <!-- /row -->
+
                     {% endif %}
 
                     {# If the user had permission to start a task and we started an 'a' or 'form' element, end it. #}
@@ -513,7 +514,7 @@
       </div> <!-- /col -->
     {% endfor %} {# column #}
     {% endwith %}
-    </div> <!-- /row for columns -->
+  
   <!-- </div> -->
 
 {% endblock %}

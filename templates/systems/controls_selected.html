@@ -14,38 +14,53 @@
 {% include "controls/_style-controls.html" %}
 {% endblock %}
 
+
+
 <!-- action buttons included from project-base.html -->
 <!-- authoring_tool_enabled included from project-base.html -->
 
 {% block body_content %}
 
-  <div class="systems-top">
-    <div id="tab-content" class="row rows-header">
-        <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"><span class="systems-selected-items">Selected controls</span></div>
-        <div id="" class="col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
-          <form id="add-control" class="form-inline pull-right" method="post"
-                action="{%  url 'system_controls_add' system_id=system.id %}">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="control_id">Add control</label>&nbsp;&nbsp;
-                <!-- NOTE: Selection box converts to a Select2 selection box via script at bottom of page -->
-                <select class="producer_element_id" id="add-control_id-select" name="control_id" style="width:440px;">
-                    <option value="None" selected disabled hidden>Select a Control</option>
-                </select>
-            </div>
-            <input type="hidden" id="add-catalog_key-input" name="catalog_key">
-          </form>
-        </div>
-        <div id="" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 pull-right">
-          <!--a href="selected/export/xacta/xlsx">export</a-->
-          <span class="glyphicon glyphicon-download-alt pull-right"
-                style="cursor: pointer;"
-                onclick="download_document('{{document.id|escapejs}}', {{ system.id }})"></span>
-        </div>
+
+    <form id="add-control" class="form-inline pull-right" method="post" action="{%  url 'system_controls_add' system_id=system.id %}">
+  {% csrf_token %}
+    <div class="form-group">
+      <!-- NOTE: Selection box converts to a Select2 selection box via script at bottom of page -->
+      <select class="producer_element_id" id="add-control_id-select" name="control_id" style="min-width:250px;">
+          <option value="None" selected disabled hidden>Select a Control to add</option>
+      </select>
     </div>
+    <input type="hidden" id="add-catalog_key-input" name="catalog_key">
+    </form>
+<br /><br />
+
+
+<style>
+.control-table { width:100%; border:1px solid #F2F2F2; font-size:.9em;}
+.control-table td {padding:8px 5px 7px 5px; }
+.control-table tr { border-bottom:1px solid #F2F2F2;}
+
+</style>
+
+
+<div class="col">
+<table class="control-table">
+  <tr style="background:#F2F2F2;">
+  <td colspan="4"><span style="">Selected Controls</span></td>
+
+  <td colspan="2">
+  <span class="pull-right" style="font-size:.8em;">Download&nbsp;
+        <span class="glyphicon glyphicon-download-alt pull-right"
+        style="cursor: pointer;"
+        onclick="download_document('{{document.id|escapejs}}', {{ system.id }})"></span>
+  </span>
+</td>
+</tr>
+
+
+
     {% if controls|length < 1 %}
-      <div id="tab-content" class="row row-control">
-        <div id="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div>
           <p>No controls are currently selected for your system.</p>
           <p>An appropriate baseline will be assigned based on your questionnaire answers. Alternatively, you can predictively assign a control baseline from the list below.</p>
           <ul>
@@ -68,19 +83,26 @@
               {% endfor %}
           </ul>
         </div>
-      </div>
+
     {% else %}
       {% for control in controls %}
-        <div id="tab-content" class="row row-control">
-            <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+
+
+
+
+              <!-- converted to table from div mess -->
+              <tr>
+
+            <td style="width:15%;">
                 <a href= {% url 'control_editor' system_id=system.id catalog_key=control.oscal_catalog_key cl_id=control.oscal_ctl_id %}>{{ control.get_flattened_oscal_control_as_dict.id_display|upper }} </a>
-                <span class="systems-control-catalog pull-right">{{ control.oscal_catalog_key }}</span>
-            </div>
-            <div id="" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                {{ control.get_flattened_oscal_control_as_dict.title }}
-            </div>
-            <div id="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-              <div class="center-text">
+                </td>
+
+            <td style=" width:35%;">{{ control.get_flattened_oscal_control_as_dict.title }}</td>
+
+            <td style="width:25%;"><span class="systems-control-catalog">{{ control.oscal_catalog_key }}</span></td>
+
+            <td style="width:10%;">
+
                 {% with total=impl_smts_cmpts_count|get_item:control.oscal_ctl_id %}
                   {% if total > 0 %}
                     {{ total }} component{{ total|pluralize }}
@@ -88,36 +110,40 @@
                       &mdash;
                   {% endif %}
                 {% endwith %}
-              </div>
-              <div class="center-text">
+              </td>
+
+            <td style="width:13%;">
+
                 {% with total=impl_smts_legacy_dict|get_item:control.oscal_ctl_id %}
                   {% if total %}
                       1 legacy statement{{ total|pluralize }}
                   {% endif %}
                 {% endwith %}
-              </div>
-            </div>
+              </td>
+
             {% get_obj_perms request.user for system as "system_perms" %}
             {% if "view_system" in system_perms %}
-              <div id="" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 small">
-                <span class="pull-right">
-                  <a href="" onclick='confirm_cnt_rm("{% url 'system_control_remove' system_id=system.id element_control_id=control.id %}"); return false;'>
-                    <span class="glyphicon glyphicon-trash text-muted small" title="remove control"></span></a>
-                </span>
-              </div>
+              <td style="width:2%;">
+                <a href="" onclick='confirm_cnt_rm("{% url 'system_control_remove' system_id=system.id element_control_id=control.id %}"); return false;'>
+                    <span class="glyphicon glyphicon-trash text-muted small pull-right" title="remove control"></span></a>
+              </td>
             {% else %}
-              <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+              <td style="width:10%;">
                 {% if control.smts_updated %}
                   {{ control.smts_updated|timesince}} ago
                 {% else %}
                   {{ control.created|timesince}} ago
                 {% endif %}
-              </div>
+              </td>
             {% endif %}
-        </div>
+        </tr>
       {% endfor %}
     {% endif %}
+</table>
+
 </div>
+
+
 
 {% endblock %}
 
