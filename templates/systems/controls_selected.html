@@ -46,10 +46,10 @@
 <div class="col">
 <table class="control-table">
   <tr style="background:#F2F2F2;">
-  <td colspan="4"><span style="">Selected Controls</span></td>
+  <td colspan="3"><span style="">Selected Controls</span></td>
 
   <td colspan="2">
-  <span class="pull-right" style="font-size:.8em;">Download&nbsp;
+  <span class="pull-right" style="font-size:.8em;">Download&nbsp;&nbsp;
         <span class="glyphicon glyphicon-download-alt pull-right"
         style="cursor: pointer;"
         onclick="download_document('{{document.id|escapejs}}', {{ system.id }})"></span>
@@ -93,15 +93,15 @@
               <!-- converted to table from div mess -->
               <tr>
 
-            <td style="width:15%;">
+            <td style="width:25%;">
                 <a href= {% url 'control_editor' system_id=system.id catalog_key=control.oscal_catalog_key cl_id=control.oscal_ctl_id %}>{{ control.get_flattened_oscal_control_as_dict.id_display|upper }} </a>
                 </td>
 
-            <td style=" width:35%;">{{ control.get_flattened_oscal_control_as_dict.title }}</td>
+            <td style=" width:45%;">{{ control.get_flattened_oscal_control_as_dict.title }}<br /><span class="systems-control-catalog">{{ control.oscal_catalog_key }}</span></td>
 
-            <td style="width:25%;"><span class="systems-control-catalog">{{ control.oscal_catalog_key }}</span></td>
+            <!--<td style="width:25%;"><span class="systems-control-catalog">{{ control.oscal_catalog_key }}</span></td>-->
 
-            <td style="width:10%;">
+            <td style="width:15%;">
 
                 {% with total=impl_smts_cmpts_count|get_item:control.oscal_ctl_id %}
                   {% if total > 0 %}
