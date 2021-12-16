@@ -150,7 +150,7 @@
                     <span class="project-info-systemcomponents">
 
                         {% for component in project.system.get_producer_elements %}
-                            <a href={% url 'system_element' system_id=system.id element_id=component.id %}>{{ component.name }}</a>{% if not forloop.last %}, {% endif %}
+                            <a href={% url 'system_element' system.id component.id %}>{{ component.name }}</a>{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </span>
 
