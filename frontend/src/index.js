@@ -8,3 +8,4 @@ import './components/poams/component';
 import './components/controls/component';
 import './components/portfolios/component';
 import './components/assessments/component'
+import './components/components/component';
