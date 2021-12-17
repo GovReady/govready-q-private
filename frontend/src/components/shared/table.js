@@ -3,31 +3,18 @@
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import PerfectScrollbar from "react-perfect-scrollbar";
-
-import { makeStyles } from "@mui/styles";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Grid,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  TablePagination,
-  TextField,
-  Typography,
-} from "@mui/material";
-
-import Search from "@mui/icons-material/Search";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
-// import StatusBullet from "./statusBullet";
+import TablePagination from '@mui/material/TablePagination';
+import TextField from '@mui/material/TextField';
 import { useDebouncedCallback } from "use-debounce";
+import '../../../clientStyles.css'
+import {
+  Table,
+  Row,
+  Grid,
+  Col,
+
+}
+  from 'react-bootstrap';
 
 export const columnDataTypes = {
   STRING: 1,
@@ -36,42 +23,6 @@ export const columnDataTypes = {
   BOOL: 4,
 };
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: 0,
-  },
-  content: {
-    padding: 0,
-    overflowX: "auto",
-  },
-  inner: {
-    minWidth: 1050,
-  },
-  nameContainer: {
-    display: "flex",
-    alignItems: "baseline",
-  },
-  status: {
-    marginRight: 15,
-  },
-  actions: {
-    justifyContent: "flex-end",
-  },
-  tableRow: {
-    padding: "0 5px",
-    cursor: "pointer",
-    ".MuiTableRow-root.MuiTableRow-hover&:hover": {},
-  },
-  hoverable: {
-    "&:hover": {
-      cursor: `pointer`,
-    },
-  },
-  arrow: {
-    fontSize: 10,
-    position: "absolute",
-  },
-}));
 
 
 export const DataTable = (props) => {
@@ -88,15 +39,15 @@ export const DataTable = (props) => {
   });
   const [columns, setColumns] = useState(props.columns);
   const [sorting, setSorting] = useState(props.sortby);
-  const classes = useStyles();
+
   const [response, setResponse] = useState({ data: [], rollup: {} });
   const debounceDuration = 250;
-
 
 
   useEffect(() => {
     debouncedFetch(querystrings);
   }, [querystrings]);
+
   const error = false;
   const fetch = (args) => {
     if (props.rollups.length > 0) {
@@ -114,6 +65,7 @@ export const DataTable = (props) => {
     });
     return props.endpoint(cleanedArgs).then((resp) => {
       setResponse(resp.data);
+      props.onResponse(resp.data);
     });
   };
 
@@ -157,122 +109,97 @@ export const DataTable = (props) => {
     }
     return obj;
   };
-
+  
   return (
-    <Card>
-      {props.header !== undefined && <CardContent
-        style={{
-          border: "0.5px solid #bbb",
-          backgroundColor: "#eee",
-          color: "#373737b"
-        }}
-      >
-        {props.header}
-      </CardContent>}
-      <Card padding={"0"} style={{ border: "0.5px solid #bbb", borderRadius: "0px", }}>
-        <CardContent className={classes.content}>
-          <PerfectScrollbar>
+    <div className="panel-body">
+      <Grid>
+        <Grid>
+          <Row
+            style={{
+              background: "#eee",
+              height: "46.42px",
+              borderTopLeftRadius: "4px",
+              borderTopRightRadius: "4px",
+              border: "1px solid #bbb",
+              width: '1241.330px',
+              marginLeft: "-65px"
+            }}
+          >
+            <Col
+              md={6}
+              style={{
+                marginTop: "10px",
+                padding: "0px 0px",
+              }}
+            >
+              {props.header.props.children}
+            </Col>
+            <Col md={6}
+              style={{
+                padding: '0px 0px'
+              }} >
+            </Col>
+          </Row>
+        </Grid>
+        <Grid
+          style={{
+            border: "1px solid #bbb",
+            width: '1241.330px',
+            marginLeft: '-50px'
+          }}
+        >
+          <Row>
             {props.searchEnabled && (
-              <div className={classes.margin}>
-                {props.children}
-                <Grid
-                  container
-                  spacing={1}
-                  alignItems="flex-end"
-                  style={{ width: "100%", padding: "1rem" }}
-                >
-                  <Grid item>
-                    <Search fontSize={'large'} />
-                  </Grid>
-                  <Grid item style={{ width: "calc(100% - 1rem - 40px" }}>
-                    <TextField
-                      inputProps={{ style: { fontSize: 20 } }} // font size of input text
-                      InputLabelProps={{ style: { fontSize: 20 } }} // font size of input label
-                      variant="standard"
-                      label="Search"
-                      size="medium"
-                      fullWidth={true}
-                      onChange={(e) => doSearch(e.target.value)}
-                    />
-                  </Grid>
-                </Grid>
-              </div>
-            )}
-            <div className={classes.inner}>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    {columns.map((item, index) => (
-                      <TableCell
-                        key={index}
-                        className={classes.hoverable}
-                        onClick={() => {
-                          handleSetSorting(`${item.sortKey}`);
-                        }}
-                        style={{ fontSize: "17px", fontWeight: "bold", color: "#151515de" }}
-                      >
-                        <span style={{ marginLeft: "15px" }}>{item.display}</span>
-                        {item.sortKey !== undefined && <Typography
-                          className={classes.arrow}
-                          variant="body2"
-                          component="span"
-                        >
-                          {sorting[0] === item.sortKey ? (
-                            sorting[1] === "desc" ? (
-                              <KeyboardArrowDownIcon />
-                            ) : (
-                              <KeyboardArrowUpIcon />
+              <>
+                <TextField
+                  style={{ width: '96.5%', marginLeft: '20px' }}
+                  inputProps={{ style: { fontSize: 20 } }} // font size of input text
+                  InputLabelProps={{ style: { fontSize: 20 } }} // font size of input label
+                  variant="standard"
+                  label="Search"
+                  size="medium"
+                  fullWidth={true}
+                  onChange={(e) => doSearch(e.target.value)}
+                />
+                <Table hover condensed responsive>
+                  <tbody>
+                    {response.data &&
+                      response.data.map((obj, i) => (
+                        <tr key={i}>
+                          {columns.map((col, index) => {
+                            return (
+                              <td key={index}>
+                                <span style={{
+                                  marginLeft: "15px",
+                                  display: 'flex'
+                                }}
+                                >{col.renderCell(obj)}</span>
+                              </td>
                             )
-                          ) : null}
-                        </Typography>}
-
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {response.data &&
-                    response.data.map((obj) => (
-                      <TableRow
-                        className={classes.tableRow}
-                        hover={props.onRowClick !== undefined ? true: false}
-                        key={obj.id}
-                        onClick={() => {
-                          if (props.onRowClick !== undefined)
-                            props.onRowClick(obj)
-                        }
-                        }
-                      >
-                        {columns.map((col, index) => {
-                          return (
-                            <TableCell key={index} style={{ fontSize: "15px" }}>
-                              <span style={{ marginLeft: "15px" }}>{col.renderCell(obj)}</span>
-                            </TableCell>
-                          )
-                        })}
-                      </TableRow>
-                    ))}
-                </TableBody>
-              </Table>
-            </div>
-          </PerfectScrollbar>
-        </CardContent>
-        <CardActions className={classes.actions}>
-          <TablePagination
-            component="div"
-            count={
-              response.pages?.total_records ? response.pages?.total_records : 0
-            }
-            onPageChange={handlePageChange}
-            onRowsPerPageChange={handleRowsPerPageChange}
-            page={querystrings.page - 1}
-            rowsPerPage={querystrings.count}
-            rowsPerPageOptions={[5, 10, 25, 50, 100]}
-          />
-        </CardActions>
-      </Card>
-
-    </Card >
+                          })}
+                        </tr>
+                      ))}
+                  </tbody>
+                </Table>
+                <TablePagination
+                  style={{ fontSize: "15px" }}
+                  component="div"
+                  count={
+                    response.pages?.total_records ? response.pages?.total_records : 0
+                  }
+                  onPageChange={handlePageChange}
+                  onRowsPerPageChange={handleRowsPerPageChange}
+                  page={querystrings.page - 1}
+                  rowsPerPage={querystrings.count}
+                  rowsPerPageOptions={[5, 10, 25, 50, 100]}
+                />
+              </>
+            )}
+          </Row>
+        </Grid>
+      </Grid>
+    </div>
+    
   );
 };
 

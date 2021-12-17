@@ -3369,16 +3369,10 @@ def system_assessment_results_list(request, system_id=None):
             # User does not have permission to this system
             raise Http404
 
-        system = System.objects.get(id=system_id)
-        # Retrieve related selected controls if user has permission on system
-        if not request.user.has_perm('view_system', system):
-            # User does not have permission to this system
-            raise Http404
-
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
-        sars = system.system_assessment_result.all().order_by('created').reverse()
+        project = system.projects.first()
+        # sars = system.system_assessment_result.all().order_by('created').reverse()
 
         # Retrieve user's API keys
         api_keys = request.user.get_api_keys()
@@ -3386,7 +3380,7 @@ def system_assessment_results_list(request, system_id=None):
         context = {
             "system": system,
             "project": project,
-            "sars": sars,
+            # "sars": sars,
             "api_key_ro": api_keys['ro'],
             "api_key_rw": api_keys['rw'],
             "api_key_wo": api_keys['wo'],

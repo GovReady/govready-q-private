@@ -10,20 +10,23 @@ import {
 } from 'react-bootstrap';
 
 
-export const PortfolioTable = () => {
+export const AssessmentTable = ({ systemId }) => {
 
     const [records, setRecords] = useState(0);
     const [sortby, setSortBy] = useState(["title", "asc"]);
-    const editToolTip = (<Tooltip placement="top" id='tooltip-edit'> Edit Portfolio
+    const editToolTip = (<Tooltip placement="left" id='tooltip-edit'> Edit System Assessment Result
     </Tooltip>)
+    const calendarToolTip = (<Tooltip placement="top" id='tooltip-edit'> View System Assessment Result History
+    </Tooltip>)
+
     const [columns, setColumns] = useState([
         {
-            display: "Portfolio",
+            display: "Assessments",
             sortKey: "title",
-            renderCell: (obj) => {
+            renderCell: (obj) => {                
                 return (
                     <>
-                        <a href={`/portfolios/${obj.id}/projects`} sx={{ textDecoration: 'none' }}>
+                        <a href={`/systems/${obj.id}/sar/$${obj.id}/view}`} sx={{ textDecoration: 'none' }}>
 
                             <Glyphicon glyph="folder-close" style={{ color: '#3d3d3d' }} />
                             &nbsp;
@@ -34,52 +37,52 @@ export const PortfolioTable = () => {
                                 "&:hover": {
                                     textDecoration: 'underline',
                                 }
-                            }}>{obj.title}</span>
+                            }}>{obj.name}</span>
                         </a>
                     </>)
             }
         },
         {
-            display: "ID",
+            display: "Description",
             sortKey: "id",
             renderCell: (obj) => {
-                return <span>{obj.id}</span>
+                return <span>{obj.description}</span>
             }
         },
-        {
-            display: "Role",
-            sortKey: "role",
-            renderCell: (obj) => {
-                return <span>{obj.role}</span>
-            }
-        },       
         {
             display: "Created",
             sortKey: "created",
             renderCell: (obj) => {
-                return <span>{moment(obj.created).fromNow()}</span>
+                return <span>{moment(obj.updated).fromNow()}</span>
             }
         },
         {
             display: "Manage",
             renderCell: (obj) => {
-                return <>
-                    <a href={`/portfolios/${obj.id}/edit`}>
-                        <OverlayTrigger placement="right" overlay={editToolTip}>
+                return <span style={{ display: 'inlineBlock' }}>
+                    <a href={`/systems/${obj.id}/sar/${obj.id}/edit`}>
+                        <OverlayTrigger placement="left" overlay={editToolTip}>
                             <Glyphicon glyph="pencil" style={{ color: '#3d3d3d' }} />
                         </OverlayTrigger>
-
                     </a>
-                </>
+                    &nbsp;
+                    &nbsp;
+                    <a href={`/systems/${systemId}/deployment/${obj.id}/history`}>
+                        <OverlayTrigger placement="right" overlay={calendarToolTip}>
+                            <Glyphicon glyph="book" style={{ color: '#3d3d3d' }} />
+                        </OverlayTrigger>
+                    </a>
+
+                </span>
             }
         }
     ]);
 
     const endpoint = (querystrings) => {
-        return axios.get(`/api/v2/portfolios/`, { params: querystrings });
+        return axios.get(`/api/v2/systems/${systemId}/assessments/`, { params: querystrings });
     };
 
-    return <DataTable
+    return <DataTable        
         sortby={sortby}
         columns={columns}
         endpoint={endpoint}
@@ -89,12 +92,9 @@ export const PortfolioTable = () => {
                     float: "left",
                     textAlign: 'left',
                 }}>
-                    <span style={{ fontWeight: "bold", fontSize: "20px", marginLeft: "15px" }}> Portfolios </span>
-                </div>
-                <div style={{ marginTop: '3px' }}>
-                    <span style={{ marginLeft: "50px" }}>You have access to {records} portfolios</span>
-                </div>
-                <div style={{marginTop: '-26px'}}>
+                    <span style={{ fontWeight: "bold", fontSize: "20px", marginLeft: "15px" }}> System Assessment Results </span>
+                </div>               
+                <div style={{ marginTop: '-26px' }}>
                     <Button
                         className={'newButton'}
                         style={{
@@ -108,9 +108,9 @@ export const PortfolioTable = () => {
                         }}
                         variant="contained"
                         color="success"
-                        href={`/portfolios/new`}
+                        href={`/systems/${systemId}/assessment/new`}
                     >
-                        {'Create a portfolio'}
+                        {'New Assessment Results'}
                     </Button>
                 </div>
 
@@ -118,7 +118,7 @@ export const PortfolioTable = () => {
             </div>
 
         }
-        onResponse={(response)=>{
+        onResponse={(response) => {
             setRecords(response.pages.total_records);
         }}
     />

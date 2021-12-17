@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
-import moment from 'moment';
-import { Button, Chip, IconButton, Link, Stack, Tooltip } from '@mui/material';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { Chip, IconButton, Link, Stack, Tooltip } from '@mui/material';
+
 import DeleteIcon from '@mui/icons-material/Delete';
 
 import { makeStyles } from "@mui/styles";
@@ -33,14 +28,16 @@ const useStyles = makeStyles((theme) => ({
 
 export const ComponentsTable = ({ systemId }) => {
 
-    
+   
     const classes = useStyles();
-    const [sortby, setSortBy] = useState(["name", "asc"]);
+    const [sortby, setSortBy] = useState(["poam_id", "asc"]);
+
     const [columns, setColumns] = useState([
         {
             display: "ID",
             sortKey: "poam_id",
             renderCell: (obj) => {
+                console.log(obj)
                 return <a className={classes.poam_id} href={`/controls/${systemId}/component/${obj.id}`} >
                     {obj.poam_id}
                 </a>
@@ -50,7 +47,7 @@ export const ComponentsTable = ({ systemId }) => {
             display: "",
             sortKey: "",
             renderCell: (obj) => {
-                console.log(obj)
+                // console.log(obj)
                 return <Stack spacing={1}>
                     <Chip label={"software"} variant="outlined"/>
                 </Stack>
@@ -69,7 +66,7 @@ export const ComponentsTable = ({ systemId }) => {
             display: "Training course",
             sortKey: "training",
             renderCell: (obj, index) => {
-                console.log('index: ', index)
+                // console.log('index: ', index)
                 return <span>training course</span>
             }
         },
@@ -109,24 +106,9 @@ export const ComponentsTable = ({ systemId }) => {
         sortby={sortby}
         columns={columns}
         endpoint={endpoint}
-        header={<div style={{ display: "block" }}>
+        header={<div style={{ display: "flex" }}>
             <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> Selected components </span>
-            <Box sx={{ minWidth: 300 }}>
-                <FormControl sx={{ minWidth: 300 }}>
-                    <InputLabel id="component-select-label">Selected Component</InputLabel>
-                    <Select
-                        labelId="component-select-label"
-                        id="component-select"
-                        value={availableComponentsToAdd}
-                        label="Available Components to add"
-                        onChange={handleChange}
-                    >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-            </Box>
+           
         </div>}
     />
 }

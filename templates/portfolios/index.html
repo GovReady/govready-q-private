@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load q %}
+
 
 {% block title %}
 Your Compliance Portfolios
@@ -15,20 +15,11 @@ Your Compliance Portfolios
 {% block body %}
 
 <div class="portfolio-top">
-  <div class="container">
-    {% comment %} <div class="portfolio-main">
-      <a id="new-portfolio" href="/portfolios/new" class="btn btn-success">Create a portfolio</a>
-    </div>
+  <div class="container"> 
     
-    <h2 class="">Portfolios</h2> {% endcomment %}
+    
     <div id="portfolio-table"></div>
-    {% comment %} {% if portfolios|length > 0 %}
-    <p>You have access to {{ portfolios|length }} portfolio{{ portfolios|pluralize }}</p>
-    {% else %}
-    <p>You do not have access to any portfolios.</p>
-    {% endif %}
-
-    {% include "portfolios/portfolios_table.html" with portfolios=portfolios %} {% endcomment %}
+   
 
   </div>
 </div>

@@ -6,12 +6,16 @@ from rest_framework import routers
 from rest_framework_nested.routers import NestedSimpleRouter
 from api.controls.views.element import ElementViewSet
 from api.controls.views.system import SystemViewSet, SystemControlsViewSet, SystemAssessmentViewSet, SystemPoamStatementsViewSet
-from api.controls.views.controls import ControlsViewSet
+from api.controls.views.controls import ControlsViewSet, CatalogDataViewSet, CatalogData
 
 router = routers.DefaultRouter()
 router.register(r'elements', ElementViewSet)
 router.register(r'systems', SystemViewSet)
 
+router.register(r'catalog-data', CatalogDataViewSet)
+
+
+# router.register(r'controls/catalogs', CatalogData)
 router.register(r'controls', ControlsViewSet)
 
 systems_router = NestedSimpleRouter(router, r'systems', lookup='systems')

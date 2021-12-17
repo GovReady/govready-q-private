@@ -19,7 +19,7 @@
 
 {% block body_content %}
 
-<div id="systems-controls-table"></div>
+{% comment %} <div id="systems-controls-table"></div> {% endcomment %}
 
 
   <div class="systems-top">
@@ -132,7 +132,7 @@
     var url = "/systems/{{ system.id }}/controls/catalogs/{{ control_id.oscal_catalog_key }}/control/" + control_id;
     window.location.href = url;
   }
-  console.log({{system.id}});
+  
   
   
   $(document).ready(function() {

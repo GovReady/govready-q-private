@@ -12,8 +12,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import EditIcon from '@mui/icons-material/Edit';
 import HistoryIcon from '@mui/icons-material/History';
-
 import { makeStyles } from "@mui/styles";
+
+import '../../../clientStyles.css'
+
+
+import { Badge, Table } from 'react-bootstrap'
 
 const useStyles = makeStyles((theme) => ({
     name:
@@ -44,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export const SystemsControlTable = ({ systemId }) => {
+export const SystemsControlTable = ({ systemId }) => {    
     const classes = useStyles();
     const [sortby, setSortBy] = useState(["oscal_ctl_id", "asc"]);
     const [age, setAge] = React.useState('');
@@ -53,6 +57,7 @@ export const SystemsControlTable = ({ systemId }) => {
             display: "Access Control",
             sortKey: "oscal_ctl_id",
             renderCell: (obj) => {
+                console.log(obj)
                 const catalogKeyToUpper = obj.oscal_ctl_id.toUpperCase()
                 return <a className={classes.name} href={`/systems/${systemId}/controls/`} >
                     {catalogKeyToUpper}
@@ -63,28 +68,32 @@ export const SystemsControlTable = ({ systemId }) => {
             display: "OSCAL Catalog Key",
             sortKey: "oscal_catalog_key",
             renderCell: (obj) => {
-                return <Stack spacing={.5}>
-                    <Chip
-                        className={classes.chip}
-                        label={obj.oscal_catalog_key}
-                        variant="outlined"
-                    />
-                </Stack>
+                return <Badge
+                    style={{
+                        background: "#fff",
+                        border: "1px solid #aaa",
+                        color: "#aaa", 
+                        fontSize: ".65em",
+                        textAlign: "center",                       
+                        
+                    }}
+                    className={'oscal_catalog_key'}
+                    label={obj.oscal_catalog_key}
+                    variant="outlined"
+                >{obj.oscal_catalog_key}</Badge>
             }
         },
-        {
-            display: "Updated",
-            sortKey: "updated",
-            renderCell: (obj) => {
-                return <span>{moment(obj.updated).fromNow()}</span>
-            }
-        },
+        // {
+        //     display: "Updated",
+        //     sortKey: "updated",
+        //     renderCell: (obj) => {
+        //         return <span>{moment(obj.updated).fromNow()}</span>
+        //     }
+        // },
         {
             // delete button
             display: "",
             renderCell: (obj) => {
-                console.log(obj)
-
                 return <>
                     <Link href={`/systems/${systemId}/controls/remove/${obj.id}`}>
                         <IconButton>
@@ -117,9 +126,9 @@ export const SystemsControlTable = ({ systemId }) => {
                     // display: "block"
                 }}>
                 <span style={{
+                    fontSize: "14pt",
+                    marginLeft: "15px",
                     fontWeight: "bold",
-                    fontSize: "20px",
-                    marginLeft: "15px"
                 }}> Selected Controls </span>
 
                 {/* <Box
@@ -155,7 +164,7 @@ export const SystemsControlTable = ({ systemId }) => {
                 >
                     {'New Deployment'}
                 </Button> */}
-                
+
             </div>}
     />
 }

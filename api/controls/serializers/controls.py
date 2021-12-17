@@ -3,6 +3,7 @@ from api.controls.serializers.element import DetailedElementSerializer
 from controls.models import CommonControlProvider, CommonControl, ElementCommonControl
 from controls.oscal import CatalogData
 from rest_framework import serializers
+
 class SimpleCommonControlProviderSerializer(ReadOnlySerializer):
     class Meta:
         model = CommonControlProvider
@@ -44,7 +45,21 @@ class CatalogDataReadSerializer(ReadOnlySerializer):
 
     def get_title(self, obj):
         return obj.catalog_json['catalog']['metadata']['title'].strip()
+
     class Meta:
         model = CatalogData
         fields = ['catalog_key', 'title']
 
+class CatalogDataGroup(serializers.Serializer):
+    id = serializers.CharField()
+    title = serializers.CharField()
+
+class CatalogDataWithGroupReadSerializer(CatalogDataReadSerializer):
+    groups = serializers.SerializerMethodField()
+
+    def get_groups(self, obj):
+        return [CatalogDataGroup(x).data for x in obj.catalog_json['catalog'].get('groups', [])]
+
+    class Meta:
+        model = CatalogData
+        fields = CatalogDataReadSerializer.Meta.fields + ['groups']

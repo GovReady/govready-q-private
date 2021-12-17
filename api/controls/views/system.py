@@ -40,7 +40,7 @@ class SystemControlsViewSet(CustomSearchModelMixin, ReadOnlyViewSet):
 
 
 
-class SystemAssessmentViewSet(ReadOnlyViewSet):
+class SystemAssessmentViewSet(CustomSearchModelMixin, ReadOnlyViewSet):
     queryset = SystemAssessmentResult.objects.all()
 
     serializer_classes = SerializerClasses(
@@ -49,6 +49,9 @@ class SystemAssessmentViewSet(ReadOnlyViewSet):
     )
 
     NESTED_ROUTER_PKS = [{"pk": "systems_pk", "model_field": "system"}]
+
+    def search(self, request, keyword):
+        return Q(name__icontains=keyword) | Q(description__icontains=keyword)
 
 
 class SystemPoamStatementsViewSet(CustomSearchModelMixin, ReadOnlyViewSet):

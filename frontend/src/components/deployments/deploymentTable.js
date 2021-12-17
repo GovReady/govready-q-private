@@ -2,41 +2,27 @@ import React, { useState } from 'react';
 import { DataTable } from '../shared/table';
 import axios from 'axios';
 import moment from 'moment';
-import { Button, IconButton, Link, Tooltip } from '@mui/material';
-
-import EditIcon from '@mui/icons-material/Edit';
-import HistoryIcon from '@mui/icons-material/History';
-
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles((theme) => ({
-    name:
-    {
-        color: 'black'
-    },
-    headerButton: {
-        float: 'right',
-        marginRight: "20px",
-        // marginLeft: "90rem",
-        backgroundColor: '#5cb85c',
-        background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
-        width: '20rem',
-        ".MuiButton-root&:hover": {
-            color: "#fff"
-        },
-
-    },
-}))
+import {
+    Tooltip,
+    Button,
+    Glyphicon,
+    OverlayTrigger,
+} from 'react-bootstrap';
 
 export const DeploymentTable = ({ systemId }) => {
-    const classes = useStyles();
     const [sortby, setSortBy] = useState(["name", "asc"]);
+    const historyToolTip =(<Tooltip title="History" placement="top" id='tooltip-history'>
+                History
+            </Tooltip> )
+    const editToolTip = (<Tooltip placement="top" id='tooltip-edit'> Edit
+            </Tooltip>)
     const [columns, setColumns] = useState([
         {
             display: "Name",
             sortKey: "name",
             renderCell: (obj) => {
-                return <a className={classes.name} href={`/systems/${systemId}/deployment/${obj.id}/inventory`} >
+                
+                return <a className={name} href={`/systems/${systemId}/deployment/${obj.id}/inventory`} >
                     {obj.name}
                 </a>
             }
@@ -58,22 +44,22 @@ export const DeploymentTable = ({ systemId }) => {
         {
             display: "Actions",
             renderCell: (obj) => {
-                return <>
-                    <Link href={`/systems/${systemId}/deployment/${obj.id}/edit`}>
-                        <Tooltip title="Edit" placement="top">
-                            <IconButton>
-                                <EditIcon />
-                            </IconButton>
-                        </Tooltip>
-                    </Link>
-                    <Link href={`/systems/${systemId}/deployment/${obj.id}/history`}>
-                        <Tooltip title="History" placement="top">
-                            <IconButton>
-                                <HistoryIcon />
-                            </IconButton>
-                        </Tooltip>
-                    </Link>
-                </>
+                return <span style={{ display: 'inlineBlock' }}>
+                    <a href={`/systems/${systemId}/deployment/${obj.id}/edit`}>
+                        <OverlayTrigger placement="left" overlay={editToolTip}>
+                            <Glyphicon glyph="pencil" style={{ color: '#3d3d3d' }} />
+                        </OverlayTrigger>
+                    </a>
+                    &nbsp;
+                    &nbsp;
+                    <a href={`/systems/${systemId}/deployment/${obj.id}/history`}>
+                        <OverlayTrigger placement="right" overlay={historyToolTip}>
+                            <Glyphicon glyph="book" style={{ color: '#3d3d3d' }}/>
+                        </OverlayTrigger>
+                    </a>
+
+                </span>
+
             }
         },
     ]);
@@ -85,17 +71,28 @@ export const DeploymentTable = ({ systemId }) => {
         sortby={sortby}
         columns={columns}
         endpoint={endpoint}
-        header={<div style={{ display: "block" }}>
-            <span style={{fontWeight: "bold", fontSize: "20px", marginLeft: "15px"}}> Deployments </span>
-            <Button
-                className={classes.headerButton}
-                variant="contained"
-                color="success"
-                // style={{width: '20rem'}} 
-                href={`/systems/${systemId}/deployment/new`}
-            >
-                {'New Deployment'}
-            </Button>
+        header={<div style={{ display: "flex" }}>
+
+            <span style={{ fontWeight: "bold", fontSize: "20px", marginLeft: "15px" }}> Deployments </span>
+            <span >
+                <Button
+                    className={'newDeploymentButton'}
+                    style={{
+                        float: 'right',
+                        marginRight: "-485px",
+                        marginTop: "-2.75px",
+                        backgroundColor: '#5cb85c',
+                        background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
+                        width: '20rem',
+                        color: "#fff"
+                    }}
+                    variant="contained"
+                    color="success"
+                    href={`/systems/${systemId}/deployment/new`}
+                >
+                    {'New Deployment'}
+                </Button>
+            </span>
         </div>}
     />
 }
