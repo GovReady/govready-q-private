@@ -773,6 +773,31 @@ class Task(BaseModel):
     # ANSWERS
 
     @staticmethod
+    def get_all_current_answer_records2(tasks):
+        # Efficiently get the current answer to every question of each of the tasks.
+        #
+        # Since we track the history of answers to each question, we need to get the most
+        # recent answer for each question. It's fastest if we pre-load the complete history
+        # of every question rather than making a separate database call for each question
+        # to find its most recent answer. See TaskAnswer.get_current_answer().
+        #
+        # Return a generator that yields tuples of (Task, Module.spec['question']['question']?, TaskAnswerHistory).
+        # Among tuples for a particular Task, the tuples are in order of the questions
+
+        ## TODO Migrating away from ModuleQuestions
+        # Should be able to replace most of the below with the following revised code
+        # for task in tasks:
+        #   module = task.module
+        #   for question in module.spec.['questions']:
+        #       # Get the latest TaskAnswerHistory for the question, if there is one
+        #       # [by n+1 filter]: TaskAnswerHistory.objects.filter(task and question_key)
+                # [by sorting through history]
+                # next(tah for tah blah, blah if tah.value=x)
+                # get answer
+                # yield (task, question, answer)
+                return (1, 1, 1)
+
+    @staticmethod
     def get_all_current_answer_records(tasks):
         # Efficiently get the current answer to every question of each of the tasks.
         #
@@ -794,6 +819,7 @@ class Task(BaseModel):
         tasks_ = {task.id: task for task in
                   Task.objects.select_related('module', 'project').filter(
                       id__in=history.values_list("taskanswer__task_id", flat=True))}
+                
         questions = {question.id: question for question in
                      ModuleQuestion.objects.select_related('module').filter(
                          id__in=history.values_list('taskanswer__question_id', flat=True))}
@@ -801,7 +827,6 @@ class Task(BaseModel):
         for ansh in history:
             current_answers.setdefault(
                 (tasks_.get(ansh.taskanswer.task_id), questions.get(ansh.taskanswer.question_id)), ansh)
-
         # Batch load all of the ModuleQuestions.
         questions = ModuleQuestion.objects.prefetch_related('answer_type_module__questions').select_related('module') \
             .filter(module__in={task.module for task in tasks}) \

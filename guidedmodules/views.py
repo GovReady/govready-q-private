@@ -227,6 +227,8 @@ def get_next_question(current_question, task):
     # go to the next one that is. If there are no subsequent questions to answer, go to the
     # first one that is answerable.
     answerable = list(answers.answerable)
+    print("5 ========== answerable", answerable)
+    
     # Avoid going to the current question as the computed available next question to answer
     if current_question in answerable:
         answerable.remove(current_question)
@@ -269,7 +271,6 @@ def save_answer(request, task, answered, context, __):
     # We can do this by stuffing all of q into q.spec
     from copy import deepcopy
     q.spec = deepcopy(q)
-    print("2.5", "==========", q)
     # task.module.get_question_by_id
 
     # store question/tasks for back button
@@ -280,13 +281,14 @@ def save_answer(request, task, answered, context, __):
     # make a function that gets the URL to the next page
     def redirect_to():
 
+        next_q = get_next_question(q, task)
+
         # ==============================================
         # TEMPORARY TODO: FIX
         # TEMPORARY WHILE MOVE AWAY FROM ModuleQuestions
         return "/projects"
         # ==============================================
 
-        next_q = get_next_question(q, task)
         if next_q:
             # Redirect to the next question.
             return task.get_absolute_url_to_question(next_q) + f"?back_url={back_url}&previous=nquestion"
