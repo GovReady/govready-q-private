@@ -409,9 +409,7 @@ def component_library(request):
     query = request.GET.get('search')
     if query:
         try:
-            element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)
-                                                  | Q(pk__in=set(Statement.objects.filter(body__search=query).values_list('producer_element', flat=True)))
-                                                 ).exclude(element_type='system').distinct()
+            element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
         except:
             logger.info(f"Ah, you are not using Postgres for your Database!")
             element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
@@ -462,6 +460,37 @@ def compare_components(request):
 
     checks = json.loads(request.POST.get('hiddenChecks'))
     compare_list = list(checks.values())
+    # Get prototype smts for all components sorted by class(catalog), sid, pid, cmpt
+    smts_all = Statement.objects.filter(producer_element__id__in=compare_list,
+                                        statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name
+                                        ).order_by('sid_class', 'sid', 'pid', 'producer_element__id')
+    print(smts_all)
+    # Iterate through controls pushing all the same catalog, sid, pid onto a stack
+    cur_key = None
+    smt_diffs = {}
+    for smt in smts_all:
+        print(f"smt.id {smt.id}")
+        smt_key = f"{smt.sid_class}+{smt.sid}+{smt.pid}"
+        print(smt_key)
+        if smt_key != cur_key:
+            cur_key = smt_key
+            smt_diffs[cur_key] = {}
+            smt_diffs[cur_key][smt.producer_element.id] = {"smt_id": smt.id, "diff": "n/a"}
+        else:
+            smt_diffs[cur_key][smt.producer_element.id] = {"smt_id": smt.id, "diff": "n/a"}
+    print("=======")
+    print(smt_diffs)
+    # class-pid-sid = {cmpt1:{}, cmpt2:{}, cmpt3:{}}
+    # {'NIST_SP-800-53_rev4+at-2+at-2': {1: {'smt_id': 1, 'diff': 'n/a'}, 2: {'smt_id': 6, 'diff': 'n/a'}}, 
+    #  'NIST_SP-800-53_rev4+at-2.2+2':  {1: {'smt_id': 3, 'diff': 'n/a'}, 2: {'smt_id': 7, 'diff': 'n/a'}},
+    #  'NIST_SP-800-53_rev4+at-3+at-3': {1: {'smt_id': 4, 'diff': 'n/a'}, 2: {'smt_id': 8, 'diff': 'n/a'}}}
+    # Turn or dictionary into and ordered array
+    # Loop through our list and update the diffs and pad any missing information
+    # Pad missing information so every component has information
+    # Finish with a simple array of comparisons to display
+
+
+    # Old code below
     if len(compare_list) <= 1:
         # add messages
         messages.add_message(request, messages.WARNING, f"Not enough components were selected to compare!")
@@ -496,7 +525,8 @@ def compare_components(request):
             "prime_smts": compare_prime_smts,
             "secondary_smts": cmt_smts,
             "differences": difference_tuples,
-            "compare_list": compare_list
+            "compare_list": compare_list,
+            "smt_diffs": smt_diffs,
         }
         return render(request, "components/compare_components.html", context)
 
@@ -1469,6 +1499,8 @@ def restore_to_history(request, smt_id, history_id):
     # Get statement if exists else 404
     smt = get_object_or_404(Statement, id=smt_id)
 
+    print(1, "==== smt", smt)
+
     # Check permission
     raise_404_if_not_permitted_to_statement(request, smt, 'change_system')
 
@@ -1485,8 +1517,8 @@ def restore_to_history(request, smt_id, history_id):
         historical_smt.instance.save()
 
         # Update the reason for the new statement record
-        recent_smt     = smt.history.first()
-        update_change_reason(recent_smt.instance, change_reason)
+        recent_smt = smt.history.first()
+        # update_change_reason(recent_smt.instance, change_reason)
 
         logger.info( f"Change reason: {change_reason}")
 
@@ -2016,7 +2048,6 @@ def save_smt(request):
         #     cleared = False
         #     skipped_reason = request.POST.get("skipped_reason") or None
         #     unsure = bool(request.POST.get("unsure"))
-
         # Track if we are creating a new statement
         new_statement = False
         form_dict = dict(request.POST)
@@ -2088,10 +2119,14 @@ def save_smt(request):
             producer_element_msg = "Producer Element save failed. Error reported {}".format(e)
             return JsonResponse({"status": producer_element_status, "message": producer_element_msg})
 
-        # Associate Statement and Producer Element if creating new statement
+        # Associate Statement, Producer Element, and optionally Consumer Element (system) if creating new statement
         if new_statement:
             try:
                 statement.producer_element = producer_element
+                if 'system_id' in form_values:
+                    # Associate Consumer Element
+                    statement.consumer_element = System.objects.get(pk=form_values['system_id']).root_element
+                    statement_msg = "Statement associated with System/Consumer Element."
                 statement.save()
                 statement_element_status = "ok"
                 statement_element_msg = "Statement associated with Producer Element."

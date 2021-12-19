@@ -25,7 +25,7 @@ from django.test.client import RequestFactory
 import selenium.webdriver
 from selenium.webdriver.remote.command import Command
 from django.urls import reverse
-from selenium.common.exceptions import WebDriverException, NoSuchElementException
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver import DesiredCapabilities
 from django.contrib.auth.models import Permission
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
@@ -62,7 +62,7 @@ def wait_for_sleep_after(fn):
     while True:
         try:
             return fn()
-        except (AssertionError, WebDriverException, NoSuchElementException) as e:
+        except (AssertionError, WebDriverException) as e:
             if time.time() - start_time > MAX_WAIT:
                 raise e
             time.sleep(0.5)
@@ -464,9 +464,9 @@ class OrganizationSiteFunctionalTests(SeleniumTest):
 
         wait_for_sleep_after(lambda: self.click_element("#new-project"))
 
-        var_sleep(2)
+        var_sleep(1)
         # Click Add Button
-        wait_for_sleep_after(lambda: self.click_element(".app[data-app='project/simple_project'] .start-app"))
+        wait_for_sleep_after(lambda: self.click_element(".app-form[data-app='project/simple_project'] .start-app"))
         wait_for_sleep_after(lambda: self.assertRegex(self.browser.title, "I want to answer some questions on Q."))
 
         m = re.match(r"http://.*?/projects/(\d+)/", self.browser.current_url)
@@ -1618,7 +1618,8 @@ class ProjectPageTests(OrganizationSiteFunctionalTests):
         self._login()
         self._new_project()
         # On project page?
-        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        # wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "h1"))
 
         # mini-dashboard content
         self.assertInNodeText("controls", "#status-box-controls")
@@ -1632,13 +1633,15 @@ class ProjectPageTests(OrganizationSiteFunctionalTests):
         wait_for_sleep_after(lambda: self.assertInNodeText("Selected controls", ".systems-selected-items"))
         # click project button
         wait_for_sleep_after(lambda: self.click_element("#btn-project-home"))
-        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        # wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "h1"))
         # test components
         self.click_element('#status-box-components')
         wait_for_sleep_after(lambda: self.assertInNodeText("Selected components", ".systems-selected-items"))
         # click project button
         wait_for_sleep_after(lambda: self.click_element("#btn-project-home"))
-        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        # wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "#project-title"))
+        wait_for_sleep_after(lambda: self.assertInNodeText("I want to answer some questions", "h1"))
         # test poams
         # TODO: Restore tests if #status-box-poam is displayed
         # self.click_element('#status-box-poams')
