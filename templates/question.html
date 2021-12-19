@@ -169,6 +169,7 @@ Next Question: {{q.spec.title}} | {{task.title}}
     <div id="question">
         <form {% if not write_priv %}class="disabled"{% endif %} autocomplete="off">
             <input type="hidden" name="question" value="{{q.id}}">
+            <input type="hidden" name="question_spec_id" value="{{q_spec_id}}">
             <input type="hidden" name="method" value="save">
             <input type="hidden" name="skipped_reason" value="">
             <input type="hidden" name="unsure" value="">

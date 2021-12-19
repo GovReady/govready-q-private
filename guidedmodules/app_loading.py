@@ -226,8 +226,8 @@ def create_module(app, appinst, spec):
 
 def remove_questions(spec):
     spec = OrderedDict(spec) # clone
-    if "questions" in spec:
-        del spec["questions"]
+    # if "questions" in spec:
+    #     del spec["questions"]
     return spec
 
 
@@ -246,7 +246,15 @@ def update_module(m, spec, log_status):
     # Update its questions.
     qs = set()
     for i, question in enumerate(spec.get("questions", [])):
+        # print(f"adding question {i}, {question}")
         qs.add(update_question(m, i, question, log_status))
+
+    # Update ModuleQuestionSet
+    question_set_json = spec.get("questions", [])
+    [q.update({"key": q["id"], "definition_order": i}) for i, q in enumerate(question_set_json,1)]
+    mqs, isnew = ModuleQuestionSet.objects.get_or_create(
+                    module=m, question_set_json = spec.get("questions", [])
+                 )
 
     # Delete removed questions (only happens if the Module is
     # not yet in use).
@@ -303,11 +311,13 @@ def is_module_changed(m, source, spec, module_id_map=None):
     #   any string => Incompatible change - a new database record is needed.
 
     # If all other metadata is the same, then there are no changes.
-    if \
-            json.dumps(m.spec, sort_keys=True) == json.dumps(remove_questions(spec), sort_keys=True) \
-        and json.dumps([q.spec for q in m.get_questions()], sort_keys=True) \
-            == json.dumps([q for q in spec.get("questions", [])], sort_keys=True):
+    if json.dumps(m.spec, sort_keys=True) == json.dumps(spec, sort_keys=True):
         return None
+    # if \
+    #         json.dumps(m.spec, sort_keys=True) == json.dumps(remove_questions(spec), sort_keys=True) \
+    #     and json.dumps([q.spec for q in m.get_questions()], sort_keys=True) \
+    #         == json.dumps([q for q in spec.get("questions", [])], sort_keys=True):
+    #     return None
 
     # Now we're just checking if the change is compatible or not with
     # the existing database record.

@@ -1,0 +1,48 @@
+MQS
+
+app_loading - storing questions, they are already in module.spec
+show_question
+update question from authoring tool
+walk questions
+impute questions
+serialize
+serialize to download
+
+TaskAnswer overhaul bc relationship would be on module.spec['question'].get_by_id
+
+key vs id might be related to reassigning the name of a module in app.yaml
+
+adding `key` and `definition_order` into Module.spec.questions
+
+when starting module and creating tasks and task questions - views.new_task
+
+taskanswer point back to question
+
+I want to start using module.questions_set as replacement for module.questions
+
+self.module.questions.get(key=question) needs to be self.module.questions_set.get_by_key(key=question) or get_by_id
+
+Lines that need to change:
+guidedmodules.views:  q = task.module.questions.get(id=request.POST.get("question"))
+to change that file, I need to also send the module_question_id or question_key in the question form
+
+
+    def redirect_to():
+
+        # ==============================================
+        # TEMPORARY TODO: FIX
+        # TEMPORARY WHILE MOVE AWAY FROM ModuleQuestions
+        return "/projects"
+        # ==============================================
+
+        next_q = get_next_question(q, task)
+        if next_q:
+            # Redirect to the next question.
+            return task.get_absolute_url_to_question(next_q) + f"?back_url={back_url}&previous=nquestion"
+        # Redirect to the module finished page because there are no more questions to answer.
+        return task.get_absolute_url() + f"/finished?back_url={back_url}&previous=nquestion"
+
+
+
+questions are already in Module.spec in module.spec['questions']; could leave them there.
+But remeber to create as OrderedDict
