@@ -28,12 +28,22 @@
 {% block contextbar %}{% endblock %}
 
 {% block body %}
+
+<div class="float-container">
+    <div class="float-child">
+        <h1>Component comparison NEW</h1>
+
+        {{ smt_diffs.keys }}
+    </div>
+</div>
+
+
  <form name="change_compare_form" method="POST">
  {% csrf_token %}
     <div class="float-container">
 
         <div class="float-child">
-            <h1>Component comparison</h1>
+            <h1>Component comparison OLD</h1>
 
             <div class="col-xs-12 col-sm-12 col-lg-12">
                 <h2 class="sub-header">{{ compare_prime.name|safe }}</h2>
