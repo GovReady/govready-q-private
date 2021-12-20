@@ -104,7 +104,8 @@ export const AssessmentTable = ({ systemId }) => {
                             backgroundColor: '#5cb85c',
                             background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
                             width: '20rem',
-                            color: "#fff"
+                            color: "#fff",
+                            textShadow: "none",
                         }}
                         variant="contained"
                         color="success"
