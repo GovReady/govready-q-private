@@ -101,10 +101,10 @@ export const PortfolioTable = () => {
                             float: 'right',
                             marginRight: "-440px",
                             marginTop: "-2.75px",
-                            backgroundColor: '#5cb85c',
+                            textShadow: "none",
                             background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
                             width: '20rem',
-                            color: "#fff"
+                            color: "white",
                         }}
                         variant="contained"
                         color="success"
