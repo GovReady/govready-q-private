@@ -18,6 +18,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Box from '@mui/material/Box';
 import ReactDOM from 'react-dom';
+import '../../../index.css'
 // import { projectTagsStateSlice } from "./slice"
 // import { Provider } from "react-redux";
 // import store from "../../../store";
@@ -40,8 +41,15 @@ window.projectMenu = (data) => {
 
     ReactDOM.render(
         <>
-            <Box style={{ marginLeft: '0px', height: '100%', width: '320px' }}>
-                <ProSidebar style={{ marginLeft: '-5px', paddingLeft: '0px', width: '320px' }} >
+            <Box style={{ marginLeft: '0px', width: '320px' }} className={'sticky'}>
+                <ProSidebar 
+                    style={{
+                        marginLeft: '-5px',
+                        paddingLeft: '0px',
+                        width: '320px',
+                        // height: '97vh',
+                        // position: 'fixed'
+                    }} >
                     <Menu iconShape="square">
                         {data.project.system && <>
                             <SidebarHeader>

@@ -29,10 +29,10 @@
 
     <div class="portfolio-top">
         <div class="container">
-            <div id="components-table"></div>
+            {% comment %} <div id="components-table"></div> {% endcomment %}
 
 
-{% comment %} 
+
 
             <div class="portfolio-main">
                 <a id="component-new" href="{% url 'new_element' %}" class="btn btn-success">Create a Component</a>
@@ -100,7 +100,7 @@
         </form>
 
             {% include "components/import-component-modal.html" %}
-        </div> {% endcomment %}
+        </div> 
     </div>
     {{ block.super }}
 {% endblock %}
