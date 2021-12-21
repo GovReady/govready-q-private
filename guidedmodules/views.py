@@ -1067,6 +1067,28 @@ def show_question(request, task, answered, context, q):
                             choices_from_data_keys[str(c_item.uuid)] = 1
         q.spec.update({"choices": choices_from_data})
 
+
+    # Calculate project menu info
+    project = task.project
+    # Calculate approximate compliance as degrees to display
+    percent_compliant = 0
+    if len(project.system.control_implementation_as_dict) > 0:
+        percent_compliant = project.system.controls_status_count['Addressed'] / len(
+            project.system.control_implementation_as_dict)
+    # Need to reverse calculation for displaying as per styles in .piechart class
+    approx_compliance_degrees = 365 - (365 * percent_compliant)
+    if approx_compliance_degrees > 358:
+        approx_compliance_degrees = 358
+
+    context.update({
+        "project": project,
+        "controls_status_count": project.system.controls_status_count,
+        "poam_status_count": project.system.poam_status_count,
+        "percent_compliant": percent_compliant,
+        "percent_compliant_100": percent_compliant * 100,
+        "approx_compliance_degrees": approx_compliance_degrees,
+    })
+
     context.update({
         "header_col_active": "start" if (len(answered.as_dict()) == 0 and q.spec["type"] == "interstitial") else "questions",
         "q": q,
@@ -1891,7 +1913,6 @@ def authoring_edit_question2(request):
 
     question = get_object_or_404(ModuleQuestion.objects.select_related('module'), id=request.POST['q_id'])
     module = question.module
-
     # Delete the question?
     if request.POST.get("delete") == "1":
         try:
@@ -1899,7 +1920,7 @@ def authoring_edit_question2(request):
             return JsonResponse({ "status": "ok", "redirect": task.get_absolute_url() })
         except Exception as e:
             # The only reason it would fail is a protected foreign key.
-            return JsonResponse({ "status": "error", "message": "The question cannot be deleted because it has already been answered." })
+            return JsonResponse({ "status": "error", "message": "The question #"+request.POST['q_id']+" cannot be deleted because it has been answered in a Project. Contact an administrator to delete." })
 
     # Update the question...
     # Update the key.
@@ -1995,9 +2016,15 @@ def authoring_edit_question2(request):
     from .module_logic import clear_module_question_cache
     clear_module_question_cache()
 
-    # Return response and reload page
-    # TODO convert to a JSON result and don't reload page
-    return JsonResponse({ "status": "ok", "redirect": reverse('show_module_questions', args=[module.id]) })
+    # Return to question in module if Task defined or reload question in authoring tool if not
+    if 'task' in request.POST:
+        # Return status. The browser will reload/redirect --- if the question key changed, this sends the new key.
+        task = get_object_or_404(Task, id=request.POST['task'])
+        return JsonResponse({ "status": "ok", "redirect": task.get_absolute_url_to_question(question) })
+    else:
+        # Return response and reload page
+        # TODO convert to a JSON result and don't reload page
+        return JsonResponse({ "status": "ok", "redirect": reverse('show_module_questions', args=[module.id]) })
 
 # @authoring_tool_auth
 @transaction.atomic

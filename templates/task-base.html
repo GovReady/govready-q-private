@@ -63,18 +63,151 @@
   .breadcrumb {
     font-size: 1.0em;
   }
-</style>
-{% endblock %}
 
-{% block navbar %}
+  /* sidebar styles */
+  h2.project-title { margin:0; font-size:1.1em;}
+  .project-title a { color:#333; text-decoration:none;}
+  h3.port-hed { margin:0; font-size: .7em; color:#333;}
+  .project-info { border-top:1px solid #D0D9D0; border-bottom:1px solid #D0D9D0; display:block; margin:1.2em 0 1.5em 0; padding:.5em 0; font-size:.7em; width:100%; color:#333;}
+  .project-info-system-id { padding: 0 1em 0 0;}
+  .project-info-project-id { padding:0 0 0 1em;}
+  .unassessed { color: #333; font-weight:light;}
+  .project-info-compliance { font-size:.8em;}
+  .project-info-controls { font-size:.8em;}
+  .project-info-poams { font-size:.8em;}
+  .project-info-components { font-size:.8em;}
+  .project-info-systemcomponents { font-size: .7em;}
+  .project-info-systemcomponents a:link{ color: #95999B; }
+
+  .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; }
+
+  .fake-bar { display:block; height: 15px; width:100%; background-color:#80CC80; margin-bottom:1em;}
+
+  .sidebar-artifacts-box { font-size: 1em; display:block; margin-top:1em; padding:0 15px;}
+  .sidebar-artifacts { display:block; padding:0; margin:0;}
+  .sidebar-artifacts a {color:#666666; text-decoration:none;}
+  .sidebar-artifacts a:hover {color:#337ab7; text-decoration:none;}
+
+  .sidebar-artifacts li { list-style:none; padding-bottom:.5em; font-size:.8em;}
+  .sidebar-icon { padding-right:.3em;}
+  .sidebar-block { padding:2em 1em 1em 0; background-color: #FFFFFF;}
+
+  .sidebar-syscomp { padding:15px;}
+  .lighter { color:#666666;}
+  .bar-box { background-color:#E3EBE3; width:100%; height:12px;font-size:.5em; display:block; margin-bottom:1.5em;}
+  .bar-box-bar { background:#80CC80; height:12px; }
+
+</style>
 {% endblock %}
 
 {% block contextbar %}{% endblock %}
 
+
+
 {% block body %}
 
-<div class="container">
-<div class="row" style="">
+        <div class="col-md-3 col-lg-2">
+            {# if is_project_page #}
+            <div class="sidebar-block">
+                <div class="sidebar-info-block">
+                  <h3 class="port-hed">Portfolio: <a href="{% url 'portfolio_projects' project.portfolio.id %}">{{ project.portfolio.title }}</a></h3>
+                  <h2 class="project-title"><a href="{{project.get_absolute_url}}">{{ project.title }}</a></h2>
+
+                  <div class="project-info">
+                    <span class="project-info-system-id">System ID: {{ project.system.id }}</span>|<span class="project-info-project-id">Project ID: {{project.id}}</span>
+                  </div>
+
+                  <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:1 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
+                  <div class="bar-box"><div class="bar-box-bar" style="width:{{ percent_compliant_100|floatformat:1 }}%;"></div></div>
+
+                  <span class="project-info-controls" onclick="window.location.assign('{% url 'controls_selected' system_id=project.system.id %}')" style="cursor: pointer;">Controls Addressed ({{ controls_status_count.Addressed }} of {{ project.system.root_element.controls.all|length }})</span>
+
+                  <div class="bar-box"><div class="bar-box-bar" style="width:15%;"></div></div>
+
+                  <span class="project-info-poams">PoA & Milestones (7 of 28)</span>
+                  <div class="bar-box"><div class="bar-box-bar" style="width:25%;"></div></div>
+
+                  </div>
+
+                  <div class="sidebar-syscomp" style="margin-top:1em;">
+
+                    <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:.5em;">
+                        <span class="sidebar-icon glyphicon glyphicon-wrench"></span><span style="font-size:1em; font-weight:bold;">Components</span>
+                    </div>
+
+                    <span class="project-info-components" onclick="window.location.assign('{% url 'components_selected' system_id=project.system.id %}')" style="cursor: pointer;">System Components ({{ project.system.get_producer_elements|length }})</span><br />
+
+                    <span class="project-info-systemcomponents">
+
+                        {% for component in project.system.get_producer_elements %}
+                            <a href={% url 'system_element' system.id component.id %}>{{ component.name }}</a>{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
+
+                  </div>
+
+                  <div class="sidebar-artifacts-box">
+                    <div style="border-bottom:1px solid #ccc; display:block; margin-bottom:1em;">
+                      <span class="sidebar-icon glyphicon glyphicon-list"></span><span style="font-size:1em; font-weight:bold;">Artifacts</span>
+                    </div>
+                      <ul class="sidebar-artifacts">
+                        <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-book"></span> Controls</a></li>-->
+                        <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-tag"></span> Components</a></li>-->
+                        <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-list"></span> POA&Ms</a></li>-->
+                        <!--<li><a href="#"><span class="sidebar-icon glyphicon glyphicon-duplicate"></span> Deployments</a></li>-->
+                        <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">Assessments</a></li>
+                        <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">PTA</a></li>
+                        <li><span class="sidebar-icon glyphicon glyphicon-list-alt lighter"></span><a href="#">SSPs</a></li>
+                      </ul>
+                  </div>
+
+                  <div id="focus-area-wrapper" style="padding:0; margin-top:0;">
+                        <!-- Authoring mode code here for now -->
+                        {% block above_title %}
+                        <!-- previously contained authoring tols for module -->
+                        {% endblock %}
+
+                        {% block action_buttons %}
+                            {% if action_buttons %}
+                                {% for q in action_buttons %}
+                                    <div class="action-button-box">
+                                        <div class="action-button-app-title">{{ project.root_task.module.spec.title }}</div>
+                                        {# Display for started tasks #}
+                                        {% if can_start_task and q.can_start_new_task %}
+                                            <form id="question-{{ q.question.key }}" class="start-task" method="post"
+                                                  action="/tasks/start" style="display:inline;">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="project" value="{{ project.id }}"/>
+                                                <input type="hidden" name="question" value="{{ q.question.key }}"/>
+                                                <input type="hidden" name="previous" value="project"/>
+                                                <a class="btn btn-sm btn-default" class="action-button"
+                                                   href="#" onclick="$(this).parent('form').submit(); return false;">
+                                                    {{ q.question.spec.title }} &raquo;
+                                                </a>
+                                            </form>
+                                        {% else %}
+                                            {# Display for not yet started tasks #}
+                                            <a id="question-{{ q.question.key }}"
+                                               class="btn btn-sm btn-default" class="action-button"
+                                               href="{{ q.task.get_absolute_url }}?previous=project">
+                                                {{ q.question.spec.title }} &raquo;
+                                                {# use a stable title - dont make it depend on the task #}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endblock %}
+                  </div> <!-- /focus-area-wrapper -->
+            </div> <!-- /col -->
+        </div>
+
+        <div class="col-md-8 col-lg-9" style="margin-top:30px;margin-left:80px;">
+
+
+
+  <div class="container" style="border:0px solid black;">
+  <div class="row" style="border: 0px solid green;"">
 
 
     <div id="context-bar">
@@ -168,10 +301,12 @@
 
 {% endblock %}
 
-
 </div><!-- col-md-9 -->
 
 </div><!-- /div class row -->
+
+
+</div>
 
     {% block scripts %}
         <script>
