@@ -1582,8 +1582,8 @@ def authoring_create_q(request):
         else:
             # Clone existing questionnaire template by copying all records
             # TODO: Working out ModuleAsset Paths!
-            new_q_appsrc = AppSource.objects.get(slug="govready-q-files-startpack")
             src_appversion = AppVersion.objects.get(pk=new_q["app_id"])
+            new_q_appsrc = src_appversion.source
 
             # copy Appversion record and change
             new_appversion = src_appversion
@@ -1604,12 +1604,19 @@ def authoring_create_q(request):
 
             # Create copy of each module in a loop and bulk create each module_questions
             modules = Module.objects.filter(app=src_appversion)
+            old_modules_to_new_modules = {}
             for src_module in modules:
+                src_module_id = src_module.id
                 src_module_questions = ModuleQuestion.objects.filter(module=src_module)
                 new_module = src_module
                 new_module.pk = None
                 new_module.app = new_appversion
+                if new_module.module_name == 'app':
+                    new_module.spec['title'] = new_q["title"]
                 new_module.save()
+                # remember module mapping
+                old_modules_to_new_modules[src_module_id] = new_module
+
                 # Bulk create copies of module_questions
                 new_module_questions = src_module_questions
                 nmqs = []
@@ -1619,25 +1626,19 @@ def authoring_create_q(request):
                     nmqs.append(nmq)
                 ModuleQuestion.objects.bulk_create(nmqs)
 
+            # Re-map all new questions to newly created modules
+            for q in ModuleQuestion.objects.filter(module__app=new_appversion).exclude(answer_type_module=None):
+                new_module = old_modules_to_new_modules[q.answer_type_module.id]
+                q.spec['module-id'] = new_module.id
+                q.answer_type_module = new_module
+                q.save()
+
             # Copy inputs
             # asset paths
             # copy templates?
             # Copy components
     except Exception as e:
         raise
-
-    # # Use stub_app to publish our new app
-    # try:
-    #     # appver = new_q_appsrc.add_app_to_catalog("stub_app")
-    #     # Update app details
-    #     appver.appname = new_q["title"]
-    #     appver.catalog_metadata["title"] = new_q["title"]
-    #     appver.catalog_metadata["description"]["short"] = new_q['short_description']
-    #     appver.catalog_metadata["category"] = new_q["category"]
-    #     # appver.spec.introduction.template = new_q['short_description']
-    #     appver.save()
-    # except Exception as e:
-    #     raise
 
     messages.add_message(request, messages.INFO, 'New Project "{}" added into the catalog.'.format(new_q["title"]))
 
@@ -1746,6 +1747,7 @@ def authoring_new_question(request, task, mq):
                   "title": "Example Module2",
                   "output": [
                     {
+                      "id": "artifact_1",
                       "format": "markdown",
                       "title": "What You Chose",
                       "template": "{{q1111}}"
@@ -1766,6 +1768,7 @@ def authoring_new_question(request, task, mq):
                  "title": "Example Module " + entry.replace("_"," ").title(),
                  "output": [
                     {
+                      "id": "artifact_1",
                       "format": "markdown",
                       "title": "What You Chose",
                       "template": "{{q1111}}"
@@ -1992,9 +1995,15 @@ def authoring_edit_question2(request):
     from .module_logic import clear_module_question_cache
     clear_module_question_cache()
 
-    # Return response and reload page
-    # TODO convert to a JSON result and don't reload page
-    return JsonResponse({ "status": "ok", "redirect": reverse('show_module_questions', args=[module.id]) })
+    # Return to question in module if Task defined or reload question in authoring tool if not
+    if 'task' in request.POST:
+        # Return status. The browser will reload/redirect --- if the question key changed, this sends the new key.
+        task = get_object_or_404(Task, id=request.POST['task'])
+        return JsonResponse({ "status": "ok", "redirect": task.get_absolute_url_to_question(question) })
+    else:
+        # Return response and reload page
+        # TODO convert to a JSON result and don't reload page
+        return JsonResponse({ "status": "ok", "redirect": reverse('show_module_questions', args=[module.id]) })
 
 # @authoring_tool_auth
 @transaction.atomic
