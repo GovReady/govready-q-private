@@ -23,7 +23,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from controls.models import System
 from controls.models import STATEMENT_SYNCHED, STATEMENT_NOT_SYNCHED, STATEMENT_ORPHANED
-from controls.views import OSCALComponentSerializer, OSCAL_ssp_export
+from controls.views import OSCALComponentSerializer, OSCAL_ssp_export, OSCAL_sar_export, OSCAL_sap_export
 from siteapp.models import User, Organization, OrganizationalSetting
 from siteapp.tests import SeleniumTest, var_sleep, OrganizationSiteFunctionalTests, wait_for_sleep_after
 from system_settings.models import SystemSettings
@@ -1174,4 +1174,61 @@ class ImportExportOSCALTests(OrganizationSiteFunctionalTests):
         regular_sid_controls = [de_oscalize_control_id(control) for control in controls]
         self.assertEqual(['AC-2(4)', 'AC-2(5)', 'AC-2(11)', 'AC-2(13)', 'AC-3', 'AC-4', 'SI-3(2)', 'SI-4(2)', 'SI-4(5)'], regular_sid_controls)
 
+class OSCALSAPTests(OrganizationSiteFunctionalTests):
+    """
+        Testing OSCAL_sap_export to make sure the file is created with a status code of 200 utilizing the class
+        OSCALSystemAssessmenPlanSerializer's as_json() method
+    """
+
+    def test_oscal_sap_export(self):
+        self._login(self.user.username, self.user.clear_password)
+        self._new_project()
+
+        the_system = self.current_project.system
+        sar_id = "1"
+
+        # sar_export_oscal with system id and sap id
+        response = OSCAL_sap_export(self,"", {"system_id": the_system.id, "sar_id": sar_id} )
+
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertEqual(
+            response.get('Content-Type'),
+            'application/json'
+        )
+        self.assertIn(
+        f"attachment; filename={the_system.root_element.name.replace(' ', '_')}_OSCAL_sap_",
+        response.get('Content-Disposition')
+        )
+
+class OSCALSARTests(OrganizationSiteFunctionalTests):
+    """
+        Testing OSCAL_sar_export to make sure the file is created with a status code of 200 utilizing the class
+        OSCALSystemAssessmentResultsSerializer's as_json() method
+    """
+
+    def test_oscal_sar_export(self):
+        self._login(self.user.username, self.user.clear_password)
+        self._new_project()
+
+        the_system = self.current_project.system
+        sar_id = "1"
+
+        # sar_export_oscal with system id and sar id
+        response = OSCAL_sar_export(self,"", {"system_id": the_system.id, "sar_id": sar_id} )
+
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertEqual(
+            response.get('Content-Type'),
+            'application/json'
+        )
+        self.assertIn(
+        f"attachment; filename={the_system.root_element.name.replace(' ', '_')}_OSCAL_sar_",
+        response.get('Content-Disposition')
+        )
 

@@ -4,6 +4,11 @@ GovReady-Q Release Notes
 v0.9.11.7-dev (October xx, 2021)
 --------------------------------
 
+**Developer changes**
+
+* Add basic OSCAL SAR serializer following same pattern as OSCAL SSP
+* Add basic OSCAL SAP serializer following same pattern as OSCAL SSP 
+* 
 **UI changes**
 
 * Use left side vertical React navigation menu for project.

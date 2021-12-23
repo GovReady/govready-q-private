@@ -14,6 +14,8 @@ from uuid import uuid4
 import rtyaml
 import trestle.oscal.component as trestlecomponent
 import trestle.oscal.ssp as trestlessp
+import trestle.oscal.assessment_plan as trestlesap
+import trestle.oscal.assessment_results as trestlesar
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -578,6 +580,12 @@ class SystemSecurityPlanSerializer(object):
         self.system = system
         self.impl_smts = impl_smts
 
+class SystemAssessmentsSerializer(object):
+
+    def __init__(self, system, sar_id):
+        self.system = system
+        self.sar_id = sar_id
+
 class OSCALSystemSecurityPlanSerializer(SystemSecurityPlanSerializer):
 
     @staticmethod
@@ -748,6 +756,114 @@ class OSCALSystemSecurityPlanSerializer(SystemSecurityPlanSerializer):
         oscal_string = json.dumps(of, sort_keys=False, indent=2)
         return oscal_string
 
+class OSCALSystemAssessmenPlanSerializer(SystemAssessmentsSerializer):
+
+    def as_json(self):
+
+        # Build OSCAL System Assessment Plan
+        project = self.system.projects.first()
+        # TODO: again a stub as found in module_logic, this is still not entirely valid.
+        profile = urlunparse((GOVREADY_URL.scheme, GOVREADY_URL.netloc,
+                              "profile_path",
+                              None, None, None))
+
+        sar = get_object_or_404(SystemAssessmentResult, pk=self.sar_id) if self.sar_id else None
+
+        # Get assessment targets results from wrapped SAP data
+        reviewed_controls = sar.assessment_results.get('reviewed-controls') or []
+        of = {
+            "assessment-plan": {
+                "uuid": str(self.system.root_element.uuid),
+                "metadata": {
+                    "title": "{} System Assessment Plan".format(self.system.root_element.name),
+                    "published": self.system.root_element.created.replace(microsecond=0).isoformat(),
+                    "last-modified": self.system.root_element.updated.replace(microsecond=0).isoformat(),
+                    "version": project.version,
+                    "oscal-version": self.system.root_element.oscal_version,
+                },
+                "import-ssp": {
+                    "href": profile# Todo: not sure where this import assessment plan comes from. 
+                },
+                "reviewed-controls": reviewed_controls
+            }
+        }
+
+        try:
+            # Create a temporary directory and dump the json_object in there.
+            tempdir = tempfile.mkdtemp()
+            path = os.path.join(tempdir, "sap_object.json")
+            # Use trestle's ComponentDefinition method oscal_read to read the path to json in the temporary folder
+            path_ssp_definition = pathlib.Path(path)
+
+            with open(path, 'w+') as cred:
+                json.dump(of, cred)
+            trestle_sap_oscal_json = trestlesap.AssessmentPlan.oscal_read(path_ssp_definition)
+
+            # Finally validate that this object is valid by the OSCAL System Assessment Plan definition
+            trestlesap.AssessmentPlan.validate(trestle_sap_oscal_json)
+            # Cleanup
+            shutil.rmtree(tempdir)
+        except Exception as e:
+            logger.error(f"Invalid System Assessment Plan JSON: {e}")
+            shutil.rmtree(tempdir)
+            return HttpResponse(e)
+
+        oscal_string = json.dumps(of, sort_keys=False, indent=2)
+        return oscal_string
+
+class OSCALSystemAssessmentResultsSerializer(SystemAssessmentsSerializer):
+
+    def as_json(self):
+
+        # Build OSCAL System Assessment Result
+        project = self.system.projects.first()
+        # TODO: again a stub as found in module_logic, this is still not entirely valid.
+        profile = urlunparse((GOVREADY_URL.scheme, GOVREADY_URL.netloc,
+                              "profile_path",
+                              None, None, None))
+
+        sar = get_object_or_404(SystemAssessmentResult, pk=self.sar_id) if self.sar_id else None
+        # Get assessment targets results from wrapped SAR data
+        sar_items = [item for item in sar.assessment_results['sar']] if sar.assessment_results != None else []
+        of = {
+            "assessment-results": {
+                "uuid": str(self.system.root_element.uuid),
+                "metadata": {
+                    "title": "{} Assessment Result".format(self.system.root_element.name),
+                    "published": self.system.root_element.created.replace(microsecond=0).isoformat(),
+                    "last-modified": self.system.root_element.updated.replace(microsecond=0).isoformat(),
+                    "version": project.version,
+                    "oscal-version": self.system.root_element.oscal_version,
+                },
+                "import-ap": {
+                    "href": profile# Todo: not sure where this import assessment plan comes from. sar list?
+                },
+                "results": sar_items
+            }
+        }
+
+        try:
+            # Create a temporary directory and dump the json_object in there.
+            tempdir = tempfile.mkdtemp()
+            path = os.path.join(tempdir, "sar_object.json")
+            # Use trestle's ComponentDefinition method oscal_read to read the path to json in the temporary folder
+            path_ssp_definition = pathlib.Path(path)
+
+            with open(path, 'w+') as cred:
+                json.dump(of, cred)
+            trestle_sar_oscal_json = trestlesar.AssessmentResults.oscal_read(path_ssp_definition)
+
+            # Finally validate that this object is valid by the OSCAL Assessment Results definition
+            trestlesar.AssessmentResults.validate(trestle_sar_oscal_json)
+            # Cleanup
+            shutil.rmtree(tempdir)
+        except Exception as e:
+            logger.error(f"Invalid Assessment Result JSON: {e}")
+            shutil.rmtree(tempdir)
+            return HttpResponse(e)
+
+        oscal_string = json.dumps(of, sort_keys=False, indent=2)
+        return oscal_string
 
 class ComponentSerializer(object):
 
@@ -1563,6 +1679,42 @@ def OSCAL_ssp_export(*args, **kwargs):
     resp = HttpResponse(oscal_string, content_type="application/json")
     resp["content-disposition"] = "attachment; filename=%s" % quote(filename)
     return resp
+
+@login_required
+def OSCAL_sap_export(*args, **kwargs):
+    """
+    Exporting a System Assessment Plan in OSCAL json version 1.0.0
+    """
+    system_id = kwargs.get('system_id', 1)
+    sar_id = kwargs.get('sar_id', 1)
+    # Retrieve identified System
+    system = System.objects.get(id=system_id)
+    oscal_string = OSCALSystemAssessmenPlanSerializer(system, sar_id).as_json()
+    # File name construction and JSON response
+    filename = "{}_OSCAL_sap_{}.json".format(system.root_element.name.replace(" ", "_"),
+                                                           datetime.now().strftime("%Y-%m-%d-%H-%M"))
+    resp = HttpResponse(oscal_string, content_type="application/json")
+    resp["content-disposition"] = "attachment; filename=%s" % quote(filename)
+    return resp
+
+@login_required
+def OSCAL_sar_export(*args, **kwargs):
+    """
+    Exporting a System Assessment Result in OSCAL json version 1.0.0
+
+    """
+    system_id = kwargs.get('system_id', 1)
+    sar_id = kwargs.get('sar_id', 1)
+    # Retrieve identified System
+    system = System.objects.get(id=system_id)
+    oscal_string = OSCALSystemAssessmentResultsSerializer(system, sar_id).as_json()
+    # File name construction and JSON response
+    filename = "{}_OSCAL_sar_{}.json".format(system.root_element.name.replace(" ", "_"),
+                                                           datetime.now().strftime("%Y-%m-%d-%H-%M"))
+    resp = HttpResponse(oscal_string, content_type="application/json")
+    resp["content-disposition"] = "attachment; filename=%s" % quote(filename)
+    return resp
+
 
 @login_required
 def controls_selected_export_xacta_xslx(request, system_id):
