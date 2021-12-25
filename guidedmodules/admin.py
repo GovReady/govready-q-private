@@ -3,6 +3,7 @@ from django import forms
 from django.utils.html import escape as escape_html
 from django_json_widget.widgets import JSONEditorWidget
 from jsonfield import JSONField
+from django.db import models
 
 
 from .models import \
@@ -261,6 +262,14 @@ class ModuleAdmin(admin.ModelAdmin):
     }
     def app_(self, obj): return "{} [{}]".format(obj.app.appname, obj.app.id) if obj.app else "(not in an app)"
 
+# class ModuleQuestionSetAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'module')
+#     raw_id_fields = ('module',)
+#     readonly_fields = ("id",)
+#     formfield_overrides = {
+#         models.JSONField: {'widget': JSONEditorWidget},
+#     }
+
 class ModuleQuestionAdmin(admin.ModelAdmin):
     list_display = ('id', 'key', 'module')
     raw_id_fields = ('module', 'answer_type_module')
@@ -293,11 +302,12 @@ class TaskAdmin(admin.ModelAdmin):
         return obj.project.organization_and_title()
 
 class TaskAnswerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'question', 'task', '_project', 'created')
+    list_display = ('id', 'question', 'module_question_id', 'task', '_project', 'created')
     raw_id_fields = ('task',)
     readonly_fields = ('id', 'task', 'question')
-    search_fields = ('task__project__organization__name', 'task__module__key')
+    search_fields = ('task__project__organization__name', 'task__module__key', 'module_question_id')
     fieldsets = [
+        (None, {"fields": ('module_question_id',)}),
         (None, {"fields": ('task', 'question')}),
         (None, {"fields": ('notes',)}),
         (None, {"fields": ('extra',)}),
@@ -334,6 +344,7 @@ admin.site.register(AppSource, AppSourceAdmin)
 admin.site.register(AppVersion, AppVersionAdmin)
 admin.site.register(AppInput, AppInputAdmin)
 admin.site.register(Module, ModuleAdmin)
+# admin.site.register(ModuleQuestionSet, ModuleQuestionSetAdmin)
 admin.site.register(ModuleQuestion, ModuleQuestionAdmin)
 admin.site.register(ModuleAsset, ModuleAssetAdmin)
 admin.site.register(Task, TaskAdmin)

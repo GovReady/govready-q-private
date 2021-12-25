@@ -15,6 +15,7 @@ from copy import deepcopy
 from collections import OrderedDict
 import uuid
 
+from django.db import models
 from api.base.models import BaseModel
 from siteapp.enums.assets import AssetTypeEnum
 from guidedmodules.enums.inputs import InputTypeEnum
@@ -368,6 +369,20 @@ class Module(BaseModel):
         import rtyaml
         return rtyaml.dump(self.spec)
 
+    @property
+    def questions_set(self):
+        """Return list of questions from Module spec"""
+
+        questions_set = self.spec.get("questions", [])
+        # Add in keys and definition order until we do this work on load
+        [q.update({"key": q["id"], "definition_order": i}) for i, q in enumerate(questions_set,1)]
+        return questions_set
+
+    def get_question_by_id(self, q_id):
+        """Return question object by id of question"""
+
+        return next((q for q in self.questions_set if q['id'] == q_id), None)
+
     def get_questions(self):
         # Return the ModuleQuestions in definition order.
         return list(self.questions.order_by('definition_order'))
@@ -567,6 +582,19 @@ class ModuleAsset(models.Model):
         return "<ModuleAsset [%d] %s from %s>" % (self.id, self.file.name, self.source)
 
 
+# class ModuleQuestionSet(models.Model):
+#     module = models.ForeignKey(Module, related_name="question_set", on_delete=models.CASCADE,
+#                                help_text="The Module that this ModuleQuestionSet is a part of.")
+#     question_set_json = models.JSONField(blank=True, null=True, help_text="JSON object representing all module questions")
+    
+#     def __str__(self):
+#         # For the admin.
+#         return "%s[%d].%s" % (self.module, self.module.id, 'ModuleQuestionSet')
+#     def __repr__(self):
+#         # For debugging.
+#         return "<ModuleQuestionSet [%d] %s %d>" % (self.id, self.module.module_name, self.module.lid)
+
+
 class ModuleQuestion(BaseModel):
     module = models.ForeignKey(Module, related_name="questions", on_delete=models.CASCADE,
                                help_text="The Module that this ModuleQuestion is a part of.")
@@ -745,6 +773,31 @@ class Task(BaseModel):
     # ANSWERS
 
     @staticmethod
+    def get_all_current_answer_records2(tasks):
+        # Efficiently get the current answer to every question of each of the tasks.
+        #
+        # Since we track the history of answers to each question, we need to get the most
+        # recent answer for each question. It's fastest if we pre-load the complete history
+        # of every question rather than making a separate database call for each question
+        # to find its most recent answer. See TaskAnswer.get_current_answer().
+        #
+        # Return a generator that yields tuples of (Task, Module.spec['question']['question']?, TaskAnswerHistory).
+        # Among tuples for a particular Task, the tuples are in order of the questions
+
+        ## TODO Migrating away from ModuleQuestions
+        # Should be able to replace most of the below with the following revised code
+        # for task in tasks:
+        #   module = task.module
+        #   for question in module.spec.['questions']:
+        #       # Get the latest TaskAnswerHistory for the question, if there is one
+        #       # [by n+1 filter]: TaskAnswerHistory.objects.filter(task and question_key)
+                # [by sorting through history]
+                # next(tah for tah blah, blah if tah.value=x)
+                # get answer
+                # yield (task, question, answer)
+                return (1, 1, 1)
+
+    @staticmethod
     def get_all_current_answer_records(tasks):
         # Efficiently get the current answer to every question of each of the tasks.
         #
@@ -766,6 +819,7 @@ class Task(BaseModel):
         tasks_ = {task.id: task for task in
                   Task.objects.select_related('module', 'project').filter(
                       id__in=history.values_list("taskanswer__task_id", flat=True))}
+                
         questions = {question.id: question for question in
                      ModuleQuestion.objects.select_related('module').filter(
                          id__in=history.values_list('taskanswer__question_id', flat=True))}
@@ -773,7 +827,6 @@ class Task(BaseModel):
         for ansh in history:
             current_answers.setdefault(
                 (tasks_.get(ansh.taskanswer.task_id), questions.get(ansh.taskanswer.question_id)), ansh)
-
         # Batch load all of the ModuleQuestions.
         questions = ModuleQuestion.objects.prefetch_related('answer_type_module__questions').select_related('module') \
             .filter(module__in={task.module for task in tasks}) \
@@ -1730,7 +1783,9 @@ class Task(BaseModel):
 class TaskAnswer(BaseModel):
     task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="answers",
                              help_text="The Task that this TaskAnswer is a part of.")
-    question = models.ForeignKey(ModuleQuestion, on_delete=models.PROTECT,
+    module_question_id = models.CharField(max_length=200, unique=False, null=True, blank=True, help_text="ID of the question")
+
+    question = models.ForeignKey(ModuleQuestion, null=True, on_delete=models.PROTECT,
                                  help_text="The question (within the Task's Module) that this TaskAnswer is answering.")
 
     notes = models.TextField(blank=True, help_text="Notes entered by editors working on this question.")
@@ -1750,6 +1805,11 @@ class TaskAnswer(BaseModel):
     def get_absolute_url(self):
         from urllib.parse import quote
         return self.task.get_absolute_url_to_question(self.question)
+
+    def get_module_question(self):
+        """Get question object from module.spec["questions"]"""
+        question_obj = self.task.module.get_question_by_id(self.module_question_id)
+        return question_obj
 
     def get_current_answer(self):
         # The current answer is the one with the highest primary key.

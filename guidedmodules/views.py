@@ -213,6 +213,8 @@ def next_question(request, task, answered, *unused_args):
         return HttpResponseRedirect(task.get_absolute_url_to_question(q) + previous)
 
 def get_next_question(current_question, task):
+
+    print(3,"========", current_question)
     # get context of questions in module
     answers = task.get_answers().with_extended_info()
 
@@ -225,6 +227,8 @@ def get_next_question(current_question, task):
     # go to the next one that is. If there are no subsequent questions to answer, go to the
     # first one that is answerable.
     answerable = list(answers.answerable)
+    print("5 ========== answerable", answerable)
+    
     # Avoid going to the current question as the computed available next question to answer
     if current_question in answerable:
         answerable.remove(current_question)
@@ -256,13 +260,35 @@ def save_answer(request, task, answered, context, __):
         return HttpResponseForbidden("Permission denied. {} does not have write privileges to task answer.".format(request.user.username))
 
     # validate question
-    q = task.module.questions.get(id=request.POST.get("question"))
+    print(1,"==============req post question", request.POST.get("question"))
+    print(2, "============ request post keys", request.POST.keys())
+    # q = task.module.questions.get(id=request.POST.get("question"))
+    question_key = request.POST.get("question_spec_id")
+    q = task.module.get_question_by_id(question_key)
+    # As part of migration away from ModuleQuestion, we need to (temporarily)
+    # recreate q.spec with all of data that was in ModuleQuestion.spec field
+    # to support the remaining code that is expecting q.spec in this operation.
+    # We can do this by stuffing all of q into q.spec
+    from copy import deepcopy
+    q.spec = deepcopy(q)
+    # task.module.get_question_by_id
+
     # store question/tasks for back button
-    back_url = task.get_absolute_url() + f"/question/{q.key}"
+    # back_url = task.get_absolute_url() + f"/question/{q.key}"
+    question_key = request.POST.get("question_spec_id")
+    back_url = task.get_absolute_url() + f"/question/{question_key}"
 
     # make a function that gets the URL to the next page
     def redirect_to():
+
         next_q = get_next_question(q, task)
+
+        # ==============================================
+        # TEMPORARY TODO: FIX
+        # TEMPORARY WHILE MOVE AWAY FROM ModuleQuestions
+        return "/projects"
+        # ==============================================
+
         if next_q:
             # Redirect to the next question.
             return task.get_absolute_url_to_question(next_q) + f"?back_url={back_url}&previous=nquestion"
@@ -344,7 +370,8 @@ def save_answer(request, task, answered, context, __):
     # save answer - get the TaskAnswer instance first
     question, _ = TaskAnswer.objects.get_or_create(
         task=task,
-        question=q,
+        # question=q,
+        module_question_id=question_key,
     )
 
     # fetch the task that answers this question
@@ -424,26 +451,27 @@ def save_answer(request, task, answered, context, __):
     # --------------------------
     # How long was it since the question was initially viewed? That gives us
     # how long it took to answer the question.
-    i_task_question_view = InstrumentationEvent.objects\
-        .filter(user=request.user, event_type="task-question-show", task=task, question=q)\
-        .order_by('event_time')\
-        .first()
-    i_event_value = (timezone.now() - i_task_question_view.event_time).total_seconds() \
-        if i_task_question_view else None
-    # Save.
-    InstrumentationEvent.objects.create(
-        user=request.user,
-        event_type="task-question-" + instrumentation_event_type,
-        event_value=i_event_value,
-        module=task.module,
-        question=q,
-        project=task.project,
-        task=task,
-        answer=question,
-        extra={
-            "answer_value": value,
-        }
-    )
+    # COMMENT OUT INSTRUMENTATION WHILE MIGRATING AWAY FROM ModuleQuestion
+    # i_task_question_view = InstrumentationEvent.objects\
+    #     .filter(user=request.user, event_type="task-question-show", task=task, question=q)\
+    #     .order_by('event_time')\
+    #     .first()
+    # i_event_value = (timezone.now() - i_task_question_view.event_time).total_seconds() \
+    #     if i_task_question_view else None
+    # # Save.
+    # InstrumentationEvent.objects.create(
+    #     user=request.user,
+    #     event_type="task-question-" + instrumentation_event_type,
+    #     event_value=i_event_value,
+    #     module=task.module,
+    #     question=q,
+    #     project=task.project,
+    #     task=task,
+    #     answer=question,
+    #     extra={
+    #         "answer_value": value,
+    #     }
+    # )
 
     # Process any actions from the question.
     # --------------------------------------
@@ -1070,6 +1098,7 @@ def show_question(request, task, answered, context, q):
     context.update({
         "header_col_active": "start" if (len(answered.as_dict()) == 0 and q.spec["type"] == "interstitial") else "questions",
         "q": q,
+        "q_spec_id": q.spec['id'],
         "title": title,
         "prompt": prompt,
     })
