@@ -807,14 +807,19 @@ class Task(BaseModel):
                   Task.objects.select_related('module', 'project').filter(
                       id__in=history.values_list("taskanswer__task_id", flat=True))}
                 
+        # TODO: To migrate awy from ModuleQuestion, we need to use module.spec.question
+        # or module.get_questionby_id
+        # I think we can completely redo this process because we don't need to re-assemble questions
         questions = {question.id: question for question in
                      ModuleQuestion.objects.select_related('module').filter(
                          id__in=history.values_list('taskanswer__question_id', flat=True))}
+        # Got questions...now use qeustions to get answers in history. Then get questions again?
 
         for ansh in history:
             current_answers.setdefault(
                 (tasks_.get(ansh.taskanswer.task_id), questions.get(ansh.taskanswer.question_id)), ansh)
         # Batch load all of the ModuleQuestions.
+        # TODO: with module.spec.questions we can just get quests array, instead?
         questions = ModuleQuestion.objects.prefetch_related('answer_type_module__questions').select_related('module') \
             .filter(module__in={task.module for task in tasks}) \
             .order_by("definition_order")

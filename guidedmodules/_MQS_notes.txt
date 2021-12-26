@@ -31,6 +31,11 @@ CONTINUE HERE > - Have views.show_question retrieve the current answer if exists
     We need @task_view to not return ModuleQuestion: see 
         `question = get_object_or_404(ModuleQuestion, module=task.module, key=question_key)`
 
+    to get correct answers see `get_all_current_answer_records`
+
+        questions = {question.id: question for question in
+                     ModuleQuestion.objects.select_related('module').filter(
+                         id__in=history.values_list('taskanswer__question_id', flat=True))}
 
 - Have guidedmodules.views.get_next_question get next question from Module.spec.question array instead of list of Module.question.
     - The next question is determined as part of saving the answer.
@@ -46,6 +51,8 @@ TO DO
 - (general) Use Module.questions_set everywhere instead of relationship Module.questions to get questions.
 
 - Editing question edits Module.spec.question
+
+- What type of object should module.get_question_by_id return? dictionary object?
 
 - Deleting question (optionally) bumps app version and adds new module record (to protect old version).
 

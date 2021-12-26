@@ -125,8 +125,31 @@ def task_view(view_func):
         # Is this page about a particular question?
         question = None
         if pagepath == "/question/":
-            question = get_object_or_404(ModuleQuestion, module=task.module, key=question_key)
-            taskans = TaskAnswer.objects.filter(task=task, question=question).first()
+            # OLD ModuleQuestion approach
+            # question = get_object_or_404(ModuleQuestion, module=task.module, key=question_key)
+            # taskans = TaskAnswer.objects.filter(task=task, question=question).first()
+            # NEW Module.spec.question approach
+            # Covert collections.OrderedDict to Dict
+            # As part of migrating from ModuleQuestion, get question from Module.spec.question
+            # question = json.loads(json.dumps(task.module.get_question_by_id(question_key)))
+            question_dict = json.loads(json.dumps(task.module.get_question_by_id(question_key)))
+
+            # As part of migration away from ModuleQuestion, we need to (temporarily)
+            # recreate q.spec with all of data that was in ModuleQuestion.spec field
+            # to support the remaining code that is expecting q.spec in this operation.
+            # We can do this by stuffing all of q into q.spec
+            from copy import deepcopy
+            question_dict['spec'] = deepcopy(question_dict)
+
+            # `question` is now a dictionary instead of a ModuleQuestion object and
+            #     that fact may cause problems in views that use @task_view and expect `question` to be
+            #     a ModuleQuestion object instead of a dictionary
+            #     We get around this with SimpleNamespace to support dot notation on question object
+            from types import SimpleNamespace
+            question = SimpleNamespace(**question_dict)
+            taskans = TaskAnswer.objects.filter(task=task, module_question_id=question_key).first()
+            print("30 ============", taskans)
+            # TODO: is the above correct with `.first`? Why not get_or_404?
 
         # Does the user have read privs here?
         def read_priv():
@@ -763,8 +786,8 @@ def show_question(request, task, answered, context, q):
 
     # Is there a TaskAnswer for this yet?
     print("17 =========== task=task, question=q, type(q)):", task, q, type(q))
-    taskq = TaskAnswer.objects.filter(task=task, question=q).first()
-    # taskq = TaskAnswer.objects.filter(task=task, module_question_id=q).first()
+    # taskq = TaskAnswer.objects.filter(task=task, question=q).first()
+    taskq = TaskAnswer.objects.filter(task=task, module_question_id=q).first()
 
     # Get previous question for back button
     back_url =  request.GET.get('back_url')
@@ -787,7 +810,9 @@ def show_question(request, task, answered, context, q):
     # For "module"-type questions, get the Module instance of the tasks that can
     # be an answer to this question, and get the existing Tasks that the user can
     # choose as an answer.
-    answer_module = q.answer_type_module
+    # answer_module = q.answer_type_module
+    answer_module = getattr(q,'answer_type_module', None)
+    # TODO : make above attr get one line
     answer_tasks = []
     if answer_module:
         # The user can choose from any Task instances they have read permission on
@@ -863,7 +888,8 @@ def show_question(request, task, answered, context, q):
                 error = "<p class='text-danger'>" + html.escape(error) + "</p>\n"
             return error
     def render_markdown_field(field, output_format, **kwargs):
-        template = q.spec.get(field)
+        # template = q.spec.get(field)
+        template = getattr(q, field, None)
         if not template:
             return None
         return render_markdown_value(template, output_format, field)
@@ -893,7 +919,8 @@ def show_question(request, task, answered, context, q):
     # What's the title/h1 of the page and the rest of the prompt? Render the
     # prompt field. If it starts with a paragraph, turn that paragraph into
     # the title.
-    title = q.spec["title"]
+    # title = q.spec["title"] # Used with ModuleQuest - delete
+    title = q.title
     prompt = render_markdown_field("prompt", "html")
     m = re.match(r"^<p>([\w\W]*?)</p>\s*", prompt)
     if m:
@@ -904,7 +931,8 @@ def show_question(request, task, answered, context, q):
     # Markdown into HTML for plain text fields. For longtext fields, turn it into
     # HTML because the WYSIWYG editor is initialized with HTML.
     default_answer = render_markdown_field("default",
-        "text" if q.spec["type"] != "longtext" else "html",
+        # "text" if q.spec["type"] != "longtext" else "html",
+        "text" if getattr(q, "type", None) != "longtext" else "html",
         demote_headings=False)
 
     ###############################################################################
@@ -1069,10 +1097,12 @@ def show_question(request, task, answered, context, q):
     #
     # We assume user has sufficient permission because user is answering question.
     #
-    if q.spec['type'] == "choice-from-data" or q.spec['type'] == "multiple-choice-from-data":
+    # if q.spec['type'] == "choice-from-data" or q.spec['type'] == "multiple-choice-from-data":
+    if getattr(q,'type', None) == "choice-from-data" or getattr(q,'type', None) == "multiple-choice-from-data":
         choices_from_data = []
         choices_from_data_keys = {}
-        for action in q.spec['choices_from_data']:
+        # for action in q.spec['choices_from_data']:
+        for action in getattr(q, 'choices_from_data', None):
             a_obj, a_verb, a_filter = action['action'].split("/")
             # Process system actions for generating question option choices
             # -------------------------------------------------------------
@@ -1108,15 +1138,15 @@ def show_question(request, task, answered, context, q):
         q.spec.update({"choices": choices_from_data})
 
     context.update({
-        "header_col_active": "start" if (len(answered.as_dict()) == 0 and q.spec["type"] == "interstitial") else "questions",
+        "header_col_active": "start" if (len(answered.as_dict()) == 0 and getattr(q,"type", None) == "interstitial") else "questions",
         "q": q,
-        "q_spec_id": q.spec['id'],
+        "q_spec_id": getattr(q, 'id', None),
         "title": title,
         "prompt": prompt,
     })
     context.update({
         "placeholder_answer": render_markdown_field("placeholder", "text") or "", # Render Jinja2 template but don't turn Markdown into HTML.
-        "example_answers": [render_markdown_value(ex.get("example", ""), "html", "example {}".format(i+1)) for i, ex in enumerate(q.spec.get("examples", []))],
+        "example_answers": [render_markdown_value(ex.get("example", ""), "html", "example {}".format(i+1)) for i, ex in enumerate(getattr(q, "examples", []))],
         "reference_text": render_markdown_field("reference_text", "html"),
     })
     context.update({
@@ -1127,7 +1157,12 @@ def show_question(request, task, answered, context, q):
         "answer": existing_answer,
         "answer_rendered": answer_rendered,
         "default_answer": default_answer,
-        "hidden_button_ids": q.module.app.modules.get(module_name="app").spec.get("hidden-buttons", []),
+
+        # The next file for migrating away from ModuleQuestion could be a tough one.
+        #   We want the module of the question, but such a relationship doesn't exist because
+        #   question is inside module. do we have madule elsewhere? from Task?
+        # "hidden_button_ids": q.module.app.modules.get(module_name="app").spec.get("hidden-buttons", []),
+        "hidden_button_ids": task.module.app.modules.get(module_name="app").spec.get("hidden-buttons", []),
     })
     context.update({
         "can_review": task.has_review_priv(request.user),
