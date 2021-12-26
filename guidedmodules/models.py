@@ -582,19 +582,6 @@ class ModuleAsset(models.Model):
         return "<ModuleAsset [%d] %s from %s>" % (self.id, self.file.name, self.source)
 
 
-# class ModuleQuestionSet(models.Model):
-#     module = models.ForeignKey(Module, related_name="question_set", on_delete=models.CASCADE,
-#                                help_text="The Module that this ModuleQuestionSet is a part of.")
-#     question_set_json = models.JSONField(blank=True, null=True, help_text="JSON object representing all module questions")
-    
-#     def __str__(self):
-#         # For the admin.
-#         return "%s[%d].%s" % (self.module, self.module.id, 'ModuleQuestionSet')
-#     def __repr__(self):
-#         # For debugging.
-#         return "<ModuleQuestionSet [%d] %s %d>" % (self.id, self.module.module_name, self.module.lid)
-
-
 class ModuleQuestion(BaseModel):
     module = models.ForeignKey(Module, related_name="questions", on_delete=models.CASCADE,
                                help_text="The Module that this ModuleQuestion is a part of.")
@@ -1783,11 +1770,9 @@ class Task(BaseModel):
 class TaskAnswer(BaseModel):
     task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="answers",
                              help_text="The Task that this TaskAnswer is a part of.")
-    module_question_id = models.CharField(max_length=200, unique=False, null=True, blank=True, help_text="ID of the question")
-
     question = models.ForeignKey(ModuleQuestion, null=True, on_delete=models.PROTECT,
                                  help_text="The question (within the Task's Module) that this TaskAnswer is answering.")
-
+    module_question_id = models.CharField(max_length=200, unique=False, null=True, blank=True, help_text="ID of the question")
     notes = models.TextField(blank=True, help_text="Notes entered by editors working on this question.")
     extra = JSONField(blank=True, help_text="Additional information stored with this object.")
 
