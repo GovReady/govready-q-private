@@ -1955,6 +1955,7 @@ class TaskAnswer(BaseModel):
 
         # Kick the Task and TaskAnswer's updated field and let the Task know that
         # its answers have changed.
+        print(10,"=========10 inside save_answer====")
         self.save(update_fields=[])
         self.task.on_answer_changed()
 

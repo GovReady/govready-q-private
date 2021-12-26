@@ -1,5 +1,82 @@
 MQS
+===
 
+Migrate Questions from being individual records to bein array in Module.
+
+Benefits:
+
+- Easier authoring by either just changing one Module record, or copying one Module record and bumping version.
+
+Done
+----
+
+- File app_loading.py now retains the questions inside module.spec. When app is loaded, the question array still exists in Module.
+
+- Add guidedmodules.models.Module.questions_set to return questions from Module.spec.
+
+- Add guidedmodules.models.get_question_by_id to return question by id from Module.spec.
+
+
+In Progress
+-----------
+
+
+
+CONTINUE HERE > - Have views.show_question retrieve the current answer if exists
+    answer = taskq.get_current_answer()
+
+    When Q does 'show_question', q value is passed in and q is type ModuleQuestion. But we are migrating away from ModuleQuestion.
+    So we need to pass in the module_question_id instead. we want to get the question from Module.spec.question and match on question id.
+    BUT, I don't understand how a whole question instance can be passed in a get URL?? BECAUSE of the @task_view decorator, dammit!
+    We need @task_view to not return ModuleQuestion: see 
+        `question = get_object_or_404(ModuleQuestion, module=task.module, key=question_key)`
+
+
+- Have guidedmodules.views.get_next_question get next question from Module.spec.question array instead of list of Module.question.
+    - The next question is determined as part of saving the answer.
+
+- Add get_all_current_answer_records2(tasks) to get all TaskAnswers efficiently
+
+- Editing a question saves in Module.spec.question.
+
+
+TO DO
+-----
+
+- (general) Use Module.questions_set everywhere instead of relationship Module.questions to get questions.
+
+- Editing question edits Module.spec.question
+
+- Deleting question (optionally) bumps app version and adds new module record (to protect old version).
+
+- Adding/Deleting modules bumps app version
+
+- Make sure TaskAnswers are related/can be found by data in Module.spec.question instead of by Django ORM relationship to ModuleQuestion.
+
+- Migrate Guidedmodules.models.ModuleQuestion back into guidedmodules.models.Module. Need to make sure any questionaires created witin application are now stored in Module.spec.question.
+
+- Have models.Module.serialize Module.spec.question.
+    Revise this section within code block:
+    ```
+    spec["questions"] = []
+        for i, q in enumerate(self.questions.order_by('definition_order')):
+            if i == 0 and q.key == "_introduction":
+                spec["introduction"] = {"format": "markdown", "template": q.spec["prompt"]}
+                continue
+    ...
+    ```
+
+- Revise Module.questions_dependencies
+    Use Module.spec.questions
+
+- Delete guidedmodules.models.ModuleQuestion model.
+
+- Remove instrumentation?
+
+
+
+Areas
+-----
 app_loading - storing questions, they are already in module.spec
 show_question
 update question from authoring tool
@@ -23,6 +100,7 @@ I want to start using module.questions_set as replacement for module.questions
 self.module.questions.get(key=question) needs to be self.module.questions_set.get_by_key(key=question) or get_by_id
 
 Lines that need to change:
+--------------------------
 guidedmodules.views:  q = task.module.questions.get(id=request.POST.get("question"))
 to change that file, I need to also send the module_question_id or question_key in the question form
 

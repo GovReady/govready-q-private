@@ -280,7 +280,7 @@ def save_answer(request, task, answered, context, __):
 
     # make a function that gets the URL to the next page
     def redirect_to():
-
+        return ""
         next_q = get_next_question(q, task)
 
         # ==============================================
@@ -430,7 +430,8 @@ def save_answer(request, task, answered, context, __):
         question.clear_answer(request.user)
         instrumentation_event_type = "clear"
     else:
-        # Save the answer.
+        # Save the answer. 
+        print("4.5 ==================== save the answer:")
         had_answer = question.has_answer()
         if question.save_answer(
             value, answered_by_tasks, answered_by_file,
@@ -746,6 +747,11 @@ def show_question(request, task, answered, context, q):
     authoring_tool_enabled = task.module.is_authoring_tool_enabled(request.user)
     can_upgrade_app = task.module.app.has_upgrade_priv(request.user)
 
+    print("16 =========== task:", task)
+    print("16 =========== answered:", answered)
+    print("16 =========== context:", context)
+    print("16 =========== q:", q)
+
     is_answerable = (((q not in answered.unanswered) or (q in answered.can_answer)) and (q.key not in answered.was_imputed))
     # TODO Create Guidedmodules settings model set in database whether to display_non_answerable
     # to allow allow access to imputed questions/
@@ -756,7 +762,9 @@ def show_question(request, task, answered, context, q):
         return HttpResponseRedirect(task.get_absolute_url())
 
     # Is there a TaskAnswer for this yet?
+    print("17 =========== task=task, question=q, type(q)):", task, q, type(q))
     taskq = TaskAnswer.objects.filter(task=task, question=q).first()
+    # taskq = TaskAnswer.objects.filter(task=task, module_question_id=q).first()
 
     # Get previous question for back button
     back_url =  request.GET.get('back_url')
@@ -767,8 +775,11 @@ def show_question(request, task, answered, context, q):
     # only here because the user is using the authoring tool, then there is no
     # real answer to load.)
     answer = None
+    print("19 =========== taskq and is_answerable:", taskq, is_answerable)
+    # taskq is None, needs to be something
     if taskq and is_answerable:
         answer = taskq.get_current_answer()
+        print("21 =========== taskq.get_current_answer():", answer)
         if answer and answer.cleared:
             # If the answer is cleared, treat as if it had not been answered.
             answer = None
@@ -802,34 +813,34 @@ def show_question(request, task, answered, context, q):
             now-t.updated,
             ))
 
-    # Add instrumentation event.
-    # How many times has this question been shown?
-    i_prev_view = InstrumentationEvent.objects\
-        .filter(user=request.user, event_type="task-question-show", task=task, question=q)\
-        .order_by('-event_time')\
-        .first()
-    # Save.
-    InstrumentationEvent.objects.create(
-        user=request.user,
-        event_type="task-question-show",
-        event_value=(i_prev_view.event_value+1) if i_prev_view else 1,
-        module=task.module,
-        question=q,
-        project=task.project,
-        task=task,
-        answer=taskq,
-    )
+    # # Add instrumentation event.
+    # # How many times has this question been shown?
+    # i_prev_view = InstrumentationEvent.objects\
+    #     .filter(user=request.user, event_type="task-question-show", task=task, question=q)\
+    #     .order_by('-event_time')\
+    #     .first()
+    # # Save.
+    # InstrumentationEvent.objects.create(
+    #     user=request.user,
+    #     event_type="task-question-show",
+    #     event_value=(i_prev_view.event_value+1) if i_prev_view else 1,
+    #     module=task.module,
+    #     question=q,
+    #     project=task.project,
+    #     task=task,
+    #     answer=taskq,
+    # )
 
-    # Indicate for the InstrumentQuestionPageLoadTimes middleware that this is
-    # a question page load.
-    request._instrument_page_load = {
-        "event_type": "task-question-request-duration",
-        "module": task.module,
-        "question": q,
-        "project": task.project,
-        "task": task,
-        "answer": taskq,
-    }
+    # # Indicate for the InstrumentQuestionPageLoadTimes middleware that this is
+    # # a question page load.
+    # request._instrument_page_load = {
+    #     "event_type": "task-question-request-duration",
+    #     "module": task.module,
+    #     "question": q,
+    #     "project": task.project,
+    #     "task": task,
+    #     "answer": taskq,
+    # }
 
     # Construct the page.
     def render_markdown_value(template, output_format, reference, **kwargs):
@@ -858,6 +869,7 @@ def show_question(request, task, answered, context, q):
         return render_markdown_value(template, output_format, field)
 
     # Get any existing answer for this question.
+    print(20, "========= get existing answer", answer)
     existing_answer = None
     if answer:
         existing_answer = answer.get_value()

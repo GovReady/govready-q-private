@@ -249,13 +249,6 @@ def update_module(m, spec, log_status):
         # print(f"adding question {i}, {question}")
         qs.add(update_question(m, i, question, log_status))
 
-    # Update ModuleQuestionSet
-    question_set_json = spec.get("questions", [])
-    [q.update({"key": q["id"], "definition_order": i}) for i, q in enumerate(question_set_json,1)]
-    mqs, isnew = ModuleQuestionSet.objects.get_or_create(
-                    module=m, question_set_json = spec.get("questions", [])
-                 )
-
     # Delete removed questions (only happens if the Module is
     # not yet in use).
     for q in m.questions.all():
