@@ -26,12 +26,12 @@ CONTINUE HERE > - Have views.show_question retrieve the current answer if exists
     answer = taskq.get_current_answer()
 
     When Q does 'show_question', q value is passed in and q is type ModuleQuestion. But we are migrating away from ModuleQuestion.
-    So we need to pass in the module_question_id instead. we want to get the question from Module.spec.question and match on question id.
-    BUT, I don't understand how a whole question instance can be passed in a get URL?? BECAUSE of the @task_view decorator, dammit!
+    The module_question_id must be passed instead to get the question from Module.spec.question by matching on the question id.
+    BUT, I don't understand how a whole question instance can be passed in a get URL? BECAUSE of the @task_view decorator, dammit!
     We need @task_view to not return ModuleQuestion: see 
         `question = get_object_or_404(ModuleQuestion, module=task.module, key=question_key)`
 
-    to get correct answers see `get_all_current_answer_records`
+    to recover the current question answers the code calls `models.get_all_current_answer_records`
 
         questions = {question.id: question for question in
                      ModuleQuestion.objects.select_related('module').filter(
