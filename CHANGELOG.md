@@ -14,6 +14,11 @@ v0.9.11.11-dev (December xx, 2021)
 * Add big button back to project home page on module summary page.
 * Edit AppVersion title, version, and description in new authoring tool.
 
+**Developer changes**
+
+* Start using react versions of tables for listing items.
+* Provide more serializers to support react.
+
 **Bug fixes**
 
 * Stop scrubching of progress-project-area-wrapper on question page.
