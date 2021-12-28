@@ -71,7 +71,7 @@ class BaseViewSet(GenericViewSet):
 
     serializer_classes = None
 
-    def __init__(self, *args, **kwargs):        
+    def __init__(self, *args, **kwargs):
         self.serializer_classes_tmp = TmpSerializerClasses()
         self.filter_backends += self.extra_filter_backends
         super().__init__(*args, **kwargs)
