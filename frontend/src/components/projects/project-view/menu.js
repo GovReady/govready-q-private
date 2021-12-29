@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import moment from 'moment';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader } from 'react-pro-sidebar';
 import Grid from '@mui/material/Grid';
 import HomeIcon from '@mui/icons-material/Home';
@@ -36,13 +37,13 @@ window.projectMenu = (data) => {
         window.location = url;
     }
 
-    // console.log(data)
+    console.log(data)
     // console.log(displayMap.urls)
 
     ReactDOM.render(
         <>
             <Box style={{ marginLeft: '0px', width: '320px' }} className={'sticky'}>
-                <ProSidebar 
+                <ProSidebar
                     style={{
                         marginLeft: '-5px',
                         paddingLeft: '0px',
@@ -63,13 +64,19 @@ window.projectMenu = (data) => {
 
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <h3 style={{ marginLeft: '20px' }}>Other: {data.project.portfolio.version}</h3>
+                                        <h3 style={{ marginLeft: '20px' }}>Project Updated: {moment(data.project.updated).fromNow()}</h3>
                                     </Grid>
                                     <Grid item xs={12}>
                                         <h3 style={{ marginLeft: '20px' }}>{data.project.root_task.module.spec.title}</h3>
                                     </Grid>
                                     <Grid item xs={12}>
                                         <h3 style={{ marginLeft: '20px' }}>Portfolio: {data.project.portfolio.title}</h3>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <h3 style={{ marginLeft: '20px' }}>Portfolio: {data.project.portfolio.title}</h3>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <h3 style={{ marginLeft: '20px' }}>Other: {data.project.portfolio.version}</h3>
                                     </Grid>
                                 </Grid>
                                 <Grid container spacing={.5}>

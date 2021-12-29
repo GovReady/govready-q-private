@@ -131,6 +131,7 @@
     {% include "edit-project-security-impact-levels-modal.html" %}
     {% include "move-project-modal.html" %}
     {% if authoring_tool_enabled %}
+        {% include "authoring-tool-modal.html" %}
         <script src="{% static "vendor/js-yaml.min.js" %}"></script>
         <script src="{% static "js/authoring_tool.js" %}"></script>
         <style>.dropdown-menu.textcomplete-dropdown { z-index: 99999 !important; }</style> {# show over modal #}
@@ -163,6 +164,7 @@
         </script>
     {% endif %}
     {% block scripts %}
+        {{ block.super }}
         <script>
             window.projectMenu({{ display_urls | json }});
             function show_import_project_modal(id, callback) {
