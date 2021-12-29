@@ -34,7 +34,7 @@ export const ControlsTable = () => {
         columns={columns}
         endpoint={endpoint}
         header={<div style={{ display: "block" }}>
-            <span style={{ fontWeight: "bold", fontSize: "20px", marginLeft: "15px" }}> Catalogs </span>
+            <span style={{ marginLeft: "20px" }}> Click a catalog to view control groups </span>
         </div>}
     />
 }
