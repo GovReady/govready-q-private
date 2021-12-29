@@ -5,7 +5,7 @@ from controls.models import ElementControl, Statement
 from datetime import datetime
 
 
-# Update project updated timestamp
+# These signals will Update project updated timestamp
 @receiver(post_save, sender=Statement)
 def on_project_component_change(sender, instance, created, **kwargs):
     instance.consumer_element.system.first().projects.update(updated=datetime.now())
@@ -37,15 +37,19 @@ def on_questionnaire_answer_remove(sender, instance, **kwargs):
 
 @receiver(post_save, sender=ModuleQuestion)
 def on_module_question_change(sender, instance, created, **kwargs):
-    project = instance.module.task_set.first().project
-    project.updated = datetime.now()
-    project.save()
+    task = instance.module.task_set.first()
+    if task:
+        project = task.project
+        project.updated = datetime.now()
+        project.save()
 
 @receiver(post_delete, sender=ModuleQuestion)
 def on_module_question_remove(sender, instance, **kwargs):
-    project = instance.module.task_set.first().project
-    project.updated = datetime.now()
-    project.save()
+    task = instance.module.task_set.first()
+    if task:
+        project = task.project
+        project.updated = datetime.now()
+        project.save()
 
 
 @receiver(post_save, sender=TaskAnswerHistory)

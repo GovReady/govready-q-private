@@ -1539,6 +1539,29 @@ def authoring_import_appsource(request):
         messages.add_message(request, messages.ERROR, f"AppSource file required.")
         return JsonResponse({ "status": "ok", "redirect": "/store" })
 
+
+@login_required
+@transaction.atomic
+def authoring_edit_appversion(request):
+    from guidedmodules.models import AppSource
+    from collections import OrderedDict
+
+    module_id = request.POST.get('module_id', 'None')
+    appversion_title = request.POST.get('appversion_title', 'None')
+    appversion_description = request.POST.get('appversion_description', 'None')
+    appversion_version = request.POST.get('appversion_version', 'None')
+
+    module = get_object_or_404(Module.objects, id=request.POST['module_id'])
+    appversion = module.app
+    appversion.version_number = appversion_version
+    appversion.catalog_metadata['title'] = appversion_title
+    appversion.catalog_metadata['description']['short'] = appversion_description
+    appversion.save()
+    messages.add_message(request, messages.INFO, f"Appversion name updated.")
+    
+    return HttpResponseRedirect(reverse('show_module_questions', args=[module.id]))
+
+
 @login_required
 @transaction.atomic
 def authoring_create_q(request):
@@ -1891,7 +1914,6 @@ def authoring_edit_question2(request):
 
     question = get_object_or_404(ModuleQuestion.objects.select_related('module'), id=request.POST['q_id'])
     module = question.module
-
     # Delete the question?
     if request.POST.get("delete") == "1":
         try:
@@ -1899,7 +1921,7 @@ def authoring_edit_question2(request):
             return JsonResponse({ "status": "ok", "redirect": task.get_absolute_url() })
         except Exception as e:
             # The only reason it would fail is a protected foreign key.
-            return JsonResponse({ "status": "error", "message": "The question cannot be deleted because it has already been answered." })
+            return JsonResponse({ "status": "error", "message": "The question #"+request.POST['q_id']+" cannot be deleted because it has been answered in a Project. Contact an administrator to delete." })
 
     # Update the question...
     # Update the key.
