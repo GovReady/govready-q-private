@@ -239,6 +239,23 @@ Question editor
     </div>
 
     {% if module.spec.type == 'project' %}
+      <h3>Assets</h3>
+      <table class="question_grid"><tr><th class="edit_col">Edit</th><th class="order_col">Content Hash</th><th class="key_col">TBD</th><th class="title_col">File</th></tr>
+         module.app.asset_paths
+        <hr>
+         module.app.asset_files.all
+        {% for af in module.app.asset_files.all %}
+            <tr class="question-row">
+              <td> btns </td>
+              <td>{{ af.content_hash|truncatechars:12 }}</td>
+              <td>cell4 {% if 'png' in af.file|stringformat:"s" %}png {% endif %}</td>
+              <td>{{ af.file }}</td>
+            </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+
+    {% if module.spec.type == 'project' %}
       <h3>Modules</h3>
     {% else %}
       <h3>Questions</h3>
