@@ -1,5 +1,6 @@
 import sys
 import os.path
+import os
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
@@ -14,6 +15,7 @@ from django.utils.text import slugify
 from controls.models import Element, Statement
 # from controls.views import system_element_download_oscal_json
 from controls.views import OSCALComponentSerializer
+from controls.views import OpenControlComponentSerializer
 
 import fs, fs.errors
 
@@ -22,7 +24,7 @@ class Command(BaseCommand):
     help = 'Export all components.'
 
     def add_arguments(self, parser):
-        parser.add_argument('--format', metavar='format', nargs='?', default="oscal", help="File format")
+        parser.add_argument('--format', metavar='format', nargs='?', default="oscal", help="File format: 'oscal', 'csv', 'dir'")
         parser.add_argument('--path', metavar='dir_or_pdf', nargs='?', default="local/export/components", help="The directory path to write export file(s) into.")
 
     def handle(self, *args, **options):
@@ -91,6 +93,29 @@ class Command(BaseCommand):
                                                    smt.created,
                                                    smt.updated
                                                   ])
+        elif FORMAT == "dir":
+            counter = 0
+            for element in elements:
+                counter += 1
+                print(f"{counter} id: {element.id}, element: {element.name}")
+                # Get the impl_smts for component
+                impl_smts = Statement.objects.filter(producer_element=element)
+                # filename = str(PurePath(slugify(element.name)).with_suffix('.json'))
+                filename_oscal = str(PurePath('oscal').with_suffix('.json'))
+                body_oscal = OSCALComponentSerializer(element, impl_smts).as_json()
+                filename_opencontrol= str(PurePath('opencontrol').with_suffix('.json'))
+                body_opencontrol = opencontrol_string = OpenControlComponentSerializer(element, impl_smts).as_yaml()
+                # Make the component dir
+                directory = slugify(element.name)
+                print("1 ==== ", directory)
+                os.mkdir(os.path.join(EXPORT_PATH,directory))
+
+                # Save component OSCAL within directory
+                with open(os.path.join(EXPORT_PATH,directory,filename_oscal), "w") as f:
+                    f.write(body_oscal)
+                # Save component OpenControl within directory
+                with open(os.path.join(EXPORT_PATH,directory,filename_opencontrol), "w") as f:
+                    f.write(body_opencontrol)
         else:
             counter = 0
             print(f"Format '{FORMAT}' not yet supported.")
