@@ -31,10 +31,12 @@
         .breadcrumb {
             font-size: 1.0em;
         }
-
+/*
         #focus-area-wrapper {
             padding: 2em 2em 3em 2em;
         }
+
+        */
 
         .link-black {
             color: black;
@@ -56,8 +58,7 @@
         body {
             border-bottom: 0px !important;
             padding-bottom: 0px !important;
-            height: 100vh;
-            width: 100vw;
+             height: 100%;
         }
 
 
@@ -67,6 +68,19 @@
 
       .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus-visible { outline: 2px dashed #60BF60;}
 
+      .pro-sidebar { }
+
+      /* overrides */
+
+    .pro-sidebar > .pro-sidebar-inner { background:#fff;}
+
+    .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
+         background-color: #fff;
+    }
+
+
+
+
     </style>
 {% endblock %}
 
@@ -74,16 +88,17 @@
 
 {% block body %}
     {{ block.super }}
-    <div class="row" style="height:100%;">
+    <div class="row">
 
-        <div class="col-md-3" style="margin:0px;padding:0px 0px 0px 0px;height:100%;">
-            <div id="focus-area-wrapper" style="padding:0px; margin-top:0px;height:100%;">
+        <div class="col-md-3">
+          <div class="leftnav-box" style="padding-right:50px;">
+          <div id="focus-area-wrapper">
                 {% block above_title %}
                 {% endblock %}
 
                 {# if is_project_page #}
 
-                <div id="menu" style="height: 100%;"></div>
+                <div id="menu"></div>
                 {% block action_buttons %}
                     {% if action_buttons %}
                         {% for q in action_buttons %}
@@ -115,18 +130,19 @@
                         {% endfor %}
                     {% endif %}
                 {% endblock %}
-            </div> <!-- /focus-area-wrapper -->
+                </div>
+            </div>
         </div> <!-- /col -->
 
-        <div class="col-md-8 project-body-block" style="margin-top: 60px;">
+        <div class="col-md-9">
             {% block body_content %}
             {% endblock %}
-
-        <footer>
-            <div class="row footer-row" style="margin-left: -20px;">
+        </div>
+        <!--<footer>
+            <div class="row footer-row">
                 {% include "footer.html" %}
             </div>
-        </footer>
+        </footer>-->
 
         </div>
     </div> <!-- /row -->

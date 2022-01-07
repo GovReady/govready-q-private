@@ -42,8 +42,8 @@ window.projectMenu = (data) => {
 
     ReactDOM.render(
         <>
-            <Box style={{ marginLeft: '0px', height: '100%', width: '320px' }}>
-                <ProSidebar style={{ marginLeft: '-5px', paddingLeft: '0px', width: '320px' }} >
+            <Box style={{ width: '100%' }}>
+                <ProSidebar style={{ width: '100%' }} >
                     <Menu iconShape="square">
                         {data.project.system && <>
                             <SidebarHeader class="sidebardarkheader">
@@ -60,7 +60,7 @@ window.projectMenu = (data) => {
                                     </Grid>
                                 </Grid>
                             </SidebarHeader>
-                            <MenuItem 
+                            <MenuItem
                                 icon={<HomeIcon />}
                                 id="menu-btn-project-home"
                                 onClick={() => redirect(`${window.origin}${data.urls.home}`)}
