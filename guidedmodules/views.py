@@ -1870,15 +1870,24 @@ def authoring_new_question2(request):
 
     # Find a new unused question identifier.
     question = get_object_or_404(ModuleQuestion.objects.select_related('module'), id=request.POST['question_id'])
-    group = question.spec['group']
+    if 'group' in question.spec.keys():
+        group = question.spec['group']
     module = question.module
 
     # import ipdb; ipdb.set_trace()
 
     if module.spec.get("type") == "project":
         # Adding a module question to top level of appversion
+
+        # Find unique module name among appversion module, modulequestion identifiers
         module_count = Module.objects.get(pk=9).app.modules.all().count()
         entry = "new_module_" + str(module_count)
+        # Avoid DB duplicates for Module, ModuleQuestion
+        while Module.objects.filter(app=module.app,module_name=entry).exists():
+            entry = "new_module_" + str( int(entry.replace("new_module_","")) + 1)
+        while ModuleQuestion.objects.filter(key=entry,module__module_name=entry).exists():
+            entry = "new_module_" + str( int(entry.replace("new_module_","")) + 1)
+
         # Make a new modular spec
         mspec = {"id": f"{entry}",
                  "title": entry.replace("_"," ").title(),
@@ -1897,7 +1906,7 @@ def authoring_new_question2(request):
         spec = {
             "id": entry,
             "type": "module",
-            "title": f"New Module {module_count}",
+            "title": entry.replace("_"," ").title(),
             "module-id": module_id,
             "group": group,
             "output": []
@@ -1976,11 +1985,23 @@ def authoring_edit_question2(request):
 
     question = get_object_or_404(ModuleQuestion.objects.select_related('module'), id=request.POST['q_id'])
     module = question.module
+    task_id = request.POST.get('task', None)
+    if task_id:
+        task = get_object_or_404(Task.objects.select_related('project'), id=task_id)
+
     # Delete the question?
     if request.POST.get("delete") == "1":
         try:
             question.delete()
-            return JsonResponse({ "status": "ok", "redirect": task.get_absolute_url() })
+            # Clear cache...
+            from .module_logic import clear_module_question_cache
+            clear_module_question_cache()
+            if task_id:
+                # if coming from editor on a question page, return to project page after deleting question
+                return JsonResponse({ "status": "ok", "redirect": task.project.get_absolute_url() })
+            else:
+                # if coming show_module_questions, return to show_module_questions after deleting question
+                return JsonResponse({ "status": "ok", "redirect": reverse('show_module_questions', args=[module.id]) })
         except Exception as e:
             # The only reason it would fail is a protected foreign key.
             return JsonResponse({ "status": "error", "message": "The question #"+request.POST['q_id']+" cannot be deleted because it has been answered in a Project. Contact an administrator to delete." })
