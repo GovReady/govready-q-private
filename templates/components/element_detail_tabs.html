@@ -91,15 +91,11 @@
         </h2>
       </div>
       <div class="col-sm-2">
-
-
         <div id="btn-edit-title" style="text-align: center;">
           {% if is_admin %}
             <button class="btn btn-default btn-small" id="edit-button" onclick="return edit_component();">Edit</button>
           {% endif %}
         </div>
-
-        
       </div>
     </div>
   <div>&nbsp;</div>
@@ -115,17 +111,17 @@
       {% endif %}
       <div style="margin: 0px 12px 0px 0px;">
         <a id="copy_component" class="btn btn btn-default pull-right" href={% url 'component_library_component_copy' element_id=element.id %} role="button" style="color: black;">Clone component</a>&nbsp;
-        
-        
-        <a 
-        id="delete_component" 
+
+
+        <a
+        id="delete_component"
           class="btn btn btn-default pull-right"
           {% comment %} href={% url 'component_library_component_copy' element_id=element.id %} {% endcomment %}
           role="button"
           style="color: black;"
           onclick="return delete_component()"
           >
-          
+
             Delete component</a>&nbsp;
       </div>
     </ul>
@@ -380,7 +376,7 @@
 
 {% block scripts %}
       <script>
-        window.renderElementTags({{ element.id }}, {{ tags | safe }});       
+        window.renderElementTags({{ element.id }}, {{ tags | safe }});
       </script>
       <script>
         // Adds statement form to page
@@ -517,7 +513,7 @@
         }
 
         function edit_component() {
-          show_edit_component_modal("{{element.name}}","{{element.description}}",(newName, newDescription)=>{
+          show_edit_component_modal("{{element.name}}",`{{element.description}}`,(newName, newDescription)=>{
             ajax_with_indicator({
               url: '{% url "edit_element" element.id %}',
               method: "POST",
@@ -536,15 +532,15 @@
           });
         }
 
-        function delete_component() {         
+        function delete_component() {
          show_delete_component_modal("{{element.name}}","{{element.description}}",(componentName, reason)=>{
-          ajax_with_indicator({            
+          ajax_with_indicator({
             url: '{% url "delete_element" element.id %}',
             method: "POST",
             data: {name: componentName,description: reason},
-            keep_indicator_forever: true,                        
+            keep_indicator_forever: true,
             success: function(res) {
-              
+
               if(res["status"]=="ok"){
                 hide_edit_component_modal();
                 window.location.reload();
