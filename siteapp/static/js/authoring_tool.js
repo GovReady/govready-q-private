@@ -27,12 +27,18 @@ function init_authoring_tool(state) {
   $('#authoring_tool_qmoduletype').append(optgroup_apps);
   optgroup_apps.append('<option value="/app/">Based on Protocol ID (Enter Next)</option>');
   if (state.answer_type_modules.length > 0) {
+    var module_question = Object.keys(state.questions)[0];
+    var module_question_module_id = state.questions[module_question].spec['module-id'];
     var optgroup_modules = $('<optgroup label="Modules in This App"></optgroup>');
     $('#authoring_tool_qmoduletype').append(optgroup_modules);
     state.answer_type_modules.forEach(function(item) {
       var opt = $("<option/>");
       opt.attr('value', item.id);
       opt.text(item.title);
+      // select current module
+      if (item.id == module_question_module_id) {
+        opt.attr('selected', 'selected');
+      }
       optgroup_modules.append(opt);
     });
   }
@@ -170,9 +176,6 @@ function authoring_tool_add_impute_condition_fields() {
 }
 
 function authoring_tool_download_app() {
-  // console.log(q_authoring_tool_state.questions)
-  // console.log(q_authoring_tool_state.questions.spec)
-  // console.log(Object.getOwnPropertyNames(q_authoring_tool_state.questions)[0]);
   var data = [{ name: "task", value: q_authoring_tool_state.task }]
   data.push( { name: "question", value: Object.getOwnPropertyNames(q_authoring_tool_state.questions)[0] } );
   ajax_with_indicator({
@@ -190,11 +193,6 @@ function authoring_tool_download_app() {
 }
 
 function authoring_tool_download_app_project(task_id, is_project_page) {
-  console.log("calling authoring_tool_download_app_project");
-  console.log("task_id sent: "+task_id);
-  // alert("check console");
-  // console.log(q_authoring_tool_state.questions.spec)
-  // console.log(Object.getOwnPropertyNames(q_authoring_tool_state.questions)[0]);
   ajax_with_indicator({
       url: "/tasks/_authoring_tool/download-app-project",
       method: "POST",
@@ -236,7 +234,7 @@ function authoring_tool_save_question() {
 }
 
 function authoring_tool_delete_question() {
-  if (!confirm("Are you sure you want to delete this question?")) return;
+  if (!confirm("WARNING! CLICKING 'OK' WILL PERMANENTLY DELETE THIS QUESTION (AND ANSWERS) FROM ALL PROJECTS USING THIS TEMPLATE.")) return;
   var data = $('#question_authoring_tool form').serializeArray();
   if (q_authoring_tool_state.task) {
     data.push( { name: "task", value: q_authoring_tool_state.task } );

@@ -38,7 +38,7 @@ window.projectMenu = (data) => {
     }
 
 
-    console.log(data)
+    // console.log(data)
     // console.log(displayMap.urls)
 
     ReactDOM.render(
@@ -59,7 +59,6 @@ window.projectMenu = (data) => {
                                         <br/>
                                         <h3 className="sidebardark-head sidebar-item" >Last Updated: <span className="sidebardark-head-title ">{moment(data.project.updated).fromNow()}</span></h3>
                                         <h3 className="sidebardark-head">Portfolio: <span className="sidebardark-head-title">{data.project.portfolio.title}</span></h3>
-                                        
                                     </Grid>
                                 </Grid>
                             </SidebarHeader>
