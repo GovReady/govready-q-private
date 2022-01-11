@@ -86,11 +86,26 @@
 
         <div class="col-md-3">
           <div class="leftnav-box" style="padding-right:50px;">
+
+            <div>
+              <h4>System Progress Report</h4>
+              <div style="border:1px solid #88BB88; padding:10px;">
+                <h4>% Compliance (unaccessed)</h4>
+
+                <h4>Controls Addressed (X of XXX)</h4>
+
+                <h4>PoA & Milestones (X of XX)</h4>
+                </div>
+            </div>
+
           <div id="focus-area-wrapper">
                 {% block above_title %}
                 {% endblock %}
-
                 {# if is_project_page #}
+
+
+
+
 
                 <div id="menu"></div>
                 {% block action_buttons %}
@@ -124,6 +139,8 @@
                         {% endfor %}
                     {% endif %}
                 {% endblock %}
+
+
                 </div>
             </div>
         </div> <!-- /col -->
