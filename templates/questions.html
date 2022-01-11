@@ -192,8 +192,8 @@ Question editor
       {{ module.app.catalog_metadata.title }}&nbsp;&nbsp;<a onclick='console.log("{{module.app.catalog_metadata.description.short}}");show_edit_appversion_modal("{{ module.id }}", "{{ module.app.catalog_metadata.title }}", "{{ module.app.catalog_metadata.description.short }}", "{{ module.app.version_number }}"); return false;' style="cursor: pointer;"><span class="glyphicon glyphicon-pencil"></span></a>
       {% if app.icon %}<img src="{{ app.icon }}" class="img-responsive" style="height:60px;" alt="App Icon">{% endif %}
     </h2>
-    <div style="font-size:0.8em;">{{ module.app.catalog_metadata.description.short }}</div>
-    <div style="font-size:0.8em;">Version: {{ module.app.version_number }}</div>
+    <div style="font-size:0.8em; padding-top:.5em;">{{ module.app.catalog_metadata.description.short }}</div>
+    <div style="font-size:0.8em; padding-top:.5em;">Version: {{ module.app.version_number }}</div>
 
     <br /><br />
     <!-- Display app.yaml project module -->

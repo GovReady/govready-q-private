@@ -64,22 +64,16 @@
 
 
 
-/* style changes for the react sidebar to comply with 508 by showing outline for screen readers */
+        /* style changes for the react sidebar to comply with 508 by showing outline for screen readers */
 
-      .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus-visible { outline: 2px dashed #60BF60;}
-
-      .pro-sidebar { }
-
-      /* overrides */
-
-    .pro-sidebar > .pro-sidebar-inner { background:#fff;}
-
-    .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
-         background-color: #fff;
-    }
-
-
-
+              .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus-visible { outline: 2px dashed #60BF60;}
+              .pro-sidebar { color:#404040; }
+              .pro-sidebar .pro-inner-item .pro-item-content:hover { color: #009900;}
+              .pro-sidebar > .pro-sidebar-inner { background:#fff;}
+              .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover { color: #009900;}
+              .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header { border-bottom:none;}
+              .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item { padding:5px 0 5px 5px; }
+              .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper { background-color: #fff;}
 
     </style>
 {% endblock %}

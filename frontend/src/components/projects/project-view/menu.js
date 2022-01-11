@@ -49,6 +49,7 @@ window.projectMenu = (data) => {
                             <SidebarHeader className="sidebardarkheader">
                                 <Grid container >
                                     <Grid item xs={12}>
+                                    <h3 className="sidebardark-head">Portfolio: <span className="sidebardark-head-title">{data.project.portfolio.title}</span></h3>
                                         <h2 className="sidebardark-header">
                                             {data.project.root_task.title_override}&nbsp;&nbsp;
                                             <span className="glyphicon glyphicon-pencil" style={{ fontSize: '14px', color: '#aaa', cursor: 'pointer' }}
@@ -56,7 +57,7 @@ window.projectMenu = (data) => {
                                         </h2>
                                         <span className="sidebardark-project-details" title={`${data.project.version_comment}`}> Project ID: {data.project.id}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;System ID: {data.project.system.id}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Version: {data.project.version} <br/>{data.project.version_comment}</span>
                                         <br/>
-                                        <h3 className="sidebardark-head">Portfolio: <span className="sidebardark-head-title">{data.project.portfolio.title}</span></h3>
+
                                     </Grid>
                                 </Grid>
                             </SidebarHeader>

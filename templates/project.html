@@ -39,11 +39,12 @@
     text-align: left;
     font-weight: bold;
     margin: 0 0 1.5em 0;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #E6E6E6;
+    padding-bottom: 5px;
   }
 
   .question {
-    min-height:240px;
+    min-height:180px;
     text-align:center;
     display:block;
     margin-right:5px;
@@ -64,7 +65,21 @@
     border: 1px solid #88BB88;
     webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
     box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    background:#F1F8E9;
   }
+
+.question-finished:hover { background:#E3EADA;}
+
+.question-started {
+  border: 1px solid #ECB144;
+  webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+  background:#FBF6E3;
+}
+
+.question-started:hover { background:#F6EDC6;}
+
+
 
   /*.question:hover {
     background-color: #F6F7F7;
@@ -187,7 +202,7 @@
       <h3 id="project-title" class="question-group-title hr" style="margin-left: 50px; font-size: 1.5em;">
         <span></span>
         &nbsp;&nbsp;
-        {{ project.title }} HERE?
+        {{ project.title }} Where is this?
         &nbsp;&nbsp;
         <span></span>
       </h3>
@@ -271,8 +286,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="project-info" style="border-left:1px solid #ccc; padding-left:20px;">
-        <h2>Things to do</h2>
+        <div class="project-info" style="border-left:1px solid #E6E6E6; padding-left:20px; margin-top:20px; margin-bottom:50px;">
         <div class="question-column">
             {% for group in question_groups.groups %}
             {% if group.title %}<div><a id="{{group.title}}"></a>&nbsp;</div>{% endif %}
@@ -285,7 +299,7 @@
                 <div id="question-{{q.question.key}}"
                   {% if q.task  %}data-task-id="{{q.task.id}}"{% endif %}
                   class="col-xs-4"
-                  ><div class="question {% if q.task.is_finished %}question-finished{% endif %}">
+                  ><div class="question  {% if q.task.is_started and not q.task.is_finished %}question-started{% endif %} {% if q.task.is_finished %}question-finished{% endif %}">
 
 
 
@@ -315,7 +329,7 @@
 
                           {% with task=q.task %}
                             {% if task.is_finished %}
-                            <a href="{{q.task.get_absolute_url}}" style="display: block;"><button class="btn btn-default" style="width:125px; padding:.5em; margin:.5em 0 1em 0;">Edit</button></a>
+                            <a href="{{q.task.get_absolute_url}}" style="display: block;"><button class="btn btn-default" style="width:125px; padding:.5em; margin:.5em 0 1em 0;">Edit Completed</button></a>
                             {% elif task.is_started %}
                             <a href="{{q.task.get_absolute_url}}" style="display: block;"><button class="btn btn-default" style="width:125px; padding:.5em; margin:.5em 0 1em 0;">Continue</button></a>
                             {% else %}
@@ -331,7 +345,7 @@
 
 
 
-                            <input type="button" value="start directly?" class="btn btn-default" style="width:125px; padding:.5em; margin:.5em 0 1em 0;"/>
+                            <input type="button" value="start" class="btn btn-default" style="width:125px; padding:.5em; margin:.5em 0 1em 0;"/>
                             {% csrf_token %}
                             <input type="hidden" name="project" value="{{project.id}}"/>
                             <input type="hidden" name="question" value="{{q.question.key}}"/>
@@ -354,11 +368,11 @@
                       <div class="question-status">
                         {% with task=q.task %}
                           {% if task.is_finished %}
-                            <div class="question-status-completed">Completed</div>
+                          <!--  <div class="question-status-completed">Completed</div> -->
                           {% elif task.is_started %}
-                            <div class="question-status-inprogress">In Progress</div>
+                            <!--<div class="question-status-inprogress">In Progress</div>-->
                           {% else %}
-                            <div class="question-status-notstarted">Not Started</div>
+                            <!--<div class="question-status-notstarted">Not Started</div>-->
 
 
 
@@ -384,7 +398,7 @@
                     {# If the user had permission to start a task and we started an 'a' or 'form' element, end it. #}
                     {% if can_start_task %}
                       {% if not q.can_start_new_task %}
-                        </a>
+                        <!--</a>-->
                       {% else %}
                         </form>
                       {% endif %}
