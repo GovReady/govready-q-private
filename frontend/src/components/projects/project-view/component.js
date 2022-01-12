@@ -27,6 +27,7 @@ window.renderProjectTags = (projectID, existingTags) => {
 
 };
 
+
 // window.projectsTable = (systemId) => {  
 //     $(window).on('load', function () {
 //         $("#content").show();
