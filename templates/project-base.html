@@ -72,9 +72,9 @@
               .pro-sidebar > .pro-sidebar-inner { background:#fff;}
               .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover { color: #009900;}
               .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header { border-bottom:none;}
-              .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item { padding:5px 0 5px 5px; }
-              .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper { background-color: #fff;}
-
+              .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item { padding:0 0 0 0; }
+              .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper { background-color: #fff; height:25px;}
+              .pro-sidebar .pro-menu .pro-menu-item { font-size: 14px;}
 
 /* styles related to progress box */
               .unassessed { color: #333; font-weight:light;}
@@ -85,11 +85,11 @@
               .project-info-systemcomponents { font-size: .7em;}
               .project-info-systemcomponents a:link{ color: #95999B; }
 
-              .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; }
+              .sidebar-info-block { border:1px solid #C0E6C0; padding:15px; background-color:#F1FAF1; border-radius: 5px; margin-bottom:1em;}
 
               .fake-bar { display:block; height: 15px; width:100%; background-color:#80CC80; margin-bottom:1em;}
 
-              .sidebar-artifacts-box { font-size: 1em; display:block; margin-top:1em; padding:0 15px;}
+              .sidebar-module-boxes { font-size: 1em; display:block; margin-top:1em; margin-bottom:1em; padding:0 15px;}
               .sidebar-artifacts { display:block; padding:0; margin:0;}
               .sidebar-artifacts a {color:#666666; text-decoration:none;}
               .sidebar-artifacts a:hover {color:#337ab7; text-decoration:none;}
@@ -104,6 +104,12 @@
               .bar-box-bar { background:#80CC80; height:12px; }
               .sidebar-progress-title { font-size:1.1em;}
 
+
+/* sidebar styles */
+.sidebar-module-boxes-header { border-bottom:1px solid #ccc; display:block; margin-bottom:1em; }
+.sidebar-box-label { font-size:1em; font-weight:bold; }
+
+
     </style>
 {% endblock %}
 
@@ -115,9 +121,10 @@
 
         <div class="col-md-3">
           <div class="leftnav-box" style="padding-right:30px; padding-top:1em;">
+
+<!-- Moved this into menu.js
             <h4 class="sidebar-progress-title">Current System Progress</h4>
               <div class="sidebar-info-block">
-
 
               <span class="project-info-compliance"><strong>{{ percent_compliant_100|floatformat:0 }}%</strong> compliance <span class="unassessed">(unassessed)</span></span><br />
               <div class="bar-box"><div class="bar-box-bar" style="width:{{ percent_compliant_100|floatformat:1 }}%;"></div></div>
@@ -130,7 +137,7 @@
               <div class="bar-box"><div class="bar-box-bar" style="width:25%;"></div></div>
 
               </div>
-
+-->
 
           <div id="focus-area-wrapper">
                 {% block above_title %}

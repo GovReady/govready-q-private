@@ -592,4 +592,4 @@ form #id_appsource_compapp { width: 100%; overflow: auto !important; }
 .sidebardark-project-details { color: #404040; font-size:.7em; margin: 10px 0 20px 0; display:block; border-top:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6; padding:5px 0 5px 0; margin:10px 20px 0 0;}
 .sidebardark-head-title {color: #404040; }
 
-.sidebardarkheader { border:none; display:block; margin:25px 0 5px 20px; }
+.sidebardarkheader { border:none; display:block; margin:0; }

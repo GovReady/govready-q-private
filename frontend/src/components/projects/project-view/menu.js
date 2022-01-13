@@ -61,66 +61,44 @@ window.projectMenu = (data) => {
                                     </Grid>
                                 </Grid>
                             </SidebarHeader>
-                            <MenuItem
-                                icon={<HomeIcon />}
-                                id="menu-btn-project-home"
-                                onClick={() => redirect(`${window.origin}${data.urls.home}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.home}`)
-                                    }
-                                }}
-                            >
-                                Project Home
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-controls"
-                                icon={<ListAltIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.controls}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.controls}`)
-                                    }
-                                }}
-                            >
-                                Controls
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-components"
-                                icon={<SettingsInputComponentIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.components}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.components}`)
-                                    }
-                                }}
-                            >
-                                Components
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-poa_ms"
-                                icon={<CheckBoxIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.poa_ms}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.poa_ms}`)
-                                    }
-                                }}
-                            >
-                                POA&Ms
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-deployments"
-                                icon={<ApiIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.deployments}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.deployments}`)
-                                    }
-                                }}
-                            >
-                                Deployments
-                            </MenuItem>
+
+                            <Grid container >
+                                <Grid item xs={12}>
+                                <h4 className="sidebar-progress-title">Current System Progress</h4>
+                                <div className="sidebar-info-block">
+
+
+                                <span className="project-info-compliance"><strong>%</strong> compliance <span className="unassessed">(unassessed)</span></span><br />
+                                <div className="bar-box"><div className="bar-box-bar" style={{ width: '20%' }}></div></div>
+
+                                <span className="project-info-controls">Controls Addressed (X of Y)</span>
+
+                                <div className="bar-box"><div className="bar-box-bar" style={{ width: '15%' }}></div></div>
+
+                                <span className="project-info-poams">PoA & Milestones (7 of 28)</span>
+                                <div className="bar-box"><div className="bar-box-bar" style={{ width: '25%' }}></div></div>
+
+                                </div>
+                                </Grid>
+                                </Grid>
+
+                            <Grid container >
+                                <Grid item xs={12}>
+                            <div className="sidebar-module-boxes">
+                            <div className="sidebar-module-boxes-header">
+                              <span className="sidebar-icon glyphicon glyphicon-th"></span><span className="sidebar-box-label">Components</span>
+                            </div>
+                            <span>A realtime list of components used in this project goes here.</span>
+                            </div>
+                            </Grid>
+                            </Grid>
+
+                            <Grid container >
+                                <Grid item xs={12}>
+                            <div className="sidebar-module-boxes">
+                            <div className="sidebar-module-boxes-header">
+                              <span className="sidebar-icon glyphicon glyphicon-list"></span><span className="sidebar-box-label">Artifacts</span>
+                            </div>
                             <MenuItem
                                 id="menu-btn-project-assesments"
                                 icon={<AssessmentIcon />}
@@ -133,6 +111,50 @@ window.projectMenu = (data) => {
                             >
                                 Assesments
                             </MenuItem>
+
+                            <MenuItem
+                                id="menu-btn-project-documents"
+                                icon={<InsertDriveFileIcon />}
+                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
+                                onKeyPress={(e) => {
+                                    if(e.key === 'Enter'){
+                                        redirect(`${window.origin}${data.urls.documents}`)
+                                    }
+                                }}
+                            >PTA</MenuItem>
+
+                            <MenuItem
+                                id="menu-btn-project-documents"
+                                icon={<InsertDriveFileIcon />}
+                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
+                                onKeyPress={(e) => {
+                                    if(e.key === 'Enter'){
+                                        redirect(`${window.origin}${data.urls.documents}`)
+                                    }
+                                }}
+                            >SSP</MenuItem>
+
+                            <MenuItem
+                                id="menu-btn-project-documents"
+                                icon={<InsertDriveFileIcon />}
+                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
+                                onKeyPress={(e) => {
+                                    if(e.key === 'Enter'){
+                                        redirect(`${window.origin}${data.urls.documents}`)
+                                    }
+                                }}
+                            >Documents</MenuItem>
+                            </div>
+                            </Grid>
+                            </Grid>
+
+                            <Grid container >
+                                <Grid item xs={12}>
+                            <div className="sidebar-module-boxes">
+                            <div className="sidebar-module-boxes-header">
+                              <span className="sidebar-icon glyphicon glyphicon-transfer"></span><span className="sidebar-box-label">Actions</span>
+                            </div>
+
                             <MenuItem
                                 icon={<ArrowUpwardIcon />}
                                 id="menu-btn-project-import"
@@ -148,9 +170,8 @@ window.projectMenu = (data) => {
                                         m.modal();
                                     }
                                 }}
-                            >
-                                Import Project
-                            </MenuItem>
+                            >Import Project</MenuItem>
+
                             <MenuItem
                                 id="menu-btn-project-export_project"
                                 icon={<ArrowDownward />}
@@ -160,25 +181,10 @@ window.projectMenu = (data) => {
                                         redirect(`${window.origin}${data.urls.export_project}`)
                                     }
                                 }}
-                            >
-                                Export Project
-                            </MenuItem>
-                        </>}
-                        {(!data.project.is_account_project || data.project.is_deletable) && <>
-                            <MenuItem
-                                id="menu-btn-project-is_account_project"
-                                icon={<SettingsIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.settings}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.settings}`)
-                                    }
-                                }}
-                            >
-                                Settings
-                            </MenuItem>
-                        </>}
-                        {data.is_project_page && <>
+                            >Export Project</MenuItem>
+
+
+
                             <MenuItem
                                 icon={<PersonAddAlt1Icon />}
                                 id="menu-btn-show-project-invite"
@@ -214,45 +220,52 @@ window.projectMenu = (data) => {
                                         return false;
                                     }
                                 }}
-                            >
-                                Invite
+                            >Invite
                             </MenuItem>
+
+
                             <MenuItem
-                                id="menu-btn-project-reviews"
-                                icon={<PreviewIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.review}`)}
+                                id="menu-btn-move_project"
+                                icon={<ImportExportIcon />}
+                                onClick={() => {
+                                    move_project()
+                                }}
                                 onKeyPress={(e) => {
                                     if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.review}`)
+                                        move_project()
                                     }
                                 }}
-                            >
-                                Review
+                            >Move Project
                             </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-documents"
-                                icon={<InsertDriveFileIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.documents}`)
-                                    }
-                                }}
-                            >
-                                Documents
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-apidocs"
-                                icon={<CompareArrowsIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.apidocs}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.apidocs}`)
-                                    }
-                                }}
-                            >
-                                API Docs
-                            </MenuItem>
+
+
+
+                            </div>
+                            </Grid>
+                            </Grid>
+
+
+                            <Grid container >
+                                <Grid item xs={12}>
+                            <div className="sidebar-module-boxes">
+                            <div className="sidebar-module-boxes-header">
+                              <span className="sidebar-icon glyphicon glyphicon-cog"></span><span className="sidebar-box-label">Administration</span>
+                            </div>
+                            {(!data.project.is_account_project || data.project.is_deletable) && <>
+                                <MenuItem
+                                    id="menu-btn-project-is_account_project"
+                                    icon={<SettingsIcon />}
+                                    onClick={() => redirect(`${window.origin}${data.urls.settings}`)}
+                                    onKeyPress={(e) => {
+                                        if(e.key === 'Enter'){
+                                            redirect(`${window.origin}${data.urls.settings}`)
+                                        }
+                                    }}
+                                >
+                                    Settings
+                                </MenuItem>
+                            </>}
+
                             <MenuItem
                                 id="menu-btn-project-authoring_tool"
                                 icon={<CreateIcon />}
@@ -268,19 +281,25 @@ window.projectMenu = (data) => {
                                 Authoring Tool
                             </MenuItem>
                             <MenuItem
-                                id="menu-btn-move_project"
-                                icon={<ImportExportIcon />}
-                                onClick={() => {
-                                    move_project()
-                                }}
+                                id="menu-btn-project-deployments"
+                                icon={<ApiIcon />}
+                                onClick={() => redirect(`${window.origin}${data.urls.deployments}`)}
                                 onKeyPress={(e) => {
                                     if(e.key === 'Enter'){
-                                        move_project()
+                                        redirect(`${window.origin}${data.urls.deployments}`)
                                     }
                                 }}
                             >
-                                Move Project
+                                Deployments
                             </MenuItem>
+                            </div>
+                            </Grid>
+                            </Grid>
+
+
+
+
+
                         </>}
 
                     </Menu>
