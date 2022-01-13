@@ -88,7 +88,7 @@ window.projectMenu = (data) => {
                             <div className="sidebar-module-boxes-header">
                               <span className="sidebar-icon glyphicon glyphicon-th"></span><span className="sidebar-box-label">Components</span>
                             </div>
-                            <span>A realtime list of components used in this project goes here.</span>
+                            <span className="sidebar-module-components-list">A realtime list of components used in this project goes here.</span>
                             </div>
                             </Grid>
                             </Grid>
