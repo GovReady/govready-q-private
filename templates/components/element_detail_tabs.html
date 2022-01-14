@@ -64,6 +64,8 @@
 
   .control-id-text { font-weight: bold; }
 
+  .cmpt-deleted { color:red; font-weight: bold; }
+
 
 </style>
 {% endblock %}
@@ -135,7 +137,7 @@
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 description-text">
             <h3>About {{ element.name }}</h3>
             {% if element.deleted %}
-            <div>Element has been marked deleted</div>
+            <p><span class="cmpt-deleted">DELETED</span> This component has been marked as deleted.</p>
             {% endif %}
             {% if element.description %}
               {{ element.description }}
