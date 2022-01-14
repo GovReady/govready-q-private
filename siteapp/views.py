@@ -2,6 +2,7 @@ import json
 import logging
 import random
 import os.path
+import re
 import yaml
 import rtyaml
 import tempfile
@@ -1124,47 +1125,79 @@ def project(request, project):
     producer_elements_control_impl_smts_status_dict = project.system.producer_elements_control_impl_smts_status_dict
 
     # Render.
-    return render(request, "project.html", {
-        "project": project,
-        "security_sensitivity": security_sensitivity,
-        "confidentiality": confidentiality,
-        "integrity": integrity,
-        "availability": availability,
+    if re.search("/artifacts$", request.path):
+      return render(request, "project-artifacts.html", {
+            "project": project,
+            
+            "is_admin": request.user in project.get_admins(),
+            "can_upgrade_app": can_upgrade_app,
+            "can_start_task": can_start_task,
+            "can_start_any_apps": can_start_any_apps,
 
-        "controls_status_count": project.system.controls_status_count,
-        "poam_status_count": project.system.poam_status_count,
-        "percent_compliant": percent_compliant,
-        "percent_compliant_100": percent_compliant * 100,
-        "approx_compliance_degrees": approx_compliance_degrees,
+            "title": project.title,
+            "has_outputs": has_outputs,
 
-        "is_admin": request.user in project.get_admins(),
-        "can_upgrade_app": can_upgrade_app,
-        "can_start_task": can_start_task,
-        "can_start_any_apps": can_start_any_apps,
+            "enable_experimental_evidence": SystemSettings.enable_experimental_evidence,
 
-        "title": project.title,
-        "send_invitation": Invitation.form_context_dict(request.user, project, [request.user]),
-        "has_outputs": has_outputs,
+            "question_groups": question_groups,
+            "action_buttons": action_buttons,
+            "projects": Project.objects.all(),
+            # "portfolios": Portfolio.objects.all(),
+            # "users": User.objects.all(),
 
-        "enable_experimental_evidence": SystemSettings.enable_experimental_evidence,
+            # "class_status": Classification.objects.last(),
+            # "tags": json.dumps(SimpleTagSerializer(project.tags, many=True).data),
+            # "authoring_tool_enabled": authoring_tool_enabled,
+            # "import_project_form": ImportProjectForm(),
 
-        "question_groups": question_groups,
-        "action_buttons": action_buttons,
-        "projects": Project.objects.all(),
-        "portfolios": Portfolio.objects.all(),
-        "users": User.objects.all(),
+            # "elements": elements,
+            # "producer_elements_control_impl_smts_dict": producer_elements_control_impl_smts_dict,
+            # "producer_elements_control_impl_smts_status_dict": producer_elements_control_impl_smts_status_dict,
+            "display_urls": project_context(project, is_project_page=True)
 
-        "class_status": Classification.objects.last(),
-        "tags": json.dumps(SimpleTagSerializer(project.tags, many=True).data),
-        "authoring_tool_enabled": authoring_tool_enabled,
-        "import_project_form": ImportProjectForm(),
+        })
+    else:  
+        return render(request, "project.html", {
+            "project": project,
+            "security_sensitivity": security_sensitivity,
+            "confidentiality": confidentiality,
+            "integrity": integrity,
+            "availability": availability,
 
-        "elements": elements,
-        "producer_elements_control_impl_smts_dict": producer_elements_control_impl_smts_dict,
-        "producer_elements_control_impl_smts_status_dict": producer_elements_control_impl_smts_status_dict,
-        "display_urls": project_context(project, is_project_page=True)
+            "controls_status_count": project.system.controls_status_count,
+            "poam_status_count": project.system.poam_status_count,
+            "percent_compliant": percent_compliant,
+            "percent_compliant_100": percent_compliant * 100,
+            "approx_compliance_degrees": approx_compliance_degrees,
 
-    })
+            "is_admin": request.user in project.get_admins(),
+            "can_upgrade_app": can_upgrade_app,
+            "can_start_task": can_start_task,
+            "can_start_any_apps": can_start_any_apps,
+
+            "title": project.title,
+            "send_invitation": Invitation.form_context_dict(request.user, project, [request.user]),
+            "has_outputs": has_outputs,
+
+            "enable_experimental_evidence": SystemSettings.enable_experimental_evidence,
+
+            "question_groups": question_groups,
+            "action_buttons": action_buttons,
+            "projects": Project.objects.all(),
+            "portfolios": Portfolio.objects.all(),
+            "users": User.objects.all(),
+
+            "class_status": Classification.objects.last(),
+            "tags": json.dumps(SimpleTagSerializer(project.tags, many=True).data),
+            "authoring_tool_enabled": authoring_tool_enabled,
+            "import_project_form": ImportProjectForm(),
+
+            "elements": elements,
+            "producer_elements_control_impl_smts_dict": producer_elements_control_impl_smts_dict,
+            "producer_elements_control_impl_smts_status_dict": producer_elements_control_impl_smts_status_dict,
+            "display_urls": project_context(project, is_project_page=True)
+
+        })
 
 
 def project_edit(request, project_id):
@@ -1317,79 +1350,6 @@ def project_list_all_answers(request, project):
         "review_choices": TaskAnswerHistory.REVIEW_CHOICES,
         "display_urls": project_context(project)
 
-    })
-
-
-@project_read_required
-def project_outputs(request, project):
-    # To render fast, combine all of the templates by type and render as
-    # a single template. Collate documents by type...
-    from collections import defaultdict
-    documents_by_format = defaultdict(lambda: [])
-    for doc in project.root_task.module.spec.get("output", []):
-        if "id" in doc and "format" in doc and "template" in doc:
-            documents_by_format[doc["format"]].append(doc)
-
-    # Set in a fixed order.
-    documents_by_format = list(documents_by_format.items())
-
-    # Combine documents and render.
-    import html
-    header = {
-        "markdown": lambda anchor, title: (
-                "\n\n"
-                + ("<a name='%s'></a>" % anchor)
-                + "\n\n"
-                + "# " + html.escape(title)
-                + "\n\n"),
-        "text": lambda anchor, title: (
-                "\n\n"
-                + title
-                + "\n\n"),
-    }
-    joiner = {
-        "markdown": "\n\n",
-        "text": "\n\n",
-    }
-    toc = []
-    combined_output = ""
-    for format, docs in documents_by_format:
-        # Combine the templates of the documents.
-        templates = []
-        for doc in docs:
-            anchor = "doc_%d" % len(toc)
-            title = doc.get("title") or doc["id"]
-            # TODO: Can we move the HTML back into the template?
-            templates.append(header[format](anchor, title) + "<div class='doc'>" + doc["template"] + "</div>")
-            toc.append((anchor, title))
-        template = joiner[format].join(templates)
-
-        # Render.
-        from guidedmodules.module_logic import render_content
-        try:
-            content = render_content({
-                "format": format,
-                "template": template
-            },
-                project.root_task.get_answers().with_extended_info(),
-                "html",
-                "project output documents",
-                show_answer_metadata=True
-            )
-        except ValueError as e:
-            content = str(e)
-
-        # Combine rendered content that was generated by format.
-        combined_output += "<div>" + content + "</div>\n\n"
-
-    return render(request, "project-outputs.html", {
-        "can_upgrade_app": project.root_task.module.app.has_upgrade_priv(request.user),
-        "authoring_tool_enabled": project.root_task.module.is_authoring_tool_enabled(request.user),
-        "page_title": "Related Controls",
-        "project": project,
-        "toc": toc,
-        "combined_output": combined_output,
-        "display_urls": project_context(project)
     })
 
 

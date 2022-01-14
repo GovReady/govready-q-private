@@ -24,6 +24,7 @@ v0.9.11.11-dev (January xx, 2022)
 * Display pagination control btm of component page.
 * Add 'Things to do' text to project.html.
 * Display links to previous and next selected control on System selected control editor page.
+* Add improved project artifacts page to link to all projects ouput artifacts.
 
 **Bug fixes**
 
@@ -35,6 +36,8 @@ v0.9.11.11-dev (January xx, 2022)
 **Developer changes**
 
 * Superusers can see all projects.
+* Move templates/project-outputs.html to templates/project-artifacts.html.
+* Change siteapp.views.project to be used for rendering both project.html and project-artifacts.html.
 
 
 v0.9.11.10-dev (December xx, 2021)
