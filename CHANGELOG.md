@@ -5,6 +5,10 @@ GovReady-Q Release Notes
 v0.9.13-dev (January xx, 2022)
 ------------------------------
 
+**Developer changes**
+
+* Add basic OSCAL SAR serializer following same pattern as OSCAL SSP.
+* Add basic OSCAL SAP serializer following same pattern as OSCAL SSP.
 
 
 v0.9.11.11 (January 15, 2022)
@@ -45,7 +49,7 @@ v0.9.11.11 (January 15, 2022)
 v0.9.11.10-dev (December 14, 2021)
 ----------------------------------
 
-Introuduce new authoring tool. Remove authoring tool modal from task question page.
+Introduce new authoring tool. Remove authoring tool modal from task question page.
 
 **Feature changes**
 
@@ -63,11 +67,6 @@ Introuduce new authoring tool. Remove authoring tool modal from task question pa
 * Refactor siteapp.views.project and templates/project.html to remove vestigial column vs row layout code and previous authoring tools.
 * Remove authoring tool modal from task question page.
 
-**Developer changes**
-
-* Add basic OSCAL SAR serializer following same pattern as OSCAL SSP
-* Add basic OSCAL SAP serializer following same pattern as OSCAL SSP 
-* 
 **UI changes**
 
 * Use left side vertical React navigation menu for project.
