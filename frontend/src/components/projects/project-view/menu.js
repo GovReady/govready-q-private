@@ -135,16 +135,16 @@ window.projectMenu = (data) => {
                                 Assesments
                             </MenuItem>
                             <MenuItem
-                                icon={<ArrowUpwardIcon />}
                                 id="menu-btn-project-import"
+                                icon={<ArrowUpwardIcon />}
                                 onClick={() => {
-                                    var m = $('#import_project_modal');
+                                    let m = $('#import_project_modal');
                                     $("#import_loading_spinner").hide();
                                     m.modal();
                                 }}
                                 onKeyPress={(e) => {
                                     if(e.key === 'Enter'){
-                                        var m = $('#import_project_modal');
+                                        let m = $('#import_project_modal');
                                         $("#import_loading_spinner").hide();
                                         m.modal();
                                     }
@@ -253,20 +253,6 @@ window.projectMenu = (data) => {
                                 }}
                             >
                                 API Docs
-                            </MenuItem>
-                            <MenuItem
-                                id="menu-btn-project-authoring_tool"
-                                icon={<CreateIcon />}
-                                onClick={() => {
-                                    show_authoring_tool_module_editor()
-                                }}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        show_authoring_tool_module_editor()
-                                    }
-                                }}
-                            >
-                                Authoring Tool
                             </MenuItem>
                             <MenuItem
                                 id="menu-btn-move_project"
