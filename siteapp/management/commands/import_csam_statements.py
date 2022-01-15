@@ -19,6 +19,7 @@ logger = get_logger()
 
 # Example:
 # python3 manage.py import_csam_statements SystemImplementationStatementsQuery.xlsx admin
+# python3 manage.py import_csam_statements example_SystemImplementationStatementsQuery.xlsx admin
 
 class Command(BaseCommand):
     help = 'Import CSAM System Implementation Statement Query excel export'
