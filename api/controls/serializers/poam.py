@@ -1,5 +1,4 @@
 from api.base.serializers.types import ReadOnlySerializer
-from api.controls.serializers.statements import DetailedStatementSerializer
 from controls.models import Poam
 
 
@@ -11,9 +10,9 @@ class SimplePoamSerializer(ReadOnlySerializer):
                   'risk_rating_original', 'risk_rating_adjusted', 'poam_group']
 
 
-class DetailedPoamSerializer(SimplePoamSerializer):
-    statement = DetailedStatementSerializer()
+# class DetailedPoamSerializer(SimplePoamSerializer):
+#     statement = DetailedStatementSerializer()
 
-    class Meta:
-        model = Poam
-        fields = SimplePoamSerializer.Meta.fields + ['statement']
+#     class Meta:
+#         model = Poam
+#         fields = SimplePoamSerializer.Meta.fields + ['statement']

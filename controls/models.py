@@ -251,7 +251,7 @@ class StatementRemote(auto_prefetch.Model):
 
 class Element(auto_prefetch.Model, TagModelMixin):
     name = models.CharField(max_length=250, help_text="Common name or acronym of the element", unique=True, blank=False, null=False)
-    full_name =models.CharField(max_length=250, help_text="Full name of the element", unique=False, blank=True, null=True)
+    full_name = models.CharField(max_length=250, help_text="Full name of the element", unique=False, blank=True, null=True)
     description = models.TextField(default="Description needed", help_text="Description of the Element", unique=False, blank=False, null=False)
     element_type = models.CharField(max_length=150, help_text="Component type", unique=False, blank=True, null=True)
     roles = models.ManyToManyField('ElementRole', related_name='elements', blank=True, help_text="Roles assigned to the Element")
@@ -783,13 +783,7 @@ class System(auto_prefetch.Model, TagModelMixin):
 
     # @property (See below for creation of property from method)
     def get_producer_elements(self):
-        smts = self.root_element.statements_consumed.all()
-        components = set()
-        for smt in smts:
-            if smt.producer_element:
-                components.add(smt.producer_element)
-        components = list(components)
-        components.sort(key=lambda component: component.name)
+        components = Element.objects.filter(statements_produced__consumer_element = self.root_element).distinct().order_by('name')
         return components
 
     producer_elements = cached_property(get_producer_elements)

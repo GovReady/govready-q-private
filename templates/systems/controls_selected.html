@@ -19,6 +19,9 @@
 
 {% block body_content %}
 
+{% comment %} <div id="systems-controls-table"></div> {% endcomment %}
+
+
   <div class="systems-top">
     <div id="tab-content" class="row rows-header">
         <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"><span class="systems-selected-items">Selected controls</span></div>
@@ -129,9 +132,10 @@
     var url = "/systems/{{ system.id }}/controls/catalogs/{{ control_id.oscal_catalog_key }}/control/" + control_id;
     window.location.href = url;
   }
-
+  
+  
+  
   $(document).ready(function() {
-
 
     // Download button shows a modal to ask what file format to download in.
     function download_document(document_id, system_id) {
@@ -206,7 +210,9 @@
       if (result) {
         window.location.href = cnt_rm_url;
       }
-    }
+    }  
+    window.systemsControlTable({{ system.id }});
+  
 </script>
 
 {% endblock %}

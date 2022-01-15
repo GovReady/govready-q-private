@@ -30,6 +30,11 @@ v0.9.11.11 (January 15, 2022)
 * Add 'Things to do' text to project.html.
 * Display links to previous and next selected control on System selected control editor page.
 
+**Developer changes**
+
+* Start using react versions of tables for listing items.
+* Provide more serializers to support react.
+
 **Bug fixes**
 
 * Stop scrubching of progress-project-area-wrapper on question page.

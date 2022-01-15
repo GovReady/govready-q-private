@@ -4,7 +4,7 @@ import { projectTagsStateSlice } from "./slice"
 import { Provider } from "react-redux";
 import store from "../../../store";
 import {TagDropdown} from "../../shared/tag-dropdown";
-
+// import { ProjectsTable } from "./projectsTable";
 
 const { setTags } = projectTagsStateSlice.actions;
 
@@ -26,3 +26,15 @@ window.renderProjectTags = (projectID, existingTags) => {
     );
 
 };
+
+// window.projectsTable = (systemId) => {  
+//     $(window).on('load', function () {
+//         $("#content").show();
+//         ReactDOM.render(
+//             <ProjectsTable systemId={systemId}/>,
+//             document.getElementById('system-projects')
+//         );
+//     });
+// };
+
+
