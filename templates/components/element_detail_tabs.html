@@ -64,6 +64,8 @@
 
   .control-id-text { font-weight: bold; }
 
+  .cmpt-deleted { color:red; font-weight: bold; }
+
 
 </style>
 {% endblock %}
@@ -111,18 +113,10 @@
       {% endif %}
       <div style="margin: 0px 12px 0px 0px;">
         <a id="copy_component" class="btn btn btn-default pull-right" href={% url 'component_library_component_copy' element_id=element.id %} role="button" style="color: black;">Clone component</a>&nbsp;
-
-
-        <a
-        id="delete_component"
-          class="btn btn btn-default pull-right"
-          {% comment %} href={% url 'component_library_component_copy' element_id=element.id %} {% endcomment %}
+        <a id="delete_component" class="btn btn btn-default pull-right"
           role="button"
           style="color: black;"
-          onclick="return delete_component()"
-          >
-
-            Delete component</a>&nbsp;
+          onclick="return delete_component()">Delete component</a>
       </div>
     </ul>
 
@@ -133,9 +127,9 @@
 
         <div class="row">
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 description-text">
-            <h3>About {{ element.name }}</h3>
+            <h3>About</h3>
             {% if element.deleted %}
-            <div>Element has been marked deleted</div>
+              <p><span class="cmpt-deleted">DELETED</span> This component has been marked as deleted.</p>
             {% endif %}
             {% if element.description %}
               {{ element.description }}
@@ -533,8 +527,8 @@
         }
 
         function delete_component() {
-         show_delete_component_modal("{{element.name}}","{{element.description}}",(componentName, reason)=>{
-          ajax_with_indicator({
+          show_delete_component_modal("{{element.name}}","{{element.description}}",(componentName, reason)=>{
+            ajax_with_indicator({
             url: '{% url "delete_element" element.id %}',
             method: "POST",
             data: {name: componentName,description: reason},
@@ -549,13 +543,9 @@
                 show_delete_component_modal_error(res["message"])
               }
             }
+            });
           });
-        });
-
-
-
         }
-
 
       </script>
 
