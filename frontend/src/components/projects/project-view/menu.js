@@ -266,20 +266,7 @@ window.projectMenu = (data) => {
                                 </MenuItem>
                             </>}
 
-                            <MenuItem
-                                id="menu-btn-project-authoring_tool"
-                                icon={<CreateIcon />}
-                                onClick={() => {
-                                    show_authoring_tool_module_editor()
-                                }}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        show_authoring_tool_module_editor()
-                                    }
-                                }}
-                            >
-                                Authoring Tool
-                            </MenuItem>
+                            
                             <MenuItem
                                 id="menu-btn-project-deployments"
                                 icon={<ApiIcon />}
