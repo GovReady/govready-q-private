@@ -160,7 +160,7 @@
           <div class='element-uuid-label'>
            Element UUID           
           </div>
-          <code class="command-copy">
+          <code class="command-copy" title="saved to clipboard">
             <span class="uuid-style">
               {{element.uuid}} 
             <span>            
@@ -527,28 +527,23 @@
         }    
         
         $(document).ready(function() {
-          $('code, pre').append('<span class="command-copy" ><i class="fa fa-clipboard" aria-hidden="true"></i></span>');
-        
+          $('code, pre').append('<span class="command-copy" ><i class="fa fa-clipboard" aria-hidden="true"></i></span>');        
           $('code span.command-copy').click(function(e) {
-            let text = $(this).parent().text().trim(); 
+            let text = $(this).parent().text().trim();             
             let copyHex = document.createElement('input');
+
+            let el = $('.fa-clipboard');
+            el.addClass('fa fa-check');
+            el.removeClass('fa fa-clipboard');
+            
             copyHex.value = text
             document.body.appendChild(copyHex);
             copyHex.select();
             document.execCommand('copy');            
-            document.body.removeChild(copyHex);
-          });
-        
-        
-          $('span.command-copy').click(function(e) {
-            let text = $(this).parent().text().trim();
-            let copyHex = document.createElement('input');
-            copyHex.value = text
-            document.body.appendChild(copyHex);
-            copyHex.select();
-            document.execCommand('copy');            
-            document.body.removeChild(copyHex);
-          });
+            document.body.removeChild(copyHex);            
+            $( '.fa-check[title]' ).tooltip();
+          
+          });      
         })
        
 
