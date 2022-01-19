@@ -104,7 +104,7 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li id="smt-tab" role="presentation" class="active"><a href="#component_controls" aria-controls="component_controls" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-wrench"></span> Control Implementation Statements  &nbsp;<div id="common-tab-count">{{ impl_smts|length }}</div></a></li>
-      <li id="systems-tab" role="presentation"><a href="#systems" aria-controls="systems" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-file"></span> Systems  &nbsp;<div id="common-tab-count">{{ consuming_systems|length }}</div></a></li>
+      <li id="systems-tab" role="presentation"><a href="#systems" aria-controls="systems" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-file"></span> Systems &nbsp;<div id="common-tab-count">{{ consuming_systems|length }}</div></a></li>
       <li id="oscal-tab" role="presentation"><a href="#oscal" aria-controls="oscal" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-file"></span> OSCAL </a></li>
       {% if enable_experimental_opencontrol %}
       <li id="opencontrol-tab" role="presentation"><a href="#opencontrol" aria-controls="opencontrol" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-file"></span> OpenControl </a></li>
@@ -131,7 +131,8 @@
               {% include 'components/component_metadata.html' %}
             </div>
             <div id="show-tags"></div>
-          </div>
+          </div>      
+          
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 
             <!-- Search/Filter form -->
@@ -154,8 +155,15 @@
               </form>
             </div>
           </div>
-        </div>
-
+        </div>      
+        <div>
+          <div class='element-uuid-label'>
+           Element UUID:           
+          </div>
+          <code class="command-copy">
+            {{element.uuid}} 
+          </code>         
+        </div> 
         <div class="row">
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 description-text">
             <div id="" class="">
@@ -514,7 +522,34 @@
               }
             });
           });
-        }
+        }    
+        
+        $(document).ready(function() {
+          $('code, pre').append('<span class="command-copy" ><i class="fa fa-clipboard" aria-hidden="true"></i></span>');
+        
+          $('code span.command-copy').click(function(e) {
+            let text = $(this).parent().text().trim(); 
+            let copyHex = document.createElement('input');
+            copyHex.value = text
+            document.body.appendChild(copyHex);
+            copyHex.select();
+            document.execCommand('copy');            
+            document.body.removeChild(copyHex);
+          });
+        
+        
+          $('span.command-copy').click(function(e) {
+            let text = $(this).parent().text().trim();
+            let copyHex = document.createElement('input');
+            copyHex.value = text
+            document.body.appendChild(copyHex);
+            copyHex.select();
+            document.execCommand('copy');            
+            document.body.removeChild(copyHex);
+          });
+        })
+       
+
       </script>
 
 {% endblock %}
