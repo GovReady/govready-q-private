@@ -333,7 +333,9 @@ details summary > * { display: inline; }
 #common-tab-count, #component-tab-count { display: inline-block; color: #444444; background-color: #eeeeee; border-radius: 20px; line-height: 1; padding: 2px 6px; font-size: 0.8em; font-weight: 600; }
 .command-copy { color: black}
 .svg-inline--fa {color: #555555; cursor: pointer;}
-.element-uuid-label {font-weight: 600; margin-bottom: 3px; margin-top: 10px;}
+.command-copy {background-color: #eeeded}
+.uuid-style {color: #333333}
+.element-uuid-label {font-size: 14px;font-weight: bold; margin-bottom: 3px; margin-top: 10px;}
 .element-uuid {margin-left: 10px;}
 .uuid-container { -webkit-box-align: center; width: 814px; display: flex; flex-wrap: wrap; align-items: center; min-height: 38px; border-style: solid; border-width: 1px; border-radius: 4px; border-color: hsl(0, 0%, 80%);}
 #component-detail-content { border-left:1px solid #ccc; border-right:1px solid #ccc; border-bottom:1px solid #ccc; border-radius: 0; padding: 0 0 8px 12px; }
