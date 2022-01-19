@@ -531,21 +531,17 @@
           $('code span.command-copy').click(function(e) {
             let text = $(this).parent().text().trim();             
             let copyHex = document.createElement('input');
-
             let el = $('.fa-clipboard');
             el.addClass('fa fa-check');
-            el.removeClass('fa fa-clipboard');
-            
+            el.removeClass('fa fa-clipboard');            
             copyHex.value = text
             document.body.appendChild(copyHex);
             copyHex.select();
             document.execCommand('copy');            
             document.body.removeChild(copyHex);            
-            $( '.fa-check[title]' ).tooltip();
-          
+            $( '.fa-check[title]' ).tooltip();          
           });      
-        })
-       
+        })       
 
       </script>
 
