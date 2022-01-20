@@ -88,7 +88,9 @@
                     {% if action_buttons %}
                         {% for q in action_buttons %}
                             <div class="action-button-box">
-                                <div class="action-button-app-title">{{ project.root_task.module.spec.title }}</div>
+
+                                {% comment %} <div class="action-button-app-title">{{ project.root_task.module.spec.title }}</div> {% endcomment %}
+
                                 {# Display for started tasks #}
                                 {% if can_start_task and q.can_start_new_task %}
                                     <form id="question-{{ q.question.key }}" class="start-task" method="post"
@@ -97,10 +99,12 @@
                                         <input type="hidden" name="project" value="{{ project.id }}"/>
                                         <input type="hidden" name="question" value="{{ q.question.key }}"/>
                                         <input type="hidden" name="previous" value="project"/>
-                                        <a class="btn btn-sm btn-default" class="action-button"
+
+                                       {% comment %} <a class="btn btn-sm btn-default" class="action-button"
                                            href="#" onclick="$(this).parent('form').submit(); return false;">
                                             {{ q.question.spec.title }} &raquo;
-                                        </a>
+                                        </a> {% endcomment %} 
+
                                     </form>
                                 {% else %}
                                     {# Display for not yet started tasks #}
@@ -136,6 +140,7 @@
     {% include "move-project-modal.html" %}
 
     {% block scripts %}
+        {{ block.super }}
         <script>
             window.projectMenu({{ display_urls | json }});
             function show_import_project_modal(id, callback) {

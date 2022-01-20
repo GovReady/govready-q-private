@@ -218,7 +218,7 @@ function authoring_tool_save_question() {
   }
   data.push( { name: "question", value: q_authoring_tool_state.current_question } );
   console.log('authoring_tool_save_question')
-  console.log(data)
+  // console.log(data)
   ajax_with_indicator({
       url: "/tasks/_authoring_tool/edit-question2",
       method: "POST",

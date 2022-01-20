@@ -11,7 +11,7 @@ from controls.models import Element
 class ElementViewSet(ReadOnlyViewSet):
     queryset = Element.objects.all()
     serializer_classes = SerializerClasses(retrieve=DetailedElementSerializer,
-                                           list=SimpleElementSerializer,
+                                           list=DetailedElementSerializer,
                                            tags=WriteElementTagsSerializer)
 
     @action(detail=True, url_path="tags", methods=["PUT"])

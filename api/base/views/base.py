@@ -56,6 +56,7 @@ class BaseViewSet(GenericViewSet):
     ordering = ('-created',)
     ordering_fields = '__all__'
     ROLLUP = {}  # Include Django ORM syntax to get rollup on values
+    extra_filter_backends = []
 
     @property
     def permission_classes(self):
@@ -70,8 +71,9 @@ class BaseViewSet(GenericViewSet):
 
     serializer_classes = None
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):        
         self.serializer_classes_tmp = TmpSerializerClasses()
+        self.filter_backends += self.extra_filter_backends
         super().__init__(*args, **kwargs)
 
     def serializer_class_override(self, serializer_type, serializer_class):

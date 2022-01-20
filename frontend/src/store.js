@@ -5,7 +5,6 @@ import {
 
 import {componentTagsStateSlice} from "./components/elements/element-detail-tabs/slice"
 import {projectTagsStateSlice} from "./components/projects/project-view/slice";
-
 const middleware = [
     ...getDefaultMiddleware(),
     /*YOUR CUSTOM MIDDLEWARES HERE*/

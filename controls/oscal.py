@@ -21,6 +21,7 @@ class CatalogData(auto_prefetch.Model):
     baselines_json = models.JSONField(blank=True, null=True, help_text="JSON object representing the baselines for the catalog.")
     created = models.DateTimeField(auto_now_add=True, db_index=True)
     updated = models.DateTimeField(auto_now=True, db_index=True)
+    
 
     def __str__(self):
         return "'%s id=%d'" % (self.catalog_key, self.id)
