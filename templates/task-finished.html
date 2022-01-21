@@ -53,7 +53,7 @@
   {{ block.super }}
 
 <div class="row">
-  <div id="focus-area-wrapper" class="col-xs-12 col-sm-12 col-md-9 col-lg-8">
+  <div id="focus-area-wrapper" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
     <h1 class="task-done">Module Summary {% if task.title %}- {{ task.title}}{% endif %}</h1>
     {% if top_of_page_output %}
       <div class="task-bottom-margin">
@@ -200,6 +200,7 @@
             </div>
           </div>
         </div>
+        <br />
       {% endif %}
 
       {% if had_any_questions %}
@@ -272,7 +273,7 @@
     &nbsp;
   </div>
 
-  <div id="progress-project-area-wrapper" class="col-xs-8 col-sm-6 col-md-3 col-lg-3 col-xl-2 question-progress-project">
+  <div id="progress-project-area-wrapper" class="col-xs-12 col-sm-12 col-md-5 col-lg-3 question-progress-project">
     {% include "task-progress-project-list.html" with previous="question" %}
   </div>
 

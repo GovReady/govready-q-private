@@ -28,6 +28,7 @@ h2 { margin-top: 1.5em; }
 {% endblock %}
 
 {% block body_content %}
+<div class="project-body-content">
     {% for section in answers %}
       {% if not forloop.first %}<hr>{% endif %}
 
@@ -132,7 +133,7 @@ h2 { margin-top: 1.5em; }
       <p>No questions have been answered in this app yet.</p>
 
     {% endfor %}
-
+</div>
 {% endblock %}
 
 {% block scripts %}

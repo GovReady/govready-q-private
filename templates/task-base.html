@@ -72,8 +72,10 @@
 .pro-sidebar > .pro-sidebar-inner { background:#fff;}
 .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover { color: #009900;}
 .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header { border-bottom:none;}
-.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item { padding:5px 0 5px 5px; }
-.pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper { background-color: #fff;}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item { padding:0 0 0 0; }
+.pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper { background-color: #fff; height:25px;}
+      .pro-sidebar .pro-menu .pro-menu-item { font-size: 14px;}
+
 
 
 
@@ -90,7 +92,7 @@
 <div class="row">
 
   <div class="col-md-3">
-    <div class="leftnav-box" style="padding-right:50px;">
+    <div class="leftnav-box">
     <div id="menu"></div>
     </div>
   </div>
@@ -189,6 +191,7 @@
 </div><!-- col-md-9 -->
 
 </div><!-- /div class row -->
+
     {% block scripts %}
         <script>
             window.projectMenu({{ display_urls | json }});

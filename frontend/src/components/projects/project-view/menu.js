@@ -49,8 +49,8 @@ window.projectMenu = (data) => {
                             <SidebarHeader className="sidebardarkheader">
                                 <Grid container >
                                     <Grid item xs={12}>
-                                    <h3 className="sidebardark-head">Portfolio: <span className="sidebardark-head-title">{data.project.portfolio.title}</span></h3>
-                                        <h2 className="sidebardark-header">
+                                    <h3 className="sidebardark-head" onClick={() => redirect(`/portfolios/${data.project.portfolio.id}/projects`)} style={{cursor: 'pointer'}}>portfolio: {data.project.portfolio.title}</h3>
+                                        <h2 className="sidebardark-header" onClick={() => redirect(`/projects/${data.project.id}`)} style={{cursor: 'pointer'}}>
                                             {data.project.root_task.title_override}&nbsp;&nbsp;
                                             <span className="glyphicon glyphicon-pencil" style={{ fontSize: '14px', color: '#aaa', cursor: 'pointer' }}
                                                 onClick={() => show_edit_project_modal()}></span>
@@ -68,7 +68,7 @@ window.projectMenu = (data) => {
                                 <div className="sidebar-info-block">
 
 
-                                <span className="project-info-compliance"><strong>%</strong> compliance <span className="unassessed">(unassessed)</span></span><br />
+                                <span className="project-info-compliance"><strong>% </strong> compliance <span className="unassessed">(unassessed)</span></span><br />
                                 <div className="bar-box"><div className="bar-box-bar" style={{ width: '20%' }}></div></div>
 
                                 <span className="project-info-controls">Controls Addressed (X of Y)</span>
@@ -112,27 +112,7 @@ window.projectMenu = (data) => {
                                 Assesments
                             </MenuItem>
 
-                            <MenuItem
-                                id="menu-btn-project-documents"
-                                icon={<InsertDriveFileIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.documents}`)
-                                    }
-                                }}
-                            >PTA</MenuItem>
 
-                            <MenuItem
-                                id="menu-btn-project-documents"
-                                icon={<InsertDriveFileIcon />}
-                                onClick={() => redirect(`${window.origin}${data.urls.documents}`)}
-                                onKeyPress={(e) => {
-                                    if(e.key === 'Enter'){
-                                        redirect(`${window.origin}${data.urls.documents}`)
-                                    }
-                                }}
-                            >SSP</MenuItem>
 
                             <MenuItem
                                 id="menu-btn-project-documents"
@@ -266,7 +246,7 @@ window.projectMenu = (data) => {
                                 </MenuItem>
                             </>}
 
-                            
+
                             <MenuItem
                                 id="menu-btn-project-deployments"
                                 icon={<ApiIcon />}

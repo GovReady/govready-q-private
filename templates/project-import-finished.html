@@ -9,6 +9,7 @@ Import Finished
 {% endblock %}
 
 {% block body_content %}
+<div class="project-body-content">
   <p>Here&rsquo;s what happened:</p>
 
   {% for line in log %}
@@ -16,5 +17,5 @@ Import Finished
   {% endfor %}
 
   <p><a href="{{project.get_absolute_url}}" class="btn btn-success">Return to {{project.title}} &raquo;</a></p>
-
+</div>
 {% endblock %}

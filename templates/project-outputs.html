@@ -22,11 +22,15 @@ Control Text
 {% endblock %}
 
 {% block body_content %}
+
+<div class="project-body-content">
+
   <ul>
     {% for anchor, title in toc %}
       <li><a href="#{{anchor}}">{{title}}</a></li>
     {% endfor %}
   </ul>
+</div>
 
   {{combined_output|safe}}
 
