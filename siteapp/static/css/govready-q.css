@@ -638,7 +638,7 @@ form #id_appsource_compapp { width: 100%; overflow: auto !important; }
 
 
 /* sidebar styles */
-.sidebar-module-boxes-header { border-bottom:1px solid #ccc; display:block; margin-bottom:1em; }
+.sidebar-module-boxes-header { border-bottom:1px solid #E6E6E6; display:block; margin-bottom:1em; }
 .sidebar-box-label { font-size:1em; font-weight:bold; }
 .sidebar-module-components-list { font-size:14px; }
 

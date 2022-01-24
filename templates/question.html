@@ -18,9 +18,11 @@ Next Question: {{q.spec.title}} | {{task.title}}
 <style>
 
   h1 {
-    margin: 4px 0 18px 0;
+    margin: 4px 0 22px 0;
     font-size: 22px;
+    line-height:28px;
     font-weight: bold;
+
   }
 
   .form-control {
@@ -149,7 +151,7 @@ Next Question: {{q.spec.title}} | {{task.title}}
 <div class="row">
   <!--<div id="focus-area-wrapper" class="col-xs-12 col-sm-9 col-md-7 col-lg-7 col-xl-6"
        style="background-color: rgb(250, 250, 250); border: 0px solid gray; border-top: 4px solid #419641;"> -->
-<div class="col-xs-6 col-sm-6 col-md-7 col-lg-9">
+<div class="col-xs-6 col-sm-6 col-md-7 col-lg-8">
 <div id="focus-area-wrapper" style="background-color: rgb(250, 250, 250); border: 0px solid gray; border-top: 4px solid #419641; margin-right:3em;">
 
     {% if source_invitation %}
@@ -602,7 +604,7 @@ Next Question: {{q.spec.title}} | {{task.title}}
 
 
 <!--  <div id="progress-project-area-wrapper" class="col-xs-8 col-sm-6 col-md-3 col-lg-3 col-xl-2 question-progress-project"> -->
-<div id="progress-project-area-wrapper" class="col-xs-6 col-sm-6 col-md-5 col-lg-3 question-progress-project">
+<div id="progress-project-area-wrapper" class="col-xs-6 col-sm-6 col-md-5 col-lg-4 question-progress-project">
     {% include "task-progress-project-list.html" with previous="question" %}
   </div>
 
