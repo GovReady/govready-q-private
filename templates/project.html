@@ -95,6 +95,7 @@
   .question .question-title {
 
     color: #222;
+    padding-right:20px;
   }
 
   .question-title {
@@ -112,6 +113,10 @@
   }
   */
 
+  .question:hover {
+      {#font-weight: bold;#}
+      background-color: #ececec;
+  }
   .question-status {
     text-align:center;
     font-size: .8em;
@@ -194,7 +199,6 @@
 {% endblock %}
 
 <!-- action buttons included from project-base.html -->
-<!-- authoring_tool_enabled included from project-base.html -->
 
 {% block body_content %}
 
@@ -288,6 +292,14 @@
       <div class="col-md-12">
         <div class="project-info" style=" padding-left:20px; margin-top:20px; margin-bottom:50px;">
         <div class="question-column">
+        <h3 class="question-group-title hr" style="margin-top: 20px;">
+                <span></span>
+                &nbsp;
+                Summary
+                &nbsp;
+                <span></span>
+              </h3>
+            <div>{{ project.root_task.module.spec.introduction.template }}</div>
             {% for group in question_groups.groups %}
             {% if group.title %}<div><a id="{{group.title}}"></a>&nbsp;</div>{% endif %}
             <div class="question-group">
@@ -360,6 +372,9 @@
                             <input type="hidden" name="q" value="{{project.root_task.id}}/{{q.question.key}}">
                         {% endif %}
                       {% endif %}
+                      <div class="pull-right">
+                          {{ q.module.questions.all|length }} question{{ q.module.questions.all|pluralize }}
+                      </div>
 
 
 
@@ -381,7 +396,7 @@
                               <p class="question-status-prepares">
                                 {# If task started we can link artifacts on task finished page, otherwise we can only know artifacts exist #}
 
-                                This module prepares {{ q.module.spec.output|length }} artifact{{ q.module.spec.output|pluralize }}:
+                                {{ q.module.spec.output|length }} artifact{{ q.module.spec.output|pluralize }}:
 
                                 {% for artif in q.module.spec.output %}
                                   {{ artif.title }}{% if not forloop.last %}, {% endif %}

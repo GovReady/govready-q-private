@@ -40,6 +40,8 @@ window.projectMenu = (data) => {
     // console.log(data)
     // console.log(displayMap.urls)
 
+
+
     ReactDOM.render(
         <>
             <Box style={{ width: '100%' }}>
@@ -136,16 +138,16 @@ window.projectMenu = (data) => {
                             </div>
 
                             <MenuItem
-                                icon={<ArrowUpwardIcon />}
                                 id="menu-btn-project-import"
+                                icon={<ArrowUpwardIcon />}
                                 onClick={() => {
-                                    var m = $('#import_project_modal');
+                                    let m = $('#import_project_modal');
                                     $("#import_loading_spinner").hide();
                                     m.modal();
                                 }}
                                 onKeyPress={(e) => {
                                     if(e.key === 'Enter'){
-                                        var m = $('#import_project_modal');
+                                        let m = $('#import_project_modal');
                                         $("#import_loading_spinner").hide();
                                         m.modal();
                                     }
