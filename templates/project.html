@@ -48,6 +48,7 @@
     text-align:center;
     display:block;
     margin-right:5px;
+    margin-bottom:1em;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 1em .5em 0 .5em;
@@ -296,7 +297,7 @@
               {% for q in group.questions %}
                 <div id="question-{{q.question.key}}"
                   {% if q.task  %}data-task-id="{{q.task.id}}"{% endif %}
-                  class="col-xs-4"
+                  class="col-xs-12"
                   ><div class="question  {% if q.task.is_started and not q.task.is_finished %}question-started{% endif %} {% if q.task.is_finished %}question-finished{% endif %}">
 
 

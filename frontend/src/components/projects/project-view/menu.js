@@ -51,12 +51,13 @@ window.projectMenu = (data) => {
                             <SidebarHeader className="sidebardarkheader">
                                 <Grid container >
                                     <Grid item xs={12}>
-                                    <h3 className="sidebardark-head" onClick={() => redirect(`/portfolios/${data.project.portfolio.id}/projects`)} style={{cursor: 'pointer'}}>portfolio: {data.project.portfolio.title}</h3>
-                                        <h2 className="sidebardark-header" onClick={() => redirect(`/projects/${data.project.id}`)} style={{cursor: 'pointer'}}>
-                                            {data.project.root_task.title_override}&nbsp;&nbsp;
+                                    <h3 className="sidebardark-head" onClick={() => redirect(`/portfolios/${data.project.portfolio.id}/projects`)} style={{cursor: 'pointer'}}>{data.project.portfolio.title}</h3>
+                                        <h2 className="sidebardark-header"><span onClick={() => redirect(`/projects/${data.project.id}`)} style={{cursor: 'pointer'}}>
+                                            {data.project.root_task.title_override}</span>&nbsp;&nbsp;
+
                                             <span className="glyphicon glyphicon-pencil" style={{ fontSize: '14px', color: '#aaa', cursor: 'pointer' }}
                                                 onClick={() => show_edit_project_modal()}></span>
-                                        </h2>
+                                            </h2>
                                         <span className="sidebardark-project-details" title={`${data.project.version_comment}`}> Project ID: {data.project.id}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;System ID: {data.project.system.id}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Version: {data.project.version} <br/>{data.project.version_comment}</span>
                                         <br/>
 

@@ -22,6 +22,7 @@ Assessment List
         content: '▼ ';
     }
 
+.content-box { padding:3em 0;}
 </style>
 {% include "controls/_style-controls.html" %}
 {% endblock %}
@@ -31,10 +32,12 @@ Assessment List
 
 {% block body_content %}
 
-<div>
+<div class="row">
+  <div class="col-xs-12">
+<div class="content-box">
     <form method="post" action="{% url 'new_system_assessment_result_wazuh' project.system.id %}"
           style="border: 1px solid #999; padding:12px 12px 12px 12px; border-radius:12px; margin-bottom: 12px;">
-        <div style="">Retrieve data from Wazuh</div>
+        <div>Retrieve data from Wazuh</div>
         {% csrf_token %}
         <div class="form-inline">
             <label for="wazuhhost_val">Wazuh host: </label>
@@ -69,7 +72,8 @@ curl -k -X GET "<span class="wazuhhost_val">WAZUH_HOST</span>/agents?pretty=true
         </details>
 
     </div>
-
+    </div>
+</div>
     <script type="text/javascript">
         // Change target values
         function update_wazuhhost(value) {
@@ -131,8 +135,8 @@ curl -k -X GET "<span class="wazuhhost_val">WAZUH_HOST</span>/agents?pretty=true
       {% endfor %}
     {% endif %}
 
+</div>
 
-  </div>
 {% endblock %}
 
 {% block scripts %}
