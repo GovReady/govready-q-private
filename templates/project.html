@@ -95,7 +95,6 @@
   .question .question-title {
 
     color: #222;
-    padding-right:20px;
   }
 
   .question-title {
@@ -113,10 +112,6 @@
   }
   */
 
-  .question:hover {
-      {#font-weight: bold;#}
-      background-color: #ececec;
-  }
   .question-status {
     text-align:center;
     font-size: .8em;
@@ -203,7 +198,7 @@
 {% block body_content %}
 
     <div class="row hidden">
-      <h3 id="project-title" class="question-group-title hr" style="margin-left: 50px; font-size: 1.5em;">
+      <h3 id="project-title" class="question-group-title" style="margin-left: 50px; font-size: 1.5em;">
         <span></span>
         &nbsp;&nbsp;
         {{ project.title }} Where is this?
@@ -292,20 +287,11 @@
       <div class="col-md-12">
         <div class="project-info" style=" padding-left:20px; margin-top:20px; margin-bottom:50px;">
         <div class="question-column">
-        <h3 class="question-group-title hr" style="margin-top: 20px;">
-                <span></span>
-                &nbsp;
-                Summary
-                &nbsp;
-                <span></span>
-              </h3>
-            <div>{{ project.root_task.module.spec.introduction.template }}</div>
+
+
             {% for group in question_groups.groups %}
-            {% if group.title %}<div><a id="{{group.title}}"></a>&nbsp;</div>{% endif %}
-            <div class="question-group">
-              {% if group.title %}
-              <h3 class="question-group-title">{{group.title}}</h3>
-              {% endif %}
+            <div class="question-group"> {% if group.title %}<h3 class="question-group-title">{{group.title}}</h3>{% endif %}
+
               <div class="row">
               {% for q in group.questions %}
                 <div id="question-{{q.question.key}}"
@@ -372,9 +358,7 @@
                             <input type="hidden" name="q" value="{{project.root_task.id}}/{{q.question.key}}">
                         {% endif %}
                       {% endif %}
-                      <div class="pull-right">
-                          {{ q.module.questions.all|length }} question{{ q.module.questions.all|pluralize }}
-                      </div>
+
 
 
 
