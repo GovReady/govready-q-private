@@ -1,24 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-
-import { ReactModal } from "../shared/modal";
+import {v4 as uuid_v4} from "uuid";
 import { EditQuestion } from "./editQuestion";
-import { EditModule } from "./editModule";
+import { Provider } from "react-redux";
+import store from "../../store";
 
-window.editQuestionModal = (moduleId, q_id) => {  
-    return ReactDOM.render(
-        <EditQuestion moduleId={moduleId} questionId={q_id} />,
+window.editQuestionModal = (moduleId, q_id) => {
+    const uuid = uuid_v4();
+    ReactDOM.render(
+        <Provider store={store}>
+            <EditQuestion moduleId={moduleId} questionId={q_id} uuid={uuid} />
+        </Provider>,
         document.getElementById('react-edit-module-question-modal')
     );
 };
-
-// window.editModuleModal = (moduleId) => {
-//     $(window).on('load', function () {
-//         $("#content").show();
-//         console.log('q_id: ', q_id)
-//         ReactDOM.render(
-//             <EditModule moduleId={moduleId} />,
-//             document.getElementById('react-edit-module-modal')
-//         );
-//     });
-// }

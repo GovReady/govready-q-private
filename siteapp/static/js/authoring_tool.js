@@ -271,6 +271,10 @@ function authoring_tool_new_question(task_id, question_id, is_project_page) {
   })
 }
 
+function react_edit_tool(module_id, question_id){
+  window.editQuestionModal(module_id, question_id);
+}
+
 function authoring_tool_new_question2(question_id) {
   ajax_with_indicator({
       url: "/tasks/_authoring_tool/new-question2",
