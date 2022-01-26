@@ -670,7 +670,11 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                         <Form horizontal>
                             {currentQuestion !== null && 
                                 <>
-                                    <h1>Edit Question</h1>
+                                    <FormGroup controlId={`form-title`}>
+                                        <Col sm={12}>
+                                            <h1>Edit Question {post.id}</h1>
+                                        </Col>
+                                    </FormGroup>
                                     <FormGroup controlId={`form-header`}>
                                         <Col componentClass={ControlLabel} sm={2}>
                                             {capitalizeFirstLetter('id')}
@@ -875,7 +879,10 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                                                                 <MenuItem
                                                                                     key={subIndex} 
                                                                                     eventKey={sub} 
-                                                                                    onSelect={(event) => handleTypeChange(event)} //addNewPropertiesToCurrentQuestion(newValue, updatedValue)
+                                                                                    onSelect={(event) => {
+                                                                                        handleTypeChange(event);
+                                                                                        document.dispatchEvent(new MouseEvent('click'));
+                                                                                    }}
                                                                                     active={sub === currentQuestion['type']}
                                                                                 >
                                                                                     {sub}
