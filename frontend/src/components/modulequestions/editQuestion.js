@@ -20,7 +20,6 @@ import {
     SplitButton,
     Modal
 } from "react-bootstrap"
-import { set } from 'lodash';
 
 const PRETTY_YAML = require('json-to-pretty-yaml');
 const YAML = require('js-yaml');
@@ -35,22 +34,30 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
     const [ tempChoice, setTempChoice ] = useState('');
     const [ tempFields, setTempFields ] = useState('');
     const [ modules, setModules ] = useState([]);
+    const [ optional, setOptional ] = useState('');
+    const [listOfModules, setListOfModules ] = useState([]);
+    const [relatedModules, setRelatedModules] = useState([]);
 
     /* Fetch data from endpoint */
     useEffect(() => {
-        axios(`/api/v2/modules/`).then(response => {
+        axios(`/api/v2/modules`).then(response => {
+            setListOfModules(response.data);
+        })
+        axios(`/api/v2/modules/${moduleId}`).then(response => {
             setModules(response.data);
         })
         axios(`/api/v2/modules/${moduleId}/questions/${questionId}/`).then(response=>{
             setPost(response.data);
         });
-        // getModules();
     }, [moduleId, questionId]);
 
     useEffect(() =>{
         dispatch(show())
     }, [uuid])
 
+    useEffect(() => {
+        setRelatedModules(getRelatedModules())
+    }, [modules, listOfModules])
     /* Assign our state to the instance of the object */
     useEffect(() => {
         if(post !== null){
@@ -103,7 +110,7 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
         "default": "Template text provided as a default value. Do not set both a placeholder and a default.",
         "choices": "Put each choice on a separate line and provide as KEY|LABEL|HELP.",
         "impute": "Impute conditions are run in order. The first condition to match determines the answer for this question. Each condition is a Jinja2 expression. If the condition evaluates to true, the condition matches.",
-        "actions": "Optional question specification YAML data not defined above.",
+        "optional": "Optional question specification YAML data not defined above.",
         "help": "Template text shown as small-font help text below the question’s input field.",
         "min": "The minimum number of choices the user must select. Leave blank if there is no minimum.",
         "max": "The maximum number of choices the user may select. Leave blank if there is no maximum.",
@@ -591,6 +598,20 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
         addNewPropertiesToCurrentQuestion(newValue, typeDict[updatedValue]);
     }
 
+    const getModuleTitleFromId = (modId) => {
+        if(modules !== undefined && relatedModules !== undefined){
+            return relatedModules.filter(mod => mod.id == modId)[0].spec.title;
+        } else {
+            return 'Select a module from below'
+        }
+    }
+    
+    const getRelatedModules = () => {
+        if(listOfModules.length !== 0){
+            return listOfModules.data.filter((mod) => mod.app.appname === modules.app.appname).sort((a, b) => (a.id > b.id) ? 1 : -1);
+        }
+    }
+
     const handleSubmit = () => {
         /* 
             1. Grab tempChoiceText and tempActionText
@@ -638,6 +659,29 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                 listOfErrors.push(error);
             }
         }
+        if(optional.length > 0){
+            try{
+                //Check if the user followed the optional yaml instructions correctly, i.e. propertyName: value
+                
+                //Let's add new properties to currentQuestion now
+                const arrayOfProperties = optional.split('\n');
+                
+                //now we map the properties and insert them to the current question
+                arrayOfProperties.map((property) => {
+                    //we want to split this string by the colon and space seperating the name and value
+                    if(!property.includes(': ')){
+                        throw new "Please follow this format exactly:\npropertyName: value"
+                    } else {
+                        const [name, value] = property.split(': ')
+                        //now that we have the name and value, lets update currentQuestion to include it
+                        updatedQuestion[name] = value;
+                    }
+                })
+                
+            } catch(error){
+                listOfErrors.push(error);
+            }
+        }
 
         const updatedPost = post;
         updatedPost.spec = updatedQuestion;
@@ -649,14 +693,6 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
             alert(`Error: ${listOfErrors}`);
         }
         
-    }
-
-    const getModuleTitleFromId = (modId) => {
-        if(modules.length !== 0){
-            return modules.data.filter(mod => mod.id == modId)[0].module_name;
-        } else {
-            return 'Select a module from below'
-        }
     }
     
     return (
@@ -873,7 +909,7 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                                             {
                                                                 typesArray.map((mainType, index) => {
                                                                     return (
-                                                                        <>
+                                                                        <React.Fragment key={index}>
                                                                             <MenuItem key={index} eventKey={mainType.header}><b>{mainType.header}</b></MenuItem>
                                                                             {mainType.sub.map((sub, subIndex) => (
                                                                                 <MenuItem
@@ -888,7 +924,7 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                                                                     {sub}
                                                                                 </MenuItem>
                                                                             ))}
-                                                                        </>
+                                                                        </React.Fragment>
                                                                     )
                                                                 })
                                                             }
@@ -948,22 +984,29 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                                         title={[undefined, null, ""].includes(currentQuestion['module-id']) ? 'Select My Own Module Protocol' : getModuleTitleFromId(currentQuestion['module-id'])}
                                                         id={`dropdown-basic-${1}`}
                                                         >
+                                                            <MenuItem>
+                                                                <b>From the Compliance Store</b>
+                                                            </MenuItem>
                                                             <MenuItem 
                                                                 eventKey={''}
                                                                 onSelect={(event) => handleChange(value, event)}
                                                                 active={currentQuestion['module-id'] === ''}
                                                             >
-                                                                Select My Own Module Protocol
+                                                                Based on Protocol ID (Enter Next)
                                                             </MenuItem>
-                                                            {modules.data !== undefined && modules.data.map((type, index) => {
+                                                            <MenuItem 
+                                                            >
+                                                                <b>Modules in this App</b>
+                                                            </MenuItem>
+                                                            {modules !== undefined && relatedModules !== undefined && relatedModules.map((mod, index) => {
                                                                     return (
                                                                         <MenuItem 
                                                                             key={index} 
-                                                                            eventKey={type.id}
+                                                                            eventKey={mod.id}
                                                                             onSelect={(event) => handleChange(value, event)}
-                                                                            active={currentQuestion['module-id'] === type.id}
+                                                                            active={currentQuestion['module-id'] === mod.id}
                                                                         >
-                                                                            {type.module_name}
+                                                                            {mod.spec.title} ({mod.module_name})
                                                                         </MenuItem>
                                                                     )
                                                                 })
@@ -1061,7 +1104,6 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                                             </FormGroup>
                                                         )
                                                     })}
-                                                    
                                                     <Button type="button" variant="secondary" onClick={addNewImpute}>Add Impute condition</Button>
                                                     <Col sm={2}>
                                                     </Col>
@@ -1081,11 +1123,36 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                 <Col sm={10}>
                                     <Button type="button" variant="secondary" onClick={addNewImpute}>Add Impute condition</Button>
                                 </Col>
+                                <Col sm={2}>
+                                </Col>
+                                <Col sm={10}>
+                                    <HelpBlock >
+                                        {helperDict.impute}
+                                    </HelpBlock>
+                                </Col>
                             </FormGroup>}
+                            <FormGroup key={'optional-properties'} controlId={`form-optional`}>
+                                <Col componentClass={ControlLabel} sm={2}>Optional</Col>
+                                <Col sm={10}>
+                                <FormControl 
+                                    componentClass="textarea"
+                                    placeholder={'Enter text'} 
+                                    value={optional} 
+                                    onChange={(event) => setOptional(event.target.value)}
+                                />
+                                </Col>
+                                <Col sm={2}>
+                                </Col>
+                                <Col sm={10}>
+                                    <HelpBlock >
+                                        {helperDict.optional}
+                                    </HelpBlock>
+                                </Col>
+                            </FormGroup>
                             <Modal.Footer style={{width: 'calc(100% + 20px)'}}>
-                            <Button type="button" className="btn btn-danger" onClick={handleDelete} style={{float: 'left'}}>Delete Question</Button>
-                            <Button variant="secondary" onClick={() => dispatch(hide())} style={{marginRight: '2rem'}}>Close</Button>
-                                    <Button type="submit" className="btn btn-success">Save Changes</Button>
+                                <Button type="button" className="btn btn-danger" onClick={handleDelete} style={{float: 'left'}}>Delete Question</Button>
+                                <Button variant="secondary" onClick={() => dispatch(hide())} style={{marginRight: '2rem'}}>Close</Button>
+                                <Button type="submit" className="btn btn-success">Save Changes</Button>
                             </Modal.Footer>
                         </Form>
                     }

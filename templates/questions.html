@@ -268,7 +268,7 @@ Question editor
               <textarea class="hidden-field" name="q_choices">{{q.choices_as_csv}}</textarea>
               <div class="form-group">
                 <input class="submitform btn edit_button" type="submit" onclick="react_edit_tool({{module.id}},{{q.id}}); return false;" value="edit">
-                {% comment %} <input class="submitform btn edit_button" name="submit" type="submit" id="submit" value="edit"> {% endcomment %}
+                <input class="submitform btn edit_button" name="submit" type="submit" id="submit" value="edit">
                 <input class="submitform btn edit_button" type="submit" onclick="authoring_tool_new_question2({{q.id}}); return false;" value="insert &#8595;">
                 </a>
               </div>
@@ -390,7 +390,7 @@ $('.question-form').on('submit', function(e) {
     autocomplete_questions: {}
   });
 
-  //show_question_authoring_tool(q_id, q_key);
+  show_question_authoring_tool(q_id, q_key);
   return false
 });
 </script>
