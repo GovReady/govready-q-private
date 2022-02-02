@@ -122,7 +122,7 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
 
     const addNewPropertiesToCurrentQuestion = (obj, type) => {
         const newValue = {...obj};
-        let propertiesToIgnore = ['id', 'prompt', 'title', 'type'];
+        let propertiesToIgnore = ['id', 'prompt', 'title', 'type', 'impute'];
 
         switch(type) {
             case 'text':
@@ -238,6 +238,14 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                 setTempFields('');
                 setTempAction('')
                 
+                setCurrentQuestion(newValue);
+                break;
+            case 'yesno':
+                Object.keys(newValue).map((property) => {
+                    if(!propertiesToIgnore.includes(property)){
+                        delete newValue[property];
+                    }
+                })
                 setCurrentQuestion(newValue);
                 break;
             case 'choice':
@@ -611,6 +619,18 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
             return listOfModules.data.filter((mod) => mod.app.appname === modules.app.appname).sort((a, b) => (a.id > b.id) ? 1 : -1);
         }
     }
+    
+    const deletePropertyFromCurrentQuestion = (property) => {
+        const updatedValue = {...currentQuestion};
+        delete updatedValue[property];
+        setCurrentQuestion(updatedValue);
+    }
+
+    const deleteImputeCondition = (condition, conditionIndex) => {
+        const updatedValue = {...currentQuestion};
+        updatedValue.impute = currentQuestion.impute.filter((cond) => cond !== condition);
+        setCurrentQuestion(updatedValue);
+    };
 
     const handleSubmit = () => {
         /* 
@@ -692,9 +712,8 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
         else{
             alert(`Error: ${listOfErrors}`);
         }
-        
     }
-    
+
     return (
         <>
             {post !== null && properties !== null && modules !== null && 
@@ -762,84 +781,99 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                     if(!differentProperties.includes(value)) {
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter(value)}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        componentClass="textarea"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
-                                                        onChange={(event) => {
-                                                            handleChange(value, event.target.value)
-                                                        }}
-                                                    />
-                                                </Col>
-                                                {(value !== null) && (value in helperDict) ? 
-                                                <>
-                                                    <Col sm={2}>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter(value)}
                                                     </Col>
-                                                    <Col sm={10}>
-                                                        <HelpBlock>
-                                                            {helperDict[value]}
-                                                        </HelpBlock>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            componentClass="textarea"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
+                                                            onChange={(event) => {
+                                                                handleChange(value, event.target.value)
+                                                            }}
+                                                        />
                                                     </Col>
-                                                </>
-                                                : ""}
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    {(value !== null) && (value in helperDict) ? 
+                                                    <>
+                                                        <Col sm={16} md={12} mdOffset={2}>
+                                                            <HelpBlock>
+                                                                {helperDict[value]}
+                                                            </HelpBlock>
+                                                        </Col>
+                                                    </>
+                                                    : ""}
+                                                </Row>
                                             </FormGroup>
                                         )
                                     }
                                     else if(value === 'min' || value === 'max') {
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter(value)}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        type="number"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
-                                                        onChange={(event) => {
-                                                            handleChange(value, event.target.value)
-                                                        }}
-                                                    />
-                                                </Col>
-                                                {(value !== null) && (value in helperDict) ? 
-                                                <>
-                                                    <Col sm={2}>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter(value)}
                                                     </Col>
-                                                    <Col sm={10}>
-                                                        <HelpBlock >
-                                                            {helperDict[value]}
-                                                        </HelpBlock>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            type="number"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
+                                                            onChange={(event) => {
+                                                                handleChange(value, event.target.value)
+                                                            }}
+                                                        />
                                                     </Col>
-                                                </>
-                                                : ""}
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    {(value !== null) && (value in helperDict) ? 
+                                                    <>
+                                                        <Col sm={16} md={12} mdOffset={2}>
+                                                            <HelpBlock >
+                                                                {helperDict[value]}
+                                                            </HelpBlock>
+                                                        </Col>
+                                                    </>
+                                                    : ""}
+                                                </Row>
                                             </FormGroup>
                                         )
                                     }
                                     else if(value === 'actions'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter(value)}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        componentClass="textarea"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? tempAction : ""} 
-                                                        onChange={(event) => setTempAction(event.target.value)}
-                                                    />
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter(value)}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            componentClass="textarea"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? tempAction : ""} 
+                                                            onChange={(event) => setTempAction(event.target.value)}
+                                                        />
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>
                                             </FormGroup>
                                             
                                         )
@@ -847,24 +881,29 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                     else if(value === 'choices'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter('choices')}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        componentClass="textarea"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? tempChoice : ""} 
-                                                        onChange={(event) => setTempChoice(event.target.value)}
-                                                    />
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter('choices')}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            componentClass="textarea"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? tempChoice : ""} 
+                                                            onChange={(event) => setTempChoice(event.target.value)}
+                                                        />
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>
                                             </FormGroup>
                                             
                                         )
@@ -872,247 +911,277 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                     else if(value === 'fields'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter('fields')}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        componentClass="textarea"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? tempFields : ""} 
-                                                        onChange={(event) => setTempFields(event.target.value)}
-                                                    />
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter('fields')}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            componentClass="textarea"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? tempFields : ""} 
+                                                            onChange={(event) => setTempFields(event.target.value)}
+                                                        />
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>
                                             </FormGroup>
-                                            
                                         )
                                     }
                                     else if(value === 'type'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter('type')}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <DropdownButton
-                                                        bsStyle={"default"}
-                                                        title={getKeyByValue(typeDict, currentQuestion.type)}
-                                                        id={`dropdown-basic-${1}`}
-                                                        >
-                                                            {
-                                                                typesArray.map((mainType, index) => {
-                                                                    return (
-                                                                        <React.Fragment key={index}>
-                                                                            <MenuItem key={index} eventKey={mainType.header}><b>{mainType.header}</b></MenuItem>
-                                                                            {mainType.sub.map((sub, subIndex) => (
-                                                                                <MenuItem
-                                                                                    key={subIndex} 
-                                                                                    eventKey={sub} 
-                                                                                    onSelect={(event) => {
-                                                                                        handleTypeChange(event);
-                                                                                        document.dispatchEvent(new MouseEvent('click'));
-                                                                                    }}
-                                                                                    active={sub === currentQuestion['type']}
-                                                                                >
-                                                                                    {sub}
-                                                                                </MenuItem>
-                                                                            ))}
-                                                                        </React.Fragment>
-                                                                    )
-                                                                })
-                                                            }
-                                                    </DropdownButton>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter('type')}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <DropdownButton
+                                                            bsStyle={"default"}
+                                                            title={getKeyByValue(typeDict, currentQuestion.type)}
+                                                            id={`dropdown-basic-${1}`}
+                                                            >
+                                                                {
+                                                                    typesArray.map((mainType, index) => {
+                                                                        return (
+                                                                            <React.Fragment key={index}>
+                                                                                <MenuItem key={index} eventKey={mainType.header} header><b>{mainType.header}</b></MenuItem>
+                                                                                {mainType.sub.map((sub, subIndex) => (
+                                                                                    <MenuItem
+                                                                                        key={subIndex} 
+                                                                                        eventKey={sub} 
+                                                                                        onSelect={(event) => {
+                                                                                            handleTypeChange(event);
+                                                                                            document.dispatchEvent(new MouseEvent('click'));
+                                                                                        }}
+                                                                                        active={sub === currentQuestion['type']}
+                                                                                    >
+                                                                                        {sub}
+                                                                                    </MenuItem>
+                                                                                ))}
+                                                                            </React.Fragment>
+                                                                        )
+                                                                    })
+                                                                }
+                                                        </DropdownButton>
+                                                    </Col>
+                                                </Row>
                                             </FormGroup>
-                                            
                                         )
                                     }
                                     else if(value === 'file-type'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter('File Type')}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <DropdownButton
-                                                        bsStyle={"default"}
-                                                        title={[undefined, null, ""].includes(currentQuestion['file-type']) ? fileType[0][0] : getKeyByValue(fileObjects, currentQuestion['file-type'])}
-                                                        id={`dropdown-basic-${1}`}
-                                                        >
-                                                            {
-                                                                fileType.map((type, index) => {
-                                                                    return (
-                                                                        <MenuItem 
-                                                                            key={index} 
-                                                                            eventKey={type[1] !== null ? type[1] : ''}
-                                                                            onSelect={(event) => handleChange(value, event)}
-                                                                            active={currentQuestion['file-type'] === type[1]}
-                                                                        >
-                                                                            {type[0]}
-                                                                        </MenuItem>
-                                                                    )
-                                                                })
-                                                            }
-                                                    </DropdownButton>
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter('File Type')}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <DropdownButton
+                                                            bsStyle={"default"}
+                                                            title={[undefined, null, ""].includes(currentQuestion['file-type']) ? fileType[0][0] : getKeyByValue(fileObjects, currentQuestion['file-type'])}
+                                                            id={`dropdown-basic-${1}`}
+                                                            >
+                                                                {
+                                                                    fileType.map((type, index) => {
+                                                                        return (
+                                                                            <MenuItem 
+                                                                                key={index} 
+                                                                                eventKey={type[1] !== null ? type[1] : ''}
+                                                                                onSelect={(event) => handleChange(value, event)}
+                                                                                active={currentQuestion['file-type'] === type[1]}
+                                                                            >
+                                                                                {type[0]}
+                                                                            </MenuItem>
+                                                                        )
+                                                                    })
+                                                                }
+                                                        </DropdownButton>
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>
+                                                
                                             </FormGroup>
                                         )
                                     }
                                     else if (value === 'module-id'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter('Module')}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <DropdownButton
-                                                        bsStyle={"default"}
-                                                        title={[undefined, null, ""].includes(currentQuestion['module-id']) ? 'Select My Own Module Protocol' : getModuleTitleFromId(currentQuestion['module-id'])}
-                                                        id={`dropdown-basic-${1}`}
-                                                        >
-                                                            <MenuItem>
-                                                                <b>From the Compliance Store</b>
-                                                            </MenuItem>
-                                                            <MenuItem 
-                                                                eventKey={''}
-                                                                onSelect={(event) => handleChange(value, event)}
-                                                                active={currentQuestion['module-id'] === ''}
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter('Module')}
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <DropdownButton
+                                                            bsStyle={"default"}
+                                                            title={[undefined, null, ""].includes(currentQuestion['module-id']) ? 'Select My Own Module Protocol' : getModuleTitleFromId(currentQuestion['module-id'])}
+                                                            id={`dropdown-basic-${1}`}
                                                             >
-                                                                Based on Protocol ID (Enter Next)
-                                                            </MenuItem>
-                                                            <MenuItem 
-                                                            >
-                                                                <b>Modules in this App</b>
-                                                            </MenuItem>
-                                                            {modules !== undefined && relatedModules !== undefined && relatedModules.map((mod, index) => {
-                                                                    return (
-                                                                        <MenuItem 
-                                                                            key={index} 
-                                                                            eventKey={mod.id}
-                                                                            onSelect={(event) => handleChange(value, event)}
-                                                                            active={currentQuestion['module-id'] === mod.id}
-                                                                        >
-                                                                            {mod.spec.title} ({mod.module_name})
-                                                                        </MenuItem>
-                                                                    )
-                                                                })
-                                                            }
-                                                    </DropdownButton>
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                                <MenuItem header>
+                                                                    <b>From the Compliance Store</b>
+                                                                </MenuItem>
+                                                                <MenuItem 
+                                                                    eventKey={''}
+                                                                    onSelect={(event) => handleChange(value, event)}
+                                                                    active={currentQuestion['module-id'] === ''}
+                                                                >
+                                                                    Based on Protocol ID (Enter Next)
+                                                                </MenuItem>
+                                                                <MenuItem header>
+                                                                    <b>Modules in this App</b>
+                                                                </MenuItem>
+                                                                {modules !== undefined && relatedModules !== undefined && relatedModules.map((mod, index) => {
+                                                                        return (
+                                                                            <MenuItem 
+                                                                                key={index} 
+                                                                                eventKey={mod.id}
+                                                                                onSelect={(event) => handleChange(value, event)}
+                                                                                active={currentQuestion['module-id'] === mod.id}
+                                                                            >
+                                                                                {mod.spec.title} ({mod.module_name})
+                                                                            </MenuItem>
+                                                                        )
+                                                                    })
+                                                                }
+                                                        </DropdownButton>
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>                                                
                                             </FormGroup>
                                         )
                                     }
                                     else if (value === 'protocol' && [undefined, null, ""].includes(currentQuestion['module-id'])){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    Protocol
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <FormControl 
-                                                        componentClass="textarea"
-                                                        placeholder={'Enter text'} 
-                                                        value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
-                                                        onChange={(event) => {
-                                                            handleChange(value, event.target.value)
-                                                        }}
-                                                    />
-                                                </Col>
-                                                <Col sm={2}>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    <HelpBlock >
-                                                        {helperDict[value]}
-                                                    </HelpBlock>
-                                                </Col>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        Protocol
+                                                    </Col>
+                                                    <Col sm={8} md={8}>
+                                                        <FormControl 
+                                                            componentClass="textarea"
+                                                            placeholder={'Enter text'} 
+                                                            value={currentQuestion[value] !== null ? currentQuestion[value] : ""} 
+                                                            onChange={(event) => {
+                                                                handleChange(value, event.target.value)
+                                                            }}
+                                                        />
+                                                    </Col>
+                                                    <Col sm={2} md={2}>
+                                                        <Button bsStyle="danger" onClick={() => deletePropertyFromCurrentQuestion(value)}>Remove</Button>
+                                                    </Col>
+                                                </Row>                                                
+                                                <Row>
+                                                    <Col sm={16} md={12} mdOffset={2}>
+                                                        <HelpBlock >
+                                                            {helperDict[value]}
+                                                        </HelpBlock>
+                                                    </Col>
+                                                </Row>                                                
                                             </FormGroup>
                                         )
                                     }
                                     else if (value === 'impute'){
                                         return (
                                             <FormGroup key={key} controlId={`form-${value}`}>
-                                                <Col componentClass={ControlLabel} sm={2}>
-                                                    {capitalizeFirstLetter(value)}
-                                                </Col>
-                                                <Col sm={10}>
-                                                    {currentQuestion[value].map((condition, conditionIndex) => {
-                                                        return (
-                                                            <FormGroup key={conditionIndex} controlId={`impute-${conditionIndex}`}>
-                                                                <Col componentClass={ControlLabel} sm={2}>Condition {conditionIndex}:</Col>
-                                                                <Col sm={10}>
-                                                                    <FormControl 
-                                                                        componentClass="textarea"
-                                                                        placeholder={'Enter text'} 
-                                                                        value={condition.condition} 
-                                                                        onChange={(event) => handleImputeChange(condition, conditionIndex, 'condition',  event.target.value)}
-                                                                    />
-                                                                </Col>
-                                                                <Col componentClass={ControlLabel} sm={2}>
-                                                                    Value {conditionIndex}:
-                                                                </Col>
-                                                                <Col sm={6}>
-                                                                    <FormControl 
-                                                                        type="text"
-                                                                        placeholder={'Enter text'} 
-                                                                        value={condition.value !== null ? condition.value : ""} 
-                                                                        onChange={(event) => handleImputeChange(condition, conditionIndex, 'value', event.target.value)}
-                                                                    />
-                                                                </Col>
-                                                                <Col sm={4}>
-                                                                    <DropdownButton
-                                                                        bsStyle={"default"}
-                                                                        title={[undefined, null, ""].includes(condition['value-mode']) ? imputeType[0][0] : condition['value-mode']}
-                                                                        id={`dropdown-basic-${1}`}
-                                                                        >
-                                                                            {
-                                                                                imputeType.map((type, index) => {
-                                                                                    return (
-                                                                                        <MenuItem 
-                                                                                            key={index} 
-                                                                                            eventKey={type[1] !== null ? type[1] : ""}
-                                                                                            onSelect={(event) => handleImputeChange(condition, conditionIndex, 'value-mode', event)}
-                                                                                            active={condition['value-mode'] === type[1]}
-                                                                                        >
-                                                                                            {type[0]}
-                                                                                        </MenuItem>
-                                                                                    )
-                                                                                })
-                                                                            }
-                                                                    </DropdownButton>
-                                                                </Col>
-                                                            </FormGroup>
-                                                        )
-                                                    })}
-                                                    <Button type="button" variant="secondary" onClick={addNewImpute}>Add Impute condition</Button>
-                                                    <Col sm={2}>
+                                                <Row>
+                                                    <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                        {capitalizeFirstLetter(value)}
                                                     </Col>
                                                     <Col sm={10}>
-                                                        <HelpBlock >
-                                                            {helperDict[value]}
-                                                        </HelpBlock>
+                                                        {currentQuestion[value] !== undefined && currentQuestion[value].length > 0 && currentQuestion[value].map((condition, conditionIndex) => {
+                                                            return (
+                                                                <FormGroup key={conditionIndex} controlId={`impute-${conditionIndex}`}>
+                                                                    <Row>
+                                                                        <Col componentClass={ControlLabel} sm={2} md={2}>Condition {conditionIndex + 1}:</Col>
+                                                                        <Col sm={6} md={6}>
+                                                                            <FormControl 
+                                                                                componentClass="textarea"
+                                                                                placeholder={'Enter text'} 
+                                                                                value={condition.condition} 
+                                                                                onChange={(event) => handleImputeChange(condition, conditionIndex, 'condition',  event.target.value)}
+                                                                            />
+                                                                        </Col>
+                                                                        <Col sm={2} md={2}>
+                                                                            <Button bsSize="xsmall" bsStyle="danger" onClick={() => deleteImputeCondition(condition, conditionIndex)}>Remove Condition {conditionIndex + 1}</Button>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col componentClass={ControlLabel} sm={2} md={2}>
+                                                                            Value {conditionIndex + 1}:
+                                                                        </Col>
+                                                                        <Col sm={6}>
+                                                                            <FormControl 
+                                                                                type="text"
+                                                                                placeholder={'Enter text'} 
+                                                                                value={condition.value !== null ? condition.value : ""} 
+                                                                                onChange={(event) => handleImputeChange(condition, conditionIndex, 'value', event.target.value)}
+                                                                            />
+                                                                        </Col>
+                                                                        <Col sm={4}>
+                                                                            <DropdownButton
+                                                                                bsStyle={"default"}
+                                                                                title={[undefined, null, ""].includes(condition['value-mode']) ? imputeType[0][0] : condition['value-mode']}
+                                                                                id={`dropdown-basic-${1}`}
+                                                                                >
+                                                                                    {
+                                                                                        imputeType.map((type, index) => {
+                                                                                            return (
+                                                                                                <MenuItem 
+                                                                                                    key={index} 
+                                                                                                    eventKey={type[1] !== null ? type[1] : ""}
+                                                                                                    onSelect={(event) => handleImputeChange(condition, conditionIndex, 'value-mode', event)}
+                                                                                                    active={condition['value-mode'] === type[1]}
+                                                                                                >
+                                                                                                    {type[0]}
+                                                                                                </MenuItem>
+                                                                                            )
+                                                                                        })
+                                                                                    }
+                                                                            </DropdownButton>
+                                                                        </Col>
+                                                                    </Row>
+                                                                </FormGroup>
+                                                            )
+                                                        })}
+                                                        <Col sm={2} md={2}>
+                                                        <Button type="button" variant="secondary" onClick={addNewImpute}>Add Impute condition</Button>
+                                                        </Col>
+                                                        
+                                                        <Col sm={16} md={12}>
+                                                            <HelpBlock >
+                                                                {helperDict[value]}
+                                                            </HelpBlock>
+                                                        </Col>
                                                     </Col>
-                                                </Col>
+                                                </Row>
                                             </FormGroup>
                                         )
                                     }
@@ -1132,27 +1201,29 @@ export const EditQuestion = ({ moduleId, questionId, uuid }) => {
                                 </Col>
                             </FormGroup>}
                             <FormGroup key={'optional-properties'} controlId={`form-optional`}>
-                                <Col componentClass={ControlLabel} sm={2}>Optional</Col>
-                                <Col sm={10}>
-                                <FormControl 
-                                    componentClass="textarea"
-                                    placeholder={'Enter text'} 
-                                    value={optional} 
-                                    onChange={(event) => setOptional(event.target.value)}
-                                />
-                                </Col>
-                                <Col sm={2}>
-                                </Col>
-                                <Col sm={10}>
-                                    <HelpBlock >
-                                        {helperDict.optional}
-                                    </HelpBlock>
-                                </Col>
+                                <Row>
+                                    <Col componentClass={ControlLabel} sm={2} md={2}>Optional</Col>
+                                    <Col sm={8} md={8}>
+                                    <FormControl 
+                                        componentClass="textarea"
+                                        placeholder={'Enter text'} 
+                                        value={optional} 
+                                        onChange={(event) => setOptional(event.target.value)}
+                                    />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col sm={16} md={12} mdOffset={2}>
+                                        <HelpBlock>
+                                            {helperDict.optional}
+                                        </HelpBlock>
+                                    </Col>
+                                </Row>                                
                             </FormGroup>
                             <Modal.Footer style={{width: 'calc(100% + 20px)'}}>
-                                <Button type="button" className="btn btn-danger" onClick={handleDelete} style={{float: 'left'}}>Delete Question</Button>
+                                <Button type="button" bsStyle="danger" onClick={handleDelete} style={{float: 'left'}}>Delete Question</Button>
                                 <Button variant="secondary" onClick={() => dispatch(hide())} style={{marginRight: '2rem'}}>Close</Button>
-                                <Button type="submit" className="btn btn-success">Save Changes</Button>
+                                <Button type="submit" bsStyle="success">Save Changes</Button>
                             </Modal.Footer>
                         </Form>
                     }
