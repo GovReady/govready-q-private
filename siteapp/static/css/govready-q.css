@@ -582,3 +582,10 @@ form #id_appsource_compapp { width: 100%; overflow: auto !important; }
 .sidebardark-head-title {color: #D9D9D9; }
 
 .sidebardarkheader { border:none; display:block; margin:25px 0 25px 20px; }
+.sidebar-item{
+     margin-bottom: 5px;
+
+}
+.react-modal{
+  min-width: '90%';
+}

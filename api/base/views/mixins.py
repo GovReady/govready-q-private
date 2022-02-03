@@ -56,7 +56,7 @@ class CustomListModelMixin(ListModelMixin):
             queryset = self.filter_queryset(queryset)
 
         post_filter = kwargs.get('post_filter')
-        if post_filter:
+        if post_filter:            
             queryset = queryset.filter(post_filter)
 
         rollup = self.get_rollup(request, queryset)
@@ -71,7 +71,7 @@ class CustomSearchModelMixin(object):
         pass
 
     def _search(self, request):
-        keyword = request.GET.get('keyword')
+        keyword = request.GET.get('search')
         if keyword:
             return self.search(request, keyword)
 

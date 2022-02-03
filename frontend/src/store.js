@@ -5,6 +5,7 @@ import {
 
 import {componentTagsStateSlice} from "./components/elements/element-detail-tabs/slice"
 import {projectTagsStateSlice} from "./components/projects/project-view/slice";
+import modalReducer from "./components/modulequestions/slice";
 
 const middleware = [
     ...getDefaultMiddleware(),
@@ -14,10 +15,12 @@ const middleware = [
 const store = configureStore({
     reducer: {
         componentTags: componentTagsStateSlice.reducer,
-        projectTags: projectTagsStateSlice.reducer
+        projectTags: projectTagsStateSlice.reducer,
+        modal: modalReducer
     },
     middleware,
 });
 
 export default store;
+
 window.store = store;

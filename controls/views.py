@@ -164,9 +164,14 @@ def controls_selected(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
+        project = system.projects.first()
         controls = system.root_element.controls.all()
         impl_smts = system.root_element.statements_consumed.all()
+        project = system.projects.all()[0]
+        # controls = system.root_element.controls.all()
+        controls = ElementControl.objects.filter(element=system.root_element)
+        # impl_smts = system.root_element.statements_consumed.all()
+        impl_smts = Statement.objects.filter(consumer_element=system.root_element, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION.name)
 
         # sort controls
         controls = list(controls)
@@ -2810,7 +2815,7 @@ def poams_list(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
+        project = system.projects.first()
         controls = system.root_element.controls.all()
         poam_smts = system.root_element.statements_consumed.filter(statement_type="POAM").order_by('-updated')
 
@@ -2847,7 +2852,6 @@ def new_poam(request, system_id):
         # Temporarily assume only one project and get first project
         project = system.projects.all()[0]
         controls = system.root_element.controls.all()
-
         if request.method == 'POST':
             statement_form = StatementPoamForm(request.POST)
             # if statement_form.is_valid() and poam_form.is_valid():
@@ -3274,10 +3278,10 @@ def system_deployments(request, system_id):
     if request.user.has_perm('view_system', system):
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
+        project = system.projects.first()
 
         # Retrieve list of deployments for the system
-        deployments = system.deployments.all().order_by(Lower('name'))
+        # deployments = system.deployments.all().order_by(Lower('name'))
         # controls = system.root_element.controls.all()
         # poam_smts = system.root_element.statements_consumed.filter(statement_type="POAM").order_by('-updated')
 
@@ -3285,7 +3289,6 @@ def system_deployments(request, system_id):
         context = {
             "system": system,
             "project": project,
-            "deployments": deployments,
             "display_urls": project_context(project)
         }
         return render(request, "systems/deployments_list.html", context)
@@ -3406,16 +3409,10 @@ def system_assessment_results_list(request, system_id=None):
             # User does not have permission to this system
             raise Http404
 
-        system = System.objects.get(id=system_id)
-        # Retrieve related selected controls if user has permission on system
-        if not request.user.has_perm('view_system', system):
-            # User does not have permission to this system
-            raise Http404
-
         # Retrieve primary system Project
         # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
-        sars = system.system_assessment_result.all().order_by('created').reverse()
+        project = system.projects.first()
+        # sars = system.system_assessment_result.all().order_by('created').reverse()
 
         # Retrieve user's API keys
         api_keys = request.user.get_api_keys()
@@ -3423,7 +3420,7 @@ def system_assessment_results_list(request, system_id=None):
         context = {
             "system": system,
             "project": project,
-            "sars": sars,
+            # "sars": sars,
             "api_key_ro": api_keys['ro'],
             "api_key_rw": api_keys['rw'],
             "api_key_wo": api_keys['wo'],

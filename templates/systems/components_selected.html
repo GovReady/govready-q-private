@@ -15,6 +15,9 @@
 {% endblock %}
 
 {% block body_content %}
+    {% comment %} <div id="systems-components-table"></div> {% endcomment %}
+
+
     <div class="systems-top">
             <div id="tab-content" class="row rows-header">
                 <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><span class="systems-selected-items">Selected components</span></div>
@@ -77,6 +80,9 @@
 
 {% block scripts %}
 {{ block.super }}
+<script>
+    window.systemsComponentsTable({{ system.id }});
+</script>
 <script>
   // Convert select field for Add Component to jQuery Select2 box
   $(document).ready(function() {

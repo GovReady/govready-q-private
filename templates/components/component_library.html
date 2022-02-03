@@ -29,6 +29,11 @@
 
     <div class="portfolio-top">
         <div class="container">
+            {% comment %} <div id="components-table"></div> {% endcomment %}
+
+
+
+
             <div class="portfolio-main">
                 <a id="component-new" href="{% url 'new_element' %}" class="btn btn-success">Create a Component</a>
                 <a id="component-import-oscal" class="btn btn-success" onclick="show_import_component_modal(); return false;" href="#">Import OSCAL Component</a>
@@ -36,7 +41,7 @@
             </div>
 
             <h2 class="">Component Library</h2>
-
+            <h1>Sergio</h1>
             <form action="{% url 'component_library' %}" method="GET" role="search">
                 <div class="form-inline pull-right create-nav">
                     <div class="form-group">
@@ -59,19 +64,19 @@
         <form action="{% url 'compare_components' %}" name="compare_form" onsubmit="return clearStorage()" method="POST">
             {% csrf_token %}
         <input type="hidden" name="hiddenChecks" id="hiddenChecks" value="" />
-            <div id="" class="row">
-                <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>
-                 <button id="compare-select" onclick="select_all(true); return false;" href="#" class="btn btn-success">Select all</button>
-                 <button id="compare-deselect" onclick="select_all(false); return false;" href="#" class=" btn btn-danger">Deselect all</button>
-                <div id="" class="col-xs-12"><span>{% include 'components/paginate_comp.html' %}</span></div>
-            </div>
+        <div id="" class="row">
+            <button id="compare-components" href="{% url 'compare_components' %}" class="btn btn-info"><em class="glyphicon glyphicon-sort"></em> Compare Components</button>
+                <button id="compare-select" onclick="select_all(true); return false;" href="#" class="btn btn-success">Select all</button>
+                <button id="compare-deselect" onclick="select_all(false); return false;" href="#" class=" btn btn-danger">Deselect all</button>
+            <div id="" class="col-xs-12"><span>{% include 'components/paginate_comp.html' %}</span></div>
+        </div>
 
-            <div id="tab-content" class="row rows-header">
-                <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Component</div>
-                <div id="" class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">Description</div>
-                <div id="" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">Select</div>
-                <div id="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"><span class="pull-right">Statements</span></div>
-            </div>
+        <div id="tab-content" class="row rows-header">
+            <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Component</div>
+            <div id="" class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">Description</div>
+            <div id="" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">Select</div>
+            <div id="" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"><span class="pull-right">Statements</span></div>
+        </div>
         <div id="checkbox-container">
             {% for component in page_obj %}
                 <div id="tab-content" class="row row-control" style="">
@@ -96,12 +101,15 @@
         </form>
 
             {% include "components/import-component-modal.html" %}
-        </div>
+        </div> 
     </div>
     {{ block.super }}
 {% endblock %}
 
 {% block scripts %}
+<script>
+    window.componentsTable({});
+</script>
 <script>
 //Hide submit button until 1 checkbox is checked
 $(document).ready(function () {

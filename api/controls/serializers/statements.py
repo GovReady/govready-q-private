@@ -1,6 +1,7 @@
 from rest_framework_recursive.fields import RecursiveField
 from api.base.serializers.types import ReadOnlySerializer
 from api.controls.serializers.element import DetailedElementSerializer
+from api.controls.serializers.poam import SimplePoamSerializer
 from api.controls.serializers.import_record import SimpleImportRecordSerializer
 from controls.models import Statement
 
@@ -10,6 +11,11 @@ class SimpleStatementSerializer(ReadOnlySerializer):
         model = Statement
         fields = ['sid', 'sid_class', 'pid', 'body', 'statement_type', 'remarks', 'status', 'version', 'uuid']
 
+class PoamStatmentSerializer(SimpleStatementSerializer):   
+    poam = SimplePoamSerializer()
+    class Meta:
+            model = Statement
+            fields = SimpleStatementSerializer.Meta.fields + ['poam']
 
 class DetailedStatementSerializer(SimpleStatementSerializer):
     parent = RecursiveField(required=False, allow_null=True)

@@ -24,6 +24,7 @@ Remove contextbar from top of page
 
 % block body-wide %
 {% block body %}
+<div id="index-group-content"></div>
 
 <div style="margin-top: 30px">
   <div class="container">
@@ -81,5 +82,6 @@ Remove contextbar from top of page
     var url = "/controls/catalogs/{{ catalog.catalog_key }}/control/"+control_id;
     window.location.href = url;
   }
+  window.controlGroupings({{ system.id }});
 </script>
 {% endblock %}
