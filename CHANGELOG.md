@@ -5,6 +5,19 @@ GovReady-Q Release Notes
 v0.9.14-dev (January xx, 2022)
 --------------------------
 
+**UI changes**
+
+* Change label 'certified statement' to 'reference statement'.
+
+**Developer changes**
+
+* Add support for OIDC SSO configuration separate from OKTA SSO configuration.
+* Update Django, libraries.
+
+**Bug fixes**
+
+* Footer fixes.
+
 
 v0.9.13 (January 23, 2022)
 --------------------------
