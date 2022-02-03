@@ -21,11 +21,13 @@ class OIDCAuth(OIDCAuthenticationBackend):
         return False
 
     def create_user(self, claims):
+        print("create_user, claims:", claims)
         data = {'email': claims[settings.OIDC_CLAIMS_MAP['email']],
                 'first_name': claims[settings.OIDC_CLAIMS_MAP['first_name']],
                 'last_name': claims[settings.OIDC_CLAIMS_MAP['last_name']],
                 'username': claims[settings.OIDC_CLAIMS_MAP['username']],
-                'is_staff': self.is_admin(claims[settings.OIDC_CLAIMS_MAP['groups']])}
+                'is_staff': True}
+                # 'is_staff': self.is_admin(claims[settings.OIDC_CLAIMS_MAP['groups']])}
 
         user = self.UserModel.objects.create_user(**data)
         portfolio = Portfolio.objects.create(title=user.email.split('@')[0], description="Personal Portfolio")
@@ -33,6 +35,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         return user
 
     def update_user(self, user, claims):
+        print("update_user, claims:", claims)
         original_values = [getattr(user, x.name) for x in user._meta.get_fields() if hasattr(user, x.name)]
 
         user.email = claims[settings.OIDC_CLAIMS_MAP['email']]
@@ -40,8 +43,10 @@ class OIDCAuth(OIDCAuthenticationBackend):
         user.last_name = claims[settings.OIDC_CLAIMS_MAP['last_name']]
         user.username = claims[settings.OIDC_CLAIMS_MAP['username']]
         groups = claims[settings.OIDC_CLAIMS_MAP['groups']]
-        user.is_staff = self.is_admin(groups)
-        user.is_superuser = user.is_staff
+        user.is_staff = True
+        user.is_superuser = True
+        # user.is_staff = self.is_admin(groups)
+        # user.is_superuser = user.is_staff
 
         new_values = [getattr(user, x.name) for x in user._meta.get_fields() if hasattr(user, x.name)]
         if new_values != original_values:
@@ -83,7 +88,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         # Validate the token
         payload = self.verify_token(id_token, nonce=nonce)
-
+        print("authenticate, payload:", payload)
         if payload:
             self.store_tokens(access_token, id_token)
             try:
