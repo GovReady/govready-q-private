@@ -85,38 +85,10 @@ export const PortfolioTable = () => {
         endpoint={endpoint}
         header={
             <div style={{ display: "flex", width: "100%" }} >
-                <div style={{
-                    float: "left",
-                    textAlign: 'left',
-                }}>
-                    <span style={{ fontWeight: "bold", fontSize: "20px", marginLeft: "15px" }}> Portfolios </span>
-                </div>
                 <div style={{ marginTop: '3px' }}>
-                    <span style={{ marginLeft: "50px" }}>You have access to {records} portfolios</span>
+                    <span style={{ marginLeft: "20px" }}>You have access to {records} portfolios</span>
                 </div>
-                <div style={{marginTop: '-26px'}}>
-                    <Button
-                        className={'newButton'}
-                        style={{
-                            float: 'right',
-                            marginRight: "-440px",
-                            marginTop: "-2.75px",
-                            textShadow: "none",
-                            background: 'linear-gradient(to bottom,#5cb85c 0,#419641 100%)',
-                            width: '20rem',
-                            color: "white",
-                        }}
-                        variant="contained"
-                        color="success"
-                        href={`/portfolios/new`}
-                    >
-                        {'Create a portfolio'}
-                    </Button>
-                </div>
-
-
             </div>
-
         }
         onResponse={(response)=>{
             setRecords(response.pages.total_records);

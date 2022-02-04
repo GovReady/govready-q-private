@@ -31,9 +31,6 @@
         <div class="container">
             {% comment %} <div id="components-table"></div> {% endcomment %}
 
-
-
-
             <div class="portfolio-main">
                 <a id="component-new" href="{% url 'new_element' %}" class="btn btn-success">Create a Component</a>
                 <a id="component-import-oscal" class="btn btn-success" onclick="show_import_component_modal(); return false;" href="#">Import OSCAL Component</a>
@@ -41,7 +38,6 @@
             </div>
 
             <h2 class="">Component Library</h2>
-            <h1>Sergio</h1>
             <form action="{% url 'component_library' %}" method="GET" role="search">
                 <div class="form-inline pull-right create-nav">
                     <div class="form-group">
@@ -101,7 +97,7 @@
         </form>
 
             {% include "components/import-component-modal.html" %}
-        </div> 
+        </div>
     </div>
     {{ block.super }}
 {% endblock %}

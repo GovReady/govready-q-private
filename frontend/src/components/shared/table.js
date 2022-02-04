@@ -143,7 +143,9 @@ export const DataTable = (props) => {
         </Grid>
         <Grid
           style={{
-            border: "1px solid #bbb",
+            borderLeft: "1px solid #bbb",
+            borderRight: "1px solid #bbb",
+            borderBottom: "1px solid #bbb",
             width: '1241.330px',
             marginLeft: '-50px'
           }}
