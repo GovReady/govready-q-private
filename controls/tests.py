@@ -172,11 +172,11 @@ class ComponentUITests(OrganizationSiteFunctionalTests):
         statement = Statement(sid='ac-1',
                               sid_class=Catalogs.NIST_SP_800_53_rev4,
                               body='My statement body',
-                              status='Not Implmented')
+                              status='Not Implemented',
+                              consumer_element=root_element)
         statement.save()
         producer_element, created = Element.objects.get_or_create(name=self.component_name)
         statement.producer_element = producer_element
-        statement.consumer_element = root_element
         statement.save()
 
         self.component = producer_element
