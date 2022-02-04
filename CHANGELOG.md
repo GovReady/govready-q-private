@@ -12,6 +12,7 @@ v0.9.14-dev (January xx, 2022)
 **Developer changes**
 
 * Add support for OIDC SSO configuration separate from OKTA SSO configuration.
+* Add support for soft delete of components/elements by adding `deleted` field to `controls.Elements` model.
 * Update Django, libraries.
 * Remove debug-toolbar.
 
@@ -29,7 +30,6 @@ v0.9.13 (January 23, 2022)
 
 **Developer changes**
 
-* Add support for soft delete of components/elements by adding `deleted` field to `controls.Elements` model.
 * Add sign-in warning message to which users need to agree.
 * Reduce number of Group Django messages from question actions into single message for adding actions.
 * Simplify new authoring tool. Move prompt from right to left. Only show first line of question prompt.
