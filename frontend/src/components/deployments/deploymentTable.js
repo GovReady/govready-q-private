@@ -65,7 +65,7 @@ export const DeploymentTable = ({ systemId }) => {
     ]);
 
     const endpoint = (querystrings) => {
-        return axios.get(`/api/v2/modules/${systemId}/deployments/`, { params: querystrings });
+        return axios.get(`/api/v2/systems/${systemId}/deployments/`, { params: querystrings });
     };
     return <DataTable
         sortby={sortby}

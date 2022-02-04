@@ -65,7 +65,6 @@ export const DataTable = (props) => {
     });
     return props.endpoint(cleanedArgs).then((resp) => {
       setResponse(resp.data);
-      props.onResponse(resp.data);
     });
   };
 
