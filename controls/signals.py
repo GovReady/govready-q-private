@@ -8,11 +8,13 @@ from datetime import datetime
 # These signals will Update project updated timestamp
 @receiver(post_save, sender=Statement)
 def on_project_component_change(sender, instance, created, **kwargs):
-    instance.consumer_element.system.first().projects.update(updated=datetime.now())
+    if instance.consumer_element is not None:
+        instance.consumer_element.system.first().projects.update(updated=datetime.now())
 
 @receiver(post_delete, sender=Statement)
 def on_project_component_remove(sender, instance, **kwargs):
-    instance.consumer_element.system.first().projects.update(updated=datetime.now())
+    if instance.consumer_element is not None:
+        instance.consumer_element.system.first().projects.update(updated=datetime.now())
 
 @receiver(post_save, sender=ElementControl)
 def on_project_control_change(sender, instance, created, **kwargs):
