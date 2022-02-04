@@ -679,7 +679,7 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         system = project.system
 
         self.navigateToPage(f"/systems/{system.id}/deployments")
-        element = self.find_selected_option("a.newDeploymentButton")
+        element = self.find_selected_option("a.newDeploymentButton.btn.btn-default")
         wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
         # Add default deployments to system
@@ -689,7 +689,7 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         # Does new deployment appear on deployments list?
         self.navigateToPage(f"/systems/{system.id}/deployments")
         var_sleep(3) # wait for page to open
-        element = self.find_selected_option("a.newDeploymentButton")
+        element = self.find_selected_option("a.newDeploymentButton.btn.btn-default")
         wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
 class PoamUnitTests(TestCase):
