@@ -679,7 +679,8 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         system = project.system
 
         self.navigateToPage(f"/systems/{system.id}/deployments")
-        wait_for_sleep_after(lambda: self.assertInNodeText("New Deployment", ".systems-element-button"))
+        element = self.find_selected_option(".newDeploymentButton")
+        wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
         # Add default deployments to system
         deployment = Deployment(name="Training", description="Training environment", system=system)
@@ -688,7 +689,8 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         # Does new deployment appear on deployments list?
         self.navigateToPage(f"/systems/{system.id}/deployments")
         var_sleep(3) # wait for page to open
-        wait_for_sleep_after(lambda: self.assertInNodeText("New Deployment", ".systems-element-button"))
+        element = self.find_selected_option(".newDeploymentButton")
+        wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
 class PoamUnitTests(TestCase):
     """Class for Poam Unit Tests"""
