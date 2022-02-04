@@ -22,6 +22,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from api.siteapp.serializers.tags import SimpleTagSerializer
 from guardian.core import ObjectPermissionChecker
@@ -83,7 +84,7 @@ def banner(request):
 def home_user(request):
     # If the user is logged in, then redirect them to the projects page.
     if not request.user.is_authenticated:
-        if settings.OKTA_CONFIG:
+        if settings.OKTA_CONFIG or settings.OIDC_CONFIG:
             return HttpResponseRedirect("/oidc/authenticate")
         return HttpResponseRedirect("/login")
 
@@ -175,7 +176,7 @@ def homepage(request):
         from django.contrib.auth import logout
         logout(request)
         return HttpResponseRedirect('/')  # reload
-    if settings.OKTA_CONFIG:
+    if settings.OKTA_CONFIG or settings.OIDC_CONFIG:
         return HttpResponseRedirect("/oidc/authenticate")
     return render(request, "index.html", {
         "hide_registration": SystemSettings.hide_registration,
@@ -285,7 +286,7 @@ def assign_project_lifecycle_stage(projects):
             project.lifecycle_stage = lifecycle_stage_code_mapping["none_none"]
 
 
-class ProjectList(ListView):
+class ProjectList(LoginRequiredMixin, ListView):
     """
     Get all of the projects that the user can see *and* that are in a folder, which indicates it is top-level.
     """
@@ -296,27 +297,22 @@ class ProjectList(ListView):
     # won't always appear in that order, but it will determine
     # the overall order of the page in a stable way.
     ordering = ['created']
-    paginate_by = 10
+    paginate_by = 15
 
     def get_queryset(self):
-        """
-        Return the projects after assigning lifecycles
-        """
+        query = self.request.GET.get('search', "")
         projects = Project.get_projects_with_read_priv(
             self.request.user,
+            filters={"system__root_element__name__icontains": query},
             excludes={"contained_in_folders": None})
-
-        # Log listing
-        logger.info(
-            event="project_list",
-            user={"id": self.request.user.id, "username": self.request.user.username}
-        )
         return list(projects)
 
     def get_context_data(self, **kwargs):
+        query = self.request.GET.get('search', "")
         context = super().get_context_data(**kwargs)
         context['projects_access'] = Project.get_projects_with_read_priv(
             self.request.user,
+            filters={"system__root_element__name__icontains": query},
             excludes={"contained_in_folders": None})
         return context
 
@@ -1075,8 +1071,10 @@ def project(request, project):
     # Assign questions in main_area_questions to groups
     question_groups = OrderedDict()
     for q in main_area_questions:
-        mq = q["question"]
-        groupname = mq.spec.get("group")
+        # v0.9.13 organizes all questions into a single group
+        # mq = q["question"]
+        # groupname = mq.spec.get("group")
+        groupname = "Modules"
         group = question_groups.setdefault(groupname, {
             "title": groupname,
             "questions": [],
