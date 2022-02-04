@@ -679,13 +679,15 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         system = project.system
 
         self.navigateToPage(f"/systems/{system.id}/deployments")
+        var_sleep(3) # wait for page to open/load
         element = self.find_selected_option("a.newDeploymentButton.btn.btn-default")
+        
         wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
         # Add default deployments to system
         deployment = Deployment(name="Training", description="Training environment", system=system)
         deployment.save()
-
+        
         # Does new deployment appear on deployments list?
         self.navigateToPage(f"/systems/{system.id}/deployments")
         var_sleep(3) # wait for page to open
@@ -1049,6 +1051,7 @@ class ControlTestHelper(object):
 
     def create_simple_import_record(self):
         # Create an Import Record with a component and statement
+        
         import_record = ImportRecord.objects.create()
         import_record.save()
 
