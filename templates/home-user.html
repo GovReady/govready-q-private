@@ -112,7 +112,7 @@ Your Compliance Projects
 <div class="project-main hidden">
   <a id="new-project-button" href="{% url 'store' %}" class=" btn btn-success">Start a project</a>
 </div>
-
+<div id="warning-message"></div>
 <h2>Welcome to {% if sitename %}{{sitename}}{% else %}GovReady-Q{% endif %}</h2>
 
 <p>Assess, test, and authorize together</p>
@@ -184,4 +184,9 @@ Your Compliance Projects
 
 </div>
 
+{% endblock %}
+{% block scripts %}
+<script>
+  window.warningMessage({});
+</script>
 {% endblock %}

@@ -13,3 +13,5 @@ import './components/assessments/component'
 import './components/components/component';
 
 import './components/modulequestions/component';
+
+import './components/warning/component';
