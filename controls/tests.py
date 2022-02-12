@@ -172,11 +172,11 @@ class ComponentUITests(OrganizationSiteFunctionalTests):
         statement = Statement(sid='ac-1',
                               sid_class=Catalogs.NIST_SP_800_53_rev4,
                               body='My statement body',
-                              status='Not Implmented')
+                              status='Not Implemented',
+                              consumer_element=root_element)
         statement.save()
         producer_element, created = Element.objects.get_or_create(name=self.component_name)
         statement.producer_element = producer_element
-        statement.consumer_element = root_element
         statement.save()
 
         self.component = producer_element
@@ -679,16 +679,20 @@ class SystemUITests(OrganizationSiteFunctionalTests):
         system = project.system
 
         self.navigateToPage(f"/systems/{system.id}/deployments")
-        wait_for_sleep_after(lambda: self.assertInNodeText("New Deployment", ".systems-element-button"))
+        var_sleep(3) # wait for page to open/load
+        element = self.find_selected_option("a.newDeploymentButton.btn.btn-default")
+        
+        wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
         # Add default deployments to system
         deployment = Deployment(name="Training", description="Training environment", system=system)
         deployment.save()
-
+        
         # Does new deployment appear on deployments list?
         self.navigateToPage(f"/systems/{system.id}/deployments")
         var_sleep(3) # wait for page to open
-        wait_for_sleep_after(lambda: self.assertInNodeText("New Deployment", ".systems-element-button"))
+        element = self.find_selected_option("a.newDeploymentButton.btn.btn-default")
+        wait_for_sleep_after(lambda: self.assertTrue("New Deployment" == element.get_attribute("text")))
 
 class PoamUnitTests(TestCase):
     """Class for Poam Unit Tests"""
@@ -1047,6 +1051,7 @@ class ControlTestHelper(object):
 
     def create_simple_import_record(self):
         # Create an Import Record with a component and statement
+        
         import_record = ImportRecord.objects.create()
         import_record.save()
 

@@ -1885,7 +1885,7 @@ def portfolio_list(request):
     )
 
     return render(request, "portfolios/index.html", {
-        "portfolios": request.user.portfolio_list() if request.user.is_authenticated else None,
+        # "portfolios": request.user.portfolio_list() if request.user.is_authenticated else None,
     })
 
 

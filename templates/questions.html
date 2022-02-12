@@ -267,10 +267,13 @@ Question editor
                 "{{q.key|escapejs}}": "{{q.value_explanation|truncatechars:50|escapejs}}"{% if not forloop.last %}, {% endif %}{% endfor %}}</textarea>
               <textarea class="hidden-field" name="q_choices">{{q.choices_as_csv}}</textarea>
               <div class="form-group">
-                <input class="submitform btn edit_button" name="submit" type="submit" id="submit" value="edit">
+                <input class="submitform btn edit_button" type="submit" onclick="react_edit_tool({{module.id}},{{q.id}}); return false;" value="edit">
+                {% comment %} <input class="submitform btn edit_button" name="submit" type="submit" id="submit" value="edit"> {% endcomment %}
                 <input class="submitform btn edit_button" type="submit" onclick="authoring_tool_new_question2({{q.id}}); return false;" value="insert &#8595;">
                 </a>
               </div>
+              
+              
             </form>
           </td>
         </tr>
@@ -379,7 +382,7 @@ $('.question-form').on('submit', function(e) {
   var m_spec_obj = JSON.parse(formElm.find('textarea[name="m_spec_obj"]').val());
   answer_type_modules = JSON.parse(formElm.find('textarea[name="answer_type_modules"]').val());
   // autocomplete_questions = JSON.parse(formElm.find('input[name="autocomplete_questions"]').val());
-
+  
   init_authoring_tool({
     module: m_spec_obj,
     questions: questions,
@@ -387,7 +390,7 @@ $('.question-form').on('submit', function(e) {
     autocomplete_questions: {}
   });
 
-  show_question_authoring_tool(q_id, q_key);
+  //show_question_authoring_tool(q_id, q_key);
   return false
 });
 </script>

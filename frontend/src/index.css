@@ -2,8 +2,7 @@
 @import '~@trussworks/react-uswds/lib/index.css';
  */
 
- @import 'react-pro-sidebar/dist/css/styles.css';
-
+@import 'react-pro-sidebar/dist/css/styles.css';
 
  body{
     overflow-x: hidden;
@@ -14,3 +13,6 @@
    position: sticky;
    top: 0; 
  }
+.react-modal.modal-dialog{
+  min-width: 90%;
+}

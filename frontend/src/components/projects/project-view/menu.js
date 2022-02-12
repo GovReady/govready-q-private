@@ -18,6 +18,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import Box from '@mui/material/Box';
 import ReactDOM from 'react-dom';
+import '../../../index.css'
 // import { projectTagsStateSlice } from "./slice"
 // import { Provider } from "react-redux";
 // import store from "../../../store";
@@ -25,7 +26,6 @@ import ReactDOM from 'react-dom';
 
 
 // const { setTags } = projectTagsStateSlice.actions;
-
 window.projectMenu = (data) => {
     // store.dispatch(setTags(existingTags));
     $(window).on('load', function () {
@@ -35,7 +35,6 @@ window.projectMenu = (data) => {
     function redirect(url) {
         window.location = url;
     }
-
 
     // console.log(data)
     // console.log(displayMap.urls)

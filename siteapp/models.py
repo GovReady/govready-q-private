@@ -198,7 +198,7 @@ class User(AbstractUser, BaseModel):
     def get_portfolios_from_projects(self):
         projects = get_objects_for_user(self, 'siteapp.view_project')
         portfolio_list = projects.values_list('portfolio', flat=True)
-        portfolios = Portfolio.objects.select_related('projects').filter(id__in=portfolio_list)
+        portfolios = Portfolio.objects.prefetch_related('projects').filter(id__in=portfolio_list)
         return portfolios
 
 
@@ -345,7 +345,6 @@ class OrganizationalSetting(BaseModel):
 class Portfolio(BaseModel):
     title = models.CharField(max_length=255, help_text="The title of this Portfolio.", unique=True)
     description = models.CharField(max_length=512, blank=True, help_text="A description of this Portfolio.")
-
     class Meta:
         permissions = [
             ('can_grant_portfolio_owner_permission', 'Grant a user portfolio owner permission'),

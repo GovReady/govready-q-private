@@ -64,6 +64,11 @@ v0.9.11.11 (January 15, 2022)
 * Display links to previous and next selected control on System selected control editor page.
 * Fix sizing of catalog listing panel in app store to keep rows clean.
 
+**Developer changes**
+
+* Start using react versions of tables for listing items.
+* Provide more serializers to support react.
+
 **Bug fixes**
 
 * Stop scrunching of progress-project-area-wrapper on question page.
