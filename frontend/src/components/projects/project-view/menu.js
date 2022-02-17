@@ -89,7 +89,12 @@ window.projectMenu = (data) => {
                                 <Grid item xs={12}>
                             <div className="sidebar-module-boxes">
                             <div className="sidebar-module-boxes-header">
-                              <span className="sidebar-icon glyphicon glyphicon-th"></span><span className="sidebar-box-label">Components</span>
+                              <span className="sidebar-icon glyphicon glyphicon-th"></span><span className="sidebar-box-label" style={{cursor: 'pointer'}} onClick={() => redirect(`${window.origin}${data.urls.components}`)}>Components</span>
+
+
+
+
+
                             </div>
                             <span className="sidebar-module-components-list">A realtime list of components used in this project goes here.</span>
                             </div>
