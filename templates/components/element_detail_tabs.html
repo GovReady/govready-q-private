@@ -64,6 +64,8 @@
 
   .control-id-text { font-weight: bold; }
 
+  .cmpt-deleted { color:red; font-weight: bold; }
+
 
 </style>
 {% endblock %}
@@ -110,7 +112,11 @@
       <li id="opencontrol-tab" role="presentation"><a href="#opencontrol" aria-controls="opencontrol" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-file"></span> OpenControl </a></li>
       {% endif %}
       <div style="margin: 0px 12px 0px 0px;">
-        <a id="copy_component" class="btn btn btn-default pull-right" href={% url 'component_library_component_copy' element_id=element.id %} role="button" style="color: black;">Clone component</a>
+        <a id="copy_component" class="btn btn btn-default pull-right" href={% url 'component_library_component_copy' element_id=element.id %} role="button" style="color: black;">Clone component</a>&nbsp;
+        <a id="delete_component" class="btn btn btn-default pull-right"
+          role="button"
+          style="color: black;"
+          onclick="return delete_component()">Delete component</a>
       </div>
     </ul>
 
@@ -122,6 +128,9 @@
         <div class="row">
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 description-text">
             <h3>About</h3>
+            {% if element.deleted %}
+              <p><span class="cmpt-deleted">DELETED</span> This component has been marked as deleted.</p>
+            {% endif %}
             {% if element.description %}
               {{ element.description }}
             {% else %}
@@ -354,6 +363,7 @@
 
 <!-- local modals -->
 {% include "edit-component-modal.html" %}
+{% include "delete-component-modal.html" %}
 
 {{ block.super }}
 {% endblock %}
@@ -515,6 +525,28 @@
             });
           });
         }
+
+        function delete_component() {
+          show_delete_component_modal("{{element.name}}","{{element.description}}",(componentName, reason)=>{
+            ajax_with_indicator({
+            url: '{% url "delete_element" element.id %}',
+            method: "POST",
+            data: {name: componentName,description: reason},
+            keep_indicator_forever: true,
+            success: function(res) {
+
+              if(res["status"]=="ok"){
+                hide_edit_component_modal();
+                window.location.reload();
+              }
+              if(res["status"]=="err"){
+                show_delete_component_modal_error(res["message"])
+              }
+            }
+            });
+          });
+        }
+
       </script>
 
 {% endblock %}

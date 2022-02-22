@@ -63,3 +63,4 @@ def build_tag_urls(path_prefix, model):
         url(rf'{path_prefix}tags/$', lambda *args, **kwargs: TagView.list_tags(*args, model, **kwargs),
             name=f"list_element_{model.__name__.lower()}"),
     ]
+

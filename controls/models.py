@@ -263,7 +263,7 @@ class Element(auto_prefetch.Model, TagModelMixin):
                                       unique=False, blank=True, null=True, help_text="The Import Record which created this Element.")
     component_type = models.CharField(default="software", max_length=50, help_text="OSCAL Component Type.", unique=False, blank=True, null=True, choices=ComponentTypeEnum.choices())
     component_state = models.CharField(default="operational", max_length=50, help_text="OSCAL Component State.", unique=False, blank=True, null=True, choices=ComponentStateEnum.choices())
-
+    deleted = models.BooleanField(default=False, help_text="Mark Component as deleted")
     # Notes
     # Retrieve Element controls where element is e to answer "What controls selected for a system?" (System is an element.)
     #    element_id = 8
@@ -847,6 +847,7 @@ class CommonControl(auto_prefetch.Model, BaseModel):
                                     null=True)
     legacy_imp_smt = models.TextField(help_text="Legacy large implementation statement", unique=False, blank=True,
                                       null=True, )
+
     common_control_provider = auto_prefetch.ForeignKey(CommonControlProvider, on_delete=models.CASCADE)
 
     def __str__(self):

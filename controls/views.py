@@ -366,6 +366,16 @@ def edit_element(request, element_id):
             msg_list = [f"{e.title()} - {errors[e][0]['message']}" for e in errors.keys()]
             return JsonResponse({"status": "err", "message": "Please fix the following problems:<br>"+"<br>".join(msg_list)})
 
+@login_required
+def delete_element(request, element_id): 
+
+    if request.method == 'POST':
+        Element.objects.filter(pk=element_id).update(deleted = True)
+        messages.add_message(request, messages.INFO, f"Element has been marked deleted.")
+        return HttpResponseRedirect('/controls/components')
+    else:
+        return HttpResponseRedirect('/controls/components')
+
 class SelectedComponentsList(ListView):
     """
     Display System's selected components view

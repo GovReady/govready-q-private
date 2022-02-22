@@ -462,6 +462,18 @@ class ElementUnitTests(TestCase):
         e.delete()
         self.assertTrue(e.id is None)
 
+
+    def test_soft_delete(self):
+        e = Element.objects.create(name="New Element", full_name="New Element Full Name", element_type="system_element")                   
+        self.assertEqual(e.name, "New Element")
+        self.assertTrue(e.id is not None)
+        self.assertTrue(e.deleted == False)
+        e.deleted = True
+        e.save()
+        e2 = Element.objects.get(pk=e.id)
+        self.assertEqual(e2.deleted, True)
+        
+
     def test_element_assign_owner_permissions(self):
         e = Element.objects.create(name="New Element", full_name="New Element Full Name", element_type="system")
         e.save()

@@ -4,6 +4,7 @@ from django.conf import settings
 
 from controls.models import Element
 from siteapp.model_mixins.tags import TagView, build_tag_urls
+# delete_tag_urls
 
 admin.autodiscover()
 
@@ -89,10 +90,14 @@ urlpatterns = [
     url(r'^elements/(\d+)/__edit$', views.edit_element, name="edit_element"),
     *build_tag_urls(r"^elements/(\d+)/", model=Element),  # Tag Urls
 
+     url(r'^elements/(\d+)/__delete$', views.delete_element, name="delete_element"),
+    # *delete_component(r"^elements/(\d+)/", model=Element),  # Tag Urls
+    
+
     # Controls
     url(r'^catalogs/(?P<catalog_key>.*)/group/(?P<g_id>.*)', views.group, name="control_group"),
     url(r'^catalogs/(?P<catalog_key>.*)/control/(?P<cl_id>.*)', views.control, name="control_info"),
-    url(r'^api/controlsselect/', views.api_controls_select, name="api_controls_select"),
+    url(r'^api/controls/select/', views.api_controls_select, name="api_controls_select"),
 
     # System Security plan
     url(r'^(?P<system_id>.*)/export/oscal', views.OSCAL_ssp_export, name="ssp_export_oscal"),

@@ -48,7 +48,7 @@ class StatementRemoteAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated', 'uuid')
 
 class ElementAdmin(GuardedModelAdmin, ExportCsvMixin):
-    list_display = ('name', 'full_name', 'element_type', 'id', 'uuid')
+    list_display = ('name', 'full_name', 'element_type', 'id', 'uuid', 'deleted')
     search_fields = ('name', 'full_name', 'uuid', 'id')
     actions = ["export_as_csv"]
 
