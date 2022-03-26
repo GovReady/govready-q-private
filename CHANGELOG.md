@@ -27,6 +27,7 @@ v0.9.14-dev (March xx, 2022)
 * Added ElementWithPermissionsViewSet for component (element) permissions.
 * Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element
 * Updated User model to include search by 'username' and exclusion functionality to queryset
+* Copy all user permissions on a component to component copy when cloning a component.
 
 **Bug fixes**
 

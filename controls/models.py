@@ -536,6 +536,20 @@ class Element(auto_prefetch.Model, TagModelMixin):
             smt_copy.consumer_element_id = None
             smt_copy.id = None
             smt_copy.save()
+        # Copy Component Owner and other permissions
+        users_with_perms = get_users_with_perms(e, attach_perms=True)
+        for user in users_with_perms:
+            # print(user, users_with_perms[user])
+            # Do we need to check if user still exists?
+            try:
+                for perm in users_with_perms[user]:
+                    assign_perm(e_copy, user, perm)
+                e_copy.save()
+            except:
+                pass
+                # TODO handle errors gracefully
+
+        # TODO: Copy Roles and Parties
         return e_copy
 
     @property
