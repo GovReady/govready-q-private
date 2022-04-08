@@ -82,6 +82,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
         token_payload.update(self.get_settings('OIDC_AUTH_REQUEST_EXTRA_PARAMS', {}))
 
         # Get the token
+        print("===== 1 DEBUG =====")
+        print("type(token_payload)", type(token_payload))
+        import ipdb; ipdb.set_trace()
         token_info = self.get_token(token_payload)
         id_token = token_info.get('id_token')
         access_token = token_info.get('access_token')
