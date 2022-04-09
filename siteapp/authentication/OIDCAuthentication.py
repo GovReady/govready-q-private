@@ -60,7 +60,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         if not self.request:
             return None
 
-        LOGGER.warning('Testing logging')
+        LOGGER.warning('====== Entering authenticate')
 
         state = self.request.GET.get('state')
         code = self.request.GET.get('code')
@@ -82,10 +82,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
                 reverse(reverse_url))
         }
         token_payload.update(self.get_settings('OIDC_AUTH_REQUEST_EXTRA_PARAMS', {}))
-
+        # DEBUG
+        LOGGER.warning('type token_payload', type(token_payload))
         # Get the token
-        print("===== 1 DEBUG =====")
-        print("type(token_payload)", type(token_payload))
         token_info = self.get_token(token_payload)
         id_token = token_info.get('id_token')
         access_token = token_info.get('access_token')
