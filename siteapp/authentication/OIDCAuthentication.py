@@ -60,6 +60,8 @@ class OIDCAuth(OIDCAuthenticationBackend):
         if not self.request:
             return None
 
+        LOGGER.warning('Testing logging')
+
         state = self.request.GET.get('state')
         code = self.request.GET.get('code')
         nonce = kwargs.pop('nonce', None)

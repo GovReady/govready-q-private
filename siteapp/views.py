@@ -105,6 +105,8 @@ def logged_out(request):
 
 
 def homepage(request):
+
+    LOGGER.warning('Testing logging home page')
     if request.user.is_authenticated:
         return HttpResponseRedirect("/projects")
     from allauth.account.forms import SignupForm, LoginForm
