@@ -84,6 +84,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
         token_payload.update(self.get_settings('OIDC_AUTH_REQUEST_EXTRA_PARAMS', {}))
         # DEBUG
         LOGGER.warning('type token_payload', type(token_payload))
+        LOGGER.warning('type token_payload', type(token_payload['client_id']), token_payload['client_id'])
+        LOGGER.warning('type token_payload', type(token_payload['id_token']), token_payload['id_token'])
+        LOGGER.warning('type token_payload', type(token_payload['access_token']),token_payload['access_token'] )
         # Get the token
         token_info = self.get_token(token_payload)
         id_token = token_info.get('id_token')
