@@ -84,17 +84,19 @@ class OIDCAuth(OIDCAuthenticationBackend):
         token_payload.update(self.get_settings('OIDC_AUTH_REQUEST_EXTRA_PARAMS', {}))
         # DEBUG
         LOGGER.warning(f"type token_payload, {type(token_payload)}")
-        LOGGER.warning(f"type token_payload, {type(token_payload.get('client_id', None))}, {token_payload.get('client_id', None)}")
-        LOGGER.warning(f"type token_payload, {type(token_payload.get('id_token', None))}, {token_payload.get('id_token', None)}")
-        LOGGER.warning(f"type token_payload, {type(token_payload.get('access_token',None))}, {token_payload.get('access_token',None)}")
+        LOGGER.warning(f"type client_id, {type(token_payload.get('client_id', None))}, {token_payload.get('client_id', None)}")
         # Get the token
         token_info = self.get_token(token_payload)
         id_token = token_info.get('id_token')
         access_token = token_info.get('access_token')
+        # DEBUG
+        LOGGER.warning(f"type id_token, {type(token_payload.get('id_token', None))}, {token_payload.get('id_token', None)}")
+        LOGGER.warning(f"type access_token, {type(token_payload.get('access_token',None))}, {token_payload.get('access_token',None)}")
 
         # Validate the token
         payload = self.verify_token(id_token, nonce=nonce)
-        print("authenticate, payload:", payload)
+        # DEBUG
+        LOGGER.warning(f"type payload, {type(payload)}, {payload}")
         if payload:
             self.store_tokens(access_token, id_token)
             try:
