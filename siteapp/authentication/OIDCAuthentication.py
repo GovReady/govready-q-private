@@ -100,12 +100,12 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         if payload:
             if type(payload) == type(dict()):
-            import json
-            payload = json.dumps(payload)
-            LOGGER.warning(f"(2) type payload , {type(payload)}, {payload}")
-            # if 'SessionToken' in payload:
-            #     access_token = payload.get('SessionToken', None)# DEBUG
-            #     LOGGER.warning(f"(2) type access_token , {type(access_token)}, {access_token}")
+                import json
+                payload = json.dumps(payload)
+                LOGGER.warning(f"(2) type payload , {type(payload)}, {payload}")
+                # if 'SessionToken' in payload:
+                #     access_token = payload.get('SessionToken', None)# DEBUG
+                #     LOGGER.warning(f"(2) type access_token , {type(access_token)}, {access_token}")
 
             self.store_tokens(access_token, id_token)
             try:
