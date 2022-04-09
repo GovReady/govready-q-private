@@ -91,7 +91,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         access_token = token_info.get('access_token')
         # DEBUG
         LOGGER.warning(f"(1) type id_token, {type(token_payload.get('id_token', None))}, {token_payload.get('id_token', None)}")
-        LOGGER.warning(f"(1) type access_token, {type(token_payload.get('access_token',None))}, {token_payload.get('access_token',None)}")
+        LOGGER.warning(f"(1) type access_token, {access_token}, {access_token}")
 
         # Validate the token
         payload = self.verify_token(id_token, nonce=nonce)
@@ -99,7 +99,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         LOGGER.warning(f"(1) type payload, {type(payload)}, {payload}")
 
         if payload:
-            if access_token is None and 'SessionToken' in payload:
+            if 'SessionToken' in payload:
                 access_token = payload.get('SessionToken', None)# DEBUG
                 LOGGER.warning(f"(2) type access_token , {type(access_token)}, {access_token}")
 
