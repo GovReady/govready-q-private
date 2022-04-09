@@ -99,7 +99,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         LOGGER.warning(f"(1) type payload, {type(payload)}, {payload}")
 
         if payload:
-            if type(payload) == type(dict())
+            if type(payload) == type(dict()):
             import json
             payload = json.dumps(payload)
             LOGGER.warning(f"(2) type payload , {type(payload)}, {payload}")
