@@ -28,7 +28,8 @@ v0.9.14-dev (March xx, 2022)
 * Added ElementPermissionSerializer, UpdateElementPermissionSerializer, RemoveUserPermissionFromElementSerializer for component (element) permissions.
 * Added ElementWithPermissionsViewSet for component (element) permissions.
 * Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element
-* Updated User model to include search by 'username' and exclusion functionality to queryset
+* Updated User model to include search by 'username' and exclusion functionality to queryset.
+* Add to controls.models.Element.merge_component_implementation_statements method to Merge a second component statements to statements of first component.
 
 **Bug fixes**
 

@@ -538,6 +538,35 @@ class Element(auto_prefetch.Model, TagModelMixin):
             smt_copy.save()
         return e_copy
 
+    @transaction.atomic
+    def merge_component_statements(self, mrg_cmpt, strategy="KEEP_BOTH"):
+        """Merge a second component statements to statements of first component"""
+
+        # print(f"strategy: {strategy}")
+        for smt_new in mrg_cmpt.statements(StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name):
+            src_cmpt_match_smts = self.statements_produced.filter(sid_class=smt_new.sid_class, sid=smt_new.sid, pid=smt_new.pid, statement_type=smt_new.statement_type)
+
+            if len(src_cmpt_match_smts) == 0 or (len(src_cmpt_match_smts) == 1 and strategy == "KEEP_BOTH") or (len(src_cmpt_match_smts) > 1):
+                # Append smt if no matching statements, multiple matching statements, or 1 matching statement and strategy keep both
+                instance = deepcopy(smt_new)
+                instance.producer_element = self
+                instance.id = instance.created = instance.update = instance.import_record = None
+                instance.uuid = uuid.uuid4()
+                instance.save()
+                # print(f"Duplicate smt added {smt_new.sid}")
+            elif len(src_cmpt_match_smts) == 1 and strategy == "REPLACE":
+                # replace text
+                src_cmpt_smt = src_cmpt_match_smts[0]
+                # print(f"{src_cmpt_smt} src_cmpt_smt.body: {src_cmpt_smt.body}")
+                # print(f"smt_new.body: {smt_new.body}")
+                src_cmpt_smt.body = smt_new.body
+                # print(f"src_cmpt_smt: {src_cmpt_smt}")
+                src_cmpt_smt.save()
+                # print(f"Replaced smt body {smt_new.sid}")
+            else:
+                # print(f"Ignored smt {smt_new.sid}")
+                pass
+
     @property
     def selected_controls_oscal_ctl_ids(self):
         """Return array of selected controls oscal ids"""
