@@ -110,7 +110,7 @@ def logged_out(request):
 
 
 def homepage(request):
-
+    from mozilla_django_oidc.auth import LOGGER
     LOGGER.warning('Testing logging home page')
     if request.user.is_authenticated:
         return HttpResponseRedirect("/projects")
