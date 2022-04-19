@@ -1,7 +1,7 @@
 GovReady-Q Release Notes
 ========================
 
-v0.9.14-dev (March xx, 2022)
+v0.9.14-dev (April xx, 2022)
 ----------------------------
 
 **UI changes**
@@ -16,7 +16,6 @@ v0.9.14-dev (March xx, 2022)
 * Only Component owner can edit user permissions.
 * Display the control framework along side of controls in component control listing page.
 
-
 **Developer changes**
 
 * Add support for OIDC SSO configuration separate from OKTA SSO configuration.
@@ -29,7 +28,9 @@ v0.9.14-dev (March xx, 2022)
 * Added ElementWithPermissionsViewSet for component (element) permissions.
 * Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element
 * Updated User model to include search by 'username' and exclusion functionality to queryset.
+* Assign owners to components imported via OSCAL. If no user is identified during component (element creation) assign first Superuser (administrator) as component owner.
 * Add to controls.models.Element.merge_component_implementation_statements method to Merge a second component statements to statements of first component.
+
 
 **Bug fixes**
 
@@ -37,6 +38,7 @@ v0.9.14-dev (March xx, 2022)
 * Fix User lookup to properly query search results and exclude specific users
 * Resolve components not displaying the tag widget by properly setting existingTags default for new component.
 * Footer fixes.
+* Assign owners to default components (elements) created during install first_run script.
 
 v0.9.13 (January 23, 2022)
 --------------------------
