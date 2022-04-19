@@ -1,7 +1,7 @@
 GovReady-Q Release Notes
 ========================
 
-v0.9.14-dev (March xx, 2022)
+v0.9.14-dev (April xx, 2022)
 ----------------------------
 
 **UI changes**
@@ -11,9 +11,10 @@ v0.9.14-dev (March xx, 2022)
 * Indicate private components with lock icon.
 * Edit model for component in library supports marking component private.
 * Add React component UI widget for setting and editing permissions on component editing.
-* Add ability to change privacy of a component is given only to the owner of the component
+* Add ability to change privacy of a component is given only to the owner of the component.
 * Added tabs for coponent requests.
-* Only Component owner can edit user permissions
+* Only Component owner can edit user permissions.
+* Display the control framework along side of controls in component control listing page.
 
 **Developer changes**
 
@@ -28,6 +29,7 @@ v0.9.14-dev (March xx, 2022)
 * Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element
 * Updated User model to include search by 'username' and exclusion functionality to queryset
 * Copy all user permissions on a component to component copy when cloning a component.
+* Assign owners to components imported via OSCAL. If no user is identified during component (element creation) assign first Superuser (administrator) as component owner.
 
 **Bug fixes**
 
@@ -35,6 +37,7 @@ v0.9.14-dev (March xx, 2022)
 * Fix User lookup to properly query search results and exclude specific users
 * Resolve components not displaying the tag widget by properly setting existingTags default for new component.
 * Footer fixes.
+* Assign owners to default components (elements) created during install first_run script.
 
 v0.9.13 (January 23, 2022)
 --------------------------
