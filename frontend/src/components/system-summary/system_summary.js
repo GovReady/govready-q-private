@@ -159,12 +159,12 @@ export const SystemSummary = ({ systemId, projectId }) => {
   }
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
-    const searchRegex = new RegExp(escapeRegex(searchValue));
+    const searchRegex = new RegExp(escapeRegex(searchValue.toLowerCase()));
     
     const filteredRows = data.filter((row) => {
       return Object.keys(row).some((field) => {
         if(row[field] !== null){
-          return searchRegex.test(row[field].toString());
+          return searchRegex.test(row[field].toString().toLowerCase());
         }
       });
     });
