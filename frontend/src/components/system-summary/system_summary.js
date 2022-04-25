@@ -232,8 +232,6 @@ export const SystemSummary = ({ systemId, projectId }) => {
     //       valueGetter: (params) => params.row.status,
     //   },
   ]);
-  console.log('data: ', data);
-  console.log('rows: ', rows);
   return (
       <div style={{ maxHeight: '2000px', width: '100%' }}>  
           <Grid className="poc-data-grid" sx={{ minHeight: '500px' }}>
@@ -260,9 +258,6 @@ export const SystemSummary = ({ systemId, projectId }) => {
                         // }}
                         // components={{
                         //   Toolbar: GridToolbar,
-                        // }}
-                        // onSelectionModelChange={(selectionModel, details) => {
-                        //   console.log(selectionModel, details);
                         // }}
                         // disableSelectionOnClick
                         sx={{ 
