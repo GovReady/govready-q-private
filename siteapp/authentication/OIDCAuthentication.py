@@ -95,7 +95,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         #users = self.filter_users_by_claims(user_info)
         users = User.objects.filter(username=user_info.get('preferred_username', None))
 
-        LOGGER.warning("\n DEBUG user (3):", users)
+        # LOGGER.warning("\n DEBUG user (3):", users)
 
         if len(users) == 1:
             return self.update_user(users[0], user_info)
