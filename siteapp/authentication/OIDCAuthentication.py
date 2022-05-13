@@ -32,13 +32,13 @@ class OIDCAuth(OIDCAuthenticationBackend):
             timeout=self.get_settings('OIDC_TIMEOUT', None),
             proxies=self.get_settings('OIDC_PROXY', None))
         user_response.raise_for_status()
-        # LOGGER.warning(f"user info, {type(user_response.text)}, {user_response.text}")
+        LOGGER.warning(f"DEBUG (5) user_response, {type(user_response.text)}, {user_response.text}")
         # split on ".": Header.Payload.Signature
         header, payload, signature = [self.parse_b64url(content) for content in user_response.text.split(".")]
         header = json.loads(header.decode('UTF-8'))
         payload = payload[:-1] if b'\x1b' in payload else payload
         payload = json.loads(payload.decode('UTF-8)'))
-        # LOGGER.warning(f"header: {header}, \npayload: {payload}, \nsignature: {signature}")
+        LOGGER.warning(f"DEBUG (5) header: {header}, \npayload: {payload}, \nsignature: {signature}")
         #return user_response.json()
         return payload
 
@@ -61,7 +61,10 @@ class OIDCAuth(OIDCAuthenticationBackend):
         """Verify the provided claims to decide if authentication should be allowed."""
 
         # Verify claims required by default configuration
-        LOGGER.warning('DEBUG 01 self.__dict__', self.__dict__)
+        cntr = 0
+        for prop in self.__dict__.keys():
+            cntr += 1
+            LOGGER.warning(f"DEBUG {cntr} self.__dict__[{prop}]: {self.__dict__[prop]}")
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
 
         LOGGER.warning('DEBUG 02 scopes', scopes)
@@ -72,7 +75,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
                        'You need to override `verify_claims` for custom claims verification.')
 
         # Custom examination of OIDC_RP_SCOPES
-        # LOGGER.warning(f"\n DEBUG custom OIDC_RP_SCOPES (1):", OIDC_RP_SCOPES)
+        LOGGER.warning(f"\n DEBUG (7) custom OIDC_RP_SCOPES (1):", OIDC_RP_SCOPES)
 
         return True
 
