@@ -94,8 +94,6 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         LOGGER.warning("\n DEBUG user (3):", users)
 
-        LOGGER.warning("\n DEBUG claims (4)", claims)
-
         if len(users) == 1:
             return self.update_user(users[0], user_info)
         elif len(users) > 1:
@@ -128,6 +126,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
         return user
 
     def update_user(self, user, claims):
+
+        LOGGER.warning("\n DEBUG claims (4)", claims)
+        
         original_values = [getattr(user, x.name) for x in user._meta.get_fields() if hasattr(user, x.name)]
 
         user.email = claims.get(settings.OIDC_CLAIMS_MAP['email'], "missing@example.com")
