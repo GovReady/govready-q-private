@@ -64,7 +64,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         LOGGER.warning('DEBUG 01 self.__dict__', self.__dict__)
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
 
-        LOGGER.warning('DEBUG 02 scopes', scopes.__dict__)
+        LOGGER.warning('DEBUG 02 scopes', scopes)
         if 'email' in scopes.split():
             return 'email' in claims
 
