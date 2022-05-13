@@ -69,11 +69,12 @@ class OIDCAuth(OIDCAuthenticationBackend):
                 LOGGER.warning(f"{str(self.__dict__[prop])}")
             except:
                 LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
-        scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
+        scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email profile')
 
         cntr = 0
         for scope in scopes.split():
-            LOGGER.warning(f"DEBUG scopes {cntr}:")
+            cntr += 1
+            LOGGER.warning(f"DEBUG scopes {cntr}: ")
             try:
                 LOGGER.warning(scope)
             except:
