@@ -64,7 +64,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         cntr = 0
         for prop in self.__dict__.keys():
             cntr += 1
-            LOGGER.warning(f"DEBUG {cntr} self.__dict__[{prop}]: {self.__dict__[prop]}")
+            LOGGER.warning(f"DEBUG {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
 
         LOGGER.warning('DEBUG 02 scopes', scopes)
