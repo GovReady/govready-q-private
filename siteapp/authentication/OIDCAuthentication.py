@@ -65,9 +65,20 @@ class OIDCAuth(OIDCAuthenticationBackend):
         for prop in self.__dict__.keys():
             cntr += 1
             LOGGER.warning(f"DEBUG {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
+            try:
+                LOGGER.warning(f"{str(self.__dict__[prop])}")
+            except:
+                LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
 
-        LOGGER.warning('DEBUG 02 scopes', scopes)
+        cntr = 0
+        for scope in scopes.split():
+            LOGGER.warning(f"DEBUG scopes {cntr}:")
+            try:
+                LOGGER.warning(scope)
+            except:
+                LOGGER.warning(f"Unable to convert scope {cntr}] to string. Type: {type(scope)}")
+
         if 'email' in scopes.split():
             return 'email' in claims
 
