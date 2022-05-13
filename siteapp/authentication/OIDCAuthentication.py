@@ -61,7 +61,10 @@ class OIDCAuth(OIDCAuthenticationBackend):
         """Verify the provided claims to decide if authentication should be allowed."""
 
         # Verify claims required by default configuration
+        LOGGER.warning('DEBUG 01 self.__dict__', self.__dict__)
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email')
+
+        LOGGER.warning('DEBUG 02 scopes', scopes.__dict__)
         if 'email' in scopes.split():
             return 'email' in claims
 
@@ -128,7 +131,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
     def update_user(self, user, claims):
 
         LOGGER.warning("\n DEBUG claims (4)", claims)
-        
+
         original_values = [getattr(user, x.name) for x in user._meta.get_fields() if hasattr(user, x.name)]
 
         user.email = claims.get(settings.OIDC_CLAIMS_MAP['email'], "missing@example.com")
