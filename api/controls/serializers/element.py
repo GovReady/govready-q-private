@@ -6,7 +6,7 @@ from api.base.serializers.types import ReadOnlySerializer, WriteOnlySerializer
 from api.controls.serializers.import_record import SimpleImportRecordSerializer
 from api.siteapp.serializers.tags import SimpleTagSerializer
 from api.siteapp.serializers.appointment import SimpleAppointmentSerializer
-from controls.models import Element, ElementRole, ElementControl
+from controls.models import Element, ElementRole, ElementControl, Statement
 from controls.enums.statements import StatementTypeEnum
 from siteapp.models import Appointment, Party, Request, Role, Tag
 from guardian.shortcuts import (assign_perm, get_objects_for_user,
@@ -32,7 +32,12 @@ class DetailedElementSerializer(SimpleElementSerializer):
     appointments = SimpleAppointmentSerializer(many=True)
     parties = serializers.SerializerMethodField('get_parties')
     criteria = serializers.SerializerMethodField('get_criteria')
+    numOfStmts = serializers.SerializerMethodField('get_numOfStmts')
 
+    def get_numOfStmts(self, element):
+        stmts = Statement.objects.filter(producer_element_id = element.id, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name)
+        return len(stmts)
+        
     def get_parties(self, element):
         parties = []
         counter = 1;
@@ -88,7 +93,7 @@ class DetailedElementSerializer(SimpleElementSerializer):
         return criteria_text
     class Meta:
         model = Element
-        fields = SimpleElementSerializer.Meta.fields + ['roles', 'import_record', 'tags', 'appointments', 'parties', 'criteria']
+        fields = SimpleElementSerializer.Meta.fields + ['roles', 'import_record', 'tags', 'appointments', 'parties', 'criteria', 'numOfStmts']
 
 class ElementPermissionSerializer(SimpleElementSerializer):
     users_with_permissions = serializers.SerializerMethodField('get_list_of_users')
@@ -183,6 +188,7 @@ class ElementRequestsSerializer(ReadOnlySerializer):
 
     def get_list_of_requested(self, element):
         list_of_requests = []
+        counter = 1
         for request in element.requests.all():
             
             list_of_system_PointOfContacts = []
@@ -194,7 +200,8 @@ class ElementRequestsSerializer(ReadOnlySerializer):
                 list_of_requestedElements_PointOfContacts.append(user.party.name)
 
             req = {
-                "id": request.id,
+                "id": counter,
+                "requestId": request.id,
                 "userId": request.user.id,
                 "user_name": request.user.name,
                 "user_email": request.user.email,
@@ -221,7 +228,7 @@ class ElementRequestsSerializer(ReadOnlySerializer):
                 "criteria_reject_comment": request.criteria_reject_comment,
                 "status": request.status,
             }
-            
+            counter += 1
             list_of_requests.append(req)
         return list_of_requests
     class Meta:
@@ -235,7 +242,7 @@ class ElementSetRequestsSerializer(WriteOnlySerializer):
         fields = ['requests_ids']
 
 class ElementCreateAndSetRequestSerializer(WriteOnlySerializer):
-    # request = serializers.JSONField()
+    proposalId = serializers.IntegerField(max_value=None, min_value=None)
     userId = serializers.IntegerField(max_value=None, min_value=None)
     systemId = serializers.IntegerField(max_value=None, min_value=None)
     criteria_comment = serializers.CharField(min_length=None, max_length=None, allow_blank=True, trim_whitespace=True)
@@ -243,4 +250,4 @@ class ElementCreateAndSetRequestSerializer(WriteOnlySerializer):
     status = serializers.CharField(min_length=None, max_length=None, allow_blank=True, trim_whitespace=True)
     class Meta:
         model = Element
-        fields = ['userId', 'systemId', 'criteria_comment', 'criteria_reject_comment', 'status']
+        fields = ['proposalId', 'userId', 'systemId', 'criteria_comment', 'criteria_reject_comment', 'status']

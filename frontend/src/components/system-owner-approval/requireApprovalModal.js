@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { DataTable } from '../shared/table';
 import axios from 'axios';
-import moment from 'moment';
-import { DataGrid } from '@mui/x-data-grid';
-import { v4 as uuid_v4 } from "uuid";
-import { 
-  Chip,
-  Grid,
-  Stack,
-} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import {
   Tooltip,
@@ -24,11 +14,7 @@ import {
   Row,
   Modal
 } from 'react-bootstrap';
-import { AsyncPagination } from "../shared/asyncTypeahead";
-import { red, green } from '@mui/material/colors';
 import { ReactModal } from '../shared/modal';
-import { hide, show } from '../shared/modalSlice';
-import { element } from 'prop-types';
 
 const datagridStyles = makeStyles({
   root: {
@@ -64,7 +50,7 @@ const useStyles = makeStyles({
   }
 });
 
-export const RequireApprovalModal = ({ userId, systemId, elementId, require_approval, uuid }) => {
+export const RequireApprovalModal = ({ userId, systemId, systemName, elementId, require_approval, uuid }) => {
   const classes = useStyles();
   const dgClasses = datagridStyles();
   const [data, setData] = useState([]);
@@ -83,6 +69,40 @@ export const RequireApprovalModal = ({ userId, systemId, elementId, require_appr
     });
   }, [elementId, uuid])
 
+  const error_no_controls = () => {
+    const message = `I couldn\'t add "${data.name}" to the system because the component does not currently have any control implementation statements to add.`
+    document.getElementById("proposal_message_type").value = "ERROR";
+    document.getElementById("proposal_message").value = message;
+    document.send_proposal_message.submit()
+  }
+  const successful_proposal_message = () => {
+    /* A template literal. It is a string that allows embedded expressions. */
+    const message = `System ${systemName} has proposed ${data.name}`;
+    document.getElementById("proposal_message_type").value = "INFO";
+    document.getElementById("proposal_message").value = message;
+    document.send_proposal_message.submit()
+    // ajax_with_indicator({
+    //     url: `/systems/${parseInt(systemId)}/components/proposal_message`,
+    //     method: "POST",
+    //     data: {
+    //       proposal_message_type: "INFO",
+    //       proposal_message: message,
+    //     },
+    //     // system_id: system.id,
+    //     success: function(res) {
+    //         console.log("successful_proposal_message SUCCESSFUL!!@!#!")
+    //         window.location.reload();
+    //     }
+    // });
+  }
+
+  const send_alreadyProposed_message = () => {
+    const message = `System ${systemName} has already proposed ${data.name}.`;
+    document.getElementById("proposal_message_type").value = "WARNING";
+    document.getElementById("proposal_message").value = message;
+    document.send_proposal_message.submit()
+  }
+
   const handleAddComponent = () => {
     handleClose();
     document.add_component.submit();
@@ -90,39 +110,45 @@ export const RequireApprovalModal = ({ userId, systemId, elementId, require_appr
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    const newReq = {
-      userId: userId,
-      systemId: systemId,
-      criteria_comment: data.criteria,
-      criteria_reject_comment: "",
-      status: "pending"
-    }
-    const checkElement = await axios.get(`/api/v2/elements/${elementId}/retrieveRequests/`);
 
-    if(checkElement.status === 200){
-      let alreadyRequested = false;
-      checkElement.data.requested.map((req) => {
-        if((req.userId === userId) && (req.requested_element.id === parseInt(elementId)) && (req.system.id === newReq.systemId)){
-          alreadyRequested = true;
-        }
-      });
-      if(!alreadyRequested){
-        /* Create a request and assign it to element and system */
-        const newRequestResponse = await axios.post(`/api/v2/elements/${elementId}/CreateAndSetRequest/`, newReq);
-        if(newRequestResponse.status === 200){
-          handleClose();
+    if(data.numOfStmts === 0){
+      handleClose();
+      error_no_controls();
+    } else {
+      const newProposal = {
+        userId: userId,
+        elementId: elementId,
+        criteria_comment: data.criteria,
+        status: "Planning"
+      }
+
+      const checkSystem = await axios.get(`/api/v2/systems/${systemId}/retrieveProposals/`);
+      if(checkSystem.status === 200){
+        let alreadyProposed = false;
+        checkSystem.data.proposals.map((req) => {
+          if(req.elementId === parseInt(elementId)){
+            alreadyProposed = true;
+          }
+        });
+        if(!alreadyProposed){
+          /* Create a request and assign it to element and system */
+          const newRequestResponse = await axios.post(`/api/v2/systems/${systemId}/CreateAndSetProposal/`, newProposal);
+          if(newRequestResponse.status === 200){
+            handleClose();
+            successful_proposal_message();
+          } else {
+            console.error("Something went wrong in creating and setting new proposal to element");
+          }
         } else {
-          console.error("Something went wrong in creating and setting new request to element");
+          handleClose();
+          send_alreadyProposed_message();
         }
       } else {
-        handleClose();
-        alert('ALREADY REQUESTED!');
+        console.error("Something went wrong with checking element");
       }
-    } else {
-      console.error("Something went wrong with checking element");
     }
   }
+  
   const handleClose = async (event) => {
     setOpenRequireApprovalModal(false);
   }
@@ -160,7 +186,7 @@ export const RequireApprovalModal = ({ userId, systemId, elementId, require_appr
                 {
                   !require_approval && data.criteria ? 
                   <Button type="button" bsStyle="success" onClick={handleAddComponent} style={{float: 'right'}}>Add Component</Button> :
-                  <Button type="submit" bsStyle="success">Submit Request</Button> 
+                  <Button type="submit" bsStyle="success">Create proposed component</Button> 
                 }
             </Modal.Footer>
           </Form>
