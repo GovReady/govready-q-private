@@ -340,31 +340,21 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
         headerName: 'Party Name',
         width: 150,
         editable: false,
-        valueGetter: (params) => params.row.user.username,
+        valueGetter: (params) => params.row.name,
       },
       {
         field: 'email',
         headerName: 'Email',
         width: 300,
         editable: false,
-        valueGetter: (params) => params.row.user.email,
+        valueGetter: (params) => params.row.email,
       },
       {
         field: 'phone_number',
-        headerName: 'Phone #',
-        width: 100,
+        headerName: 'Phone Number',
+        width: 300,
         editable: false,
-        renderCell: (params) => (
-          <div
-            style={{ width: "100%" }}
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-            }}
-          >
-            {params.row.view ? <Glyphicon glyph="ok" style={{ color: green[700] }} /> : <Glyphicon glyph="remove" style={{ color: 'rgb(245,48,48,1)' }} />}
-          </div>
-        ),
+        valueGetter: (params) => params.row.phone_number,
       },
       {
         field: 'roles',
@@ -491,7 +481,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
     },
     
   ]);
-  
+  console.log("data: ", data);
   return (
     <div style={{ maxHeight: '2000px', width: '100%' }}>
       <Grid className="poc-data-grid" sx={{ minHeight: '500px' }}>

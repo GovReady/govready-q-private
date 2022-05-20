@@ -829,12 +829,44 @@ class OSCALComponentSerializer(ComponentSerializer):
         control_implementations = []
         props = []
         orgs = list(Organization.objects.all())  # TODO: orgs need uuids, not sure which orgs to use for a component
-        parties = [{"uuid": str(uuid.uuid4()), "type": "organization", "name": org.name} for org in orgs]
+        
+        list_of_parties = []
+        list_of_roles = []
+
+        for appointment in self.element.appointments.all():
+            party = {
+                "uuid": str(appointment.party.uuid),
+                "type": appointment.party.party_type,
+                "name": appointment.party.name,
+                "short-name": appointment.party.short_name,
+                "email-addresses": appointment.party.email,
+                "telephone-numbers": appointment.party.phone_number,
+            }
+            role = {
+                "id": appointment.role.role_id,
+                "title": appointment.role.title,
+                "short-name": appointment.role.short_name,
+                "description": appointment.role.description,
+            }
+            if party not in list_of_parties:
+                list_of_parties.append(party)
+            if role not in list_of_roles:
+                list_of_roles.append(role)
+            
+        parties = [
+            {
+                "uuid": str(uuid.uuid4()), 
+                "type": "organization", 
+                "name": org.name
+            } for org in orgs]
+        parties.extend(list_of_parties)
+        
         responsible_roles =  [{
            "role-id": "supplier",# TODO: Not sure what this refers to
             "party-uuids": [ str(party.get("uuid")) for party in parties ]
 
         }]
+        
         of = {
             "component-definition": {
                 "uuid": str(uuid4()),
@@ -843,7 +875,8 @@ class OSCALComponentSerializer(ComponentSerializer):
                     "last-modified": self.element.updated.replace(microsecond=0).isoformat(),
                     "version": self.element.updated.replace(microsecond=0).isoformat(),
                     "oscal-version": self.element.oscal_version,
-                    "parties": parties
+                    "parties": parties,
+                    "roles": list_of_roles,
                 },
                 "components": [
                    {
