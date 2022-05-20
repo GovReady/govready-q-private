@@ -1411,9 +1411,6 @@ class Tag(BaseModel):
 
     def serialize(self):
         return {"label": self.label, "system_created": self.system_created, "id": self.id}
-class Address (BaseModel):
-    address_type = models.CharField(max_length=100, unique=False, blank=True, null=True, help_text="Type of address")
-    street = models.CharField(max_length=100, unique=False, blank=True, null=True, help_text="Street address")
 
 class Location(BaseModel):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, help_text="A UUID (a unique identifier) for this Location.")
