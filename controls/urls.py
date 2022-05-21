@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^restore_to/(?P<smt_id>.*)/(?P<history_id>.*)/$', views.restore_to_history, name="restore_to"),
 
     url(r'^(?P<system_id>.*)/aspen/summary$', views.system_summary_1, name="system_summary_1"),
+    url(r'^(?P<system_id>.*)/aspen/integrations$', views.system_integrations, name="system_integrations"),
 
 
     # Systems Assessment Results

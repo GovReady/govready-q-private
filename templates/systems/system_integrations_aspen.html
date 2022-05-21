@@ -108,13 +108,13 @@ Deployments List
 <div class="row">
 <div class="col-md-12">
   <ul id="horizontal-nav">
-    <li><span class="material-symbols-outlined ">home</span><span class="summary-nav-options"><b>System</b></span></li>
+    <li><span class="material-symbols-outlined ">home</span><span class="summary-nav-options"><a href="/systems/{{ system.id }}/aspen/summary">System</a></span></li>
     <li><span class="material-symbols-outlined ">list</span><span class="summary-nav-options">Controls</span></li>
     <li><span class="material-symbols-outlined ">settings_input_component</span><span class="summary-nav-options">Components</span></li>
     <li><span class="material-symbols-outlined ">check_box</span><span class="summary-nav-options"><a href="/systems/{{ system.id }}/poams">POA&Ms</a></span></li>
     <li><span class="material-symbols-outlined ">hub</span><span class="summary-nav-options"><a href="/systems/{{ system.id }}/deployments">Deployments</a></span></li>
     <li><span class="material-symbols-outlined ">article</span><span class="summary-nav-options">Artifacts</span></li>
-    <li><span class="material-symbols-outlined ">hub</span><span class="summary-nav-options"><a href="/systems/{{ system.id }}/aspen/integrations">Integrations</a></span></li>
+    <li><span class="material-symbols-outlined ">hub</span><span class="summary-nav-options"><b>Integrations</b></span></li>
   </ul>
 </div>
 </div>
@@ -122,7 +122,14 @@ Deployments List
 <div style="padding:0 50px 0 50px;">
 
 <div class="row" style="margin-top: 20px;">
-  <div class="col-md-12"><h3 class="sys-summary-header">System Overview</h3></div>
+  <div class="col-md-12"><h3 class="sys-summary-header">Integrations Overview</h3></div>
+
+    <div style="max-width:75%; padding-left:1em;">
+      <p class="sys-summary-content">
+        Integrations extend your risk and compliance information with data from various systems and tools.
+      </p>
+    </div>
+
 
   <div class="col-md-8">
     <h3 class="system-heading">System Details</h3>
@@ -149,10 +156,11 @@ Deployments List
 <div>
 
 <h3 class="system-heading">Recent System Related Events</h3>
+
 <table class="sys-recent">
-    {% for se in system_events %}
+    {% for si in system_integrations %}
       <tr>
-        <td class="sys-recent-left"><div class="sys-recent-tag">{{ se.event_tag }}</div></td><td>{{ se.event_summary }}</td>
+        <td class="sys-recent-left"><div class="sys-recent-tag">{{ si.integration_name }}</div></td><td>{{ si.integration_summary }}</td><td><a href="">[configure]</a></td>
       </tr>
     {% endfor %}
 </table>
