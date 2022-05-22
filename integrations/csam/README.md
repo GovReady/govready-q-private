@@ -39,11 +39,11 @@ For local dev and testing, create an Integration record in Django admin for CSAM
 
 The CSAM integration includes a mock CSAM service you can launch in the terminal to test your integration.
 
-To launch the mock service do the following in a separate terminal:
+To launch the mock service do the following in a separate terminal from the root directory of GovReady-Q:
 
 ```python
-cd integrations/csam
-python 
+pip install click
+python integrations/csam/mock.py
 ```
 
 ## Details
