@@ -85,6 +85,23 @@ Deployments List
 
 .summary-nav-options { padding-left:5px;}
 
+h4.summary-sidebar { border-bottom:1px solid #B3B3B3; color:#404040; font-weight: bold; font-size:.8em; margin-top:3em; padding-bottom:5px;}
+.summary-sidebar-overview { background-color:#F8F8F8; border:1px solid #8C8C8C; padding:15px; border-radius: 5px; font-size: .8em;}
+.summary-sidebar-overview-details { font-weight:bold;}
+h4.no-line { border-bottom:0px; }
+
+
+.summary-sidebar-progress { font-size: .8em; color:#333333; padding:10px 15px; }
+.summary-sidebar-prog-box { width:100%; background-color: #E6E6E6; height:15px; display:block; margin-bottom:1em; margin-top:5px;}
+.summary-sidebar-prog-box-progress {background-color:#BFBFBF;height:15px;}
+
+.summary-sidebar-vulnerabilities { padding:15px; }
+.summary-sidebar-vuln-box { border:1px solid #ccc; background:#F2F2F2; text-align:center; padding:5px}
+.summary-sidebar-vuln-box-num {  font-weight:bold; font-size:1.1em; color:#1A1A1A; display:block; margin:0; padding:0;}
+.summary-sidebar-vuln-box-cat { font-size:.7em; display:block; margin:0; padding:0;}
+
+.summary-sidebar-artifacts { padding:15px;}
+
 </style>
 <div style="margin-top:8px; padding:20px 50px 0 50px; border-top:1px solid #ccc; background-color:#F5F5F5;">
 <div class="row">
@@ -121,7 +138,52 @@ Deployments List
 </div>
 <div style="padding:0 50px 0 50px;">
 
-<div class="row" style="margin-top: 20px;">
+
+<div class="row">
+
+<!-- start left sidebar -->
+<div class="col-sm-3">
+
+<h4 class="summary-sidebar no-line">Overview</h4>
+<div class="summary-sidebar-overview">
+<ul>
+  <li>System ID: <span class="summary-sidebar-overview-details">23742348237235</span></li>
+  <li>Operational Status: <span class="summary-sidebar-overview-details">Operational</span></li>
+  <li>System Type: <span class="summary-sidebar-overview-details">General Support System</span></li>
+  <li>System Created: <span class="summary-sidebar-overview-details">724 days</span></li>
+  <li>Hosting Facility: <span class="summary-sidebar-overview-details">DISC</span></li>
+</ul>
+</div>
+
+<h4 class="summary-sidebar">Progress Report</h4>
+<div class="summary-sidebar-progress">
+85% compliance (unaccessed)
+<div class="summary-sidebar-prog-box"><div class="summary-sidebar-prog-box-progress" style="width:85%;">&nbsp;</div></div>
+100 of 200 controls addressed
+<div class="summary-sidebar-prog-box"><div class="summary-sidebar-prog-box-progress" style="width:50%;">&nbsp;</div></div>
+</div>
+
+<h4 class="summary-sidebar">Vulnerabilities</h4>
+<div class="row summary-sidebar-vulnerabilities">
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">12</span><span class="summary-sidebar-vuln-box-cat">new</span></div></div>
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">6</span><span class="summary-sidebar-vuln-box-cat">resolved</span></div></div>
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">4</span><span class="summary-sidebar-vuln-box-cat">ongoing</span></div></div>
+</div>
+
+<h4 class="summary-sidebar ">Artifacts</h4>
+<div class="summary-sidebar-artifacts">
+<ul>
+<li><span class="glyphicon glyphicon-list" style="font-size:.8em; padding-right:5px; color:#808080;"></span>Assessments (1)
+<li><span class="glyphicon glyphicon-list" style="font-size:.8em; padding-right:5px; color:#808080;"></span>PTAs (3)
+<li><span class="glyphicon glyphicon-list" style="font-size:.8em; padding-right:5px; color:#808080;"></span>SSPs (1)
+</ul>
+</div>
+
+</div> <!-- ends left sidebar -->
+
+<div class="col-sm-9">
+
+  <div class="row" style="margin-top: 20px; padding-left:20px;">
   <div class="col-md-12"><h3 class="sys-summary-header">Deployments Overview</h3></div>
 
   <div style="max-width:75%; padding-left:1em;">
@@ -139,7 +201,7 @@ Deployments List
             <tr><td class="sys-detail-table-left">Hosting Facility: <span class="sys-detail-response">{{ system.hosting_facility }}Data Center 1</span></td></tr>
             <tr><td class="sys-detail-table-left">Status: <span class="sys-detail-response">{{ system.status }}Production</span></td></tr>
             <tr><td class="sys-detail-table-left">Deployment Type: <span class="sys-detail-response">{{ system.type }}Automated</span></td></tr>
-            
+
         </table>
       </div>
       <div class="col-md-6">
@@ -154,17 +216,17 @@ Deployments List
 
   </div>
 
-</div>
+  </div>
 
 
-<div class="row" style="margin-top:1em;">
+  <div class="row" style="margin-top:1em;">
   <div class="col-md-12">
     <!-- <h3 class="sys-summary-header">Deployments</h3> -->
-<!-- 
+  <!--
     <div class="col-md-2"><div class="vuln-scores greybg"><h2 style="font-size:2em;">Production</h2><span style="font-weight:bold; font-size:.9em;">Updated: 4:24pm, 04/26/22</span></div></div>
     <div class="col-md-2"><div class="vuln-scores"><span class="vuln-scores-cat-tot">Staging</span><span class="vuln-scores-cat-title">Updated: 8:14am, 04/17/22</span></div></div>
     <div class="col-md-2"><div class="vuln-scores"><span class="vuln-scores-cat-tot">Dev</span><span class="vuln-scores-cat-title">Updated: 12:43pm, 04/23/22</span></div></div>
- -->
+  -->
 
 
     {% if deployments|length < 1 %}
@@ -176,21 +238,39 @@ Deployments List
     {% else %}
       {% for deployment in deployments %}
 
-      <div class="col-md-3"><div class="vuln-scores"><span class="vuln-scores-cat-tot">{{ deployment.name }}</span><span class="vuln-scores-cat-title">{{ deployment.description }}<br>Updated {{ deployment.updated|timesince}} ago
+      <div class="col-md-6">
+        <div class="vuln-scores" style="display:block; margin-bottom:2em;">
+          <span class="vuln-scores-cat-tot">{{ deployment.name }}</span>
+          <span class="vuln-scores-cat-title">{{ deployment.description }}<br />Updated {{ deployment.updated|timesince}} ago
         <a class="portfolio-project-link" href="/systems/{{ system.id }}/deployment/{{ deployment.id }}/edit" title="Edit deployment" aria-label="Edit deployment" ><span class="glyphicon glyphicon-pencil"></span></a>
                 &nbsp;
                 <a class="portfolio-project-link" href="/systems/{{ system.id }}/deployment/{{ deployment.id }}/history" title="View deployment history" aria-label="View deployment history" ><span class="glyphicon glyphicon-calendar"></span></a>
 
-      </span></div></div>
+      </span>
+    </div>
+  </div>
       {% endfor %}
     {% endif %}
 
 
-</div>
-</div>
+  </div>
+  </div>
 
 
-</div>
+  </div>
+
+
+
+
+
+
+</div> <!-- ends main md content well -->
+</div> <!-- ends row -->
+
+
+
+
+
 {% endblock %}
 
 {% block scripts %}
