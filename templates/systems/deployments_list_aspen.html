@@ -21,7 +21,7 @@ Deployments List
 
 <style>
 
-.sys-summary-header { font-size:1.5em; font-weight:bold; color:#1A1A1A; border-bottom:1px solid; padding:0 0 .3em 0; margin:0 0 1em 0;}
+.sys-summary-header { font-size:1.2em; font-weight:bold; color:#1A1A1A; border-bottom:1px solid; padding:0 0 .3em 0; margin:0 0 1em 0;}
 
 .sys-detail-response { font-weight:bold; font-family:Helvetica Neue,"Helvetica","Roboto","Arial",sans-serif;}
 
@@ -96,8 +96,8 @@ h4.no-line { border-bottom:0px; }
 .summary-sidebar-prog-box-progress {background-color:#BFBFBF;height:15px;}
 
 .summary-sidebar-vulnerabilities { padding:15px; }
-.summary-sidebar-vuln-box { border:1px solid #ccc; background:#F2F2F2; text-align:center; padding:5px}
-.summary-sidebar-vuln-box-num {  font-weight:bold; font-size:1.1em; color:#1A1A1A; display:block; margin:0; padding:0;}
+.summary-sidebar-vuln-box { border:1px solid #ccc; background:#F2F2F2; text-align:center; padding:12px 5px 8px 5px;}
+h4.summary-sidebar-vuln-box-num {font-weight:bold; font-size:1em; color:#1A1A1A; margin:0; padding:0; line-height:.8em;}
 .summary-sidebar-vuln-box-cat { font-size:.7em; display:block; margin:0; padding:0;}
 
 .summary-sidebar-artifacts { padding:15px;}
@@ -165,9 +165,9 @@ h4.no-line { border-bottom:0px; }
 
 <h4 class="summary-sidebar">Vulnerabilities</h4>
 <div class="row summary-sidebar-vulnerabilities">
-  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">12</span><span class="summary-sidebar-vuln-box-cat">new</span></div></div>
-  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">6</span><span class="summary-sidebar-vuln-box-cat">resolved</span></div></div>
-  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><span class="summary-sidebar-vuln-box-num">4</span><span class="summary-sidebar-vuln-box-cat">ongoing</span></div></div>
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><h4 class="summary-sidebar-vuln-box-num">12</h4><span class="summary-sidebar-vuln-box-cat">new</span></div></div>
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><h4 class="summary-sidebar-vuln-box-num">6</h4><span class="summary-sidebar-vuln-box-cat">resolved</span></div></div>
+  <div class="col-md-4"><div class="summary-sidebar-vuln-box"><h4 class="summary-sidebar-vuln-box-num">4</h4><span class="summary-sidebar-vuln-box-cat">ongoing</span></div></div>
 </div>
 
 <h4 class="summary-sidebar ">Artifacts</h4>
@@ -183,8 +183,8 @@ h4.no-line { border-bottom:0px; }
 
 <div class="col-sm-9">
 
-  <div class="row" style="margin-top: 20px; padding-left:20px;">
-  <div class="col-md-12"><h3 class="sys-summary-header">Deployments Overview</h3></div>
+  <div class="row" style="padding:50px 0 0 20px; ">
+  <div class="col-md-12"><h4 class="sys-summary-header">Deployments Overview</h4></div>
 
   <div style="max-width:75%; padding-left:1em;">
         <p class="sys-summary-content">
