@@ -17,6 +17,8 @@ from api.base.models import BaseModel
 from controls.enums.components import ComponentTypeEnum, ComponentStateEnum
 from siteapp.model_mixins.tags import TagModelMixin
 from siteapp.model_mixins.appointments import AppointmentModelMixin
+from siteapp.model_mixins.requests import RequestsModelMixin
+from siteapp.model_mixins.proposals import ProposalModelMixin
 from controls.enums.statements import StatementTypeEnum
 from controls.enums.remotes import RemoteTypeEnum
 from controls.oscal import Catalogs, Catalog, CatalogData
@@ -261,7 +263,7 @@ class StatementRemote(auto_prefetch.Model):
                                              unique=False, blank=True, null=True, help_text="The Import Record which created this record.")
 
 
-class Element(auto_prefetch.Model, TagModelMixin, AppointmentModelMixin):
+class Element(auto_prefetch.Model, TagModelMixin, AppointmentModelMixin, RequestsModelMixin):
     name = models.CharField(max_length=250, help_text="Common name or acronym of the element", unique=True, blank=False, null=False)
     full_name =models.CharField(max_length=250, help_text="Full name of the element", unique=False, blank=True, null=True)
     description = models.TextField(default="Description needed", help_text="Description of the Element", unique=False, blank=False, null=False)
@@ -545,6 +547,35 @@ class Element(auto_prefetch.Model, TagModelMixin, AppointmentModelMixin):
             smt_copy.save()
         return e_copy
 
+    @transaction.atomic
+    def merge_component_statements(self, mrg_cmpt, strategy="KEEP_BOTH"):
+        """Merge a second component statements to statements of first component"""
+
+        # print(f"strategy: {strategy}")
+        for smt_new in mrg_cmpt.statements(StatementTypeEnum.CONTROL_IMPLEMENTATION_PROTOTYPE.name):
+            src_cmpt_match_smts = self.statements_produced.filter(sid_class=smt_new.sid_class, sid=smt_new.sid, pid=smt_new.pid, statement_type=smt_new.statement_type)
+
+            if len(src_cmpt_match_smts) == 0 or (len(src_cmpt_match_smts) == 1 and strategy == "KEEP_BOTH") or (len(src_cmpt_match_smts) > 1):
+                # Append smt if no matching statements, multiple matching statements, or 1 matching statement and strategy keep both
+                instance = deepcopy(smt_new)
+                instance.producer_element = self
+                instance.id = instance.created = instance.update = instance.import_record = None
+                instance.uuid = uuid.uuid4()
+                instance.save()
+                # print(f"Duplicate smt added {smt_new.sid}")
+            elif len(src_cmpt_match_smts) == 1 and strategy == "REPLACE":
+                # replace text
+                src_cmpt_smt = src_cmpt_match_smts[0]
+                # print(f"{src_cmpt_smt} src_cmpt_smt.body: {src_cmpt_smt.body}")
+                # print(f"smt_new.body: {smt_new.body}")
+                src_cmpt_smt.body = smt_new.body
+                # print(f"src_cmpt_smt: {src_cmpt_smt}")
+                src_cmpt_smt.save()
+                # print(f"Replaced smt body {smt_new.sid}")
+            else:
+                # print(f"Ignored smt {smt_new.sid}")
+                pass
+
     @property
     def selected_controls_oscal_ctl_ids(self):
         """Return array of selected controls oscal ids"""
@@ -648,11 +679,12 @@ class ElementRole(auto_prefetch.Model, BaseModel):
         return "'%s id=%d'" % (self.role, self.id)
 
 
-class System(auto_prefetch.Model, TagModelMixin):
+class System(auto_prefetch.Model, TagModelMixin, ProposalModelMixin):
     root_element = auto_prefetch.ForeignKey(Element, related_name="system", on_delete=models.CASCADE,
                                             help_text="The Element that is this System. Element must be type [Application, General Support System]")
     fisma_id = models.CharField(max_length=40, help_text="The FISMA Id of the system", unique=False, blank=True,
                                 null=True)
+    info = models.JSONField(blank=True, default=dict, help_text="JSON object representing additional system information")
     created = models.DateTimeField(auto_now_add=True, db_index=True)
     updated = models.DateTimeField(auto_now_add=True, db_index=True)
 
