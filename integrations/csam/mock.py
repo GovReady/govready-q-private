@@ -51,7 +51,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     SYSTEMS = { "111": {"id": 111,
                        "externalId": "string",
                        "name": "System A",
-                       "description": "This is a simple test system",
                        "acronym": "string",
                        "organization": "string",
                        "subOrganization": "string",
@@ -63,7 +62,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                        "fismaReportable": True,
                        "criticalInfrastructure": True,
                        "missionCritical": True,
-                       "purpose": "string",
+                       "purpose": "This is a system with a purpose, a <h2>heading 2> and a <p>paragraph new</p>",
                        "ombExhibit": "string",
                        "uiiCode": "string",
                        "investmentName": "string",
@@ -77,7 +76,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 "222": {"id": 222,
                        "externalId": "string",
                        "name": "System B",
-                       "description": "This is another simple test system",
                        "acronym": "string",
                        "organization": "string",
                        "subOrganization": "string",
@@ -89,7 +87,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                        "fismaReportable": True,
                        "criticalInfrastructure": True,
                        "missionCritical": True,
-                       "purpose": "string",
+                       "purpose": "This is a system with a purpose, a <h2>heading 2> and a <p>paragraph new</p>",
                        "ombExhibit": "string",
                        "uiiCode": "string",
                        "investmentName": "string",
@@ -242,7 +240,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 elif '222' in request.path:
                     system_id = '222'
                 self.SYSTEMS[system_id]['name'] = self.post_data_json.get('name', self.SYSTEM['name'])
-                self.SYSTEM[system_id]['description'] = self.post_data_json.get('description', self.SYSTEM['description'])
+                self.SYSTEM[system_id]['purpose'] = self.post_data_json.get('purpose', "MISSING CONTENT")
                 # Send response
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json')

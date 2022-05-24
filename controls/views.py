@@ -3770,7 +3770,7 @@ def system_summary_csam(request, system_id):
                 #  'nextFyFunding': 0,
                 #  'categorization': 'string',
                 #  'fundingImportStatus': 'string'}
-                purpose = f"{csam_data['description']}"
+                purpose = f"{csam_data['purpose']}"
                 organization_name = f"{csam_data['organization']} {csam_data['subOrganization']}"
                 other_id = f"{csam_data['id']}"
                 system_type = f"{csam_data['systemType']}"
