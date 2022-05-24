@@ -165,7 +165,7 @@ Deployments List
 
 <div class="col-md-4">
 <h3 class="system-heading">System Summary</h3>
-<div class="col-md-12" ><p class="sys-summary-content">{{ system.purpose|safe }}</p>
+<div class="col-md-12" ><p class="sys-summary-content">{{ system.purpose|safe|truncatewords:75 }}</p>
 <br />
 </div>
 
