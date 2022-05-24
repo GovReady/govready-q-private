@@ -828,7 +828,7 @@ class SystemUITests(OrganizationSiteFunctionalTests):
 
         self.navigateToPage(f"/systems/{system.id}/deployments")
         # Conditionally skip test if we are in Aspen deployment page
-        if not self.assertInNodeText("Deployment Overview", ".sys-summary-header"):
+        if not self.assertInNodeText("Deployments Overview", ".sys-summary-header"):
             wait_for_sleep_after(lambda: self.assertInNodeText("New Deployment", ".systems-element-button"))
 
             # Add default deployments to system
