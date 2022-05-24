@@ -3770,7 +3770,7 @@ def system_summary_csam(request, system_id):
                 #  'nextFyFunding': 0,
                 #  'categorization': 'string',
                 #  'fundingImportStatus': 'string'}
-                purpose = f"{csam_data['purpose']}"
+                purpose = f"{csam_data['description']}"
                 organization_name = f"{csam_data['organization']} {csam_data['subOrganization']}"
                 other_id = f"{csam_data['id']}"
                 system_type = f"{csam_data['systemType']}"
@@ -3817,6 +3817,8 @@ def system_summary_csam(request, system_id):
             else:
                 organization_name = "DHS"
 
+            system_type = random.choice(["General Support System", "Major Application", "Major Application", "Major Application", "Major Application", "Major Application", "Major Application", "Minor Application", ])
+
         # Acronym
         if "(" in system_name:
             acronym = re.search(r"\((.*)\)", system_name).group(1).strip()
@@ -3832,7 +3834,6 @@ def system_summary_csam(request, system_id):
             short_name = " ".join([word for word in system_name.split(" ")[0:2]]) + " System"
             aka.append(short_name)
 
-        system_type = random.choice(["General Support System", "Major Application", "Major Application", "Major Application", "Major Application", "Major Application", "Major Application", "Minor Application", ])
         hosting_facility = random.choice(["DISC", "AWS", "AWS","AWS", "AWS", "DC-1", "AWS", "AWS", "Azure", "AWS", "AWS", "AWS", "DC-1",  ])
         # Dates
         from datetime import datetime, date, timedelta, timezone
