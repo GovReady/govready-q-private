@@ -4,6 +4,13 @@ GovReady-Q Release Notes
 v0.9.14-dev (April xx, 2022)
 ----------------------------
 
+**Feature changes**
+
+* Support private components (elements).
+* Assign responsible roles to components (elements) and appointing parties to roles. 
+
+Release adds support for private components and integrations with third party services.
+
 **UI changes**
 
 * Change label 'certified statement' to 'reference statement'.
@@ -15,6 +22,7 @@ v0.9.14-dev (April xx, 2022)
 * Added tabs for coponent requests.
 * Only Component owner can edit user permissions.
 * Display the control framework along side of controls in component control listing page.
+* Remove icons from project listing.
 
 **Developer changes**
 
@@ -22,15 +30,22 @@ v0.9.14-dev (April xx, 2022)
 * Update Django, libraries.
 * Remove debug-toolbar.
 * Support for private components by adding 'private' boolean field to controls.models.Element.
+* Support for hidden components by adding 'hidden' boolean field to controls.models.Element.
+* Support for requiring approval components by adding 'require_approval' boolean field to controls.models.Element.
 * Create new components as private and assign owner permissions to user who created the component.
 * Added tests for component creation form user interface.
 * Added ElementPermissionSerializer, UpdateElementPermissionSerializer, RemoveUserPermissionFromElementSerializer for component (element) permissions.
 * Added ElementWithPermissionsViewSet for component (element) permissions.
-* Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element
-* Updated User model to include search by 'username' and exclusion functionality to queryset
+* Added more permission functions to element model: assigning a user specific permissions, removing all permissions from a user, and checking if a user is an owner of the element.
+* Updated User model to include search by 'username' and exclusion functionality to queryset.
 * Copy all user permissions on a component to component copy when cloning a component.
+* Added extensible Integrations Django appplication to support communication with third-party services via APIs, etc.
+* Added initial support for DoJ's CSAM integration.
+* Add tests for component creation form user interface.
+* Add model Roles, Party, and Appointments to siteapp to support identifying roles on Components (Element).
 * Assign owners to components imported via OSCAL. If no user is identified during component (element creation) assign first Superuser (administrator) as component owner.
 * Support navigating to specific tab on component library component page using URL hash (#) reference.
+* Protype integrations System Summary page.
 
 **Bug fixes**
 
@@ -39,6 +54,7 @@ v0.9.14-dev (April xx, 2022)
 * Resolve components not displaying the tag widget by properly setting existingTags default for new component.
 * Footer fixes.
 * Assign owners to default components (elements) created during install first_run script.
+* Correctly display POA&M forms with left-side menu.
 
 v0.9.13 (January 23, 2022)
 --------------------------
