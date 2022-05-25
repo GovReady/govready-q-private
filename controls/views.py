@@ -3742,9 +3742,9 @@ def get_integrations_system_events(request, system_id):
     # Retrieve events from integrations
     csam_system_id = system.info.get('csam_system_id', None)
     system_events = [
-        { "event_tag": "TEST", "event_summary": "Penetration test scheduled - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..."},
-        { "event_tag": "SCAN", "event_summary": "Security scan scheduled - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..."},
-        { "event_tag": "SYS", "event_summary": "Isso appointed - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod..."}
+        { "event_tag": "TEST", "event_summary": "Penetration test scheduled - Automated penetration test run by SOC"},
+        { "event_tag": "SCAN", "event_summary": "Security scan scheduled - Automated weekly security scan will occur Sunday, June 9"},
+        { "event_tag": "SYS", "event_summary": "ISSO appointed - Janice Avery (contracor) has been appointed as ISSO for System"}
     ]
     return system_events
 
