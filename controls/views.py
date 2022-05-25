@@ -3810,7 +3810,7 @@ def system_summary_csam(request, system_id):
             system_name = system_from_sorn['name'].strip(" ").strip(",")
             if re.search(r"DHS/[A-Za-z/&0-9-]+[0-9]{0,4} ", system_name):
                 system_name = re.sub(r"DHS/[A-Za-z/&0-9-]+[0-9]{0,4} ", '', system_name)
-        
+
             # Organization
             if re.search(r"DHS/([A-Za-z]{0,4})", system_from_sorn['name'].strip(" ").strip(",")):
                 organization_name = "DHS " + re.search(r"DHS/([A-Za-z]{0,4})", system_from_sorn['name'].strip(" ").strip(",")).group(1).strip()
@@ -3888,7 +3888,7 @@ def system_summary_csam(request, system_id):
         project.system.root_element.name = system['name']
         project.root_task.title_override = system['name']
         # Return the controls
-        
+
         context = {
             "system": system,
             #"project": project,
