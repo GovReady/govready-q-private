@@ -22,7 +22,7 @@ class CSAMCommunication(Communication):
 
     def __init__(self, **kwargs):
         self.status_code = None
-        self.integration_name = self.DESCRIPTION['name']
+        self.integration_name = self.DESCRIPTION.get('name', "Description missing")
         self.integration = get_object_or_404(Integration, name=self.integration_name)
         self.description = self.integration.description
         self.config = self.integration.config

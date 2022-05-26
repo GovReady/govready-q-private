@@ -115,17 +115,16 @@ def get_system_info(request, system_id=2):
 
 def system_info(request, system_id=2):
     """Retrieve the system information from CSAM"""
-
     system = get_object_or_404(System, pk=system_id)
-    try:
-        # system = System.objects.get(pk=system_id)
-        system = get_object_or_404(System, pk=system_id)
-    except:
-        return HttpResponse(
-        f"<html><body>"
-        f"<p>now: {datetime.now()}</p>"
-        f"<p>System '{system_id}' does not exist.</p>"
-        f"</body></html>")
+    # try:
+    #     # system = System.objects.get(pk=system_id)
+    #     system = get_object_or_404(System, pk=system_id)
+    # except:
+    #     return HttpResponse(
+    #     f"<html><body>"
+    #     f"<p>now: {datetime.now()}</p>"
+    #     f"<p>System '{system_id}' does not exist.</p>"
+    #     f"</body></html>")
 
     # TODO: Check user permission to view
     communication = set_integration()
