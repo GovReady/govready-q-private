@@ -62,7 +62,7 @@ System
 
 
     <div class="systems-top">
-            <div id="tab-content" class="rows-header" style="height:50px;">
+            <div id="tab-content" class="rows-header" style="min-height:50px;">
                 <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><span class="systems-selected-items">Selected components</span></div>
                 <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">&nbsp;</div>
                 <div id="" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pull-right">
@@ -93,7 +93,7 @@ System
 
             {% for component in system_elements %}
                 {# Each "component" is a Element model object. #}
-                    <div id="tab-content" class="row-control" style="min-height:60px;">
+                    <div id="tab-content" class="row-control" style="min-height:110px;">
                         <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                             <a href={% url 'system_element' system_id=system.id element_id=component.id %}>{{ component.name }}</a>
                         </div>
@@ -102,7 +102,7 @@ System
                             <span class="component-state">{{ component.component_state }}</span>
                         </div>
                         <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                            {% if component.description %}{{ component.description }}{% else %}<span class="not-provided">No description provided.</span>{% endif %}
+                            {% if component.description %}{{ component.description|truncatewords:10 }}{% else %}<span class="not-provided">No description provided.</span>{% endif %}
                             <div>{% for tag in component.tags.all %}<span class="component-tag">{{ tag.label }}</span> {% endfor %}</div>
                         </div>
                     {% with ctl_count=component.get_control_impl_smts_prototype_count %}
@@ -128,14 +128,14 @@ System
     <br />
 
     <div>
-        <div class="rows-header" style="height:50px;">
+        <div class="rows-header" style="min-height:50px;">
             <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><span class="systems-selected-items">Proposed components</span></div>
             <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">&nbsp;</div>
             <div id="" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pull-right">&nbsp;</div>
         </div>
             {% for proposal in system_proposals %}
                     {# Each "component" is a Element model object. #}
-                        <div class="row-control" style="height:50px;">
+                        <div class="row-control" style="min-height:110px;">
                             <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                 <a href={% url 'system_element' system_id=system.id element_id=proposal.requested_element.id %}>{{ proposal.requested_element.name }}</a>
                             </div>
@@ -144,7 +144,7 @@ System
                                 <span class="component-state">{{ proposal.requested_element.component_state }}</span>
                             </div>
                             <div id="" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                {% if proposal.requested_element.description %}{{ proposal.requested_element.description }}{% else %}<span class="not-provided">No description provided.</span>{% endif %}
+                                {% if proposal.requested_element.description %}{{ proposal.requested_element.description|truncatewords:10 }}{% else %}<span class="not-provided">No description provided.</span>{% endif %}
                                 <div>{% for tag in proposal.requested_element.tags.all %}<span class="component-tag">{{ tag.label }}</span> {% endfor %}</div>
                             </div>
                             {% with ctl_count=proposal.requested_element.get_control_impl_smts_prototype_count %}
