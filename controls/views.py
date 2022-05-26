@@ -485,8 +485,8 @@ class SelectedComponentsListAspen(ListView):
             # Temporarily assume only one project and get first project
             project = system.projects.first()
             context['project'] = project
-            context['system'] = system_summary
-            # context['system'] = system
+            context['system_summary'] = system_summary
+            context['system'] = system
             context['system_proposals'] = system_proposals
             context['system_proposal_elements'] =  system_proposal_elements
             context['elements'] = Element.objects.all().exclude(element_type='system')
