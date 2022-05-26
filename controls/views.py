@@ -3829,7 +3829,8 @@ def system_integrations_aspen(request, system_id):
     for integration in integrations:
         general_integration = {
             "integration_name": integration.name,
-            "integration_summary": integration.description
+            "integration_summary": integration.description,
+            "integration_base_url": integration.config.get('base_url', None)
             }
         general_integrations.append(general_integration)
 

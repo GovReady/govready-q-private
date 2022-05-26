@@ -66,7 +66,7 @@ System
           <table class="sys-recent">
               {% for si in system_integrations %}
                 <tr>
-                  <td class="sys-recent-left"><div class="sys-recent-tag">{{ si.integration_name }}</div></td><td>{{ si.integration_summary }}</td><td><a href="">[configure]</a></td>
+                  <td class="sys-recent-left"><div class="sys-recent-tag">{{ si.integration_name }}</div></td><td>{{ si.integration_summary }}</td><td>{{ si.integration_base_url }}</td><td><a href="">[configure]</a></td>
                 </tr>
               {% endfor %}
           </table>
