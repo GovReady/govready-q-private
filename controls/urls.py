@@ -46,8 +46,6 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/aspen/summary/fake$', views.system_summary_1_aspen, name="system_summary_1"),
     url(r'^(?P<system_id>.*)/aspen/summary$', views.system_summary_aspen, name="system_summary"),
     url(r'^(?P<system_id>.*)/aspen/integrations$', views.system_integrations_aspen, name="system_integrations"),
-    # url(r'^(?P<system_id>.*)/aspen/summary/poams$', views.system_summary_poams, name="system_summary_poams"),
-    url(r'^import-poams$', views.import_poams_xlsx, name="import_poams_xlsx"),
 
     # Systems Assessment Results
     url(r'^(?P<system_id>.*)/assessments$', views.system_assessment_results_list, name="system_assessment_results_list"),
@@ -70,6 +68,7 @@ urlpatterns = [
     url(r'^smt/_update_smt_prototype/$', views.update_smt_prototype),
 
     # System Components/Elements
+    url(r'^(?P<system_id>.*)/aspen/components/selected$', views.SelectedComponentsListAspen.as_view(), name="components_selected_aspen"),
     url(r'^(?P<system_id>.*)/components/selected$', views.SelectedComponentsList.as_view(), name="components_selected"),
     url(r'^(?P<system_id>.*)/components/selected/export/opencontrol$', views.export_system_opencontrol, name="export_system_opencontrol"),
     url(r'^(?P<system_id>.*)/component/(?P<element_id>.*)/download/oscal/json$',
@@ -82,7 +81,6 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/controls/updated$', views.controls_updated, name="controls_updated"),
 
     # Component Library
-
     url(r'^components$', views.component_library, name="component_library"),
     url(r'^components/compare$', views.compare_components, name="compare_components"),
     url(r'^components/new$', views.new_element, name="new_element"),
@@ -113,6 +111,9 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/controls/baseline/(?P<catalog_key>.*)/(?P<baseline_name>.*)/_assign$', views.assign_baseline, name="assign_baseline"),
 
     # Poams
+    url(r'^(?P<system_id>.*)/aspen/poams$', views.system_poams_aspen, name="system_poams_aspen"),
+    url(r'^import-poams$', views.import_poams_xlsx, name="import_poams_xlsx"),
+
     url(r'^(?P<system_id>.*)/poams$', views.poams_list, name="poams_list"),
     url(r'^(?P<system_id>.*)/poams/new$', views.new_poam, name="new_poam"),
     url(r'^(?P<system_id>.*)/poams/(?P<poam_id>.*)/edit$', views.edit_poam, name="edit_poam"),
