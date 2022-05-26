@@ -56,6 +56,7 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/sar/(?P<sar_id>.*)/history$', views.system_assessment_result_history, name="system_assessment_result_history"),
 
     # Systems Inventory and Deployments
+    url(r'^(?P<system_id>.*)/aspen/deployments$', views.system_deployments_aspen, name="system_deployments_aspen"),
     url(r'^(?P<system_id>.*)/deployments$', views.system_deployments, name="system_deployments"),
     url(r'^(?P<system_id>.*)/deployment/new$', views.manage_system_deployment, name="new_system_deployment"),
     url(r'^(?P<system_id>.*)/deployment/(?P<deployment_id>.*)/edit$', views.manage_system_deployment, name="manage_system_deployment"),
