@@ -39,7 +39,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         LOGGER.warning(f"DEBUG (6) header: {header}, \npayload: {payload}, \nsignature: {signature}")
         payload = payload[:-1] if b'\x1b' in payload else payload
         LOGGER.warning(f"DEBUG (7) payload: {payload}")
-        payload = json.loads(payload.decode('UTF-8)'))
+        payload = json.loads(payload.decode('UTF-8)').strip('\x06'))
         LOGGER.warning(f"DEBUG (8) header: {header}, \npayload: {payload}, \nsignature: {signature}")
         #return user_response.json()
         return payload
