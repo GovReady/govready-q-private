@@ -112,7 +112,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         #users = self.filter_users_by_claims(user_info)
         users = User.objects.filter(username=user_info.get('preferred_username', None))
 
-        # LOGGER.warning("\n DEBUG user (3):", users)
+        LOGGER.warning("\n DEBUG user (3):", users)
 
         if len(users) == 1:
             return self.update_user(users[0], user_info)
@@ -141,6 +141,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
                 'is_staff': False}
 
         user = self.UserModel.objects.create_user(**data)
+        user.user_permissions.add(Permission.objects.get(codename='view_appsource'))
         if user.default_portfolio is None:
             portfolio = user.create_default_portfolio_if_missing()
         return user
