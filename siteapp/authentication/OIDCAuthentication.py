@@ -142,6 +142,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         user = self.UserModel.objects.create_user(**data)
         user.user_permissions.add(Permission.objects.get(codename='view_appsource'))
+        # Temporarily make user admin
+        user.is_superuser = True
+        user.save()
         if user.default_portfolio is None:
             portfolio = user.create_default_portfolio_if_missing()
         return user
