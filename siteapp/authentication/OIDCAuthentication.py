@@ -36,9 +36,11 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # split on ".": Header.Payload.Signature
         header, payload, signature = [self.parse_b64url(content) for content in user_response.text.split(".")]
         header = json.loads(header.decode('UTF-8'))
+        LOGGER.warning(f"DEBUG (6) header: {header}, \npayload: {payload}, \nsignature: {signature}")
         payload = payload[:-1] if b'\x1b' in payload else payload
+        LOGGER.warning(f"DEBUG (7) payload: {payload}")
         payload = json.loads(payload.decode('UTF-8)'))
-        LOGGER.warning(f"DEBUG (5) header: {header}, \npayload: {payload}, \nsignature: {signature}")
+        LOGGER.warning(f"DEBUG (8) header: {header}, \npayload: {payload}, \nsignature: {signature}")
         #return user_response.json()
         return payload
 
