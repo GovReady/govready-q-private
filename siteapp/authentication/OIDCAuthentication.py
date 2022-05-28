@@ -111,7 +111,8 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         # email based filtering
         #users = self.filter_users_by_claims(user_info)
-        users = User.objects.filter(username=user_info.get('preferred_username', None))
+        # use email as username
+        users = User.objects.filter(username=user_info.get('mail', None))
 
         LOGGER.warning("\n DEBUG user (3):", users)
 
