@@ -8,9 +8,7 @@ from siteapp.model_mixins.tags import TagView, build_tag_urls
 admin.autodiscover()
 
 from django.views.decorators.csrf import csrf_exempt
-from controls import urls_api
 
-import controls.views
 from controls import views
 
 from siteapp.settings import *

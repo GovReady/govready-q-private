@@ -70,20 +70,37 @@ System
         </table>
       </div>
     </div>
-<div>
-
-<h3 class="system-heading">Recent System Related Events</h3>
-<table class="sys-recent">
-    {% for se in system_events %}
-      <tr>
-        <td class="sys-recent-left"><div class="sys-recent-tag">{{ se.event_tag }}</div></td><td>{{ se.event_summary }}</td>
-      </tr>
-    {% endfor %}
-</table>
-
+  <div>
+    <h3 class="system-heading">Recent System Related Events</h3>
+      <table class="sys-recent">
+        {% for se in system_events %}
+          <tr>
+            <td class="sys-recent-left"><div class="sys-recent-tag">{{ se.event_tag }}</div></td><td>{{ se.event_summary }}</td>
+          </tr>
+        {% endfor %}
+      </table>
   </div>
 
-
+  <h3 class="system-heading">Projects (Questionnaires)</h3>
+  {% if projects|length < 1 %}
+    <div id="tab-content" class="row row-control">
+      <div id="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <p>No Projects are currently identified for this system.</p>
+      </div>
+    </div>
+  {% else %}
+    {% for p in projects %}
+      <div class="col-md-4">
+        <a href="/projects/{{ p.id }}/">
+        <div class="vuln-scores" style="display:block; margin-bottom:2em;">
+          <span class="vuln-scores-cat-tot">{{ p.title }}</span>
+          <span class="vuln-scores-cat-title">{{ p.root_task.module.get_questions|length }} Modules</span>
+          <!-- <span class="vuln-scores-cat-title">{{ p.id }}<br />Updated {{ project.updated|timesince}} ago</span> -->
+        </div>
+        </a>
+      </div>
+    {% endfor %}
+  {% endif %}
 </div>
 
 

@@ -3751,6 +3751,7 @@ def get_integrations_system_info(request, system_id):
     # Retrieve primary system Project
     # Temporarily assume only one project and get first project
     project = system.projects.all()[0]
+
     system_name = system.root_element.name
 
     # Retrieve info from integrations
@@ -3929,6 +3930,9 @@ def system_summary_1_aspen(request, system_id):
     system_summary = get_integrations_system_info(request, system_id)
     system_events = get_integrations_system_events(request, system_id)
 
+    # Get all projects
+    projects = system.projects.all()
+
     # Fix menu data for old vertical menu
     project.system.root_element.name = system_summary['name']
     project.root_task.title_override = system_summary['name']
@@ -3936,6 +3940,7 @@ def system_summary_1_aspen(request, system_id):
     context = {
         "system": system_summary,
         #"project": project,
+        "project": projects,
         "system_events": system_events,
         # "deployments": deployments,
         "display_urls": project_context(project)
@@ -3957,6 +3962,9 @@ def system_summary_aspen(request, system_id):
     system_summary = get_integrations_system_info(request, system_id)
     system_events = get_integrations_system_events(request, system_id)
 
+    # Get all projects
+    projects = system.projects.all()
+
     # Fix menu data for old vertical menu
     project.system.root_element.name = system_summary['name']
     project.root_task.title_override = system_summary['name']
@@ -3964,6 +3972,7 @@ def system_summary_aspen(request, system_id):
     context = {
         "system": system_summary,
         #"project": project,
+        "projects": projects,
         "system_events": system_events,
         # "deployments": deployments,
         "display_urls": project_context(project)
