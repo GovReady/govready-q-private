@@ -2240,6 +2240,92 @@ def controls_selected_export_xacta_xslx(request, system_id):
         raise Http404
 
 @login_required
+def get_control_matrix_info(request, cl_id):
+    """Return the control matrix information for specified control"""
+
+    # Temporary code for controls_matrix
+
+    control_matrix_doc = [
+        {"cl_id": "AU-2",
+        "monitor_period": "Continuous and Ongoing",
+        "discussion": "Certain events must be continuously monitored. Successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes."
+        },
+        {"cl_id": "AU-6",
+        "monitor_period": "Weekly",
+        "discussion": "Review and analyze information system audit records for indications of inappropriate or unusual activity."
+        },
+        {"cl_id": "RA-5",
+        "monitor_period": "Monthly",
+        "discussion": "Scan operating systems, web applications and databases monthly. All scan reports must be sent to the Reviewer monthly."
+        },
+        {"cl_id": "IA-5",
+        "monitor_period": "every 60 Days",
+        "discussion": "Change/refresh authenticators/passwords at least"
+        },
+        {"cl_id": "IA-4",
+        "monitor_period": "Quarterly (90 Days)",
+        "discussion": "Disables user IDs after 90 days of inactivity."
+        },
+        {"cl_id": "AC-2",
+        "monitor_period": "Annually",
+        "discussion": "Perform an annual review and re-certification of user accounts to verify if the account holder requires continued access to the system."
+        },
+        {"cl_id": "IA-4",
+        "monitor_period": "Two Years",
+        "discussion": "Prevent reuse of user and device identifiers every two years."
+        },
+        {"cl_id": "CA-6",
+        "monitor_period": "Three Years",
+        "discussion": "The security authorization will be re-evaluated by the Authorizing Official at least every three years."
+        }
+    ]
+    control_matrix_doc = next((ctl for ctl in control_matrix_doc if ctl['cl_id'].upper() == cl_id.upper()), None)
+
+    import pandas
+    import pathlib
+    rows_list = []
+    # TODO: Fix file path
+    fn = "data/controls_matrix.xlsx"
+    if pathlib.Path(fn).is_file():
+        try:
+            df_dict = pandas.read_excel(fn, 'controls_foundation', header=0)
+            for index, row in df_dict.iterrows():
+                row_dict = {
+                    "CONTROL_STATUS": row.get('CONTROL_STATUS', ""),
+                    "MONITORED_STATUS": row.get('MONITORED_STATUS', ""),
+                    "TIER": row.get('TIER', ""),
+                    "REVIEW_FREQUENCY": row.get('REVIEW_FREQUENCY', ""),
+                    "CONTROL_TYPE": row.get('CONTROL_TYPE', ""),
+                    "AUTOMATED": row.get('AUTOMATED', ""),
+                    "COMMON_CONTROL": row.get('COMMON_CONTROL', ""),
+                    "PRIORITY": row.get('PRIORITY', ""),
+                    "BASELINE_IMPACT": row.get('BASELINE_IMPACT', ""),
+                    "RMF_CONTROL_FAMILY": row.get('RMF_CONTROL_FAMILY', ""),
+                    "RMF_CONTROL": row.get('RMF_CONTROL', ""),
+                    "RMF_CONTROL_NAME": row.get('RMF_CONTROL_NAME', ""),
+                    "CSF_FUNCTION": row.get('CSF_FUNCTION', ""),
+                    "CSF_CATEGORY": row.get('CSF_CATEGORY', ""),
+                    "CSF_SUBCATEGORY": row.get('CSF_SUBCATEGORY', ""),
+                    "CYBERSECURITY_PROGRAM_DOMAIN": row.get('CYBERSECURITY_PROGRAM_DOMAIN', ""),
+                    "ORTB": row.get('ORTB', ""),
+                    "FSA": row.get('FSA', ""),
+                    "HVA": row.get('HVA', ""),
+                    "FPKI": row.get('FPKI', ""),
+                    "PRIVACY": row.get('PRIVACY', ""),
+                    "CLOUD_SHARED": row.get('CLOUD_SHARED', ""),
+                    "FAST_TRACK": row.get('FAST_TRACK', "")
+                }
+                rows_list.append(row_dict)
+        except FileNotFoundError as e:
+            logger.error(f"Error reading file {fn}: {e}")
+        except Exception as e:
+            logger.error(f"Other error reading file {fn}: {e}")
+    else:
+        print(f"Faiiled to find or open file '{fn}'.")
+    control_matrix = next((ctl for ctl in rows_list if ctl['RMF_CONTROL'].upper() == cl_id.upper()), None)
+    return control_matrix, control_matrix_doc
+
+@login_required
 def editor(request, system_id, catalog_key, cl_id):
     """System Control detail view"""
 
@@ -2287,7 +2373,8 @@ def editor(request, system_id, catalog_key, cl_id):
         # Define status options
         impl_statuses = ["Not implemented", "Planned", "Partially implemented", "Implemented", "Unknown"]
 
-      # Only elements for the given control id, sid, and statement type
+        # Only elements for the given control id, sid, and statement type
+        control_matrix, control_matrix_doc = get_control_matrix_info(request, cl_id)
 
         elements =  Element.objects.all().exclude(element_type='system')
 
@@ -2296,6 +2383,8 @@ def editor(request, system_id, catalog_key, cl_id):
             "project": project,
             "catalog": catalog,
             "control": cg_flat[cl_id.lower()],
+            "control_matrix_doc": control_matrix_doc,
+            "control_matrix": control_matrix,
             "impl_smts": impl_smts,
             "impl_statuses": impl_statuses,
             "impl_smts_legacy": impl_smts_legacy,
