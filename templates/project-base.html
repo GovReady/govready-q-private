@@ -134,6 +134,7 @@
     {% include "edit-project-modal.html" %}
     {% include "edit-project-security-impact-levels-modal.html" %}
     {% include "move-project-modal.html" %}
+    {% if control.title is not None %}{% include "control-description-modal.html" %}{% endif %}
 
     {% block scripts %}
         <script>

@@ -23,6 +23,7 @@ Release adds support for private components and integrations with third party se
 * Only Component owner can edit user permissions.
 * Display the control framework along side of controls in component control listing page.
 * Remove icons from project listing.
+* Display project control text partially on page with modal for full text.
 
 **Developer changes**
 
