@@ -46,6 +46,7 @@ Release adds support for private components and integrations with third party se
 * Assign owners to components imported via OSCAL. If no user is identified during component (element creation) assign first Superuser (administrator) as component owner.
 * Support navigating to specific tab on component library component page using URL hash (#) reference.
 * Protype integrations System Summary page.
+* Add Django admin command to create shell integration directory.
 
 **Bug fixes**
 
