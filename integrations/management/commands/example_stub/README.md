@@ -2,7 +2,7 @@
 
 ## Configure
 
-Create an Integration record in Django admin:
+### Step 1: Create an Integration record in Django admin:
 
 - Name: example
 - Description: Integration to support Example service
@@ -32,6 +32,12 @@ For local dev and testing, create an Integration record in Django admin for CSAM
 - Config schema:
 ```json
 {}
+```
+
+### Step 2: Add route to `integration.urls.py`
+
+```python
+url(r"^example/", include("integrations.example.urls")),
 ```
 
 ## Testing with Mock Service
