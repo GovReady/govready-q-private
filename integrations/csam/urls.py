@@ -19,5 +19,5 @@ urlpatterns = [
     url(r"^system/(?P<system_id>.*)$", views.system_info, name='csam_system_info'),
 
     url(r"^create_system_from_remote/(?P<remote_system_id>.*)$", views.create_system_from_remote, name='create_system_from_remote'),
-    
+
 ]
