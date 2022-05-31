@@ -4,17 +4,16 @@ import json
 
 from django.conf import settings
 from django.core.exceptions import SuspiciousOperation
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseForbidden, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.contrib.auth.models import Permission
 from mozilla_django_oidc.auth import OIDCAuthenticationBackend, LOGGER
 from mozilla_django_oidc.middleware import SessionRefresh
 from mozilla_django_oidc.utils import absolutify, add_state_and_nonce_to_session
-from base64 import urlsafe_b64encode, urlsafe_b64decode
+from base64 import urlsafe_b64decode
 
 from siteapp.models import Portfolio, User
-
 
 
 class OIDCAuth(OIDCAuthenticationBackend):
@@ -100,6 +99,18 @@ class OIDCAuth(OIDCAuthenticationBackend):
         user_info = self.get_userinfo(access_token, id_token, payload)
         LOGGER.warning("\n DEBUG user_info (1):", user_info)
 
+        # Check if user has role to access service
+        GROUP_SPLIT_CHAR = '^'
+        user_groups = user_info.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
+        LOGGER.warning("\n DEBUG user_info (1b) user_groups:", user_groups)
+        if settings.OIDC_ROLES_MAP['normal'] not in user_groups:
+            # User does not have access to application
+            LOGGER.warning("\n DEBUG user_info (1c): user does not have role to access application")
+            HttpResponseForbidden()
+            # redirect_url = "logout"
+            # logout_url = self.get_settings('OIDC_OP_AUTHORIZATION_ENDPOINT')
+            # HttpResponseRedirect(redirect_url)
+
         claims_verified = self.verify_claims(user_info)
         if not claims_verified:
             msg = 'Claims verification failed'
@@ -139,9 +150,19 @@ class OIDCAuth(OIDCAuthenticationBackend):
                 'is_staff': False}
 
         user = self.UserModel.objects.create_user(**data)
+        # Set permissions
         user.user_permissions.add(Permission.objects.get(codename='view_appsource'))
         # Temporarily make user admin
-        user.is_superuser = True
+        # user.is_superuser = True
+        # user.save()
+        # Check to see if user has admin role
+        GROUP_SPLIT_CHAR = '^'
+        user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
+        LOGGER.warning("\n DEBUG user_info (10a) user_groups:", user_groups)
+        if settings.OIDC_ROLES_MAP['admin'] in user_groups:
+            # User is an admin
+            user.is_superuser = True
+            LOGGER.warning("\n DEBUG user_info (10b): user is an admin")
         user.save()
         if user.default_portfolio is None:
             portfolio = user.create_default_portfolio_if_missing()
