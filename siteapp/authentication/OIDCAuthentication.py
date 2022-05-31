@@ -61,24 +61,15 @@ class OIDCAuth(OIDCAuthenticationBackend):
         """Verify the provided claims to decide if authentication should be allowed."""
 
         # Verify claims required by default configuration
-        # cntr = 0
-        # for prop in self.__dict__.keys():
-        #     cntr += 1
-        #     LOGGER.warning(f"DEBUG {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
-        #     try:
-        #         LOGGER.warning(f"{str(self.__dict__[prop])}")
-        #     except:
-        #         LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
+        cntr = 0
+        for prop in self.__dict__.keys():
+            cntr += 1
+            LOGGER.warning(f"DEBUG claims {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
+            try:
+                LOGGER.warning(f"{str(self.__dict__[prop])}")
+            except:
+                LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email profile')
-
-        # cntr = 0
-        # for scope in scopes.split():
-        #     cntr += 1
-        #     LOGGER.warning(f"DEBUG scopes {cntr}: ")
-        #     try:
-        #         LOGGER.warning(scope)
-        #     except:
-        #         LOGGER.warning(f"Unable to convert scope {cntr}] to string. Type: {type(scope)}")
 
         if 'email' in scopes.split():
             return 'email' in claims
@@ -102,7 +93,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Check if user has role to access service
         GROUP_SPLIT_CHAR = '^'
         user_groups = user_info.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        LOGGER.warning("\n DEBUG user_info (1b) user_groups:", user_groups)
+        LOGGER.warning(f"\n DEBUG user_info (1a) user_groups len {len(user_groups)}:", user_info.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['normal'] not in user_groups:
             # User does not have access to application
             LOGGER.warning("\n DEBUG user_info (1c): user does not have role to access application")
@@ -158,7 +149,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Check to see if user has admin role
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        LOGGER.warning("\n DEBUG user_info (10a) user_groups:", user_groups)
+        LOGGER.warning(f"\n DEBUG user_info (10a) user_groups len {len(user_groups)}:", claims.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['admin'] in user_groups:
             # User is an admin
             user.is_superuser = True
