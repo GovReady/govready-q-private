@@ -37,6 +37,7 @@ class Command(BaseCommand):
         self.stdout.write(f"Integration '{integration_name}' created.")
         # Rename Communication subclass
         try:
+            # Update communicate.py
             with open(os.path.join(integrations_dir, 'communicate.py'), "r+") as f:
                 orig_file = f.read()
                 new_file = orig_file.replace('ExampleCommunication', f'{integration_name.title()}Communication')
@@ -48,19 +49,42 @@ class Command(BaseCommand):
         except:
             print(f"Error updating {os.path.join(integrations_dir, 'communicate.py')}")
         try:
+            # Update views.py
             with open(os.path.join(integrations_dir, 'views.py'), "r+") as f:
                 orig_file = f.read()
                 new_file = orig_file.replace('ExampleCommunication', f'{integration_name.title()}Communication')
-                # new_file = new_file.replace("https://example.com/api", f"https://{integration_name}.com/api")
                 new_file = new_file.replace("INTEGRATION_NAME = 'example'", f"INTEGRATION_NAME = '{integration_name}'")
                 new_file = new_file.replace("INTEGRATION_SYSTEM_ID = 'example_system_id'", f"INTEGRATION_SYSTEM_ID = '{integration_name}_system_id'")
                 new_file = new_file.replace("return ExampleCommunication()", f"return {integration_name}Communication()")
+                new_file = new_file.replace("IntegrationStub", f"{integration_name}")
                 f.seek(0)
                 f.write(new_file)
                 f.truncate()
             print(f"File {os.path.join(integrations_dir, 'views.py')} updated")
         except:
             print(f"Error updating {os.path.join(integrations_dir, 'views.py')}")
+        try:
+            # Update README.md
+            with open(os.path.join(integrations_dir, 'README.md'), "r+") as f:
+                orig_file = f.read()
+                new_file = orig_file.replace('example', f'{integration_name}')
+                f.seek(0)
+                f.write(new_file)
+                f.truncate()
+            print(f"File {os.path.join(integrations_dir, 'README.md')} updated")
+        except:
+            print(f"Error updating {os.path.join(integrations_dir, 'README.md')}")
+        try:
+            # Update mock.py
+            with open(os.path.join(integrations_dir, 'mock.py'), "r+") as f:
+                orig_file = f.read()
+                new_file = orig_file.replace('example', f'{integration_name}')
+                f.seek(0)
+                f.write(new_file)
+                f.truncate()
+            print(f"File {os.path.join(integrations_dir, 'mock.py')} updated")
+        except:
+            print(f"Error updating {os.path.join(integrations_dir, 'mock.py')}")
 
         return
         

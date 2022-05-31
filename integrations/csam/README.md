@@ -71,14 +71,14 @@ The following URLs will test the integration from your browser. Data will be ret
 - Purpose: Identifies the integration. All integrations have this URL.
 - Returns:
 ```text
-Attempting to communicate with csam integration: This is csam version 0.1
+Attempting to communicate with integration: This is csam version 0.1
 ```
 
 - URL: http://localhost:8000/integrations/csam/endpoint/system/111
 - Purpose: Get data from an endpoint
 - Returns: 
 ```text
-Attempting to communicate with 'csam' integration: This is csam version 0.1
+Attempting to communicate with integration: This is csam version 0.1
 
 endpoint: /system/111
 

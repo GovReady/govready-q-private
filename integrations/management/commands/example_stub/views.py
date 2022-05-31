@@ -27,7 +27,7 @@ def integration_identify(request):
     """Integration returns an identification"""
 
     communication = set_integration()
-    return HttpResponse(f"Attempting to communicate with csam integration: {communication.identify()}")
+    return HttpResponse(f"Attempting to communicate with {INTEGRATION_NAME} integration: {communication.identify()}")
 
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""
@@ -161,9 +161,9 @@ def system_info(request, system_id=2):
         "ep": ep
     }
     from siteapp import settings
-    # settings.TEMPLATES[0]['DIRS'].append('/Users/gregelinadmin/Documents/workspace/govready-q-private/integrations/csam/templates/')
+    # settings.TEMPLATES[0]['DIRS'].append('/Users/gregelinadmin/Documents/workspace/govready-q-private/integrations/{INTEGRATION_NAME}/templates/')
     # print(2,"========= TEMPLATES", settings.TEMPLATES[0]['DIRS'])
-    return render(request, "csam/system.html", context)
+    return render(request, "{INTEGRATION_NAME}/system.html", context)
 
 def get_multiple_system_info(request, system_id_list="1,2"):
     """Get and cach system info for multiple systems"""
@@ -184,7 +184,7 @@ def get_multiple_system_info(request, system_id_list="1,2"):
             )
             ep.data = data
             ep.save()
-            msg = f"System id {s.id} info updated from csam system {integration_system_id}"
+            msg = f"System id {s.id} info updated from {INTEGRATION_NAME} system {integration_system_id}"
             print(msg)
             systems_updated.append(msg)
             time.sleep(0.25)

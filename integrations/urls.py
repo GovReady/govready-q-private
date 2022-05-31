@@ -10,6 +10,3 @@ integration_apps = [dir for dir in next(os.walk('integrations'))[1] if dir not i
 for app in integration_apps:
     if os.path.exists(os.path.join('integrations', app, 'urls.py')):
         urlpatterns.append(url(r'^%s/' % app, include('integrations.%s.urls' % app)))
-
-print(f"ALL urlpatterns: {urlpatterns}")
-
