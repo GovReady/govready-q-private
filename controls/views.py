@@ -897,11 +897,6 @@ class OSCALComponentSerializer(ComponentSerializer):
         parties.extend(list_of_parties)
         
         
-        responsible_roles =  [{
-           "role-id": "supplier",# TODO: Not sure what this refers to
-            "party-uuids": [ str(party.get("uuid")) for party in parties ]
-
-        }]
         
         of = {
             "component-definition": {
@@ -923,7 +918,7 @@ class OSCALComponentSerializer(ComponentSerializer):
                         "type": self.element.component_type.lower() if self.element.component_type is not None else "software",
                         "title": self.element.full_name or self.element.name,
                         "description": self.element.description,
-                        "responsible-roles": responsible_roles, # TODO: gathering party-uuids, just filling for now
+                        "responsible-roles": list_of_resp_roles, #TODO: Need to add responsible roles
                         "props": props,
                         "control-implementations": control_implementations
                     }
