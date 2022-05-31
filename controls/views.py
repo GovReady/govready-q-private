@@ -49,7 +49,7 @@ from .forms import StatementPoamForm, PoamForm, ElementForm, DeploymentForm, Sta
 from .models import *
 from .utilities import *
 from siteapp.utils.views_helper import project_context
-from siteapp.models import Role, Party, Appointment, Request, Proposal
+from siteapp.models import Role, Party, Appointment, Request, Proposal, Location
 from integrations.models import Integration
 
 logging.basicConfig()
@@ -833,7 +833,25 @@ class OSCALComponentSerializer(ComponentSerializer):
         
         list_of_parties = []
         list_of_roles = []
+        list_of_resp_parties = []
+        list_of_resp_roles = []
+        list_of_locations = []
 
+        for location in Location.objects.all():
+            # import ipdb; ipdb.set_trace()
+            loc = {
+                "uuid": str(location.uuid),
+                "title": location.title,
+                "address": {
+                    "type": location.address_type,
+                    "addr-lines": [location.apt, location.street],
+                    "city": location.city,
+                    "state": location.state,
+                    "postal-code": location.zipcode,
+                },
+                "remarks": location.remarks,
+            }
+            list_of_locations.append(loc)
         for appointment in self.element.appointments.all():
             party = {
                 "uuid": str(appointment.party.uuid),
@@ -849,8 +867,24 @@ class OSCALComponentSerializer(ComponentSerializer):
                 "short-name": appointment.role.short_name,
                 "description": appointment.role.description,
             }
+            respParty = {
+                'role-id': role["id"],
+                'party-uuids': [party["uuid"]]
+            }
+
+            if len(list_of_resp_parties) == 0:
+                list_of_resp_parties.append(respParty)
+            
+            if role["id"] in [x['role-id'] for x in list_of_resp_parties]:
+                for x in list_of_resp_parties:
+                    if x['role-id'] == role["id"] and party['uuid'] not in x['party-uuids']:
+                        x['party-uuids'].append(party["uuid"])
+            else:
+                list_of_resp_parties.append(respParty)
+
             if party not in list_of_parties:
                 list_of_parties.append(party)
+
             if role not in list_of_roles:
                 list_of_roles.append(role)
             
@@ -861,6 +895,7 @@ class OSCALComponentSerializer(ComponentSerializer):
                 "name": org.name
             } for org in orgs]
         parties.extend(list_of_parties)
+        
         
         responsible_roles =  [{
            "role-id": "supplier",# TODO: Not sure what this refers to
@@ -876,8 +911,11 @@ class OSCALComponentSerializer(ComponentSerializer):
                     "last-modified": self.element.updated.replace(microsecond=0).isoformat(),
                     "version": self.element.updated.replace(microsecond=0).isoformat(),
                     "oscal-version": self.element.oscal_version,
-                    "parties": parties,
+                    
                     "roles": list_of_roles,
+                    "locations": list_of_locations,
+                    "parties": parties,
+                    "responsible-parties": list_of_resp_parties,
                 },
                 "components": [
                    {

@@ -1420,7 +1420,7 @@ class Location(BaseModel):
     apt = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="Apt/Suite")
     city = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="City")
     state = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="State")
-    zip = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="Zip")
+    zipcode = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="Zip")
     country = models.CharField(max_length=250, unique=False, blank=True, null=True, help_text="Country")
     remarks = models.TextField(unique=False, blank=True, null=True, help_text="Remarks")
     
