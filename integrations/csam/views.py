@@ -268,7 +268,7 @@ def match_system_from_remote(request, remote_system_id):
         else:
             msg = f"More than one system in GovReady matched to CSAM system name \"{ep.data['name']}\"."
     else:
-        msg = f"No system in GovReady matched to CSAM system name \"{ep.data['name']}\"."
+        msg = f"No system in GovReady matched to CSAM system id {csam_system_id}."
     return HttpResponse(
         f"<html><body><p>{msg}</p>"
         f"<p>now: {datetime.now()}</p>"
