@@ -80,6 +80,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         claims_verified = self.verify_claims(user_info)
         if not claims_verified:
             msg = 'Claims verification failed'
+            HttpResponseForbidden()
             raise SuspiciousOperation(msg)
 
         # use email as username
