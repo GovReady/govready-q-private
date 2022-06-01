@@ -88,15 +88,15 @@ class OIDCAuth(OIDCAuthenticationBackend):
         and configured to do so. Returns nothing if multiple users are matched."""
 
         user_info = self.get_userinfo(access_token, id_token, payload)
-        LOGGER.warning("\n DEBUG user_info (1):", user_info)
+        # LOGGER.warning("\n DEBUG user_info (1):", user_info)
 
         # Check if user has role to access service
         GROUP_SPLIT_CHAR = '^'
         user_groups = user_info.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        LOGGER.warning(f"\n DEBUG user_info (1a) user_groups len {len(user_groups)}:", user_info.get(settings.OIDC_CLAIMS_MAP['groups']))
+        # LOGGER.warning(f"\n DEBUG user_info (1a) user_groups len {len(user_groups)}:", user_info.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['normal'] not in user_groups:
             # User does not have access to application
-            LOGGER.warning("\n DEBUG user_info (1c): user does not have role to access application")
+            # LOGGER.warning("\n DEBUG user_info (1c): user does not have role to access application")
             HttpResponseForbidden()
             # redirect_url = "logout"
             # logout_url = self.get_settings('OIDC_OP_AUTHORIZATION_ENDPOINT')
@@ -149,7 +149,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Check to see if user has admin role
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        LOGGER.warning(f"\n DEBUG user_info (10a) user_groups len {len(user_groups)}:", claims.get(settings.OIDC_CLAIMS_MAP['groups']))
+        # LOGGER.warning(f"\n DEBUG user_info (10a) user_groups len {len(user_groups)}:", claims.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['admin'] in user_groups:
             # User is an admin
             user.is_superuser = True
