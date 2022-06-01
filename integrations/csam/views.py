@@ -262,9 +262,9 @@ def match_system_from_remote(request, remote_system_id):
             if matched_system.info == {}:
                 matched_system.info = {"csam_system_id": csam_system_id }
                 matched_system.save()
-                msg = f"Matched existing System in GovReady based on CSAM system name {ep.data['name']}."
+                msg = f"Matched existing System {matched_system.id} in GovReady based on CSAM system name {ep.data['name']}."
             else:
-                msg = f"System in GovReady already matched to CSAM system id for \"{ep.data['name']}\"."
+                msg = f"System {matched_system.id} in GovReady already matched to CSAM system id for \"{ep.data['name']}\"."
         else:
             msg = f"More than one system in GovReady matched to CSAM system name \"{ep.data['name']}\"."
     else:

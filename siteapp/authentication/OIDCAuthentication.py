@@ -118,7 +118,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         user.save()
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        if settings.OIDC_ROLES_MAP['admin'] in user_groups:
+        if settings.OIDC_ROLES_MAP['admin'] in claims:
             user.is_superuser = True
             user.save()
         if user.default_portfolio is None:
