@@ -69,10 +69,10 @@ class OIDCAuth(OIDCAuthenticationBackend):
         #         LOGGER.warning(f"{str(self.__dict__[prop])}")
         #     except:
         #         LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
-        scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email profile')
+        # scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email profile')
 
-        if 'email' in scopes.split():
-            return 'email' in claims
+        # if 'email' in scopes.split():
+        #     return 'email' in claims
 
         LOGGER.warning('Custom OIDC_RP_SCOPES defined. '
                        'You need to override `verify_claims` for custom claims verification.')
