@@ -18,6 +18,7 @@ urlpatterns = [
 
     url(r"^system/(?P<system_id>.*)$", views.system_info, name='csam_system_info'),
 
+    url(r"^match_system_from_remote/(?P<remote_system_id>.*)$", views.match_system_from_remote, name='match_system_from_remote'),
     url(r"^create_system_from_remote/(?P<remote_system_id>.*)$", views.create_system_from_remote, name='create_system_from_remote'),
     
 ]
