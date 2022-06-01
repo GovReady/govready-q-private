@@ -62,13 +62,13 @@ class OIDCAuth(OIDCAuthenticationBackend):
 
         # Verify claims required by default configuration
         cntr = 0
-        for prop in self.__dict__.keys():
-            cntr += 1
-            LOGGER.warning(f"DEBUG claims {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
-            try:
-                LOGGER.warning(f"{str(self.__dict__[prop])}")
-            except:
-                LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
+        # for prop in self.__dict__.keys():
+        #     cntr += 1
+        #     LOGGER.warning(f"DEBUG claims {cntr} self.__dict__[{prop}]: {str(self.__dict__[prop])}")
+        #     try:
+        #         LOGGER.warning(f"{str(self.__dict__[prop])}")
+        #     except:
+        #         LOGGER.warning(f"Unable to convert self.__dict__[{prop}] to string. Type: {type(self.__dict__[prop])}")
         scopes = self.get_settings('OIDC_RP_SCOPES', 'openid email profile')
 
         if 'email' in scopes.split():
@@ -93,7 +93,6 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Check if user has role to access service
         GROUP_SPLIT_CHAR = '^'
         user_groups = user_info.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        # LOGGER.warning(f"\n DEBUG user_info (1a) user_groups len {len(user_groups)}:", user_info.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['normal'] not in user_groups:
             # User does not have access to application
             # LOGGER.warning("\n DEBUG user_info (1c): user does not have role to access application")
@@ -107,7 +106,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
             msg = 'Claims verification failed'
             raise SuspiciousOperation(msg)
 
-        LOGGER.warning("\n DEBUG user_info (2):", user_info)
+        # LOGGER.warning("\n DEBUG user_info (2):", user_info)
 
         # email based filtering
         #users = self.filter_users_by_claims(user_info)
