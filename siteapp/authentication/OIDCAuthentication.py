@@ -118,8 +118,9 @@ class OIDCAuth(OIDCAuthenticationBackend):
         user.save()
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        if settings.OIDC_ROLES_MAP['admin'] in claims:
+        if settings.OIDC_ROLES_MAP['admin'] in user_groups:
             user.is_superuser = True
+            user.is_staff = True
             user.save()
         if user.default_portfolio is None:
             portfolio = user.create_default_portfolio_if_missing()
@@ -138,10 +139,12 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Update permissions based on claim groups
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        if settings.OIDC_ROLES_MAP['admin'] in claims:
+        if settings.OIDC_ROLES_MAP['admin'] in user_groups:
             user.is_superuser = True
+            user.is_staff = True
         else:
             user.is_superuser = False
+            user.is_staff = False
 
         new_values = [getattr(user, x.name) for x in user._meta.get_fields() if hasattr(user, x.name)]
         if new_values != original_values:
