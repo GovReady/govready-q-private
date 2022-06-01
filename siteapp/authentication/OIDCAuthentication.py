@@ -138,7 +138,7 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Update permissions based on claim groups
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
-        if settings.OIDC_ROLES_MAP['admin'] in user_groups:
+        if settings.OIDC_ROLES_MAP['admin'] in claims:
             user.is_superuser = True
         else:
             user.is_superuser = False
