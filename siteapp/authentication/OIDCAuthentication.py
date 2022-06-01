@@ -148,12 +148,13 @@ class OIDCAuth(OIDCAuthenticationBackend):
         # Check to see if user has admin role
         GROUP_SPLIT_CHAR = '^'
         user_groups = claims.get(settings.OIDC_CLAIMS_MAP['groups']).split(GROUP_SPLIT_CHAR)
+        user.save()
         # LOGGER.warning(f"\n DEBUG user_info (10a) user_groups len {len(user_groups)}:", claims.get(settings.OIDC_CLAIMS_MAP['groups']))
         if settings.OIDC_ROLES_MAP['admin'] in user_groups:
             # User is an admin
             user.is_superuser = True
-            LOGGER.warning("\n DEBUG user_info (10b): user is an admin")
-        user.save()
+            user.save()
+            # LOGGER.warning("\n DEBUG user_info (10b): user is an admin")
         if user.default_portfolio is None:
             portfolio = user.create_default_portfolio_if_missing()
         return user
