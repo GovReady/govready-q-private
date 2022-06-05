@@ -41,19 +41,16 @@ def integration_identify(request):
         data.append(up_dict)
 
     # Retrieve README
-    with open('integrations/csam/README.md', 'r') as f:
+    with open(f'integrations/{INTEGRATION_NAME}/README.md', 'r') as f:
         readme_markdown = f.readlines()
         readme_html = markdown.markdown("\n".join(readme_markdown))
 
-    return HttpResponse(
-        f"<html><body><p>Identify integration communication '{INTEGRATION_NAME}' "
-        f"integration: {communication.identify()}</p>"
-        f"<p>Returned data:</p>"
-        f"<h2>Links</h2>"
-        f"<pre>{json.dumps(data,indent=4)}</pre>"
-        f"<h2>README</h2>"
-        f"<div style='width:900px; padding:12px; border: 0.5px solid #888; background-color: #fcfcfc; font-family:courier;'>{readme_html}</div>"
-        f"</body></html>")
+    return render(request, "integrations/integration_detail.html", {
+        "integration": communication.identify(),
+        "data": json.dumps(data,indent=4),
+        # "create_system_form_html": create_system_form_html,
+        "readme_html": readme_html,
+        })
 
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""

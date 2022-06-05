@@ -10,7 +10,7 @@ from django.db.models import Q
 from integrations import csam
 from integrations.models import Integration, Endpoint
 from .communicate import CSAMCommunication
-from controls.models import System
+from controls.models import System, Element
 from siteapp.models import Organization, Portfolio
 from siteapp.views import get_compliance_apps_catalog_for_user, start_app
 from guidedmodules.models import AppSource
@@ -49,19 +49,25 @@ def integration_identify(request):
         data.append(up_dict)
 
     # Retrieve README
-    with open('integrations/csam/README.md', 'r') as f:
+    with open(f'integrations/{INTEGRATION_NAME}/README.md', 'r') as f:
         readme_markdown = f.readlines()
         readme_html = markdown.markdown("\n".join(readme_markdown))
 
-    return HttpResponse(
-        f"<html><body><p>Identify integration communication '{INTEGRATION_NAME}' "
-        f"integration: {communication.identify()}</p>"
-        f"<p>Returned data:</p>"
-        f"<h2>Links</h2>"
-        f"<pre>{json.dumps(data,indent=4)}</pre>"
-        f"<h2>README</h2>"
-        f"<div style='width:900px; padding:12px; border: 0.5px solid #888; background-color: #fcfcfc; font-family:courier;'>{readme_html}</div>"
-        f"</body></html>")
+    # Form to create system from remote service
+    create_system_form_html = f"""
+        <form action="/integrations/{INTEGRATION_NAME}/create_system_from_remote2/" method="GET">
+            <div>Create a system with the ID of a system in {INTEGRATION_NAME}</div>
+            Remote System Id: <input type="input" name="remote_system_id_field" id="remote_system_id_field">
+            <input type="submit">
+        </form>
+    """
+    return render(request, "integrations/integration_detail.html", {
+        "integration": communication.identify(),
+        "data": json.dumps(data,indent=4),
+        "create_system_form_html": create_system_form_html,
+        "readme_html": readme_html,
+    })
+
 
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""
@@ -312,8 +318,6 @@ def match_system_from_remote(request, remote_system_id):
 def create_system_from_remote(request, remote_system_id):
     """Create a system in GovReady-Q based on info from integrated service"""
 
-    print("Create a system in GovReady-Q based on info from integrated service")
-
     communication = set_integration()
     csam_system_id = int(remote_system_id)
     endpoint = f'/v1/systems/{csam_system_id}'
@@ -322,17 +326,15 @@ def create_system_from_remote(request, remote_system_id):
         integration=INTEGRATION,
         endpoint_path=endpoint
     )
-    # TODO: Refresh data if empty
     if created:
-        # Cache not available
-        data = communication.get_response(endpoint)
-        # Cache remote data locally in database
+        data = communication.get_response(f"{endpoint}")
         ep.data = data
         ep.save()
     else:
-        # Cache available
-        cached = True
-        pass
+        # In future, we may want to handle differently if data already stored locally
+        data = communication.get_response(f"{endpoint}")
+        ep.data = data
+        ep.save()
 
     # Check if system aleady exists with csam_system_id
     if not System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id})).exists():
@@ -363,6 +365,7 @@ def create_system_from_remote(request, remote_system_id):
             if not request.user.default_portfolio:
                 request.user.create_default_portfolio_if_missing()
             portfolio = request.user.default_portfolio
+        # import ipdb; ipdb.set_trace()
         try:
             project = start_app(appver, organization, request.user, folder, task, q, portfolio)
         except ModuleDefinitionError as e:
@@ -373,7 +376,136 @@ def create_system_from_remote(request, remote_system_id):
         new_system.save()
         # Update System name to CSAM system name
         nsre = new_system.root_element
-        nsre.name = ep.data['name']
+        # Make sure system root element name is unique
+        name_suffix = ""
+        while Element.objects.filter(name=f"{ep.data['name']}{name_suffix}").exists():
+            # Element exists with that name
+            if name_suffix == "":
+                name_suffix = 1
+            else:
+                name_suffix = str(int(name_suffix)+1)
+        if name_suffix == "":
+            nsre.name = ep.data['name']
+        else:
+            nsre.name = f"{ep.data['name']} {name_suffix}"
+        nsre.save()
+        # Update System Project title to CSAM system name
+        prt = project.root_task
+        prt.title_override = ep.data['name']
+        prt.save()
+        # Redirect to the new project.
+        # return HttpResponseRedirect(project.get_absolute_url())
+        msg = f"Created new System in GovReady based on CSAM system id {csam_system_id}."
+    else:
+        systems = System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id}))
+        if len(systems) == 1:
+            system = systems[0]
+            # Assume one project per system
+            project = system.projects.all()[0]
+            msg = f"System aleady exists in GovReady based on CSAM system id {csam_system_id}."
+        else:
+            project = None
+            msg = f"Multiple systems aleady exists in GovReady based on CSAM system id {csam_system_id}."
+            msg = msg + f"They are: " + ",".join(str(systems))
+            return HttpResponse(
+                f"<html><body><p>{msg}</p>"
+                f"<p>now: {datetime.now()}</p>"
+                f"<p>Returned data:</p>"
+                f"<pre>{json.dumps(ep.data,indent=4)}</pre>"
+                f"</body></html>")
+    return HttpResponse(
+        f"<html><body><p>{msg}</p>"
+        f"<p>visit system {project.title} at {project.get_absolute_url()} </p>"
+        f"<p>now: {datetime.now()}</p>"
+        f"<p>Returned data:</p>"
+        f"<pre>{json.dumps(ep.data,indent=4)}</pre>"
+        f"</body></html>")
+
+def create_system_from_remote2(request):
+    """Create a system in GovReady-Q based on info from integrated service"""
+
+    communication = set_integration()
+    print("request", request.GET)
+    remote_system_id = request.GET.get("remote_system_id_field", None)
+
+    if remote_system_id is None:
+        msg = "No remote system id received."
+        data = {}
+        return HttpResponse(
+            f"<html><body><p>{msg}</p>"
+            f"<p>Returned data:</p>"
+            f"<pre>{json.dumps(data,indent=4)}</pre>"
+            f"</body></html>")
+
+    csam_system_id = int(remote_system_id)
+    endpoint = f'/v1/systems/{csam_system_id}'
+    # is there local information?
+    ep, created = Endpoint.objects.get_or_create(
+        integration=INTEGRATION,
+        endpoint_path=endpoint
+    )
+    if created:
+        data = communication.get_response(f"{endpoint}")
+        ep.data = data
+        ep.save()
+    else:
+        # In future, we may want to handle differently if data already stored locally
+        data = communication.get_response(f"{endpoint}")
+        ep.data = data
+        ep.save()
+
+    # Check if system aleady exists with csam_system_id
+    if not System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id})).exists():
+        # Create new system
+        # What is default template?
+        source_slug = "govready-q-files-startpack"
+        app_name = "speedyssp"
+        # can user start the app?
+        # Is this a module the user has access to? The app store
+        # does some authz based on the organization.
+        catalog = get_compliance_apps_catalog_for_user(request.user)
+        for app_catalog_info in catalog:
+            if app_catalog_info["key"] == source_slug + "/" + app_name:
+                # We found it.
+                break
+        else:
+            raise Http404()
+        # Start the most recent version of the app.
+        appver = app_catalog_info["versions"][0]
+        organization = Organization.objects.first()  # temporary
+        folder = None
+        task = None
+        q = None
+        # Get portfolio project should be included in.
+        if request.GET.get("portfolio"):
+            portfolio = Portfolio.objects.get(id=request.GET.get("portfolio"))
+        else:
+            if not request.user.default_portfolio:
+                request.user.create_default_portfolio_if_missing()
+            portfolio = request.user.default_portfolio
+        # import ipdb; ipdb.set_trace()
+        try:
+            project = start_app(appver, organization, request.user, folder, task, q, portfolio)
+        except ModuleDefinitionError as e:
+            error = str(e)
+        # Associate System with CSAM system
+        new_system = project.system 
+        new_system.info = {"csam_system_id": csam_system_id}
+        new_system.save()
+        # Update System name to CSAM system name
+        nsre = new_system.root_element
+        # Make sure system root element name is unique
+        name_suffix = ""
+        while Element.objects.filter(name=f"{ep.data['name']}{name_suffix}").exists():
+            # Element exists with that name
+            if name_suffix == "":
+                name_suffix = 1
+            else:
+                name_suffix = str(int(name_suffix)+1)
+        if name_suffix == "":
+            nsre.name = ep.data['name']
+        else:
+            nsre.name = f"{ep.data['name']} {name_suffix}"
         nsre.save()
         # Update System Project title to CSAM system name
         prt = project.root_task

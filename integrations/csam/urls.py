@@ -23,6 +23,7 @@ urlpatterns = [
     url(r"^system/(?P<system_id>.*)$", views.system_info, name=f'{INTEGRATION_NAME}_csam_system_info'),
 
     url(r"^match_system_from_remote/(?P<remote_system_id>.*)$", views.match_system_from_remote, name=f'{INTEGRATION_NAME}_match_system_from_remote'),
+    url(r"^create_system_from_remote2/$", views.create_system_from_remote2, name=f'{INTEGRATION_NAME}_create_system_from_remote2'),
     url(r"^create_system_from_remote/(?P<remote_system_id>.*)$", views.create_system_from_remote, name=f'{INTEGRATION_NAME}_create_system_from_remote'),
     
 ]
