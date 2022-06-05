@@ -74,7 +74,7 @@ class Communication(HelperMixin, ABC):
 
         msg = f"The {self.integration_name} integration is not fully configured. The problem could be no database record or no integration subclass."
 
-    def get_response(self, endpoint, headers=None, verify=False):
+    def get_response(self, endpoint, headers=None, verify=False, timeout=20):
         response = requests.get(f"{self.base_url}{endpoint}")
         self.status_code = response.status_code
         if self.status_code == 200:
