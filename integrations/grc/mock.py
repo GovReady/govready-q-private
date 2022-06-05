@@ -42,6 +42,7 @@ from django.utils import timezone
 from time import time
 
 
+HOSTNAME = 'localhost'
 PORT = 9022
 MOCK_SRVC = "GRC"
 
@@ -248,7 +249,7 @@ def main():
 
     print(f"\nStarting service '{MOCK_SRVC}' running on port {PORT}...")
     print(f"Information on {len(dhs_sorns)} systems available\n")
-    httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
+    httpd = HTTPServer((HOSTNAME, PORT), SimpleHTTPRequestHandler)
     httpd.serve_forever()
 
 

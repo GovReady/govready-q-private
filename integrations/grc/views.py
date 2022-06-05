@@ -4,17 +4,17 @@ from datetime import datetime
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse, HttpResponseNotFound
 from integrations.models import Integration, Endpoint
-from .communicate import CSAMCommunication
+from .communicate import GRCCommunication
 from controls.models import System
 
-INTEGRATION_NAME = 'csam'
+INTEGRATION_NAME = 'grc'
 try:
     INTEGRATION = get_object_or_404(Integration, name=INTEGRATION_NAME)
 except:
     HttpResponseNotFound(f'<h1>404 - Integration configuration missing. Create Integration database record.</h1>')
 
 def set_integration():
-    return CSAMCommunication()
+    return GRCCommunication()
 
 def integration_identify(request):
     """Integration returns an identification"""

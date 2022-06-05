@@ -7,10 +7,10 @@ from integrations.utils.integration import Communication
 from integrations.models import Integration, Endpoint
 
 
-class CSAMCommunication(Communication):
+class GRCCommunication(Communication):
     
     DESCRIPTION = {
-        "name": "csam",
+        "name": "grc",
         "description": "GRC API Service",
         "version": "0.3",
         "integration_db_record": True,

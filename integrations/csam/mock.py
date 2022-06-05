@@ -42,6 +42,7 @@ from django.utils import timezone
 from time import time
 
 
+HOSTNAME = 'localhost'
 PORT = 9002
 MOCK_SRVC = "CSAM"
 
@@ -258,7 +259,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data, indent=4).encode('UTF-8'))
 
 def main():
-    httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
+    httpd = HTTPServer((HOSTNAME, PORT), SimpleHTTPRequestHandler)
     httpd.serve_forever()
 
 if __name__ == "__main__":
