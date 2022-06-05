@@ -36,13 +36,14 @@ def integration_identify(request):
         try:
             resolved_url = reverse(up.name)
         except:
-            resolved_url = "exception"
+            # hack to approximate reverse url path
+            url_match_part = str(up.pattern.regex).replace('re.compile','').replace("('^","").replace("$'","")
+            resolved_url = f"/integrations/{INTEGRATION_NAME}/{url_match_part}"
         up_dict = {
-            "name": up.name,
             "integration_name": INTEGRATION_NAME,
-            "url": f"{up.pattern.regex}",
-            "resolved_url": resolved_url,
-            "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
+            "name": up.name,
+            "url": resolved_url,
+            # "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
         }
         data.append(up_dict)
 

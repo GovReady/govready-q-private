@@ -21,12 +21,23 @@ def set_integration():
 def integration_identify(request):
     """Integration returns an identification"""
 
-
+    from django.urls import reverse
     communication = set_integration()
     url_patterns = getattr(importlib.import_module(f'integrations.{INTEGRATION_NAME}.urls'), "urlpatterns")
     data = []
     for up in url_patterns:
-        up_dict = {"name": up.name}
+        try:
+            resolved_url = reverse(up.name)
+        except:
+            # hack to approximate reverse url path
+            url_match_part = str(up.pattern.regex).replace('re.compile','').replace("('^","").replace("$'","")
+            resolved_url = f"/integrations/{INTEGRATION_NAME}/{url_match_part}"
+        up_dict = {
+            "integration_name": INTEGRATION_NAME,
+            "name": up.name,
+            "url": resolved_url,
+            # "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
+        }
         data.append(up_dict)
 
     return HttpResponse(
