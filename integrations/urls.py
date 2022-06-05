@@ -1,7 +1,10 @@
 from django.conf.urls import include, url
 import os
+from integrations import views
 
 urlpatterns = [
+    url(r"^$", views.list_integrations, name='list_integrations'),
+
     url(r"^jsonplaceholder/", include("integrations.jsonplaceholder.urls")),
 ]
 

@@ -1,4 +1,6 @@
 import json
+import time
+import importlib
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse, HttpResponseNotFound
 from integrations.models import Integration, Endpoint
@@ -19,9 +21,20 @@ def set_integration():
 def integration_identify(request):
     """Integration returns an identification"""
 
-    communication = set_integration()
-    return HttpResponse(f"Attempting to communicate with {INTEGRATION_NAME} integration: {communication.identify()}")
 
+    communication = set_integration()
+    url_patterns = getattr(importlib.import_module(f'integrations.{INTEGRATION_NAME}.urls'), "urlpatterns")
+    data = []
+    for up in url_patterns:
+        up_dict = {"name": up.name}
+        data.append(up_dict)
+
+    return HttpResponse(
+        f"<html><body><p>Identify integration communication '{INTEGRATION_NAME}' "
+        f"integration: {communication.identify()}</p>"
+        f"<p>Returned data:</p>"
+        f"<pre>{json.dumps(data,indent=4)}</pre>"
+        f"</body></html>")
 
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""

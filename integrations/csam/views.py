@@ -1,6 +1,7 @@
 from hashlib import new
 import json
 import time
+import importlib
 from datetime import datetime
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
@@ -27,8 +28,30 @@ def set_integration():
 def integration_identify(request):
     """Integration returns an identification"""
 
+    from django.urls import reverse
     communication = set_integration()
-    return HttpResponse(f"Attempting to communicate with csam integration: {communication.identify()}")
+    url_patterns = getattr(importlib.import_module(f'integrations.{INTEGRATION_NAME}.urls'), "urlpatterns")
+    data = []
+    for up in url_patterns:
+        try:
+            resolved_url = reverse(up.name)
+        except:
+            resolved_url = "exception"
+        up_dict = {
+            "name": up.name,
+            "integration_name": INTEGRATION_NAME,
+            "url": f"{up.pattern.regex}",
+            "resolved_url": resolved_url,
+            "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
+        }
+        data.append(up_dict)
+
+    return HttpResponse(
+        f"<html><body><p>Identify integration communication '{INTEGRATION_NAME}' "
+        f"integration: {communication.identify()}</p>"
+        f"<p>Returned data:</p>"
+        f"<pre>{json.dumps(data,indent=4)}</pre>"
+        f"</body></html>")
 
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""

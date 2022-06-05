@@ -248,7 +248,6 @@ def main():
     """Main loop"""
 
     print(f"\nStarting service '{MOCK_SRVC}' running on port {PORT}...")
-    print(f"Information on {len(dhs_sorns)} systems available\n")
     httpd = HTTPServer((HOSTNAME, PORT), SimpleHTTPRequestHandler)
     httpd.serve_forever()
 

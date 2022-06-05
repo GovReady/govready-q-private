@@ -1,0 +1,15 @@
+<html>
+
+    <body>
+        <h2>Configured Integrations</h2>
+        <div>
+            {% for integration in integrations %}
+            <p>
+                {{ integration.integration_name }} - {{ integration.integration_summary }}
+                <a href="/integrations/{{ integration.integration_name }}">identify</a>
+            </p>
+            {% endfor %}
+        </div>
+    </body>
+
+</html>
