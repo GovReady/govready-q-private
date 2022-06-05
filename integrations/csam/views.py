@@ -68,7 +68,6 @@ def integration_identify(request):
         "readme_html": readme_html,
     })
 
-
 def integration_endpoint(request, endpoint=None):
     """Communicate with an integrated service"""
 
