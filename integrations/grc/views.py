@@ -9,7 +9,7 @@ from django.db.models import Q
 from integrations.models import Integration, Endpoint
 from .communicate import GRCCommunication
 from controls.models import System, Element
-from siteapp.models import Organization, Portfolio
+from siteapp.models import Organization, Portfolio, Folder
 from siteapp.views import get_compliance_apps_catalog_for_user, start_app
 from guidedmodules.models import AppSource
 from guidedmodules.app_loading import ModuleDefinitionError
@@ -267,7 +267,6 @@ def update_system_description(request, params={"src_obj_type": "system", "src_ob
         result = data
     return result
 
-
 def match_system_from_remote(request, remote_system_id):
     """Match a system in GovReady-Q based on info from integrated service"""
 
@@ -355,7 +354,15 @@ def create_system_from_remote(request, remote_system_id):
         # Start the most recent version of the app.
         appver = app_catalog_info["versions"][0]
         organization = Organization.objects.first()  # temporary
-        folder = None
+        default_folder_name = "Started Apps"
+        folder = Folder.objects.filter(
+            organization=organization,
+            admin_users=request.user,
+            title=default_folder_name,
+        ).first()
+        if not folder:
+            folder = Folder.objects.create(organization=organization, title=default_folder_name)
+            folder.admin_users.add(request.user)
         task = None
         q = None
         # Get portfolio project should be included in.
@@ -473,7 +480,15 @@ def create_system_from_remote2(request):
         # Start the most recent version of the app.
         appver = app_catalog_info["versions"][0]
         organization = Organization.objects.first()  # temporary
-        folder = None
+        default_folder_name = "Started Apps"
+        folder = Folder.objects.filter(
+            organization=organization,
+            admin_users=request.user,
+            title=default_folder_name,
+        ).first()
+        if not folder:
+            folder = Folder.objects.create(organization=organization, title=default_folder_name)
+            folder.admin_users.add(request.user)
         task = None
         q = None
         # Get portfolio project should be included in.

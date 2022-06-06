@@ -11,7 +11,7 @@ from integrations import csam
 from integrations.models import Integration, Endpoint
 from .communicate import CSAMCommunication
 from controls.models import System, Element
-from siteapp.models import Organization, Portfolio
+from siteapp.models import Organization, Portfolio, Folder
 from siteapp.views import get_compliance_apps_catalog_for_user, start_app
 from guidedmodules.models import AppSource
 from guidedmodules.app_loading import ModuleDefinitionError
@@ -354,7 +354,15 @@ def create_system_from_remote(request, remote_system_id):
         # Start the most recent version of the app.
         appver = app_catalog_info["versions"][0]
         organization = Organization.objects.first()  # temporary
-        folder = None
+        default_folder_name = "Started Apps"
+        folder = Folder.objects.filter(
+            organization=organization,
+            admin_users=request.user,
+            title=default_folder_name,
+        ).first()
+        if not folder:
+            folder = Folder.objects.create(organization=organization, title=default_folder_name)
+            folder.admin_users.add(request.user)
         task = None
         q = None
         # Get portfolio project should be included in.
@@ -364,7 +372,6 @@ def create_system_from_remote(request, remote_system_id):
             if not request.user.default_portfolio:
                 request.user.create_default_portfolio_if_missing()
             portfolio = request.user.default_portfolio
-        # import ipdb; ipdb.set_trace()
         try:
             project = start_app(appver, organization, request.user, folder, task, q, portfolio)
         except ModuleDefinitionError as e:
@@ -472,7 +479,15 @@ def create_system_from_remote2(request):
         # Start the most recent version of the app.
         appver = app_catalog_info["versions"][0]
         organization = Organization.objects.first()  # temporary
-        folder = None
+        default_folder_name = "Started Apps"
+        folder = Folder.objects.filter(
+            organization=organization,
+            admin_users=request.user,
+            title=default_folder_name,
+        ).first()
+        if not folder:
+            folder = Folder.objects.create(organization=organization, title=default_folder_name)
+            folder.admin_users.add(request.user)
         task = None
         q = None
         # Get portfolio project should be included in.

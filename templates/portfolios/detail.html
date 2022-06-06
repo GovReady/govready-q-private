@@ -48,8 +48,8 @@ Remove contextbar from top of page
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-1">&nbsp;</div>
-        <div class="col-xs-10 col-md-4">Project</div>
+        <!-- <div class="col-sm-1">&nbsp;</div> -->
+        <div class="col-xs-10 col-md-5">Project</div>
         <div class="col-xs-6 col-sm-1">ID</div>
         <div class="col-xs-6 col-sm-2">Portfolio</div>
         <div class="col-xs-6 col-sm-2">Role</div>
@@ -60,7 +60,7 @@ Remove contextbar from top of page
       {% for project in projects %}
       <div class="row portfolio-row">
 
-        <div class="col-sm-1">
+        <!-- <div class="col-sm-1">
           {% if project.root_task.get_app_icon_url %}
             <a href="{{project.get_absolute_url}}" class="project-image">
               <img src="{{project.root_task.get_app_icon_url}}" class="img-responsive" alt="App Icon">
@@ -68,9 +68,9 @@ Remove contextbar from top of page
           {% else %}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           {% endif %}
-        </div>
+        </div> -->
 
-        <div class="col-xs-10 col-md-4">
+        <div class="col-xs-10 col-md-5">
           <a href="{{project.get_absolute_url}}" class="portfolio-project-link">{{project.title}}</a>
         </div>
 
