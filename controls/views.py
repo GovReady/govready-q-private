@@ -3787,12 +3787,12 @@ def get_integrations_system_info(request, system_id):
             #  'nextFyFunding': 0,
             #  'categorization': 'string',
             #  'fundingImportStatus': 'string'}
-            purpose = f"{csam_data['purpose']}"
-            organization_name = f"{csam_data['organization']} {csam_data['subOrganization']}"
-            other_id = f"{csam_data['id']}"
-            system_type = f"{csam_data['systemType']}"
-            status = f"{csam_data['operationalStatus']}"
-            impact = f"{csam_data['categorization']}"
+            purpose = f"{csam_data.get('purpose_short', 'Missing')}"
+            organization_name = f"{csam_data.get('organization', 'Missing')} {csam_data.get('subOrganization', 'Missing')}"
+            other_id = f"{csam_data.get('id', 'Missing')}"
+            system_type = f"{csam_data.get('systemType', 'Missing')}"
+            status = f"{csam_data.get('operationalStatus', 'Missing')}"
+            impact = f"{csam_data.get('categorization', 'Missing')}"
         else:
             # retreive fresh data from CSAM
             pass
