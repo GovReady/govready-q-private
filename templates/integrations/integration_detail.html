@@ -11,7 +11,7 @@ Integration Detail
         h1 { font-size: 24px; border-bottom: 0.5px solid #888;}
 
         .integration-general { width:80%; margin: auto; padding:12px; }
-        .integration-content { margin-top: 20px; padding: 20px; border: 0.5px solid #888; }
+        .integration-content { margin-top: 20px; padding: 20px 30px 20px 30px; border: 0.5px solid #888; }
 
     </style>
 {% endblock %}
@@ -26,13 +26,13 @@ Integration Detail
 {% block body %}
 
     <div class="integration-general">
-        <h2 style="border-bottom: 0px;">{{ integration }}</h2>
+        <h2>{{ integration }}</h2>
 
         <div class="integration-content">
             <form action="/integrations/{{ integration_name }/create_system_from_remote2/" method="GET">
-                Create a system from {{ integration_name }} system ID: 
+                Enter {{ integration_name }} system ID to create new system: 
                 <input type="input" name="remote_system_id_field" id="remote_system_id_field">
-                <input type="submit">
+                <input type="submit" name="submit" value="Create">
             </form>
         </div>
 
