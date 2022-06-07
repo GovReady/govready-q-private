@@ -30,7 +30,7 @@ def integration_identify(request):
     from django.urls import reverse
     communication = set_integration()
     url_patterns = getattr(importlib.import_module(f'integrations.{INTEGRATION_NAME}.urls'), "urlpatterns")
-    data = []
+    url_routes = []
     for up in url_patterns:
         try:
             resolved_url = reverse(up.name)
@@ -44,26 +44,17 @@ def integration_identify(request):
             "url": resolved_url,
             # "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
         }
-        data.append(up_dict)
+        url_routes.append(up_dict)
 
     # Retrieve README
     with open(f'integrations/{INTEGRATION_NAME}/README.md', 'r') as f:
         readme_markdown = f.readlines()
         readme_html = markdown.markdown("\n".join(readme_markdown))
 
-    # Form to create system from remote service
-    create_system_form_html = f"""
-        <form action="/integrations/{INTEGRATION_NAME}/create_system_from_remote2/" method="GET">
-            <div>Create a system with the ID of a system in {INTEGRATION_NAME}</div>
-            Remote System Id: <input type="input" name="remote_system_id_field" id="remote_system_id_field">
-            <input type="submit">
-        </form>
-    """
-
     return render(request, "integrations/integration_detail.html", {
         "integration": communication.identify(),
-        "data": json.dumps(data,indent=4),
-        "create_system_form_html": create_system_form_html,
+        "integration_name": INTEGRATION_NAME,
+        "url_routes": url_routes,
         "readme_html": readme_html,
         })
 

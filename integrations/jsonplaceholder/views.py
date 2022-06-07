@@ -25,7 +25,7 @@ def integration_identify(request):
     from django.urls import reverse
     communication = set_integration()
     url_patterns = getattr(importlib.import_module(f'integrations.{INTEGRATION_NAME}.urls'), "urlpatterns")
-    data = []
+    url_routes = []
     for up in url_patterns:
         try:
             resolved_url = reverse(up.name)
@@ -39,7 +39,7 @@ def integration_identify(request):
             "url": resolved_url,
             # "importlib": f"importlib.import_module('integrations.{INTEGRATION_NAME}.views.{up.name}')"
         }
-        data.append(up_dict)
+        url_routes.append(up_dict)
 
     # Retrieve README
     with open(f'integrations/{INTEGRATION_NAME}/README.md', 'r') as f:
@@ -48,8 +48,8 @@ def integration_identify(request):
 
     return render(request, "integrations/integration_detail.html", {
         "integration": communication.identify(),
-        "data": json.dumps(data,indent=4),
-        # "create_system_form_html": create_system_form_html,
+        "integration_name": INTEGRATION_NAME,
+        "url_routes": url_routes,
         "readme_html": readme_html,
         })
 

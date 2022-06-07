@@ -55,12 +55,6 @@ def list_integrations(request):
             }
         general_integrations.append(general_integration)
 
-    # general_integrations = [
-    #     { "integration_name": "CSAM", "integration_summary": "Provides access to system information stored in CSAM"},
-    #     { "integration_name": "GITHUB", "integration_summary": "Includes recent developer changes to source code"},
-    #     # { "event_tag": "SYS", "event_summary": "Isso appointed - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod..."}
-    # ]
-
     context = {
         "integrations": general_integrations,
     }

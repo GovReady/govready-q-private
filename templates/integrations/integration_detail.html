@@ -6,10 +6,14 @@ Integration Detail
 {% endblock %}
 
 {% block head %}
-<style>
+    <style>
 
+        h1 { font-size: 24px; border-bottom: 0.5px solid #888;}
 
-</style>
+        .integration-general { width:80%; margin: auto; padding:12px; }
+        .integration-content { margin-top: 20px; padding: 20px; border: 0.5px solid #888; }
+
+    </style>
 {% endblock %}
 
 {% block contextbar %}
@@ -20,6 +24,34 @@ Integration Detail
 {% endblock %}
 
 {% block body %}
+
+    <div class="integration-general">
+        <h2 style="border-bottom: 0px;">{{ integration }}</h2>
+
+        <div class="integration-content">
+            <form action="/integrations/{{ integration_name }/create_system_from_remote2/" method="GET">
+                Create a system from {{ integration_name }} system ID: 
+                <input type="input" name="remote_system_id_field" id="remote_system_id_field">
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="integration-content">
+            <div><b>URL Routes</b></div>
+            <div style="">
+                {% for route in url_routes %}
+                    <div>{{ route.name }}: {{ route.url }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="integration-content">
+            <div><b>Readme</b></div>
+            <div class="integration-readme">
+                {{ readme_html|safe }}
+            </div>
+        </div>
+    </div>
 
     {% comment %}
    <div>
@@ -134,15 +166,6 @@ Integration Detail
         </div>
     </div>
 {% endcomment %}
-
-<h2 style="width:80%; margin: auto; padding:12px;">{{ integration }}</h2>
-
-<h2 style="width:80%; margin: auto; padding:12px;">Links</h2>
-<div style="width:80%; margin: auto; padding:12px;"><pre>{{ data }}</pre>
-
-</div>
-<div style="width:80%; margin: auto; border:1px solid black; padding:12px; margin-top: 20px; width: 80%;">{{ create_system_form_html|safe }}</div>
-<div style="width:80%; margin: auto; padding:12px; margin-top: 20px; border: 0.5px solid #888; background-color: #fcfcfc; font-family:courier;">{{ readme_html|safe }}</div>
 
 
 <!-- Spacer bottom of page -->

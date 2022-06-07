@@ -62,7 +62,7 @@ class Communication(HelperMixin, ABC):
 
     def identify(self):
         """Identify which Communication subclass"""
-        identity_str = f"This is {self.DESCRIPTION['name']} version {self.DESCRIPTION['version']}"
+        identity_str = f"{self.DESCRIPTION['name']} version {self.DESCRIPTION['version']}"
         print(identity_str)
         return identity_str
 

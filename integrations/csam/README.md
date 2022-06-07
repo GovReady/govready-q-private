@@ -1,6 +1,3 @@
-# ABOUT CSAM Integreation
-
-
 ## Configure
 
 Create an Integration record in Django admin:
