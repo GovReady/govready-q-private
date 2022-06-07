@@ -29,12 +29,19 @@ Integration Detail
         <h2>{{ integration }}</h2>
 
         <div class="integration-content">
-            <form action="/integrations/{{ integration_name }/create_system_from_remote2/" method="GET">
+            <form action="/integrations/{{ integration_name }}/create_system_from_remote/" method="GET">
                 Enter {{ integration_name }} system ID to create new system: 
                 <input type="input" name="remote_system_id_field" id="remote_system_id_field">
                 <input type="submit" name="submit" value="Create">
             </form>
         </div>
+
+        <div class="integration-content">
+            <div><b>Integration Details</b></div>
+            <pre>description: {{ integration_record.description }}</pre>
+            <pre>base_url: {{ integration_record.config.base_url }}</pre>
+        </div>
+
 
         <div class="integration-content">
             <div><b>URL Routes</b></div>
