@@ -44,13 +44,12 @@
         <div class="integration-content">
             <form id="update_remote" action="/integrations/{{ integration_name }}/update_system_description" method="POST">
                 Push local system info to remote {{ integration_name }} service (overwrite description only) 
-                <!-- <input type="input" name="remote_system_id_field" id="remote_system_id_field"> -->
                 {% csrf_token %}
+                <input type="hidden" name="system_id" id="system_id" value="{{system.id}}">
                 <input type="submit" name="submit" value="Update {{ integration_name }}">
                 <p>local system_description: "{{ system.info.system_description }}"</p>
             </form>
         </div>
-
 
         <table class="table">
             <thead>

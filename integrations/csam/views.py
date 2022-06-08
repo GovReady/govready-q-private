@@ -253,14 +253,13 @@ def update_system_description_test(request, system_id=2):
         f"<pre>{json.dumps(data,indent=4)}</pre>"
         f"</body></html>")
 
-def update_system_description(request, params={"src_obj_type": "system", "src_obj_id": 2}):
+def update_system_description(request):
     """Update System description in CSAM"""
 
-    system_id = params['src_obj_id']
+    system_id = request.POST.get('system_id')
     system = System.objects.get(pk=system_id)
     # TODO: Check user permission to update
     csam_system_id = system.info.get('csam_system_id', None)
-    # print("10, ========== csam_system_id", csam_system_id)
 
     # get local system info
     # local_system_description = "This is the new system description."
@@ -268,13 +267,19 @@ def update_system_description(request, params={"src_obj_type": "system", "src_ob
 
     if csam_system_id is not None:
         endpoint = f"/v1/systems/{csam_system_id}"
+        # Retrieve schema for endpoint
+        # Post change data
         post_data = {
-            "description": local_system_description
+            "purpose": local_system_description
         }
         communication = set_integration()
         data = communication.post_response(endpoint, data=json.dumps(post_data))
-        result = data
-    return result
+        # result = data
+    return HttpResponse(
+        f"<html><body><p>Update sent to {INTEGRATION_NAME} for remote system id {system_id}."
+        f"<p>Returned data:</p>"
+        f"<pre>{json.dumps(data,indent=4)}</pre>"
+        f"</body></html>")
 
 def match_system_from_remote(request, remote_system_id):
     """Match a system in GovReady-Q based on info from integrated service"""
@@ -436,7 +441,8 @@ def create_system_from_remote(request):
         messages.add_message(request, messages.INFO, f"Created new System in GovReady based on {INTEGRATION_NAME} system id {csam_system_id}.")
 
         # Redirect to the new system/project.
-        return HttpResponseRedirect(project.get_absolute_url())
+        # return HttpResponseRedirect(project.get_absolute_url())   
+        return HttpResponseRedirect(f"/system/{new_system.id}/aspen/summary")
     else:
         systems = System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id}))
         if len(systems) == 1:

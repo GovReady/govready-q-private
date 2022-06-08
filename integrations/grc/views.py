@@ -431,7 +431,8 @@ def create_system_from_remote(request):
         messages.add_message(request, messages.INFO, f"Created new System in GovReady based on {INTEGRATION_NAME} system id {csam_system_id}.")
 
         # Redirect to the new system/project.
-        return HttpResponseRedirect(project.get_absolute_url())
+        # return HttpResponseRedirect(project.get_absolute_url())   
+        return HttpResponseRedirect(f"/system/{new_system.id}/aspen/summary")
     else:
         systems = System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id}))
         if len(systems) == 1:
