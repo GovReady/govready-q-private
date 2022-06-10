@@ -1,0 +1,133 @@
+{
+  "component-definition": {
+    "uuid": "f6006c70-041a-4038-a86d-a531a83ca26c",
+    "metadata": {
+      "title": "Windows Firewall V1R7",
+      "last-modified": "2022-06-10T12:50:53",
+      "version": "2022-06-10T12:50:53",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "c7b4581f-32f2-4ff3-aed0-cc7445007a7d",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "e84b09ed-0795-4324-82c8-6c222fd4e1c8",
+        "type": "software",
+        "title": "Windows Firewall V1R7",
+        "description": "Numquam porro porro sit dolore dolore amet. Ipsum sed quisquam numquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "c7b4581f-32f2-4ff3-aed0-cc7445007a7d"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "74f531b5-2b88-4513-a68f-9b479a7c3977",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "af233104-d626-48c8-8623-fdb32b0aa77c",
+                "description": "The Windows Firewall with Advanced Security must be enabled when connected to a domain.\nThe Windows Firewall with Advanced Security must be enabled when connected to a private network.\nThe Windows Firewall with Advanced Security must be enabled when connected to a public network.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "2c9cdca5-64fa-43ec-9c36-78c0bc2af561",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "49879c37-c7f2-4943-9e43-2c577a4dc40b",
+                "description": "Inbound exceptions to the firewall on domain workstations must only allow authorized remote management hosts.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b6c02af0-8509-4e12-9c88-db6c0fa30594",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "63ab1d84-e67e-438e-b41a-0a93b10f978c",
+                "description": "The Windows Firewall with Advanced Security log size must be configured for domain connections.\nThe Windows Firewall with Advanced Security log size must be configured for private network connections.\nThe Windows Firewall with Advanced Security log size must be configured for public network connections.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "47720fa3-50a0-4fc8-8847-dad6e150b904",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "bb68492e-fd99-4fa4-a1d0-38b559e6f9dc",
+                "description": "The Windows Firewall with Advanced Security must log dropped packets when connected to a domain.\nThe Windows Firewall with Advanced Security must log dropped packets when connected to a private network.\nThe Windows Firewall with Advanced Security must log dropped packets when connected to a public network.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "e32d5256-817c-487d-a3cd-403e5c5eaae8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6dd4f466-da42-4c51-9480-34bc2d5e0e94",
+                "description": "The Windows Firewall with Advanced Security must log successful connections when connected to a domain.\nThe Windows Firewall with Advanced Security must log successful connections when connected to a private network.\nThe Windows Firewall with Advanced Security must log successful connections when connected to a public network.",
+                "control-id": "au-14.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "552a90c0-c46c-4bd5-a9dd-f2de5036c2f9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "6b1b37eb-0c64-4d32-8bd7-b080e2669395",
+                "description": "The Windows Firewall with Advanced Security must block unsolicited inbound connections when connected to a domain.\nThe Windows Firewall with Advanced Security must block unsolicited inbound connections when connected to a private network.\nThe Windows Firewall with Advanced Security must block unsolicited inbound connections when connected to a public network.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "e72f52ee-4924-4fb2-af15-c8feb2413177",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7e5a0535-992f-4172-8aff-cdc86d553042",
+                "description": "The Windows Firewall with Advanced Security must allow outbound connections, unless a rule explicitly blocks the connection when connected to a domain.\nThe Windows Firewall with Advanced Security must allow outbound connections, unless a rule explicitly blocks the connection when connected to a private network.\nThe Windows Firewall with Advanced Security must allow outbound connections, unless a rule explicitly blocks the connection when connected to a public network.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "444487a8-d0d2-479a-9acd-1c4929dd62dd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "fdaf6912-34b6-4742-9fdf-261d37fde219",
+                "description": "The Windows Firewall with Advanced Security local firewall rules must not be merged with Group Policy settings when connected to a public network.\nThe Windows Firewall with Advanced Security local connection rules must not be merged with Group Policy settings when connected to a public network.",
+                "control-id": "sc-24."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "component-definition": {
+    "uuid": "b2f45f6c-4a21-46fb-aa2e-2e7cd370b992",
+    "metadata": {
+      "title": "Apple iOS 12 V1R2",
+      "last-modified": "2022-06-10T12:50:59",
+      "version": "2022-06-10T12:50:59",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "33992bd0-d543-4f00-9997-663ac5eb81d8",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "a766067d-bf61-45f2-ab2c-b439e1c2aeb7",
+        "type": "software",
+        "title": "Apple iOS 12 V1R2",
+        "description": "Tempora neque est porro porro dolore. Quaerat quisquam quaerat consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "33992bd0-d543-4f00-9997-663ac5eb81d8"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "0ce91f3e-d0d6-4e1c-b7f7-fd04edae5a42",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "0d340d7b-e6f1-4f77-b2dc-cfbe4be32c9d",
+                "description": "Apple iOS must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "810a4959-8a98-43c3-8f75-dfc969146bfe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "ebb16462-1780-45b0-a0b2-ec382d9ab3cc",
+                "description": "Apple iOS must implement the management setting: not share location data through iCloud.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "bbdfce30-49bb-47b4-82fd-f6ae8b412ed6",
+                "description": "Apple iOS must not allow backup to remote systems (managed applications data stored in iCloud).\nApple iOS must not allow backup to remote systems (enterprise books).\nApple iOS must not allow non-DoD applications to access DoD data.\nApple iOS must not allow managed apps to write contacts to unmanaged contacts accounts.\nApple iOS must not allow unmanaged apps to read contacts from managed contacts accounts.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "44b071af-1679-402c-a3a7-fbb8653bc29a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "1b0c1e1a-4c03-44cb-8b74-588b71150278",
+                "description": "Apple iOS must be configured to lock the display after 15 minutes (or less) of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "2e483fe7-11d0-486d-9c0a-57913ef57810",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "316bb1f3-0f37-4c99-b5a6-804fba84b18a",
+                "description": "Apple iOS must implement the management setting: require the user to enter a password when connecting to an AirPlay-enabled device for the first time.",
+                "control-id": "ac-17."
+              },
+              {
+                "uuid": "00d713ea-8464-4dfb-a299-3e64247a35c6",
+                "description": "Apple iOS must not include applications with the following characteristics: Voice dialing application if available when MD is locked.",
+                "control-id": "ac-17."
+              }
+            ]
+          },
+          {
+            "uuid": "93238753-00bb-4603-a0ac-adfa2e0c6278",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2fa1418f-c47b-4263-8c2e-804d84c87a61",
+                "description": "Apple iOS must implement the management setting: Disable Allow MailDrop.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f1aa6bbb-d25b-4c10-9e0d-2f9a29e0fd08",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "66894d14-22c8-4a74-9936-e2635c065aea",
+                "description": "If an unmanaged third-party VPN client is installed on the iOS device, it must not be configured with a DoD network (work) VPN profile.\nApple iOS must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: Apple App Store].\nApple iOS must not include applications with the following characteristics: Siri when the device is locked.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "9fef22f5-30f2-45ff-a7ba-a8abad3869b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "3e0f3ea4-2e36-4c84-ab1a-2d6d4c532086",
+                "description": "Apple iOS must not display notifications when the device is locked.",
+                "control-id": "ac-18.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "27e20329-e6f5-4e9c-9b2a-d4dec2890f8c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "74484f5b-cc70-40f1-b2b8-49dc978475cd",
+                "description": "A managed photo app must be used to take and store work related photos.\nApple iOS must implement the management setting: enable USB Restricted Mode.",
+                "control-id": "ac-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "34b9405e-488e-4221-b392-479fb0be2fbf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "2e51635b-4ca9-4b51-9f03-297de6292621",
+                "description": "Apple iOS must be configured to not allow passwords that include more than two repeating or sequential characters.\nApple iOS must not include applications with the following characteristics: Voice dialing application if available when MD is locked.\nApple iOS must not display notifications when the device is locked.\nApple iOS must not display notifications (calendar information) when the device is locked.\nApple iOS must be configured to display the DoD advisory warning message at start-up or each time the user unlocks the device.\nApple iOS must not allow backup of managed app data to locally connected systems.\nApple iOS must not allow backup to remote systems (iCloud).\nApple iOS must not allow backup to remote systems (iCloud document and data synchronization).\nApple iOS must not allow backup to remote systems (iCloud Keychain).\nApple iOS must not allow backup to remote systems (My Photo Stream).\nApple iOS must not allow backup to remote systems (iCloud Photo Sharing, also known as Shared Photo Streams).\nApple iOS must not allow backup to remote systems (managed applications data stored in iCloud).\nApple iOS must not allow backup to remote systems (enterprise books).\nApple iOS must not allow non-DoD applications to access DoD data.\nApple iOS must implement the management setting: remove managed applications upon unenrollment from MDM (including sensitive and protected data).\nApple iOS must implement the management setting: limit Ad Tracking.\nApple iOS must implement the management setting: not allow automatic completion of Safari browser passcodes.\nApple iOS must implement the management setting: Encrypt iTunes backups.\nApple iOS must implement the management setting: not allow use of Handoff.\nApple iOS must implement the management setting: Disable Allow MailDrop.\nApple iOS device must have the latest available iOS operating system installed.\nApple iOS must implement the management setting: not allow messages in an ActiveSync Exchange account to be forwarded or moved to other accounts in the Apple iOS Mail app.\nApple iOS must implement the management setting: Treat Airdrop as an unmanaged destination.\nApple iOS must implement the management setting: not have any Family Members in Family Sharing.\nApple iOS users must complete required training.\nApple iOS must implement the management setting: enable USB Restricted Mode.\nApple iOS must not allow managed apps to write contacts to unmanaged contacts accounts.\nApple iOS must not allow unmanaged apps to read contacts from managed contacts accounts.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "cce6cdfa-3664-491d-ada4-7b033f0be28f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "5436e5ec-a755-4a42-98a4-218df8b0a701",
+                "description": "Apple iOS must not include applications with the following characteristics: Voice dialing application if available when MD is locked.\nApple iOS must not display notifications when the device is locked.\nApple iOS must be configured to display the DoD advisory warning message at start-up or each time the user unlocks the device.\nApple iOS must not allow backup to remote systems (iCloud Keychain).\nApple iOS must not allow backup to remote systems (iCloud Photo Sharing, also known as Shared Photo Streams).\nApple iOS must not allow non-DoD applications to access DoD data.\nApple iOS must implement the management setting: remove managed applications upon unenrollment from MDM (including sensitive and protected data).\nApple iOS must implement the management setting: limit Ad Tracking.\nApple iOS must implement the management setting: not allow automatic completion of Safari browser passcodes.\nApple iOS must implement the management setting: Encrypt iTunes backups.\nApple iOS must implement the management setting: not allow use of Handoff.\nApple iOS must implement the management setting: Disable Allow MailDrop.\nApple iOS device must have the latest available iOS operating system installed.\nApple iOS must implement the management setting: not allow messages in an ActiveSync Exchange account to be forwarded or moved to other accounts in the Apple iOS Mail app.\nApple iOS must implement the management setting: not have any Family Members in Family Sharing.\nApple iOS users must complete required training.\nApple iOS must implement the management setting: enable USB Restricted Mode.\nApple iOS must not allow managed apps to write contacts to unmanaged contacts accounts.\nApple iOS must not allow unmanaged apps to read contacts from managed contacts accounts.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0437eb00-1c61-47f9-b976-aacb14ef2858",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "b3a63e50-1975-4787-8b7a-d5ab9a69c307",
+                "description": "Apple iOS must implement the management setting: not allow automatic completion of Safari browser passcodes.\nApple iOS must implement the management setting: Encrypt iTunes backups.\nApple iOS must implement the management setting: not allow use of Handoff.\nApple iOS must implement the management setting: Disable Allow Shared Albums.\nApple iOS device must have the latest available iOS operating system installed.\nApple iOS must implement the management setting: force Apple Watch wrist detection.\nApple iOS users must complete required training.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "8747d1c6-a48c-4e8d-810a-83e114e66be9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0a97dd75-7e5f-4d7d-80b3-8db14401e98d",
+                "description": "Apple iOS must not allow backup to remote systems (My Photo Stream).\nApple iOS must not allow backup to remote systems (iCloud Photo Sharing, also known as Shared Photo Streams).",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4f878176-9e7a-4b17-90f2-d53e56a889a4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "b42275fa-605a-42cd-a9ac-3cd2c14ff6c3",
+                "description": "Apple iOS must be configured to display the DoD advisory warning message at start-up or each time the user unlocks the device.",
+                "control-id": "cm-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "66a52843-0b11-4061-97c7-010a9d38d32f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "23afd8fb-57c1-403f-8173-51dd9b2567b3",
+                "description": "Apple iOS must not allow backup to remote systems (iCloud Keychain).",
+                "control-id": "cm-7.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "e34892e1-4ece-4903-b763-5727edc1f666",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "4aed5cec-5123-4ecd-b83d-deca2c3a712b",
+                "description": "Apple iOS must not display notifications (calendar information) when the device is locked.\nApple iOS must not allow backup of managed app data to locally connected systems.\nApple iOS must not allow backup to remote systems (iCloud).\nApple iOS must not allow backup to remote systems (iCloud document and data synchronization).",
+                "control-id": "cm-11."
+              }
+            ]
+          },
+          {
+            "uuid": "752cb21d-4de6-4855-b971-36fe62284d9b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "726ee964-2524-4db5-b517-7f5823d71a81",
+                "description": "Apple iOS must implement the management setting: use SSL for Exchange ActiveSync.\nApple iOS must implement the management setting: not allow messages in an ActiveSync Exchange account to be forwarded or moved to other accounts in the Apple iOS Mail app.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "b4b06db9-11d5-4480-abf9-c4145c1d135a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d110813d-12aa-4652-be3e-9e31ccca1368",
+                "description": "Apple iOS must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "be05030f-ab04-488b-902b-2737e256c04c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(14).",
+            "implemented-requirements": [
+              {
+                "uuid": "49f371f2-3be5-4ebe-a423-b581c7aaefe7",
+                "description": "Apple iOS must implement the management setting: Treat Airdrop as an unmanaged destination.\nApple iOS must implement the management setting: not have any Family Members in Family Sharing.",
+                "control-id": "ia-5.(14)"
+              }
+            ]
+          },
+          {
+            "uuid": "93ffcc75-1a4f-48a6-9b81-27c28f16e375",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "1d722bca-2bcc-4246-a6f7-db115b02bd12",
+                "description": "Apple iOS must be configured to disable automatic transfer of diagnostic data to an external device other than an MDM service with which the device has enrolled.\nApple iOS must implement the management setting: remove managed applications upon unenrollment from MDM (including sensitive and protected data).\nApple iOS must require a valid password be successfully entered before the mobile device data is unencrypted.\nApple iOS must implement the management setting: limit Ad Tracking.",
+                "control-id": "sc-28."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

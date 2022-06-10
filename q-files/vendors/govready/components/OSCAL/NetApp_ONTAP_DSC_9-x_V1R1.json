@@ -1,0 +1,586 @@
+{
+  "component-definition": {
+    "uuid": "a5b7267a-3084-4804-be4b-62bb16d2d9f8",
+    "metadata": {
+      "title": "NetApp ONTAP DSC 9-x V1R1",
+      "last-modified": "2022-06-10T12:50:57",
+      "version": "2022-06-10T12:50:57",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "4b963b21-3619-407f-8dc2-bebf402b8b94",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "2d9676b3-0a64-425d-b11c-35b2c673a4e6",
+        "type": "software",
+        "title": "NetApp ONTAP DSC 9-x V1R1",
+        "description": "Porro quisquam modi velit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "4b963b21-3619-407f-8dc2-bebf402b8b94"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "5c9187fb-6ac9-4250-a41f-74e99fc5bccb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "b1ef6d37-5157-46ab-9513-a113715a18d8",
+                "description": "ONTAP must be configured with only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "58042bec-8fb1-45bc-b012-f593968e71f4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "b06d93c3-d5f7-4c9b-8082-227587cac08d",
+                "description": "ONTAP must automatically audit account-enabling actions.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "f7572001-3454-4754-bfaa-a1ef935ff55c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "33d61f60-8d96-4b85-a307-e84ff25e2b47",
+                "description": "ONTAP must be configured with only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
+                "control-id": "ac-2.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "5a3076b8-d9ca-4c77-b681-4b1d0f9969e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "9b91f206-774a-4836-b358-d599810d86fd",
+                "description": "ONTAP must terminate shared/group account credentials when members leave the group.",
+                "control-id": "ac-2.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "70d5dae5-8511-43e6-9870-74e0d04334d5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "fcd863fe-9227-4f14-a1e8-383a2dda71ea",
+                "description": "ONTAP must enforce administrator privileges based on their defined roles.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "334c466b-2402-4fc2-a89b-1679c5af955d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "3068e63f-e3ac-4a08-8fa9-da5f2feab859",
+                "description": "ONTAP must be configured to enforce organization-defined mandatory access control policies over all subjects and objects.",
+                "control-id": "ac-3.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "e70fd102-2a30-4bd5-a8d6-8f657e704c66",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "ef9662c8-38f7-4ce2-8365-3e29eb31b565",
+                "description": "ONTAP must enforce organization-defined DAC policies.",
+                "control-id": "ac-3.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "315ea2b1-cbc4-4775-939f-d579c34c32c8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "f9156661-0c64-4c6d-94a9-ab834e3d655c",
+                "description": "ONTAP must enforce organization-defined role-based access control policies over defined subjects and objects.",
+                "control-id": "ac-3.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "db73ede9-886e-4d99-9d73-b087bcaf677a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "9d15473c-9905-4739-9b8e-5ccdadd16503",
+                "description": "ONTAP must enforce approved authorizations for controlling the flow of management information.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "c4c4cb1f-a131-4903-9acd-c8b2a5ddfef2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "d9650263-e032-4bf9-8b10-451fc52316dc",
+                "description": "ONTAP must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "086a05a7-f571-4948-accb-864f6be10511",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "cfbcee0b-ffde-43fc-8fac-d46623b57650",
+                "description": "ONTAP must be configured to enforce the limit of three consecutive invalid logon attempts, after which time it must block any login attempt for 15 minutes.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "05cec977-e1ea-41d3-87df-4f9ec409b436",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "1ff61135-1820-4e20-b82d-2c569669a9cb",
+                "description": "ONTAP must be configured to display the Standard Mandatory DoD Notice and Consent Banner before granting access to the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "abd33c38-6be7-4988-887a-e0e63a9f2113",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "57ed95e4-8519-4777-aa8c-6ed400e7e5d8",
+                "description": "ONTAP must be configured to limit the number of concurrent sessions.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "5db16218-8600-4c27-80f2-5d89d01ebcf2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "376c49a2-0fce-4f16-a336-175fe06e3e67",
+                "description": "ONTAP must be configured to create a session lock after 15 minutes.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "3c67c52b-9c00-4802-ac5b-129613b0f8fa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "05ed56b8-01d0-4c3b-875d-5f097c2d7c1f",
+                "description": "ONTAP must allocate audit record storage capacity in accordance with organization-defined audit record storage requirements.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "c3f208a5-b9fc-4cda-8ee4-888398abaf2a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "26f8a6f5-0e9c-4bf9-a620-d67ef7740add",
+                "description": "ONTAP must off-load audit records onto a different system or media.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4b44c3da-ee4b-4a4d-8057-ab0563bee365",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e133bc0e-da6a-407f-b269-94ffc0e371aa",
+                "description": "ONTAP must generate an immediate real-time alert of all audit failure events requiring real-time alerts.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e58b2c0e-905d-4a6d-83e5-400906842d65",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "c72751fe-d218-4eb8-807c-4e1ff513fb89",
+                "description": "ONTAP must use internal system clocks to generate time stamps for audit records.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "be997d59-d4e7-4513-97a5-dd3e34e817c2",
+                "description": "ONTAP must record time stamps for audit records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT).",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "4c0b690a-2307-4577-b6b9-593145528580",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d6c8a8b0-c6e7-4788-8c0f-cab236eed207",
+                "description": "ONTAP must be configured to synchronize internal information system clocks using redundant authoritative time sources.",
+                "control-id": "au-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8a1e6898-aa69-45dc-a3b0-582042202fe1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "34ebd148-9399-4a9d-b828-9725ef240808",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "0addafad-7069-4a39-9ae3-2e31a8bdc148",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "0a58b6c3-5e31-491b-8954-2d19e7c10b48",
+                "description": "ONTAP must generate log records for a locally developed list of auditable events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "8ea303e4-fafb-4969-8f01-48c28a441224",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "aa9b4004-7360-49a1-bb2b-ced333ab86b1",
+                "description": "ONTAP must enforce access restrictions associated with changes to the device configuration.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2ba140bf-985e-486f-a026-e3bbb514a407",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "cd4e18e8-b471-4fec-98ef-4eb3d2f3d0a0",
+                "description": "ONTAP must be configured to synchronize internal information system clocks using redundant authoritative time sources.\nONTAP must be configured to enforce organization-defined mandatory access control policies over all subjects and objects.\nONTAP must enforce organization-defined role-based access control policies over defined subjects and objects.\nONTAP must generate log records for a locally developed list of auditable events.\nONTAP must be configured to conduct backups of system level information.\nONTAP must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "2418710d-002e-41fa-9481-285f2f9ad2a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1ffe971a-ff6c-4b7c-b332-b9aff35c65f2",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4cc662a5-8a11-4332-836f-3bf32f3f1b82",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "2c7c0ca1-7e51-4119-a04d-b1feca082aad",
+                "description": "ONTAP must be configured to prohibit the use of all unnecessary and/or nonsecure functions, ports, protocols, and/or services.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "343eff3b-7a55-478b-a859-466aa6354a84",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "d575dc38-dcef-4711-8e5c-169c6440756f",
+                "description": "ONTAP must be configured to conduct backups of system level information.",
+                "control-id": "cp-9."
+              }
+            ]
+          },
+          {
+            "uuid": "f50e4cef-bc23-496f-a58c-30d0e5c45f35",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "e73730f0-908f-4519-88e4-c997275851e5",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "5185ad29-cacc-4a51-ae10-72255ea5f454",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "90073390-4a4a-4c8e-afc6-dfeae76540d7",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "490a4bb7-efcc-4f01-9e51-a403a64e97e4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "dd8f78e4-7fe7-4b0f-b54e-550ec60841c5",
+                "description": "ONTAP must be configured to authenticate each administrator prior to authorizing privileges based on assignment of group or role.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "392e7b70-da52-45c9-bd0a-41335e7b3b12",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "c34ea533-d79d-450a-ba40-aaacfa4a45b4",
+                "description": "ONTAP must implement replay-resistant authentication mechanisms for network access to privileges accounts.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "d685273c-d9c1-4f15-8ddd-f875f9329137",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1e1cfab1-3471-417c-b179-c9b166cdf0dd",
+                "description": "ONTAP must be configured to authenticate SNMP messages using FIPS-validated Keyed-HMAC.\nONTAP must authenticate NTP sources using authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "49a13e2f-c88b-44a7-a5dc-c956d8e4e55a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d79f340e-dce3-462d-a820-c1818714f5ae",
+                "description": "ONTAP must enforce password complexity by requiring that at least one lowercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "9340241e-fa46-4f99-9997-83609f476f75",
+                "description": "ONTAP must enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "4b751452-0456-45dc-8236-2a5dad4fa093",
+                "description": "ONTAP must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "4b324f0f-c583-412c-9ab1-7479b880ad50",
+                "description": "ONTAP must enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "a5fa174a-e310-4353-81aa-998e4d9a1ad8",
+                "description": "ONTAP must enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3c1b2d27-5094-4530-b6d4-5f312fed2b19",
+                "description": "ONTAP must require that when a password is changed, the characters are changed in at least eight of the positions within the password.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "5642ff3c-1834-4001-b2b7-f0ed273057c2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "21472ed1-c4c5-41de-abe9-5f86ad63a79f",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "260b4905-62f6-4075-85e2-edcb9156f26c",
+                "description": "ONTAP must be configured to use an authentication server to provide multifactor authentication.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "a0d76ada-c876-41ff-9811-3c085b5b57df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "4271185b-0938-4c2b-8683-5499bd1cf959",
+                "description": "ONTAP must prohibit the use of cached authenticators.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "dc27212a-efd1-4058-9283-4b93ba4bbbbf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "7f46cbcc-31a4-4a72-ae81-d59b182fb9ea",
+                "description": "ONTAP must be configured to implement cryptographic mechanisms using FIPS 140-2.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ef000cbb-c648-44e5-8e69-fd6c469cabf9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "9bbe78ee-c802-4125-8447-380836cbdf19",
+                "description": "ONTAP must be configured to implement cryptographic mechanisms using FIPS 140-2.",
+                "control-id": "ma-4.(6)"
+              },
+              {
+                "uuid": "af2e1d2c-2fed-4027-8e80-98c53ec0b093",
+                "description": "ONTAP must be configured to implement cryptographic mechanisms using FIPS 140-2.",
+                "control-id": "ma-4.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "2bedfd55-ea02-4abd-8ef7-1729951f9a2c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "26a82ffb-5ae5-44f7-bfe0-b9c32895f835",
+                "description": "ONTAP must be configured to protect against known types of denial-of-service (DoS) attacks by employing organization-defined security safeguards.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "61db4223-b199-4403-a16f-cc3a14d2615a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "1763f662-ea50-40b6-a3a1-b543c227d11f",
+                "description": "ONTAP must terminate all network connections associated with a device management session at the end of the session, or the session must be terminated after 10 minutes of inactivity except to fulfill documented and validated mission requirements.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "c2cfd37c-58ca-49cc-80ac-ce5a4eae6841",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "0d5e013c-477a-4b24-94b6-520d45d92c0d",
+                "description": "ONTAP must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "sc-17."
+              }
+            ]
+          },
+          {
+            "uuid": "454983a0-7a39-45fa-91bf-132b8395c2c6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "ce09ef49-32d7-430d-aaa3-0e4649370f1b",
+                "description": "ONTAP must recognize only system-generated session identifiers.",
+                "control-id": "sc-23.(3)"
+              },
+              {
+                "uuid": "450221f3-51cc-4947-be61-a477701163a2",
+                "description": "ONTAP must generate unique session identifiers using a FIPS 140-2-approved random number generator.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "c29eebfe-a45a-40bd-a3d5-9b108720a075",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "ba3e0076-993a-44f6-8dab-6cecfeba5b23",
+                "description": "ONTAP must allow only authorized administrators to view or change the device configuration, system files, and other files stored either in the device or on removable media (such as a flash drive).",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "ea3ef8a3-7aeb-44fc-8150-6047e72b5cc1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "2af61d20-9927-4576-bbca-4bb4b4ee0dca",
+                "description": "ONTAP must be configured to send log data to a central log server.",
+                "control-id": "si-2."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

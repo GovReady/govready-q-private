@@ -1,0 +1,35 @@
+{
+  "component-definition": {
+    "uuid": "353735b2-a50c-4eda-bf94-b1b1112f183f",
+    "metadata": {
+      "title": "Traditional Security Manual Checklist V2R1",
+      "last-modified": "2022-06-10T12:50:53",
+      "version": "2022-06-10T12:50:53",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "ba24bff0-e5ad-4326-a84d-d88c21663248",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "6d605d1c-76d8-4381-90e2-c8ab1d04f40e",
+        "type": "software",
+        "title": "Traditional Security Manual Checklist V2R1",
+        "description": "Sit non ipsum porro eius. Ipsum modi consectetur dolorem eius labore dolorem. Dolor eius velit etincidunt aliquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "ba24bff0-e5ad-4326-a84d-d88c21663248"
+            ]
+          }
+        ],
+        "props": []
+      }
+    ]
+  }
+}

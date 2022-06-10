@@ -1,0 +1,150 @@
+{
+  "component-definition": {
+    "uuid": "2c4598ab-4937-4b14-8456-2739ee1faa8e",
+    "metadata": {
+      "title": "IBM MaaS360 with Watson v10-x MDM V1R2",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "401c744e-d643-4a64-a39a-ac8a484d1969",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "d77bd2f2-80d3-4ce0-9dba-571f9c103bcc",
+        "type": "software",
+        "title": "IBM MaaS360 with Watson v10-x MDM V1R2",
+        "description": "Numquam sit numquam consectetur neque consectetur quisquam. Porro ipsum non numquam modi non.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "401c744e-d643-4a64-a39a-ac8a484d1969"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "eee1fb98-9cd1-40ac-b92f-d5fc306a1111",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4a0cad6e-9cbc-4f05-95bd-137fe293e5cf",
+                "description": "The MaaS360 MDM server must be configured to leverage the MDM platform user accounts and groups for MaaS360 MDM server user identification and authentication.\nAuthentication of MaaS360 MDM platform accounts must be configured so they are implemented via an enterprise directory service.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2d35e98c-60f1-46c2-821e-d8565a806bb6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "4c984447-038d-4fcc-9e0a-ffd0d8223d75",
+                "description": "The MaaS360 MDM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              },
+              {
+                "uuid": "625453a1-8bb5-41fd-a70a-fa139dccd0ea",
+                "description": "The MaaS360 MDM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "9181b837-3408-4a62-b9c0-bdb9ae8d51c0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "3b614307-fde7-4f25-85c6-3b1b19a43c6f",
+                "description": "The MaaS360 MDM server must be configured to display the required DoD warning banner upon administrator logon.\n\nNote: This requirement is not applicable if the TOE platform is selected in FTA_TAB.1.1 in the Security Target (ST).",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "4ec06f73-29b2-4e9a-92fe-f6cd669b5904",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "73ee839e-0429-4d92-a685-dc8c0fa7a1b4",
+                "description": "The MaaS360 MDM server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): a. Failure to push a new application on a managed mobile device.\nThe MaaS360 server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): b. Failure to update an existing application on a managed mobile device.",
+                "control-id": "au-2."
+              }
+            ]
+          },
+          {
+            "uuid": "0d2c33a9-9858-43e8-b5fb-8c8d22358606",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "5d31a806-58e0-49a4-8456-f1c25e12505c",
+                "description": "The MaaS360 MDM server must be configured to transfer MaaS360 MDM server logs to another server for storage, analysis, and reporting.\n\nNote: MaaS360 MDM server logs include logs of MDM events and logs transferred to the MaaS360 MDM server by MDM agents of managed devices.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ff0affa6-e763-4108-baf4-05fb5e260666",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "837d3ac4-0649-49d0-9af1-3e008a65c50d",
+                "description": "The MaaS360 MDM server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): a. Failure to push a new application on a managed mobile device.\nThe MaaS360 server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): b. Failure to update an existing application on a managed mobile device.\nThe MaaS360 MDM Agent must be configured to implement the management setting: periodicity of reachability events equals six hours or less.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "9157e031-fe61-40e2-9221-8c35391debd9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "628d2d6a-db43-4802-b741-a5e4b9a39459",
+                "description": "The MaaS360 MDM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.\nThe MaaS360 MDM server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): a. Failure to push a new application on a managed mobile device.\nThe MaaS360 server must be configured to enable all required audit events (if function is not automatically implemented during MDM/MAS server install): b. Failure to update an existing application on a managed mobile device.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "23172429-0cec-40c1-86ca-c4a244b2e321",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "ef2cafaf-ceca-47b1-921f-bfefcf88ce81",
+                "description": "The MaaS360 server platform must be protected by a DoD-approved firewall.\nThe firewall protecting the MaaS360 server platform must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support MaaS360 server and platform functions.\nThe firewall protecting the MaaS360 server platform must be configured so that only DoD-approved ports, protocols, and services are enabled. (See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services.)",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "93d87e4f-f711-4bae-8713-b398f2b34dbd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "3a8d5a90-4e8b-4de8-95b4-7252ca2be721",
+                "description": "The MaaS360 MDM Agent must provide an alert via the trusted channel to the MDM server for the following event: change in enrollment state.",
+                "control-id": "si-6."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

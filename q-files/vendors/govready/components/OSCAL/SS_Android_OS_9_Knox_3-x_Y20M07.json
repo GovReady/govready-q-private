@@ -1,0 +1,198 @@
+{
+  "component-definition": {
+    "uuid": "9ac2cc2c-aef5-4b15-b693-029572601d73",
+    "metadata": {
+      "title": "SS Android OS 9 Knox 3-x Y20M07",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "dd2a71a1-e58b-4a6c-9837-261d795e78e8",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "1c67d8fa-595b-4825-906f-dae50ecb14d3",
+        "type": "software",
+        "title": "SS Android OS 9 Knox 3-x Y20M07",
+        "description": "Neque etincidunt quaerat dolorem. Adipisci adipisci tempora ut amet ut est.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "dd2a71a1-e58b-4a6c-9837-261d795e78e8"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "d11af6c4-fd09-4333-a050-933fb1a0d773",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "edfb5956-6a45-4c18-8aad-878f364a1081",
+                "description": "Samsung Android must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "b6e9ee9a-e4de-4134-86d1-c60314a8e40b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "02d1d58e-f116-4948-85fd-429e887afc26",
+                "description": "Samsung Android must be configured to not display the following notifications when the device is locked: all notifications.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "77699e43-ae1b-41f8-adac-6d88741c44e6",
+                "description": "Samsung Android must be configured to display the DoD advisory warning message at startup or each time the user unlocks the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "22a57761-d1c9-4e9e-be0a-1406684eab5f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "9e89dde4-f3f0-42da-a08b-a69bd4d2248e",
+                "description": "Samsung Android must be configured to lock the display after 15 minutes (or less) of inactivity.\nSamsung Android must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "fc95e1f1-2025-4390-a869-5a1afb5affeb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "417481f5-442a-41ee-92b4-fbc2230b5681",
+                "description": "Samsung Android must be configured to enable authentication of personal hotspot connections to the device using a preshared key.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1905caba-0363-4979-a8be-8ab16dd708fe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "4d4e3c0f-a878-4cdf-9a96-14c0859f673a",
+                "description": "Samsung Android must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
+                "control-id": "ac-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c2123a01-a7a6-49e5-af7f-46d1797ca17b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "996151da-98fd-4c87-815e-3bd69efd9f3b",
+                "description": "Samsung Android must be configured to not allow backup of [all applications, configuration data] to remote systems.",
+                "control-id": "ac-20.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "aa376f2c-b311-425c-a636-3e1bfbf35b18",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "029c069b-06f9-44b3-acf7-0f7883064c44",
+                "description": "Samsung Android must be configured to prevent users from adding personal email accounts to the work email app.\nSamsung Android must be configured to enforce the system application disable list.\nSamsung Android must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: list of digital signatures, list of package names.\nThe Samsung Android whitelist must be configured to not include applications with the following characteristics: - back up mobile device data to non-DoD cloud servers (including user and application access to cloud backup services); - transmit mobile device diagnostic data to non-DoD servers; - voice assistant application if available when the mobile device is locked; - voice dialing application if available when the mobile device is locked; - allows synchronization of data or applications between devices associated with the user; and - allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other mobile devices or printers.\nSamsung Android must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [DoD-approved commercial app repository, MDM server, mobile application store]: - disallow unknown app installation sources.\nSamsung Android must be configured to enable the Knox audit log.\nSamsung Android must be configured to not display the following notifications when the device is locked: all notifications.\nSamsung Android device users must complete required training.\nAny accessory that provides wired networking capabilities to a Samsung Android device must not be connected to a DoD network (for example: DeX Station [LAN port], USB to Ethernet adapter, etc.).\nSamsung Android must be configured to not allow passwords that include more than two repeating or sequential characters.\nSamsung Android must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nSamsung Android must be configured to disable Face Recognition. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nSamsung Android must be configured to disable automatic completion of Samsung Internet browser text input.\nSamsung Android must be configured to disable the autofill services.\nSamsung Android must be configured to disable all Bluetooth profiles except HSP (Headset Profile), HFP (HandsFree Profile), SPP (Serial Port Profile), A2DP (Advanced Audio Distribution Profile), AVRCP (Audio/Video Remote Control Profile), and PBAP (Phone Book Access Profile).\nSamsung Android must be configured to enable Knox Common Criteria (CC) Mode.\nSamsung Android must be configured to disallow configuration of date and time.\nSamsung Android must be configured to enforce a USB host mode exception list. Note: This configuration allows DeX mode (with input devices), which is DoD-approved for use.\nSamsung Android must be configured to disallow the Share Via List feature.\nSamsung Android must be configured to disallow outgoing beam.\nSamsung Android must be configured to enforce that Wi-Fi Sharing is disabled.\nSamsung Android must be configured to enable Certificate Revocation List (CRL) status checking.\nSamsung Android must have the DoD root and intermediate PKI certificates installed.\nSamsung Android devices must have the latest available Samsung Android operating system installed.\nSamsung Android must be configured to enable the Online Certificate Status Protocol (OCSP).\nSamsung Android must be configured to not enable Microsoft Exchange ActiveSync (EAS) password recovery. This requirement is not applicable if not using Microsoft EAS.\nSamsung Android must be configured to set the password history with a length of 0.\nSamsung Android must be configured to enforce that Secure Startup is enabled. This requirement is Not Applicable (NA) to Galaxy S10 (or newer) devices.\nSamsung Android must be configured to enforce that Strong Protection is enabled. This requirement is Not Applicable (NA) for devices older than Galaxy S10.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "3f85275a-0a47-4077-967d-e8c39a8e8dcf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "72c1e144-5432-4bd8-93e9-23491beb4ff9",
+                "description": "Any accessory that provides wired networking capabilities to a Samsung Android device must not be connected to a DoD network (for example: DeX Station [LAN port], USB to Ethernet adapter, etc.).\nSamsung Android must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nSamsung Android must be configured to disable Face Recognition. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "aa7251f5-93de-4f40-bcf5-d3f1f0f744b2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "3928ca6d-f568-44cc-8174-3bc1e2e7b621",
+                "description": "Samsung Android must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nSamsung Android must be configured to disable Face Recognition. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nSamsung Android must be configured to disable USB mass storage mode.\nSamsung Android must be configured to disable developer modes.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "4960886f-9cad-41b7-a372-840129e6c617",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "27981611-6036-4ce3-8d1f-8358c1bb28ae",
+                "description": "Samsung Android must be configured to disable all Bluetooth profiles except HSP (Headset Profile), HFP (HandsFree Profile), SPP (Serial Port Profile), A2DP (Advanced Audio Distribution Profile), AVRCP (Audio/Video Remote Control Profile), and PBAP (Phone Book Access Profile).",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "bc3dba07-8536-4c70-9220-759aaa90cc80",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "9eb4d25c-5553-4844-bb6b-f7ddd2fde991",
+                "description": "Samsung Android must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: list of digital signatures, list of package names.\nThe Samsung Android whitelist must be configured to not include applications with the following characteristics: - back up mobile device data to non-DoD cloud servers (including user and application access to cloud backup services); - transmit mobile device diagnostic data to non-DoD servers; - voice assistant application if available when the mobile device is locked; - voice dialing application if available when the mobile device is locked; - allows synchronization of data or applications between devices associated with the user; and - allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other mobile devices or printers.\nSamsung Android must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [DoD-approved commercial app repository, MDM server, mobile application store]: - disallow unknown app installation sources.",
+                "control-id": "cm-11."
+              }
+            ]
+          },
+          {
+            "uuid": "d5420555-e4a8-4d8b-8cce-ba151230af41",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "877c7469-7d7b-4130-800d-8c2e035a68c4",
+                "description": "Samsung Android must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "40c69c4d-48a8-43b3-a56c-28207c8619c8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "8825811c-fc6e-4cfa-bbe2-11aa03f567bd",
+                "description": "Samsung Android must be configured to enable encryption for data at rest on removable storage media or alternately, the use of removable storage media must be disabled.",
+                "control-id": "sc-28."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

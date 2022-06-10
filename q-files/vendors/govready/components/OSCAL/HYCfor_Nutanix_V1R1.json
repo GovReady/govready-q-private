@@ -1,0 +1,591 @@
+{
+  "component-definition": {
+    "uuid": "4299ec2a-02fb-4d83-b960-a79811001197",
+    "metadata": {
+      "title": "HYCfor Nutanix V1R1",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "0cce6bc8-966d-4d2f-9296-5f7471138330",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "85e33fd5-1c32-4dbc-8e7e-9758f88ba283",
+        "type": "software",
+        "title": "HYCfor Nutanix V1R1",
+        "description": "Numquam velit labore velit. Quaerat labore consectetur magnam dolor quaerat dolorem. Neque quisquam tempora aliquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "0cce6bc8-966d-4d2f-9296-5f7471138330"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "c0d9815c-8666-4336-bc68-3d03edf47303",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "ec0ebac2-d8cb-4fe5-8017-fedaa05fe54f",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "1872785e-9119-4e40-b503-adfdcb53f015",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "df14a3cb-b5cc-408b-baaf-889ac32fcce8",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "852fbd74-8f83-4f22-819e-8f668c023815",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "576255e1-36c0-44fc-88b0-389dbfe8c82f",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "928db31d-bf50-401b-96c2-74172ce080d9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "896179a6-95fc-4503-bd13-b78baab9e3b1",
+                "description": "The HYCU server must terminate shared/group account credentials when members leave the group.",
+                "control-id": "ac-2.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "033b113b-653e-4413-9483-929d0cf8230b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "e3dc4c43-4ae4-49be-a730-38ee443c8fd5",
+                "description": "The HYCU 4.1 Application must enforce the assigned privilege level for each administrator and authorizations for access to all commands relative to the privilege level in accordance with applicable policy for the device.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "6d3656a8-e26d-4141-be47-04d024827685",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "b3c316db-76f8-4045-90ac-542dfba0f4ae",
+                "description": "If the HYCU Server or Web UI uses discretionary access control, the network device must enforce organization-defined discretionary access control policies over defined subjects and objects.",
+                "control-id": "ac-3.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "5ce3e720-4a9d-4adf-a4f2-58b1e75dc9dc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "a01bde5f-8434-4187-987c-d746de658597",
+                "description": "If the HYCU Server or Web UI uses discretionary access control, the network device must enforce organization-defined discretionary access control policies over defined subjects and objects.",
+                "control-id": "ac-3.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "57ba818b-3895-44bd-b827-f69b264c0031",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "4291497b-8005-47ed-97c6-c9243cb3d6c0",
+                "description": "The HYCU virtual machine must enforce approved authorizations for controlling the flow of management information within the network device based on information flow control policies.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "b3663c3d-7d67-48a1-9929-9f549fa24e5e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "a3de8cff-ddc3-47ee-8ee8-445bf091b526",
+                "description": "The HYCU server and Web UI must audit the execution of privileged functions.\nThe network device must enforce a minimum 15-character password length.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "cb8bf0fd-2751-44a3-8b45-b73c520633fa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "2a49c388-31c2-428c-ae1c-1869ff7b7f4c",
+                "description": "The HYCU VM console must be configured to enforce the limit of three consecutive invalid logon attempts, after which time it must block any logon attempt for 15 minutes.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "c562e696-5be3-4efe-adb9-43b15072e285",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "4f8ae57a-d001-44c7-ae78-b2802c6d9c9b",
+                "description": "The HYCU VM console must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the device.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "e3666aa0-3c0b-4da9-bbcc-64187ccad202",
+                "description": "The HYCU VM console must retain the Standard Mandatory DoD Notice and Consent Banner on the screen until the administrator acknowledges the usage conditions and takes explicit actions to log on for further access.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "fa9b24b5-3a49-4380-ae57-837f8e887b80",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "f5a5fe16-8eba-43e4-bc2c-0bc95d7bedce",
+                "description": "The HYCU 4.1 application and server must limit the number of concurrent sessions to an organization-defined number for each administrator account and/or administrator account type.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "5056da93-7ac4-48af-b098-b41e91328e19",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "269a91d0-f738-41ce-b1b9-1fa246f0f4a1",
+                "description": "The HYCU 4.1 application and server must initiate a session lock after a 15-minute period of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "c8be272e-1b98-4975-bf5d-9a737082eeb1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "657e80ee-8288-43ea-a312-cf959fddbf98",
+                "description": "The HYCU server must produce audit records containing information to establish when events occurred, where events occurred, the source of the event, the outcome of the event, and identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "5e780846-833c-4a8e-81a1-c612fe89d1fa",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "bd9a36d9-fa00-4a54-9339-b02a0c0d5903",
+                "description": "The HYCU server must produce audit records containing information to establish when events occurred, where events occurred, the source of the event, the outcome of the event, and identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "60ffca79-99c9-4cf4-a8c2-527282883f8b",
+                "description": "The HYCU server must produce audit records containing information to establish when events occurred, where events occurred, the source of the event, the outcome of the event, and identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "ed6646c9-2977-45b7-b14c-42ab9fc7a59f",
+                "description": "The HYCU server must generate audit records containing information that establishes the identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "1c5c83f3-7d71-46a6-abc1-ebdd040f226b",
+                "description": "The HYCU server must produce audit records containing information to establish when events occurred, where events occurred, the source of the event, the outcome of the event, and identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "1c37e262-66ac-4ce3-8bd4-813ffced8526",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "dfba470f-68ea-4bb1-81c4-d66022056845",
+                "description": "The HYCU Server must generate audit records containing the full-text recording of privileged commands.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "aa90ed68-2907-4906-b3d7-f64722f4e106",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "ee63c373-8862-4467-bf01-1e9e5c101cf8",
+                "description": "The HYCU server must allocate audit record storage capacity in accordance with organization-defined audit record storage requirements.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "212e582c-1289-479d-8cd0-e5b340ceaf31",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1941371e-9225-4a9e-a999-2843bb416c34",
+                "description": "The HYCU server must be configured to conduct backups of system-level information when changes occur and to offload audit records onto a different system or media.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e2463105-e13d-4b04-bf20-685214aeb41c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "73cac3d4-7b9a-4148-b251-f4a1ccc1c5be",
+                "description": "The HYCU Web UI must generate an immediate real-time alert of all audit failure events requiring real-time alerts.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "97111805-8cf5-4154-b88e-53bc966eb0ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e31d097b-588f-487a-ba96-2c06239b7cc2",
+                "description": "The HYCU server must be configured to synchronize internal information system clocks using redundant authoritative time sources.",
+                "control-id": "au-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4eb3ec58-a4f5-436a-862d-cd812a97b6a2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "7bd858a3-1931-49be-ba0e-db2807ece78a",
+                "description": "The HYCU server must protect audit tools from unauthorized access, modification, and deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "29e33844-6f48-43dc-a28c-6e03727a08c7",
+                "description": "The HYCU server must protect audit tools from unauthorized access, modification, and deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "9ba69929-25f0-43c5-ad09-f19382ca8bb1",
+                "description": "The HYCU server must protect audit information from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "be2d22bc-e300-4f1f-a93b-ed193f58860e",
+                "description": "The HYCU server must protect audit tools from unauthorized access, modification, and deletion.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "261e1f60-d4c4-4d5c-8da8-9ea2767154c7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "c65fa6bc-a6f2-4b78-b303-30647f9aeb63",
+                "description": "The HYCU VM console and HYCU Web UI must be configured to use an authentication server for authenticating users prior to granting access to protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined requirements.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "b875ea20-338a-4097-8874-ba37ea455f8c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "067e3cf5-d1b6-4156-9803-129328de902e",
+                "description": "The HYCU server must generate audit records when successful/unsuccessful attempts to access privileges occur.\nThe HYCU server must generate audit records when successful/unsuccessful attempts to modify or delete administrator privileges occur.\nThe HYCU server must generate audit records when successful/unsuccessful logon attempts occur.\nThe HYCU server must generate audit records for privileged activities or other system-level access.\nThe HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "9db70601-7e42-483d-9b9c-bd4214647741",
+                "description": "The HYCU server must generate audit records for privileged activities or other system-level access.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "cb577fd2-303e-4a1d-aa0d-ecf08289004e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "736bd791-ec02-4bf7-8ad6-12eb8ef84914",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "au-12.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "a1ffbc69-3e1d-4181-b8aa-42bb87c9e848",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c69f8856-bd1b-444b-9c54-a682456b383c",
+                "description": "The HYCU server must initiate session auditing upon startup and produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f0dc825c-6e7a-4f79-9275-3b14f4192e92",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "3b249ea2-3885-442f-bc61-0b5b0d336438",
+                "description": "If the HYCU Server or Web UI uses discretionary access control, the network device must enforce organization-defined discretionary access control policies over defined subjects and objects.\nThe HYCU VM/server must be configured to disable SSH.\nThe HYCU VM console and HYCU Web UI must be configured to use an authentication server for authenticating users prior to granting access to protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined requirements.\nThe HYCU server must generate audit records for privileged activities or other system-level access.\nThe HYCU server must be configured to conduct backups of system-level information when changes occur and to offload audit records onto a different system or media.\nThe HYCU server must be configured to synchronize internal information system clocks using redundant authoritative time sources.\nThe HYCU appliance must be running a release that is currently supported by the vendor.\nThe HYCU server must back up audit records at least every seven days onto a different system or system component than the system or component being audited.\nThe HYCU server must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "51461a6b-7d5c-4f83-ad67-d2ff4674258b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d765d4a3-b86b-481d-a241-5ea9aa8e4d0b",
+                "description": "The HYCU VM console and HYCU Web UI must be configured to use an authentication server for authenticating users prior to granting access to protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined requirements.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "5869a880-ea7e-46bb-a51d-e984bcae1f67",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "cb1a7ac0-21ae-4ef5-90d7-8518e0a78027",
+                "description": "The network device must be configured to prohibit the use of all unnecessary and/or nonsecure functions, ports, protocols, and/or services.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ba97cc35-1576-4911-997f-cbab81013563",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "fb95d027-eb97-415e-acfd-893f582ac8bc",
+                "description": "The HYCU server must be configured to conduct backups of system-level information when changes occur and to offload audit records onto a different system or media.",
+                "control-id": "cp-9."
+              },
+              {
+                "uuid": "c6657ba5-4464-4a43-8c96-29efc7a974b4",
+                "description": "The HYCU server must be configured to conduct backups of system-level information when changes occur and to offload audit records onto a different system or media.",
+                "control-id": "cp-9."
+              }
+            ]
+          },
+          {
+            "uuid": "0473b45b-4e13-444b-b541-34d89fc974ae",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f28b8292-2b4b-437a-9bf7-3e8393ba75f7",
+                "description": "The HYCU VM console and HYCU Web UI must be configured to use an authentication server for authenticating users prior to granting access to protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined requirements.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "67977ced-b0cd-425c-ad8c-5d6175566153",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "b52f0c33-e5f1-4fbe-996f-48a97d38c70e",
+                "description": "The network device must implement replay-resistant authentication mechanisms for network access to privileged accounts.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "1c51252d-876a-4d91-abac-1e90eabb99f8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "22aeaf5f-8991-4d1e-b2a3-2bd78ef5d423",
+                "description": "The HYCU server must authenticate Network Time Protocol sources using authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "6f98e9f8-30eb-4ed8-9ffa-2010f6d93df4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a38a01e7-8698-473b-b1a7-85646e3ddcd9",
+                "description": "The HYCU server must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "050ab73a-ba83-40a9-86ba-27a15091a682",
+                "description": "The HYCU server must enforce password complexity by requiring that at least one uppercase character be used.\nThe network device must enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d99075a0-88f6-408c-877e-16fa8c731ec7",
+                "description": "The HYCU VM console must not have any default manufacturer passwords when deployed.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "665f29b6-5ed3-4b5d-bbe4-e8949a24f866",
+                "description": "The HYCU server must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "dff74d9c-af8a-47f0-9cd3-21790fca15b1",
+                "description": "The HYCU server must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d7e149f3-4b9d-4a09-931d-c910feff5a23",
+                "description": "The HYCU server must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "76075b94-706d-4cb6-b400-d9cea2538eb9",
+                "description": "The HYCU server must require that when a password is changed, the characters are changed in at least eight of the positions within the password.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "67758fb8-ea6f-4fee-a382-86f624e529a1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "28d46005-aadb-478e-82c8-a60b8ee534d0",
+                "description": "The HYCU server must prohibit the use of cached authenticators after an organization-defined time period.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "26805fae-f581-4b18-956f-25cb0d41d681",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "61e77945-4ecf-47b3-91ab-06466d288429",
+                "description": "The HYCU server must use FIPS-validated algorithms for authentication to a cryptographic module and Keyed-Hash Message Authentication Code (HMAC) to protect the integrity and confidentiality of remote maintenance sessions.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "8201fe6c-36e8-45ea-bace-bdb950bbdfce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "d7a44d06-7535-4191-8478-9ef1324dc10d",
+                "description": "The HYCU server must use FIPS-validated algorithms for authentication to a cryptographic module and Keyed-Hash Message Authentication Code (HMAC) to protect the integrity and confidentiality of remote maintenance sessions.",
+                "control-id": "ma-4.(6)"
+              },
+              {
+                "uuid": "a072adf3-9955-4e8a-8e96-d3db5de23052",
+                "description": "The HYCU server must use FIPS-validated algorithms for authentication to a cryptographic module and Keyed-Hash Message Authentication Code (HMAC) to protect the integrity and confidentiality of remote maintenance sessions.",
+                "control-id": "ma-4.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "c9617432-d183-40ca-a7e9-e9fe50a3a42d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "d7177593-86fa-4fcf-b1b0-940bd019e657",
+                "description": "The HYCU server and Web UI must terminate all network connections associated with a device management session at the end of the session, or the session must be terminated after 15 minutes of inactivity except to fulfill documented and validated mission requirements.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "aeaf625a-b701-4bf5-b2e3-8c3fbe0a226c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "0b5a7dc9-61cb-48b0-a3a5-92c68fe92750",
+                "description": "The HYCU server must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "sc-17."
+              }
+            ]
+          },
+          {
+            "uuid": "62b1f411-9955-4828-b788-52a4dafb1cd8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "43ea815a-403e-47db-8a85-dfc026367777",
+                "description": "The network device must generate unique session identifiers using a FIPS 140-2 approved random number generator.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "9eb3507b-635c-4ed2-a93c-6e62565bdc8b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "65bd3a18-97e1-4ddf-a1cd-34511b60e2cc",
+                "description": "The HYCU Web UI must be configured to send log data to a central log server for forwarding alerts to the administrators and the ISSO.",
+                "control-id": "si-2."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "component-definition": {
+    "uuid": "9b0d2b93-56ad-47ac-97bd-571a9c8fc2f9",
+    "metadata": {
+      "title": "Layer 2 Switch V2R1",
+      "last-modified": "2022-06-10T12:50:55",
+      "version": "2022-06-10T12:50:55",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "72d2e579-5f3d-4de7-9452-a89e73e02b84",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "28b92ba1-cf3b-4551-a411-79590f85a5f8",
+        "type": "software",
+        "title": "Layer 2 Switch V2R1",
+        "description": "Neque sit ut neque velit ipsum quaerat.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "72d2e579-5f3d-4de7-9452-a89e73e02b84"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "666a249d-8784-463e-ae43-cb57e1cfc140",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14..",
+            "implemented-requirements": [
+              {
+                "uuid": "fcad8064-43fe-4f33-ba15-2246f638d9b0",
+                "description": "The layer 2 switch must provide the capability for authorized users to select a user session to capture.",
+                "control-id": "au-14."
+              }
+            ]
+          },
+          {
+            "uuid": "b1379d69-2483-4834-99e4-8ef1b75dbeba",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "5cf4e6fa-afd2-4235-ba66-c70c56595bbf",
+                "description": "The layer 2 switch must provide the capability for authorized users to remotely view, in real time, all content related to an established user session from a component separate from the layer 2 switch.",
+                "control-id": "au-14.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "420acf4a-23c6-4eab-a4c2-50cde8b2ea72",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "4370dea6-9dcc-49b4-9da6-08b4af12f10d",
+                "description": "The layer 2 switch must have Storm Control configured on all host-facing switch ports.\nThe layer 2 switch must have IGMP or MLD Snooping configured on all VLANs\nThe layer 2 switch must implement Rapid STP where VLANs span multiple switches with redundant links.\nThe layer 2 switch must enable Unidirectional Link Detection (UDLD) to protect against one-way connections.\nThe layer 2 switch must have all trunk links enabled statically.\nThe layer 2 switch must have all disabled switch ports assigned to an unused VLAN.\nThe layer 2 switch must not have the default VLAN assigned to any host-facing switch ports.\nThe layer 2 switch must have the default VLAN pruned from all trunk ports that do not require it.\nThe layer 2 switch must not use the default VLAN for management traffic.\nThe layer 2 switch must have all user-facing or untrusted ports configured as access switch ports.\nThe layer 2 switch must have the native VLAN assigned to an ID other than the default VLAN for all 802.1q trunk links.\nThe layer 2 switch must not have any switch ports assigned to the native VLAN.\nThe layer 2 switch must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "ecb37408-9a7e-4ec1-add6-95088ff12a77",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e318870-6425-4e05-a3ba-950df9d26ad2",
+                "description": "The layer 2 switch must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ad271f8d-74b3-4a96-a6ec-d6491a187246",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "d69d94e0-a716-486f-ba97-dd1adfda802b",
+                "description": "The layer 2 switch must authenticate all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "ed1d8fb7-f171-426d-b493-d9a8bca3abaf",
+                "description": "The layer 2 switch must uniquely identify all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "e1df5c43-05d1-4f31-bf18-d9d36a0929f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "73b3575f-5ae9-4a52-962d-7e7a9af7aaa5",
+                "description": "The layer 2 switch must authenticate all VLAN Trunk Protocol (VTP) messages with a hash function using the most secured cryptographic algorithm available.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "740935be-16b9-4354-8030-7769f781775b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "be355609-a802-4171-ac49-5d3341b85ae9",
+                "description": "The layer 2 switch must have Root Guard enabled on all switch ports connecting to access layer switches and hosts.\nThe layer 2 switch must have BPDU Guard enabled on all user-facing or untrusted access switch ports.\nThe layer 2 switch must have STP Loop Guard enabled on all non-designated STP switch ports.\nThe layer 2 switch must have Unknown Unicast Flood Blocking (UUFB) enabled.\nThe layer 2 switch must have DHCP snooping for all user VLANs to validate DHCP messages from untrusted sources.\nThe layer 2 switch must have IP Source Guard enabled on all user-facing or untrusted access switch ports.\nThe layer 2 switch must have Dynamic Address Resolution Protocol (ARP) Inspection (DAI) enabled on all user VLANs.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "f0899430-0fe1-49fb-8d7e-2141eb4cabdb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "928d66c4-6793-4ecb-80a1-9e5df07b2adb",
+                "description": "The layer 2 switch must manage excess bandwidth to limit the effects of packet flooding types of denial of service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "cd8ee36f-00e3-47d7-aaa2-0c1f65ff034a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(18).",
+            "implemented-requirements": [
+              {
+                "uuid": "f6a1aeaa-6713-497b-9a9c-75cceb70ea97",
+                "description": "The layer 2 switch must be configured to fail securely in the event of an operational failure.",
+                "control-id": "sc-7.(18)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

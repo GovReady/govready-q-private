@@ -1,0 +1,268 @@
+{
+  "component-definition": {
+    "uuid": "4b9a0984-8ec3-4e5c-b2c5-d73a0ca8b04a",
+    "metadata": {
+      "title": "Microsoft SQL Server 2016 Y22M01",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "58f341cf-7e6b-4712-9799-2ff243b5d61c",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "e5bc44e1-1a15-49b8-b1eb-0a8d79ca054c",
+        "type": "software",
+        "title": "Microsoft SQL Server 2016 Y22M01",
+        "description": "Numquam est dolorem est. Dolor labore neque velit voluptatem.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "58f341cf-7e6b-4712-9799-2ff243b5d61c"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "1a0431bf-811a-47dd-9625-4333c8b6a70d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d99cd70e-dcbc-400a-aeeb-ae6ebbfbfe69",
+                "description": "SQL Server databases must integrate with an organization-level authentication/access mechanism providing account management and automation for all users, groups, roles, and any other principals.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ecaf7e01-5377-40d4-9200-c9750be476de",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "5e11c551-9ecc-43cc-a880-7245ed620a86",
+                "description": "SQL Server must enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "bae8398e-bf1b-41ea-a867-5d9065012c63",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "dff91403-07a3-47bc-85ed-2a783b160e50",
+                "description": "SQL Server must enforce discretionary access control policies, as defined by the data owner, over defined subjects and objects.",
+                "control-id": "ac-3.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "be396acc-8589-4f22-a1cf-e16d373ee506",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "83149b7e-bad7-47f8-af20-05d72b70ffb9",
+                "description": "Execution of stored procedures and functions that utilize execute as must be restricted to necessary cases only.",
+                "control-id": "ac-6.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "2d54f2f2-c62c-4232-91e5-e102ae9d0e22",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16..",
+            "implemented-requirements": [
+              {
+                "uuid": "95f521c0-10e5-4ddd-90a8-f2bd4acd46c7",
+                "description": "SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in transmission.",
+                "control-id": "ac-16."
+              },
+              {
+                "uuid": "be46c19b-2cc4-4c0b-a954-eb1d1355225e",
+                "description": "SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in process.",
+                "control-id": "ac-16."
+              },
+              {
+                "uuid": "e15c476f-a1d4-47c7-a256-d93ff20c80a2",
+                "description": "SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in storage.",
+                "control-id": "ac-16."
+              }
+            ]
+          },
+          {
+            "uuid": "8b1480c2-0c9d-4292-9e3a-cf3a10bc5f1d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "758bc5a8-87c7-427f-abca-71e1fdc7f5a9",
+                "description": "SQL Server must protect against a user falsely repudiating by ensuring only clearly unique Active Directory user accounts can connect to the database.\nSQL Server must protect against a user falsely repudiating by use of system-versioned tables (Temporal Tables).\nSQL Server must protect against a user falsely repudiating by ensuring databases are not in a trust relationship.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "e483c0cb-f463-4d55-92c3-83196221382f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "24db4fc1-21cd-4268-a06a-bc89ac991cd3",
+                "description": "SQL Server must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "7ec1c0cd-2edc-4b50-b248-a88b042be87e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1576cfaa-c1e3-43be-afe3-6a739ca8c1b5",
+                "description": "SQL Server must enforce access restrictions associated with changes to the configuration of the database(s).",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "06e47192-c3fd-4df0-ad72-94d2ae7f38b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "04862673-6f0e-4235-843b-903fc96f29ff",
+                "description": "SQL Server must limit privileges to change software modules, to include stored procedures, functions, and triggers.\nSQL Server must limit privileges to change software modules, to include stored procedures, functions, and triggers, and links to software external to SQL Server.\nDatabase objects (including but not limited to tables, indexes, storage, stored procedures, functions, triggers, links to software external to SQL Server, etc.) must be owned by database/DBMS principals authorized for ownership.\nThe role(s)/group(s) used to modify database structure (including but not necessarily limited to tables, indexes, storage, etc.) and logic modules (stored procedures, functions, triggers, links to software external to SQL Server, etc.) must be restricted to authorized users.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "5ad9cc72-548f-4e47-93b1-5c05d6936945",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "69d67b3a-fbcd-457d-b681-a8aa09f164ce",
+                "description": "SQL Server must prohibit user installation of logic modules (stored procedures, functions, triggers, views, etc.) without explicit privileged status.",
+                "control-id": "cm-11.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "b96a937c-a07b-4acb-b4a1-4a3ce6928abe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "5da50a1d-ce41-4ec1-b3eb-7849370c63f5",
+                "description": "SQL Server must isolate security functions from non-security functions.",
+                "control-id": "sc-3."
+              }
+            ]
+          },
+          {
+            "uuid": "4234112e-da08-46dd-acb3-a20d5b0a126a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "915f3f49-b436-4387-ad08-bd54136f7f61",
+                "description": "Database contents must be protected from unauthorized and unintended information transfer by enforcement of a data-transfer policy.",
+                "control-id": "sc-4."
+              }
+            ]
+          },
+          {
+            "uuid": "0cedf29f-1573-4b42-83e0-cfc8cd21ff3e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "283cdfb3-b8b3-45f7-9b36-2d99408f05c0",
+                "description": "SQL Server must use NSA-approved cryptography to protect classified information in accordance with the data owners requirements.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "eb9d022e-9749-4e61-a448-70ca10c7e7c2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "95c9004d-74a1-4f70-a386-6955fb427c86",
+                "description": "In the event of a system failure, hardware loss or disk failure, SQL Server must be able to restore necessary databases with least disruption to mission processes.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "1558ea07-6773-43a4-b935-21d266b161eb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "9986d584-9c14-4ecc-8e94-d04f73156f99",
+                "description": "The Database Master Key encryption password must meet DOD password complexity requirements.\nThe Database Master Key must be encrypted by the Service Master Key, where a Database Master Key is required and another encryption method has not been specified.\nThe Certificate used for encryption must be backed up, stored offline and off-site.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "9701a0b8-5e63-4590-bb69-57b62d2b0557",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "692d7a17-bf8d-43b7-b72f-6933498f94c1",
+                "description": "SQL Server must implement cryptographic mechanisms to prevent unauthorized modification of organization-defined information at rest (to include, at a minimum, PII and classified information) on organization-defined information system components.",
+                "control-id": "sc-28.(1)"
+              },
+              {
+                "uuid": "9af7d2a8-ffc8-4de4-9d00-08fcab86f042",
+                "description": "SQL Server must implement cryptographic mechanisms preventing the unauthorized disclosure of organization-defined information at rest on organization-defined information system components.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e03da067-ab26-44e8-ade2-1161d4dfe900",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "6f49a2e4-d6f3-4aec-b617-f75c38d1aeda",
+                "description": "SQL Server must check the validity of all data inputs except those specifically identified by the organization.",
+                "control-id": "si-10."
+              }
+            ]
+          },
+          {
+            "uuid": "28cb065f-d383-4ba2-a997-f1b79acd8ea0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "0f55be4e-606f-43b5-b24f-1ff4a620785e",
+                "description": "SQL Server must provide non-privileged users with error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

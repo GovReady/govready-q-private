@@ -1,0 +1,217 @@
+{
+  "component-definition": {
+    "uuid": "c3de8de3-585e-4db7-9fe0-7ac070ce9ce4",
+    "metadata": {
+      "title": "HW Android 9-x",
+      "last-modified": "2022-06-10T12:50:57",
+      "version": "2022-06-10T12:50:57",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "2082201c-81a9-4b7e-95ce-9d4adabee012",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "762df4c7-c052-4a69-a1db-506ca13038a5",
+        "type": "software",
+        "title": "HW Android 9-x",
+        "description": "Velit velit numquam magnam est. Etincidunt eius sed ut aliquam numquam consectetur. Ipsum numquam ipsum dolorem.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "2082201c-81a9-4b7e-95ce-9d4adabee012"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "f70b254b-79b0-404b-8a92-2d8f88aba9fb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "3c3bf2ab-a855-4a54-b1d3-c25a8dc826e4",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to disable multi-user modes.",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "099c7059-62e9-459e-9e50-8d8260ac5513",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "74cb2fca-f613-4567-971f-cb52bac98b85",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "25e59dc3-790a-48cb-9c3a-88be0281b17f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "a94e9067-9cd3-4806-8dbe-99d24b5ce7d5",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to display the DoD advisory warning message at start-up or each time the user unlocks the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "e6c12d61-6b8a-44b4-a482-2c73c9b3d2b0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "5a749cc0-7660-407c-b64f-e96f81354c4f",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\nThe Honeywell Mobility Edge Android Pie device must be configured to lock the display after 15 minutes (or less) of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "c41b5ebe-3ed5-4b9a-8502-a5f2f7348096",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "87647c33-5efc-4dd6-87fd-12ffd2a08768",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
+                "control-id": "ac-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e08a5bab-48a5-4784-821b-60baf15df4d3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "af60c649-56f5-4cc6-baf1-0ee0a707b589",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to not allow backup of all applications and configuration data to remote systems.",
+                "control-id": "ac-20.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "ab0d46df-bf59-4583-b639-fca3e954d798",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "24f77d42-0a60-4fbd-8cb8-c2636455d186",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to enable audit logging.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2e0c067c-d683-4b7f-ac6e-f85a1d8528f9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "d4f930f3-eb3f-42f6-b62f-cf04aa1a78b4",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to generate audit records for the following auditable events: detected integrity violations.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "3be36f44-ffc2-4808-83ff-0adf67cf2830",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "6a054608-c4da-4046-858f-9783126699d2",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to not allow passwords that include more than two repeating or sequential characters.\nThe Honeywell Mobility Edge Android Pie device must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nThe Honeywell Mobility Edge Android Pie device must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nThe Honeywell Mobility Edge Android Pie device whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services);\n- transmit MD diagnostic data to non-DoD servers;\n- voice assistant application if available when MD is locked;\n- voice dialing application if available when MD is locked;\n- allows synchronization of data or applications between devices associated with user; and\n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nThe Honeywell Mobility Edge Android Pie device must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only HSP (Headset Profile), HFP (HandsFree Profile), or SPP (Serial Port Profile) capable devices.\nThe Honeywell Mobility Edge Android Pie device must be configured to disable trust agents. \n \nNOTE: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Honeywell Mobility Edge Android Pie device must be configured to disable multi-user modes.\nThe Honeywell Mobility Edge Android Pie device must be configured to enable audit logging.\nThe Honeywell Android Pie must wipe all data upon unenrollment from MDM.\nHoneywell Mobility Edge Android Pie devices users must complete required training.\nHoneywell Mobility Edge Android Pie devices must have the DoD root and intermediate PKI certificates installed.\nThe Honeywell Mobility Edge Android Pie must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nHoneywell Mobility Edge Android Pie devices work profile must be configured to disable automatic completion of workspace internet browser text input.\nHoneywell Mobility Edge Android Pie devices Work Profile must be configured to disable the autofill services.\nHoneywell Mobility Edge Android Pie devices must be configured to disallow configuration of date and time.\nHoneywell Mobility Edge Android Pie devices must configured to disallow outgoing beam.\nHoneywell Mobility Edge Android Pie devices must have a NIAP validated Honeywell Mobility Edge Android Pie devices operating system installed.\nOn all Honeywell Mobility Edge Android Pie devices, cryptography must be configured to be in FIPS 140-2 validated mode.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "e7e2e0b3-a4d9-414b-a5f4-26eb5243c674",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d2f290f3-0960-430f-bb18-7372f0f2f3b1",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to disable trust agents. \n \nNOTE: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Honeywell Mobility Edge Android Pie device must be configured to enable audit logging.\nThe Honeywell Android Pie must wipe all data upon unenrollment from MDM.\nThe Honeywell Mobility Edge Android Pie must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nHoneywell Mobility Edge Android Pie devices must configured to disallow outgoing beam.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "349bea35-1788-452d-abf8-e31e2f386216",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "c480fa4a-849a-4da9-a869-504607b1e919",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to disable trust agents. \n \nNOTE: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Honeywell Mobility Edge Android Pie device must be configured to disable developer modes.\nThe Honeywell Mobility Edge Android Pie device must be configured to disable USB mass storage mode.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ec89a6d1-a1ef-498d-b606-e9a3a58c6d3e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1e9df257-688c-40db-bdfe-e31bff1e07d6",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only HSP (Headset Profile), HFP (HandsFree Profile), or SPP (Serial Port Profile) capable devices.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "409895f3-f217-4276-b3e0-22d1c67bdd88",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "af291b66-9644-48c1-bfc9-233246cb714f",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nThe Honeywell Mobility Edge Android Pie device must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nThe Honeywell Mobility Edge Android Pie device whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services);\n- transmit MD diagnostic data to non-DoD servers;\n- voice assistant application if available when MD is locked;\n- voice dialing application if available when MD is locked;\n- allows synchronization of data or applications between devices associated with user; and\n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.",
+                "control-id": "cm-11."
+              }
+            ]
+          },
+          {
+            "uuid": "c33c16b9-5e64-449f-b11f-360c21c0abd8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "5f489c87-7a44-4955-8178-c27ae09c49e2",
+                "description": "The Honeywell Mobility Edge Android Pie device must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "3c2bded8-42a4-40ce-8158-8718aa9e36a1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement mp-6.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "f4e385a4-3a69-47de-ad83-e668fb8f6feb",
+                "description": "The Honeywell Android Pie must wipe all data upon unenrollment from MDM.",
+                "control-id": "mp-6.(3)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

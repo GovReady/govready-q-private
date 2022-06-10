@@ -1,0 +1,126 @@
+{
+  "component-definition": {
+    "uuid": "ee31775a-8a71-488e-9e2b-3482f63bb64d",
+    "metadata": {
+      "title": "Microsoft Office System 2016 V2R2",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "0830867d-7b9d-4ada-a1e1-f4bba51aa575",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "9eb5e2eb-8974-4f74-bfea-dafa04a57e3e",
+        "type": "software",
+        "title": "Microsoft Office System 2016 V2R2",
+        "description": "Non voluptatem velit tempora sit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "0830867d-7b9d-4ada-a1e1-f4bba51aa575"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "475c5f7a-e568-4660-a898-294833f888df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "6c6a55e6-8d07-4c9f-a377-f444b03be7b9",
+                "description": "Connection verification of permissions must be enforced.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "88a1f9e4-17e4-4dcb-96f3-08e72619dfee",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "1d98c074-145f-45d3-b79a-352d206ad40f",
+                "description": "The Help Improve Proofing Tools feature for Office must be configured.\nA mix of policy and user locations for Office Products must be disallowed.\nSmart Documents use of Manifests in Office must be disallowed.\nInclusion of document properties for PDF and XPS output must be disallowed.\nWhen using the Office Feedback tool, the ability to include a screenshot must be disabled.\nThe ability to run unsecure Office web add-ins and Catalogs must be disabled.\nThe Office Telemetry Agent must be configured to obfuscate the file name, file path, and title of Office documents before uploading telemetry data to the shared folder.\nThe ability to send personal information to Office must be disabled.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "3cdbc754-5c7b-4030-981c-5aaa8198e9f7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "39882621-8923-4be3-9b58-f75298a2966c",
+                "description": "Office Presentation Service must be removed as an option for presenting PowerPoint and Word online.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "536679bb-554b-4782-9318-70a8a1c9c794",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "27ee8478-af0a-42b8-bb5b-e9f387343bff",
+                "description": "Trust Bar notifications for Security messages must be enforced.\nLoad controls in forms3 must be disabled from loading.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "feff72d9-3045-4718-8b1f-4b4be7e23512",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "ae64f368-dd76-4a1a-b893-f1ba7f6ecf7b",
+                "description": "ActiveX control initialization must be disabled.",
+                "control-id": "sc-18.(4)"
+              },
+              {
+                "uuid": "d333bb33-a08c-48c2-9a51-83383d949e78",
+                "description": "Automation Security to enforce macro level security in Office documents must be configured.\nThe ability to create an online presentation programmatically must be disabled.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "f1d50b06-5081-4c2c-a274-8b958a17cd7c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "af825f0c-1094-4624-882a-ac1109f9f875",
+                "description": "Document metadata for password protected files must be protected.\nThe encryption type for password protected Open XML files must be set.\nThe encryption type for password protected Office 97 thru Office 2003 must be set.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "80bd7776-a2f1-4e80-9330-26c34870503b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "258b21e3-0544-4c0f-b605-5c61da3b56f8",
+                "description": "Rights managed Office Open XML files must be protected.\nEncrypt document properties must be configured for OLE documents.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

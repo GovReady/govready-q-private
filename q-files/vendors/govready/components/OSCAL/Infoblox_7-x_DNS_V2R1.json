@@ -1,0 +1,375 @@
+{
+  "component-definition": {
+    "uuid": "62fa1d6c-082c-48b2-a0a4-28b153f7532b",
+    "metadata": {
+      "title": "Infoblox 7-x DNS V2R1",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "080b0d7e-8b5c-4bb4-95a2-82079e990638",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "1051a2fa-7d9f-4f93-81a6-26059e80286b",
+        "type": "software",
+        "title": "Infoblox 7-x DNS V2R1",
+        "description": "Dolorem porro magnam ut labore ut est. Quiquia dolore non dolorem ipsum consectetur est.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "080b0d7e-8b5c-4bb4-95a2-82079e990638"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "b98f644d-e25a-43d1-8db6-25a4608b113a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "b52dbf52-8fcd-4a35-82e5-88d3f8db408a",
+                "description": "Infoblox systems which perform zone transfers to non-Infoblox Grid DNS servers must be configured to limit the number of concurrent sessions for zone transfers.\nThe Infoblox system must limit the number of concurrent client connections to the number of allowed dynamic update clients.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "10646ce7-0665-4a6b-953c-990e599a59e8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "c663c2ac-450c-4712-a50e-d53b9a88d419",
+                "description": "The Infoblox system audit records must be backed up at least every seven days onto a different system or system component than the system or component being audited.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "9c98f873-8896-43ea-92b0-58356a399f5e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6e922a4d-22bd-4258-93d8-227571a6f062",
+                "description": "The Infoblox system must be configured to provide the means for authorized individuals to determine the identity of the source of the DNS server-provided information.",
+                "control-id": "au-10.(1)"
+              },
+              {
+                "uuid": "1df5cd75-36d5-4d31-9ed6-70c8e2cc869c",
+                "description": "An Infoblox DNS server must strongly bind the identity of the DNS server with the DNS information using DNSSEC.",
+                "control-id": "au-10.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e531ebd1-cb53-4acf-8817-329f5a621b6f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d57b20bd-158c-46c4-b39d-990d8b8bdca5",
+                "description": "The Infoblox system must be configured to validate the binding of the other DNS servers identity to the DNS information for a server-to-server transaction (e.g., zone transfer).",
+                "control-id": "au-10.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "895da2cb-c33c-4ec1-bf12-c45f853e9ac7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "809814b9-83a6-4602-9356-0898538d3e17",
+                "description": "Primary authoritative name servers must be configured to only receive zone transfer requests from specified secondary name servers.\nThe Infoblox system must be configured to activate a notification to the system administrator when a component failure is detected.\nAn Infoblox DNS server must strongly bind the identity of the DNS server with the DNS information using DNSSEC.\nThe Infoblox system must be configured to provide the means for authorized individuals to determine the identity of the source of the DNS server-provided information.\nThe Infoblox system must be configured to validate the binding of the other DNS servers identity to the DNS information for a server-to-server transaction (e.g., zone transfer).\nRecursion must be disabled on Infoblox DNS servers which are configured as authoritative name servers.\nA DNS server implementation must provide data origin artifacts for internal name/address resolution queries.\nA DNS server implementation must provide data integrity protection artifacts for internal name/address resolution queries.\nThe DNS server implementation must follow procedures to re-role a secondary name server as the master name server should the master name server permanently lose functionality.\nThe Zone Signing Key (ZSK) rollover interval must be configured to less than two months.\nNSEC3 must be used for all internal DNS zones.\nThe Infoblox system must ensure each NS record in a zone file points to an active name server authoritative for the domain specified in that record.\nAll authoritative name servers for a zone must be located on different network segments.\nAn authoritative name server must be configured to enable DNSSEC Resource Records.\nDigital signature algorithm used for DNSSEC-enabled zones must be FIPS-compatible.\nFor zones split between the external and internal sides of a network, the RRs for the external hosts must be separate from the RRs for the internal hosts.\nIn a split DNS configuration, where separate name servers are used between the external and internal networks, the external name server must be configured to not be reachable from inside resolvers.\nIn a split DNS configuration, where separate name servers are used between the external and internal networks, the internal name server must be configured to not be reachable from outside resolvers.\nThe DNS implementation must enforce a Discretionary Access Control (DAC) policy that limits propagation of access rights.\nThe DNS implementation must implement internal/external role separation.\nThe Infoblox system must utilize valid root name servers in the local root zone file.\nThe Infoblox NIOS version must be at the appropriate version.\nThe IP address for hidden master authoritative name servers must not appear in the name servers set in the zone database.\nThe platform on which the name server software is hosted must be configured to respond to DNS traffic only.\nThe platform on which the name server software is hosted must be configured to send outgoing DNS messages from a random port.\nThe private keys corresponding to both the ZSK and the KSK must not be kept on the DNSSEC-aware primary authoritative name server when the name server does not support dynamic updates.\nCNAME records must not point to a zone with lesser security for more than six months.\nThe Infoblox system must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.\nThe Infoblox system must be configured to display the appropriate security classification information.\nThe Infoblox system must be configured with the approved DoD notice and consent banner.\nInfoblox Grid configuration must be backed up on a regular basis.\nInfoblox systems must be configured with current DoD password restrictions.\nA secure Out Of Band (OOB) network must be utilized for management of Infoblox Grid Members.\nAll authoritative name servers for a zone must be geographically disbursed.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "9d791939-ed00-4f2c-850e-968043c28fb5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "6f6a1458-4769-4e36-9a7f-4d234d917284",
+                "description": "Infoblox systems configured to run the DNS service must be configured to prohibit or restrict unapproved ports and protocols.\nThe DHCP service must not be enabled on an external authoritative name server.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "546f9483-6160-474d-967c-6902089237bf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "7e20cafa-aead-4131-bb0e-532f8a3833ca",
+                "description": "The Infoblox system must authenticate the other DNS server before responding to a server-to-server transaction.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "c24801ab-961d-4fd1-80d2-0e40a78c2fe2",
+                "description": "Infoblox systems which are configured to perform zone transfers to non-Grid name servers must utilize transaction signatures (TSIG).",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "c3542902-f648-423a-af42-e8e28531c223",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2e7fe3ff-7a27-4ff8-8fa9-91f0000f9b07",
+                "description": "The DNS server implementation must authenticate another DNS server before establishing a remote and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8da2aee9-9172-4788-9248-b3a2779e9188",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "4020fdb6-b209-433e-be4e-613c3a6531a0",
+                "description": "Only the private key corresponding to the ZSK alone must be kept on the name server that does support dynamic updates.\nSignature generation using the KSK must be done off-line, using the KSK-private stored off-line.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "d5ef1485-048e-448d-b23c-ca335d80e55b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "2121835c-303a-492a-8daf-28351b3dd69e",
+                "description": "The Infoblox system must be configured to employ strong authenticators in the establishment of nonlocal maintenance and diagnostic sessions.",
+                "control-id": "ma-4."
+              }
+            ]
+          },
+          {
+            "uuid": "f751ef45-c08a-43a8-8c17-be09caf5d12f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "cc71482c-2ba4-4820-b1a8-5d16959ea1cf",
+                "description": "The Infoblox system must be configured to restrict the ability of individuals to use the DNS server to launch Denial of Service (DoS) attacks against other information systems.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ddba9620-0d31-422c-93ba-edd5d4b52f35",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "52346beb-4662-4548-8efc-f22e3becbb6a",
+                "description": "The Infoblox system must be configured to manage excess capacity, bandwidth, or other redundancy to limit the effects of information flooding types of Denial of Service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "dd57366b-ad2a-4a6c-85a7-63c5f7fb46ef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "6d798042-34ef-49ed-a666-9f10fd06582b",
+                "description": "The Infoblox system must be configured to must protect the integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "c907b698-de46-4e82-9d7e-23ea191bc2e1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "daa89bc8-fa28-42ba-85d0-ece40ffbba59",
+                "description": "The Infoblox system must implement cryptographic mechanisms to detect changes to information during transmission unless otherwise protected by alternative physical safeguards, such as, at a minimum, a Protected Distribution System (PDS).",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "3b7a215f-a784-4795-9498-35e79245af07",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "399f5d74-3e6d-43c4-827d-2330dce5d011",
+                "description": "The DNS server implementation must maintain the integrity of information during reception.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "a5c95b1f-31ab-41e7-b0f3-7023a22b3230",
+                "description": "The DNS server implementation must maintain the integrity of information during preparation for transmission.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "41943016-6181-4849-a81c-c7ea35835279",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "f0939773-e95a-40b7-99e0-f7ca2b8cc897",
+                "description": "The DNS server must implement NIST FIPS-validated cryptography for provisioning digital signatures, generating cryptographic hashes, and protecting unclassified information requiring confidentiality.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "66e5e036-5ae0-441f-9ead-efd1d7a697d3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-20..",
+            "implemented-requirements": [
+              {
+                "uuid": "87d15269-5dad-49cc-9d59-cc4bc3f200f6",
+                "description": "The Infoblox system implementation must enforce approved authorizations for controlling the flow of information between DNS servers and between DNS servers and DNS clients based on DNSSEC policies.\nA DNS server implementation must provide the means to enable verification of a chain of trust among parent and child domains (if the child supports secure resolution services).",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "625cf7e3-f0b0-4116-bc08-98383aafd67c",
+                "description": "A DNS server implementation must provide additional integrity artifacts along with the authoritative name resolution data the system returns in response to external name/address resolution queries.",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "b5208139-0bea-42fc-b52e-ce6c26787687",
+                "description": "The Infoblox system must be configured to provide additional data origin artifacts along with the authoritative data the system returns in response to external name/address resolution queries.",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "352b1ec5-3af0-42ad-b1aa-c22f1ad7f15d",
+                "description": "A DNS server implementation must provide the means to indicate the security status of child zones.\nThe Key Signing Key (KSK) rollover interval must be configured to no less than one year.",
+                "control-id": "sc-20."
+              }
+            ]
+          },
+          {
+            "uuid": "e6604af4-552d-438f-b529-b466d336a707",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "689cbdf5-b45e-4a1e-8bda-44263176b994",
+                "description": "A DNS server implementation must provide data origin artifacts for internal name/address resolution queries.",
+                "control-id": "sc-20.(2)"
+              },
+              {
+                "uuid": "3c52c490-3064-4f1f-a2cc-0c22933725c5",
+                "description": "A DNS server implementation must provide data integrity protection artifacts for internal name/address resolution queries.",
+                "control-id": "sc-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e4a20409-89a7-4eed-bf05-2d0a0a05f933",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-21..",
+            "implemented-requirements": [
+              {
+                "uuid": "47940448-dd52-4402-9034-a2dcfc0d5fed",
+                "description": "A DNS server implementation must request data origin authentication verification on the name/address resolution responses the system receives from authoritative sources.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "fea90f15-a45c-40b1-9873-dc95072e6e97",
+                "description": "A DNS server implementation must perform data origin verification authentication on the name/address resolution responses the system receives from authoritative sources.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "445cc821-0404-4896-8a88-9a3f47bc4f89",
+                "description": "A DNS server implementation must request data integrity verification on the name/address resolution responses the system receives from authoritative sources.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "5ee8c8f6-1f04-4b4a-a02a-60023fd46a3e",
+                "description": "A DNS server implementation must perform data integrity verification on the name/address resolution responses the system receives from authoritative sources.",
+                "control-id": "sc-21."
+              }
+            ]
+          },
+          {
+            "uuid": "590caacb-d78e-4bfd-b2aa-6da42eebba87",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "f5fbb646-3144-4a6c-9b05-2b71bb289a9c",
+                "description": "Infoblox DNS servers must protect the authenticity of communications sessions for zone transfers.\nInfoblox DNS servers must be configured to protect the authenticity of communications sessions for dynamic updates.\nInfoblox DNS servers must be configured to protect the authenticity of communications sessions for queries.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "64c0a10d-3a3f-4cc6-9ce3-9dcde8e446cd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "deabe29d-7c64-441c-aadf-29259a36f1f0",
+                "description": "In the event of a system failure, The Infoblox system must preserve any information necessary to determine cause of failure and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "b71c29cb-e652-47d3-8c04-8702b9a1d67c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "82145528-3b5c-48c9-978f-843b1060368e",
+                "description": "The DNS server implementation must log the event and notify the system administrator when anomalies in the operation of the signed zone transfers are discovered.",
+                "control-id": "si-6."
+              }
+            ]
+          },
+          {
+            "uuid": "b065ba28-cfe0-4e90-ad91-db27112a7596",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-13.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "2d9ac339-92ff-469c-9a2b-6766dccf74fa",
+                "description": "The Infoblox system must be configured to activate a notification to the system administrator when a component failure is detected.",
+                "control-id": "si-13.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "664e8418-5cdb-41b3-b904-24c4bbda2313",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "93a4df37-096b-4f1f-ac68-eb6ca948f1d1",
+                "description": "The DNS server implementation must follow procedures to re-role a secondary name server as the master name server should the master name server permanently lose functionality.",
+                "control-id": "si-17."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

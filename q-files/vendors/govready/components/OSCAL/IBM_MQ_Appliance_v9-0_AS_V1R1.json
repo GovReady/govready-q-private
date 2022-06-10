@@ -1,0 +1,630 @@
+{
+  "component-definition": {
+    "uuid": "58b60b1f-ca58-4639-9f83-5b3b39a8a1cb",
+    "metadata": {
+      "title": "IBM MQ Appliance v9-0 AS V1R1",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "7f3602c5-10be-4b81-8dd9-98864b1b9b60",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "a48af093-20ff-45cd-9dec-df4622ff197a",
+        "type": "software",
+        "title": "IBM MQ Appliance v9-0 AS V1R1",
+        "description": "Aliquam amet etincidunt numquam neque non quisquam. Neque sed velit ut sed non dolore. Velit ipsum non consectetur quaerat aliquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "7f3602c5-10be-4b81-8dd9-98864b1b9b60"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "357f72bd-8217-4052-b585-1e712d91c51c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "52eec023-7223-4891-b6e7-68d838d959da",
+                "description": "The MQ Appliance messaging server must provide access logging that ensures users who are granted a privileged role (or roles) have their privileged activity logged.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "64859122-08b9-4bc5-9854-08cc77f827ac",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "04f33660-2799-46b2-b207-bd6b40ebdc82",
+                "description": "The MQ Appliance messaging server management interface must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "8b7f64f6-4b83-4b0f-ac24-6c5065e68939",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "a2dbfba3-57e0-4c48-b3fb-0b007ec14f92",
+                "description": "The MQ Appliance messaging server must protect against or limit the effects of all types of Denial of Service (DoS) attacks by employing operationally-defined security safeguards.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "99100419-a37d-4138-9aa4-a20ede51ca7d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "f0668410-d078-458a-98f6-7b26b40468b6",
+                "description": "The MQ Appliance messaging server must automatically terminate a SSH user session after organization-defined conditions or trigger events requiring a session disconnect.\nThe MQ Appliance must automatically terminate a WebGUI user session after 600 seconds of idle time.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "cf9a2016-cab5-4db1-9ea4-5a53375846aa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "12ea4159-0a94-4d46-87b0-b5380c83b31b",
+                "description": "The MQ Appliance messaging server must provide access logging that ensures users who are granted a privileged role (or roles) have their privileged activity logged.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "3097d8ed-5c7b-46da-8cf0-097b04fd088d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "f4a99b20-6830-4d03-8247-9ae01daba4f1",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "0c627cf8-a19a-4c1e-9057-0011e7b7fd48",
+                "description": "The MQ Appliance messaging server must use encryption strength in accordance with the categorization of the management data during remote access management sessions.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "ec9150df-f6d8-400a-b2b4-910b79c75304",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "372a0fd6-ea20-48a8-9b32-b988bade2554",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d74cddb3-b217-436b-bf89-5e2fdfc9d385",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "f978a77f-006d-41dc-8064-a6fab8164bc4",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "6069cc53-7744-4a72-8f91-42c4d4588ff1",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "f7f65a92-0867-4dac-bf90-3685dde2944e",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "fdab108e-a17c-4312-98ae-b420fa38688d",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "4d324713-22b1-4894-9519-5fcb52838859",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "118fb799-dd94-41dc-98a4-b0fb508d4c29",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1b8e13ec-ce1c-4ea8-94fc-e4d2ae8c6b2d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "4081eb7f-d2df-4db9-8368-d78fc42c5d02",
+                "description": "The MQ Appliance messaging server must provide centralized management and configuration of the content to be captured in log records generated by all application components.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "838886a6-6657-42e1-a914-9048551862b8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8dbeca96-051c-489e-aada-c0db633733ee",
+                "description": "The MQ Appliance messaging server must off-load log records onto a different system or media from the system being logged.\nThe MQ Appliance messaging server must, at a minimum, transfer the logs of interconnected systems in real time, and transfer the logs of standalone systems weekly.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "bd0c6628-1e0d-4a7c-8a4e-da10723b68bb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "ca9e923b-4b75-4917-b062-76b82851c1dc",
+                "description": "The MQ Appliance messaging server must be configured to fail over to another system in the event of log subsystem failure.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "25d2a078-8334-49cc-a353-1f78432ab792",
+                "description": "The MQ Appliance messaging server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "3c1de11e-dddc-45a8-a20f-a2cbe1502228",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c1443f52-e22c-4d66-aae5-f01d027d4d83",
+                "description": "The MQ Appliance messaging server must provide an immediate warning to the SA and ISSO, at a minimum, when allocated log record storage volume reaches 75% of maximum log record storage capacity.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a5debfe4-8997-44bf-898a-1357df816d02",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "4c4f260f-b97c-4ee1-ba21-a7f73f291d61",
+                "description": "The MQ Appliance messaging server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "723ea3ba-1f7c-481b-876c-0745d5a0aa03",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "1e3073f1-a154-45cf-b47a-5291f90090be",
+                "description": "The MQ Appliance messaging server must provide a log reduction capability that supports on-demand reporting requirements.",
+                "control-id": "au-7."
+              }
+            ]
+          },
+          {
+            "uuid": "407b08a5-d2f3-451a-a836-194177e0267f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4b803992-f6ce-4c93-9bfd-cb808707ebc4",
+                "description": "The MQ Appliance messaging server must synchronize internal MQ Appliance messaging server clocks to an authoritative time source when the time difference is greater than the organization-defined time period.",
+                "control-id": "au-8.(1)"
+              },
+              {
+                "uuid": "df3abf79-9bbf-4702-bd96-a9b64ef28ece",
+                "description": "The MQ Appliance messaging server must compare internal MQ Appliance messaging server clocks at least every 24 hours with an authoritative time source.",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0e8ffebd-3827-4098-bb99-93a7f754ad32",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "56801f33-6f6b-4090-ab06-b08819ba4bd3",
+                "description": "The MQ Appliance messaging server must be configured to fail over to another system in the event of log subsystem failure.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e6fd2e4d-18e3-487c-b4dd-b4eff4a46b39",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "3296f276-3427-4c91-9a6d-8bcf9124327c",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "au-9.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "59d6f3a2-5ea7-4190-aa29-fd385dd6c756",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "312075aa-00d9-4785-a5e5-9a09c1ff3d58",
+                "description": "The MQ Appliance messaging server must protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined actions to be covered by non-repudiation.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "266a4c60-ec0a-4c07-a0c6-0a7c75d87735",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "885ad0e8-00b8-4062-aebc-27571eeb6696",
+                "description": "The MQ Appliance messaging server must identify potentially security-relevant error conditions.\nThe MQ Appliance messaging server must provide access logging that ensures users who are granted a privileged role (or roles) have their privileged activity logged.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "2d9c52d9-cbc1-40a7-904d-6482bde34fea",
+                "description": "The MQ Appliance messaging server must generate log records for access and authentication events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "25415421-2ab7-49ba-a662-e0ba1578a2f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "0a794b88-7a76-4b3e-80d9-1a0e96dd1e92",
+                "description": "The MQ Appliance messaging server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-14.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e35c522d-e6c2-4c95-bc06-56d36e0612ed",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "7a09f822-53d5-48b6-848f-d4e36260980b",
+                "description": "The MQ Appliance messaging server must provide a log reduction capability that supports on-demand reporting requirements.",
+                "control-id": "au-14.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "a695a3c4-8611-4c95-a882-63819d652421",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "a84baec4-329b-4be5-9112-cc9d5e0392f3",
+                "description": "The MQ Appliance messaging server must use an enterprise user management system to uniquely identify and authenticate users (or processes acting on behalf of organizational users).",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "7cfdefad-a7c3-455d-bc65-509643358dc7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "0b70fca7-d176-4cec-be99-f62950a43ecd",
+                "description": "The MQ Appliance messaging server must authenticate all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "159f41d6-1d26-4500-b936-b404f8eaee55",
+                "description": "The MQ Appliance messaging server must uniquely identify all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "3e29bc5f-e753-4e9e-8b57-b3c2fb5e1f27",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8438a73b-ee9d-461a-bff6-64e885fd37be",
+                "description": "The MQ Appliance messaging server must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c4d1ebf6-9c87-426a-9a2d-503583a370a0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "08b31266-6e9f-4e77-a878-3cf70152e56a",
+                "description": "The MQ Appliance must disable identifiers (individuals, groups, roles, and devices) after 35 days of inactivity.",
+                "control-id": "ia-4."
+              }
+            ]
+          },
+          {
+            "uuid": "373c1b37-532f-4229-990b-152d0910ec97",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e993aba8-919e-4ede-aa93-58d65ce36a77",
+                "description": "Access to the MQ Appliance messaging server must utilize encryption when using LDAP for authentication.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f95119e7-70f6-4493-945e-8bd23d503d2f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d61d7252-d9b9-4105-8ca8-758d1d7cdd8e",
+                "description": "The MQ Appliance messaging server must map the authenticated identity to the individual messaging user or group account for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "7edc7d24-62ea-402c-a527-47cf546a457a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "c38872fa-baca-47cd-9648-1f499dda4087",
+                "description": "The MQ Appliance WebGUI interface to the messaging server must prohibit the use of cached authenticators after one hour.\nThe MQ Appliance SSH interface to the messaging server must prohibit the use of cached authenticators after 600 seconds.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "08b39bbf-e35f-45ec-ab3a-4a165a99236c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "6d96b45f-d576-43fa-88b9-90d2dc1e6539",
+                "description": "The MQ Appliance messaging server must utilize FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "b0664734-fc74-4ca1-88df-c697b71300a3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7be842d5-52d4-4c3d-a5a6-cffb5e2e997d",
+                "description": "The MQ Appliance messaging server must accept FICAM-approved third-party credentials.",
+                "control-id": "ia-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "efb8dd7b-2714-47c6-8ee3-f7455a18a0a0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "ba926294-3b8f-455c-b048-818f2fecb843",
+                "description": "The MQ Appliance messaging server must accept FICAM-approved third-party credentials.",
+                "control-id": "ia-8.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "5a839265-38f0-4dd2-bd13-511d14c7617f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "b28cddbb-dfde-43cc-80e6-43e7f23e364f",
+                "description": "The MQ Appliance messaging server, when categorized as a high level system, must be in a high-availability (HA) cluster.\nThe MQ Appliance messaging server must protect against or limit the effects of all types of Denial of Service (DoS) attacks by employing operationally-defined security safeguards.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "839f50e9-9f4d-474b-8633-57461ea8dec3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "6a22e49a-338c-47f0-aef3-664f1da83842",
+                "description": "The MQ Appliance messaging server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.\nThe MQ Appliance messaging server must protect the confidentiality and integrity of transmitted information through the use of an approved TLS version.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "ca8a52e6-8231-4f95-977b-c6b05390dbc1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d20a92d5-dc6a-4316-a180-7f8fb285a398",
+                "description": "The MQ Appliance messaging server must employ approved cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "89361904-ef28-4a64-a2fb-161c1db79a90",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "a591660f-e657-4177-9a52-34c27ea0b439",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "2d8651c9-be0e-4f53-82eb-65aab21e6daf",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "00432457-af8b-44e8-9cef-62ad4d3435dd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "7b60b1fc-aa49-4759-a6c8-c9572cbe8ef6",
+                "description": "The MQ Appliance messaging server must implement NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.\nThe MQ Appliance messaging server must use DoD- or CNSS-approved PKI Class 3 or Class 4 certificates.\nMQ Appliance messaging servers must use NIST-approved or NSA-approved key management technology and processes.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "292d0839-ed6c-4cfd-95f3-12346abfa475",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "491925f6-f3b2-4952-8799-e593af7740c6",
+                "description": "The MQ Appliance messaging server must ensure authentication of both SSH client and server during the entire session.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "80f726cf-4abd-420b-a27f-eb2f176ea84b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "eb739708-d3fe-4440-8ecb-67ca05325303",
+                "description": "The MQ Appliance messaging server must ensure authentication of both SSH client and server during the entire session.",
+                "control-id": "sc-23.(3)"
+              },
+              {
+                "uuid": "3369144d-8c4d-4970-9ace-ac921041bd99",
+                "description": "The MQ Appliance messaging server must generate a unique session identifier using a FIPS 140-2 approved random number generator.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "6f8922ac-ef6c-4c8c-8c01-a0293ee8e687",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "2d4b614d-d24c-49aa-bcee-56a23a495567",
+                "description": "The MQ Appliance messaging server must only allow the use of DoD PKI-established certificate authorities for verification of the establishment of protected (messaging) sessions.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "7e8170c9-bfa5-49c9-8d57-89e0aa35b5be",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "b702506d-2d91-4de2-b7a0-5548d141abff",
+                "description": "The MQ Appliance messaging server must provide a clustering capability.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "9634cf98-5cdd-4475-9d9e-90180f2c8c7d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "e82e6f98-9f55-4bd3-b423-7ad22ac1a054",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "eb96d97a-188b-47b2-936c-501855caa333",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8e83a939-0944-4808-b461-e3b2bf95eb10",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "sc-28.(1)"
+              },
+              {
+                "uuid": "c102754c-36ee-43d0-9f3c-70876b9b5bf1",
+                "description": "The MQ Appliance messaging server must implement cryptography mechanisms to protect the integrity of the remote access session.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b284fa1a-c4b1-4ae7-b90a-b3ac61c2cb5f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "1836b908-2064-460c-bcad-4e7a6b0d6619",
+                "description": "The MQ Appliance messaging server must install security-relevant software updates within the time period directed by an authoritative source (e.g., IAVM, CTOs, DTMs, and STIGs).",
+                "control-id": "si-2."
+              }
+            ]
+          },
+          {
+            "uuid": "3898e1b4-a330-4d86-85a7-4a83339ad5ed",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "399523b5-6573-489a-a88b-7a8727e829f0",
+                "description": "The MQ Appliance messaging server must identify potentially security-relevant error conditions.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

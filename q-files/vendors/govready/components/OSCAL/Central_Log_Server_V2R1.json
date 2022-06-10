@@ -1,0 +1,795 @@
+{
+  "component-definition": {
+    "uuid": "a4b9aeae-272c-47a5-ad94-fe90fc482987",
+    "metadata": {
+      "title": "Central Log Server V2R1",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "c40aa93f-19f7-4134-b6f2-dd22d7e0bac1",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "69239026-baf8-447a-a68c-a07c28eb2943",
+        "type": "software",
+        "title": "Central Log Server V2R1",
+        "description": "Quaerat quisquam numquam consectetur neque est.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "c40aa93f-19f7-4134-b6f2-dd22d7e0bac1"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "4ab46371-1c37-4dcf-a028-c0f9767d2bfe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "e670a8af-c364-4afb-a77c-f373bf781a03",
+                "description": "For devices and hosts within its scope of coverage, the Central Log Server must notify the System Administrator (SA) and Information System Security Officer (ISSO) when events indicating account disabling actions are received.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "81d15306-068a-4b8c-9d4a-d1892dd67921",
+                "description": "The Central Log Server must notify system administrators and ISSO when accounts are created.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "659dd130-e2b3-4e0a-9a3a-861cc6fec566",
+                "description": "For devices and hosts within its scope of coverage, the Central Log Server must be configured to notify the System Administrator (SA) and Information System Security Officer (ISSO) when account modification events are received.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "4c8bb7c7-3a81-4639-85f9-e43a564560e6",
+                "description": "For devices and hosts within its scope of coverage, the Central Log Server must notify the System Administrator (SA) and Information System Security Officer (ISSO) when events indicating account removal actions are received.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "3be8b195-d19d-4052-bb9e-0a8f7dd7b5ea",
+                "description": "The Central Log Server must automatically audit account creation.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "807f0767-d716-44a4-a564-ff859de82022",
+                "description": "The Central Log Server must automatically audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "893f1716-4c06-4087-96cf-60e05ea00231",
+                "description": "The Central Log Server must automatically audit account disabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "0c69f5a6-c4fb-4f72-b062-668609bdf391",
+                "description": "The Central Log Server must automatically audit account removal actions.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "bc12a575-b610-490a-9f73-b6e48d9e05f7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "d017af2b-c80b-4bff-a9ed-0d0f7c4023b5",
+                "description": "The Central Log Server must be configured to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "f8450d33-70f4-48ac-a22e-79a9a04fc557",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "4e43d511-7795-43a4-b1ef-50f96c52b3ff",
+                "description": "The Central Log Server must automatically lock the account until the locked account is released by an administrator when three unsuccessful login attempts in 15 minutes are exceeded.",
+                "control-id": "ac-7."
+              },
+              {
+                "uuid": "cd1d21b9-981b-4884-85d7-e9b9dec7e6df",
+                "description": "The Central Log Server must enforce the limit of three consecutive invalid logon attempts by a user during a 15 minute time period.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ab0cb653-02ed-4f51-832b-a1d249a9cc95",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "afe2e7e7-8c78-41cd-a8f9-837332eb23a8",
+                "description": "The Central Log Server must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the Central Log Server.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "51bf3fe2-9e6c-436c-bafd-893720eab849",
+                "description": "The Central Log Server must retain the Standard Mandatory DoD Notice and Consent Banner on the screen until users acknowledge the usage conditions and take explicit actions to log on for further access.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "191a4b27-63d9-406a-a2d6-4cc60d72937a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "cd998861-0802-49ed-956c-47ace3193c3c",
+                "description": "The Central Log Server must automatically terminate a user session after organization-defined conditions or trigger events requiring session disconnect.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "3e2b55dd-a3c6-4041-a50e-eba367dab063",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1472a2c0-aeb8-4593-8af5-e4c6fc31dd21",
+                "description": "The Central Log Server must provide a logout capability for user initiated communication session.",
+                "control-id": "ac-12.(1)"
+              },
+              {
+                "uuid": "c6ad43cc-94b3-4adc-bfc4-efea830ac321",
+                "description": "The Central Log Server must display an explicit logout message to users indicating the reliable termination of authenticated communications sessions.",
+                "control-id": "ac-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "407a0bf5-2d40-4e86-9d2b-c2f2944ad7b1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "c49ae60e-e585-4700-8c82-0480ce5fc77d",
+                "description": "The Central Log Server must produce audit records containing information to establish what type of events occurred.\nThe System Administrator (SA) and Information System Security Manager (ISSM) must configure the retention of the log records based on criticality level, event type, and/or retention period, at a minimum.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "bc3d1010-b4bd-4b5b-aaef-91ef2b53d582",
+                "description": "The Central Log Server must produce audit records containing information to establish where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "b965db62-0703-44fc-83f7-b5be64614878",
+                "description": "The Central Log Server must generate audit records containing information that establishes the identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "a7f07b7f-dc38-496c-bfcc-101040f5b36d",
+                "description": "The Central Log Server must produce audit records containing information to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "ae23e77b-9b1e-4a86-b3d7-cb3dc50e74b7",
+                "description": "The Central Log Server must produce audit records that contain information to establish the outcome of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "140e9eb1-ad03-486e-b563-71fb2aec5e15",
+                "description": "The Central Log Server must produce audit records containing information to establish the source of the events.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "8751bcae-7dfa-4d4b-ae73-83bd0e9ad7e9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "3876273e-8cdb-4fb0-b175-7cb77d30a51b",
+                "description": "The Central Log Server must be configured for centralized management of the events repository for the purposes of configuration, analysis, and reporting.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4d935983-73df-4b57-8528-eb7c9133e4d3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "79a880fa-450d-4c67-958e-a280d858810f",
+                "description": "The Central Log Server must be configured to off-load log records onto a different system or media than the system being audited.\nThe Central Log Server must be configured to off-load interconnected systems in real time and off-load standalone systems weekly, at a minimum.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0799420d-ea01-48ed-af99-6739717b3f7a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c0bd108f-ee1a-45eb-b2a1-87124c530f89",
+                "description": "The Central Log Server must be configured to send an immediate alert to the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated log record storage volume reaches 75 percent of the repository maximum log record storage capacity.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8390cc6f-aa0e-437a-9c02-f7961539201e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "32616427-6ebc-4dba-be03-17bacea74315",
+                "description": "For the host and devices within its scope of coverage, the Central Log Server must be configured to send a real-time alert to the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) of all audit failure events, such as loss of communications with hosts and devices, or if log records are no longer being received.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "a13acc69-de04-4c86-b312-70b83ecf1a7c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "28fd3150-ebc4-4320-9a52-29d2af28e725",
+                "description": "The Central Log Server must be configured to send an immediate alert to the System Administrator (SA) or Information System Security Officer (ISSO) if communication with the host and devices within its scope of coverage is lost.",
+                "control-id": "au-5.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "865c57d4-98d1-4bfc-80db-439fe45af083",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-6.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "e0afde98-1f26-47f3-8500-de9f3c9890e3",
+                "description": "The Central Log Server must be configured to perform analysis of log records across multiple devices and hosts in the enclave that can be reviewed by authorized individuals.",
+                "control-id": "au-6.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "a7b73052-b81a-45cf-b761-38f0396e9fb6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "6d5cdf8f-4759-437e-b51f-50288b8d6cec",
+                "description": "The Central Log Server must be configured to generate reports that support on-demand reporting requirements.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "89bb5b32-ef9f-4351-8d8f-c24387c27ec7",
+                "description": "The Central Log Server must be configured to perform audit reduction that supports on-demand reporting requirements.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "37a39d4f-82b4-43a3-82f0-6960d4c6b40e",
+                "description": "The Central Log Server must be configured to perform audit reduction that supports on-demand audit review and analysis.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "ef1fa123-b5b6-4c2c-b54e-9c48605b5f8e",
+                "description": "The Central Log Server must be configured to generate on-demand audit review and analysis reports.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "5ba39dd0-2d5d-444f-95cd-25e095367fc4",
+                "description": "The Central Log Server must be configured to perform audit reduction that supports after-the-fact investigations of security incidents.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "d7df14b9-5aa8-4f9c-9c18-05134983e942",
+                "description": "The Central Log Server must be configured to generate reports that do not alter original content or time ordering of log records.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "1c75d7c0-30f5-4386-9c14-ea099f8e7c99",
+                "description": "The Central Log Server must be configured to generate reports that support after-the-fact investigations of security incidents.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "f5be07b7-de26-4a32-92bc-0bd74ead1105",
+                "description": "The Central Log Server must be configured to perform audit reduction that does not alter original content or time ordering of log records.",
+                "control-id": "au-7."
+              }
+            ]
+          },
+          {
+            "uuid": "5c09f64e-7027-46ad-a031-c276163e3d8d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "dad67804-04f8-4d57-aea7-87dc6fc1e2ab",
+                "description": "The Central Log Server must be configured to perform on-demand filtering of the log records for events of interest based on organization-defined criteria.",
+                "control-id": "au-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b1e264ed-bdbb-4756-bbf7-4bdbba820e1a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d98bc34d-43fe-4280-a6a7-431290e5ad85",
+                "description": "The Central Log Server must be configured to perform on-demand searches of log records for events of interest based on the content of organization-defined audit fields within log records.",
+                "control-id": "au-7.(2)"
+              },
+              {
+                "uuid": "a8144968-55e2-4a8c-a826-5c1645118347",
+                "description": "The Central Log Server must be configured to perform on-demand sorting of log records for events of interest based on the content of organization-defined audit fields within log records.",
+                "control-id": "au-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "43b66d49-ff50-4e39-9356-6ed95ce1c0ab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "db69de33-c85e-4cd2-93eb-164d7d03859a",
+                "description": "The Central Log Server must be configured to use internal system clocks to generate time stamps for log records.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "4cf54005-b67e-44e5-be01-a70d039e5c03",
+                "description": "The Central Log Server must be configured to record time stamps for when log records are received by the log server that meet a granularity of one second for a minimum degree of precision.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "f3fbfb07-1822-455f-8933-17e6b931fcbc",
+                "description": "Upon receipt of the log record from hosts and devices, the Central Log Server must be configured to record time stamps of the time of receipt that can be mapped to Coordinated Universal Time (UTC).",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "801d8b8f-97a0-47eb-b79d-fd64df966bf2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "0a54adc1-1ede-48dd-b211-7cb9f5d8d6e6",
+                "description": "The Central Log Server must protect audit tools from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "81358a0f-4d3f-4469-b027-dd30d2b2d9b6",
+                "description": "The Central Log Server must protect audit information from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "905a6caf-30a7-422d-832c-2ee926d1e2d3",
+                "description": "The Central Log Server must protect audit tools from unauthorized modification.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "79fd742b-7d47-4fb1-8400-65c6ecb13c19",
+                "description": "The Central Log Server must protect audit tools from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "4d609655-0717-47e3-b379-325e4048a72f",
+                "description": "The Central Log Server must protect audit information from any type of unauthorized read access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "0621aff4-4be8-4db8-b58f-9dd22f111031",
+                "description": "The Central Log Server must protect audit information from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "ea3b9799-0e28-407e-82e6-21d57b883dad",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6523cc80-1c57-4187-aae9-1d322e7c7068",
+                "description": "The Central Log Server must be configured to back up the log records repository at least every seven days onto a different system or system component other than the system or component being audited.\nThe Central Log Server system backups must be retained for a minimum of 5 years for SAMLI and a minimum of 7 days for non-SAMI on media capable of guaranteeing file integrity for the minimum applicable information retention period.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8c956fdd-ad88-4d1b-bb9e-a43c9350d607",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "a3db95cb-c08f-4d65-ab8f-364af902db48",
+                "description": "The Central Log Server must be configured to protect the data sent from hosts and devices from being altered in a way that may prevent the attribution of an action to an individual (or process acting on behalf of an individual).",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "3487e623-f309-4d84-9b84-3874ddcbf3fd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "e27cc4ee-56a1-49d3-923c-90ca49385d7e",
+                "description": "The Central Log Server system backups must be retained for a minimum of 5 years for SAMLI and a minimum of 7 days for non-SAMI on media capable of guaranteeing file integrity for the minimum applicable information retention period.",
+                "control-id": "au-11."
+              }
+            ]
+          },
+          {
+            "uuid": "72ca1399-3e3c-44f3-8b19-955c95139fc5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "5c463138-c951-40ef-ba55-41250df38dc2",
+                "description": "The Central Log Server must generate audit records when successful/unsuccessful logon attempts occur.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "4a318a17-258d-494b-9108-1cc40c7950ac",
+                "description": "The Central Log Server must be configured to retain the DoD-defined attributes of the log records sent by the devices and hosts.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "3dc4c505-979f-4e2c-9343-bd3b9045907f",
+                "description": "The Central Log Server must be configured to allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be retained.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "2eb9fd90-850d-41aa-9115-822f15e96260",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7985a792-0258-46a9-9f1c-65bf2e742721",
+                "description": "The Central Log Server must be configured to aggregate log records from organization-defined devices and hosts within its scope of coverage.\nTime stamps recorded on the log records in the Central Log Server must be configured to synchronize to within one second of the host server or, if NTP is configured directly in the log server, the NTP time source must be the same as the host and devices within its scope of coverage.\nWhere multiple log servers are installed in the enclave, each log server must be configured to aggregate log records to a central aggregation server or other consolidated events repository.",
+                "control-id": "au-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "bb54e9fe-b8bb-4e57-8d23-adc744f75c18",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "3a263fcc-6cc5-4d4c-98dc-27f208d8a8e0",
+                "description": "The Central Log Server log records must be configured to use the syslog protocol or another industry standard format (e.g., Windows event protocol) that can be used by typical analysis tools.",
+                "control-id": "au-12.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "1b7d460c-d31e-479c-a609-959fd1529d4d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "24dd60cd-982d-466c-8d51-00a229cae370",
+                "description": "The System Administrator (SA) and Information System Security Manager (ISSM) must configure the retention of the log records based on criticality level, event type, and/or retention period, at a minimum.\nThe Central Log Server must be configured so changes made to the level and type of log records stored in the centralized repository must take effect immediately without the need to reboot or restart the application.",
+                "control-id": "au-12.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "e2919323-e415-43b7-a01f-fbdefb887bf0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "aceec3ea-fa8a-4581-b7d7-295da7548fec",
+                "description": "The Central Log Server must initiate session auditing upon startup.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "cf1c92df-c571-470f-87a3-3d3d94d2ddfc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "68556eba-74a5-4e2c-b2d4-e65cbc8da5b6",
+                "description": "The Central Log Server must be configured to retain the identity of the original source host or device where the event occurred as part of the log record.\nThe Central Log Server that aggregates log records from hosts and devices must be configured to use TCP for transmission.\nThe Central Log Server must be configured to notify the System Administrator (SA) and Information System Security Officer (ISSO), at a minimum, when an attack is detected on multiple devices and hosts within its scope of coverage.\nThe Central Log Server must be configured to automatically create trouble tickets for organization-defined threats and events of interest as they are detected in real time (within seconds).\nFor devices and hosts within the scope of coverage, the Central Log Server must be configured to automatically aggregate events that indicate account actions.\nThe Central Log Server must be configured with the organization-defined severity or criticality levels of each event that is being sent from individual devices or hosts.\nAnalysis, viewing, and indexing functions, services, and applications used as part of the Central Log Server must be configured to comply with DoD-trusted path and access requirements.\nThe Central Log Server must be configured so changes made to the level and type of log records stored in the centralized repository must take effect immediately without the need to reboot or restart the application.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "0ad2ae4f-3587-4ac0-bb32-40026bfd650d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "f7a36516-cc28-41e5-a084-c105b2701345",
+                "description": "The Central Log Server must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "28afa3e4-39ea-41fd-88bf-2c21f2cf593e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "2fd713ca-d398-4a39-ad72-5f8e0ad843ef",
+                "description": "The Central Log Server must be configured to uniquely identify and authenticate organizational users (or processes acting on behalf of organizational users).",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "e9d1328c-acf8-4e74-a16d-29936e4155e3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d99447f1-28bc-4ea9-aa68-67389aa9a7d4",
+                "description": "The Central Log Server must use multifactor authentication for network access to privileged user accounts.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "594554d5-5fe9-4a7e-a2a3-7766c8996238",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7bca20dc-edf0-415a-af6e-9aafae76edae",
+                "description": "The Central Log Server must use multifactor authentication for network access to non-privileged user accounts.",
+                "control-id": "ia-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "547adfd2-aa40-4374-a12b-5ebea880748c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "165d6c0a-0c60-4b2d-9ad7-5dfd55583c1f",
+                "description": "The Central Log Server must use multifactor authentication for local access using privileged user accounts.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "6913b7d4-62a8-4fd9-9094-99831b0b0b7a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "8b42d20b-18b9-4032-a019-e5181ae903a2",
+                "description": "The Central Log Server must be configured to use multifactor authentication for network access to privileged accounts such that one of the factors is provided by a device separate from the system gaining access.",
+                "control-id": "ia-2.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "2cea6769-2008-45d5-baee-632d10273941",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "d3875a24-f5f3-4df7-ad57-0e64e73ac6b3",
+                "description": "The Central Log Server must use FIPS-validated SHA-1 or higher hash function to provide replay-resistant authentication mechanisms for network access to privileged accounts.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "ddeadd62-9878-40ac-be45-57274fd87502",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "e9a0aecb-bd48-4700-b6da-7af4e869e9e0",
+                "description": "The Central Log Server must be configured to accept the DoD CAC credential to support identity management and personal authentication.",
+                "control-id": "ia-2.(12)"
+              },
+              {
+                "uuid": "32d3dcbf-6d1b-4280-849a-79962ae5374f",
+                "description": "The Central Log Server must be configured to electronically verify the DoD CAC credential.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "a0c38fad-24e6-4027-af70-3165c4c51b58",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "e55ce799-4442-4958-895a-6888148f5fb0",
+                "description": "The Central Log Server must disable accounts (individuals, groups, roles, and devices) after 35 days of inactivity.",
+                "control-id": "ia-4."
+              }
+            ]
+          },
+          {
+            "uuid": "807c82cc-fca5-4dff-8da2-e62c751dff48",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4d5e10a2-4d3d-4a8d-b833-23eb4259ba99",
+                "description": "The Central Log Server must be configured to enforce password complexity by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d9038737-43f0-403f-91ab-a4c235175e92",
+                "description": "The Central Log Server must be configured to enforce 24 hours/1 day as the minimum password lifetime.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "22295a46-2ae3-4987-abd8-e4446131d29d",
+                "description": "The Central Log Server must be configured to enforce a 60-day maximum password lifetime restriction.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d155a56d-36c5-49e0-93a3-699ce0e00123",
+                "description": "For locally created accounts in the application, the Central Log Server must be configured to allow the use of a temporary password for system logons with an immediate change to a permanent password.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "0c93d7cb-e41b-40b1-a3a9-4c0843015cc0",
+                "description": "The Central Log Server must be configured to enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3b95b2c0-e57e-4214-be50-ea0895869e3a",
+                "description": "The Central Log Server must be configured to require the change of at least 8 of the total number of characters when passwords are changed.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3ca4618e-f429-4795-a53a-d1c0cedb9a88",
+                "description": "The Central Log Server must be configured to enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "ea0a0182-ea40-42e2-b769-b44db9b68a04",
+                "description": "For accounts using password authentication, the Central Log Server must use FIPS-validated SHA-1 or later protocol to protect the integrity of the password authentication process.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "830175ba-2ad4-4115-9a06-5c891b59221c",
+                "description": "For accounts using password authentication, the Central Log Server must be configured to store only cryptographic representations of passwords.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "5a087b30-0ffa-4cd3-ba91-526c459fd5c1",
+                "description": "The Central Log Server must be configured to enforce password complexity by requiring that at least one upper-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "6a3f49de-5126-4916-83f0-c09856a172fd",
+                "description": "The Central Log Server must be configured to enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "0d0ab15a-ab5b-4788-b8cd-72b8f11a480a",
+                "description": "The Central Log Server must be configured to prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1e03669d-e8a3-4028-9596-02590da2de08",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "cf70b4e9-afe9-4fa3-af0c-0bb2c7c25b6d",
+                "description": "The Central Log Server, when utilizing PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "bb00299d-8eca-4bb9-927a-aa268e5bb1ef",
+                "description": "The Central Log Server must map the authenticated identity to the individual user or group account for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "ff9aee82-da9a-49ab-b299-37fc04bdeff4",
+                "description": "The Central Log Server, when using PKI-based authentication, must enforce authorized access to the corresponding private key.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "99d7a3b2-bff4-4c18-91f4-559c83b85697",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "5b1e231a-8fe4-47da-9512-375dadd509bf",
+                "description": "The Central Log Server must obfuscate authentication information during the authentication process so that the authentication is not visible.",
+                "control-id": "ia-6."
+              }
+            ]
+          },
+          {
+            "uuid": "2b9162a8-cd99-44af-9cf3-7f1a84d0426c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "31149710-2fd0-43f5-b3e4-b186010eb218",
+                "description": "The Central Log Server must use FIPS-validated SHA-1 or higher hash function to protect the integrity of keyed-hash message authentication code (HMAC), Key Derivation Functions (KDFs), Random Bit Generation, hash-only applications, and digital signature verification (legacy use only).\nThe Central Log Server must use FIPS-validated SHA-2 or higher hash function for digital signature generation and verification (non-legacy use).",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "d2e0a569-ad54-4b81-920e-723c9dc89ab5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "81e70d37-44fe-4d81-adb0-1c52e8981a69",
+                "description": "The Central Log Server must require users to reauthenticate when organization-defined circumstances or situations require reauthentication.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "e508b7cf-2de6-49d0-b792-ed98430b2dbb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "8d09eccc-1b65-4cfa-99f9-1c7a086cd2c8",
+                "description": "The Central Log Server must be configured to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "0d4aa482-d6d4-4099-a334-98a94b9602e1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "93cb0432-fac5-4898-b2b8-d8719d01cec0",
+                "description": "The Central Log Server must implement NIST FIPS-validated cryptography for the following: to provision digital signatures; to generate cryptographic hashes; and/or to protect unclassified information requiring confidentiality and cryptographic protection.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "72b18566-292b-4d2a-990e-04dcc48d0c0b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "271547e6-f4f1-4c24-948d-2b0f42cd06e0",
+                "description": "The Central Log Server must only allow the use of DoD PKI established certificate authorities for verification of the establishment of protected sessions.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

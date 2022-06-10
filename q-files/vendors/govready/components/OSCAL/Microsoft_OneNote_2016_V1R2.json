@@ -1,0 +1,83 @@
+{
+  "component-definition": {
+    "uuid": "80d0ea4e-b11f-4f9f-a5b7-89d5967d903c",
+    "metadata": {
+      "title": "Microsoft OneNote 2016 V1R2",
+      "last-modified": "2022-06-10T12:50:49",
+      "version": "2022-06-10T12:50:49",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "dc997b6e-6550-4313-b5bb-3857e7a1a77c",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "8be86c63-01b2-48b5-9cf6-89d62bb57be6",
+        "type": "software",
+        "title": "Microsoft OneNote 2016 V1R2",
+        "description": "Numquam quaerat dolorem dolorem quisquam velit. Modi dolore ipsum voluptatem tempora tempora adipisci quaerat. Numquam dolorem porro quaerat eius dolor.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "dc997b6e-6550-4313-b5bb-3857e7a1a77c"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "b9982b0c-7642-42d9-a6b4-25991c5462f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b184838e-f7d6-47ef-8ef9-3f5cb3462bc6",
+                "description": "Add-on Management functionality must be allowed.\nLinks that invoke instances of Internet Explorer from within an Office product must be blocked.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2f7c5b9b-ff1b-43c1-af0b-508858df8aaf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "a05130f2-4d8b-45dd-bde8-a3e364abdade",
+                "description": "File Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.(3)"
+              },
+              {
+                "uuid": "487819c1-e884-471e-bd63-40cc9dca43a1",
+                "description": "Enabling IE Bind to Object functionality must be present.\nProtection from zone elevation must be enforced.\nScripted Window Security must be enforced.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "0149801a-2a98-4319-82ca-8309865eb813",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "12a64b41-7806-4090-931c-9d74e6311d4f",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.(4)"
+              },
+              {
+                "uuid": "cf6f24fb-93a4-472c-8d56-3635abd72116",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URLs embedded in Office products must be blocked.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

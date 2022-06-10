@@ -1,0 +1,206 @@
+{
+  "component-definition": {
+    "uuid": "08e82b24-1bc5-46b8-944b-b58542bdd862",
+    "metadata": {
+      "title": "Microsoft SQL Server 2014 Y22M01",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "ff6a0bf0-0b41-4dc6-bb61-2571a6020900",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "6c8e6c2e-4b62-40b8-95b8-56fe40dd822a",
+        "type": "software",
+        "title": "Microsoft SQL Server 2014 Y22M01",
+        "description": "Magnam quaerat etincidunt adipisci ipsum. Quaerat sit sed eius quisquam quiquia.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "ff6a0bf0-0b41-4dc6-bb61-2571a6020900"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "869e5f0c-c75f-4c41-9bed-886405cc67f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "8f4d2f4e-321b-4903-8608-358378f79f07",
+                "description": "SQL Server must enforce approved authorizations for logical access to information and database-level system resources in accordance with applicable access control policies.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "becfc831-8b84-4ba8-8f62-ede1d9dd5864",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16..",
+            "implemented-requirements": [
+              {
+                "uuid": "eaf4f0fd-1965-4fab-b079-b3022c79fa89",
+                "description": "When supporting applications that require security labeling of data, SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in process.",
+                "control-id": "ac-16."
+              },
+              {
+                "uuid": "e89c0a9e-4c9b-4e35-a2d7-4e2daa349046",
+                "description": "When supporting applications that require security labeling of data, SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in transmission.",
+                "control-id": "ac-16."
+              },
+              {
+                "uuid": "3594ec76-32e2-4cdb-8977-7a1b4c5d9b21",
+                "description": "When supporting applications that require security labeling of data, SQL Server must associate organization-defined types of security labels having organization-defined security label values with information in storage.",
+                "control-id": "ac-16."
+              }
+            ]
+          },
+          {
+            "uuid": "c3e6b3cd-1d08-4955-99e3-46c5d1b323bc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "0f2e03db-a08b-4e7d-9652-479c6ba754b6",
+                "description": "Time stamps in database tables, intended for auditing or activity-tracking purposes, must include both date and time of day, with a minimum granularity of one second.",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "2f8f3cda-795a-4ad1-9d01-34d08779cead",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "50c26f43-2966-4b51-ba6b-b71ba166c7f5",
+                "description": "Where SQL Server Audit is in use at the database level, SQL Server must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited at the database level.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "d294c8bb-7812-4482-9859-e48a4afb1e2e",
+                "description": "Trace or Audit records must be generated when categorized information (e.g., classification levels/security levels) is accessed.\nTrace or Audit records must be generated  when unsuccessful attempts to access categorized information (e.g., classification levels/security levels) occur.\nSQL Server must generate Trace or Audit records when privileges/permissions are modified via locally-defined security objects.\nSQL Server must generate Trace or Audit records when unsuccessful attempts to modify privileges/permissions via locally-defined security objects occur.\nSQL Server must generate Trace or Audit records when locally-defined security objects are modified.\nSQL Server must generate Trace or Audit records when unsuccessful accesses to designated objects occur.\nSQL Server must generate Trace or Audit records when successful accesses to designated objects occur.\nTrace or Audit records must be generated when unsuccessful attempts to delete categorized information (e.g., classification levels/security levels) occur.\nTrace or Audit records must be generated when categorized information (e.g., classification levels/security levels) is deleted.\nSQL Server must generate Trace or Audit records when  unsuccessful attempts to drop locally-defined security objects occur.\nSQL Server must generate Trace or Audit records when locally-defined security objects are dropped.\nSQL Server must generate Trace or Audit records when unsuccessful attempts to modify locally-defined security objects occur.\nTrace or Audit records must be generated when categorized information (e.g., classification levels/security levels) is created.\nTrace or Audit records must be generated when unsuccessful attempts to create categorized information (e.g., classification levels/security levels) occur.\nTrace or Audit records must be generated when categorized information (e.g., classification levels/security levels) is modified.\nTrace or Audit records must be generated when unsuccessful attempts to modify categorized information (e.g., classification levels/security levels) occur.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "7d9f15ff-0b47-48b4-9b95-223ec8ac6a04",
+                "description": "SQL Server must generate Trace or Audit records for organization-defined auditable events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "3d3cce8e-6b48-4f20-8e1b-e92850b1cce3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "888c3b82-1ebc-4129-a30c-94bc5377aa84",
+                "description": "SQL Server must be monitored to discover unauthorized changes to functions.\nSQL Server must be monitored to discover unauthorized changes to triggers.\nSQL Server must be monitored to discover unauthorized changes to stored procedures.\nDatabase objects (including but not limited to tables, indexes, storage, stored procedures, functions, triggers, links to software external to SQL Server, etc.) must be owned by database/DBMS principals authorized for ownership.\nIn a database owned by a login not having administrative privileges at the instance level, the database property TRUSTWORTHY must be OFF unless required and authorized.\nIn a database owned by [sa], or by any other login having administrative privileges at the instance level, the database property TRUSTWORTHY must be OFF.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "87d595ac-3d7f-452e-94de-844e09dfe990",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "4735fcd5-a295-43d0-aa4d-d85061eb8da4",
+                "description": "Database contents must be protected from unauthorized and unintended information transfer by enforcement of a data-transfer policy.",
+                "control-id": "sc-4."
+              }
+            ]
+          },
+          {
+            "uuid": "0d59fa69-d290-4f3e-9eba-922d3c8246ef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "840bc9d8-dd06-4b71-9e71-068d3c301210",
+                "description": "In the event of a system failure, SQL Server must preserve any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "542ba01e-9411-4757-a584-d7bf953bb1b2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "b4da3fa6-330c-4939-8e42-92e5e1185108",
+                "description": "The Database Master Key must be encrypted by the Service Master Key, where a Database Master Key is required and another encryption method has not been specified.\nDatabase Master Key passwords must not be stored in credentials within the database.\nSymmetric keys (other than the database master key) must use a DoD certificate to encrypt the key.\nSQL Server must protect data at rest and ensure confidentiality and integrity of data.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "48c16388-348d-45ed-9a92-4bc0b349f729",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4c465b55-3bf1-44e2-88eb-2229c41b452c",
+                "description": "SQL Server must implement and/or support cryptographic mechanisms to prevent unauthorized modification of organization-defined information at rest (to include, at a minimum, PII and classified information) on organization-defined information system components.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "09ea9c2f-1021-4034-ac20-079c50701fbc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "5cdbd5bb-4991-4c89-8131-17100e1aa7ed",
+                "description": "SQL Server must check the validity of all data inputs except those specifically identified by the organization.\nThe DBMS and associated applications must reserve the use of dynamic code execution for situations that require it.\nThe DBMS and associated applications, when making use of dynamic code execution, must scan input data for invalid values that may indicate a code injection attack.",
+                "control-id": "si-10."
+              }
+            ]
+          },
+          {
+            "uuid": "ef7253ee-bac1-4063-a2ba-416a730b268c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "459eb0ac-e286-415f-8613-d5616706fe07",
+                "description": "When invalid inputs are received, SQL Server must behave in a predictable and documented manner that reflects organizational and system objectives.",
+                "control-id": "si-10.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "55649ce2-bff0-4097-8f85-214a6dd0421e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "742eb4f0-1182-414f-9447-d74b5a9cdaa3",
+                "description": "SQL Server must reveal detailed error messages only to the ISSO, ISSM (or their designees), SA and DBA.",
+                "control-id": "si-11."
+              },
+              {
+                "uuid": "11719443-be34-49e3-8ee5-ab3c58f5ae00",
+                "description": "The DBMS and associated applications must provide non-privileged users with error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

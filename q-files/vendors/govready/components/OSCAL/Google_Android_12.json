@@ -1,0 +1,253 @@
+{
+  "component-definition": {
+    "uuid": "b12fe3d8-e901-43b4-9854-1273fd7d610d",
+    "metadata": {
+      "title": "Google Android 12",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "aac8cf76-861d-4bea-97fd-d1a12ff0093b",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "6057396c-03da-4e7c-b2cb-137848d91158",
+        "type": "software",
+        "title": "Google Android 12",
+        "description": "Numquam ut adipisci aliquam magnam adipisci etincidunt. Neque velit amet non.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "aac8cf76-861d-4bea-97fd-d1a12ff0093b"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "d9da8a2c-1ad8-42b0-8ef8-2be706e360e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "95ab3f8d-7c2b-4a7d-8cf9-8349d1951be3",
+                "description": "Google Android 12 must be configured to disable multiuser modes.",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "b744d36d-a13e-494e-9886-e31ab1893227",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "8d42057d-83e0-4529-aa57-59d1da8c645d",
+                "description": "Google Android 12 must be configured to disable all data signaling over [assignment: list of externally accessible hardware ports (for example, USB)].",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "48f68435-2381-4912-9168-3c1d749d201d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "0abbc8e1-641e-4a5e-8722-c781d38c071c",
+                "description": "Google Android 12 must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "3a316170-3f36-4467-b50a-73283aaab4ab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "488fc6b7-aecc-433d-b97a-8b9acbdc7915",
+                "description": "Google Android 12 must be configured to display the DoD advisory warning message at startup or each time the user unlocks the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "98b1e9b9-5285-4315-8a9c-67bb04cf1d01",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "23df94a0-c4be-4515-b02d-fe401563022a",
+                "description": "Google Android 12 must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\nGoogle Android 12 must be configured to lock the display after 15 minutes (or less) of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "debd8568-484f-4403-8a24-13caf348dfbf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2c32270d-5235-4158-bf2c-56ccbfc92ebd",
+                "description": "Google Android 12 must be configured to not display the following (work profile) notifications when the device is locked: [selection:\n\na. email notifications \nb. calendar appointments \nc. contact associated with phone call notification \nd. text message notification\ne. other application-based notifications\nf. all notifications].",
+                "control-id": "ac-11.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "35f7cfc2-af95-4c06-bf69-4f1a84ecfb86",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-6.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "9cd8ece5-8d5c-4d5a-b600-01191f751cf0",
+                "description": "Google Android 12 must be configured to enable audit logging.",
+                "control-id": "au-6.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "b81c6a48-79fe-4824-b10c-b82c90b97e14",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "72fcd190-76ae-4da2-86a5-4963c549ea8b",
+                "description": "Google Android 12 must be configured to generate audit records for the following auditable events: detected integrity violations.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "77bfa3a8-88c6-4bff-a938-5143189e149c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "d0bcac68-bd0b-4294-bd1a-d561e81cdad2",
+                "description": "Google Android 12 must be configured to not allow passwords that include more than two repeating or sequential characters.\nGoogle Android 12 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nGoogle Android 12 allowlist must be configured to not include applications with the following characteristics: 1. Back up mobile device (MD) data to non-DoD cloud servers (including user and application access to cloud backup services);2. Transmit MD diagnostic data to non-DoD servers;3. Voice assistant application if available when MD is locked;4. Voice dialing application if available when MD is locked;5. Allows synchronization of data or applications between devices associated with user; and6. Allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nGoogle Android 12 must be configured to disable multiuser modes.\nGoogle Android 12 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), Hands-Free Profile (HFP), and Serial Port Profile (SPP).\nGoogle Android 12 users must complete required training.\nGoogle Android 12 must be configured to enforce that Wi-Fi Sharing is disabled.\nGoogle Android 12 must have the DoD root and intermediate PKI certificates installed.\nGoogle Android 12 work profile must be configured to enforce the system application disable list.\nGoogle Android 12 work profile must be configured to disable automatic completion of work space Internet browser text input.\nGoogle Android 12 must be configured to disallow configuration of date and time.\nAndroid 12 devices must have the latest available Google Android 12 operating system installed.\nAndroid 12 devices must be configured to disable the use of third-party keyboards.\nAndroid 12 devices must be configured to enable Common Criteria Mode (CC Mode).\nGoogle Android 12 must allow only the administrator (EMM) to install/remove DoD root and intermediate PKI certificates.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "6ac1f161-90fc-451e-84bd-2f50af96b688",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e726af22-c359-4057-b831-589648841396",
+                "description": "Google Android 12 must allow only the administrator (EMM) to install/remove DoD root and intermediate PKI certificates.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d47f4a2c-d23c-4010-8b13-b48d27e7c3a9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "6c2110ff-df54-47ee-92a0-527963e75a56",
+                "description": "Google Android 12 must be configured to disable developer modes.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "0bc6f6a4-0d7e-4f0c-a018-15f5784dbdf3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ffa13b28-300f-415f-9d46-4aea04dff8c3",
+                "description": "Google Android 12 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), Hands-Free Profile (HFP), and Serial Port Profile (SPP).",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0e33adac-28c5-43c9-9c7d-7652994d528d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e08a3b33-2b72-48ba-8a43-fb71ce56f6db",
+                "description": "Google Android 12 must be configured to enforce an application installation policy by specifying an application allowlist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].",
+                "control-id": "cm-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "b725612f-bd57-4f81-a57e-a8b2008f02c2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "1a4c59fb-dcca-4354-a976-e3b64e259082",
+                "description": "Google Android 12 must be configured to disable trust agents. \n \nNote: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "091f3013-df7f-427e-ab8b-f4751af1f66c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "81b74c06-d7e9-48ed-9d53-69eaecc8f37d",
+                "description": "Google Android 12 must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d0d78229-9c9f-43ac-b741-fe2aa44705c3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "ac6b3ff2-77d5-4649-b1c8-305cf117b967",
+                "description": "Google Android 12 must be configured to not allow backup of [all applications, configuration data] to locally connected systems.\nGoogle Android 12 must be configured to not allow backup of [all applications, configuration data] to remote systems.",
+                "control-id": "sc-4."
+              }
+            ]
+          },
+          {
+            "uuid": "6741f612-8b2d-40b6-a15c-96c45e3287e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-40..",
+            "implemented-requirements": [
+              {
+                "uuid": "15293215-959f-4d6b-870a-39e0602739ce",
+                "description": "Google Android 12 must be configured to disable ad hoc wireless client-to-client connection capability.",
+                "control-id": "sc-40."
+              }
+            ]
+          },
+          {
+            "uuid": "6348d07b-8eb5-435c-a27f-d383d27d9e2b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-41..",
+            "implemented-requirements": [
+              {
+                "uuid": "0aba8fcb-de5b-47bf-a14e-fc69dc08ae2c",
+                "description": "Google Android 12 must be configured to disable USB mass storage mode.",
+                "control-id": "sc-41."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

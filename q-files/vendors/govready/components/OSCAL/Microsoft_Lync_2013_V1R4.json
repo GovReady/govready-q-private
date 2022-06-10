@@ -1,0 +1,61 @@
+{
+  "component-definition": {
+    "uuid": "19e3ab40-db59-4a12-9dbd-d580946fe2c7",
+    "metadata": {
+      "title": "Microsoft Lync 2013 V1R4",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "5333fa89-6ab6-420f-ba3b-afa860d4c47e",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "c5591127-bec7-4f60-a634-313302c5561d",
+        "type": "software",
+        "title": "Microsoft Lync 2013 V1R4",
+        "description": "Dolor tempora magnam magnam dolore porro neque. Velit modi modi velit ipsum quisquam. Adipisci amet porro consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "5333fa89-6ab6-420f-ba3b-afa860d4c47e"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "b1f8c3f6-6a3d-4500-819f-81b9c8794bcc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e8725a53-9fed-4c39-84f6-91894a13998a",
+                "description": "The ability of Lync to store user passwords must be disabled.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "206d9562-0949-4f2a-b615-5464b8172725",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "7ce8bc02-7f93-4e61-9a46-62990d1fc704",
+                "description": "Session Initiation Protocol (SIP) security mode must be configured.\nIn the event a secure Session Initiation Protocol (SIP) connection fails, the connection must be restricted from resorting to the unencrypted HTTP.",
+                "control-id": "sc-23."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

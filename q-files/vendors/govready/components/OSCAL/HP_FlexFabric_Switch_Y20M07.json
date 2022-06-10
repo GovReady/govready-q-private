@@ -1,0 +1,121 @@
+{
+  "component-definition": {
+    "uuid": "b5c07bc5-9430-4133-ae5f-3d0791c619aa",
+    "metadata": {
+      "title": "HP FlexFabric Switch Y20M07",
+      "last-modified": "2022-06-10T12:50:50",
+      "version": "2022-06-10T12:50:50",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "30fc6f90-c01a-446a-aa67-2b81ca2c627c",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "c6ea6d9e-80ba-4aae-9cc2-2848b9499c94",
+        "type": "software",
+        "title": "HP FlexFabric Switch Y20M07",
+        "description": "Amet est ipsum velit sit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "30fc6f90-c01a-446a-aa67-2b81ca2c627c"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "d19f21e0-c44d-41ff-8ee5-c0378c8e378a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14..",
+            "implemented-requirements": [
+              {
+                "uuid": "22fbef45-ae0c-4f42-bab0-fdf4d5dc7c1e",
+                "description": "The HP FlexFabric Switch must provide the capability for authorized users to select a user session to capture.",
+                "control-id": "au-14."
+              }
+            ]
+          },
+          {
+            "uuid": "c995fff4-777a-4010-bf50-01538c9458de",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "390a00ae-36b2-47d2-b738-a04a2fc6dbbd",
+                "description": "The HP FlexFabric Switch must provide the capability for authorized users to remotely view, in real time, all content related to an established user session from a component separate from the HP FlexFabric Switch.",
+                "control-id": "au-14.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "1e5dc219-84bf-48f5-ab99-21e76db1ecf9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "1771adf8-ab65-4d53-a812-87a9eb0938ba",
+                "description": "The HP FlexFabric Switch must implement Rapid STP where VLANs span multiple switches with redundant links.\nThe HP FlexFabric Switch must enable Device Link Detection Protocol (DLDP) to protect against one-way connections.\nThe HP FlexFabric Switch must have all trunk links enabled statically.\nThe HP FlexFabric Switch must have all disabled switch ports assigned an unused VLAN.\nThe HP FlexFabric Switch must not have the default VLAN assigned to any host-facing switch ports.\nThe HP FlexFabric Switch must have the default VLAN pruned from all trunk ports that do not require it.\nThe HP FlexFabric Switch must not use the default VLAN for management traffic.\nThe HP FlexFabric Switch must have all user-facing or untrusted ports configured as access switch ports.\nThe HP FlexFabric Switch must have the native VLAN assigned to a VLAN ID other than the default VLAN ID for all 802.1q trunk links.\nThe HP FlexFabric Switch must not have any access switch ports assigned to the native VLAN.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "56f4d3a2-81bf-4d99-b248-4f4db2c1704c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "01efcea7-fc08-4f54-a295-943016fa38be",
+                "description": "The HP FlexFabric Switch must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "7581c724-d66d-4d15-b8c5-0068e4df07f6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "a112f4bb-8c40-4487-83ef-471ed2901d48",
+                "description": "HP FlexFabric Switch must authenticate all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "f0af0e1d-0384-4e85-be98-1e333b114dba",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "eeacaa63-4d9a-4900-a7e9-adcfd9494bd7",
+                "description": "The HP FlexFabric Switch must have Root Guard enabled on all ports where the root bridge should not appear.\nThe HP FlexFabric Switch must have BPDU Guard enabled on all user-facing access ports.\nThe HP FlexFabric Switch must have STP Loop Protection enabled all non-designated STP switch ports.\nThe HP FlexFabric Switch must have unknown storm-constrain enabled.\nThe HP FlexFabric Switch must have DHCP snooping for all user VLANs to validate DHCP messages from untrusted sources as well as rate-limit DHCP traffic.\nThe HP FlexFabric Switch must have IP Source Guard enabled on all user-facing or untrusted access switch ports.\nThe HP FlexFabric Switch must have Dynamic ARP Inspection (DAI) enabled on all user VLANs.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "5f44aeb7-6edd-4d07-8cbd-4a038a4225cf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "db2d1a0a-8341-4c58-8954-25bf8cc1aa90",
+                "description": "The HP FlexFabric Switch must manage excess bandwidth to limit the effects of packet flooding types of denial of service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "component-definition": {
+    "uuid": "100d682b-ac2b-4d07-a8b1-eb8e9d1543e4",
+    "metadata": {
+      "title": "Adobe Acrobat Pro DC Continuous V2R1",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "0cefce13-3065-4a82-a4dc-a56d98c4fe10",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "fa7563dc-035c-4307-98e4-760288beb830",
+        "type": "software",
+        "title": "Adobe Acrobat Pro DC Continuous V2R1",
+        "description": "Dolorem magnam est consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "0cefce13-3065-4a82-a4dc-a56d98c4fe10"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "ee32d6fd-e673-4d02-86b5-d4f52012544a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0ed1bc8e-a7d8-4161-9680-66425911205a",
+                "description": "Adobe Acrobat Pro DC Continuous privileged file and folder locations must be disabled.\nAdobe Acrobat Pro DC Continuous privileged host locations must be disabled.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "15e34225-2fff-4d23-8bec-a8fc60d8229d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "51d8fb0f-63fb-4453-9f76-22842ce6f207",
+                "description": "Adobe Acrobat Pro DC Continuous Default Handler changes must be disabled.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "1d0be055-9e7a-4713-b28d-2beb3ac1b5d6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "cfc6cd42-d9bd-443e-af6a-2013b1873520",
+                "description": "Adobe Acrobat Pro DC Continuous PDF file attachments must be blocked.\nAdobe Acrobat Pro DC Continuous access to unknown websites must be restricted.\nAdobe Acrobat Pro DC Continuous access to websites must be blocked.\nAdobe Acrobat Pro DC Continuous must be configured to block Flash Content.\nThe Adobe Acrobat Pro DC Continuous Send and Track plugin for Outlook must be disabled.\nAdobe Acrobat Pro DC Continuous must disable the ability to store files on Acrobat.com.\nAdobe Acrobat Pro DC Continuous Cloud Synchronization must be disabled.\nAdobe Acrobat Pro DC Continuous Repair Installation must be disabled.\nAdobe Acrobat Pro DC Continuous third-party web connectors must be disabled.\nAdobe Acrobat Pro DC Continuous Webmail must be disabled.\nThe Adobe Acrobat Pro DC Continuous Welcome Screen must be disabled.\nAdobe Acrobat Pro DC Continuous SharePoint and Office365 access must be disabled.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "68bb773b-94e4-4eaf-bbd8-f2ffb3ce7c00",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "3a12757e-8bc4-40cc-bb5d-6bec496ee946",
+                "description": "Adobe Acrobat Pro DC Continuous FIPS mode must be enabled.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "f97fc85a-dd2e-43c5-8551-32379c35aef2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "05c21b2d-faf4-4219-868a-fd71ec164772",
+                "description": "Adobe Acrobat Pro DC Continuous Enhanced Security for standalone mode must be enabled.\nAdobe Acrobat Pro DC Continuous Enhanced Security for browser mode must be enabled.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "ded161d3-b88f-4a80-ae37-549782c5a6ef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "3c96b59c-9923-4217-af1d-d48ffac62108",
+                "description": "Adobe Acrobat Pro DC Continuous periodic downloading of Adobe European certificates must be disabled.\nAdobe Acrobat Pro DC Continuous Periodic downloading of Adobe certificates must be disabled.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "20f8f642-dff1-4208-81b4-58228bb8fa9d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39..",
+            "implemented-requirements": [
+              {
+                "uuid": "240c101b-68e1-4c64-ab3d-32b47a96f069",
+                "description": "Adobe Acrobat Pro DC Continuous Enhanced Security for standalone mode must be enabled.\nAdobe Acrobat Pro DC Continuous Enhanced Security for browser mode must be enabled.\nAdobe Acrobat Pro DC Continuous Protected Mode must be enabled.\nAdobe Acrobat Pro DC Continuous Protected View must be enabled.",
+                "control-id": "sc-39."
+              }
+            ]
+          },
+          {
+            "uuid": "a820a387-8019-4d65-8215-436afb70ba35",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "28f5318d-a720-4552-8b72-acbd2ebe9f52",
+                "description": "The Adobe Acrobat Pro DC Continuous latest security-related software updates must be installed.",
+                "control-id": "si-2."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

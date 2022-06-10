@@ -1,0 +1,227 @@
+{
+  "component-definition": {
+    "uuid": "b57f2f31-92bd-4235-a573-55dd541582ec",
+    "metadata": {
+      "title": "SS SDS EMM V1R2",
+      "last-modified": "2022-06-10T12:50:59",
+      "version": "2022-06-10T12:50:59",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "3d0eb811-b97c-4e7f-a077-d04b3fffb217",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "6884f114-ceba-4749-9054-11e783f62cd8",
+        "type": "software",
+        "title": "SS SDS EMM V1R2",
+        "description": "Est etincidunt numquam labore amet dolor etincidunt quisquam. Numquam magnam aliquam quaerat consectetur dolor aliquam est. Velit quiquia magnam ut magnam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "3d0eb811-b97c-4e7f-a077-d04b3fffb217"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "1991503e-cea7-4271-ac22-5150ddec0167",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "82eec547-4dbf-4b85-acff-9b8b0d8d7b95",
+                "description": "The Samsung SDS EMM server must be configured to use one-time password in addition to username and password for administrator logon to the server.\nThe Samsung SDS EMM must be configured to leverage the MDM platform administrator accounts and groups for Samsung SDS EMM user identification and CAC authentication.\nAuthentication of MDM platform accounts must be configured so they are implemented via an enterprise directory service.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "bb3f1f7d-2a08-45f7-81e4-04939da71bfc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "823cc4f9-93c2-4d19-932e-3f7d747ef39c",
+                "description": "The Samsung SDS EMM must automatically disable accounts after a 35 day period of account inactivity (local accounts).",
+                "control-id": "ac-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "25c76034-cf85-4afa-bf51-86c42bd603eb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "82bd896e-534a-4d89-8d34-746a36b51663",
+                "description": "The Samsung SDS EMM must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              },
+              {
+                "uuid": "14b688ea-264b-42b8-808f-fc0922b85715",
+                "description": "The Samsung SDS EMM must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "3cd06940-8822-494b-a6ef-9ff8a5de21c3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "7381fa4a-164e-46a3-9ed8-8b4d48e523ac",
+                "description": "The Samsung SDS EMM must enforce the limit of three consecutive invalid logon attempts by a user.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "3d56a626-0a55-4451-b35e-4863ac7fcc9b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "613838e8-7567-483f-b1cf-31467627a4a7",
+                "description": "The Samsung SDS EMM must be configured to display the required DoD warning banner upon administrator logon.\n\nNote: This requirement is not applicable if the TOE platform is selected in FTA_TAB.1.1 in the Security Target (ST).\nThe [selection: Samsung SDS EMM, MDM platform] must have the capability to display the DoD warning banner prior to establishing a user session.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "a457155c-d89a-48cb-80f4-b8e3329f8b15",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "f0e0f1f2-5e5d-4ed2-9654-836dd0a9ab1e",
+                "description": "The Samsung SDS EMM must limit the number of concurrent sessions to an organization-defined number for all accounts and/or account types.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "51e89502-6342-4f82-964a-1da60a13c797",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "eb99baa9-76dc-487c-854a-30c4d136fab8",
+                "description": "The Samsung SDS EMM or platform must be configured to initiate a session lock after a 15-minute period of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "65cdd06b-287a-49e4-82cb-6fdfc680d908",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8bfb1231-3727-405b-b4c8-cfad459e0f2c",
+                "description": "The Samsung SDS EMM must be configured to transfer Samsung SDS EMM logs to another server for storage, analysis, and reporting.\n\nNote: Samsung SDS EMM logs include logs of MDM events and logs transferred to the Samsung SDS EMM by MDM agents of managed devices.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "7b61e3ba-2d45-4438-8534-902da7fb093c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "2d3a5039-9c2c-4806-b197-78e505169f71",
+                "description": "The Samsung SDS EMM must be configured to audit DoD or site-defined auditable events. Note: See VulDiscussion for a list of DoD required auditable events.",
+                "control-id": "au-11."
+              }
+            ]
+          },
+          {
+            "uuid": "1663404a-f5a8-4ea2-b422-69a072f19943",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "769b43df-573a-4cd8-98ea-8965f7554030",
+                "description": "The Samsung SDS EMM local accounts must be configured with password maximum lifetime of 60 Days.",
+                "control-id": "au-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "703d497a-617a-4da4-9d8a-fdcdc164cc50",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "2bc7199b-54ba-4c05-9b6c-81a8ca4ae3d8",
+                "description": "The Samsung SDS EMM must implement functionality to generate an audit record of the following auditable events:\nc. [selection: Commands issued to the MDM Agent].\nThe Samsung SDS EMM must be configured to communicate the following commands to the MDM Agent: read audit logs kept by the MD.\nThe Samsung SDS EMM must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.\nThe Samsung SDS EMM server must be maintained at a supported version.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "8525295f-5526-4740-bbc1-40f72986da31",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "a97fb3d2-f889-4958-8ba1-a3d19de71c33",
+                "description": "The Samsung SDS EMM platform must be protected by a DoD-approved firewall.\nThe firewall protecting the Samsung SDS EMM platform must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support Samsung SDS EMM and platform functions.\nThe firewall protecting the Samsung SDS EMM platform must be configured so that only DoD-approved ports, protocols, and services are enabled. See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "9ca351a0-c174-4cf2-a75c-d57aff5843af",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "bc48cc96-49b8-4efc-a305-43987d93402d",
+                "description": "The Samsung SDS EMM must use multifactor authentication for local access to privileged accounts.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "ce7f7418-e633-472d-b713-1bd9300a49ec",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "04d7edfe-50a9-478f-ade7-cd8fd4161026",
+                "description": "The Samsung SDS EMM local accounts password must be configured with length of 15 characters.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "a7ad1f46-0d49-4f7f-a2be-650d071fb8b9",
+                "description": "The Samsung SDS EMM local accounts must prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a80fdef9-f1c1-4ae6-99c4-e0700c5e7bbb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "166775d8-dd0a-4db2-9711-bc61c9ac1f52",
+                "description": "The Samsung SDS EMM must be configured with a periodicity for reachable events of six hours or less for the following commands to the agent: \n- query connectivity status;\n- query the current version of the MD firmware/software;\n- query the current version of installed mobile applications;\n- read audit logs kept by the MD.",
+                "control-id": "si-6."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

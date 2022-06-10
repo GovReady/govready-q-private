@@ -1,0 +1,295 @@
+{
+  "component-definition": {
+    "uuid": "16a334cd-5321-430e-8cd7-72911ac3fcb0",
+    "metadata": {
+      "title": "Firewall V2R1",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "effb3415-9d23-4946-9aa5-28f7c0546658",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "2a0e8876-5bc8-4f75-9858-1a48931f4a22",
+        "type": "software",
+        "title": "Firewall V2R1",
+        "description": "Est eius porro dolor dolore amet.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "effb3415-9d23-4946-9aa5-28f7c0546658"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "4a2f67d9-5063-4f5c-917b-a391dd5cabe6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "c45f3f8a-9cff-44e9-8ab6-345a96e257f4",
+                "description": "The firewall must be configured to use filters that use packet headers and packet attributes, including source and destination IP addresses and ports, to prevent the flow of unauthorized or suspicious traffic between interconnected networks with different security policies (including perimeter firewalls and server VLANs).\nThe firewall must immediately use updates made to policy enforcement mechanisms such as firewall rules, security policies, and security zones.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "008fc503-fb42-4520-95bd-c9bfdddac243",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "47f3f3c1-2f65-46fe-81fb-772001f80eaf",
+                "description": "The firewall that filters traffic from the VPN access points must be configured with organization-defined filtering rules that apply to the monitoring of remote access traffic.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "16bcb9b1-a35b-4adf-a088-8fb7125c82ca",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "3bf60eb8-f82c-4910-ad56-b57e25ef1412",
+                "description": "The firewall must generate traffic log entries containing information to establish the outcome of the events, such as, at a minimum, the success or failure of the application of the firewall rule.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "a1a8cd46-cfb6-4e90-84f2-eb3b1cd29414",
+                "description": "The firewall must generate traffic log entries containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "635d808d-812b-45ed-8de2-488eecdaefa6",
+                "description": "The firewall must generate traffic log entries containing information to establish the source of the events, such as the source IP address at a minimum.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "82ce19a0-63cd-4728-87a6-d84eee34a26e",
+                "description": "The firewall must generate traffic log entries containing information to establish the location on the network where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "5c05f374-0895-4657-9922-ef0592d4b72d",
+                "description": "The firewall must generate traffic log entries containing information to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "b3fe97a4-28b3-438b-bca6-fb3101c6b005",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "3d40dd38-1802-4da7-8459-5c888990975a",
+                "description": "The firewall must be configured to send traffic log entries to a central audit server for management and configuration of the traffic log entries.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "d735b38d-b87a-44cc-8d7b-8cef3432efa6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e33bb6c-fe5f-4c73-8512-0b2955cd8aa4",
+                "description": "In the event that communication with the central audit server is lost, the firewall must continue to queue traffic log records locally.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "b29f3400-6e4d-4de8-afc3-1508d5a69360",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "cd304406-93ab-482e-b57f-990860578c34",
+                "description": "If communication with the central audit server is lost, the firewall must generate a real-time alert to, at a minimum, the SCA and ISSO.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "f0267268-e416-4e6f-9f57-0a6e0d6a4426",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "39003e5b-e309-4291-be03-55feebacd042",
+                "description": "The firewall must protect the traffic log from unauthorized deletion of local log files and log records.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "24777695-f651-4891-9203-f1eac44ea702",
+                "description": "The firewall must protect the traffic log from unauthorized modification of local log records.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "9d81bfab-7999-407e-bcbf-aa9685fd1314",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "006fc4e1-1714-4e3d-a9db-e18387caf29d",
+                "description": "The firewall must generate traffic log records when traffic is denied, restricted, or discarded.\nThe firewall must generate traffic log records when attempts are made to send packets between security zones that are not authorized to communicate.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "ae1cc2a3-7cd8-4cfb-9cfc-89fa1d983b4c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "bdce2605-340c-4a1c-b01c-34f945747897",
+                "description": "The firewall must be configured to allow authorized users to record a packet capture based IP, traffic type (TCP, UDP, or ICMP), or protocol.",
+                "control-id": "au-14.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "5a2eeb01-b130-450d-ac7e-8b2985a97005",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "73ab2b4f-a8cf-4c80-9769-29d40eb754eb",
+                "description": "The firewall must be configured to use TCP when sending log records to the central audit server.\nThe firewall must be configured to inspect all inbound and outbound traffic at the application layer.\nThe firewall must be configured to inspect all inbound and outbound IPv6 traffic for unknown or out-of-order extension headers.\nThe firewall must be configured to restrict it from accepting outbound packets that contain an illegitimate address in the source address field via an egress filter or by enabling Unicast Reverse Path Forwarding (uRPF).",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "07a358cc-84b4-4c5a-8ba0-49e2522b0fea",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "9473e0d6-2489-4ef4-a8c8-cf8a06d6c97a",
+                "description": "The firewall must disable or remove unnecessary network services and functions that are not used as part of its role in the architecture.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "a58da17d-60de-4381-b2a5-732a0cc5cecb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "09d1f01c-379b-4ebc-bdb1-ead9bef5c742",
+                "description": "The firewall must employ filters that prevent or limit the effects of all types of commonly known denial-of-service (DoS) attacks, including flooding, packet sweeps, and unauthorized port scanning.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "635d8c13-2606-43d8-8ef4-63c55248a9b3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "87a91116-28a9-4bf1-93c3-61da2794b69c",
+                "description": "The firewall must block outbound traffic containing denial-of-service (DoS) attacks to protect against the use of internal information systems to launch any DoS attacks against other networks or endpoints.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "64144a93-9794-416d-88f2-8ee128954ec8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "46b61d80-3679-484a-ac91-e691aeb65fc5",
+                "description": "The firewall implementation must manage excess bandwidth to limit the effects of packet flooding types of denial-of-service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "50c9d7aa-1d7f-4f5e-850d-b368fe76d079",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "a8d9e419-ea98-476d-9ddb-dec0428ced1d",
+                "description": "The perimeter firewall must filter traffic destined to the internal enclave in accordance with the specific traffic that is approved and registered in the Ports, Protocols, and Services Management (PPSM) Category Assurance List (CAL), Vulnerability Assessments (VAs) for that the enclave.",
+                "control-id": "sc-7."
+              }
+            ]
+          },
+          {
+            "uuid": "74345af8-79d3-4e1b-9ecf-c221fcae5174",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "419a6510-da50-4722-8d3d-e0dd925304d6",
+                "description": "The firewall must deny network communications traffic by default and allow network communications traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "sc-7.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "f0d42432-1130-40a9-af9d-c0d9fed115ff",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(11).",
+            "implemented-requirements": [
+              {
+                "uuid": "88330d91-6194-4f13-bc34-7faf7b97996a",
+                "description": "The firewall must apply ingress filters to traffic that is inbound to the network through any active external interface.\nThe firewall must apply egress filters to traffic that is outbound from the network through any internal interface.\nThe premise firewall (located behind the premise router) must block all outbound management traffic.\nThe firewall must restrict traffic entering the VPN tunnels to the management network to only the authorized management packets based on destination address.",
+                "control-id": "sc-7.(11)"
+              }
+            ]
+          },
+          {
+            "uuid": "446ccd57-f540-4833-b896-c34806e327fe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "044e81a5-a969-4b15-8d0e-8b34a9bf5533",
+                "description": "In the event of a system failure of the firewall function, the firewall must be configured to save diagnostic information, log system messages, and load the most current security policies, rules, and signatures when restarted.",
+                "control-id": "sc-24."
+              },
+              {
+                "uuid": "143b01ce-6767-4e74-8d70-245d88551058",
+                "description": "The firewall must fail to a secure state upon the failure of the following: system initialization, shutdown, or system abort.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "b4792b8e-ccc0-496d-aeba-4bd27bc36524",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-4.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "61ae6196-38fb-4e5c-bc06-0ee5bba68350",
+                "description": "The firewall must generate an alert that can be forwarded to, at a minimum, the ISSO and ISSM when denial-of-service (DoS) incidents are detected.",
+                "control-id": "si-4.(5)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

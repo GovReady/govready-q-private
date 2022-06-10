@@ -1,0 +1,764 @@
+{
+  "component-definition": {
+    "uuid": "8fc37a4f-5217-4b7f-92fb-abac814b3fe9",
+    "metadata": {
+      "title": "IBM WebSphere Traditional V9-x V1R1",
+      "last-modified": "2022-06-10T12:50:59",
+      "version": "2022-06-10T12:50:59",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "88da2a05-455c-422b-99ba-bc1b053f1038",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "835e9f77-c63c-4ea4-896d-63f13fa035dc",
+        "type": "software",
+        "title": "IBM WebSphere Traditional V9-x V1R1",
+        "description": "Quaerat voluptatem neque est modi etincidunt non. Consectetur labore quaerat quisquam consectetur quiquia voluptatem tempora. Tempora porro adipisci neque.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "88da2a05-455c-422b-99ba-bc1b053f1038"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "1ddfc8db-ae5e-44e1-876f-15ad661a7cf5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "340f27f0-2846-4f39-85e9-7a8db2a6a80e",
+                "description": "The WebSphere Application Server users in a local user registry group must be authorized for that group.\nThe WebSphere Application Server Java 2 security must be enabled.\nThe WebSphere Application Server Java 2 security must not be bypassed.\nThe WebSphere Application Server users in the admin role must be authorized.\nThe WebSphere Application Server LDAP groups must be authorized for the WebSphere role.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "2b67d0b7-3367-405c-830a-b0ffb043c6fa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "9817b674-e28a-4bc4-9e9b-fe15ec510e9b",
+                "description": "The WebSphere Application Server security auditing must be enabled.\nThe WebSphere Application Server groups in the user registry mapped to WebSphere auditor roles must be configured in accordance with the security plan.\nThe WebSphere Application Server users in the WebSphere auditor role must be configured in accordance with the System Security Plan.\nThe WebSphere Application Server audit event type filters must be configured.\nThe WebSphere Application Server audit service provider must be enabled.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "64f509f3-d7e7-4a56-aea8-31896a7c5bdd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "f366678a-9f10-4696-9f1c-4892136bae69",
+                "description": "The WebSphere Application Server users in the admin role must be authorized.\nThe WebSphere Application Server users in a LDAP user registry group must be authorized for that group.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "36b1c9cf-c7a5-4fb5-b338-3e9e140b321a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "c9eef767-c364-4214-938c-a0a5f2e3ae3a",
+                "description": "The WebSphere Application Server management interface must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "def4d586-42e6-41b4-bc68-fc067d5e0532",
+                "description": "The WebSphere Application Server management interface must retain the Standard Mandatory DoD Notice and Consent Banner on the screen until users acknowledge the usage conditions and take explicit actions to log on for further access.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "b65885a6-445d-4d58-bf45-28a13f83e4e3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "b6e5dbcd-3ace-450e-b358-6eda19863318",
+                "description": "The WebSphere Application Server maximum in-memory session count must be set according to application requirements.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "92df5784-d5b9-4655-aba5-c9febfab85aa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "e121b11a-dc3e-4737-9f09-4611ed86c66e",
+                "description": "The WebSphere Application Server admin console session timeout must be configured.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "a97fbc13-fde2-4fe9-92dd-dba4b88c9a34",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "12fc551f-e2c5-4246-a149-afe0c1e987c5",
+                "description": "The WebSphere Application Server automatic repository checkpoints must be enabled to track configuration changes.\nThe WebSphere Application Server security auditing must be enabled.\nThe WebSphere Application Server groups in the user registry mapped to WebSphere auditor roles must be configured in accordance with the security plan.\nThe WebSphere Application Server users in the WebSphere auditor role must be configured in accordance with the System Security Plan.\nThe WebSphere Application Server audit event type filters must be configured.\nThe WebSphere Application Server audit service provider must be enabled.",
+                "control-id": "ac-17.(1)"
+              },
+              {
+                "uuid": "14f833bb-ceed-492a-a34e-524cfb5745c8",
+                "description": "The WebSphere Application Server administrative security must be enabled.\nThe WebSphere Application Server users in a local user registry group must be authorized for that group.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "812fc944-27c9-417e-b8f1-cfd0d35f674a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "0e5c67a6-4b57-4f1f-afcc-56a98c359cfd",
+                "description": "The WebSphere Application Server security cookies must be set to HTTPOnly.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "2fa23f6d-bb9e-4f72-8a14-46009967afda",
+                "description": "The WebSphere Application Server Quality of Protection (QoP) must be set to use TLSv1.2 or higher.\nThe WebSphere Application Server global application security must be enabled.\nThe WebSphere Application Server Single Sign On (SSO) must have SSL enabled for Web and SIP Security.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "f07b6907-cd4f-4e21-b9d0-f4bf4a7d4731",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "3a4b2655-df3a-4ba1-a2c0-1fa63255db95",
+                "description": "The WebSphere Application Server bus security must be enabled.",
+                "control-id": "ac-17.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "5622218b-fba2-4d5c-98c4-9bc7a7105d56",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "dee4743f-6c9c-4ae6-93ef-795a6770927d",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "1dbd1703-e888-4d4b-88c3-f3b74f26c497",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "29cded2f-b988-4517-879f-3cbd5749c78d",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "fba0c7a8-258e-49ff-84d2-63d16b8ab637",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d12dbd09-d13c-41f9-a748-da2024247185",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "4307ce39-1f1c-4d77-87f0-c9a75da39617",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "692675a2-62c0-4dd1-9bf8-ebe0167c0a6e",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8dd30f06-82e8-47cc-920a-1e64139fa38d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "9954c433-8260-4ef0-8945-3e89dc7010c1",
+                "description": "The WebSphere Application Server must allocate JVM log record storage capacity in accordance with organization-defined log record storage requirements.\nThe WebSphere Application Server must allocate audit log record storage capacity in accordance with organization-defined log record storage requirements.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "12fc300e-ce4b-4e6e-927f-a80c9fa24b7a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "908a7e05-b95a-46e2-ace7-21700969dfc1",
+                "description": "The WebSphere Application Server must shut down by default upon log failure (unless availability is an overriding concern).\nThe WebSphere Application Server high availability applications must be configured to fail over to another system in the event of log subsystem failure.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "1e2cb206-13cd-4f42-9b05-cee059b7e070",
+                "description": "The WebSphere Application Server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.\nThe WebSphere Application Server audit subsystem failure action must be set to Log warning.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "b8f2fdff-b94a-4085-9340-0950269586a0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "9aca8a9f-bc9f-4682-9d98-7e585021beec",
+                "description": "The WebSphere Application Server must provide an immediate real-time alert to authorized users of all log failure events requiring real-time alerts.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "098f756c-5009-44b8-b307-02d1f38dd55f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "e21de53f-14fb-478e-93aa-2f58dfcfd9ad",
+                "description": "The WebSphere Application Server wsadmin file must be protected from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "adf7cbd4-8e94-43c8-bdbc-99366a352147",
+                "description": "The WebSphere Application Server must be configured to protect log information from any type of unauthorized read access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "7a02effd-2b3e-4c39-97cb-281854f45cd8",
+                "description": "The WebSphere Application Server wsadmin file must be protected from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "9390b4fd-498f-4603-9fe3-61d12ff2fbb9",
+                "description": "The WebSphere Application Server must protect log information from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "f69a62d0-94b7-4444-9735-0947b434d6ea",
+                "description": "The WebSphere Application Server wsadmin file must be protected from unauthorized modification.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "44d34b15-3df3-49ba-b977-d9d1ea6dd806",
+                "description": "The WebSphere Application Server must protect log information from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "4f4bb589-ecda-4143-9163-492424a9dc79",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "62ef03cd-e584-426e-b62a-3105592a352f",
+                "description": "The WebSphere Application Server must be configured to encrypt log information.\nThe WebSphere Application Server must be configured to sign log information.",
+                "control-id": "au-9.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "5e41ca19-d846-40b4-8fc0-7a949d4dba23",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "139c71fa-9722-4aaf-abf8-3214aecdd6dd",
+                "description": "The WebSphere Application Server security auditing must be enabled.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "6e3b7601-7eaf-4d1a-a152-5466ad0ab653",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "27f51b53-8025-4d93-b61c-e4a5ae7088a8",
+                "description": "The WebSphere Application Server users in the WebSphere auditor role must be configured in accordance with the System Security Plan.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "be151bc3-b41a-42b8-a40e-3604b349f919",
+                "description": "The WebSphere Application Server audit event type filters must be configured.\nThe WebSphere Application Server must generate log records when successful/unsuccessful attempts to access subject privileges occur.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "33224824-b408-421a-8858-e501dfd31a26",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "f9412f08-3725-4464-99dd-f87f292b5e27",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "484b131a-c590-4b98-95a5-e0190dfa8bb8",
+                "description": "The WebSphere Application Server security auditing must be enabled.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c1728d69-6bef-4ce0-bab4-a35611939f04",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "452cf78a-d60f-41ef-bd53-6565bbd91485",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "au-14.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8c24b8e7-1936-4aad-b73a-21435ed5f573",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "9cc571f2-6dc0-4b6e-9276-843190c8382d",
+                "description": "The WebSphere Application Server users in a local user registry group must be authorized for that group.\nThe WebSphere Application Server users in the admin role must be authorized.",
+                "control-id": "cm-5.(1)"
+              },
+              {
+                "uuid": "62d0fb45-5643-488f-9174-9c4ab9e9d726",
+                "description": "The WebSphere Application Server audit event type filters must be configured.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "cc32ffdf-6b56-420e-ae83-9e2050863e8d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "bf0cc077-3fa2-41e4-9cd3-4704020692a4",
+                "description": "The WebSphere Application Server users in a local user registry group must be authorized for that group.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "8b3eacbb-ac8f-4692-9b77-6b2219345e6e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "bbe7f0f6-82ad-4133-8f4c-63214634241b",
+                "description": "The WebSphere Application Server must prohibit or restrict the use of nonsecure ports, protocols, modules, and/or services as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "38aaf8ae-ec11-44cf-a69b-b254e5db2252",
+                "description": "The WebSphere Application Server process must not be started from the command line with the -password option.\nThe WebSphere Application Server files must be owned by the non-root WebSphere user ID.\nThe WebSphere Application Server sample applications must be removed.\nThe WebSphere Application Server must remove JREs left by web server and plug-in installers for web servers and plugins running in the DMZ.\nThe WebSphere Application Server must be run as a non-admin user.\nThe WebSphere Application Server must disable JSP class reloading.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "da3d0255-702f-4542-ab41-0636bcdee978",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "b6054d70-d4da-4d4f-9c8a-5e558bb14b16",
+                "description": "The WebSphere Application Server LDAP user registry must be used.\nThe WebSphere Application Server local file-based user registry must not be used.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "93cf2fd2-7b17-487d-865e-35fb5d484c7f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "87ba6eec-126e-4dc0-8efc-f901dbd9c63e",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4e907ed0-0d02-424e-8e4a-37120cc110cf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "b2b61284-b78b-4166-bdde-9783b116889b",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "2a1b9b19-6089-4f34-918c-62503d5074f1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "f2a32793-7a3a-453f-9a20-e1826e9ee9bf",
+                "description": "The WebSphere Application Server users in a local user registry group must be authorized for that group.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "91a8e8d1-a116-49d7-aac2-01351e6d8b37",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "1a935b8a-e16e-44d1-96c3-d53a85ee51bc",
+                "description": "The WebSphere Application Server must provide security extensions to extend the SOAP protocol and provide secure authentication when accessing sensitive data.\nThe WebSphere Application Server must provide security extensions to extend the SOAP protocol and provide secure authentication when accessing sensitive data.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "a640a4a2-5ac8-42b4-bfa9-077275f928a5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "bdaed0a5-810f-489f-acee-f758b1089391",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(12)"
+              },
+              {
+                "uuid": "6a27e448-2db8-4a99-bd4f-cb785f7fbe63",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "61493bc1-c58f-49f1-b6aa-b030caaf9d88",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "97647bc2-842f-4532-a97f-dbb499e6c6e4",
+                "description": "The WebSphere Application Server must authenticate all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "5e522c41-a884-4861-98bc-8cec1a6efd60",
+                "description": "The WebSphere Application Server Single Sign On (SSO) must have SSL enabled for Web and SIP Security.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "1b2cbaa7-9762-4182-9cc2-9cb2f9ea6b69",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7f7d3368-7d4f-4297-b343-b45c8a2ff031",
+                "description": "The WebSphere Application Server must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "6d3a6d6c-4080-4fbd-82f0-697fc113ffb0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e94dacb8-23a9-4320-9e32-9279f4fc53f6",
+                "description": "The WebSphere Application Server global application security must be enabled.\nThe WebSphere Application Server Single Sign On (SSO) must have SSL enabled for Web and SIP Security.\nThe WebSphere Application Server application security must be enabled for each security domain except for publicly available applications specified in the System Security Plan.\nThe WebSphere Application Server secure LDAP (LDAPS) must be used for authentication.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "bf2605f6-2e8b-43c6-8fbf-f89b7e33fa7b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "777d3de2-583c-4eb8-a339-7d2862ced7fd",
+                "description": "The WebSphere Application Server default keystore passwords must be changed.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "96ea3b87-6f54-46be-a11d-b26486cd923a",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.\nThe WebSphere Application Server must authenticate all network-connected endpoint devices before establishing any connection.\nThe WebSphere Application Server must use signer for DoD-issued certificates.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c7514999-d03b-4c87-98e3-5b3e918dc940",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "00de94b5-148c-4b9e-b44a-9ec8599a07db",
+                "description": "The WebSphere Application Server must prohibit the use of cached authenticators after an organization-defined time period.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "f3ac7103-0c2d-4588-8ed2-7f009fa1de70",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "06214cc9-176e-4a0c-8f68-b17412db90cf",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "6aeb227a-4c5b-437d-9544-b579d60b779f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "600fcb05-8f59-4d03-8c0f-cd43e87b73a6",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-8.(1)"
+              },
+              {
+                "uuid": "321e8159-5572-4874-8960-121c3f3fec3e",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.\nThe WebSphere Application Server must accept Personal Identity Verification (PIV) credentials from other federal agencies to access the management interface.",
+                "control-id": "ia-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f23a9c53-da81-495f-84a8-96e2e01463d0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "5b2de46d-a2c4-4f4c-b70e-1f5892c8ea4b",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4c351a40-a9d6-46b3-a3b4-a783491989ff",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "50bbf217-314e-448a-82d6-d0816d71353c",
+                "description": "The WebSphere Application Servers must not be in the DMZ.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "d919c35c-5855-427d-b3e4-dc09ee4dac63",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "d03608c7-f907-4de4-8d73-79f5d7e6c97e",
+                "description": "The WebSphere Application servers with an RMF categorization of high must be in a high-availability (HA) cluster.\nThe WebSphere Application Server high availability applications must be installed on a cluster.\nThe WebSphere Application Server memory session settings must be defined according to application load requirements.\nThe WebSphere Application Server thread pool size must be defined according to application load requirements.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "30bf8d9c-2e8c-40a0-87a2-f0ecfe8337e2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "66b4f56c-7b0e-403a-919e-6b68c14d535a",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.\nThe WebSphere Application Server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "564602ff-99f3-4da4-a4b0-acf4e58927aa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b4b05cda-df53-4ead-907d-6b536dfc0696",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.\nThe WebSphere Application Server plugin must be configured to use HTTPS only.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ebd33c73-d8d6-44f4-bde9-e6a2bd1fcdc8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e29ec3fb-c3c2-4e84-b4e0-254f8b907942",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "6918f98c-d64a-449f-951c-720c4fa7aa9d",
+                "description": "The WebSphere Application Server distribution and consistency services (DCS) transport links must be encrypted.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "1a7117bd-ac68-4d8c-bc32-56d2072b41af",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "13f5b501-3009-455c-8fa1-1e8785df79f6",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.\nThe WebSphere Application Server must use DoD-approved Signer Certificates.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "f5888922-1e15-4e17-bbbc-a3bf381791e9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "28ed2b4e-16a3-4ec7-b8d9-380dbe0802a9",
+                "description": "The WebSphere Application Server multifactor authentication for network access to privileged accounts must be used.\nThe WebSphere Application Server DoD root CAs must be in the trust store.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "0bc31403-b866-4a24-b532-81ede5b4fe14",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "716ec39f-13e8-49a5-a79a-5066e59e21fc",
+                "description": "The WebSphere Application Server must utilize FIPS 140-2-approved encryption modules when authenticating users and processes.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "31590bff-d8c1-4f0e-89b0-8607794870ac",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "88735429-7315-48f5-88bd-4b9e9f7d403c",
+                "description": "The WebSphere Application Server personal certificates in all keystores must be issued by an approved DoD CA.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "86b5c7d5-339d-48f8-bc20-ed6002c2e644",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "38240446-5d96-4532-adf9-0eee22052b45",
+                "description": "The WebSphere Application Server must be configured to perform complete application deployments when using A/B clusters.\nThe WebSphere Application servers with an RMF categorization of high must be in a high-availability (HA) cluster.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "e79b1435-e8bb-4c36-893f-e94a819d3a97",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8e28b353-a629-43fd-b2cd-f7aefdfb570f",
+                "description": "The WebSphere Application Server must not generate LTPA keys automatically.\nThe WebSphere Application Server must periodically regenerate LTPA keys.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "97395d90-2a41-41d9-9838-709215209a8c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "6ec0303c-9155-442f-8c23-413a301caf26",
+                "description": "The WebSphere Application Server must apply the latest security fixes.\nThe WebSphere Application Server must install security-relevant software updates within the time period directed by an authoritative source (e.g., IAVMs, CTOs, DTMs, and STIGs).",
+                "control-id": "si-2."
+              }
+            ]
+          },
+          {
+            "uuid": "b58027f3-f43d-4c06-975b-e4ea57b6eba1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "d9f2be71-b0a8-4fd3-8599-272326a37edd",
+                "description": "The WebSphere Application Server must remove organization-defined software components after updated versions have been installed.",
+                "control-id": "si-2.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "a3771442-6e32-46e7-ae35-fada4d686a5b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "6a25a0bb-0949-446e-90d6-99465540bde1",
+                "description": "The WebSphere Application Server security auditing must be enabled.\nThe WebSphere Application Server LDAP groups must be authorized for the WebSphere role.",
+                "control-id": "si-11."
+              },
+              {
+                "uuid": "b2a5baee-5372-4409-aa0f-e14eafaa4a09",
+                "description": "The WebSphere Application Server security auditing must be enabled.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

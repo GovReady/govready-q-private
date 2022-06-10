@@ -1,0 +1,336 @@
+{
+  "component-definition": {
+    "uuid": "b4521659-d957-408a-9eee-6af25d6e5f70",
+    "metadata": {
+      "title": "VMWare vSphere 6-7 Y22M02",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "69f69aa2-2ed1-4835-b508-e44f92c9d78f",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "98ae8dcb-9ba2-496d-aaa1-cf28a3c3475c",
+        "type": "software",
+        "title": "VMWare vSphere 6-7 Y22M02",
+        "description": "Quaerat etincidunt consectetur tempora. Etincidunt quiquia adipisci eius etincidunt dolor amet.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "69f69aa2-2ed1-4835-b508-e44f92c9d78f"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "d0605627-a92d-42da-b24f-b88fb4576abe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "26fc6018-d6bf-4d33-88dc-47363103c2ee",
+                "description": "ESX Agent Manager must limit the amount of time that each TCP connection is kept alive.\nESX Agent Manager must limit the number of concurrent connections permitted.\nESX Agent Manager must limit the maximum size of a POST request.\nESX Agent Manager must protect cookies from XSS.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "f6bedd75-7414-4731-b90a-cdd326a609db",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c3d4a598-466c-409a-bb01-f5ffd1577a3e",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9edb89dd-1a30-4c1f-908c-8daff251b6ef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "488672c5-e9e1-4a43-8f5a-ff05b74f8ca6",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d5ef08eb-7ff0-4705-b354-0d393cfcffb2",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "5ae431c8-df23-4d6f-9faa-73b2cadd728f",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "bc9b1cf9-5739-4ac5-a4f9-73c986aa1abf",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "fc3463de-30a3-40d9-9830-3f7daf4c8ef0",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "c0d65455-8d46-4a39-85e0-77b7be2f96a8",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "e496a429-7416-40c3-9bfc-7668ec47c66c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "bdb34c68-68d0-4821-a5ec-1f8bb83ad295",
+                "description": "ESX Agent Manager application files must be verified for their integrity.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "87c221da-87bf-4bb3-a632-221dc959e482",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3d0e77cb-05d5-4c44-ba9c-3725317f0652",
+                "description": "Rsyslog must be configured to monitor and ship ESX Agent Manager log files.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "56d13798-8421-4842-84f1-62641ab4be2d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "2440b79a-a0a2-41ac-88aa-96d15a9c34a7",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "aa7ded30-b857-41cb-9332-c5eb9b9352ab",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "9c429589-1f9d-4a18-b536-45b1685a4268",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "e04d7b41-bc4f-44d0-ab51-28e41a561dd5",
+                "description": "ESX Agent Manager log files must only be modifiable by privileged users.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "12684081-8a77-4c1b-9a83-e1be9ea8a369",
+                "description": "ESX Agent Manager log files must only be modifiable by privileged users.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "5db2991c-3bad-487f-a525-f2754d59e537",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "81f457a4-d63f-4b8f-b06f-ba2689dea205",
+                "description": "Rsyslog must be configured to monitor and ship ESX Agent Manager log files.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "839b8bbe-b40d-4303-9a29-2e78f7066b30",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "e823bc30-1942-48f8-82d9-83f269e31308",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.\nESX Agent Manager must generate log records for system startup and shutdown.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "e2dc4c52-e4e8-46e5-b5c6-cbae5c690aaf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "8a899257-75d9-42dd-89fc-6ae9d22700df",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b23809d3-1bdf-48b7-9e64-3f6764c4308c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d2edf440-7532-4f6b-bf36-51b03aae4002",
+                "description": "ESX Agent Manager must record user access in a format that enables monitoring of remote access.",
+                "control-id": "au-14.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "f924fde2-291d-4950-a72c-ed9a141470dc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b4d5f2cf-1008-47be-b166-95f6c05353a8",
+                "description": "ESX Agent Manager directory tree must have permissions in an \"out-of-the box\" state.\nESX Agent Manager must set the secure flag for cookies.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "517907b9-c3da-4a60-aa1a-b7d27592905e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "93ac0d18-7a17-4712-a44d-1e6a0644c92d",
+                "description": "ESX Agent Manager application files must be verified for their integrity.\nESX Agent Manager must only run one webapp.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "df5410de-5f1e-41b2-8fb3-08f5dcac67e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "1359e565-c630-4c84-917b-2892f3590f8e",
+                "description": "ESX Agent Manager must not be configured with unsupported realms.\nESX Agent Manager must be configured to limit access to internal packages.\nESX Agent Manager must have Multipurpose Internet Mail Extensions (MIMEs) that invoke operating system shell programs disabled.\nESX Agent Manager must have mappings set for Java servlet pages.\nESX Agent Manager must not have the Web Distributed Authoring (WebDAV) servlet installed.\nESX Agent Manager must be configured with memory leak protection.\nESX Agent Manager must not have any symbolic links in the web content directory tree.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "622a1a6a-d723-4c3e-8b1c-c033313115a2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "07836819-6e47-464d-b10d-aee2505c47bc",
+                "description": "ESX Agent Manager must be configured with the appropriate ports.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "5a56363e-5a09-4cff-aaaa-9758ca1218e0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "eac54dd6-777e-4917-bc6c-be5730acd92f",
+                "description": "ESX Agent Manager directory tree must have permissions in an \"out-of-the box\" state.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "d5aa0a57-bbd3-4361-82af-0efde93d4075",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "950e7d33-d793-4242-af23-4a431d08e4ef",
+                "description": "ESX Agent Manager must disable the shutdown port.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "db8237e7-5925-425f-9672-80f595832c32",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "87452af5-49b2-42d0-b649-129cb552dc2f",
+                "description": "ESX Agent Manager must limit the number of allowed connections.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "102a989f-fcaa-405f-bdb1-81ca2438c506",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "7886b8d7-6e9a-4f65-a7d2-23bceca3020f",
+                "description": "ESX Agent Manager must protect cookies from XSS.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "3fa29032-3b71-401f-b8b1-626b4ff4c25f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "4183a828-c39d-4791-88be-18a304129a25",
+                "description": "ESX Agent Manager must fail to a known safe state if system initialization fails, shutdown fails, or aborts fail.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "51ca8be8-0564-4e50-872e-e96c217066bc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "569434d2-5208-4f37-9ecb-2425b395dec0",
+                "description": "ESX Agent Manager must set \"URIEncoding\" to UTF-8.\nESX Agent Manager must use the \"setCharacterEncodingFilter\" filter.",
+                "control-id": "si-10."
+              }
+            ]
+          },
+          {
+            "uuid": "03c6c94b-105f-4bc7-a1ff-84cd79859a2c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "cbfa4cbe-6535-4868-9abc-eb5783702899",
+                "description": "ESX Agent Manager must set the welcome-file node to a default web page.\nESX Agent Manager must not show directory listings.\nESX Agent Manager must be configured to show error pages with minimal information.\nESX Agent Manager must not enable support for TRACE requests.\nESX Agent Manager must have the debug option turned off.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "component-definition": {
+    "uuid": "9c53b131-2bd0-41ed-bdea-77b9ce44f775",
+    "metadata": {
+      "title": "IBM WebSphere Liberty Server V1R1",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "489b3901-774d-4a63-b77b-955aef5c9065",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "68cd782a-70a6-42a9-a53c-2f3dc48f9b79",
+        "type": "software",
+        "title": "IBM WebSphere Liberty Server V1R1",
+        "description": "Non voluptatem velit dolore ut modi porro ipsum. Modi porro quaerat adipisci ipsum dolore dolore.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "489b3901-774d-4a63-b77b-955aef5c9065"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "eb526b80-65cf-483f-9c62-9e33ae02c72f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "30f60365-b084-43ef-a89f-e947a076002e",
+                "description": "Users in the REST API admin role must be authorized.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "633b488e-5c1c-4394-9b24-f5c70a5f080d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "a9e9ef52-634a-4f4e-946f-3166bfb22143",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "f5c48888-edc1-4196-b81d-0030ee6bdba3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "9fa90447-abbe-4f32-a137-b8f2e7ed99da",
+                "description": "Users in a reader-role must be authorized.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "bda92ebc-41ec-4936-a1ff-3b9324cf8618",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "8f5fcc59-71ec-4bea-b18d-1b7adbc73f19",
+                "description": "Maximum in-memory session count must be set according to application requirements.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "4ff89c77-1dee-4db9-9a36-edea5e1d0dfc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "986f8984-c40d-4fb4-b8a0-b1316904be19",
+                "description": "HTTP session timeout must be configured.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "d6352029-d4c0-423a-aae5-84a691a6dc61",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0627b40a-0009-4216-8c60-8be4c77a3860",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "ac-17.(1)"
+              },
+              {
+                "uuid": "9ec9945e-e84d-4f6f-9cdd-88462fa7b86b",
+                "description": "Application security must be enabled on the WebSphere Liberty Server.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e20425ca-eca0-4e6e-8f8c-1ccf1582c7e8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "a2332ef7-3d20-4d0f-8ad9-6a9bd678951f",
+                "description": "Security cookies must be set to HTTPOnly.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "beb4a3d9-f00e-4d6c-b44c-09bd84562f66",
+                "description": "The WebSphere Liberty Server Quality of Protection (QoP) must be set to use TLSv1.2 or higher.\nApplication security must be enabled on the WebSphere Liberty Server.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8a4105bc-67b8-4682-9635-1cb8adab1ce6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "385a3cbc-e4e6-4ccb-a7e6-39c377884e04",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "98e814f6-6ca4-4699-80ed-b9cdd97bed2f",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "720366ff-aca9-47e9-93a7-09e24ae9553d",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "8664bb7e-f0c5-40dc-a880-a8b8dc9b7207",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "9535523d-7b90-4239-8ea1-1f4b2a12021b",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "238a937c-1360-4138-b843-c3bfc9ff0a23",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "2150d8f0-1465-4729-aedf-024dec79d9ed",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7e574353-839c-4fa2-a57c-51b75b4729d2",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "eff6be33-4f64-4f70-bda0-a5d32a5f4328",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "25033dbf-119f-4fe4-91a6-cf769b5a5019",
+                "description": "The WebSphere Liberty Server must allocate JVM log record storage capacity in accordance with organization-defined log record storage requirements.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "d4c4477c-98f5-4ecc-9db7-94eed76a2e87",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1481678c-3d94-434c-93ee-de5fde87a824",
+                "description": "The WebSphere Liberty Server must be configured to offload logs to a centralized system.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4af43180-1223-4000-842e-38bbcbc4a37b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "2f461815-58b7-4dee-a936-d6429c523930",
+                "description": "The WebSphere Liberty Server must be configured to offload logs to a centralized system.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "2c161aba-91da-46ff-b454-b1b0d38a97e3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "2389aa1c-19c3-43ca-a837-ddb022503f2b",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.\nThe WebSphere Liberty Server must be configured to encrypt log information.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "f5329122-da78-4dc0-9de8-d80739246c21",
+                "description": "The WebSphere Liberty Server must protect log tools from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "7fb4f1e6-2bb6-4faf-afce-7f602e0f8828",
+                "description": "The WebSphere Liberty Server must protect log information from unauthorized access or changes.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "911c7955-b386-4e34-b0d3-c70697c2ed41",
+                "description": "The WebSphere Liberty Server must protect log information from unauthorized access or changes.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "2d4299ba-0cf1-4a56-a8f2-bc5ad1777866",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "00d395ef-76d2-4c6e-89da-73e9cbe73b68",
+                "description": "The WebSphere Liberty Server must be configured to encrypt log information.",
+                "control-id": "au-9.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "1952c46c-09d3-4db8-ad30-d9addc30e503",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "3240a8e6-a937-4c2e-bcfb-ecd3fa000d86",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "94fd0ec2-3a12-4b17-9b5b-0c80f0bd61c1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "5fe12e73-2625-408e-9dc1-2b0cb555bbec",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.\nThe WebSphere Liberty Server must generate log records for authentication and authorization events.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "2b858ac6-dfb3-44e9-934c-973378e3d7e9",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "62551631-266b-4c14-914b-aa863bb53db7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7d763333-3c11-417a-8775-5c2020f15900",
+                "description": "The WebSphere Liberty Server must generate log records for authentication and authorization events.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c5c9e822-a1e4-4d17-a166-3293489aaa69",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "930fb4cc-4139-4c12-80a4-82ead31b3456",
+                "description": "The server.xml file must be protected from unauthorized modification.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "db7d115c-3911-438f-b711-b31e0a738221",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "0c2c2f45-b4a2-46b9-8750-244a7cc79586",
+                "description": "The WebSphere Liberty Server must protect software libraries from unauthorized access.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "038ffa8b-c0d7-41c8-81af-7af0dbf15148",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "9c0dda68-dc4f-4502-b5ab-aab98c7f10c4",
+                "description": "The WebSphere Liberty Server must prohibit or restrict the use of nonsecure ports, protocols, modules, and/or services as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "a3e18fc5-c84d-4ebf-9e44-dc2e2e99272a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "9bd70358-117c-4321-8ee2-7a6271b82ad8",
+                "description": "The WebSphere Liberty Server must use an LDAP user registry.\nBasic Authentication must be disabled.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "d4d8ac22-e373-4a9d-b25c-7aedf941b693",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f2ed1b9b-e1ff-4825-9bba-497c254e9fe5",
+                "description": "Multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e6ed1bd3-f931-44b9-8f5b-c74f5dc23281",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "04e58413-44f8-4e75-ab29-32a967230095",
+                "description": "Multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "c0f2eb12-5f6b-4bd7-b0af-9bc73a0e331d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "38e54abf-c111-40e4-9319-9097007f0c16",
+                "description": "The WebSphere Liberty Server must use TLS-enabled LDAP.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "ecbe266d-046a-408c-a2e5-800efe98b96a",
+                "description": "The WebSphere Liberty Server must store only encrypted representations of user passwords.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1693e8f3-a312-4ae4-bcb3-1f6d4688bbd2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "28f384e5-a081-48a1-a78d-fddb29179ffd",
+                "description": "Multifactor authentication for network access to privileged accounts must be used.\nThe WebSphere Liberty Server must use DoD-issued/signed certificates.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "40972d6f-48d2-4569-b7be-7bbdaf83ee73",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "4822acd1-0fb1-4e9b-ad72-33882e661fed",
+                "description": "The WebSphere Liberty Server must prohibit the use of cached authenticators after an organization-defined time period.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "6f4cc65d-0b0d-47be-b314-1ff71c993b06",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "fae59804-577f-4b26-84b0-940d4b77c367",
+                "description": "The WebSphere Liberty Server must use FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "54fe2df7-b3b7-4d6e-b530-30c95813a8b8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2c3b01f6-d90e-4ca3-81f8-8ad35ce8f2bc",
+                "description": "Multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-8.(1)"
+              },
+              {
+                "uuid": "85209beb-264a-4106-a58c-3ee02c1e9d89",
+                "description": "Multifactor authentication for network access to privileged accounts must be used.",
+                "control-id": "ia-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "97bd09fb-ff26-4bc2-ab23-657617255a8e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "c6465b59-02b2-427e-b209-d030b15e1272",
+                "description": "HTTP session timeout must be configured.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "bd073bf6-910c-4cad-b5a3-3c5c195124fe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "c7855dcd-646f-43db-ac97-491bd273d301",
+                "description": "The WebSphere Liberty Server must use FIPS 140-2 approved encryption modules when authenticating users and processes.\nThe WebSphere Liberty Server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "b318a377-9db0-416b-8931-5de0413e859c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2230e4b4-4872-4708-a28b-c388c7a0046b",
+                "description": "The WebSphere Liberty Server must be configured to use HTTPS only.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "498beb24-6fd8-4532-99e7-634d043594e5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "96dbfccb-65f7-44e7-a1f1-8ebcaeb02d96",
+                "description": "The WebSphere Liberty Server must use FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "3eebe3c8-8f83-4fbd-81a6-4aac0bada981",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "084556a5-555d-4e1f-96bc-88e5900fdd96",
+                "description": "The WebSphere Liberty Server must use DoD-issued/signed certificates.\nThe WebSphere Liberty Server must use FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "57eb73ae-7d16-4daa-9da0-2942ffb0981b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "8bdedc06-3081-4def-aacd-dfa27d37c76e",
+                "description": "The WebSphere Liberty Server must use FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "cb16bfc9-be48-47d1-a45c-74878ec95107",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "55f43c1d-36b5-4dcf-a04e-9c416f85d966",
+                "description": "The WebSphere Liberty Server must use DoD-issued/signed certificates.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "d59b839a-5da0-4a5a-a58a-0204c6839802",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "541705b3-c058-421d-9ad0-f528fbc024a9",
+                "description": "The WebSphere Liberty Server must store only encrypted representations of user passwords.\nThe WebSphere Liberty Server LTPA keys password must be changed.",
+                "control-id": "sc-28.(1)"
+              },
+              {
+                "uuid": "4ce6239a-098e-4365-aa6a-a68c5d494850",
+                "description": "The WebSphere Liberty Server must store only encrypted representations of user passwords.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "688b6ed7-d0cb-41c2-a97e-6293fa76f863",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "e1ed2342-240d-409f-93eb-002dc50cde10",
+                "description": "The WebSphere Liberty Server must install security-relevant software updates within the time period directed by an authoritative source.",
+                "control-id": "si-2."
+              }
+            ]
+          },
+          {
+            "uuid": "60e31716-3463-4669-bc3f-22fe5dbe461c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "faf889be-701f-4cf9-ae24-6b1dade10b58",
+                "description": "The WebSphere Liberty Server must be configured to encrypt log information.",
+                "control-id": "si-11."
+              },
+              {
+                "uuid": "80ab76f1-7ef6-47aa-abc8-ec83064fb039",
+                "description": "The WebSphere Liberty Server must log remote session and security activity.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

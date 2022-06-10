@@ -1,0 +1,524 @@
+{
+  "component-definition": {
+    "uuid": "2600a5f5-1aeb-4462-9337-cde254dbd065",
+    "metadata": {
+      "title": "Apache Server 2-4 UNIX Y22M01",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "2a369378-4bc3-45e9-916d-0f1f7434e4aa",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "a5c5aaec-79c6-4376-9828-c33f1acbb349",
+        "type": "software",
+        "title": "Apache Server 2-4 UNIX Y22M01",
+        "description": "Ipsum porro sed quiquia.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "2a369378-4bc3-45e9-916d-0f1f7434e4aa"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "458771b6-3ab8-41bf-ae69-80c952d29457",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "b4adda86-e04f-4a87-aee7-c0fa93a76f6e",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "d1bde948-7f26-49d5-ac4b-6dd177e20c51",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "a4010379-6b8c-4260-baaa-ed4089a72143",
+                "description": "Non-privileged accounts on the hosting system must only access Apache web server security-relevant information and functions through a distinct administrative account.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "6495f484-1637-4dba-8be5-3f8d58a81964",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "9521e7f2-4a2f-4029-927e-cd2cba06f4b4",
+                "description": "The Apache web server must limit the number of allowed simultaneous session requests.\nThe Apache web server must perform server-side session management.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "bd2b24bf-0172-4109-8866-c15d56bc68c4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "1863ce19-80a2-406d-9e22-f0bd5c24911f",
+                "description": "The Apache web server must invalidate session identifiers upon hosted application user logout or other session termination.\nThe Apache web server must set an inactive timeout for sessions.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "5a34449a-0002-4941-a332-514be67639df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2e84a2d3-b117-4d7b-8079-60db44692fa1",
+                "description": "The Apache web server must restrict inbound connections from nonsecure zones.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9432ec64-69fc-427e-80c6-16801b74485e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "24d39f00-7f60-455f-9f37-02b9c9c5794b",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "9b5cba8f-0601-4be5-afe6-f25a94562838",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "675397ea-49fd-4ae0-a7e6-7a5fb886bc47",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "38501d76-cbb3-4af1-aab3-09404828944d",
+                "description": "The Apache web server must be configured to immediately disconnect or disable remote access to the hosted applications.",
+                "control-id": "ac-17.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "869abd75-00fb-4707-a1cc-d02956a48e8e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "04a6069f-465e-4f28-9aef-53b3b737d0c6",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "3d23df3a-419d-445f-bad7-e0cbc0a08078",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "ccaad53b-1a80-493b-b8fe-a97a597946d2",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.\nAn Apache web server, behind a load balancer or proxy server, must produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d4a71650-d78d-4ed6-87c4-77f3a4673a89",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "0ed53ce7-66f0-41f0-9b32-a882dfd805c3",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "cf6d758e-8675-4bcc-9abb-91baff9518b5",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "b8691114-fb6e-4851-8ab4-50794db366b8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "fec65d1d-66b1-409a-bc0b-a67048e4f799",
+                "description": "The Apache web server must use a logging mechanism that is configured to allocate log record storage capacity large enough to accommodate the logging requirements of the Apache web server.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "9eadd0bf-9a7f-44f7-9e71-861bd391798e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ce63d728-721c-4556-9260-5d4523414771",
+                "description": "The Apache web server must not impede the ability to write specified log record content to an audit log server.\nThe Apache web server must be configured to integrate with an organizations security infrastructure.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "3205358e-67bd-4896-92b2-10de1ee2408c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "519933e9-4970-486c-9fea-d9b6c120bea0",
+                "description": "The Apache web server must use a logging mechanism that is configured to alert the Information System Security Officer (ISSO) and System Administrator (SA) in the event of a processing failure.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "6f463cba-3d11-4e05-ad55-584ed35b73d0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "5d4308af-2e7f-48f4-b8a0-68350ee1ebf2",
+                "description": "The Apache web server must use a logging mechanism that is configured to alert the Information System Security Officer (ISSO) and System Administrator (SA) in the event of a processing failure.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "af40c9f5-5be5-49fb-977f-9d5972d3b5e2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "6f5de002-261a-42b0-b395-4adb2553882e",
+                "description": "The Apache web server must generate log records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT) which are stamped at a minimum granularity of one second.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "20ba9d0d-0986-4bfa-a899-93cc5aea4335",
+                "description": "The Apache web server must generate log records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT) which are stamped at a minimum granularity of one second.",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "a41bbe51-864c-4486-8ff0-5cb94ee1f9ab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "3f79bc66-9618-4a16-8c08-555f5678592b",
+                "description": "The Apache web server log files must only be accessible by privileged users.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "9fb37585-8681-49f0-9be8-2dccc1a307f3",
+                "description": "The log information from the Apache web server must be protected from unauthorized modification or deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "75b674c9-a4dc-4628-89c2-2f55876d4e4d",
+                "description": "The log information from the Apache web server must be protected from unauthorized modification or deletion.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "98972c31-63c5-4a97-b295-a757e22b12cb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "294cd7a5-e181-4e57-8739-0c7b7b95fde1",
+                "description": "The log data and records from the Apache web server must be backed up onto a different system or media.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "379d29d7-cc93-4444-8d39-493f10feb13e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "ea72d66c-81d1-4df9-a0ab-45bcdab4c187",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "ea6a9d41-356e-4769-a8ee-322cec7b4fe9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "028480f3-6f08-4e74-bbe0-080a4b0fbe74",
+                "description": "The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0bb4f689-8d68-4f8f-9b4a-f33bf2550b6f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "90920c6a-77f7-491c-8b35-b6a2325bdf92",
+                "description": "Apache web server application directories,  libraries, and configuration files must only be accessible to privileged users.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9cf85cf8-095d-47db-8c25-4b798a6bc3ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "897aa67b-003f-4d8b-8c47-ddca770e11c1",
+                "description": "Expansion modules must be fully reviewed, tested, and signed before they can exist on a production Apache web server.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "babc869f-0491-4c98-9f7b-f0f7c1188325",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "fc886f93-2867-43a9-9be3-f2e9cb53258c",
+                "description": "The Apache web server must have system logging enabled.\nThe account used to run the Apache web server must not have a valid login shell and password defined.\nThe Apache web server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.\nThe Apache web server software must be a vendor-supported version.\nThe Apache web server htpasswd files (if present) must reflect proper ownership and permissions.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "0e8bd58f-0500-4ad8-ae48-644988b6b356",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "488a5023-0b6d-411f-b503-a997c8d348fd",
+                "description": "The Apache web server must be configured to use a specified IP address and port.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "70b34d3c-9390-4c94-8915-f9e7b72f5acd",
+                "description": "The Apache web server must not perform user management for hosted applications.\nThe Apache web server must only contain services and functions necessary for operation.\nThe Apache web server must not be a proxy server.\nThe Apache web server must provide install options to exclude the installation of documentation, sample code, example applications, and tutorials.\nThe Apache web server must have resource mappings set to disable the serving of certain file types.\nThe Apache web server must allow the mappings to unused and vulnerable scripts to be removed.\nThe Apache web server must have Web Distributed Authoring (WebDAV) disabled.\nApache web server application directories,  libraries, and configuration files must only be accessible to privileged users.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "d940db60-8ce4-4c0e-9383-e420978bb518",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "72b58637-48d3-430d-898c-d039ff0a0cb6",
+                "description": "The Apache web server must prohibit or restrict the use of nonsecure or unnecessary ports, protocols, modules, and/or services.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9b425c86-d3f4-4fa2-97ca-22f1c2bbffe6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6e7424f2-180d-406d-998a-b97c510e8f63",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ea4100ea-bab7-4a43-b860-46af16ab8707",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "a15d9f48-b24e-4b7e-b1bb-48028be3f80a",
+                "description": "The Apache web server must be configured to use a specified IP address and port.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "414bf223-4788-4f5a-b7cd-96c82623e8b0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "aef3b8fe-0374-4e18-bd34-0928bb3562b6",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "11fbab4f-3efa-4cae-86fd-c7a893ae582a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "9f446089-607e-4ec2-9747-17f86090a9ed",
+                "description": "Apache web server accounts accessing the directory tree, the shell, or other operating system functions and utilities must only be administrative accounts.\nApache web server application directories,  libraries, and configuration files must only be accessible to privileged users.\nThe Apache web server must separate the hosted applications from hosted Apache web server management functionality.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "396c0f7f-7dc1-4156-9e0d-1d4e042c08e9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "6d07752e-0d60-458a-aced-e84e34d46da3",
+                "description": "The Apache web server must be tuned to handle the operational requirements of the hosted application.\nThe Apache web server must be protected from being stopped by a non-privileged user.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "30789688-cfa8-4ed3-a7e5-9ebe57fef7dd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2359fb6d-c10f-4d7b-8d94-8d61013e6100",
+                "description": "The Apache web server must be tuned to handle the operational requirements of the hosted application.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e9b8249b-959d-4bc0-8602-4933a881a890",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "2e7b05ae-f011-49e0-9165-f375b4520684",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.\nCookies exchanged between the Apache web server and the client, such as session cookies, must have cookie properties set to prohibit client-side scripts from reading the cookie data.\nThe Apache web server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "f1b2187d-55b1-461c-ba65-ad861131cba2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "64e82f7f-e1a0-4ff7-8dd9-598e0ebcc4a5",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "377a3a3b-4a1c-4902-8235-2ecc0bde8fd6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3221310f-2f02-47d1-b4a9-913d736749aa",
+                "description": "The Apache web server must invalidate session identifiers upon hosted application user logout or other session termination.",
+                "control-id": "sc-23.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "323de74e-1246-44ad-a056-5ba093923188",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "547bbb53-f92b-4abe-809c-07a0f4ba6919",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.\nThe Apache web server must generate a session ID long enough that it cannot be guessed through brute force.\nThe Apache web server must generate a session ID using as much of the character set as possible to reduce the risk of brute force.",
+                "control-id": "sc-23.(3)"
+              },
+              {
+                "uuid": "7e6d9368-602d-467f-8c54-d5b19fec2807",
+                "description": "Cookies exchanged between the Apache web server and client, such as session cookies, must have security settings that disallow cookie access outside the originating Apache web server and hosted application.\nThe Apache web server must generate a session ID using as much of the character set as possible to reduce the risk of brute force.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "942bc724-f85d-4aee-8975-d58ad2c1ce29",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "bb4bf5be-9451-4c48-bfda-c16e9718c250",
+                "description": "The Apache web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "ac58f317-c087-4e47-8aaf-96e65d735028",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "a83110a2-2e36-4944-826e-91d420c9ec38",
+                "description": "The Apache web server must be built to fail to a known safe state if system initialization fails, shutdown fails, or aborts fail.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "f804bd87-72f9-4547-b453-27b4039b3bfa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "b6bdd807-87bd-412c-ac60-9267bb2f32c6",
+                "description": "The Apache web server must install security-relevant software updates within the configured time period directed by an authoritative source (e.g., IAVM, CTOs, DTMs, and STIGs).",
+                "control-id": "si-2."
+              }
+            ]
+          },
+          {
+            "uuid": "8c1f0365-ad22-4ef3-bae1-84915a06d26f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "d4747028-4ca4-4bda-8818-dce2f7a2133e",
+                "description": "Warning and error messages displayed to clients must be modified to minimize the identity of the Apache web server, patches, loaded modules, and directory paths.\nDebugging and trace information used to diagnose the Apache web server must be disabled.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

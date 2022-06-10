@@ -1,0 +1,405 @@
+{
+  "component-definition": {
+    "uuid": "7d1ee93d-cbe1-4bd9-9153-08e244c0a58f",
+    "metadata": {
+      "title": "Splunk Enterprise 7-x for Windows V2R3",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "ff41e34a-33ba-47eb-b5d8-2be8a379b549",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "db77df26-503e-4b8b-980f-6ed49065c830",
+        "type": "software",
+        "title": "Splunk Enterprise 7-x for Windows V2R3",
+        "description": "Velit magnam sit ut quaerat dolorem. Aliquam etincidunt porro quaerat voluptatem sed numquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "ff41e34a-33ba-47eb-b5d8-2be8a379b549"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "8600f641-2898-4eb1-875c-d1f4a85c6cc2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "bdac69d4-5560-45e2-a9c4-731aadbc6748",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) and Information System Security Officer (ISSO) when account events are received (creation, deletion, modification, disabling).\nSplunk Enterprise must notify analysts of applicable events for Tier 2 CSSP and JRSS only.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "0f22b6b7-819d-45f9-8695-44c5cb79ea9e",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) and Information System Security Officer (ISSO) when account events are received (creation, deletion, modification, disabling).\nSplunk Enterprise must notify analysts of applicable events for Tier 2 CSSP and JRSS only.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "a53a8781-925c-4a64-af89-f3f49f1b8a4a",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) and Information System Security Officer (ISSO) when account events are received (creation, deletion, modification, disabling).\nSplunk Enterprise must notify analysts of applicable events for Tier 2 CSSP and JRSS only.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d88e9b84-f1e5-4bd9-b59b-16a35b022bfe",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) and Information System Security Officer (ISSO) when account events are received (creation, deletion, modification, disabling).\nSplunk Enterprise must notify analysts of applicable events for Tier 2 CSSP and JRSS only.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "149dee11-577e-4132-b984-f0e2f4bee958",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "3c9e4a70-2325-429d-9a38-3d8f703236e0",
+                "description": "Splunk Enterprise must enforce the limit of 3 consecutive invalid logon attempts by a user during a 15 minute time period.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ea24b69d-ed50-47a2-aa84-24f8149b918b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "f5c5d40f-7c6e-45c5-9f5f-797dfc6e5dd6",
+                "description": "Splunk Enterprise must display the Standard Mandatory DoD Notice and Consent Banner and accept user acknowledgement before granting access to the application.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "cd70deb5-8205-4cd2-ae6f-be14f556c4a7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "12a8a3bd-3301-40a5-90f0-9e596d744c1a",
+                "description": "Splunk Enterprise idle session timeout must be set to not exceed 15 minutes.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "5d04ed0a-497e-44bd-b8a3-7b7ec17f1daa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "55c8533b-ec6b-4739-b0d8-cdacb6eeff4b",
+                "description": "Splunk Enterprise must be configured to send an immediate alert to the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated log record storage volume reaches 75 percent of the repository maximum log record storage capacity.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "73d67be5-94fe-44cb-ab72-b96aa3bc6e28",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6f618c08-25da-4317-a6e6-218df5da7608",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) of all audit failure events, such as loss of communications with hosts and devices, or if log records are no longer being received.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "177b6110-2475-4bf3-aa6b-7722f363cc5a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "4b3b5b2a-abab-422f-bbb3-13b637350dc6",
+                "description": "Splunk Enterprise must notify the System Administrator (SA) or Information System Security Officer (ISSO) if communication with the host and devices within its scope of coverage is lost.",
+                "control-id": "au-5.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "03b2a628-a5a5-47f6-a214-a0331cce5dde",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "9946242e-2fea-4b64-b8c8-0ee016502000",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "aa3f8147-2fc2-42c7-9f73-de2635d6a9b0",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "5e911106-0551-4526-8bd2-41be837c2bc1",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "ae4a22f5-672b-4ae5-adaa-f89defbe89ef",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "e96ec9b8-ab82-4646-a5f8-ebe768cc2355",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "89d00b8a-f210-489e-a5c1-d314b1a12ea2",
+                "description": "Splunk Enterprise installation directories must be secured.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "c2585e34-3af1-41b3-b793-de3a2afa07ff",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7f3274d8-3cf0-4504-ad38-8ee4770f1ef5",
+                "description": "Splunk Enterprise must be configured to back up the log records repository at least every seven days onto a different system or system component other than the system or component being audited.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "a94de5d9-6b12-476d-9379-a7aedf7bc4b0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "64331a5d-d461-483b-b465-4719ba879647",
+                "description": "Splunk Enterprise must be configured to protect the log data stored in the indexes from alteration.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "a121298b-4ade-43f1-b040-0c48b9541aa8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "cfc1b14c-c93c-4981-bb23-caf5b3e3651e",
+                "description": "Splunk Enterprise must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to be assigned to the Power User role.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "b8192e33-7fb9-4df3-9c8c-e8a2da0c5dca",
+                "description": "Splunk Enterprise must be configured with a successful/unsuccessful logon attempts report.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "16f5cfeb-f980-4004-a01b-de8f58be9513",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "23a088d4-dcfa-44d0-a8c9-589405dcdf51",
+                "description": "Splunk Enterprise must be configured to aggregate log records from organization-defined devices and hosts within its scope of coverage.",
+                "control-id": "au-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9b71047b-5b1b-4abf-8552-8f02e1346070",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "ee976583-d1bd-4e79-8bf4-677fefecc262",
+                "description": "The System Administrator (SA) and Information System Security Officer (ISSO) must configure the retention of the log records based on the defined security plan.",
+                "control-id": "au-12.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "9253606a-674d-4b12-a2b1-2e0c86d90d40",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "88372801-e215-484a-8de5-1f802b4f685b",
+                "description": "Splunk Enterprise must use TCP for data transmission.\nSplunk Enterprise must be configured to notify the System Administrator (SA) and Information System Security Officer (ISSO), at a minimum, when an attack is detected on multiple devices and hosts within its scope of coverage.\nSplunk Enterprise forwarders must be configured with Indexer Acknowledgement enabled.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "a9f4a4a4-366a-429b-a6ef-f0923b925c69",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "8149a383-dffb-4fd7-9546-2bcf38019a6a",
+                "description": "When Splunk Enterprise is distributed over multiple servers, each server must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "e18489f1-1009-4d75-90db-0e58a46810e8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "00447353-66ac-43fd-a361-f61242268680",
+                "description": "Splunk Enterprise must use organization level authentication to uniquely identify and authenticate users.\nSplunk Enterprise must have all local user accounts removed after implementing organizational level user management system, except for one emergency account of last resort.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "e01480e3-571a-4c2c-9ae5-3c7d2b44ac45",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "3dfe73e2-43a3-48f9-9c9a-4f918954da5a",
+                "description": "Splunk Enterprise must use HTTPS/SSL for access to the user interface.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "60a4e36f-45de-4ebd-8d5e-1b89c32a5b96",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "0c938492-a66e-4e2f-a063-96d19e953fa9",
+                "description": "Splunk Enterprise must use an SSO proxy service, F5 device, or SAML implementation to accept the DoD CAC or other smart card credential for identity management, personal authentication, and multifactor authentication.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "804068a3-08ba-4e2b-8778-79e9bbef82e2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "cffa215f-a3e4-47b8-917f-0bd6ec9ffadf",
+                "description": "Splunk Enterprise must enforce password complexity for the account of last resort by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "5c9f83d0-d9d9-4249-9dc8-8600a69f4147",
+                "description": "Splunk Enterprise must use LDAPS for the LDAP connection.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "5d7716b0-eac8-4bb8-80a1-dafc35ad6a07",
+                "description": "Splunk Enterprise must enforce a minimum 15-character password length for the account of last resort.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "4bcf7a68-f0e9-4a2d-b584-9ba10721aeab",
+                "description": "Splunk Enterprise must enforce a 60-day maximum password lifetime restriction for the account of last resort.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "075a96ea-be7a-422d-98f3-75355e7ce0be",
+                "description": "Splunk Enterprise must prohibit password reuse for a minimum of five generations for the account of last resort.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "8b9ac44d-384b-4cf0-a757-08c6e3279bd2",
+                "description": "Splunk Enterprise must enforce password complexity for the account of last resort by requiring that at least one upper-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "2887f9fc-bf65-480c-a136-794e1f4fb576",
+                "description": "Splunk Enterprise must enforce password complexity for the account of last resort by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "fc191173-a7af-4378-a2bb-a166c02640f3",
+                "description": "Splunk Enterprise must enforce password complexity for the account of last resort by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "7ee4a2bb-1632-469b-a443-3743ad034b3d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "a3c8527e-63d2-4f15-92af-eb2c33b75d7d",
+                "description": "Splunk Enterprise must use TLS 1.2 and SHA-2 or higher cryptographic algorithms.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "c9f1290b-ab8d-4bf5-990b-67dc80d14265",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "013b58cc-6234-41b6-bbe1-a0af8a972cc8",
+                "description": "Splunk Enterprise idle session timeout must be set to not exceed 15 minutes.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "68c44f67-b916-4133-b410-b0a6ca8b75ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "f2af7c64-5fe0-4ffb-ad09-7d639efa98d9",
+                "description": "Splunk Enterprise must use SSL to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "40231402-033b-4742-887f-9c9391883ad3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "36e6bf1e-7864-4da2-9847-c6fdd2e2651c",
+                "description": "Splunk Enterprise must be installed with FIPS mode enabled, to implement NIST FIPS 140-2 approved ciphers for all cryptographic functions.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "a0162d5b-ea4d-47c7-b00d-954e683af0de",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "ae13cfda-7c43-4086-b2e7-d349b333e85e",
+                "description": "Splunk Enterprise must only allow the use of DoD-approved certificate authorities for cryptographic functions.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

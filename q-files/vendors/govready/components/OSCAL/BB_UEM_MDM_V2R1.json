@@ -1,0 +1,191 @@
+{
+  "component-definition": {
+    "uuid": "b5dcd575-9cbb-4e7b-835f-baaf47c9b5db",
+    "metadata": {
+      "title": "BB UEM MDM V2R1",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "9ded3e0d-24b4-42f4-97f6-f511a5712c82",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "836ea29c-714f-46be-b7c0-8091a94aa86e",
+        "type": "software",
+        "title": "BB UEM MDM V2R1",
+        "description": "Neque quiquia ut consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "9ded3e0d-24b4-42f4-97f6-f511a5712c82"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "ffdd18ed-de98-418b-9765-db5006f3070a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c0342b9c-dff3-466c-9a71-8caf1b38e2ae",
+                "description": "The BlackBerry UEM server must be configured to leverage the MDM platform user accounts and groups for BlackBerry UEM server user identification and CAC authentication.\nAuthentication of MDM platform accounts must be configured so they are implemented via an enterprise directory service.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d8213fe1-c752-4a09-9b55-7fa073003a98",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "a3fe9ece-c9e1-42a5-ac62-170555bb83b9",
+                "description": "The BlackBerry UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.",
+                "control-id": "ac-6.(5)"
+              },
+              {
+                "uuid": "be91ac8c-36e9-4c54-9a61-98b9d4c426c9",
+                "description": "The BlackBerry UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.",
+                "control-id": "ac-6.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "cdd65231-edbe-4cad-97e1-4f891ab5d0d2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "efbed0ea-76b8-46a6-b9e1-69d1e13a0a4e",
+                "description": "The BlackBerry UEM server must be configured to display the required DoD warning banner upon administrator logon. \n\nNote: This requirement is not applicable if the TOE platform is selected in FTA_TAB.1.1 in the Security Target (ST).",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "1b01d16e-ae66-4503-9a02-f02f0c85a481",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "5517cc74-c2ff-4054-8c1e-240572b87808",
+                "description": "The BlackBerry UEM server or platform must be configured to initiate a session lock after a 15-minute period of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "9227ad05-6549-4309-ae47-c50fc4d74832",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2c08f4d3-2697-4dae-9f22-22306d15b3a1",
+                "description": "The BlackBerry UEM server must be configured to transfer BlackBerry UEM server logs to another server for storage, analysis, and reporting. \n\nNote: BlackBerry UEM server logs include logs of MDM events and logs transferred to the BlackBerry UEM server by MDM agents of managed devices.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "65fdd9d2-7dc6-4e20-bf8e-0643ce0faef6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "d94f409b-cef4-4787-a390-1a17298c368a",
+                "description": "The BlackBerry UEM server must be configured to audit DoD or site-defined auditable events. Note: See VulDiscussion for a list of DoD required auditable events.",
+                "control-id": "au-11."
+              }
+            ]
+          },
+          {
+            "uuid": "55eb1381-9076-462f-8a5f-9ec696616477",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "025d0e83-b75e-4d8b-864b-8602435fcdf4",
+                "description": "The BlackBerry UEM server must [selection: invoke platform-provided functionality, implement functionality] to generate an audit record of the following auditable events: c. [selection: Commands issued to the MDM Agent].\nThe BlackBerry UEM server must be configured to communicate the following commands to the MDM Agent: read audit logs kept by the MD.\nThe BlackBerry UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.\nThe BlackBerry UEM server must be maintained at a supported version.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "851de2d1-483c-4b15-83c3-36ba5781e2c6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "458e4a68-2ad6-4c7b-9c29-e61e21ec3e54",
+                "description": "The BlackBerry UEM server platform must be protected by a DoD-approved firewall.\nThe firewall protecting the BlackBerry UEM server platform must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support BlackBerry UEM server and platform functions.\nThe firewall protecting the BlackBerry UEM server platform must be configured so that only DoD-approved ports, protocols, and services are enabled. (See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services).\nThe BlackBerry UEM server Blackberry Web Services must not be authorized access from external sources unnecessarily.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "952a0665-8989-4914-8cd0-a5ac18eda53d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "404d3fdd-9d3a-4870-b6e3-430aa1d9d52d",
+                "description": "All BlackBerry UEM server local accounts created during application installation and configuration must be disabled or removed.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "893b03ed-9198-4cc3-ba37-cfdfa3fff509",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "99a7766c-476e-41ad-b4a1-e496f0f0a792",
+                "description": "The BlackBerry UEM server must connect to [assignment: [SQL Server]] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "a50b8c7c-6ede-4aae-bafd-957d8903042d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "d95bd640-8f82-4de5-9270-2c6afb0532fd",
+                "description": "The BlackBerry UEM server must connect to [assignment: [SQL Server]] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "fb58ca4d-de03-4357-a12f-0d7525ded5ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "fb41b0d7-b722-42a0-9510-032eb3795c4b",
+                "description": "The BlackBerry UEM server must connect to [assignment: [SQL Server]] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "a8e2fd5c-2ac2-49af-8fb9-2bbda2263eba",
+                "description": "The BlackBerry UEM server must connect to [assignment: [SQL Server]] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

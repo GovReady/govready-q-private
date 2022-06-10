@@ -1,0 +1,222 @@
+{
+  "component-definition": {
+    "uuid": "43bdf2de-37ce-4d3e-bd2c-8ff1cffa04ad",
+    "metadata": {
+      "title": "Google Android 10-x V1R2",
+      "last-modified": "2022-06-10T12:50:56",
+      "version": "2022-06-10T12:50:56",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "3948f761-a5ef-447d-beb5-bedd0f140a58",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "a3436108-e000-45d9-afec-5a2b330b2bac",
+        "type": "software",
+        "title": "Google Android 10-x V1R2",
+        "description": "Quiquia magnam dolorem ut ipsum. Dolore labore ipsum consectetur eius etincidunt consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "3948f761-a5ef-447d-beb5-bedd0f140a58"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "3b90a154-c329-4d1c-af58-32d9284561c2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "dadcbee6-ebad-4f2d-9a33-09ef8c24047a",
+                "description": "Google Android 10 must be configured to disable multi-user modes.",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "d65be949-dd86-40de-b4a7-d51966cdb639",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "146d1761-ddaf-4d14-81a1-fa28f61826bd",
+                "description": "Google Android 10 must be configured to disable exceptions to the access control policy that prevents application processes from accessing all data stored by other application processes.",
+                "control-id": "ac-4.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "2b3fb70f-3a5c-4bde-9bcd-1d61a13176a9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "d854a5b7-d227-4632-ae77-5debc5cc5309",
+                "description": "Google Android 10 must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "9d04b6b3-6ccb-49ff-9778-dc10c719e4b5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "e00aeee8-3cd4-4a79-8da4-c1bc9640ce22",
+                "description": "Google Android 10 must be configured to not display the following (work profile) notifications when the device is locked: [selection: - email notifications - calendar appointments - contact associated with phone call notification - text message notification - other application-based notifications - all notifications].",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "46a2323e-da3a-44f8-84cc-9954bde56296",
+                "description": "Google Android 10 must be configured to display the DoD advisory warning message at start-up or each time the user unlocks the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "a4025cd8-fb6d-4399-9de4-2ada89101562",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "bac8d93c-170a-472a-affc-cadeabe9382d",
+                "description": "Google Android 10 must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\nGoogle Android 10 must be configured to lock the display after 15 minutes (or less) of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "9634443a-1233-4912-9120-fbfba5d8463d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6fa978bd-60a6-4e98-8672-294a91a7ea95",
+                "description": "Google Android 10 must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
+                "control-id": "ac-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "af7271ba-aed3-4527-b395-0c6c29693764",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "eba29c38-4e7b-404e-883f-2e30067d3092",
+                "description": "Google Android 10 must be configured to not allow backup of all applications and configuration data to remote systems.",
+                "control-id": "ac-20.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "fc7fa529-1dd9-410a-ab10-1f6155c8c4a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1bd3f304-a5a3-48e0-a764-6164713a24f3",
+                "description": "Google Android 10 must be configured to enable audit logging.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d58c2987-d280-4ce3-956e-36d71c1cdde1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "9fceffc0-2dfc-4bf1-a8ad-7ebf3f0c8a4c",
+                "description": "Google Android 10 must be configured to generate audit records for the following auditable events: detected integrity violations.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "6fa11276-4477-45b0-89b2-cbd102da25b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "335dc334-8db2-4865-9e88-942ed718b21e",
+                "description": "Google Android 10 must be configured to not allow passwords that include more than two repeating or sequential characters.\nGoogle Android 10 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nGoogle Android 10 must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nGoogle Android 10 whitelist must be configured to not include applications with the following characteristics: - back up MD data to non-DoD cloud servers (including user and application access to cloud backup services); - transmit MD diagnostic data to non-DoD servers; - voice assistant application if available when MD is locked; - voice dialing application if available when MD is locked; - allows synchronization of data or applications between devices associated with user; and - allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nGoogle Android 10 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), HandsFree Profile (HFP), and Serial Port Profile (SPP).\nGoogle Android 10 must be configured to not display the following (work profile) notifications when the device is locked: [selection: - email notifications - calendar appointments - contact associated with phone call notification - text message notification - other application-based notifications - all notifications].\nGoogle Android 10 must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nGoogle Android 10 must be configured to disable exceptions to the access control policy that prevents application processes from accessing all data stored by other application processes.\nGoogle Android 10 must be configured to disable multi-user modes.\nGoogle Android 10 must be configured to enable audit logging.\nGoogle Android 10 users must complete required training.\nGoogle Android 10 must be configured to enforce that Wi-Fi Sharing is disabled.\nGoogle Android 10 must have the DoD root and intermediate PKI certificates installed.\nGoogle Android 10 must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nThe Google Android 10 Work Profile must be configured to prevent users from adding personal email accounts to the work email app.\nGoogle Android 10 work profile must be configured to enforce the system application disable list.\nGoogle Android 10 must be provisioned as a fully managed device and configured to create a work profile.\nGoogle Android 10 work profile must be configured to disable automatic completion of work space Internet browser text input.\nGoogle Android 10 Work Profile must be configured to disable the autofill services.\nGoogle Android 10 must be configured to disallow configuration of date and time.\nGoogle Android 10 devices must have the latest available Google Android 10 operating system installed.\nGoogle Android 10 devices must be configured to disable the use of third-party keyboards.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "1d3ebc2a-c524-4f81-bde3-3bde88c62fa2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "cd7c1bc6-f791-4199-bd23-07341982b76e",
+                "description": "Google Android 10 must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nGoogle Android 10 must be configured to enable audit logging.\nGoogle Android 10 must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "72b0bd38-ff5d-41e9-8b3f-bb23fe02ab16",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "8ff6e2b0-a17c-4d6d-a145-dcc5627756bc",
+                "description": "Google Android 10 must be configured to disable trust agents. Note: This requirement is not applicable (NA) for specific biometric authentication factors included in the products Common Criteria evaluation.\nGoogle Android 10 must be configured to disable developer modes.\nGoogle Android 10 must be configured to disable USB mass storage mode.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "77efc488-e92c-4fb0-b0f8-9f13254d0533",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a7f78521-ad2f-49d8-8321-b016fb16495a",
+                "description": "Google Android 10 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), HandsFree Profile (HFP), and Serial Port Profile (SPP).",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c4795a60-1654-46b9-aae4-348220fc27ab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "c1b1c771-3967-42da-a755-d55cbd08c3d3",
+                "description": "Google Android 10 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nGoogle Android 10 must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nGoogle Android 10 whitelist must be configured to not include applications with the following characteristics: - back up MD data to non-DoD cloud servers (including user and application access to cloud backup services); - transmit MD diagnostic data to non-DoD servers; - voice assistant application if available when MD is locked; - voice dialing application if available when MD is locked; - allows synchronization of data or applications between devices associated with user; and - allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.",
+                "control-id": "cm-11."
+              }
+            ]
+          },
+          {
+            "uuid": "7cf8f265-38a4-4b30-89bf-370472fe0705",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "435b1a8b-c8e1-48de-8370-ca50fab65edc",
+                "description": "Google Android 10 must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "component-definition": {
+    "uuid": "d9dd8cce-470c-4ee9-ad0d-8946963f5d46",
+    "metadata": {
+      "title": "Oracle HTTP Server 12-1-3 V2R1",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "b8cafb5d-b634-4ebf-bb85-5a91fe3e0c0f",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "fd9eac82-2af9-4300-9a40-13d924090f7a",
+        "type": "software",
+        "title": "Oracle HTTP Server 12-1-3 V2R1",
+        "description": "Sit sed numquam adipisci ut dolore adipisci amet.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "b8cafb5d-b634-4ebf-bb85-5a91fe3e0c0f"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "2e15d635-d2b9-4f9c-ae26-cc791ffd7bdc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "25f361b6-0dac-49ca-a3b6-de7b6342e2b6",
+                "description": "Non-privileged accounts on the hosting system must only access OHS security-relevant information and functions through a distinct administrative account.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "7e978dfc-7c32-48d8-a652-d28f0c3a6e87",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "ce16837a-b65e-4ee2-bad1-79f2ea20b7f2",
+                "description": "OHS must have the mpm property set to use the worker Multi-Processing Module (MPM) as the preferred means to limit the number of allowed simultaneous requests.\nOHS must have the mpm_prefork_module directive disabled so as not conflict with the worker directive used to limit the number of allowed simultaneous requests.\nOHS must have the MaxClients directive defined to limit the number of allowed simultaneous requests.\nOHS must limit the number of threads within a worker process to limit the number of allowed simultaneous requests.\nOHS must limit the number of worker processes to limit the number of allowed simultaneous requests.\nOHS must capture, record, and log all content related to a user session.\nOHS must have the LoadModule ossl_module directive enabled to implement required cryptographic protections using cryptographic modules complying with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting data that must be compartmentalized.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "9c757746-5e59-464f-b9a7-fa5dd0c494d0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b05c2768-cd8c-4705-9499-9d0fd05320a3",
+                "description": "OHS must have the LoadModule log_config_module directive enabled to generate information to be used by external applications or entities to monitor and control remote access.\nOHS must have the OraLogMode set to Oracle Diagnostic Logging text mode to generate information to be used by external applications or entities to monitor and control remote access.\nOHS must have a log directory location defined to generate information for use by external applications or entities to monitor and control remote access.\nOHS must have the OraLogSeverity directive defined to generate adequate information to be used by external applications or entities to monitor and control remote access.\nOHS must have the log rotation parameter set to allow generated information to be used by external applications or entities to monitor and control remote access.\nOHS must have a log format defined to generate adequate information to be used by external applications or entities to monitor and control remote access.\nOHS must have a SSL log format defined to allow generated information to be used by external applications or entities to monitor and control remote access in accordance with the categorization of data hosted by the web server.\nOHS must have a log file defined for each site/virtual host to capture information to be used by external applications or entities to monitor and control remote access.",
+                "control-id": "ac-17.(1)"
+              },
+              {
+                "uuid": "2d05ed68-5016-4c0d-b6d6-ff2f59c01530",
+                "description": "Remote access to OHS must follow access policy or work in conjunction with enterprise tools designed to enforce policy requirements.\nOHS must have the Order, Allow, and Deny directives set within the Directory directives set to restrict inbound connections from nonsecure zones.\nOHS must have the Order, Allow, and Deny directives set within the Files directives set to restrict inbound connections from nonsecure zones.\nOHS must have the Order, Allow, and Deny directives set within the Location directives set to restrict inbound connections from nonsecure zones.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "89531930-2949-4722-9986-5c9b749465ab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "20a9b630-b7b0-48bf-b22f-b6917f312b8a",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to protect the integrity of remote sessions in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLFIPS directive enabled to protect the integrity of remote sessions in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to protect the integrity of remote sessions in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLCipherSuite directive enabled to protect the integrity of remote sessions in accordance with the categorization of data hosted by the web server.\nOHS must have the SecureProxy directive enabled to protect the integrity of remote sessions when integrated with WebLogic in accordance with the categorization of data hosted by the web server.\nOHS must have the WLSSLWallet directive enabled to protect the integrity of remote sessions when integrated with WebLogic in accordance with the categorization of data hosted by the web server.\nOHS must have the WebLogicSSLVersion directive enabled to protect the integrity of remote sessions when integrated with WebLogic in accordance with the categorization of data hosted by the web server.\nOHS must have the WLProxySSL directive enabled to protect the integrity of remote sessions when integrated with WebLogic in accordance with the categorization of data hosted by the web server.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "dfb1a15f-aa2c-4f0e-b9ac-b1c73b457cf2",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to encrypt remote connections in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLFIPS directive enabled to encrypt remote connections in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to encrypt remote connections in accordance with the categorization of data hosted by the web server.\nOHS must have the SSLCipherSuite directive enabled to encrypt remote connections in accordance with the categorization of data hosted by the web server.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "7497ce5e-ff75-452e-aa4a-a91d3a442524",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "aa8847f3-0559-442b-9db2-c89f97bfa89c",
+                "description": "OHS must provide the capability to immediately disconnect or disable remote access to the hosted applications.",
+                "control-id": "ac-17.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "1c36810f-6641-45e3-8c36-4e363c88d4c7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "820e9646-7982-4352-860e-d9ddae4d8377",
+                "description": "OHS must have a log format defined to produce log records that contain sufficient information to establish the outcome (success or failure) of events.\nOHS must have a SSL log format defined to produce log records that contain sufficient information to establish the outcome (success or failure) of events.\nOHS must have a log file defined for each site/virtual host to produce log records that contain sufficient information to establish the outcome (success or failure) of events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "0d46190e-87c1-4e28-a87d-1008dda1de6b",
+                "description": "OHS must have a log level severity defined to produce sufficient log records to establish what type of events occurred.\nOHS must have a log format defined for log records generated to capture sufficient information to establish what type of events occurred.\nOHS must have a SSL log format defined for log records generated to capture sufficient information to establish what type of events occurred.\nOHS must have a log file defined for each site/virtual host to capture sufficient information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "fd7fbded-8d7e-441e-9ca6-2f0b96fb475b",
+                "description": "OHS must have a log format defined for log records that allow the establishment of the source of events.\nOHS must have a SSL log format defined for log records that allow the establishment of the source of events.\nOHS must have a log file defined for each site/virtual host to capture logs generated that allow the establishment of the source of events.\nOHS, behind a load balancer or proxy server, must produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.\nOHS, behind a load balancer or proxy server, must have the SSL log format set correctly to produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.\nOHS, behind a load balancer or proxy server, must have a log file defined for each site/virtual host to produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "11b5a8a6-0b61-4e43-9d2c-872ced0dd0a5",
+                "description": "OHS must have a log format defined for log records that allow the establishment of where within OHS the events occurred.\nOHS must have a SSL log format defined for log records that allow the establishment of where within OHS the events occurred.\nOHS must have a log file defined for each site/virtual host to capture logs generated that allow the establishment of where within OHS the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "b45c49a2-41c5-4360-94f1-0b81ebc40263",
+                "description": "OHS must have a log format defined to produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.\nOHS must have a SSL log format defined to produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.\nOHS must have a log file defined for each site/virtual host to produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "f10caf5c-3fdc-4e3d-ba1a-360510c55d3d",
+                "description": "OHS must have a log format defined for log records generated to capture sufficient information to establish when an event occurred.\nOHS must have a SSL log format defined for log records generated to capture sufficient information to establish when an event occurred.\nOHS must have a log file defined for each site/virtual host to capture logs generated that allow the establishment of when an event occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "b37775c9-f79c-49f2-a709-0be106a11472",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0a74ca60-d4e1-4397-bf8c-48bc36d99b16",
+                "description": "OHS must be configured to store error log files to an appropriate storage device from which other tools can be configured to reference those log files for diagnostic/forensic purposes.\nOHS must be configured to store access log files to an appropriate storage device from which other tools can be configured to reference those log files for diagnostic/forensic purposes.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c42b3a4d-0283-47c3-add3-d28d781a556c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "77a99696-634a-41ee-840a-cb179fab1f4b",
+                "description": "OHS log files must only be accessible by privileged users.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "887f151b-f4d6-4673-8917-1e841dec1969",
+                "description": "The log information from OHS must be protected from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "c5d77f32-2dfd-4d66-8bbd-0343a4134dc4",
+                "description": "The log information from OHS must be protected from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "8298daae-7041-44e4-8d63-70f9601f925d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "53882e7d-f84b-4d9d-a616-1f99be60f092",
+                "description": "The log data and records from OHS must be backed up onto a different system or media.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "a738ddd0-338d-4148-a499-adbf8accfaeb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "012fdfae-b194-4b01-be53-ffde4f831dd3",
+                "description": "OHS must have the client requests logging module loaded to generate log records for system startup and shutdown, system access, and system authentication logging.\nOHS must have OraLogMode set to Oracle Diagnostic Logging text mode to generate log records for system startup and shutdown, system access, and system authentication logging.\nOHS must have a log directory location defined to generate log records for system startup and shutdown, system access, and system authentication logging.\nOHS must have a log level severity defined to generate adequate log records for system startup and shutdown, system access, and system authentication events.\nOHS must have the log rotation parameter set to allow for the generation log records for system startup and shutdown, system access, and system authentication events.\nOHS must have a log format defined to generate adequate logs by system startup and shutdown, system access, and system authentication events.\nOHS must have a SSL log format defined to generate adequate logs by system startup and shutdown, system access, and system authentication events.\nOHS must have a log file defined for each site/virtual host to capture logs generated by system startup and shutdown, system access, and system authentication events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "018ff7da-761f-4248-845e-247a06cdcb45",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "922a5bdd-fae2-4bbf-9434-a64204237809",
+                "description": "The Node Manager account password associated with the installation of OHS must be in accordance with DoD guidance for length, complexity, etc.\nOHS must have Entity tags (ETags) disabled.\nThe SecureListener property of the Node Manager configured to support OHS must be enabled for secure communication.\nThe ListenAddress property of the Node Manager configured to support OHS must match the CN of the certificate used by Node Manager.\nThe AuthenticationEnabled property of the Node Manager configured to support OHS must be configured to enforce authentication.\nThe KeyStores property of the Node Manager configured to support OHS must be configured for secure communication.\nThe CustomIdentityKeyStoreFileName property of the Node Manager configured to support OHS must be configured for secure communication.\nThe CustomIdentityKeyStorePassPhrase property of the Node Manager configured to support OHS must be configured for secure communication.\nThe CustomIdentityAlias property of the Node Manager configured to support OHS must be configured for secure communication.\nThe CustomIdentityPrivateKeyPassPhrase property of the Node Manager configured to support OHS must be configured for secure communication.\nThe listen-address element defined within the config.xml of the OHS Standalone domain that supports OHS must be configured for secure communication.\nThe listen-port element defined within the config.xml of the OHS Standalone Domain must be configured for secure communication.\nThe WLST_PROPERTIES environment variable defined for the OHS WebLogic Scripting Tool must be updated to reference an appropriate trust store so that it can communicate with the Node Manager supporting OHS.\nThe WLST_PROPERTIES environment variable defined for the Fusion Middleware WebLogic Scripting Tool must be updated to reference an appropriate trust store so that it can communicate with the Node Manager supporting OHS.\nOHS must limit access to the Dynamic Monitoring Service (DMS).\nOHS must have the AllowOverride directive set properly.\nOHS must be set to evaluate deny directives first when considering whether to serve a file.\nOHS must deny all access by default when considering whether to serve a file.\nThe OHS instance installation must not contain an .htaccess file.\nThe OHS instance configuration must not reference directories that contain an .htaccess file.\nOHS must have the HostnameLookups directive enabled.\nOHS must have the ServerAdmin directive set properly.\nOHS must restrict access methods.\nThe OHS htdocs directory must not contain any default files.\nOHS must have the SSLSessionCacheTimeout directive set properly.\nOHS must have the RewriteEngine directive enabled.\nOHS must have the RewriteOptions directive set properly.\nOHS must have the RewriteLogLevel directive set to the proper log level.\nOHS must have the RewriteLog directive set properly.\nAll accounts installed with the web server software and tools must have passwords assigned and default passwords changed.\nA production OHS Installation must prohibit the installation of a compiler.\nA public OHS installation, if hosted on the NIPRNet, must be isolated in an accredited DoD DMZ Extension.\nA private OHS installation must be located on a separate controlled access subnet.\nThe version of the OHS installation must be vendor-supported.\nOHS must be certified with accompanying Fusion Middleware products.\nOHS tools must be restricted to the web manager and the web managers designees.\nAll utility programs, not necessary for operations, must be removed or disabled.\nThe OHS htpasswd files (if present) must reflect proper ownership and permissions.\nA public OHS installation must limit email to outbound only.\nOHS content and configuration files must be part of a routine backup program.\nOHS must be segregated from other services.\nOHS must have all applicable patches (i.e., CPUs) applied/documented (OEM).\nA private OHS list of CAs in a trust hierarchy must lead to an authorized DoD PKI Root CA.\nOHS must have the ScoreBoardFile directive disabled.\nThe OHS document root directory must not be on a network share.\nThe OHS server root directory must not be on a network share.\nSymbolic links must not be used in the web content directory tree.\nOHS administration must be performed over a secure path or at the local console.\nOHS must not contain any robots.txt files.\nOHS must prohibit anonymous FTP user access to interactive scripts.\nThe OHS DocumentRoot directory must be in a separate partition from the OHS ServerRoot directory.\nThe OHS DocumentRoot directory must be on a separate partition from OS root partition.\nRemote authors or content providers must have all files scanned for viruses and malicious code before uploading files to the Document Root directory.\nA public OHS server must use TLS if authentication is required to host web sites.\nOHS hosted web sites must utilize ports, protocols, and services according to PPSM guidelines.\nOHS must not have the directive PlsqlDatabasePassword set in clear text.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "72dda430-a302-4a94-93eb-36113b059296",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "45ddff13-8ed6-47b9-8b8d-3cfe314b081a",
+                "description": "OHS must be configured to use a specified IP address, port, and protocol.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "661315bb-799c-4a29-b422-301e47d250d7",
+                "description": "OHS must have the LoadModule file_cache_module directive disabled.\nOHS must have the LoadModule vhost_alias_module directive disabled.\nOHS must have the LoadModule env_module directive disabled.\nOHS must have the LoadModule mime_magic_module directive disabled.\nOHS must have the LoadModule negotiation_module directive disabled.\nOHS must not have the LanguagePriority directive enabled.\nOHS must not have the ForceLanguagePriority directive enabled.\nOHS must have the LoadModule status_module directive disabled.\nOHS must have the LoadModule info_module directive disabled.\nOHS must have the LoadModule include_module directive disabled.\nOHS must have the LoadModule autoindex_module directive disabled.\nOHS must have the IndexOptions directive disabled.\nOHS must have the AddIconByEncoding directive disabled.\nOHS must have the AddIconByType directive disabled.\nOHS must have the AddIcon directive disabled.\nOHS must have the DefaultIcon directive disabled.\nOHS must have the ReadmeName directive disabled.\nOHS must have the HeaderName directive disabled.\nOHS must have the IndexIgnore directive disabled.\nOHS must have the LoadModule dir_module directive disabled.\nOHS must have the DirectoryIndex directive disabled.\nOHS must have the LoadModule cgi_module directive disabled.\nOHS must have the LoadModule fastcgi_module disabled.\nOHS must have the LoadModule cgid_module directive disabled for mpm workers.\nOHS must have the IfModule cgid_module directive disabled.\nOHS must have the LoadModule mpm_winnt_module directive disabled.\nOHS must have the ScriptAlias directive for CGI scripts disabled.\nOHS must have the ScriptSock directive disabled.\nOHS must have the cgi-bin directory disabled.\nOHS must have directives pertaining to certain scripting languages removed from virtual hosts.\nOHS must have the LoadModule asis_module directive disabled.\nOHS must have the LoadModule imagemap_module directive disabled.\nOHS must have the LoadModule actions_module directive disabled.\nOHS must have the LoadModule speling_module directive disabled.\nOHS must have the LoadModule userdir_module directive disabled.\nOHS must have the AliasMatch directive pertaining to the OHS manuals disabled.\nOHS must have the Directory directive pointing to the OHS manuals disabled.\nOHS must have the LoadModule auth_basic_module directive disabled.\nOHS must have the LoadModule authz_user_module directive disabled.\nOHS must have the LoadModule authn_file_module directive disabled.\nOHS must have the LoadModule authn_anon_module directive disabled.\nOHS must have the LoadModule proxy_module directive disabled.\nOHS must have the LoadModule proxy_http_module directive disabled.\nOHS must have the LoadModule proxy_ftp_module directive disabled.\nOHS must have the LoadModule proxy_connect_module directive disabled.\nOHS must have the LoadModule proxy_balancer_module directive disabled.\nOHS must have the LoadModule cern_meta_module directive disabled.\nOHS must have the LoadModule expires_module directive disabled.\nOHS must have the LoadModule usertrack_module directive disabled.\nOHS must have the LoadModule uniqueid_module directive disabled.\nOHS must have the LoadModule setenvif_module directive disabled.\nOHS must have the BrowserMatch directive disabled.\nOHS must have the LoadModule dumpio_module directive disabled.\nOHS must have the IfModule dumpio_module directive disabled.\nOHS must have the Alias /icons/ directive disabled.\nOHS must have the path to the icons directory disabled.\nOHS must have the IfModule mpm_winnt_module directive disabled.\nOHS must have the LoadModule proxy_module directive disabled.\nOHS must have the LoadModule proxy_http_module directive disabled.\nOHS must have the LoadModule proxy_ftp_module directive disabled.\nOHS must have the LoadModule proxy_connect_module directive disabled.\nOHS must have the LoadModule proxy_balancer_module directive disabled.\nOHS must disable the directive pointing to the directory containing the OHS manuals.\nOHS must have the AliasMatch directive disabled for the OHS manuals.\nOHS must have the AddHandler directive disabled.\nOHS must have the LoadModule cgi_module directive disabled.\nOHS must have the LoadModule cgid_module directive disabled.\nOHS must have the IfModule cgid_module directive disabled for the OHS server, virtual host, and directory configuration.\nOHS must have the LoadModule cgi_module directive disabled within the IfModule mpm_winnt_module directive.\nOHS must have the ScriptAlias /cgi-bin/ directive within a IfModule alias_module directive disabled.\nOHS must have the ScriptSock directive within a IfModule cgid_module directive disabled.\nOHS must have the cgi-bin directory disabled.\nOHS must have directives pertaining to certain scripting languages removed from virtual hosts.\nOHS must have resource mappings set to disable the serving of certain file types.\nUsers and scripts running on behalf of users must be contained to the document root or home directory tree of OHS.\nIf WebLogic is not in use with OHS, OHS must have the include mod_wl_ohs.conf directive disabled at the server level.\nIf mod_plsql is not in use with OHS, OHS must have the include moduleconf/* directive disabled.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "14059b95-0009-42af-be62-4210858be5b0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "575b1635-fc7f-473b-82a8-5f4d9a396a84",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to encrypt passwords during transmission.\nOHS must use FIPS modules to encrypt passwords during transmission.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to encrypt passwords during transmission.\nOHS must have the SSLCipherSuite directive enabled to encrypt passwords during transmission.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "53e8def9-8711-40dd-b14a-49a345ff1d78",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "815fe893-c363-46a0-9c38-b3027a3cd790",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to perform RFC 5280-compliant certification path validation.\nOHS must use FIPS modules to perform RFC 5280-compliant certification path validation.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to perform RFC 5280-compliant certification path validation.\nOHS must have the SSLCipherSuite directive enabled to perform RFC 5280-compliant certification path validation.\nOHS must have the SSLVerifyClient directive set within each SSL-enabled VirtualHost directive to perform RFC 5280-compliant certification path validation.\nOHS must have the SSLCARevocationFile and SSLCRLCheck directives within each SSL-enabled VirtualHost directive set to perform RFC 5280-compliant certification path validation when using single certification revocation.\nOHS must have SSLCARevocationPath and SSLCRLCheck directives within each SSL-enabled VirtualHost directive set to perform RFC 5280-compliant certification path validation when using multiple certification revocation.\nOHS must be integrated with a tool such as Oracle Access Manager to enforce a client-side certificate revocation check through the OCSP protocol.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "3dd14004-769c-474b-82b6-46939a786b91",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "9d9644a0-6f38-4bc4-801e-d9ab49a0f5f2",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nOHS must have the SSLFIPS directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nOHS must have the SSLCipherSuite directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nOHS must have the LoadModule ossl_module directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance for such authentication.\nOHS must have the SSLFIPS directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance for such authentication.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance for such authentication.\nOHS must have the SSLCipherSuite directive enabled to meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance for such authentication.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "cbd79f35-2e76-4719-b43f-769469ee1a36",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "193b9cae-40b0-4bab-852f-bf863c543fda",
+                "description": "OHS accounts accessing the directory tree, the shell, or other operating system functions and utilities must only be administrative accounts.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "966aa3a4-c3a1-4e64-a5b6-1b3784e52f5e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "08290412-41ed-4b72-8e24-1886a080a798",
+                "description": "OHS must have the DocumentRoot directive set to a separate partition from the OHS system files.\nOHS must have the Directory directive accompanying the DocumentRoot directive set to a separate partition from the OHS system files.",
+                "control-id": "sc-3."
+              }
+            ]
+          },
+          {
+            "uuid": "cdb39077-c4a3-4c17-9ca8-2f8f7c592397",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "6c789e0e-6f10-400f-b083-4de924c11393",
+                "description": "OHS must be tuned to handle the operational requirements of the hosted application.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "e7563677-71db-4356-8265-fc48dcae7e2b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e5d7c62f-6d89-4f86-9982-63f5566f011a",
+                "description": "OHS must have the Timeout directive properly set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the KeepAlive directive properly set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the KeepAliveTimeout properly set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the MaxKeepAliveRequests directive properly set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the ListenBacklog properly set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitRequestBody directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitRequestFields directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitRequestFieldSize directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitRequestLine directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitXMLRequestBody directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.\nOHS must have the LimitInternalRecursion directive set to restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ac1595f0-3878-4b94-8eb6-b2b2398f986c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "cfe69ef8-3c09-450b-8288-0a385bc734da",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to prevent unauthorized disclosure of information during transmission.\nOHS must have the SSLFIPS directive enabled to prevent unauthorized disclosure of information during transmission.\nOHS must have the SSLEngine, SSLProtocol, SSLWallet directives enabled and configured to prevent unauthorized disclosure of information during transmission.\nOHS must have the SSLCipherSuite directive enabled to prevent unauthorized disclosure of information during transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the SecureProxy directive enabled to prevent unauthorized disclosure of information during transmission.\nOHS must have the WLSSLWallet directive enabled to prevent unauthorized disclosure of information during transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the WebLogicSSLVersion directive enabled to prevent unauthorized disclosure of information during transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring SSL termination at OHS, OHS must have the WLProxySSL directive enabled to prevent unauthorized disclosure of information during transmission.\nOHS must have the LoadModule ossl_module directive enabled to maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.\nOHS must have the SSLFIPS directive enabled to maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.\nOHS must have the SSLCipherSuite directive enabled to maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "f17a6cdc-7211-4e7c-978e-86f0c4dceadc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "09231b86-1f0f-49c7-a428-986f62128fe5",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to maintain the confidentiality and integrity of information during reception.\nOHS must have the SSLFIPS directive enabled to maintain the confidentiality and integrity of information during reception.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to maintain the confidentiality and integrity of information during reception.\nOHS must have the SSLCipherSuite directive enabled to maintain the confidentiality and integrity of information during reception.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the SSLSecureProxy directive enabled to maintain the confidentiality and integrity of information during reception.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the WLSSLWallet directive enabled to maintain the confidentiality and integrity of information during reception.\nIf using the WebLogic Web Server Proxy Plugin and configuring SSL termination at OHS, OHS must have the WLProxySSL directive enabled to maintain the confidentiality and integrity of information during reception.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "8eb970be-83e1-49df-a0f8-7c34e5f55f78",
+                "description": "OHS must have the LoadModule ossl_module directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.\nOHS must have the SSLFIPS directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled and configured to maintain the confidentiality and integrity of information during preparation for transmission.\nOHS must have the SSLCipherSuite directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the SecureProxy directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring end-to-end SSL, OHS must have the WLSSLWallet directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.\nIf using the WebLogic Web Server Proxy Plugin and configuring SSL termination at OHS, OHS must have the WLSProxySSL directive enabled to maintain the confidentiality and integrity of information during preparation for transmission.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "50975698-6331-4f0f-9645-ac38da2bedd9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "71e47b2f-f9f7-4e5c-90c0-d58325988e9a",
+                "description": "OHS must have the SSLFIPS directive enabled to implement required cryptographic protections using cryptographic modules complying with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting data that must be compartmentalized.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "37403f9f-3a2e-4665-add8-2ae20ec9517b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "12a5fdc0-aee9-470b-9a76-92b25130d92c",
+                "description": "OHS utilizing mobile code must meet DoD-defined mobile code requirements.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e219a895-7446-4c4c-90dd-7b0ee2effa6e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "36154a53-3326-49db-9d80-68c45d4a8a63",
+                "description": "OHS must have the LoadModule ossl_module directive enabled so SSL requests can be processed with client certificates only issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).\nOHS must have the SSLFIPS directive enabled so SSL requests can be processed with client certificates only issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).\nOHS must have the SSLEngine, SSLProtocol, and SSLWallet directives enabled so SSL requests can be processed with client certificates only issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).\nOHS must have the SSLCipherSuite directive enabled so SSL requests can be processed with client certificates only issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).\nOHS must have the SSLVerifyClient directive enabled to only accept client certificates issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).\nOHS must use wallets that have only DoD certificate authorities defined.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "940288ab-904b-47fe-afd1-62f1b38f4030",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "28cfeab8-b0b0-4dae-b4e9-402f049d533f",
+                "description": "OHS must display a default hosted application web page, not a directory listing, when a requested web page cannot be found.\nOHS must have the ServerSignature directive disabled.\nOHS must have the ServerTokens directive set to limit the response header.\nOHS must have the Alias /error directive defined to reference the directory accompanying the ErrorDocument directives to minimize the identity of OHS, patches, loaded modules, and directory paths in warning and error messages displayed to clients.\nOHS must have the permissions set properly via the Directory directive accompanying the ErrorDocument directives to minimize improper access to the warning and error messages displayed to clients.\nOHS must have defined error pages for common error codes that minimize the identity of the web server, patches, loaded modules, and directory paths.\nOHS must have production information removed from error documents to minimize the identity of OHS, patches, loaded modules, and directory paths in warning and error messages displayed to clients.\nDebugging and trace information used to diagnose OHS must be disabled.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

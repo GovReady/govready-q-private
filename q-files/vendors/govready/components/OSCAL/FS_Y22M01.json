@@ -1,0 +1,239 @@
+{
+  "component-definition": {
+    "uuid": "571e671f-4f9e-441b-a74f-02f00b269f1b",
+    "metadata": {
+      "title": "FS Y22M01",
+      "last-modified": "2022-06-10T12:50:57",
+      "version": "2022-06-10T12:50:57",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "ef11a2c3-59bb-4e46-bba2-12df7e976fad",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "3f8ac59c-d7c5-49e1-a029-256cda4c82c3",
+        "type": "software",
+        "title": "FS Y22M01",
+        "description": "Aliquam numquam numquam amet. Quisquam etincidunt non magnam ipsum ut ut. Numquam quiquia neque velit ipsum adipisci ut.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "ef11a2c3-59bb-4e46-bba2-12df7e976fad"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "4054f8b8-d87d-4637-a8e5-6fa1fe3d97dd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "17f5904e-8a2e-4288-a07c-256e57c6f6a8",
+                "description": "Forescout must enforce approved access by employing admissions assessment filters that include, at a minimum, device attributes such as type, IP address, resource group, and/or mission conditions as defined in Forescout System Security Plan (SSP).  This is required for compliance with C2C Step 4.\nEndpoint policy assessment must proceed after the endpoint attempting access has been identified using an approved identification method such as IP address.  This is required for compliance with C2C Step 2.\nFor endpoints that require automated remediation, Forescout must be configured to redirect endpoints to a logically separate network segment for remediation services. This is required for compliance with C2C Step 4.\nIf a device requesting access fails Forescout policy assessment, Forescout must communicate with other components and the switch to either terminate the session or isolate the device from the trusted network for remediation. This is required for compliance with C2C Step 3.\nForescout must be configured to notify the user before proceeding with remediation of the user's endpoint device when automated remediation is used. This is required for compliance with C2C Step 3.\nForescout must be configured so that all client machines are assessed by Forescout with exceptions that are allowed to bypass Forescout based on account or account type, as approved by the Information System Security Manager (ISSM) and documented in the System Security Plan (SSP). This is required for compliance with C2C Step 1.\nForescout appliance must not be configured to implement a DHCP layer 3 method for separation or device authorization. This is required for compliance with C2C Step 1.\nForescout must send an alert to the Information System Security Manager (ISSM) and System Administrator (SA), at a minimum, when critical security issues are found that put the network at risk. This is required for compliance with C2C Step 2.\nWhen devices fail the policy assessment, Forescout must create a record with sufficient detail suitable for forwarding to a remediation server for automated remediation or sending to the user for manual remediation. This is required for compliance with C2C Step 3.\nForescout must place client machines on a blacklist or terminate network communications on devices when critical security issues are found that put the network at risk. This is required for compliance with C2C Step 4.\nForescout must be configured so client machines do not communicate with other network devices in the DMZ or subnet except as needed to perform a client assessment or to identify itself. This is required for compliance with C2C Step 2.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "eb2fdab7-5332-4b1a-b15d-2c9e7096e352",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "85436941-85b4-4c6b-b715-0e6fff5fc644",
+                "description": "Forescout must enforce the revocation of endpoint access authorizations at the next compliance assessment interval based on changes to the compliance assessment security policy. This is required for compliance with C2C Step 4.\nForescout must deny or restrict access for endpoints that fail critical endpoint security checks. This is required for compliance with C2C Step 4.",
+                "control-id": "ac-3.(8)"
+              },
+              {
+                "uuid": "9bc879b4-5120-4117-89ff-2a623931c0c3",
+                "description": "Forescout must enforce the revocation of endpoint access authorizations when devices are removed from an authorization group. This is required for compliance with C2C Step 4.",
+                "control-id": "ac-3.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "1920048d-698a-4d29-8312-8deb6d41451f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "3b2df5e1-c5d8-4c06-87f7-8483f18f0a78",
+                "description": "For TLS connections, Forescout must automatically terminate the session when a client certificate is requested and the client does not have a suitable certificate. This is required for compliance with C2C Step 1.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "c8291329-3b04-42f9-9036-b62402a99aaa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "f1b165db-2cbe-4233-970e-4630d26cdd89",
+                "description": "Forescout must use TLS 1.2, at a minimum, to protect the confidentiality of information passed between the endpoint agent and Forescout for the purposes of client posture assessment. This is required for compliance with C2C Step 1.\nForescout that stores device keys must have a key management process that is FIPS-approved and protected by Advanced Encryption Standard (AES) block cipher algorithms. This is required for compliance with C2C Step 1.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "e864c32d-3233-4795-84c3-8111b7c6c4cf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-24.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2a4ef30a-885a-4a7e-82a6-08efeb00c680",
+                "description": "Communications between Forescout endpoint agent and the switch must transmit access authorization information via a protected path using a cryptographic mechanism. This is required for compliance with C2C Step 1.",
+                "control-id": "ac-24.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ccc858c1-0acb-4be5-aeac-9104e53dc6cd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "331fa745-7ec5-47e4-850d-213b9351d4b9",
+                "description": "Forescout must be configured to log records onto a centralized events server. This is required for compliance with C2C Step 1.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "6edff975-4e4c-49a8-bcbe-5c1d781de1be",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c0956dd3-ba67-4890-b263-5bc5ab6de40c",
+                "description": "Forescout must off-load log records onto a different system. This is required for compliance with C2C Step 1.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "02dc065b-b3d4-402f-934f-f024486f9cd1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "910414b5-54f3-43f3-89ec-1119d058eb47",
+                "description": "Forescout must configure TCP for the syslog protocol to allow for detection by the central event server if communications is lost. This is required for compliance with C2C Step 1.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "30502b32-b796-497b-b2c3-ab22ef80efb3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6bd3808b-946f-4990-b6d5-4d4d17f28ea9",
+                "description": "Forescout must generate a critical alert to be sent to the Information System Security Officer (ISSO) and Systems Administrator (SA) (at a minimum) in the event of an audit processing failure. This is required for compliance with C2C Step 1.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "1751bd21-0861-42ef-a023-168d9d871cf0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "0cac4b31-4581-44b8-a9a2-fb14740ee161",
+                "description": "Forescout must be configured with a secondary log server, in case the primary log is unreachable. This is required for compliance with C2C Step 1.",
+                "control-id": "au-5.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "1c0d697f-7ad6-47cb-9023-a0547044950e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "4f67c8cc-257c-4702-a8fe-ce2809b99a50",
+                "description": "Forescout must generate a log record when the client machine fails policy assessment because required security software is missing or has been deleted. This is required for compliance with C2C Step 1.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "1801bf8e-cfdc-4aac-a3b3-547496c85580",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "3654aafa-e4c7-49f8-a927-368598ea8185",
+                "description": "Forescout must perform continuous detection and tracking of endpoint devices attached to the network. This is required for compliance with C2C Step 1.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "d8aecab4-0870-4bf7-9bcb-4181d009ee88",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "63939e7d-579e-4698-9ce6-51f7363d5881",
+                "description": "Forescout must authenticate all endpoint devices before establishing a connection and proceeding with posture assessment. This is required for compliance with C2C Step 4.\nForescout must be configured to apply dynamic ACLs that restrict the use of ports when non-entity endpoints are connected using MAC Authentication Bypass (MAB). This is required for compliance with C2C Step 4.\nForescout switch module must only allow a maximum of one registered MAC address per access port. This is required for compliance with C2C Step 4.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "1d33cc2c-d6af-4190-bf08-15144e8e2240",
+                "description": "Forescout must deny network connection for endpoints that cannot be authenticated using an approved method. This is required for compliance with C2C Step 4.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "c96dd5c0-daca-40e2-9c3a-967c34b2496b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "04c0d1bd-1a28-4e05-8d9b-8c6519b9e2f6",
+                "description": "Forescout must use a bidirectional authentication mechanism configured with a FIPS-validated Advanced Encryption Standard (AES) cipher block algorithm to authenticate with the endpoint device. This is required for compliance with C2C Step 1.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "6b4aca93-e460-45f0-9f5e-f58a2b5a26cd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "523af567-f318-4f4a-95a0-199cbe5bd0fb",
+                "description": "When connecting with endpoints, Forescout must validate certificates used for Transport Layer Security (TLS) functions by performing RFC 5280-compliant certification path validation. This is required for compliance with C2C Step 1.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "997c3339-861d-4d5c-8bb0-6aefbb6178c3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "711b4cdf-66e6-4482-b974-5b390e698f74",
+                "description": "Forescout must reveal error messages only to the Information System Security Officer (ISSO), Information System Security Manager (ISSM), and System Administrator (SA). This is required for compliance with C2C Step 1.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

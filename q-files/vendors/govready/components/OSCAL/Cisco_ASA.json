@@ -1,0 +1,198 @@
+{
+  "component-definition": {
+    "uuid": "b78fc5d9-e399-4977-9988-30ac885d76ca",
+    "metadata": {
+      "title": "Cisco ASA",
+      "last-modified": "2022-06-10T12:50:59",
+      "version": "2022-06-10T12:50:59",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "f37011d9-b8a5-4c12-a0fb-458057ff5bdd",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "ace7c91e-3aed-4a9b-8be0-f74a5ad03cc6",
+        "type": "software",
+        "title": "Cisco ASA",
+        "description": "Modi neque dolorem quisquam ut dolorem. Neque quisquam sed sed dolore.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "f37011d9-b8a5-4c12-a0fb-458057ff5bdd"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "f71a0309-7b44-4499-a7b3-e6e37e8bd986",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "977730af-e00c-4154-9aba-fa10ef2be6f6",
+                "description": "The Cisco ASA must be configured to filter outbound traffic, allowing only authorized ports and services.\nThe Cisco ASA must immediately use updates made to policy enforcement mechanisms such as firewall rules, security policies, and security zones.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "5c6d54d0-7797-41af-a0ce-a6346edbbf7d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ffb5edd0-d311-4863-917a-62e7dd0fc886",
+                "description": "The Cisco ASA must be configured to restrict VPN traffic according to organization-defined filtering rules.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8e4c8099-f1ce-439f-a553-2c53ceee0d9e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "a63d5166-08b0-455f-b877-b795e00d8b55",
+                "description": "The Cisco ASA must be configured to generate traffic log entries containing information to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "8b203237-f6be-48b6-be77-845a7c65050b",
+                "description": "The Cisco ASA must be configured to generate traffic log entries containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "6cbcc95f-f43c-4b44-9786-7fc8d77a272d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "9a8072ac-9d7f-4ddb-8009-c1518b005847",
+                "description": "The Cisco ASA must be configured to send log data of denied traffic to a central audit server for analysis.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "73166b5f-e3fc-412a-8a8f-2e6331036d64",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "85f01b39-8350-4d32-ac0d-85c2ae2e1002",
+                "description": "The Cisco ASA must be configured to queue log records locally in the event that the central audit server is down or not reachable.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "49d1fb27-ec43-4485-86a8-d2f050de1971",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "266b1434-d198-4873-8787-84a85e8f5a8a",
+                "description": "The Cisco ASA must be configured to generate a real-time alert to organization-defined personnel and/or the firewall administrator in the event communication with the central audit server is lost.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "851c90ef-2dbb-4e51-85c4-4004611382b2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "ad6a010b-f261-42e1-b343-3eb05ee015ac",
+                "description": "The Cisco ASA must be configured to use TCP when sending log records to the central audit server.\nThe Cisco ASA must be configured to inspect all inbound and outbound traffic at the application layer.\nThe Cisco ASA must be configured to inspect all inbound and outbound IPv6 traffic for unknown or out-of-order extension headers.\nThe Cisco ASA must be configured to restrict it from accepting outbound packets that contain an illegitimate address in the source address field via an egress filter or by enabling Unicast Reverse Path Forwarding (uRPF).",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "24fe626c-b173-4722-8d88-c9e9a223a39a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "9cce870a-9069-4716-afba-39a41c3bbfaa",
+                "description": "The Cisco ASA must be configured to disable or remove unnecessary network services and functions that are not used as part of its role in the architecture.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "b6af5ce8-7d49-4933-ab5f-85c70ad63c2d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "b88a4106-260d-4167-ae5a-0d2f991e086c",
+                "description": "The Cisco ASA must be configured to implement scanning threat detection.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "868095f3-2a61-4f9a-a166-e63998b74637",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "ab248729-13a4-4daa-ba82-95c1abaedff0",
+                "description": "The Cisco ASA must be configured to enable threat detection to mitigate risks of denial-of-service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "fd81d1c2-a6fd-4148-86cb-70d8b16ec439",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "98658d54-6829-473c-a404-f77e66050e35",
+                "description": "The Cisco ASA perimeter firewall must be configured to filter traffic destined to the enclave in accordance with the specific traffic that is approved and registered in the Ports, Protocols, and Services Management (PPSM)  Category Assurance List (CAL) and vulnerability assessments.",
+                "control-id": "sc-7."
+              }
+            ]
+          },
+          {
+            "uuid": "0f927fa0-b7a4-424f-ac96-d384f19c7d75",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(11).",
+            "implemented-requirements": [
+              {
+                "uuid": "ace9724b-32fe-4d15-b51f-cf946b852d69",
+                "description": "The Cisco ASA must be configured to filter inbound traffic on all external interfaces.\nThe Cisco ASA must be configured to filter outbound traffic on all internal interfaces.\nThe Cisco ASA perimeter firewall must be configured to block all outbound management traffic.\nThe Cisco ASA must be configured to forward management traffic to the Network Operations Center (NOC) via an IPsec tunnel.",
+                "control-id": "sc-7.(11)"
+              }
+            ]
+          },
+          {
+            "uuid": "0152cdb2-1adb-46d6-9e05-36d093272461",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-4.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "678fd06c-551e-4ef9-b9d3-986978e2a78a",
+                "description": "The Cisco ASA must be configured to generate an alert that can be forwarded to organization-defined personnel and/or the firewall administrator when denial-of-service (DoS) incidents are detected.",
+                "control-id": "si-4.(5)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

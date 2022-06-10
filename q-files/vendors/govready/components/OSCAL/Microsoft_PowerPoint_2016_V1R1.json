@@ -1,0 +1,107 @@
+{
+  "component-definition": {
+    "uuid": "524b72dd-dc0c-4c77-bb25-db70d623d348",
+    "metadata": {
+      "title": "Microsoft PowerPoint 2016 V1R1",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "85fcb152-83b1-40b0-b3db-9fa8e02d5bda",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "9fac2c25-ac6f-438f-9d5c-f0294e6d6c85",
+        "type": "software",
+        "title": "Microsoft PowerPoint 2016 V1R1",
+        "description": "Dolore voluptatem neque quisquam sed est quisquam. Quisquam dolorem sit neque. Labore magnam porro consectetur labore.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "85fcb152-83b1-40b0-b3db-9fa8e02d5bda"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "22931960-82f9-414d-8595-a8bc1279ae4d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "f4086543-0fa5-4937-bb65-5ec77f370585",
+                "description": "Add-ins to Office applications must be signed by a Trusted Publisher.\nTrust Bar Notifications for unsigned application add-ins must be blocked.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "8f915f24-65af-458d-a1a9-c73b78e09fb9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "bcc8fc21-484a-491b-a504-6125afa55323",
+                "description": "The Save commands default file format must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "bbdbcad6-8c85-49ed-80e3-f2d1985580e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c0d40660-c56d-4712-872a-b1de22faf2ed",
+                "description": "Blocking as default file block opening behavior must be enforced.\nFiles from the Internet zone must be opened in Protected View.\nAdd-on Management functionality must be allowed in PowerPoint.\nLinks that invoke instances of Internet Explorer from within an Office product must be blocked in PowerPoint.\nAdd-on Management functionality must be allowed in PowerPoint Viewer.\nLinks that invoke instances of Internet Explorer from within an Office product must be blocked in PowerPoint Viewer.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4aed2439-edec-4c8b-9dc9-42c01a2d9b45",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "28dc175d-0590-469f-b3f5-a2f1f32c5606",
+                "description": "File Downloads must be configured for proper restrictions in PowerPoint.\nFile Downloads must be configured for proper restrictions in PowerPoint Viewer.",
+                "control-id": "sc-18.(3)"
+              },
+              {
+                "uuid": "5c2d74cb-8f17-4cae-a5a6-7c8f727ece49",
+                "description": "The Internet Explorer Bind to Object functionality must be enabled in PowerPoint.\nConfiguration for file validation must be enforced.\nProtection from zone elevation must be enforced in PowerPoint.\nThe Internet Explorer Bind to Object functionality must be enabled in PowerPoint Viewer.\nScripted Window Security must be enforced in PowerPoint Viewer.\nProtection from zone elevation must be enforced in PowerPoint Viewer.\nScripted Window Security must be enforced in PowerPoint.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "a97c9325-295c-4821-8db4-cc9ff8c1c9a4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "e987449f-976c-44b3-8fde-d6fcc6853ba7",
+                "description": "ActiveX Installs must be configured for proper restriction in PowerPoint.\nActiveX Installs must be configured for proper restriction in PowerPoint Viewer.",
+                "control-id": "sc-18.(4)"
+              },
+              {
+                "uuid": "b13fc4b6-5b2b-42be-920d-67e572ea8e1e",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced in PowerPoint.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint.\nAll automatic loading from trusted locations must be disabled.\nDisallowance of trusted locations on the network must be enforced.\nThe scanning of encrypted macros in open XML documents must be enforced.\nThe ability to run programs from a PowerPoint presentation must be disallowed.\nAttachments opened from Outlook must be in Protected View.\nDisabling of user name and password syntax from being used in URLs must be enforced in PowerPoint Viewer.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint Viewer.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint Viewer.\nMacros must be blocked from running in Office files from the Internet.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nFiles on local Intranet UNC must be opened in Protected View.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

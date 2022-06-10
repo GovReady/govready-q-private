@@ -1,0 +1,322 @@
+{
+  "component-definition": {
+    "uuid": "4e22c24e-264f-4c3d-8a32-14df4d27266d",
+    "metadata": {
+      "title": "Jamf Pro v10-x EMM V1R1",
+      "last-modified": "2022-06-10T12:50:49",
+      "version": "2022-06-10T12:50:49",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "1b10a6a5-5cbf-4615-adb7-f7791672410a",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "547b9372-60f1-4b4f-9d27-0412a311f816",
+        "type": "software",
+        "title": "Jamf Pro v10-x EMM V1R1",
+        "description": "Dolore etincidunt quiquia voluptatem ut non ut quaerat.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "1b10a6a5-5cbf-4615-adb7-f7791672410a"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "0df9ddbb-a8b0-41b0-a897-1ea2ba1236ba",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "fc13c64f-8b1f-4339-bb55-c4f222381816",
+                "description": "The Jamf Pro EMM server must be configured to leverage the MDM platform user accounts and groups for Jamf Pro EMM server user identification and CAC authentication.\nAuthentication of Jamf Pro EMM server accounts must be configured so they are implemented either via an Authentication Gateway Service (AGS) which connects to the site DoD Identity Access Management (IdAM) environment that utilizes CAC authentication or via strong password controls for the administrator local accounts.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4cc76cd2-b89f-42ff-9c9d-ed930848e407",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "e8a0a39c-840e-4fa6-9452-902b47360e63",
+                "description": "The Jamf Pro EMM must automatically disable accounts after a 35 day period of account inactivity (local accounts).",
+                "control-id": "ac-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "c291256a-fcfb-4125-8ee3-d11ad97dafe5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "fd9289ad-00af-4156-884c-8a139afef7d0",
+                "description": "The Jamf Pro EMM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              },
+              {
+                "uuid": "4e820b89-fef9-4e4d-bb82-cd5e638681e9",
+                "description": "The Jamf Pro EMM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.",
+                "control-id": "ac-6.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "db1d3833-c9bc-44c5-b03d-36fb8e6a1366",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "0434eb1c-49af-4ecb-bb6e-eaabda60cdfb",
+                "description": "The Jamf Pro EMM must enforce the limit of three consecutive invalid logon attempts by a user.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "a3fd5b21-ff1c-4c7c-bb09-efc2290bac72",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "d55e1e5d-c549-489b-921b-75d6a9c5091d",
+                "description": "The Jamf Pro EMM server must be configured to display the required DoD warning banner upon administrator logon.\n\nNote: This requirement is not applicable if the TOE platform is selected in FTA_TAB.1.1 in the Security Target (ST).",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "4d34ec2a-817b-4afc-800f-cc8d08bf35c9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "938e432f-8905-4c9d-8469-f8ce7e203567",
+                "description": "The Jamf Pro EMM server or platform must be configured to initiate a session lock after a 15-minute period of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "089cd58f-a4e5-416b-887a-13855dd899b9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a16e1bf1-670d-438c-a242-af20c092fb9c",
+                "description": "The Jamf Pro EMM server must be configured to transfer Jamf Pro EMM server logs to another server for storage, analysis, and reporting.\n\nNote: Jamf Pro EMM server logs include logs of MDM events and logs transferred to the Jamf Pro EMM server by MDM agents of managed devices.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e88a2df8-c580-4bbe-b4fd-cf14707dc35b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a171fe01-b9a8-4a1e-9e38-005bb1c3b3a2",
+                "description": "The Jamf Pro EMM local accounts must be configured with password maximum lifetime of 3 months.",
+                "control-id": "au-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "3067d6e4-b8f3-4628-97ff-a1656572ed49",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "839b37bf-3d77-4fdc-bb11-f4290f95bcbf",
+                "description": "The MySQL DatabasePassword key must be removed or set to a blank value in the database configuration file in Jamf Pro EMM.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "6ef7e3f1-66ba-4792-8bd9-400614686d5a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "17be0423-004d-4501-9432-57f94b0574e5",
+                "description": "When the Jamf Pro EMM server cannot establish a connection to determine the validity of a certificate, the server must not have the option to accept the certificate.\nThe Jamf Pro EMM server must configure the MDM Agent/platform to enable the DoD required device enrollment restrictions allowed for enrollment [specific device model].\nThe Jamf Pro EMM server must be configured with an enterprise certificate for signing policies (if function is not automatically implemented during Jamf Pro EMM server install).\nThe Jamf Pro EMM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, auditor.\nJamf Pro EMM must be maintained at a supported version.\nSeparate MySQL user accounts with limited privileges must be created within Jamf Pro EMM.\nMySQL database backups must be scheduled in Jamf Pro EMM.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "13320079-4fd4-4168-9a9e-23364f222b0f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "8c3c6620-8823-4dc6-816d-40535aef5d3c",
+                "description": "The Jamf Pro EMM server platform must be protected by a DoD-approved firewall.\nThe firewall protecting the Jamf Pro EMM server platform must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support Jamf Pro EMM server and platform functions.\nThe firewall protecting the Jamf Pro EMM server platform must be configured so that only DoD-approved ports, protocols, and services are enabled. (See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services).",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "caa6bce2-3601-46c8-b11b-2453d88adc96",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6370fd84-86fd-49cc-8cc0-22023300f66b",
+                "description": "The default mysql_secure_installation must be installed.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f35886c6-e2b9-46a7-8963-7164a9ebfe01",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "a9b2e778-04ab-4c52-989e-90b4b014a608",
+                "description": "All Jamf Pro EMM server local accounts created during application installation and configuration must be disabled.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "760ee5e1-18fc-4140-95be-28871068e0be",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "abbd9b80-b15e-4c78-9f33-2079f15a5082",
+                "description": "The Jamf Pro EMM local accounts must be configured with at least one lowercase character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "c1ad373b-b56f-4c61-b816-422a02e89453",
+                "description": "A unique database name and a unique MySQL user with a secure password must be created for use in Jamf Pro EMM.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "0428ecac-f536-47e1-a8c4-01d2297cb023",
+                "description": "The Jamf Pro EMM local accounts must be configured with password minimum lifetime of 24 hours.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "c10a69b8-6f44-4090-8dbc-dc40fb123290",
+                "description": "The Jamf Pro EMM local accounts password must be configured with length of 15 characters.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "a47b80e2-a2a0-44d5-8f13-f4af8522a54a",
+                "description": "The Jamf Pro EMM local accounts must prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "503ff109-56cb-4d50-bd61-30dc01fae80b",
+                "description": "The Jamf Pro EMM local accounts must be configured with at least one uppercase character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d4b04992-6a70-4e18-b2ff-1014a998dab6",
+                "description": "The Jamf Pro EMM local accounts must be configured with at least one number.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "bcd2b1a6-5742-4984-b812-57d6d14f14ba",
+                "description": "The Jamf Pro EMM local accounts must be configured with at least one special character.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "53f109eb-4c58-49af-89d6-b92545df4ea3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e2c2e8f8-07c6-4266-9d12-f91877679e5a",
+                "description": "When the Jamf Pro EMM server cannot establish a connection to determine the validity of a certificate, the server must not have the option to accept the certificate.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "636c253c-705e-40ce-8007-3fa338be9104",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "ccc4fa38-95aa-4532-8d53-fcefecd7ad32",
+                "description": "The Jamf Pro EMM server must connect to [Authentication Gateway Service (AGS)] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "4dfe265d-25a4-4409-a185-cbe9b119ea75",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4c0b633d-372b-442b-a543-ed8500ab7544",
+                "description": "The Jamf Pro EMM server must connect to [Authentication Gateway Service (AGS)] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "901ab2cd-01a8-4ec5-93a5-687a3e411f2a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "84c71cec-b76e-43ee-b4ee-13a78d812f95",
+                "description": "The Jamf Pro EMM server must connect to [Authentication Gateway Service (AGS)] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "3c791c24-14ac-4a0d-b9e6-a78b3bc584ed",
+                "description": "The Jamf Pro EMM server must connect to [Authentication Gateway Service (AGS)] with an authenticated and secure (encrypted) connection to protect the confidentiality and integrity of transmitted information.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "44b12897-c7df-4b47-a486-7fb30c64981a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "b3691d24-e7f7-496d-9218-71dc63bde25b",
+                "description": "When the Jamf Pro EMM server cannot establish a connection to determine the validity of a certificate, the server must not have the option to accept the certificate.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "8f330b61-6601-491b-ac8a-8f41385e2bbd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "18217104-48b9-4139-9bb7-eeb4c9bba960",
+                "description": "When the Jamf Pro EMM server cannot establish a connection to determine the validity of a certificate, the server must not have the option to accept the certificate.",
+                "control-id": "si-10."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

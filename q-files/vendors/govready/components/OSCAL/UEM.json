@@ -1,0 +1,126 @@
+{
+  "component-definition": {
+    "uuid": "3d2f3b03-d2cb-4964-9372-91332f6cfa64",
+    "metadata": {
+      "title": "UEM",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "9b99d355-7417-45be-ad7c-4928abc0e3a9",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "cfe30c70-e414-441c-9334-68ea4f5b31db",
+        "type": "software",
+        "title": "UEM",
+        "description": "Velit sed voluptatem ut labore ut. Consectetur quisquam ut labore adipisci numquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "9b99d355-7417-45be-ad7c-4928abc0e3a9"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "12d312e6-a90e-4460-ba57-4de401fb6751",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "09a65939-b8a3-4fbd-a46b-e9ea1fb7f84b",
+                "description": "The UEM Agent must record within each UEM Agent audit record the following information:\n\n-date and time of the event\n-type of event\n-subject identity\n-(if relevant) the outcome (success or failure) of the event.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "79ac5f7d-ca65-4f5c-b5af-f55a00ac8c16",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "85da6757-ff94-4b4d-b6e8-1685efc0dcba",
+                "description": "The UEM Agent must queue alerts if the trusted channel is not available.\nThe UEM Agent must be configured to enable the following function: transfer managed endpoint device audit logs read by the UEM Agent to an UEM server or third-party audit management server.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "5085aebf-9eb3-46eb-9cc1-53b016d4eb39",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "a2134cfd-d5f4-4a93-8e96-a25ea147d3a6",
+                "description": "The UEM Agent must provide an alert via the trusted channel to the UEM Server in the event of any of the following audit events:\n-successful application of policies to a mobile device\n-receiving or generating periodic reachability events\n-change in enrollment state\n-failure to install an application from the UEM Server\n-failure to update an application from the UEM Server.\nThe UEM Agent must generate a UEM Agent audit record of the following auditable events:-startup and shutdown of the UEM Agent-UEM policy updated-any modification commanded by the UEM Server.\nThe UEM Agent must be configured to enable the following function: read audit logs of the managed endpoint device.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "ede0142e-537d-4225-9a72-d4b3c0b20c30",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "44a3ed24-fabd-4467-9a36-31099f75c162",
+                "description": "The UEM Agent must record the reference identifier of the UEM Server during the enrollment process.\nThe UEM Agent must perform the following functions: \n\n-enroll in management\n\n-configure whether users can unenroll from management\n\n-configure periodicity of reachability events.\nThe UEM Agent must be configured to perform one of the following actions upon an attempt to unenroll the mobile device from management: \n-prevent the unenrollment from occurring\n-wipe the device to factory default settings\n-wipe the work profile with all associated applications and data.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "e06c8a30-b03f-4909-bbbd-3187587af2a3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "842f5b3d-90d2-4cf9-bcce-404c4484c3a7",
+                "description": "The UEM Agent must use managed endpoint device key storage for all persistent secret and private keys.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "10382875-b410-4c39-98e4-6020076ff0a6",
+                "description": "The UEM Agent must not install policies if the policy-signing certificate is deemed invalid.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "3b4ddc0a-8d51-4980-9129-8b7e861afd2e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "2ab93f39-467a-4b5d-94e1-50e989685050",
+                "description": "All UEM Agent cryptography supporting DoD functionality must be FIPS 140-2 validated.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "480e4797-78de-4425-8d62-b926150bfbb7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "5db2863a-c790-4c74-83a3-7e0ab27c6105",
+                "description": "The UEM Agent must only accept policies and policy updates that are digitally signed by a certificate that has been authorized for policy updates by the UEM Server.\nThe UEM Agent must perform the following functions: Import the certificates to be used for authentication of UEM Agent communications.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

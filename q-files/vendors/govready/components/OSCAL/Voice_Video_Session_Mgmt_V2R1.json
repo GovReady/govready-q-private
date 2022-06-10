@@ -1,0 +1,445 @@
+{
+  "component-definition": {
+    "uuid": "f6f5e967-4ae5-4b74-be86-1b160a8353a3",
+    "metadata": {
+      "title": "Voice Video Session Mgmt V2R1",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "28959798-c328-4803-aefc-d0c4c3a146a8",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "e16ed8f2-8617-4e28-a6a6-eaec6b966be4",
+        "type": "software",
+        "title": "Voice Video Session Mgmt V2R1",
+        "description": "Neque consectetur velit aliquam velit. Adipisci magnam aliquam velit sit. Quaerat porro labore ut est labore.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "28959798-c328-4803-aefc-d0c4c3a146a8"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "7fa80c58-9d24-4cb8-a4d6-b70b3fa0e186",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "ef8129a5-6937-48de-9d55-cdf05e08144b",
+                "description": "The Voice Video Session Manager must automatically disable Voice Video endpoint user access after a 35 day period of account inactivity.",
+                "control-id": "ac-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "58885b54-c1be-4e8d-b3ad-d78994b0e67c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(11).",
+            "implemented-requirements": [
+              {
+                "uuid": "d47fb0e3-1fd5-495b-b840-2e9559384c98",
+                "description": "The Voice Video Session Manager must restrict Voice Video endpoint user access outside of operational hours.",
+                "control-id": "ac-2.(11)"
+              }
+            ]
+          },
+          {
+            "uuid": "4a7ff00b-1156-4c25-ab8e-5a2a9813282a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "631f9c92-83b8-428e-802c-a29df751d1dd",
+                "description": "The Voice Video Session Manager must enforce registration of only approved Voice Video endpoints prior to operation.\nThe Voice Video Session Manager must disable (prevent) auto-registration of Voice Video endpoints.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "3a9ca6ad-762f-4d3a-9048-2ba55ee27444",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "fea73cb7-c5e5-494e-905f-82f54a002382",
+                "description": "The Voice Video Session Manager must immediately enforce changes to privileges of Voice Video endpoint user access.",
+                "control-id": "ac-3.(8)"
+              },
+              {
+                "uuid": "5a98ab39-1395-40dc-8892-3b03352de6de",
+                "description": "The Voice Video Session Manager must immediately enforce changes to privileges of Voice Video endpoint device access.",
+                "control-id": "ac-3.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "c02eefee-8280-4465-af2b-f72511cc0f43",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "52e2fdca-e880-43b1-acb1-e49c9f70dff8",
+                "description": "The Voice Video Session Manager must control flow outside the enclave based on approved dial plans.",
+                "control-id": "ac-4."
+              },
+              {
+                "uuid": "d5fa3b20-34f5-451f-bf84-eeb8ad93c4ef",
+                "description": "The Voice Video Session Manager must control flow within the enclave based on approved dial plans.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "cfd27347-3c22-48a0-a1aa-b0b0ab79b027",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3b387b63-fe9b-4393-af25-9d5e6e4a7481",
+                "description": "The Voice Video Session Manager must apply 802.1Q VLAN tags to signaling and media traffic or be in a private subnet.\nThe Voice Video Session Manager must use a voice or video VLAN, separate from all other VLANs.",
+                "control-id": "ac-16.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "5cee11a0-b2b2-45de-a133-04d32a46dc0a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "3ccc51e4-9997-4e34-bbc0-cf17ff64e668",
+                "description": "The Voice Video Session Manager must produce session (call) records containing the outcome (status) of the connection.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d03476e9-c003-411a-8470-2162ad6c6d73",
+                "description": "The Voice Video Session Manager must produce session (call) records containing the type of session connection.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "8585d52b-e81e-43a1-8447-a36f4cfa289a",
+                "description": "The Voice Video Session Manager must produce session (call) records containing the identity of the initiator of the call.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "547a5ce2-e48e-48c2-925c-b47bad07d7fc",
+                "description": "The Voice Video Session Manager must produce session (call) records containing where (location) the connection originated.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "7df346c6-506c-4f41-8cac-5bf732d58267",
+                "description": "The Voice Video Session Manager must produce session (call) records containing the identity of the users and identifiers associated with the session.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "a2f0a4e6-0cc6-4a3c-a522-eb7389ca1980",
+                "description": "The Voice Video Session Manager must produce session (call) records containing when (date and time) the connection was established.\nThe Voice Video Session Manager must produce session (call) records containing when (date and time) the connection was terminated.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "73d575f5-91af-479c-ad91-01d09156ab09",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "b0538df1-08cb-4dfe-9d56-42c9e9755a36",
+                "description": "The Voice Video Session Manager must provide centralized management of session (call) records.",
+                "control-id": "au-3.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "9cc1cbba-73e9-4b21-8c7f-0297b685c7fc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "cd28a422-cbc9-4e79-9ee3-93b91fbad31e",
+                "description": "The Voice Video Session Manager must off-load session (call) records onto a different system or storage media.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a59e496d-5e94-469b-a922-c27121aa11cd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "6e61e57c-6518-4121-9c13-293cbd0a215f",
+                "description": "The Voice Video Session Manager must alert the ISSO and SA (at a minimum) in the event of a session (call) record system failure.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "fe5ce2a8-de61-4222-a1df-db7048203392",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "be91b2ae-59ef-4069-8dcc-b4eb088a7ecf",
+                "description": "The Voice Video Session Manager must protect session (call) records from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "1bd3ab41-55ab-4ced-b57a-d5582fed0421",
+                "description": "The Voice Video Session Manager must protect session (call) records from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "6452cccf-5239-43f2-a9e8-a533dffc90e0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "0eca43f6-4c55-4358-826f-a96c93947ebb",
+                "description": "The Voice Video Session Manager must produce session (call) records for events determined to be significant and relevant by local policy.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "983987c4-b24d-4ced-a5af-73b7daa54b13",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "5ddd287e-fd54-4018-9489-c446b31235b0",
+                "description": "The Voice Video Session Manager supporting Command and Control (C2) communications must associate multilevel precedence and preemption (MLPP) attributes when exchanged between unified capabilities (UC) systems.\nThe Voice Video Session Manager supporting Command and Control (C2) communications must validate the integrity of transmitted multilevel precedence and preemption (MLPP) attributes.\nThe Voice Video Session Manager must restrict Voice Video endpoint user access outside of operational hours.\nThe Voice Video Session Manager must immediately enforce changes to privileges of Voice Video endpoint user access.\nThe Voice Video Session Manager must immediately enforce changes to privileges of Voice Video endpoint device access.\nThe Voice Video Session Manager must provide an explicit indication of current participants in all videoconference-based and IP-based online meetings and conferences (excluding audio-only teleconferences using traditional telephony).\nThe Voice Video Session Manager supporting Command and Control (C2) communications must associate multilevel precedence and preemption (MLPP) attributes when exchanged between unified capabilities (UC) system components.\nThe Voice Video Session Manager must route Fire and Emergency Services (FES) communications as a priority call in a non-blocking manner.\nThe Voice Video Session Manager must provide Fire and Emergency Services (FES) with the Automatic Number Identification (ANI) of the initiator of the call.\nThe Voice Video Session Manager must provide Fire and Emergency Services (FES) with the Automatic Location Identification (ALI) of the initiator of the call.\nThe Voice Video Session Manager must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, Communication Tasking Orders (CTOs), and DTMs.\nThe Voice Video Session Manager must be configured to obfuscate passwords within configuration files.\nThe Voice Video Session Manager used for unclassified communication within a Sensitive Compartmented Information Facility (SCIF) or Special Access Program Facility (SAPF) must be configured in accordance with the Committee on National Security Systems Instruction (CNSSI) 5000.\nThe Voice Video Session Manager must apply 802.1Q VLAN tags to signaling and media traffic or be in a private subnet.\nThe Voice Video Session Manager must use a voice or video VLAN, separate from all other VLANs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "7dd64a61-c19d-4928-9ed0-567ad8a3b67f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "808791bf-42b0-4ad5-aa7d-a358f3639d3b",
+                "description": "The Voice Video Session Manager must only use of ports, protocols, and services allowed per the Ports, Protocols, and Services Management (PPSM) Category Assurance List (CAL) and Vulnerability Assessments (VAs).",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "f99fae96-6750-4682-a79a-f24f6f0d08dc",
+                "description": "The Voice Video Session Manager must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "7d5b3eba-29d9-421a-854f-ecf6b28bbf4f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "782d711c-591c-4b48-87c1-cd816aa3fad7",
+                "description": "The Voice Video Session Manager must implement attack-resistant mechanisms for Voice Video endpoint registration.",
+                "control-id": "ia-2.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "54b32c03-c352-40ca-a4e8-4754578f1de1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "69a6cc34-8639-4b70-bb8b-6f2431aaaf15",
+                "description": "The Voice Video Session Manager must authenticate each Voice Video endpoint devices before registration.\nThe Voice Video Session Manager must authenticate each Voice Video peer (trunk) before registration.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "96ac60d9-2523-41d1-981c-c344854e05c5",
+                "description": "The Voice Video Session Manager must uniquely identify each Voice Video endpoint device before registration.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "48895e84-bd54-453a-9ce5-9e8ba30c01b7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "192439a1-f247-4a3d-834e-29eb63e5523b",
+                "description": "The Voice Video Session Manager must use encryption for signaling and media traffic.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "36c83374-05b0-45c0-a084-c836eba62758",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "0b7ed18d-450f-4598-a6f4-1d2b994ca623",
+                "description": "The Voice Video Session Manager must require Voice Video endpoints to re-register at least every three (3) hours.\nThe Voice Video Session Manager must require Voice Video peers to re-register (re-authenticate) at least every hour.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "255bf1e7-cf6f-4dc0-a8f1-195692d00506",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "9d72b700-ae2d-4fa5-afbb-5310c0404bcb",
+                "description": "The Voice Video Session Manager supporting Command and Control (C2) communications must limit and reserve bandwidth based on priority of the traffic type.",
+                "control-id": "sc-6."
+              }
+            ]
+          },
+          {
+            "uuid": "422d97b5-5bf1-4d6e-b47d-dd2d26f68b33",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "836f4fc0-5474-422d-9758-47ce4d54586f",
+                "description": "The Voice Video Session Manager must protect the confidentiality of transmitted configuration files, signaling, and media streams.\nThe Voice Video Session Manager must protect the integrity of transmitted configuration files, signaling, and media streams.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "504534c4-4a76-4d12-a5c6-83d066b010f1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "e7a571e5-8734-497d-a33b-80898e938011",
+                "description": "The Voice Video Session Manager must terminate all network connections associated with a communications session at the end of the session, or the session must be terminated after 15 minutes of inactivity.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "263ab43f-dbe6-4817-a738-a1e13f45d587",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "72c059ff-b8b4-4563-b03e-1b433cfe9ab5",
+                "description": "The Voice Video Session Manager must implement NIST FIPS-validated cryptography to generate cryptographic hashes and to protect sensitive unclassified information.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "5db00661-b1fc-4df8-8d94-79d42cf9f471",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-15..",
+            "implemented-requirements": [
+              {
+                "uuid": "7d1a6bcc-a264-465f-9391-2f08ebb027b9",
+                "description": "The Voice Video Session Manager must prohibit remote activation of collaborative computing devices (excluding centrally managed, dedicated videoconference suites located in approved videoconference locations).",
+                "control-id": "sc-15."
+              }
+            ]
+          },
+          {
+            "uuid": "05fab15e-006f-4e92-9243-f006aa39c06e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-15.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "658b6767-8e8b-4d4b-837e-b290389a8736",
+                "description": "The Voice Video Session Manager must provide an explicit indication of current participants in all videoconference-based and IP-based online meetings and conferences (excluding audio-only teleconferences using traditional telephony).",
+                "control-id": "sc-15.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "40191c58-3bfe-49d2-9325-4283178fcdf5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-16..",
+            "implemented-requirements": [
+              {
+                "uuid": "d91e334b-622c-4101-a690-5c45c44f3f58",
+                "description": "The Voice Video Session Manager supporting Command and Control (C2) communications must associate multilevel precedence and preemption (MLPP) attributes when exchanged between unified capabilities (UC) system components.",
+                "control-id": "sc-16."
+              },
+              {
+                "uuid": "1b282a15-b01f-4264-96a5-746a53bc9848",
+                "description": "The Voice Video Session Manager supporting Command and Control (C2) communications must associate multilevel precedence and preemption (MLPP) attributes when exchanged between unified capabilities (UC) systems.",
+                "control-id": "sc-16."
+              }
+            ]
+          },
+          {
+            "uuid": "3d6aba71-4aa1-4134-a325-e7828237f9f3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-16.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "43906f0c-1961-40a9-af97-15d6583a8f36",
+                "description": "The Voice Video Session Manager supporting Command and Control (C2) communications must validate the integrity of transmitted multilevel precedence and preemption (MLPP) attributes.",
+                "control-id": "sc-16.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "cbb4c718-c649-4d39-bc69-63f5bec5ea92",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "c6c0830c-e4cb-40a9-b9a4-ebba5ca5d211",
+                "description": "The Voice Video Session Manager must protect the authenticity of communications sessions.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "5661fabf-7ba4-47ea-8643-7a91f82af070",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "decc3e08-796b-4e49-a594-93ddcd156e4b",
+                "description": "In the event of a system failure, Voice Video Session Managers must preserve any information necessary to determine cause of failure and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "sc-24."
+              },
+              {
+                "uuid": "630fc6da-4b50-493c-968c-e2c3d1f93f23",
+                "description": "The Voice Video Session Manager must fail to a secure state if system initialization fails, shutdown fails, or aborts fail.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "f299cb47-2987-4576-8975-ce11d8949c1a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "57595607-b183-46b6-8cfc-c89b3a06448f",
+                "description": "The Voice Video Session Manager must generate session (call) records that provide information necessary for corrective actions without revealing personally identifiable information or sensitive information.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

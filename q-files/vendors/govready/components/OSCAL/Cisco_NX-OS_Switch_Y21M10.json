@@ -1,0 +1,126 @@
+{
+  "component-definition": {
+    "uuid": "278d5e37-8955-4b8b-9b95-9e853112a561",
+    "metadata": {
+      "title": "Cisco NX-OS Switch Y21M10",
+      "last-modified": "2022-06-10T12:50:53",
+      "version": "2022-06-10T12:50:53",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "db5b257b-1e33-4daf-bfec-e855a03f52dd",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "1b0c2618-c308-49d9-8c4d-56565b281a2f",
+        "type": "software",
+        "title": "Cisco NX-OS Switch Y21M10",
+        "description": "Neque magnam consectetur porro sit. Quiquia labore aliquam dolor ut. Est porro dolor ipsum numquam amet ut ipsum.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "db5b257b-1e33-4daf-bfec-e855a03f52dd"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "e47e5de3-032a-4dea-a1d2-12322ba23772",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e0e29ff-6830-4bd9-9620-7c804db55e6c",
+                "description": "The Cisco switch must be configured for authorized users to select a user session to capture.",
+                "control-id": "au-14."
+              }
+            ]
+          },
+          {
+            "uuid": "6dea18ed-3a4c-4977-86a4-b2173bd2362a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "a8dfeafc-cb0b-4e40-92e9-601deca33757",
+                "description": "The Cisco switch must be configured for authorized users to remotely view, in real time, all content related to an established user session from a component separate from The Cisco switch.",
+                "control-id": "au-14.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "54aa6470-00c7-4521-bdf7-fbf022158eee",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "b63df049-540d-4e38-8d3b-7014bcfd8d3e",
+                "description": "The Cisco switch must have Storm Control configured on all host-facing switchports.\nThe Cisco switch must have IGMP or MLD Snooping configured on all VLANs.\nThe Cisco switch must enable Unidirectional Link Detection (UDLD) to protect against one-way connections.\nThe Cisco switch must have all disabled switch ports assigned to an unused VLAN.\nThe Cisco switch must not have the default VLAN assigned to any host-facing switch ports.\nThe Cisco switch must have the default VLAN pruned from all trunk ports that do not require it.\nThe Cisco switch must not use the default VLAN for management traffic.\nThe Cisco switch must have all user-facing or untrusted ports configured as access switch ports.\nThe Cisco switch must have the native VLAN assigned to an ID other than the default VLAN for all 802.1q trunk links.\nThe Cisco switch must not have any switchports assigned to the native VLAN.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "7ebf0147-837a-41b9-9c6d-74831415adce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "d6df2ec7-2420-47e0-9850-a713bea76fd8",
+                "description": "The Cisco switch must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "753e99cf-0f8e-4573-8dc8-1be4e01d2e33",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "765e4aae-a149-455c-ac12-d9d0b246a8d3",
+                "description": "The Cisco switch must authenticate all endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "c02c813a-42ee-4a87-a8d2-0a698ff4fd94",
+                "description": "The Cisco switch must uniquely identify all network-connected endpoint devices before establishing any connection.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "8bca20ee-b171-4702-a542-d749a99f85cb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "cbc1e2b6-cbc7-4d5c-955e-be62cae98bc3",
+                "description": "The Cisco switch must authenticate all VLAN Trunk Protocol (VTP) messages with a hash function using the most secured cryptographic algorithm available.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "e34472eb-ff24-4ebc-aaa3-c2d0d0bac4fd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "cde82270-3acc-4b3f-93f3-92c7633c6f08",
+                "description": "The Cisco switch must have Root Guard enabled on all switch ports connecting to access layer switches and hosts.\nThe Cisco switch must have BPDU Guard enabled on all user-facing or untrusted access switch ports.\nThe Cisco switch must have STP Loop Guard enabled.\nThe Cisco switch must have Unknown Unicast Flood Blocking (UUFB) enabled.\nThe Cisco switch must have DHCP snooping for all user VLANs to validate DHCP messages from untrusted sources.\nThe Cisco switch must have IP Source Guard enabled on all user-facing or untrusted access switch ports.\nThe Cisco switch must have Dynamic Address Resolution Protocol (ARP) Inspection (DAI) enabled on all user VLANs.",
+                "control-id": "sc-5."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

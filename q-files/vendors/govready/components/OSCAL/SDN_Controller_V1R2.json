@@ -1,0 +1,288 @@
+{
+  "component-definition": {
+    "uuid": "e457e48e-26af-4d9e-9dcf-1f97a3a13aa1",
+    "metadata": {
+      "title": "SDN Controller V1R2",
+      "last-modified": "2022-06-10T12:50:59",
+      "version": "2022-06-10T12:50:59",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "1d7d3ec7-3502-46f6-8723-73dbcf4d47b7",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "748b3392-0f12-4bde-9df2-eb60ea16080a",
+        "type": "software",
+        "title": "SDN Controller V1R2",
+        "description": "Magnam ut quaerat magnam adipisci non modi dolore. Etincidunt sed aliquam numquam sed. Sed velit eius magnam neque.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "1d7d3ec7-3502-46f6-8723-73dbcf4d47b7"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "8e4479ec-e4bf-4ab8-a4dc-1dd3e045f3b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "67162922-5c80-4f6d-9169-48b212539311",
+                "description": "The SDN controller must be configured to enforce approved authorizations for access to system resources in accordance with applicable access control policies.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "47a97a9e-3ea9-453b-ad7b-459a1f4cba0c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "05e137e5-1ab9-4344-8bfa-b9a9bfdf1d98",
+                "description": "The SDN controller must be configured to enforce approved authorizations for controlling the flow of traffic within the network based on organization-defined information flow control policies.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "5329d2c8-6204-4f93-933c-1ab5e45af375",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "d10d3352-f5c7-42cc-a37f-9840d1d0487d",
+                "description": "The SDN controller must be configured to encrypt all southbound Application Program Interface (API) control-plane messages using a FIPS-validated cryptographic module.\nThe SDN controller must be configured to encrypt all northbound Application Program Interface (API) messages using a FIPS-validated cryptographic module.\nThe SDN controller must be configured to encrypt all southbound Application Program Interface (API) management-plane messages using a FIPS-validated cryptographic module.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4b530c78-f93e-4594-8a14-929026e73876",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "724c633a-76b9-4180-8bc0-806cfdb64c4d",
+                "description": "The SDN controller must be configured to produce audit records containing information to establish the outcome of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "5406da9d-ac58-4b18-9282-6fcf29f4f979",
+                "description": "The SDN controller must be configured to produce audit records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "cba00770-b6cb-4571-bfeb-a8717a35e5ee",
+                "description": "The SDN controller must be configured to produce audit records containing information to establish the source of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "de174bee-93b9-4fed-9974-a5c8ce876cef",
+                "description": "The SDN controller must be configured to produce audit records containing information to establish where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "8d579d1d-10ee-4455-a0ae-0324886eb6c9",
+                "description": "The SDN controller must be configured to generate audit records containing information that establishes the identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "309a4461-6203-4f97-bc3c-f0c764067e36",
+                "description": "The SDN controller must be configured to produce audit records containing information to establish when the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "46f6d962-3ab8-459d-a5dd-877c676478e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a84d8058-1742-424f-b8cf-03489cae8e2d",
+                "description": "The SDN controller must be configured to enforce access restrictions associated with changes to the configuration.",
+                "control-id": "cm-5.(1)"
+              },
+              {
+                "uuid": "f2e26572-8752-4eb1-a62b-7ae9841d8970",
+                "description": "The SDN controller must be configured to audit the enforcement actions used to restrict access associated with changes to any application within the SDN framework.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c5d912ea-81fc-4fde-bd47-17bf5e6be16b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "71fa82f0-0ec5-4d74-9bb4-b49a14d226f1",
+                "description": "The SDN controller must be configured to be deployed as a cluster and on separate physical hosts.\nThe SDN Controller must be configured to notify the forwarding device to either drop the packet or make an entry in the flow table for a received packet that does not match any flow table entries.\nSDN controller must be configured to forward traffic based on security requirements.\nThe SDN controller must be configured to enable multi-tenant virtual networks to be fully isolated from one another.\nThe SDN controller must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "b784250c-212d-490a-9215-e28605237c8a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "c96a3633-aa36-431b-b8b1-162c298f5fbb",
+                "description": "The SDN controller must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "220081d5-58f4-4db7-ae27-40ac89b729a6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7b5b4bd0-08e5-42e9-afc5-5c9ebdebfe0e",
+                "description": "The SDN controller must be configured to prohibit user installation of software without explicit privileged status.",
+                "control-id": "cm-11.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "ec48e72d-ad42-4693-906e-6d84d1678add",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "99c2aa98-19c0-4616-930c-b207f3aa90ee",
+                "description": "The SDN controller must be configured to authenticate southbound Application Program Interface (API) control-plane messages received from SDN-enabled network elements using a FIPS-approved message authentication code algorithm.\nThe SDN controller must be configured to authenticate northbound Application Program Interface (API) messages received from business applications and management systems using a FIPS-approved message authentication code algorithm.\nThe SDN controller must be configured to authenticate received southbound Application Program Interface (API) management-plane messages using a FIPS-approved message authentication code algorithm.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "b7dbcc28-8f51-42a3-91f9-7f69a86921db",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "cf0cc1f3-ccb2-4110-a394-5e7bb71f9b6f",
+                "description": "The SDN controller must be configured to separate tenant functionality from system management functionality.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "06e12b40-2c96-404d-9e48-6882d3403436",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "b587fe4a-e4cb-43cb-a65d-129891bae2e8",
+                "description": "The SDN controller must be configured to isolate security functions from non-security functions.",
+                "control-id": "sc-3."
+              }
+            ]
+          },
+          {
+            "uuid": "c0ed362e-6ef9-48d8-b29f-36fd459b3323",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "5cd3278e-3125-4874-b628-d7228bbbf012",
+                "description": "The SDN controller must be configured to protect against or limit the effects of denial-of-service (DoS) attacks by rate-limiting control-plane communications.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "86f35b12-477e-4e6b-986e-dd5cbe12418c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "4f623880-2275-432b-b889-d5acd1cf6dd7",
+                "description": "The SDN controller must be configured to enforce a policy to manage bandwidth and to limit the effects of a packet-flooding Denial of Service (DoS) attack.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "33c9df8b-b7bb-4caf-897c-d0a599266406",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(11).",
+            "implemented-requirements": [
+              {
+                "uuid": "a6c2a376-b508-4579-be18-e8d78034f9e0",
+                "description": "The SDN controller must be configured to only allow incoming communications from organization-defined authorized sources routed to organization-defined authorized destinations.",
+                "control-id": "sc-7.(11)"
+              }
+            ]
+          },
+          {
+            "uuid": "88afbd95-768b-4de7-9b23-7c50282e366c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "f63728e4-2c18-4389-b8ed-6120e5f6f042",
+                "description": "The SDN controllers must be configured as a cluster in active/active or active/passive mode to preserve any information necessary to determine cause of a system failure and to maintain network operations with least disruption to workload processes and flows.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "5ec20a0d-24ae-4faa-bc30-e03d502f3893",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "87ff3367-b2ef-4592-8a5d-87c155999ccc",
+                "description": "The SDN controller must be configured to notify the ISSO and ISSM of failed verification tests for organization-defined security functions.",
+                "control-id": "si-5."
+              }
+            ]
+          },
+          {
+            "uuid": "8b2d882f-54d9-4bd6-a7f5-d3acc66c271c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "87241a17-6bc4-41d2-941b-e9b891baf289",
+                "description": "The SDN controller must be configured to notify the ISSO and ISSM of failed verification tests for organization-defined security functions.",
+                "control-id": "si-6."
+              },
+              {
+                "uuid": "f3f532d0-a956-42c4-9404-10026601df98",
+                "description": "The SDN controller must be configured to notify the ISSO and ISSM of failed verification tests for organization-defined security functions.",
+                "control-id": "si-6."
+              }
+            ]
+          },
+          {
+            "uuid": "5a66d42a-38f2-4ea6-8ae6-944180a6323a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "b8d4f48a-ac1a-449e-9a46-156dc1741dc1",
+                "description": "The SDN controller must be configured to generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

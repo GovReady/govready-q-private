@@ -1,0 +1,61 @@
+{
+  "component-definition": {
+    "uuid": "f17834bd-adf9-414b-8095-2889609b1bde",
+    "metadata": {
+      "title": "Microsoft Skype for Business 2016 V1R1",
+      "last-modified": "2022-06-10T12:50:50",
+      "version": "2022-06-10T12:50:50",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "d6381355-736d-48c7-8c83-9e48137a3760",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "72855927-06d2-42b7-8f50-d15a56b6946a",
+        "type": "software",
+        "title": "Microsoft Skype for Business 2016 V1R1",
+        "description": "Etincidunt velit labore non eius ipsum consectetur. Labore numquam etincidunt labore.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "d6381355-736d-48c7-8c83-9e48137a3760"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "f5751bbc-e088-4d3d-894b-8e3fc1346407",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "29ed62c2-15a2-47b7-8d3a-f56ea92b2758",
+                "description": "The ability to store user passwords in Skype must be disabled.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "97901bff-0bc0-4a96-a3da-b0c23c8162ba",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "878c38ba-0791-442b-bbb2-ca86c2decc69",
+                "description": "Session Initiation Protocol (SIP) security mode must be configured.\nIn the event a secure Session Initiation Protocol (SIP) connection fails, the connection must be restricted from resorting to the unencrypted HTTP.",
+                "control-id": "sc-23."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

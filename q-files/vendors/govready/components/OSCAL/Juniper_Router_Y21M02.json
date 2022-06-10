@@ -1,0 +1,464 @@
+{
+  "component-definition": {
+    "uuid": "99543a95-f8f7-4a37-b736-4c40a43f67eb",
+    "metadata": {
+      "title": "Juniper Router Y21M02",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "76cef778-f321-4d1c-882b-ab3c5a29cfba",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "6637ff07-bba1-4c84-b83f-b2f5677a000b",
+        "type": "software",
+        "title": "Juniper Router Y21M02",
+        "description": "Labore quisquam quaerat aliquam neque. Dolor dolor ut sed dolor tempora.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "76cef778-f321-4d1c-882b-ab3c5a29cfba"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "45009c73-c661-4531-bdb6-54be828b0754",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "eb13f877-f1d7-479c-9df4-c6d15c3878f1",
+                "description": "The Juniper router must be configured with only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "d8783fde-4f9e-4517-bc7a-2d2905fa15c4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "2a82d3f4-fd72-4209-bb52-6286ecdb9c07",
+                "description": "The Juniper router must be configured to automatically audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "619518a5-4631-485c-a84a-f322d74ad34b",
+                "description": "The Juniper router must be configured to automatically audit account enabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d51c74a2-f7f9-4205-a3fc-e8df2a82c213",
+                "description": "The Juniper router must be configured to automatically audit account disabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "f5c965c2-877b-44df-b251-a7e8d521a3c0",
+                "description": "The Juniper router must be configured to automatically audit account removal actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "8d18c4cd-16c8-439b-8033-018c0bc619d8",
+                "description": "The Juniper router must be configured to automatically audit account creation.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "46928dfc-a3e0-4522-931f-793e5b97b5fa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "78ee2a10-4da3-4ec2-b08a-6ed9637e6d90",
+                "description": "The Juniper router must be configured with only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
+                "control-id": "ac-2.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "a6997f21-a4f6-4be7-8e65-564af702b681",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "63178b4c-d760-49b2-8f52-a68534aae995",
+                "description": "The Juniper router must be configured to enforce approved authorizations for controlling the flow of management information within the device based on control policies.",
+                "control-id": "ac-4."
+              }
+            ]
+          },
+          {
+            "uuid": "ff36cd59-71cc-40ac-aa41-c1f2929660d1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "7733c9e1-c410-4ed0-bc03-9a5f30885739",
+                "description": "The Juniper router must be configured to audit the execution of privileged functions.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "1f6e6373-a9c8-4ecd-84e5-1be0475fa95a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "9f7c17d7-9e77-43c8-801a-55fe5201b97a",
+                "description": "The Juniper router must be configured to enforce the limit of three consecutive invalid logon attempts after which time lock out the user account from accessing the device for 15 minutes.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "8ba44b9a-acd5-401f-9dcb-2e7707e456b1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "628a68db-38a5-443c-a3c0-6776e305a20f",
+                "description": "The Juniper router must be configured to display the Standard Mandatory DoD Notice and Consent Banner before granting access to the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "a046925b-cd1a-4247-897d-64df5c0b99a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "259edaca-d738-40ff-91de-72cafd67fabb",
+                "description": "The Juniper router must be configured to limit the number of concurrent management sessions to an organization-defined number.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "95b3bb1a-090d-422b-8bb6-42f7bd885e3e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "3274df6d-cb1a-4f48-a29b-fa5dd5ae3a18",
+                "description": "The Juniper router must be configured to encrypt SNMP messages using a FIPS 140-2 approved algorithm.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4cfce280-d791-4f63-94ca-962d1379fec0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "966afae2-6477-477b-aea2-095e5911ab4a",
+                "description": "The Juniper router must be configured to generate audit records containing the full-text recording of privileged commands.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c8ecf483-1607-4ae6-a878-73973a7078e9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "3ead9a4c-9eb6-4d25-a19a-b84e27a574e3",
+                "description": "The Juniper router must be configured to allocate audit record storage capacity in accordance with organization-defined audit record storage requirements.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "3b9aa07c-6456-4299-8a36-5997ed4e471a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "85f8287d-7573-4078-87da-641b8cd64995",
+                "description": "The Juniper router must be configured to off-load log records onto a different system than the system being audited.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ecb17d1b-e312-4da1-8db5-1f2ec3d6245a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "bb8c1c9f-358a-457a-bdb7-5db4a2879b1e",
+                "description": "The Juniper router must be configured to generate an alert for all audit failure events.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "21a494f1-3a2b-498e-99c7-d915973d9792",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "1b3d9057-e6d7-40e0-be42-377cc7b7fed9",
+                "description": "The Juniper router must be configured to record time stamps for log records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT).",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "83363739-24d8-4b65-ad66-c970ea2e79ca",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7106f008-e29f-428c-8843-c795db711b59",
+                "description": "The Juniper router must be configured to synchronize its clock with the primary and secondary time sources using redundant authoritative time sources.",
+                "control-id": "au-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "f5d13c73-e5e7-4fa5-8c4a-5bd35cd67cca",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "442c1b41-6824-490d-9b55-3c6ddb4a865e",
+                "description": "The Juniper router must be configured to protect audit information from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "d4f3672f-639d-405a-bb60-75f101144fdb",
+                "description": "The Juniper router must be configured to protect audit information from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "2089197f-4261-468e-badf-91683e00de9a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "54d15bfe-12eb-41ab-a6a0-46b3865ff11e",
+                "description": "The Juniper router must be configured to protect against an individual falsely denying having performed organization-defined actions to be covered by non-repudiation.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "a0458917-799e-47ed-a563-60291fcdfbc5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "f9fb34ab-4041-4001-8e92-71f680a3c203",
+                "description": "The Juniper router must be configured to generate audit records when successful/unsuccessful attempts to logon with access privileges occur.\nThe Juniper router must be configured to generate log records when administrator privileges are modified.\nThe Juniper router must be configured to generate log records when administrator privileges are deleted.\nThe Juniper router must be configured to generate audit records when successful/unsuccessful logon attempts occur.\nThe Juniper router must be configured to generate log records for privileged activities.\nThe Juniper router must be configured to generate log records when concurrent logons from different workstations occur.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "48f1da84-d41b-472b-aa0c-b04c1d1474b9",
+                "description": "The Juniper router must be configured to generate log records for a locally developed list of auditable events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "dc33a455-4644-4b05-a6eb-efd7c9c7badd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "c59d899f-79a5-4335-8f1c-2e893e5ca353",
+                "description": "The Juniper router must be configured to limit privileges to change the software resident within software libraries.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "1759adab-b599-4f28-b8c6-b75a7dabe6f3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "58e9f296-933f-4188-b2f8-3e2a99759ae5",
+                "description": "The Juniper router must be configured to synchronize its clock with the primary and secondary time sources using redundant authoritative time sources.\nThe Juniper router must be configured to generate log records for a locally developed list of auditable events.\nThe Juniper router must be configured to use an authentication server for the purpose of authenticating users prior to granting administrative access.\nThe Juniper router must be configured to support organizational requirements to conduct backups of the configuration when changes occur.\nThe Juniper router must be configured to obtain its public key certificates from an appropriate certificate policy through an approved service provider.\nThe Juniper router must be configured to send log data to a syslog server for the purpose of forwarding alerts to the administrators and the ISSO.\nThe Juniper router must be configured with a master password that is used to generate encrypted keys for shared secrets.\nThe Juniper router must be running a Junos release that is currently supported by Juniper Networks.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "cb2dfcd2-c6f9-4edd-950f-b97417fafc36",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a3b8b980-99c5-48ca-8384-5159e89a408a",
+                "description": "The Juniper router must be configured to use an authentication server for the purpose of authenticating users prior to granting administrative access.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "968f8f8f-bd23-4fd0-ae52-35278a13bbe5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "52934c62-5ebf-4d84-812f-5c554a71c055",
+                "description": "The Juniper router must be configured to be configured to prohibit the use of all unnecessary and nonsecure functions and services.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "efefad32-f19b-426c-9850-d1e33ee229e4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "99185881-7594-4ed8-a6b5-fd4a96ecf7db",
+                "description": "The Juniper router must be configured to prohibit installation of software without explicit privileged status.",
+                "control-id": "cm-11.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "b027bf55-d021-4307-be5e-a246253f33e4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "e2483ce6-b79d-4f6a-9103-31360f06672e",
+                "description": "The Juniper router must be configured to support organizational requirements to conduct backups of the configuration when changes occur.",
+                "control-id": "cp-9."
+              }
+            ]
+          },
+          {
+            "uuid": "c84055d4-485e-45a6-8b2e-8c2116588a8f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "69c7d735-afc9-4337-9210-a053585c945c",
+                "description": "The Juniper router must be configured to implement replay-resistant authentication mechanisms for network access to privileged accounts.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "8bff08a1-0537-4188-9dda-72f50a6a243c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3c7efb21-2101-47a2-978c-f31c6c1a51ce",
+                "description": "The Juniper router must be configured to authenticate SNMP messages using a FIPS-validated Keyed-Hash Message Authentication Code (HMAC).\nThe Juniper router must be configured to authenticate NTP sources using authentication that is cryptographically based.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "140a62d6-8f3e-4a08-8389-d6befe05bb30",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e27ad8f9-ae8c-4e55-893f-f37e4b55c78c",
+                "description": "The Juniper router must be configured to enforce password complexity by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "bdb6a8e6-446c-444c-bc37-36980746e496",
+                "description": "The Juniper router must be configured to enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "e5db803a-3505-4ad6-81fc-e9d4bbc55315",
+                "description": "The Juniper router must be configured to enforce password complexity by requiring that at least one upper-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3aacfa89-dc9e-4eb1-82f1-4284912ec0a6",
+                "description": "The Juniper router must be configured to enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "123f52aa-7d74-44f0-a99a-d7faec9730f9",
+                "description": "The Juniper router must be configured to enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9f1bffce-dbea-4eaa-ad1f-c2797047ce17",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "30861f23-5604-4683-8e00-6c85f3b16f6d",
+                "description": "The Juniper router must be configured to use FIPS-validated Keyed-Hash Message Authentication Code (HMAC) to protect the integrity of remote maintenance sessions.",
+                "control-id": "ma-4.(6)"
+              },
+              {
+                "uuid": "306283c7-075b-4581-9b3b-78aaaa9a4a61",
+                "description": "The Juniper router must be configured to implement cryptographic mechanisms to protect the confidentiality of remote maintenance sessions.",
+                "control-id": "ma-4.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "e196c411-aaff-4dd3-96cd-790ef06a552a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "490e608e-ebc0-4cc5-aa14-f97e0f95f0c1",
+                "description": "The Juniper router must be configured to protect against known types of Denial of Service (DoS) attacks by employing organization-defined security safeguards.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "041958a2-7a04-4fc7-97af-ccb9c27bf152",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "9e401d99-2878-4aef-afbe-e868db3c2d0d",
+                "description": "The Juniper router must be configured to terminate all network connections associated with device management after 10 minutes of inactivity.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "63f23201-87e3-4380-9f3e-85101cce4d3f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "c01acea5-84d4-4131-8acf-a4bc2c16a54f",
+                "description": "The Juniper router must be configured to obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "sc-17."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "component-definition": {
+    "uuid": "62b027fc-1270-4e11-a234-90a11287103e",
+    "metadata": {
+      "title": "Adobe Acrobat Reader DC Continuous V2R1",
+      "last-modified": "2022-06-10T12:50:50",
+      "version": "2022-06-10T12:50:50",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "eb696c9a-fe51-4ec8-beec-92f9dcc5bdff",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "b7da6ac9-79e7-42ea-a21d-5872d8fb63ab",
+        "type": "software",
+        "title": "Adobe Acrobat Reader DC Continuous V2R1",
+        "description": "Non voluptatem dolor neque aliquam. Etincidunt ipsum non non. Eius amet consectetur magnam dolorem quiquia quaerat sed.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "eb696c9a-fe51-4ec8-beec-92f9dcc5bdff"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "82c66393-b1a0-4495-abec-a0e970cdf807",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0ffff595-840f-4cfa-9697-b0bce4702723",
+                "description": "Adobe Reader DC must disable the ability to add Trusted Files and Folders.\nAdobe Reader DC must disable the ability to elevate IE Trusts to Privileged Locations.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b4299960-b60c-45c1-83fe-ada5e129d9f3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "06258ec6-56b6-477a-aaf3-f6eca524d85c",
+                "description": "Adobe Reader DC must disable the ability to change the Default Handler.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "9b10b6a3-56ea-4b16-8013-27a94a9abb37",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "d4c76f73-8e11-432d-9f34-1a204fd57832",
+                "description": "Adobe Reader DC must disable the Adobe Send and Track plugin for Outlook.\nAdobe Reader DC must disable all service access to Document Cloud Services.\nAdobe Reader DC must disable Cloud Synchronization.\nAdobe Reader DC must disable the Adobe Repair Installation.\nAdobe Reader DC must disable 3rd Party Web Connectors.\nAdobe Reader DC must disable Acrobat Upsell.\nAdobe Reader DC must disable Adobe Send for Signature.\nAdobe Reader DC must disable access to Webmail.\nAdobe Reader DC must disable Online SharePoint Access.\nAdobe Reader DC must disable the Adobe Welcome Screen.\nAdobe Reader DC must disable Service Upgrades.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "90cce9ef-f1ee-4092-8aeb-31317326bc50",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "fbfbad1a-2ce8-4495-912b-89dcd72ead6c",
+                "description": "Adobe Reader DC must enable FIPS mode.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "77871b59-b87a-486d-98b0-2c43083a644c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3883557e-cfd2-46c7-954a-f9d6c6d068b2",
+                "description": "Adobe Reader DC must enable Enhanced Security in a Standalone Application.\nAdobe Reader DC must enable Enhanced Security in a Browser.\nAdobe Reader DC must enable Protected Mode.\nAdobe Reader DC must enable Protected View.\nAdobe Reader DC must Block Websites.\nAdobe Reader DC must block access to Unknown Websites.\nAdobe Reader DC must prevent opening files other than PDF or FDF.\nAdobe Reader DC must block Flash Content.",
+                "control-id": "sc-18.(1)"
+              },
+              {
+                "uuid": "c2fdc314-23b9-440a-bd2f-c4828d32391c",
+                "description": "Adobe Reader DC must enable Enhanced Security in a Standalone Application.\nAdobe Reader DC must enable Enhanced Security in a Browser.\nAdobe Reader DC must enable Protected Mode.\nAdobe Reader DC must enable Protected View.\nAdobe Reader DC must Block Websites.\nAdobe Reader DC must block access to Unknown Websites.\nAdobe Reader DC must prevent opening files other than PDF or FDF.\nAdobe Reader DC must block Flash Content.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8de567b7-9627-477a-b0a0-d7d403fccf3b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "1af1f3c7-7311-4e32-9b1b-1c72065d71e1",
+                "description": "Adobe Reader DC must enable Enhanced Security in a Standalone Application.\nAdobe Reader DC must enable Enhanced Security in a Browser.\nAdobe Reader DC must enable Protected Mode.\nAdobe Reader DC must enable Protected View.\nAdobe Reader DC must Block Websites.\nAdobe Reader DC must block access to Unknown Websites.\nAdobe Reader DC must prevent opening files other than PDF or FDF.\nAdobe Reader DC must block Flash Content.",
+                "control-id": "sc-18.(3)"
+              },
+              {
+                "uuid": "ecd82b90-b80f-4332-9385-a614407c0dea",
+                "description": "Adobe Reader DC must enable Enhanced Security in a Standalone Application.\nAdobe Reader DC must enable Enhanced Security in a Browser.\nAdobe Reader DC must enable Protected Mode.\nAdobe Reader DC must enable Protected View.\nAdobe Reader DC must Block Websites.\nAdobe Reader DC must block access to Unknown Websites.\nAdobe Reader DC must prevent opening files other than PDF or FDF.\nAdobe Reader DC must block Flash Content.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "8db0dfcb-3983-4a50-a957-c2df14200ef6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "df215b4e-e936-45fc-8cb2-1c0195f333e2",
+                "description": "Adobe Reader DC must enable Enhanced Security in a Standalone Application.\nAdobe Reader DC must enable Enhanced Security in a Browser.\nAdobe Reader DC must enable Protected Mode.\nAdobe Reader DC must enable Protected View.\nAdobe Reader DC must Block Websites.\nAdobe Reader DC must block access to Unknown Websites.\nAdobe Reader DC must prevent opening files other than PDF or FDF.\nAdobe Reader DC must block Flash Content.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "936bffb8-bfeb-44e3-a3dc-90f862b894b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "06fc142e-3980-45b4-be8a-d2c61ec9d81a",
+                "description": "Adobe Reader DC must disable periodical uploading of European certificates.\nAdobe Reader DC must disable periodical uploading of Adobe certificates.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "3c764d45-80e5-4b72-8211-0f2f4e946b56",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "152b6718-38d8-4891-9b38-889d91566b6e",
+                "description": "Adobe Reader DC must have the latest Security-related Software Updates installed.",
+                "control-id": "si-2."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "component-definition": {
+    "uuid": "440776bb-8235-42db-bc51-aa598c1d8a62",
+    "metadata": {
+      "title": "DBN-6300 NDM V1R1",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "f698a31c-e6ef-46e2-8742-5dad85abeebb",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "44a08107-c86e-47a2-b3aa-e9758f1cf676",
+        "type": "software",
+        "title": "DBN-6300 NDM V1R1",
+        "description": "Tempora ut dolorem quiquia adipisci consectetur porro amet. Consectetur numquam quiquia sed dolorem.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "f698a31c-e6ef-46e2-8742-5dad85abeebb"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "3b5a60a9-2b61-4bb4-9215-6123f401c784",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "c55ffb56-6025-47b8-9daa-b2303e3e9923",
+                "description": "The DBN-6300 must uniquely identify and authenticate organizational administrators (or processes acting on behalf of organizational administrators).",
+                "control-id": "ac-2."
+              }
+            ]
+          },
+          {
+            "uuid": "5d335648-3297-493b-becd-3ee76aad0499",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6d51539e-ff03-4034-a765-4b29e4d04d7f",
+                "description": "The DBN-6300 must provide automated support for account management functions.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9b8351a0-9d21-4eb4-9434-24027980fdf0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "6e6c38b0-0d8d-40ff-bc79-7359bf052502",
+                "description": "The DBN-6300 must automatically audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "338feba4-b6ab-4c5f-8d2d-41a3901cef43",
+                "description": "The DBN-6300 must automatically audit account enabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d9af1277-e0c9-4c08-97ef-dfea30aa97b0",
+                "description": "The DBN-6300 must automatically audit account removal actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "073be26f-defc-4ff7-8a3c-7a41205c8d5c",
+                "description": "The DBN-6300 must automatically audit account creation.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "4ef2bc3a-8092-4e49-988f-192a46827d0d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "5500c01c-4bdc-4520-8f4d-57e9dc86c38b",
+                "description": "The DBN-6300 must uniquely identify and authenticate organizational administrators (or processes acting on behalf of organizational administrators).",
+                "control-id": "ac-2.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "d2a0adb4-d82f-4929-8bef-18f9c29f833f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "20860b25-9ad8-49db-8090-b0fbac7f233e",
+                "description": "The DBN-6300 must audit the execution of privileged functions.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "845a4adb-91bc-4b82-aa37-860255e03e9c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "d726067d-c2b7-4d3d-9b10-bd17481a026c",
+                "description": "The DBN-6300 must enforce the limit of three consecutive invalid logon attempts by a user during a 15-minute time period.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "7527753b-814c-48be-ab86-e5c3a8662d47",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "8c2ce5ae-c856-4d35-aba0-39641ef0fc4a",
+                "description": "The DBN-6300 must automatically terminate a network administrator session after organization-defined conditions or trigger events requiring session disconnect.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "a2833e18-5613-47b2-9e97-f3a6b312e499",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-24.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f6b4dba1-1fa6-4051-b413-4345a42a13c2",
+                "description": "The DBN-6300 must be compliant with at least one IETF Internet standard authentication protocol.",
+                "control-id": "ac-24.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ecd4a64e-36fa-4f12-925d-39b83ccb7b28",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e64d884-aeed-4697-8db6-78ef0967fcc9",
+                "description": "The DBN-6300 must produce audit records that contain information to establish the outcome of the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "014e6047-3f20-48e5-baa3-ec73d7ae2b54",
+                "description": "The DBN-6300 must produce audit log records containing sufficient information to establish what type of event occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "32ac00bc-92bd-491c-92fd-ecbb760d955d",
+                "description": "The DBN-6300 must produce audit log records containing information to establish the source of events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "68072c42-6ed8-446b-9659-ec0e0fabefe3",
+                "description": "The DBN-6300 must produce audit records containing information to establish where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "6236e35f-b551-4ce9-b8eb-e78f43dca73a",
+                "description": "The DBN-6300 must generate audit records containing information that establishes the identity of any individual or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "33e2776d-43fa-4920-a232-6fe6fde2ed7a",
+                "description": "The DBN-6300 must produce audit records containing information to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "bb4ff21b-d354-475b-8780-963d6fa40131",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "75ce9a8c-9029-4018-b982-62c7863a4ff0",
+                "description": "The DBN-6300 must generate audit records containing the full-text recording of privileged commands.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "56f0d32c-f481-4790-8242-915e12459d52",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "43e6a163-eabc-4354-9ddf-caca8064444f",
+                "description": "The DBN-6300 must off-load audit records onto a different system or media than the system being audited.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "36220e1b-083c-495b-9f7a-74e30ac3c54a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "e0087ea2-1150-4dc7-aedd-b25d1d251212",
+                "description": "The DBN-6300 must use internal system clocks to generate time stamps for audit records.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "8e3aa92f-bca7-4e16-96e4-7fb188241acc",
+                "description": "The DBN-6300 must record time stamps for audit records that meet a granularity of one second for a minimum degree of precision.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "630f027e-fa41-4f66-b9ed-cc9d93efd83c",
+                "description": "The DBN-6300 must record time stamps for audit records that can be mapped to Coordinated Universal Time (UTC).",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "213efd98-4ad8-4667-8cad-8776ce201cb1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1c4f125f-34be-434c-8970-3a7708a176fa",
+                "description": "The DBN-6300 must synchronize its internal system clock to the NTP server when the time difference is greater than one second.",
+                "control-id": "au-8.(1)"
+              },
+              {
+                "uuid": "4a89aadf-9520-46ff-b66c-a54ba93a3724",
+                "description": "The DBN-6300 must compare internal information system clocks at least every 24 hours with an authoritative time server.",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "01514849-ad6b-4fd9-9720-8a88e058837b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e3bfa22c-fbbc-45c8-97ed-29d8b505d612",
+                "description": "The DBN-6300 must back up audit records at least every seven days onto a different system or system component than the system or component being audited.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c65e51bd-9397-417a-a5bf-8e0d6ab4385e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "1ed7e080-48e2-4236-b366-8b797f8cb4fb",
+                "description": "The DBN-6300 must protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined actions to be covered by non-repudiation.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "40972a13-dc0b-463d-bfbd-cb5b5586b83b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "7d58bb8c-9d24-444c-890b-5e28fbfa3ff4",
+                "description": "The DBN-6300 must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be generated and forwarded to the audit log.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "3fa01fc6-bc0f-45e7-96b5-be306bb34561",
+                "description": "The DBN-6300 must generate log records when successful attempts to access privileges occur.\nThe DBN-6300 must generate audit records when successful/unsuccessful attempts to modify administrator privileges occur.\nThe DBN-6300 must generate audit records when successful/unsuccessful attempts to delete administrator privileges occur.\nThe DBN-6300 must generate audit records when successful/unsuccessful logon attempts occur.\nThe DBN-6300 must generate audit records for privileged activities or other system-level access.\nThe DBN-6300 must generate audit records showing starting and ending time for administrator access to the system.\nThe DBN-6300 must generate audit records when concurrent logons from different workstations occur.\nThe DBN-6300 must generate audit records for all account creation, modification, disabling, and termination events.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "102897da-a18c-441c-8dbf-00c59a94345f",
+                "description": "The DBN-6300 must provide audit record generation capability for DoD-defined auditable events within the DBN-6300.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "043186d3-4084-4a5d-9c11-10410b33c834",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "08140cf7-87a8-442b-ae89-b1c0d52b9bbe",
+                "description": "The DBN-6300 must provide the capability for organization-identified individuals or roles to change the auditing to be performed based on all selectable event criteria within near real time.",
+                "control-id": "au-12.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "30d72dfa-92f9-4f96-b36e-c639ea4b0686",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "38d8de96-df2e-4948-ae20-29062872cd93",
+                "description": "The DBN-6300 must initiate session auditing upon startup.",
+                "control-id": "au-14.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "168c53a9-53f2-4024-aaec-04805d0bf2be",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "4cabbc4b-df85-4350-8ba6-87bd5e7babfe",
+                "description": "The DBN-6300 must audit the enforcement actions used to restrict access associated with changes to the device.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "c85bb669-0051-4e4e-81c0-5ebfa1b09764",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "9b335341-4571-45b0-80d1-192f45c07a9e",
+                "description": "The DBN-6300 must be compliant with at least one IETF Internet standard authentication protocol.\nThe DBN-6300 must generate audit log events for a locally developed list of auditable events.\nThe DBN-6300 must activate a system alert message, send an alarm, and/or automatically shut down when a component failure is detected.\nThe DBN-6300 must be configured to send log data to a syslog server for the purpose of forwarding alerts to the administrators and the ISSO.\nAccounts for device management must be configured on the authentication server and not the network device itself, except for the account of last resort.\nThe DBN-6300 must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "b2ebcbfe-4511-4130-a3ba-20e46d0f14df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ce891243-29cf-4d39-ad56-55a54b48d54d",
+                "description": "Accounts for device management must be configured on the authentication server and not the network device itself, except for the account of last resort.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f6e0335c-601d-4196-8c73-62745b0d3eb6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "57df30fb-d0b0-46d0-952d-49ed91d3f2a7",
+                "description": "The DBN-6300 must use multifactor authentication for network access (remote and nonlocal) to privileged accounts.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f695f38c-9dd2-44e6-8601-899e76c3d96b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "2d97ce00-24c6-4c7f-a31b-f10af4dab912",
+                "description": "The DBN-6300 must use multifactor authentication for local access to privileged accounts.",
+                "control-id": "ia-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "7d60dd28-046d-4fe6-8df3-f2658382930b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "5fb4345e-2d5e-4400-8966-48764e57cef7",
+                "description": "The DBN-6300 must implement replay-resistant authentication mechanisms for network access to privileged accounts.",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "142a92a5-ea6c-45c5-89e6-ef05ab319f12",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "efe878e4-8e3f-47ff-b260-de21734b2f45",
+                "description": "If multifactor authentication is not supported and passwords must be used, the DBN-6300 must enforce password complexity by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "085323b7-3ef6-451a-adf9-798865b63754",
+                "description": "The DBN-6300 must enforce 24 hours/1 day as the minimum password lifetime.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "b39ca481-35f3-4132-a377-0359ff6491f7",
+                "description": "The DBN-6300 must enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "fbd439dd-4da7-4fa5-8552-ac8597e2193b",
+                "description": "The DBN-6300 must enforce a 60-day maximum password lifetime restriction.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "65e9b088-21d9-419d-9c4d-d546ec923727",
+                "description": "The DBN-6300 must prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "cfd99963-1307-4df2-97b4-916e8d147166",
+                "description": "If multifactor authentication is not supported and passwords must be used, the DBN-6300 must enforce password complexity by requiring that at least one upper-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "5fcb01f6-fc74-44ea-8480-517faa5cd222",
+                "description": "If multifactor authentication is not supported and passwords must be used, the DBN-6300 must enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "48b78a2b-6a9c-466c-8e6b-489234106fcc",
+                "description": "If multifactor authentication is not supported and passwords must be used, the DBN-6300 must enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "16e85125-ee38-4eda-8846-9db720ab7898",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "2e574723-9967-4d27-9563-1d38d4abf534",
+                "description": "Applications used for nonlocal maintenance sessions must implement cryptographic mechanisms to protect the integrity of nonlocal maintenance and diagnostic communications.",
+                "control-id": "ma-4.(6)"
+              },
+              {
+                "uuid": "c172315d-a471-49f0-939e-6f32f57e4a76",
+                "description": "Applications used for nonlocal maintenance sessions must implement cryptographic mechanisms to protect the confidentiality of nonlocal maintenance and diagnostic communications.",
+                "control-id": "ma-4.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "95a865e4-bc6f-422d-abb2-dbfb568b29f6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "dbdcfb8c-0b0f-4ee6-a7e4-0a70cdad42ad",
+                "description": "The DBN-6300 must terminate all network connections associated with a device management session at the end of the session, or the session must be terminated after 10 minutes of inactivity except to fulfill documented and validated mission requirements.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "69ae11b3-fd7c-4e97-a4cf-311e1e942b48",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17..",
+            "implemented-requirements": [
+              {
+                "uuid": "70b4eeb7-d551-4af7-bdc3-977ca85bcc9e",
+                "description": "The DBN-6300 must obtain its public key certificates from an appropriate certificate policy through an approved service provider.",
+                "control-id": "sc-17."
+              }
+            ]
+          },
+          {
+            "uuid": "049f236d-aee5-4b2f-bdce-f48a7cc7cbfb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "2a213e08-f6f7-4053-8b94-55f641b2c3eb",
+                "description": "The DBN-6300 must reveal error messages only to authorized individuals (ISSO, ISSM, and SA).",
+                "control-id": "si-11."
+              }
+            ]
+          },
+          {
+            "uuid": "c8f336e6-6241-46bd-995b-73374a665fc0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-13.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "8b73dad3-c920-4445-bd25-00dbf109a2a2",
+                "description": "The DBN-6300 must activate a system alert message, send an alarm, and/or automatically shut down when a component failure is detected.",
+                "control-id": "si-13.(4)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

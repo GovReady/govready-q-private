@@ -1,0 +1,528 @@
+{
+  "component-definition": {
+    "uuid": "7ec7dcb6-fbfe-457f-9fa3-1842188e1b1c",
+    "metadata": {
+      "title": "Oracle WebLogic Server 12c V2R1",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "5a0a3bbf-89f1-4563-844e-716636d829c3",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "9301bfe5-fb75-4b3a-b1ac-818bb590167f",
+        "type": "software",
+        "title": "Oracle WebLogic Server 12c V2R1",
+        "description": "Eius modi sed quisquam. Voluptatem aliquam quisquam sit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "5a0a3bbf-89f1-4563-844e-716636d829c3"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "fd474bd2-5a94-407b-9dce-c9292c708c43",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "c77c8e94-bec6-40ad-b231-fa79ac709442",
+                "description": "Oracle WebLogic must automatically audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "3f721319-e4c9-4385-9df7-b95b4d7a6702",
+                "description": "Oracle WebLogic must automatically audit account creation.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "5c816105-c5f4-48a4-b7c0-a358c8ac34df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "076bb27f-56e3-478a-a08f-c1ef76708f18",
+                "description": "Oracle WebLogic must limit the number of failed login attempts to an organization-defined number of consecutive invalid attempts that occur within an organization-defined time period.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "52cf0dcc-ef67-4b76-9d30-d062e6a10a80",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f4bbba1e-5690-4fa4-83ad-dc5f0628e053",
+                "description": "Oracle WebLogic must employ automated mechanisms to facilitate the monitoring and control of remote access methods.\nOracle WebLogic must ensure remote sessions for accessing security functions and security-relevant information are audited.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "afb94c31-500f-4c19-88d4-fc7f15576d9e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "ba66ff5f-64c3-4d22-b76e-8a52e58d1f08",
+                "description": "Oracle WebLogic must use cryptography to protect the integrity of the remote access session.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "cde999e2-ab7d-4b9c-8086-66ee31b013e5",
+                "description": "Oracle WebLogic must utilize cryptography to protect the confidentiality of remote access management sessions.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8f9069c2-6f04-4f90-b1e4-050b25e26470",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "5cd3c80e-7320-4e19-9cce-b93b30504af2",
+                "description": "Oracle WebLogic must produce audit records that contain sufficient information to establish the outcome (success or failure) of application server and application events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "0408dc5c-700d-4b14-955d-69a460ef1ca8",
+                "description": "Oracle WebLogic must produce process events and severity levels to establish what type of HTTPD-related events and severity levels occurred.\nOracle WebLogic must produce audit records containing sufficient information to establish what type of JVM-related events and severity levels occurred.\nOracle WebLogic must produce process events and security levels to establish what type of Oracle WebLogic process events and severity levels occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "4426c2e7-3340-4513-bf18-670eff415164",
+                "description": "Oracle WebLogic must produce audit records containing sufficient information to establish the sources of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "7ff1d673-7274-4d40-a03e-7931a5307dae",
+                "description": "Oracle WebLogic must produce audit records containing sufficient information to establish where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "e906bf20-e671-4b07-9330-79327536840d",
+                "description": "Oracle WebLogic must produce audit records containing sufficient information to establish the identity of any user/subject or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "e0b766a2-92bd-4838-8034-8bb08d91ce2b",
+                "description": "Oracle WebLogic must produce audit records containing sufficient information to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "f5e97fdc-36b1-45c9-8e33-2e5a15ca7504",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "15773da8-9371-4eba-9707-6cdde37c9e39",
+                "description": "Oracle WebLogic must provide the ability to write specified audit record content to an audit log server.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "b0b9b4be-0c8f-429d-94bf-5a598f06634d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "1af3a8ce-6784-4dc0-ab86-efd7b37ca1cc",
+                "description": "Oracle WebLogic must notify administrative personnel as a group in the event of audit processing failure.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "f2c09f6c-d29e-4459-bffc-cbf6b19594cb",
+                "description": "Oracle WebLogic must provide a real-time alert when organization-defined audit failure events occur.\nOracle WebLogic must alert designated individual organizational officials in the event of an audit processing failure.\nOracle WebLogic must provide system notifications to a list of response personnel who are identified by name and/or role.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "400a801a-7be0-4c60-9b1c-62028bb66d9a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "d6728ff1-2c51-4bcf-b286-519a44e7257a",
+                "description": "Oracle WebLogic must use internal system clocks to generate time stamps for audit records.",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "1716f610-813c-4429-a149-f9264e64e2aa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a568029a-fcc0-4dc2-9ddc-05020e4a03fa",
+                "description": "Oracle WebLogic must synchronize with internal information system clocks which, in turn, are synchronized on an organization-defined frequency with an organization-defined authoritative time source.",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "601ad824-f000-4f2a-92cc-7dec57e4e260",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "d6802158-c502-4578-a5ee-67478b875882",
+                "description": "Oracle WebLogic must protect audit tools from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "de580991-a248-44a3-9935-fd36b1982767",
+                "description": "Oracle WebLogic must protect audit information from any type of unauthorized read access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "9c4cdfeb-fa34-4fbb-bb9d-bcc1fd8f184e",
+                "description": "Oracle WebLogic must protect audit tools from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "3c03acad-3d2f-4615-8eda-b8fdaecffc42",
+                "description": "Oracle WebLogic must protect audit tools from unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "19d3429c-8bdf-4834-acad-844c8a41b928",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "3dd23451-abee-4f60-bc76-8050b338f4f0",
+                "description": "Oracle WebLogic must protect against an individual falsely denying having performed a particular action.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "9b5226b1-d3f1-4410-85ac-7391c8d8dc78",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "2d91ccf2-aa17-48e5-bc88-c6c12df7d98d",
+                "description": "Oracle WebLogic must provide access logging that ensures users who are granted a privileged role (or roles) have their privileged activity logged.\nOracle WebLogic must generate audit records for the DoD-selected list of auditable events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "0e58ac7f-52cc-4491-974d-0c669353a23a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "fadaf0b7-1014-4149-b405-0a7d15b36726",
+                "description": "Oracle WebLogic must compile audit records from multiple components within the system into a system-wide (logical or physical) audit trail that is time-correlated to within an organization-defined level of tolerance.",
+                "control-id": "au-12.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "f4c28d20-2d54-42e1-bcb1-80fc3ac15209",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "2b14e6b0-99c5-41b9-be04-9820c508345b",
+                "description": "Oracle WebLogic must limit privileges to change the software resident within software libraries (including privileged programs).",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "c92b63d6-f02c-4c3c-a886-fb5196ba0c9f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "3f86d2f2-bb52-4b9b-9e7a-b9daf8c24b62",
+                "description": "Oracle WebLogic must enforce the organization-defined time period during which the limit of consecutive invalid access attempts by a user is counted.\nOracle WebLogic must automatically lock accounts when the maximum number of unsuccessful login attempts is exceeded for an organization-defined time period or until the account is unlocked by an administrator.\nOracle WebLogic must utilize automated mechanisms to prevent program execution on the information system.\nOracle WebLogic must utilize NSA-approved cryptography when protecting classified compartmentalized data.\nOracle WebLogic must be integrated with a tool to monitor audit subsystem failure notification information that is sent out (e.g., the recipients of the message and the nature of the failure).\nOracle WebLogic must be managed through a centralized enterprise tool.\nOracle WebLogic must be integrated with a tool to implement multi-factor user authentication.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "f7b0e08c-59a3-40c7-92dd-94c4c5241f40",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "969930f2-d1e9-436c-aa65-b61b6bc0a9dd",
+                "description": "Oracle WebLogic must support the capability to disable network protocols deemed by the organization to be non-secure except for explicitly identified components in support of specific operational requirements.\nOracle WebLogic must prohibit or restrict the use of unauthorized functions, ports, protocols, and/or services.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "e67a1d47-c586-4970-aec7-e143f28d1487",
+                "description": "Oracle WebLogic must adhere to the principles of least functionality by providing only essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "128b4fd5-4b94-42ca-bf8e-0ac93b25249c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "f811cec5-b2ed-416d-8fa6-0952d6f3edd7",
+                "description": "Oracle WebLogic must uniquely identify and authenticate users (or processes acting on behalf of users).",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "b128d909-fc99-4b42-9eda-93a51f8f8f2d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "67c0eb09-e9e8-42ad-9f55-ae7391e9e643",
+                "description": "Oracle WebLogic must authenticate users individually prior to using a group authenticator.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "b4543438-af9f-4d70-9104-3bd2f21a7daa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ba84aaf5-88d2-4b42-b741-6eefbbdc6ad9",
+                "description": "Oracle WebLogic must enforce password complexity by the number of lower-case characters used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d7775310-3d1a-48fb-acde-0623f189c2a0",
+                "description": "Oracle WebLogic must encrypt passwords during transmission.\nOracle WebLogic must utilize encryption when using LDAP for authentication.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "c3bf632d-f181-40b3-aaff-5f385526502f",
+                "description": "Oracle WebLogic must enforce minimum password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "a2f60c74-9fa8-465d-a3ce-f4f5a3e06ef8",
+                "description": "Oracle WebLogic must enforce password complexity by the number of upper-case characters used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "90ddc294-ec25-4f59-94a0-645f5623ac85",
+                "description": "Oracle WebLogic must enforce password complexity by the number of numeric characters used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d56a43f4-0a4b-4abc-9699-74855ed0ac85",
+                "description": "Oracle WebLogic must enforce password complexity by the number of special characters used.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "be677de1-5fb6-4380-b5e0-133d0fe39e22",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "bcca5ba2-8422-4e9a-be47-2e50c733d4d9",
+                "description": "Oracle WebLogic must map the PKI-based authentication identity to the user account.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "71717316-0b21-498f-800c-7faa81384e3e",
+                "description": "Oracle WebLogic, when utilizing PKI-based authentication, must validate certificates by constructing a certification path with status information to an accepted trust anchor.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "546c751d-3cfc-4727-bc6b-43e110c56c06",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "220834bd-c237-4762-a3e2-716e53004606",
+                "description": "Oracle WebLogic must use cryptographic modules that meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nOracle WebLogic must utilize FIPS 140-2 approved encryption modules when authenticating users and processes.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "e775a86a-9c52-4945-b39a-460b13449123",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "ebf7d048-25a1-4cdc-aa37-9792156e5955",
+                "description": "Oracle WebLogic must employ strong identification and authentication techniques when establishing nonlocal maintenance and diagnostic sessions.",
+                "control-id": "ma-4."
+              }
+            ]
+          },
+          {
+            "uuid": "4b7e748f-e32e-464d-978b-5d4a1229cc06",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "45a4832e-39ed-4ff7-9e82-b1d4ce6b4a75",
+                "description": "Oracle WebLogic must separate hosted application functionality from Oracle WebLogic management functionality.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "fbe5048f-4a95-43bf-85ed-59f0845f8018",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "83ca594e-7708-4827-a417-6fe013923edb",
+                "description": "Oracle WebLogic must protect the integrity and availability of publicly available information and applications.\nOracle WebLogic must protect against or limit the effects of HTTP types of Denial of Service (DoS) attacks.\nOracle WebLogic must limit the use of resources by priority and not impede the host from servicing processes designated as a higher-priority.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "eab21a69-0efb-4ac9-90e1-9d8cc3f006da",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(18).",
+            "implemented-requirements": [
+              {
+                "uuid": "fe298f69-0aaf-4dab-bed1-d8539e281e8b",
+                "description": "Oracle WebLogic must fail securely in the event of an operational failure.",
+                "control-id": "sc-7.(18)"
+              }
+            ]
+          },
+          {
+            "uuid": "126c2df2-1dbf-4fae-8e8d-ab0660e20559",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b3e02830-2010-450d-b078-372a5ef6ea69",
+                "description": "Oracle WebLogic must employ cryptographic encryption to protect the integrity and confidentiality of nonlocal maintenance and diagnostic communications.\nOracle WebLogic must protect the confidentiality of applications and leverage transmission protection mechanisms, such as TLS and SSL VPN, when deploying applications.\nOracle WebLogic must employ approved cryptographic mechanisms when transmitting sensitive data.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d1f29f2d-ba6a-402b-afef-2561b97f042b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "b10805b9-988f-4990-bbb2-a39a60ee30b6",
+                "description": "Oracle WebLogic must protect the integrity of applications during the processes of data aggregation, packaging, and transformation in preparation for deployment.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "b5f4693f-29d1-481c-9a7e-8681843a6983",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "50c7eea6-3367-42f9-933e-961385458f5f",
+                "description": "Oracle WebLogic must terminate the network connection associated with a communications session at the end of the session or after a DoD-defined time period of inactivity.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "81e641d3-a8ac-466a-badf-10b7663c90f5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "93e6f30b-35f3-4610-b7b5-c940594bb0ec",
+                "description": "Oracle WebLogic must establish a trusted communications path between the user and organization-defined security functions within the information system.",
+                "control-id": "sc-11."
+              }
+            ]
+          },
+          {
+            "uuid": "a16a472a-66db-4cb3-bca7-3ae0197bdf4b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "b4943fe7-cbe9-46e1-a756-62de966d50ef",
+                "description": "Oracle WebLogic must ensure authentication of both client and server during the entire session.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "49246502-e064-45f1-8753-ebf8427d3b81",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "0fe093d4-e9ba-4c17-b36a-e75acc08f6ad",
+                "description": "Oracle WebLogic must terminate user sessions upon user logout or any other organization- or policy-defined session termination events such as idle time limit exceeded.",
+                "control-id": "sc-23.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "8802cf9b-9683-4176-aa54-fd08a8e30dd2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "7e16fa06-1f1e-42b1-b6ec-42bc538ab7ea",
+                "description": "Oracle WebLogic must be configured to perform complete application deployments.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "ec58dc36-cbef-472e-b4c9-0752fbeaac74",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "7fb9a442-ec06-446f-ab9c-e59689bc1d5a",
+                "description": "Oracle WebLogic must restrict error messages so only authorized personnel may view them.",
+                "control-id": "si-11."
+              },
+              {
+                "uuid": "5a22f508-1311-4bce-95ce-fa4f3d61fa10",
+                "description": "Oracle WebLogic must identify potentially security-relevant error conditions.\nOracle WebLogic must only generate error messages that provide information necessary for corrective actions without revealing sensitive or potentially harmful information in error logs and administrative messages.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

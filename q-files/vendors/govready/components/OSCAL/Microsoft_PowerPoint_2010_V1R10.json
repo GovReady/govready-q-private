@@ -1,0 +1,131 @@
+{
+  "component-definition": {
+    "uuid": "361692e6-c91f-4f3d-b4b8-79c85cea267c",
+    "metadata": {
+      "title": "Microsoft PowerPoint 2010 V1R10",
+      "last-modified": "2022-06-10T12:50:53",
+      "version": "2022-06-10T12:50:53",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "05dd5870-a5db-4b51-a780-3c6eac64e6bf",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "cba4aff9-23cd-4955-9a12-7dcf514b6d9c",
+        "type": "software",
+        "title": "Microsoft PowerPoint 2010 V1R10",
+        "description": "Dolor tempora sit ipsum dolor dolor quaerat etincidunt.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "05dd5870-a5db-4b51-a780-3c6eac64e6bf"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "bf7c6eda-099e-4158-bc15-12cd1da4bfbb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "16eda9ff-55e6-4613-b1c1-f3db79cc606b",
+                "description": "Trust Bar Notifications for unsigned application add-ins must be blocked.\nApplication add-ins must be signed by Trusted Publisher.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "30d147c0-6f18-42f2-a34b-6b15241c4364",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "69d9b6b4-05a6-47ff-801e-5d0297fdd850",
+                "description": "Hidden markup options must be visible.\nThe configuration for Slide Update with counterparts must be disallowed.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "42730289-a575-4a32-8487-e1904a4c8488",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "588e121a-a17d-4cf7-b0d4-b4a4b94961ae",
+                "description": "Save files default format  must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "58165f3d-cd95-4e10-b594-089a3b672407",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "2d4947e5-6bb4-4d7a-ab44-ee8c4423b299",
+                "description": "Pre-release versions of file formats new to Office Products must be blocked.",
+                "control-id": "cm-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "3170ed93-1c27-49c3-b1c7-b503e28dfbcb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "78447324-a799-437b-ad2a-450218072678",
+                "description": "Links that invoke instances of IE from within an Office product must be blocked.\nAdd-on Management functionality must be allowed.\nBlocking as default file block opening behavior must be enforced.\nFiles from the Internet zone must be opened in Protected View.",
+                "control-id": "sc-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a001b0e1-8945-4c4d-91fe-a713abea41f8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "8732fbe5-4f28-44e4-a248-d50b0cfe4127",
+                "description": "Automatic download of linked images must be disallowed.\nFile Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.(3)"
+              },
+              {
+                "uuid": "29c14cb7-e5e7-4644-8959-dd40d7d63146",
+                "description": "Enabling IE Bind to Object functionality must be present.\nProtection from zone elevation must be enforced.\nScripted Window Security must be enforced.\nConfiguration for file validation must be enforced.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "0c1b91b7-61d8-4b51-8b2b-45001c114638",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "c383310d-357c-4031-828f-89009cca34b4",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.(4)"
+              },
+              {
+                "uuid": "ea26ce2f-782a-4b15-b2f2-b04e235198c6",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URL's embedded in Office products must be blocked.\nAll automatic loading from Trusted Locations must be disabled.\nForce encrypted macros to be scanned in open XML documents must be determined and configured.\nDisallowance of Trusted Locations on the network must be enforced.\nThe ability to run programs from a PowerPoint presentation must be disallowed.\nData Execution Prevention must be enforced.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

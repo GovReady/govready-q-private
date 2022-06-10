@@ -1,0 +1,193 @@
+{
+  "component-definition": {
+    "uuid": "457ff506-61f6-4f04-aba1-8ed0331a71c4",
+    "metadata": {
+      "title": "MOT Android 9-x Y21M04",
+      "last-modified": "2022-06-10T12:50:55",
+      "version": "2022-06-10T12:50:55",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "6bc19d7b-87c5-4c98-9974-643f0c42a912",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "1d9cd75b-a4b1-40d4-a92c-81cabf7c92a2",
+        "type": "software",
+        "title": "MOT Android 9-x Y21M04",
+        "description": "Non sed adipisci consectetur.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "6bc19d7b-87c5-4c98-9974-643f0c42a912"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "b08e41a2-0f5f-41e4-9e03-125ea8c90024",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "322d4dcf-56f3-4a21-9b75-054ca3c38aaa",
+                "description": "The Motorola Android Pie must be configured to not allow more than 10 consecutive failed authentication attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "0dcd698a-3f1d-43f2-a856-37db768b8a78",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "de49b38c-e8af-4ff6-a552-b56d87f34183",
+                "description": "The Motorola Android Pie must be configured to display the DoD advisory warning message at startup or each time the user unlocks the device.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "d31dd348-bbc9-4c19-a88c-ae59d0a19387",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "614655b4-b643-4fea-a35a-cf1ac8a7f510",
+                "description": "The Motorola Android Pie must be configured to enable a screen lock policy that will lock the display after a period of inactivity.\nThe Motorola Android Pie must be configured to lock the display after 15 minutes (or less) of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "88459a9a-2dc8-4f34-9f32-01154469c1a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "f2791645-28cb-4373-85a6-62e08b55fa37",
+                "description": "The Motorola Android Pie must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
+                "control-id": "ac-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "af31f5a4-b289-4ed2-bd55-e612cf583c98",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "dcb5e6a5-344e-4801-b498-9af890b865c0",
+                "description": "The Motorola Android Pie must be configured to not allow backup of all applications and configuration data to remote systems.",
+                "control-id": "ac-20.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "a5066012-9fd1-4b4b-b251-928607fdc76c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "621fe48f-a25b-4134-a626-eb2bda51f9c6",
+                "description": "The Motorola Android Pie must be configured to enable audit logging.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d90b0b4e-2a63-43e5-8e04-b1d3e28b625c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "5f43054f-cfd3-4666-ba06-46076535467c",
+                "description": "The Motorola Android Pie must be configured to generate audit records for the following auditable events: detected integrity violations.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "029195dd-a842-402c-a16e-2732a870184c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "ce8a7759-73b2-40bf-918d-31c22543f6f8",
+                "description": "The Motorola Android Pie must be configured to not allow passwords that include more than two repeating or sequential characters.\nThe Motorola Android Pie must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nThe Motorola Android Pie must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nThe Motorola Android Pie whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services); \n- transmit MD diagnostic data to non-DoD servers; \n- voice assistant application if available when MD is locked; \n- voice dialing application if available when MD is locked; \n- allows synchronization of data or applications between devices associated with user; and \n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nThe Motorola Android Pie must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only HSP (Headset Profile), HFP (HandsFree Profile), or SPP (Serial Port Profile) capable devices.\nMotorola Android Pie must be configured to disable trust agents. \n \nNote: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Motorola Android Pie must be configured to enable audit logging.\nMotorola Android Pie users must complete required training.\nMotorola Android Pie must be configured to enforce that Wi-Fi Sharing is disabled.\nMotorola Android Pie must have the DoD root and intermediate PKI certificates installed.\nMotorola Android Pie must allow only the Administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nMotorola Android Pie must be configured to disallow configuration of date and time.\nMotorola Android Pie must be configured to disallow outgoing beam.\nMotorola Android Pie devices must have the latest available Motorola Android Pie operating system installed.\nMotorola Android Pie devices must have a NIAP-validated Motorola Android Pie operating system installed.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "2c75227a-f901-41ed-a03a-5711676a8c1f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "39b10a4c-91ac-4791-b446-f422b7503977",
+                "description": "Motorola Android Pie must be configured to disable trust agents. \n \nNote: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Motorola Android Pie must be configured to enable audit logging.\nMotorola Android Pie must allow only the Administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nMotorola Android Pie must be configured to disallow outgoing beam.",
+                "control-id": "cm-6.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4083f467-0af5-4c60-8998-41022d773f69",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "94905d96-52a8-4afc-bc79-4104a7500257",
+                "description": "Motorola Android Pie must be configured to disable trust agents. \n \nNote: This requirement is not applicable (NA) for specific biometric authentication factors included in the product's Common Criteria evaluation.\nThe Motorola Android Pie must be configured to disable developer modes.\nThe Motorola Android Pie must be configured to disable USB mass storage mode.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "85561040-4738-457f-85bb-6422df26a68e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a4cb8398-3acc-43be-aa2f-a1240597012b",
+                "description": "The Motorola Android Pie must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only HSP (Headset Profile), HFP (HandsFree Profile), or SPP (Serial Port Profile) capable devices.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a41ada6e-00df-4dd9-9bce-749cdff4aaf9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "092bd925-dc1e-46e9-82d6-0137e97eabd7",
+                "description": "The Motorola Android Pie must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nThe Motorola Android Pie must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nThe Motorola Android Pie whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services); \n- transmit MD diagnostic data to non-DoD servers; \n- voice assistant application if available when MD is locked; \n- voice dialing application if available when MD is locked; \n- allows synchronization of data or applications between devices associated with user; and \n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.",
+                "control-id": "cm-11."
+              }
+            ]
+          },
+          {
+            "uuid": "939a9c34-d8ba-48cf-ba9c-b930ca6cb1cf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "34a4ff46-562c-485d-bff6-df0c598267e4",
+                "description": "The Motorola Android Pie must be configured to enforce a minimum password length of six characters.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "component-definition": {
+    "uuid": "a0757d90-51bb-4e62-9ccc-a3c9b9114086",
+    "metadata": {
+      "title": "BIND 9-x V2R2",
+      "last-modified": "2022-06-10T12:50:52",
+      "version": "2022-06-10T12:50:52",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "7d06f6fd-a52c-4b86-bd76-e9cb8b11546d",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "72ffede2-2890-4e56-ae05-bbf6cf192db1",
+        "type": "software",
+        "title": "BIND 9-x V2R2",
+        "description": "Neque neque quaerat eius modi ipsum dolorem. Non dolor porro modi tempora velit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "7d06f6fd-a52c-4b86-bd76-e9cb8b11546d"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "5f121e6e-09c4-46d0-bfe4-b015f4852f71",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "9c92199e-3d4b-4055-9753-f89c1b68319b",
+                "description": "The BIND 9.x secondary name server must limit the number of zones requested from a single master name server.\nThe BIND 9.x secondary name server must limit the total number of zones the name server can request at any one time.\nThe BIND 9.x server implementation must limit the number of concurrent session client connections to the number of allowed dynamic update clients.\nA BIND 9.x master name server must limit the number of concurrent zone transfers between authorized secondary name servers.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "b5b544e3-94b7-444f-a4c7-3c587405ccd0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "7fa491de-1ca2-4898-9981-56d7a3c83a71",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "de4602e9-8e5d-4f7e-9d90-49aba50f6084",
+                "description": "The print-severity variable for the configuration of BIND 9.x server logs must be configured to produce audit records containing information to establish what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "689d7a0f-c9f7-4116-8daf-8e9e4005b042",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "142877bc-4ab6-4bdd-b724-0148ef081134",
+                "description": "The print-category variable for the configuration of BIND 9.x server logs must be configured to record information indicating which process generated the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d8bc180e-012d-49cc-b24f-1068c3f8a653",
+                "description": "The print-time variable for the configuration of BIND 9.x server logs must be configured to establish when (date and time) the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "247e606d-4049-4b6c-ae1b-d5f772185939",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "c4b61e60-6d3b-4966-aff4-1ba3fcb44566",
+                "description": "The BIND 9.x server implementation must not be configured with a channel to send audit records to null.\nThe BIND 9.x server implementation must be configured with a channel to send audit records to a remote syslog.\nThe BIND 9.x server implementation must be configured with a channel to send audit records to a local file.\nThe BIND 9.x server implementation must maintain at least 3 file versions of the local log file.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "bc92a1a8-5338-4204-8c4a-2c6b00e26d4a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "b9b94fa3-e67b-4628-b7c6-6c5945d65ba1",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "au-10.(1)"
+              },
+              {
+                "uuid": "cc0d23ea-1262-4819-8995-744e4e274b95",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "au-10.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "296eaab8-870b-472a-afd0-b164e444fc9a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "076326f6-a4cd-4584-abea-0531f05e8ccb",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "au-10.(2)"
+              },
+              {
+                "uuid": "0875ba0e-72f9-4608-820b-321896e973b8",
+                "description": "In the event of an error when validating the binding of other DNS servers identity to the BIND 9.x information, when anomalies in the operation of the signed zone transfers are discovered, for the success and failure of start and stop of the name server service or daemon, and for the success and failure of all name server events, a BIND 9.x server implementation must generate a log entry.",
+                "control-id": "au-10.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "71757427-0654-4f5f-a967-84c3d7e4b595",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "14f37e56-48a9-46ed-a7a5-73d9b6899132",
+                "description": "In the event of an error when validating the binding of other DNS servers identity to the BIND 9.x information, when anomalies in the operation of the signed zone transfers are discovered, for the success and failure of start and stop of the name server service or daemon, and for the success and failure of all name server events, a BIND 9.x server implementation must generate a log entry.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "66d233a9-707a-4c36-a2ef-755b64095074",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.\nThe BIND 9.x server logging configuration must be configured to generate audit records for all DoD-defined auditable events to a local file by enabling triggers for all events with a severity of info, notice, warning, error, and critical for all DNS components.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "cb06e8ea-b174-4428-8b5f-fb268db5ed90",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "4fa3d653-7d3e-47ba-853e-43eedbb4f8c6",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "au-12.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "a7a5cce0-d1a8-42ab-b3e7-9e48a6dcd005",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "16458461-9f0b-45d2-ab48-462f8b61aaf8",
+                "description": "A BIND 9.x server implementation must be operating on a Current-Stable version as defined by ISC.\nThe platform on which the name server software is hosted must only run processes and services needed to support the BIND 9.x implementation.\nThe BIND 9.x server software must run with restricted privileges.\nThe host running a BIND 9.X implementation must implement a set of firewall rules that restrict traffic on the DNS interface.\nThe host running a BIND 9.x implementation must use a dedicated management interface in order to separate management traffic from DNS specific traffic.\nThe host running a BIND 9.x implementation must use an interface that is configured to process only DNS traffic.\nIn the event of an error when validating the binding of other DNS servers identity to the BIND 9.x information, when anomalies in the operation of the signed zone transfers are discovered, for the success and failure of start and stop of the name server service or daemon, and for the success and failure of all name server events, a BIND 9.x server implementation must generate a log entry.\nA BIND 9.x server implementation must prohibit recursion on authoritative name servers.\nThe master servers in a BIND 9.x implementation must notify authorized secondary name servers when zone files are updated.\nThe secondary name servers in a BIND 9.x implementation must be configured to initiate zone update notifications to other authoritative zone name servers.\nOn the BIND 9.x server the platform on which the name server software is hosted must be configured to send outgoing DNS messages from a random port.\nThe BIND 9.X implementation must not utilize a TSIG or DNSSEC key for more than one year.\nOn the BIND 9.x server the private keys corresponding to both the ZSK and the KSK must not be kept on the BIND 9.x DNSSEC-aware primary authoritative name server when the name server does not support dynamic updates.\nThe two files generated by the BIND 9.x server dnssec-keygen program must be owned by the root account, or deleted, after they have been copied to the key file in the name server.\nThe two files generated by the BIND 9.x server dnssec-keygen program must be group owned by the server administrator account, or deleted, after they have been copied to the key file in the name server.\nPermissions assigned to the dnssec-keygen keys used with the BIND 9.x implementation must enforce read-only access to the key owner and deny access to all other users.\nThe core BIND 9.x server files must be owned by the root or BIND 9.x process account.\nThe core BIND 9.x server files must be group owned by a group designated for DNS administration only.\nThe permissions assigned to the core BIND 9.x server files must be set to utilize the least privilege possible.\nOn a BIND 9.x server for zones split between the external and internal sides of a network, the RRs for the external hosts must be separate from the RRs for the internal hosts.\nOn a BIND 9.x server in a split DNS configuration, where separate name servers are used between the external and internal networks, the external name server must be configured to not be reachable from inside resolvers.\nOn a BIND 9.x server in a split DNS configuration, where separate name servers are used between the external and internal networks, the internal name server must be configured to not be reachable from outside resolvers.\nA BIND 9.x server implementation must implement internal/external role separation.\nOn the BIND 9.x server the IP address for hidden master authoritative name servers must not appear in the name servers set in the zone database.\nA BIND 9.x implementation operating in a split DNS configuration must be approved by the organizations Authorizing Official.\nOn the BIND 9.x server the private key corresponding to the ZSK, stored on name servers accepting dynamic updates, must be owned by root.\nOn the BIND 9.x server the private key corresponding to the ZSK, stored on name servers accepting dynamic updates, must be group owned by root.\nA BIND 9.x server implementation must enforce approved authorizations for controlling the flow of information between authoritative name servers and specified secondary name servers based on DNSSEC policies.\nA BIND 9.x server validity period for the RRSIGs covering a zones DNSKEY RRSet must be no less than two days and no more than one week.\nA BIND 9.x server NSEC3 must be used for all internal DNS zones.\nEvery NS record in a zone file on a BIND 9.x server must point to an active name server and that name server must be authoritative for the domain specified in that record.\nOn a BIND 9.x server all authoritative name servers for a zone must be located on different network segments.\nOn a BIND 9.x server all authoritative name servers for a zone must have the same version of zone information.\nOn a BIND 9.x server all root name servers listed in the local root zone file hosted on a BIND 9.x authoritative name server must be valid for that zone.\nOn a BIND 9.x server all root name servers listed in the local root zone file hosted on a BIND 9.x authoritative name server must be empty or removed.\nOn the BIND 9.x server a zone file must not include resource records that resolve to a fully qualified domain name residing in another zone.\nOn the BIND 9.x server CNAME records must not point to a zone with lesser security for more than six months.\nThe BIND 9.x server implementation must prohibit the forwarding of queries to servers controlled by organizations outside of the U.S. Government.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "a0c69a12-59cf-4ad1-b4d7-d1c294222965",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "acda305f-803c-4586-8434-fcefdc7df27c",
+                "description": "The BIND 9.x server implementation must be configured to use only approved ports and protocols.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "40d9f429-8f0f-497f-bc4c-bf3f9003675f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "1ccc9590-17b2-42a3-a695-09415676a3ef",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "e5497dde-b13e-4623-8996-5eaa301e21b3",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.\nThe BIND 9.x server implementation must utilize separate TSIG key-pairs when securing server-to-server transactions.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "90a61665-3d8c-4373-864b-d3a43514c5d1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7cb9427a-c486-46d8-88b4-1a1a86109e30",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.",
+                "control-id": "ia-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0ea6c5a3-5179-42e6-9d72-ccf0bfe57ef1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "8c262a85-552e-4433-8fa3-4228a6cf8db5",
+                "description": "The TSIG keys used with the BIND 9.x implementation must be owned by a privileged account.\nThe TSIG keys used with the BIND 9.x implementation must be group owned by a privileged account.\nThe read and write access to a TSIG key file used by a BIND 9.x server must be restricted to only the account that runs the name server software.\nThe BIND 9.x server private key corresponding to the ZSK pair must be the only DNSSEC key kept on a name server that supports dynamic updates.\nThe BIND 9.x server signature generation using the KSK must be done off-line, using the KSK-private key stored off-line.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "65edd640-87af-4f43-b62b-67d92d018d07",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "62b24e3e-2561-4f2d-bfb7-0a3347cacda8",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "42a576a1-9587-445c-996d-aeb8b61a7558",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "b8bfb634-4686-4620-8e6e-e2390d39df6a",
+                "description": "A BIND 9.x server implementation must be running in a chroot(ed) directory structure.",
+                "control-id": "sc-4."
+              }
+            ]
+          },
+          {
+            "uuid": "d4234281-4f67-495f-8539-5e392b54d222",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ca76add4-1e87-484a-b4ec-7b7a413cd4db",
+                "description": "A BIND 9.x server implementation must prohibit recursion on authoritative name servers.\nA BIND 9.x implementation configured as a caching name server must restrict recursive queries to only the IP addresses and IP address ranges of known supported clients.",
+                "control-id": "sc-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e5eedb59-db1b-428a-9bef-2841add96035",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "235034ca-1ce8-465d-b090-e727deb97c5f",
+                "description": "A BIND 9.x server implementation must manage excess capacity, bandwidth, or other redundancy to limit the effects of information flooding types of Denial of Service (DoS) attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "036a8e7b-3af8-410a-bf31-d536a1ccb87b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "4e022018-bcd1-4c73-8809-95af29f240f6",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "757b2bea-15e6-4ee9-aa63-6659ba62f03f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "533e0c51-291e-4189-aca3-ff8c3461e206",
+                "description": "The BIND 9.x server implementation must uniquely identify and authenticate the other DNS server before responding to a server-to-server transaction, zone transfer and/or dynamic update request using cryptographically based bidirectional authentication to protect the integrity of the information in transit.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ef2b49cd-8706-4607-be7b-c9342c027a40",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "048940f0-acc1-4ad1-9777-0c94c9bb53e0",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-8.(2)"
+              },
+              {
+                "uuid": "527870f0-23f3-4fd6-b952-417e45141710",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "f810e096-cf82-4241-8382-39fb99c55201",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "0b411c2d-22e6-4aa2-84ae-3fa8e0c66edd",
+                "description": "A BIND 9.x server must implement NIST FIPS-validated cryptography for provisioning digital signatures and generating cryptographic hashes.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "352ba270-8c84-4c8f-b9c7-19b691e1bffe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-20..",
+            "implemented-requirements": [
+              {
+                "uuid": "3b80aa9c-de08-4093-ba1c-f5c448a20323",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.\nA BIND 9.x server implementation must enforce approved authorizations for controlling the flow of information between authoritative name servers and specified secondary name servers based on DNSSEC policies.",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "14dddba9-023f-4381-ba1e-0e69e9de124c",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "02c5bb0b-cb35-45f3-beb7-04dd899c01bb",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-20."
+              },
+              {
+                "uuid": "21576e16-4f11-42ef-b638-f466ae416372",
+                "description": "A BIND 9.x server implementation must provide the means to indicate the security status of child zones.\nThe BIND 9.x server validity period for the RRSIGs covering the DS RR for zones delegated children must be no less than two days and no more than one week.",
+                "control-id": "sc-20."
+              }
+            ]
+          },
+          {
+            "uuid": "717eb791-7bbf-4e99-9ce0-3d0d2ce96365",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-20.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "08f4a84e-01cc-436f-81dd-434ae8a60a1f",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-20.(2)"
+              },
+              {
+                "uuid": "c21f0967-9fac-49af-bbd9-9bb94bf16cc9",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-20.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "ae8be92e-ec7c-430a-ad48-0e2f1964bc36",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-21..",
+            "implemented-requirements": [
+              {
+                "uuid": "ff112b6c-6fb2-42ed-b874-3ac7ce492fdf",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "46766dc4-8b73-43e2-a9bf-0fdf74f79e13",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "d9be9f34-0995-43e4-8409-c9835bb94fb9",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-21."
+              },
+              {
+                "uuid": "3a5a1d3f-bb9c-46f4-96a3-ecbcf5d0e637",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-21."
+              }
+            ]
+          },
+          {
+            "uuid": "8ee7efba-64fa-45e6-8554-28cb4fae7bda",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "7a24b0b5-2f46-410a-a7ac-8b3b03635f44",
+                "description": "A BIND 9.x server implementation must maintain the integrity and confidentiality of DNS information while it is being prepared for transmission, in transmission, and in use and t must perform integrity verification and data origin verification for all DNS information.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "9a9d9d49-785b-48e9-bf5e-899fc4f87d1a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "00753dda-28b5-4eed-99d4-bb4a8b8918b1",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "eaad64db-b9c6-4852-95c9-c167a3c9e2cc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "d6cd2a57-fa67-4234-9134-9ecd260034d2",
+                "description": "The DNSSEC keys used with the BIND 9.x implementation must be owned by a privileged account.\nThe DNSSEC keys used with the BIND 9.x implementation must be group owned by a privileged account.\nPermissions assigned to the DNSSEC keys used with the BIND 9.x implementation must enforce read-only access to the key owner and deny access to all other users.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "5a34606a-f480-40bb-a408-98d501d162ba",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "f14ca817-746a-4b82-9cab-e3d6568f393a",
+                "description": "In the event of an error when validating the binding of other DNS servers identity to the BIND 9.x information, when anomalies in the operation of the signed zone transfers are discovered, for the success and failure of start and stop of the name server service or daemon, and for the success and failure of all name server events, a BIND 9.x server implementation must generate a log entry.",
+                "control-id": "si-6."
+              },
+              {
+                "uuid": "8891dfe2-abf4-457f-8644-7ab142bc0268",
+                "description": "A BIND 9.x server implementation must be configured to allow DNS administrators to audit all DNS server components, based on selectable event criteria, and produce audit records within all DNS server components that contain information for failed security verification tests, information to establish the outcome and source of the events, any information necessary to determine cause of failure, and any information necessary to return to operations with least disruption to mission processes.",
+                "control-id": "si-6."
+              }
+            ]
+          },
+          {
+            "uuid": "67116f29-a58c-497b-91ec-3eb8d3ed970e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "3bfc190f-6170-4274-be01-937154a4a5a8",
+                "description": "A BIND 9.x caching name server must implement DNSSEC validation to check all DNS queries for invalid input.",
+                "control-id": "si-10.(3)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

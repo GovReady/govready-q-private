@@ -1,0 +1,886 @@
+{
+  "component-definition": {
+    "uuid": "5cba3fed-947e-4e62-9b1d-6cade7a937cb",
+    "metadata": {
+      "title": "SOL 11 x86 V2R6",
+      "last-modified": "2022-06-10T12:50:54",
+      "version": "2022-06-10T12:50:54",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "c688d9a5-075c-40d9-883f-a47b31782694",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "ac50faa0-2fe0-4247-9a9b-f911e654b444",
+        "type": "software",
+        "title": "SOL 11 x86 V2R6",
+        "description": "Amet adipisci ut velit numquam non voluptatem. Dolorem porro porro ut sit. Adipisci adipisci porro quiquia ut.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "c688d9a5-075c-40d9-883f-a47b31782694"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "57ce27e3-098e-4220-9bae-80b118ffbb4d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "51b9cf29-0d9e-43ff-b5ba-6ec75c9ffd3a",
+                "description": "The operating system must automatically terminate temporary accounts within 72 hours.",
+                "control-id": "ac-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "b796915f-8d93-4a70-b598-89d0defd98d4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "8485ef64-21f5-41cd-a3b1-ecff15b117e0",
+                "description": "User accounts must be locked after 35 days of inactivity.",
+                "control-id": "ac-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "630ff3a0-5e7e-40a1-b7f4-998eb65a3e6d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "10b4957b-32de-440e-91a0-4bafd3e7823f",
+                "description": "The audit system must be configured to audit account creation.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "c88598e1-2079-4965-adab-f17a5f2247bc",
+                "description": "The audit system must be configured to audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "09faf346-6898-41fa-a2ea-406563a8d820",
+                "description": "The operating system must automatically audit account disabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "f882472e-6406-4bad-86f8-e66a9d4078af",
+                "description": "The operating system must automatically audit account termination.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "b6ca46ca-4983-4453-a7c6-c083aca60288",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "67862af2-ac6f-4fbd-b03a-a4abd481fb78",
+                "description": "All .Xauthority files must have mode 0600 or less permissive.\nThe .Xauthority files must not have extended ACLs.\nX displays must not be exported to the world.\nThe .Xauthority utility must only permit access to authorized hosts.",
+                "control-id": "ac-6."
+              }
+            ]
+          },
+          {
+            "uuid": "1dbef468-957a-4b4d-a871-4cbc3cfee7c4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "c28c194b-990b-4eb3-b72f-f383b9990b3e",
+                "description": "The operating system must protect the audit records resulting from non-local accesses to privileged accounts and the execution of privileged functions.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "a422ef9a-c4b8-4194-b7ae-4bee7212ad08",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "aacee3a2-dd35-4dbe-ae84-4f0199d2fe43",
+                "description": "The system must restrict the ability of users to assume excessive privileges to members of a defined group and prevent unauthorized users from accessing administrative tools.\nThe operating system must prevent non-privileged users from circumventing malicious code protection capabilities.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "d0db588a-2bb5-4c57-8750-b908086f9485",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "dbeead01-c2b7-48ca-bb18-a0359f28aabf",
+                "description": "The system must disable accounts after three consecutive unsuccessful login attempts.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "491474b7-9295-4474-94d2-735988ea2d1c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "5cc5f6eb-090e-4a4f-9ff7-5cc7afcaa8d2",
+                "description": "The operating system must display the DoD approved system use notification message or banner before granting access to the system for general system logons.\nThe operating system must display the DoD approved system use notification message or banner for SSH connections.\nThe GNOME service must display the DoD approved system use notification message or banner before granting access to the system.\nThe FTP service must display the DoD approved system use notification message or banner before granting access to the system.",
+                "control-id": "ac-8."
+              },
+              {
+                "uuid": "1348febf-ec2a-45fd-b48f-64dea60169fd",
+                "description": "The GNOME service must display the DoD approved system use notification message or banner before granting access to the system.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "273062f3-83f9-4f26-9f4c-32330912fa81",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "dc8d0e8a-01ac-46c6-8079-f0ecfedff3f4",
+                "description": "The operating system, upon successful logon, must display to the user the date and time of the last logon (access).",
+                "control-id": "ac-9."
+              }
+            ]
+          },
+          {
+            "uuid": "3ec4a527-4bbb-4fe3-898b-15bf0fe7e3a5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "0cf57bed-2c7f-4eb9-acca-8d7e1dc23657",
+                "description": "The operating system must limit the number of concurrent sessions for each account to an organization-defined number of sessions.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "dbc16aa0-9a6d-41d5-9a4a-91a4273ed826",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "2c9f81f3-5c88-41a1-87b3-c2e206842350",
+                "description": "The operating system must provide the capability for users to directly initiate session lock mechanisms.",
+                "control-id": "ac-11."
+              },
+              {
+                "uuid": "97227a3c-6102-4390-82d1-2464c7742a5a",
+                "description": "The system must require users to re-authenticate to unlock a graphical desktop environment.",
+                "control-id": "ac-11."
+              },
+              {
+                "uuid": "914e5967-3b68-4d00-b989-3f76db95a72f",
+                "description": "Graphical desktop environments provided by the system must automatically lock after 15 minutes of inactivity.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "926a21c9-74c7-4efa-93e5-64aba33e71ef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "2fc23880-aeed-4b20-bd14-ad032af655b2",
+                "description": "The operating system session lock mechanism, when activated on a device with a display screen, must place a publicly viewable pattern onto the associated display, hiding what was previously visible on the screen.",
+                "control-id": "ac-11.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4bad0f38-50b1-4bfc-b4b3-33bf54e1e06a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e9ab8eef-c52e-4e93-a86d-e3c2c18f222e",
+                "description": "The audit system must be configured to audit login, logout, and session initiation.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2dc4d1f3-302a-4f6b-be6e-d5ef10fb50e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "08d0d8bb-a52e-4051-9d8f-75915cf884e8",
+                "description": "The operating system must implement DoD-approved encryption to protect the confidentiality of remote access sessions.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "9cd4f423-473b-4730-9c20-a38d56c34521",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "83aa4612-5e50-4332-b0b2-460c4aaf0025",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "794d1702-4284-4e14-bc55-62fc345b68aa",
+                "description": "Wireless network adapters must be disabled.",
+                "control-id": "ac-18.(1)"
+              },
+              {
+                "uuid": "2272f5c0-827a-47e7-98f0-a505a401e006",
+                "description": "Wireless network adapters must be disabled.",
+                "control-id": "ac-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d2c7b194-e595-494b-836b-1900056d70cd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "fcd8edd0-84b9-4145-bf1e-5d6cad34d9ef",
+                "description": "Audit records must include what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "30b93e72-c711-4699-bd29-b123542f6632",
+                "description": "Audit records must include where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "98e82836-42e3-4bd5-b47b-b062f227d61a",
+                "description": "The audit system must produce records containing sufficient information to establish the identity of any user/subject associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "f9ef2e33-d683-42df-bcc7-61fc7699344d",
+                "description": "Audit records must include when (date and time) the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "9035ba14-4a8d-49dc-94d6-d4206e24a74d",
+                "description": "Audit records must include the outcome (success or failure) of the events that occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "218310c9-cb78-4768-b5ab-c3b13facd9ec",
+                "description": "Audit records must include the sources of the events that occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "2876cbed-ecec-42b9-9f6d-325c985e62ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "2e94f503-e3a7-4e91-b45b-eb10042da657",
+                "description": "The operating system must allocate audit record storage capacity.\nThe operating system must configure auditing to reduce the likelihood of storage capacity being exceeded.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "413d15bc-9afc-4c41-934d-997cc5d1fc45",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "50580972-dc22-4179-8795-69c19b086f36",
+                "description": "The operating system must alert designated organizational officials in the event of an audit processing failure.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "5bf9a20e-1832-4d6f-a6fd-9e17f06c6b1d",
+                "description": "The operating system must shut down by default upon audit failure (unless availability is an overriding concern).",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "d554f359-63fd-48f1-abaa-f68b776412cf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "fd86130a-15c9-4ac4-8930-2fc1ef8ee456",
+                "description": "The audit system must alert the SA when the audit storage volume approaches its capacity.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "dc3ef730-8997-4c2e-a9fe-030fa3f0bc39",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "51a8d48a-0b60-4d20-aab4-419221d3078d",
+                "description": "The audit system must alert the System Administrator (SA) if there is any type of audit failure.",
+                "control-id": "au-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "adc59024-3bf5-448c-abfe-c01164d0b563",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "e0fe9a9f-ee69-4e9c-9325-be0572dc2860",
+                "description": "The audit system must support an audit reduction capability.",
+                "control-id": "au-7."
+              },
+              {
+                "uuid": "e1ceb659-57f5-4ff8-8148-1b7d534f32d7",
+                "description": "The audit system records must be able to be used by a report generation capability.",
+                "control-id": "au-7."
+              }
+            ]
+          },
+          {
+            "uuid": "5764b225-d5bc-4007-8f2b-58b1746792af",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "91f7a3af-f3db-4570-aa39-1e93ae806e3e",
+                "description": "The operating system must provide the capability to automatically process audit records for events of interest based upon selectable, event criteria.",
+                "control-id": "au-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "7341fdab-b92e-4a5a-9ea6-e0d7749688f4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6f55da47-0c1e-4f10-979a-b05f4d187c46",
+                "description": "The operating system must synchronize internal information system clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "6dd0111f-e4c0-4bcf-9374-11c8b79504e7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "95166f2c-c6db-48a7-9aca-bd24a713707b",
+                "description": "The operating system must protect audit tools from unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "7326f8f5-94a5-411c-b4d0-5b34a4319101",
+                "description": "The operating system must protect audit tools from unauthorized modification.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "bd421d4e-ab26-45d8-8c7c-aebe383a32e2",
+                "description": "The operating system must protect audit tools from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "83d37f18-0b97-440c-8622-27e3c0a02998",
+                "description": "The operating system must protect audit information from unauthorized access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "1192673f-b2ac-478e-bade-df48adb6f8e8",
+                "description": "The operating system must protect audit information from unauthorized access.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "8e75ee4d-42d0-48ba-861c-f6739211a5df",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "a8f1c145-b16d-4f03-88eb-4a9f4b3d9624",
+                "description": "The operating system must back up audit records at least every seven days onto a different system or system component than the system or component being audited.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "4bd11feb-22cd-474a-bc39-4d1048029feb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "0978054f-5a6b-46d0-be22-f2f9a5c09a46",
+                "description": "System packages must be configured with the vendor-provided files, permissions, and ownerships.",
+                "control-id": "au-9.(3)"
+              },
+              {
+                "uuid": "d3aac327-645f-45bf-8d34-b1d8b975c5b1",
+                "description": "The operating system must use cryptographic mechanisms to protect the integrity of audit information.",
+                "control-id": "au-9.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "5699ff51-5a2f-4280-b185-db47d5dac399",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "962b6705-afa4-4e0f-9770-1e844962b1df",
+                "description": "The operating system must protect against an individual falsely denying having performed a particular action. In order to do so the system must be configured to send audit records to a remote audit server.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "4d46a243-2189-4b0c-b213-3db36452d6a6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "630f956e-72b2-41c6-8c6a-3f00e0e6a3db",
+                "description": "The operating system must generate audit records for the selected list of auditable events as defined in DoD list of events.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "05bdde71-265b-47e8-9ff1-28944086098f",
+                "description": "The audit records must provide data for all auditable events defined at the organizational level for the organization-defined information system components.\nThe operating system must support the capability to compile audit records from multiple components within the system into a system-wide (logical or physical) audit trail that is time-correlated to within organization-defined level of tolerance.\nThe audit system must be configured to audit all discretionary access control permission modifications.\nThe audit system must be configured to audit the loading and unloading of dynamic kernel modules.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "5a0ab064-a726-472c-9d4e-0e3bfa005f65",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "52a3d280-43f5-42ba-94a2-8a3a05c3321f",
+                "description": "Any X Windows host must write .Xauthority files.\n.Xauthority or X*.hosts (or equivalent) file(s) must be used to restrict access to the X server.",
+                "control-id": "cm-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "d7f0be7c-dbdf-4183-b980-4c6867d15836",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-3.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "b602c85f-a7a6-46dc-8131-57f2b9aaa0cc",
+                "description": "The operating system must employ automated mechanisms, per organization-defined frequency, to detect the addition of unauthorized components/devices into the operating system.",
+                "control-id": "cm-3.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "60f44bf0-b967-4a96-97b8-bb108b23cf15",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "ffd73eba-f858-4797-8293-f8516e73c220",
+                "description": "The system must verify that package updates are digitally signed.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "620495b3-269a-4912-81bd-78c321b4f698",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "601865d9-9466-42f1-b96f-07e1f1c68502",
+                "description": "The audit system must be configured to audit file deletions.\nThe operating system must ensure unauthorized, security-relevant configuration changes detected are tracked.\nThe audit system must be configured to audit all administrative, privileged, and security actions.\nThe audit system must be configured to audit failed attempts to access files and programs.\nThe auditing system must not define a different auditing level for specific users.\nThe System packages must be up to date with the most recent vendor updates and security fixes.\nThe finger daemon package must not be installed.\nThe legacy remote network access utilities daemons must not be installed.\nThe NIS package must not be installed.\nThe pidgin IM client package must not be installed.\nThe FTP daemon must not be installed unless required.\nThe TFTP service daemon must not be installed unless required.\nThe telnet service daemon must not be installed unless required.\nThe UUCP service daemon must not be installed unless required.\nThe rpcbind service must be configured for local only services unless organizationally defined.\nThe VNC server package must not be installed unless required.\nAll run control scripts must have mode 0755 or less permissive.\nAll run control scripts must have no extended ACLs.\nRun control scripts executable search paths must contain only authorized paths.\nRun control scripts library search paths must contain only authorized paths.\nRun control scripts lists of preloaded libraries must contain only authorized paths.\nRun control scripts must not execute world writable programs or scripts.\nAll system start-up files must be owned by root.\nAll system start-up files must be group-owned by root, sys, or bin.\nSystem start-up files must only execute programs owned by a privileged UID or an application.\nAny X Windows host must write .Xauthority files.\nAll .Xauthority files must have mode 0600 or less permissive.\nThe .Xauthority files must not have extended ACLs.\nX displays must not be exported to the world.\n.Xauthority or X*.hosts (or equivalent) file(s) must be used to restrict access to the X server.\nThe .Xauthority utility must only permit access to authorized hosts.\nX Window System connections that are not required must be disabled.\nThe graphical login service provides the capability of logging into the system using an X-Windows type interface from the console. If graphical login access for the console is required, the service must be in local-only mode.\nGeneric Security Services (GSS) must be disabled.\nSystems services that are not required must be disabled.\nTCP Wrappers must be enabled and configured per site policy to only allow access by approved hosts and services.\nThe system must require passwords to contain no more than three consecutive repeating characters.\nThe system must not have accounts configured with blank or null passwords.\nThe delay between login prompts following a failed login attempt must be at least 4 seconds.\nThe system must prevent the use of dictionary words for passwords.\nThe default umask for system and users must be 077.\nThe default umask for FTP users must be 077.\nThe value mesg n must be configured as the default setting for all users.\nLogin services for serial ports must be disabled.\nThe nobody access for RPC encryption key storage service must be disabled.\nX11 forwarding for SSH must be disabled.\nConsecutive login attempts for SSH must be limited to 3.\nThe rhost-based authentication for SSH must be disabled.\nDirect root account login must not be permitted for SSH access.\nLogin must not be permitted with empty/null passwords for SSH.\nHost-based authentication for login-based services must be disabled.\nThe use of FTP must be restricted.\nThe system must not allow autologin capabilities from the GNOME desktop.\nUnauthorized use of the at or cron capabilities must not be permitted.\nLogins to the root account must be restricted to the system console only.\nThe operating system must not allow logins for users with blank passwords.\nThe operating system must prevent remote devices that have established a non-remote connection with the system from communicating outside of the communication path with resources in external networks.\nThe system must disable directed broadcast packet forwarding.\nThe system must not respond to ICMP timestamp requests.\nThe system must not respond to ICMP broadcast timestamp requests.\nThe system must not respond to ICMP broadcast netmask requests.\nThe system must not respond to broadcast ICMP echo requests.\nThe system must not respond to multicast echo requests.\nThe system must ignore ICMP redirect messages.\nThe system must set strict multihoming.\nThe system must disable ICMP redirect messages.\nThe system must disable TCP reverse IP source routing.\nThe system must set maximum number of half-open TCP connections to 4096.\nThe system must set maximum number of incoming connections to 1024.\nThe system must disable network routing unless required.\nThe system must implement TCP Wrappers.\nThe boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).\nThe system must prevent local applications from generating source-routed packets.\nThe operating system must prevent internal users from sending out packets which attempt to manipulate or spoof invalid IP addresses.\nThe operating system must use cryptographic mechanisms to protect and restrict access to information on portable digital media.\nThe sticky bit must be set on all world writable directories.\nPermissions on user home directories must be 750 or less permissive.\nPermissions on user . (hidden) files must be 750 or less permissive.\nPermissions on user .netrc files must be 750 or less permissive.\nThere must be no user .rhosts files.\nGroups assigned to users must exist in the /etc/group file.\nUsers must have a valid home directory assignment.\nAll user accounts must be configured to use a home directory that exists.\nAll home directories must be owned by the respective user assigned to it in /etc/passwd.\nDuplicate Group IDs (GIDs) must not exist for multiple groups.\nReserved UIDs 0-99 must only be used by system accounts.\nDuplicate user names must not exist.\nDuplicate group names must not exist.\nUser .netrc files must not exist.\nThe system must not allow users to configure .forward files.\nWorld-writable files must not exist.\nAll valid SUID/SGID files must be documented.\nThe operating system must have no unowned files.\nThe operating system must have no files with extended attributes.\nThe root account must be the only account with GID of 0.\nThe operator must document all file system objects that have non-standard access control list settings.\nThe operating system must be a supported release.\nThe system must implement non-executable program stacks.\nAddress Space Layout Randomization (ASLR) must be enabled.\nProcess core dumps must be disabled unless needed.\nThe system must be configured to store any process core dumps in a specific, centralized directory.\nThe centralized process core dump data directory must be owned by root.\nThe centralized process core dump data directory must be group-owned by root, bin, or sys.\nThe centralized process core dump data directory must have mode 0700 or less permissive.\nKernel core dumps must be disabled unless needed.\nThe kernel core dump data directory must be owned by root.\nThe kernel core dump data directory must be group-owned by root.\nThe kernel core dump data directory must have mode 0700 or less permissive.\nSystem BIOS or system controllers supporting password protection must have administrator accounts/passwords configured, and no others. (Intel)\nThe system must require authentication before allowing modification of the boot devices or menus. Secure the GRUB Menu (Intel).\nThe operating system must implement transaction recovery for transaction-based systems.\nSNMP communities, users, and passphrases must be changed from the default.\nA file integrity baseline must be created, maintained, and reviewed on at least weekly to determine if unauthorized changes have been made to important system files located in the root file system.\nDirect logins must not be permitted to shared, default, application, or utility accounts.\nThe system must not have any unnecessary accounts.\nThe operating system must conduct backups of user-level information contained in the operating system per organization-defined frequency to conduct backups consistent with recovery time and recovery point objectives.\nThe operating system must conduct backups of system-level information contained in the information system per organization-defined frequency to conduct backups that are consistent with recovery time and recovery point objectives.\nThe operating system must conduct backups of operating system documentation including security-related documentation per organization-defined frequency to conduct backups that is consistent with recovery time and recovery point objectives.\nThe operating system must employ PKI solutions at workstations, servers, or mobile computing devices on the network to create, manage, distribute, use, store, and revoke digital certificates.\nThe operating system must employ malicious code protection mechanisms at workstations, servers, or mobile computing devices on the network to detect and eradicate malicious code transported by electronic mail, electronic mail attachments, web accesses, removable media, or other common means.\nThe operating system must have malicious code protection mechanisms at system entry and exit points to detect and eradicate malicious code transported by electronic mail, electronic mail attachments, web accesses, removable media, or other common means.\nAll manual editing of system-relevant files shall be done using the pfedit command, which logs changes made to the files.\nThe /etc/zones directory, and its contents, must have the vendor default owner, group, and permissions.\nThe limitpriv zone option must be set to the vendor default or less permissive.\nThe systems physical devices must not be assigned to non-global zones.\nThe audit system must identify in which zone an event occurred.\nThe audit system must maintain a central audit trail for all zones.\nThe operating system must monitor for unauthorized connections of mobile devices to organizational information systems.\nThe sshd server must bind the X11 forwarding server to the loopback address.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "fa9691a4-4072-4663-8281-03cb216df059",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "a8350c83-e77e-4c64-b7ef-1f84e1335ea2",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "ea48665a-5726-4990-afd1-828c4ff6c7c1",
+                "description": "The operating system must be configured to provide essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "c3a715e4-062f-4ef1-9eb4-c223711fe170",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7d7c8a7c-736c-47a0-8b7e-a44836474c2d",
+                "description": "The operating system must employ automated mechanisms to prevent program execution in accordance with the organization-defined specifications.",
+                "control-id": "cm-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c0dcba00-58a2-4b0c-ac3f-31f9bef206fe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-10.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "dbc2c0db-eb2d-4d42-af96-31b53b7f8b26",
+                "description": "The operating system must implement transaction recovery for transaction-based systems.",
+                "control-id": "cp-10.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "21f8f129-4f38-4833-bbaf-981a8ac96f9e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "6dc06bd5-a315-4ffe-8d51-3810e7642609",
+                "description": "Duplicate User IDs (UIDs) must not exist for users within the organization.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "a1c26925-4c6d-47e2-b168-a32c873c606a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "c9265901-ed8d-4a5c-89d5-cf1045d253bf",
+                "description": "The operating system must require individuals to be authenticated with an individual authenticator prior to using a group authenticator.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "8ca7dc6b-11a3-4113-a7af-aa9a8cde49ac",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "f8cdf4c9-a3d3-4ed5-a271-d550cc67ce0b",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ia-2.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "599bee0b-86e0-4ee3-aa61-bd08ab90c93d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "845814a6-ceb7-4775-9461-e5663412538f",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ia-2.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "163e2dca-44d3-452e-99f6-cc8b1dff94cc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "d916aa99-6519-43cf-ae9b-7e2ebd0d9d0a",
+                "description": "User accounts must be locked after 35 days of inactivity.",
+                "control-id": "ia-4."
+              }
+            ]
+          },
+          {
+            "uuid": "d59cb1e7-ce0b-4846-84de-51ec9365f701",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7b81aa2a-4adb-4a88-9c89-f1bb7a5de1e9",
+                "description": "The operating system must enforce password complexity requiring that at least one lowercase character is used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "44f72d00-fd17-46e4-82c9-04c6b234e632",
+                "description": "The operating system must enforce minimum password lifetime restrictions.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "9f926342-90a7-43c7-8e31-77739e13bf38",
+                "description": "User passwords must be changed at least every 60 days.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "05767072-8372-4a12-a009-e4ab7c271e81",
+                "description": "The system must require passwords to contain at least one numeric character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "a13df90e-ab5e-4227-9f94-244af39adb87",
+                "description": "The system must require at least eight characters be changed between the old and new passwords during a password change.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "b3b17f29-a0fa-4424-8f30-89f549408c4a",
+                "description": "User passwords must be at least 15 characters in length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "8365dbb4-9311-4130-b244-097aacbb8a30",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "36f166f8-e37f-46ce-ad6c-563fd8dac6c3",
+                "description": "Systems must employ cryptographic hashes for passwords using the SHA-2 family of algorithms or FIPS 140-2 approved successors.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d5ab8a89-1c81-40e8-ab9f-e6853b73ee51",
+                "description": "The system must require passwords to contain at least one uppercase alphabetic character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3dc990db-03a2-4d4c-a18d-0ed2f97a9c7a",
+                "description": "The system must require passwords to contain at least one special character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "909a8745-4c3d-4a47-a83c-701749c179a1",
+                "description": "Users must not reuse the last 5 passwords.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "58d4a04b-27b2-4aef-9538-c8436f346d86",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "c55e8596-fb25-47c5-b3fc-1fba2378e1b3",
+                "description": "The operating system must use mechanisms for authentication to a cryptographic module meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for such authentication.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ad99bc22-a892-44b5-b09d-7ecdbb9adec9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "10cf77ca-a971-4250-8ce2-682bb41b90bb",
+                "description": "Duplicate UIDs must not exist for multiple non-organizational users.",
+                "control-id": "ia-8."
+              }
+            ]
+          },
+          {
+            "uuid": "fbbb4df7-cd14-4ed2-bee0-b52ba6b08840",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "ae32293d-5de7-4703-b06d-76e8f23845f2",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ma-4."
+              },
+              {
+                "uuid": "9a2fb218-714b-4d52-a189-083d2081514b",
+                "description": "The operating system must terminate all sessions and network connections when non-local maintenance is completed.",
+                "control-id": "ma-4."
+              }
+            ]
+          },
+          {
+            "uuid": "d5ea3726-3f8a-41a4-9177-da58765eb830",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "1055efb1-5bce-44f0-bce0-8ef6dd865ba0",
+                "description": "The boundary protection system (firewall) must be configured to deny network traffic by default and must allow network traffic by exception (i.e., deny all, permit by exception).",
+                "control-id": "ma-4.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "79186b29-999f-4e3c-8685-9eafa0f481bc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "df80b9dd-1138-4357-aa29-f548a6d61568",
+                "description": "The operating system must manage excess capacity, bandwidth, or other redundancy to limit the effects of information flooding types of denial of service attacks.",
+                "control-id": "sc-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "cba1b4f3-2eab-40dc-80ae-60f7df16308c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "117f32b7-c52d-47e0-a0f6-784bb997fe26",
+                "description": "Wireless network adapters must be disabled.\nThe operating system must protect the integrity of transmitted information.\nThe operating system must protect the confidentiality of transmitted information.\nThe operating system must protect the integrity of transmitted information.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "504570a9-2417-45db-bdce-a04fc546a660",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c90b8e0f-df69-44cb-bf13-2853ad89b293",
+                "description": "The operating system must employ cryptographic mechanisms to recognize changes to information during transmission unless otherwise protected by alternative physical measures.\nThe operating system must employ cryptographic mechanisms to prevent unauthorized disclosure of information during transmission unless otherwise protected by alternative physical measures.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "9b72ea39-a988-4e0c-a040-d6e76e6f36bd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e49241e5-a81e-458e-b7db-23caf977f223",
+                "description": "The operating system must maintain the integrity of information during aggregation, packaging, and transformation in preparation for transmission.\nThe operating system must maintain the confidentiality of information during aggregation, packaging, and transformation in preparation for transmission.",
+                "control-id": "sc-8.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c71acff0-1a4b-4b7c-97a9-c09d6ba654fe",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "45ddd901-b7c4-4ab1-84eb-6392a71bc41c",
+                "description": "The operating system must terminate the network connection associated with a communications session at the end of the session or after 10 minutes of inactivity.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "0d8aea7a-6dfd-4a6e-9c91-5ca503e5f450",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "4f313de7-bfd5-4944-b07c-982a0218b98a",
+                "description": "The operating system must employ FIPS-validate or NSA-approved cryptography to implement digital signatures.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "cd3fcbf2-898a-43d8-b9ed-66e849f053ce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "dbf58995-72a7-4305-988f-b90b3b6ac937",
+                "description": "The operating system must prevent the execution of prohibited mobile code.",
+                "control-id": "sc-18.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "ca7a1267-4e4b-40b3-80ab-8af07ea28b61",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "4f9b840e-288e-417d-9277-5a8a383c4506",
+                "description": "The operating system must disable information system functionality that provides the capability for automatic execution of code on mobile devices without user direction.",
+                "control-id": "sc-18.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "aee153f0-5fd7-4e47-8fff-b956b07842b1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e07658e-b685-40c6-bd71-8ff0f485d482",
+                "description": "The operating system must protect the confidentiality and integrity of information at rest.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "3dd377c3-2873-49da-8908-9a4b4e826a8e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "952f0400-ddc2-498f-ac0f-03cf5bd992b2",
+                "description": "The operating system must employ cryptographic mechanisms to protect information in storage.\nThe operating system must employ cryptographic mechanisms to prevent unauthorized disclosure of information at rest unless otherwise protected by alternative physical measures.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "df2575a5-0072-40e1-8183-977728535bfb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "c640a5ea-9b0c-4330-82e2-3d51379912ad",
+                "description": "The operating system must verify the correct operation of security functions in accordance with organization-defined conditions and in accordance with organization-defined frequency (if periodic verification).\nThe operating system must identify potentially security-relevant error conditions.",
+                "control-id": "si-6."
+              }
+            ]
+          },
+          {
+            "uuid": "716f2b99-caf9-4314-a3fc-ee0105061113",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "a6d1f277-137b-4388-9820-3772a9bccfdc",
+                "description": "The operating system must reveal error messages only to authorized personnel.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

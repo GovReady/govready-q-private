@@ -1,0 +1,85 @@
+{
+  "component-definition": {
+    "uuid": "e1fa8285-bef6-43b3-9d8d-296575ec38fc",
+    "metadata": {
+      "title": "Citrix XenDesktop 7-x Y20M04",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "505d1883-dd13-40db-805a-bbf35cd32e97",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "1f25c108-97c1-479c-bc1d-c60e7447f0e7",
+        "type": "software",
+        "title": "Citrix XenDesktop 7-x Y20M04",
+        "description": "Voluptatem adipisci etincidunt magnam sit. Eius amet est modi.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "505d1883-dd13-40db-805a-bbf35cd32e97"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "410fb378-01ce-4e0d-9d62-d33c677cd76b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "319de82a-7017-422a-8e49-63daab8a22e0",
+                "description": "Delivery Controller must limit the number of concurrent sessions to an organization-defined number for all accounts and/or account types.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "27feeac9-e746-4e14-a1d6-c41714656952",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "4ab0be96-afb5-4d3d-aa26-a837f5287e27",
+                "description": "Delivery Controller must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "81fb33b6-7bcd-484c-a698-401ed6342c03",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "1e7f7be7-4013-437e-8acb-f5be3c4f3690",
+                "description": "Delivery Controller must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "2684d7eb-1293-4e1f-94df-b1b5520f2f77",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "47679312-785f-418e-821a-a260a24fcc89",
+                "description": "Delivery Controller must implement NIST FIPS-validated cryptography for the following: to provision digital signatures; to generate cryptographic hashes; and to protect unclassified information requiring confidentiality and cryptographic protection in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-13."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

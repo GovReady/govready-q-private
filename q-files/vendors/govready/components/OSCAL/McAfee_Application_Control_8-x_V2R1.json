@@ -1,0 +1,105 @@
+{
+  "component-definition": {
+    "uuid": "19224ee3-1cf0-4364-83d9-ae459faeeb9f",
+    "metadata": {
+      "title": "McAfee Application Control 8-x V2R1",
+      "last-modified": "2022-06-10T12:50:53",
+      "version": "2022-06-10T12:50:53",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "19ee674a-53ed-4479-88fa-36e7d38a8198",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "19d5347e-88f8-4101-82a1-4500b833583e",
+        "type": "software",
+        "title": "McAfee Application Control 8-x V2R1",
+        "description": "Quaerat aliquam quaerat dolor.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "19ee674a-53ed-4479-88fa-36e7d38a8198"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "b4cbb6a9-aebe-4b50-85a1-32ffbc377657",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "044d4394-5a5c-4cad-8440-cb3f6d3d14d0",
+                "description": "The Solidcore client Command Line Interface (CLI) must be in lockdown mode.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ef09ffa8-76af-41e4-aaf7-ccc28ec86e3e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "7ea4a656-d66d-4325-bd41-7bc70bf2ee81",
+                "description": "A McAfee Application Control written policy must be documented to outline the organization-specific variables for application whitelisting.\nThe configuration of features under McAfee Application Control Options policies Enforce feature control must be documented in the organizations written policy.\nThe organizations written policy must include a process for how whitelisted applications are deemed to be allowed.\nThe organizations written policy must include procedures for how often the whitelist of allowed applications is reviewed.\nThe Solidcore client must be enabled.\nThe Solidcore client Command Line Interface (CLI) Access Password must be changed from the default.\nThe organization-specific Rules policy must only include executable and dll files that are associated with applications as allowed by the organizations written policy.\nThe McAfee Application Control Options Reputation-Based Execution settings, if enabled, must be configured to allow Most Likely Trusted or Known Trusted only.\nOrganization-specific McAfee Applications Control Options policies must be created and applied to all endpoints.\nThe McAfee Application Control Options policy must be configured to disable Self-Approval.\nThe McAfee Application Control Options policy End User Notification, if configured by organization, must have all default variables replaced with the organization-specific data.\nThe McAfee Application Control Options policies Enforce feature control memory protection must be enabled.\nEnabled features under McAfee Application Control Options policies Enforce feature control must not be configured unless documented in written policy and approved by ISSO/ISSM.\nThe McAfee Application Control Options Inventory option must be configured to hide OS Files.\nThe McAfee Application Control Options Inventory interval option must be configured to pull inventory from endpoints on a regular basis not to exceed seven days.\nThe McAfee Applications Default Rules policy must be part of the effective rules policy applied to every endpoint.\nA copy of the McAfee Default Rules policy must be part of the effective rules policy applied to every endpoint.\nThe organization-specific Rules policies must be part of the effective rules policy applied to all endpoints.\nThe organization-specific Solidcore Client Policies must be created and applied to all endpoints.\nThe Throttling settings must be enabled and configured to settings according to organizations requirements.\nThe Solidcore Client Exception Rules must be documented in the organizations written policy.",
+                "control-id": "cm-7.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "8c2b0f57-a578-44b2-82be-77a4700fb8dc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e722a661-450f-4958-84b8-3483fb4ce3fa",
+                "description": "The Solidcore client Command Line Interface (CLI) Access Password protection process must be documented in the organizations written policy.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "4c4b5694-b67e-436c-a6a4-dddfab7a8cbe",
+                "description": "The requirement for scheduled Solidcore client Command Line Interface (CLI) Access Password changes must be documented in the organizations written policy.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "606bc227-36c5-4fc1-96fd-5c3825ce0856",
+                "description": "The process by which the Solidcore client Command Line Interface (CLI) Access Password is made available to administrators when needed must be documented in the organizations written policy.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "bc0e0758-76da-4137-9877-45df72798366",
+                "description": "The Solidcore client Command Line Interface (CLI) Access password complexity requirements must be documented in the organizations written policy.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "52dfcf6f-eb6c-442c-80b2-f6db49aeb369",
+                "description": "The use of a Solidcore 8.x local Command Line Interface (CLI) Access Password must be documented in the organizations written policy.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "74765851-65ac-40f9-a145-a8032981ca21",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "7efd0a18-27f3-4cd8-a94b-3e6686014de8",
+                "description": "The McAfee Application Control Options Advanced Threat Defense (ATD) settings, if being used, must be confined to the organizations enclave.\nThe McAfee Application Control Options Reputation setting must be configured to use the McAfee Global Threat Intelligence (McAfee GTI) option.\nThe McAfee Application Control Options Advanced Threat Defense (ATD) settings must not be enabled unless an internal ATD is maintained by the organization.\nThe McAfee Application Control Options Advanced Threat Defense (ATD) settings, if being used, must be configured to send all binaries with a reputation of Might be Trusted and below for analysis.\nThe McAfee Application Control Options Advanced Threat Defense (ATD) settings, if being used, must be configured to only send binaries with a size of 5 MB or less.",
+                "control-id": "si-3."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

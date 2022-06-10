@@ -1,0 +1,459 @@
+{
+  "component-definition": {
+    "uuid": "54853707-af25-4747-ad00-41eb35f56db0",
+    "metadata": {
+      "title": "AAA Services V1R2",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "4906b3b3-ba04-472d-860b-af19d08e6cb5",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "cb939873-b8be-4645-9aba-d84ea73f48d7",
+        "type": "software",
+        "title": "AAA Services V1R2",
+        "description": "Etincidunt dolorem consectetur quisquam. Aliquam eius tempora sed amet ipsum. Dolore non tempora sed quisquam etincidunt ut.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "4906b3b3-ba04-472d-860b-af19d08e6cb5"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "3cd27537-fe7b-4e77-8c11-e768e2fb631f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e719d814-a71e-483c-a9bb-94bced012c35",
+                "description": "AAA Services must be configured to provide automated account management functions.",
+                "control-id": "ac-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e1eed304-decb-4e19-84eb-dbda9533f96c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "8bf9e0a8-20bb-4b1f-bb17-563dc6b39e48",
+                "description": "AAA Services must be configured to prevent automatically removing emergency accounts.\nAAA Services must be configured to prevent automatically disabling emergency accounts.",
+                "control-id": "ac-2.(2)"
+              },
+              {
+                "uuid": "5edb4e3b-0461-43f7-b017-0594d57a5bc1",
+                "description": "AAA Services must be configured to automatically remove authorizations for temporary user accounts after 72 hours.\nAAA Services must be configured to automatically remove temporary user accounts after 72 hours.",
+                "control-id": "ac-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "c4ed91a5-693b-4b64-87cd-5a8110857d6a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "5c0c5ba9-abb0-4c20-9362-253bb44bc9da",
+                "description": "AAA Services must be configured to automatically disable accounts after a 35-day period of account inactivity.",
+                "control-id": "ac-2.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "2f3f5230-670e-4331-b14a-a28e1d6bdf53",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "7c4b0f1d-37c3-43fd-8ef0-bcfd9244f578",
+                "description": "AAA Services must be configured to notify the system administrators and ISSO for account disabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "44a672ad-6539-49f2-b04f-6f1f214c5c55",
+                "description": "AAA Services must be configured to notify system administrators and ISSO of account enabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "c53585e6-91df-4222-ae01-fb2854dd209c",
+                "description": "AAA Services must be configured to notify the system administrators and ISSO when accounts are created.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d18cb670-c554-48c5-afa4-6b6765dbbbcb",
+                "description": "AAA Services must be configured to notify the system administrators and ISSO for account removal actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d3c524a0-0b53-46c9-8908-ed4c6435525d",
+                "description": "AAA Services must be configured to automatically audit account modification.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "d94e04dc-8385-4615-ab17-a2f11ad3a469",
+                "description": "AAA Services must be configured to automatically audit account enabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "3c43a8d0-c7f0-4375-a546-0836c3ed0873",
+                "description": "AAA Services must be configured to notify the system administrators and ISSO when accounts are modified.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "11d5a3b2-ac68-4fd8-beec-006cd0fc1c67",
+                "description": "AAA Services must be configured to automatically audit account disabling actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "55784f57-820a-49bb-9542-bee775c8d7b1",
+                "description": "AAA Services must be configured to automatically audit account removal actions.",
+                "control-id": "ac-2.(4)"
+              },
+              {
+                "uuid": "8e0a9ba0-0723-45f6-88ca-5a530ea54c8d",
+                "description": "AAA Services must be configured to automatically audit account creation.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "a3e5496a-8b85-4965-9435-9ecf6900c08d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(7).",
+            "implemented-requirements": [
+              {
+                "uuid": "691256a7-ce5a-4ea8-8f5d-181e669fa241",
+                "description": "AAA Services must be configured to use Role-Based Access Control (RBAC) policy for levels of access authorization.",
+                "control-id": "ac-3.(7)"
+              }
+            ]
+          },
+          {
+            "uuid": "0a1d83d7-d8ec-4741-ba70-49a424893414",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "e472416d-8351-4701-ae9a-c2afbfe19aa7",
+                "description": "AAA Services must be configured to maintain locks on user accounts until released by an administrator.",
+                "control-id": "ac-7."
+              },
+              {
+                "uuid": "ebd01e1e-a9cf-436f-afa9-1ebd05dab782",
+                "description": "AAA Services must be configured to automatically lock user accounts after three consecutive invalid logon attempts within a 15-minute time period.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "5d47ffcd-68f9-47f0-a7be-7f2122de6239",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "013a24a5-c339-449c-9124-28088a334c8a",
+                "description": "AAA Services configuration audit records must identify the outcome of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "d16aaf73-2a46-4272-b4a2-29d0ee4bbffa",
+                "description": "AAA Services configuration audit records must identify what type of events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "87b5fe07-d31b-49ba-862d-cf1ced38e42a",
+                "description": "AAA Services configuration audit records must identify the source of the events.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "886f8f22-073e-4ddb-931b-125ecdc086a1",
+                "description": "AAA Services configuration audit records must identify where the events occurred.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "07543da4-b38a-4c03-83ee-93ebc1003772",
+                "description": "AAA Services configuration audit records must identify any individual user or process associated with the event.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "8e631a12-f278-4bca-b34a-14d858c2ad5c",
+                "description": "AAA Services configuration audit records must identify when (date and time) the events occurred.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "4ec14cd7-d1e2-42fa-ae49-8af945f341ee",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "5f3c0c97-5961-4b2a-a1e9-510203e7a303",
+                "description": "AAA Services must be configured to send audit records to a centralized audit server.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4bab8332-7b3a-4274-8ed9-80da685775f1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "9c100ba5-ff3e-43a7-8b7f-214ccddb2b69",
+                "description": "AAA Services must be configured to generate audit records overwriting the oldest audit records in a first-in-first-out manner.\nAAA Services must be configured to queue audit records locally until communication is restored when any audit processing failure occurs.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "ff07028b-edb2-4171-bcf0-c45c203da732",
+                "description": "AAA Services must be configured to alert the SA and ISSO when any audit processing failure occurs.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "bc957fc4-a2a5-435f-822e-9cefe50eb97d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "5b9d39e6-dc37-4468-b5e0-9ebd467cd031",
+                "description": "AAA Services must be configured with a minimum granularity of one second to record time stamps for audit records.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "d6fc9150-4bc5-4774-9841-1eee6d62e3bc",
+                "description": "AAA Services must be configured to use internal system clocks to generate time stamps for audit records.",
+                "control-id": "au-8."
+              },
+              {
+                "uuid": "23720479-c3d0-4447-9ad1-efdeb0df8359",
+                "description": "AAA Services must be configured to use or map to Coordinated Universal Time (UTC) to record time stamps for audit records.",
+                "control-id": "au-8."
+              }
+            ]
+          },
+          {
+            "uuid": "4cb93ff3-c678-4fd6-ac0d-a74c6c709ab3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "18639497-1ceb-41cb-a991-448133e4545c",
+                "description": "AAA Services must be configured to use at least two NTP servers to synchronize time.\nAAA Services must be configured to authenticate all NTP messages received from NTP servers and peers.",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "31f2d88c-6987-435d-b05f-0b57cc19457c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "441a1086-d077-4baf-8f93-299f5a4efdd5",
+                "description": "AAA Services must be configured to audit each authentication and authorization transaction.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "869a40cb-7501-4bc3-8b92-c09a064cb556",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "ac6a86ef-a4fa-4fe1-88a5-2ba3c8f7e1af",
+                "description": "AAA Services must be configured to use at least two NTP servers to synchronize time.\nAAA Services must be configured to authenticate all NTP messages received from NTP servers and peers.\nAAA Services must be configured to use their loopback or OOB management interface address as the source address when originating NTP traffic.\nAAA Services used for 802.1x must be configured to use secure Extensible Authentication Protocol (EAP), such as EAP-TLS, EAP-TTLS, and PEAP.\nAAA Services must not be configured with shared accounts.\nAAA Services used to authenticate privileged users for device management must be configured to connect to the management network.\nAAA Services must be configured to use a unique shared secret for communication (i.e. RADIUS, TACACS+) with clients requesting authentication services.\nAAA Services must be configured to use IP segments separate from production VLAN IP segments.\nAAA Services must be configured to place non-authenticated network access requests in the Unauthorized VLAN or the Guest VLAN with limited access.\nAAA Services must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "8d85cdcb-795b-4c32-8082-f1c069aab8dd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "23d97df4-50d2-4750-aa80-31bc3857b2e8",
+                "description": "AAA Services must be configured to use secure protocols when connecting to directory services.\nAAA Services must be configured to use protocols that encrypt credentials when authenticating clients, as defined in the PPSM CAL and vulnerability assessments.\nAAA Services must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "14f31ea4-f7c0-41f4-8c77-8964924c4845",
+                "description": "AAA Services must be configured to disable non-essential modules.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "ead7774f-8062-475c-9dc6-3270e8e5afc1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "6e8e283d-313b-4595-905c-acec97d7a4fb",
+                "description": "AAA Services must be configured to uniquely identify and authenticate organizational users.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "f20bc0c7-8898-4f2c-beaa-9f4cdfd92b92",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f0f8045b-6b2c-4f30-821f-606c964854d2",
+                "description": "AAA Services must be configured to require multifactor authentication using Personal Identity Verification (PIV) credentials for authenticating privileged user accounts.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1812f441-7cd5-41c2-8539-87a5b3b7eee2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "8b8f9f2a-95d8-45dc-8a41-6468bd25cea9",
+                "description": "AAA Services must be configured to require multifactor authentication using Common Access Card (CAC) Personal Identity Verification (PIV) credentials for authenticating non-privileged user accounts.",
+                "control-id": "ia-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "7ac031ce-c2e7-4754-8d35-6e129487484a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "f5cee2da-4e70-4438-874c-bd51c83b3fa9",
+                "description": "AAA Services used for 802.1x must be configured to authenticate network endpoint devices (supplicants) before the authenticator establishes any connection.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "bbd77868-69ba-483a-856f-eaf96b73053f",
+                "description": "AAA Services used for 802.1x must be configured to uniquely identify network endpoints (supplicants) before the authenticator establishes any connection.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "bd30530a-843e-4173-9ff6-3c3678413e2e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ab6c4b11-1d9e-4180-962b-4bc1706e84a6",
+                "description": "AAA Services must be configured to enforce password complexity by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "3d320c28-2e25-473b-b13c-69cb88da888d",
+                "description": "AAA Services must be configured to encrypt transmitted credentials using a FIPS-validated cryptographic module.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "00bac296-90b3-457f-8fd7-99411058cbb4",
+                "description": "AAA Services must be configured to encrypt locally stored credentials using a FIPS-validated cryptographic module.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "2e218cbc-9f39-4650-93b5-0053c7824dd3",
+                "description": "AAA Services must be configured to enforce 24 hours as the minimum password lifetime.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "2bd12d05-92e0-4865-baa3-80f96228a03d",
+                "description": "AAA Services must be configured to enforce a minimum 15-character password length.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "536ed156-500b-4027-b9b4-299d070d45cb",
+                "description": "AAA Services must be configured to enforce a 60-day maximum password lifetime restriction.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "b0a72233-c521-492c-a36d-b568e2a8be1c",
+                "description": "AAA Services must be configured to allow the use of a temporary password at initial logon with an immediate change to a permanent password.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "c1b395c5-1d3c-456a-a29d-c921e1b82426",
+                "description": "AAA Services must be configured to prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "ac718393-1445-4932-96de-1bdcccc06c3d",
+                "description": "AAA Services must be configured to enforce password complexity by requiring that at least one upper-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "4e2d08e4-e9f4-4886-bc08-a38942ab8985",
+                "description": "AAA Services must be configured to enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d81d4041-3fea-4204-b359-f16ada0a24ea",
+                "description": "AAA Services must be configured to enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "ff5d0ace-c4a4-4830-a0a1-4b85ae26b3af",
+                "description": "AAA Services must be configured to require the change of at least eight of the total number of characters when passwords are changed.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "714d07aa-51c3-4e42-85a9-4bd5fb4198cc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6e371074-ba6a-4eeb-be3c-6b5b9d5fcf5c",
+                "description": "AAA Services must be configured to enforce authorized access to the corresponding private key for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "2b9be19a-a966-4324-9403-38143a69fdf8",
+                "description": "AAA Services must be configured to map the authenticated identity to the user account for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "8d213f8e-a03f-4811-bd8e-0aa83b5b10c6",
+                "description": "AAA Services must be configured to only accept certificates issued by a DoD-approved Certificate Authority for PKI-based authentication.\nAAA Services must be configured to not accept certificates that have been revoked for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "adb30974-a524-4d03-b975-e848053e59f7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "06475cd0-0001-4adc-a17c-2438f3499828",
+                "description": "AAA Services must be configured to protect the confidentiality and integrity of all information at rest.",
+                "control-id": "sc-28."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

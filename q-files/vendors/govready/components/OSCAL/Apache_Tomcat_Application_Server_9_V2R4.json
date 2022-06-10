@@ -1,0 +1,615 @@
+{
+  "component-definition": {
+    "uuid": "0869a278-4eb9-4cfe-8dd5-573b508bb522",
+    "metadata": {
+      "title": "Apache Tomcat Application Server 9 V2R4",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "5410cfd4-8d41-4fe6-9556-c93875374d59",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "644debec-3796-426e-8f20-c351a569935a",
+        "type": "software",
+        "title": "Apache Tomcat Application Server 9 V2R4",
+        "description": "Etincidunt labore dolorem sed dolorem labore dolor aliquam.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "5410cfd4-8d41-4fe6-9556-c93875374d59"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "327fbd52-18d4-44a1-89dc-ed25d20515cc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "10d5f131-3b7c-4bab-9ebc-72ab88f97742",
+                "description": "Default password for keystore must be changed.\nCookies must have secure flag set.\nCookies must have http-only flag set.\nDefaultServlet must be set to readonly for PUT and DELETE.\nConnectors must be secured.\nThe Java Security Manager must be enabled.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "c7f46c2a-585b-460c-9ee3-fb9f2c6d03c3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "b6248d59-fb84-4663-92d4-bb260a8fc89a",
+                "description": "Application user name must be logged.",
+                "control-id": "ac-6.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "c802a2df-4d92-4642-bd4b-b26718075036",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "implemented-requirements": [
+              {
+                "uuid": "8990ec3b-86b8-496b-a50b-27e4e513a6bd",
+                "description": "$CATALINA_HOME/bin folder permissions must be set to 750.\nTomcat user account must be set to nologin.\nTomcat user account must be a non-privileged user.",
+                "control-id": "ac-6.(10)"
+              }
+            ]
+          },
+          {
+            "uuid": "d231b221-dd3c-4dcc-a51b-f332e86e59c8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "130e212f-7706-47e1-b7ca-b3ac0a512f28",
+                "description": "The number of allowed simultaneous sessions to the manager application must be limited.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "7e7d20a1-675d-4f2f-bed3-dea9a2c11893",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "047bd5d7-326d-4537-a9e0-7a7079c32733",
+                "description": "Idle timeout for management application must be set to 10 minutes.",
+                "control-id": "ac-12."
+              }
+            ]
+          },
+          {
+            "uuid": "c464f9cd-d770-4bf1-84df-199a9c2893d4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "7c6cc822-f88e-4706-8da1-c8e19331b4e1",
+                "description": "AccessLogValve must be configured for each application context.",
+                "control-id": "ac-17.(1)"
+              },
+              {
+                "uuid": "7f378175-eebe-4809-a1f1-c2f2013263d7",
+                "description": "LockOutRealms must be used for management of Tomcat.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "a6a91fc6-c2fa-40f8-a6fb-aafd7e3cadd3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "7c5285c4-c87e-4ae1-9169-7d3b71000ede",
+                "description": "HTTP Strict Transport Security (HSTS) must be enabled.\nTLS 1.2 must be used on secured HTTP connectors.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "aacd6cfe-fb4a-494c-b21f-485757e4f8c2",
+                "description": "Secured connectors must be configured to use strong encryption ciphers.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "29b7c53a-7831-4a2a-9732-c352cd6c0ab4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "implemented-requirements": [
+              {
+                "uuid": "1e6837ea-5e8f-4033-a92e-242a35bbc888",
+                "description": "LockOutRealms failureCount attribute must be set to 5 failed logins for admin users.\nLockOutRealms lockOutTime attribute must be set to 600 seconds (10 minutes) for admin users.",
+                "control-id": "ac-17.(9)"
+              }
+            ]
+          },
+          {
+            "uuid": "42cd9583-3eca-4ccd-9f02-05da544b6f1f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "f453e18d-1cd7-4db3-8efa-542c941031f8",
+                "description": "AccessLogValve must be configured for each application context.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "85657145-c1e7-4bba-a0d5-01ab375ca04d",
+                "description": "AccessLogValve must be configured for each application context.\nAccessLogValve must be configured per each virtual host.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "ba55ebba-5e44-4dd9-a5a5-9bbb9f7e92dc",
+                "description": "AccessLogValve must be configured for each application context.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "da475232-9d5c-47bf-a2b6-5df9e8771628",
+                "description": "Remote hostname must be logged.\nHTTP status code must be logged.\nThe first line of request must be logged.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "f9136da9-3328-49c7-ba8e-61d94589280f",
+                "description": "AccessLogValve must be configured per each virtual host.",
+                "control-id": "au-3."
+              },
+              {
+                "uuid": "88fdb587-8797-499e-a6f5-4e923ad27779",
+                "description": "Date and time of events must be logged.",
+                "control-id": "au-3."
+              }
+            ]
+          },
+          {
+            "uuid": "063c7a9b-5071-4db5-a46a-af55e821f9a6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "08d22c07-5472-470e-8f53-075c860f4d19",
+                "description": "AccessLogValve must be configured per each virtual host.",
+                "control-id": "au-3.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "03b6310a-0502-4c66-968d-32a732fde9e4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "2cc65803-b017-43e6-bacc-72183aa4e882",
+                "description": "The application server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "7b00e968-4d6e-458f-b465-4df23a00c6e6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "0e1f427e-2b40-4644-84a2-7d4b09cdac72",
+                "description": "$CATALINA_HOME/bin folder permissions must be set to 750.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "7a784701-d2d7-4c8b-9df6-2cc3ff1422b0",
+                "description": "$CATALINA_BASE/logs folder permissions must be set to 750.\nFiles in the $CATALINA_BASE/logs/ folder must have their permissions set to 640.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "4e308aa2-d747-4a4a-a39a-0467aa1dff10",
+                "description": "$CATALINA_HOME/bin folder permissions must be set to 750.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "dbb44d02-f016-4836-b007-d7e428388187",
+                "description": "Jar files in the $CATALINA_HOME/bin/ folder must have their permissions set to 640.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "4cea8051-d899-4cda-8e1d-23d7e5133c9f",
+                "description": "$CATALINA_HOME/bin folder permissions must be set to 750.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "b8a59e7b-d325-4924-a818-394f15d02916",
+                "description": "Files in the $CATALINA_BASE/conf/ folder must have their permissions set to 640.\n$CATALINA_BASE/conf folder permissions must be set to 750.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "8da96fa2-121e-4b43-a994-8ccc70f2ddbc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "573150cc-4808-4af1-8325-e0883f5667fb",
+                "description": "AccessLogValve must be configured for each application context.",
+                "control-id": "au-10."
+              }
+            ]
+          },
+          {
+            "uuid": "816c3a04-3af2-4339-8bcd-2332a83cc751",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "f4be0561-1341-469f-9250-2d2ba90f6ede",
+                "description": "AccessLogValve must be configured per each virtual host.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "ecd4b457-b4f3-489a-b33e-3951616305f6",
+                "description": "AccessLogValve must be configured for each application context.\nAccessLogValve must be configured per each virtual host.\nAccessLogValve must be configured for Catalina engine.\nChanges to $CATALINA_HOME/bin/ folder must be logged.\nChanges to $CATALINA_BASE/conf/ folder must be logged.\nChanges to $CATALINA_HOME/lib/ folder must be logged.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "d56b2fc1-3fdb-4e40-9d7b-88f2c023989e",
+                "description": "AccessLogValve must be configured for each application context.\nTomcat servers behind a proxy or load balancer must log client IP.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "a1b9617e-b45e-44ac-ade2-ba46e950ce79",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ea42f2dd-34dc-448f-85ca-4ced2901ec0d",
+                "description": "Files in the $CATALINA_BASE/conf/ folder must have their permissions set to 640.\n$CATALINA_BASE/conf folder permissions must be set to 750.\n$CATALINA_HOME folder must be owned by the root user, group tomcat.\n$CATALINA_BASE/conf/ folder must be owned by root,  group tomcat.\n$CATALINA_BASE/logs/ folder must be owned by tomcat user, group tomcat.\n$CATALINA_BASE/temp/ folder must be owned by tomcat user, group tomcat.\n$CATALINA_BASE/temp folder permissions must be set to 750.\n$CATALINA_BASE/work/ folder must be owned by tomcat user, group tomcat.",
+                "control-id": "cm-5.(1)"
+              },
+              {
+                "uuid": "7d99adde-68c7-47c4-ad5a-41c14a983be4",
+                "description": "AccessLogValve must be configured for Catalina engine.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "96ac1fa9-4f92-469c-984f-2028c617e9c9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "28578ea3-7689-4aff-892a-743772123c3e",
+                "description": "Tomcat user UMASK must be set to 0027.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "178ccf2c-5317-46b0-9ab9-d3d72b659cc7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "40ab5b0a-9773-4c0d-bd99-ab38992d4eb3",
+                "description": "STRICT_SERVLET_COMPLIANCE must be set to true.\nRECYCLE_FACADES must be set to true.\nALLOW_BACKSLASH must be set to false.\nENFORCE_ENCODING_IN_GET_WRITER must be set to true.\nTomcat users in a management role must be approved by the ISSO.\nHosted applications must be documented in the system security plan.\nConnectors must be approved by the ISSO.\nConnector address attribute must be set.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "7e1acf1f-35e1-40d7-9447-7cd78d1f7d04",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "eec7efb2-57d0-4992-80f7-6bdef5d09ee9",
+                "description": "Applications in privileged mode must be approved by the ISSO.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "329a6f1b-05b3-4424-8109-c195bfe3826b",
+                "description": "Stack tracing must be disabled.\nThe shutdown port must be disabled.\nUnapproved connectors must be disabled.\nDefaultServlet debug parameter must be disabled.\nDefaultServlet directory listings parameter must be disabled.\nThe deployXML attribute must be set to false in hosted environments.\nAutodeploy must be disabled.\nxpoweredBy attribute must be disabled.\nExample applications must be removed.\nTomcat default ROOT web application must be removed.\nDocumentation must be removed.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "a263cd8e-302b-4230-b71b-1667fe30fcdf",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "aa26c7fa-e47c-40bd-bb7d-f341a7fd476e",
+                "description": "Tomcat management applications must use LDAP realm authentication.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "21e015ef-c492-497c-be53-378a9bd3b0f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "64239d6d-39db-4192-9662-9f76f6ade31e",
+                "description": "JMX authentication must be secured.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "24b18d6f-e9ba-4449-bb53-90ed0057f451",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "46177934-f90f-4370-a931-1be662c9fd38",
+                "description": "TLS must be enabled on JMX.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "ecba69d6-5678-497a-a3c9-b9faba181ccb",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "f9b07703-a213-4386-b47a-7de35ec277d5",
+                "description": "Multifactor certificate-based tokens (CAC) must be used when accessing the management interface.",
+                "control-id": "ia-2.(12)"
+              },
+              {
+                "uuid": "9887c2f3-2d54-4bc3-828e-a52918c35551",
+                "description": "Multifactor certificate-based tokens (CAC) must be used when accessing the management interface.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "96995516-d90a-483f-b255-fc036a8a43d7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "fcfaac92-8ef4-4bba-8fda-f3ae7657deab",
+                "description": "TLS 1.2 must be used on secured HTTP connectors.\nLDAP authentication must be secured.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "08d0ded8-595f-4006-b5ea-d2ea4bbe7a6c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "29011c4d-e6ef-4c32-b515-a566dc1eb3df",
+                "description": "DoD root CA certificates must be installed in Tomcat trust store.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "3bbc9d44-8c8f-484a-9a96-11b2fa73f6b5",
+                "description": "Default password for keystore must be changed.\nKeystore file must be protected.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "762ba9ec-8b87-4acf-b9a6-d18f778d6904",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "e0139ef1-efb5-4f8b-96ed-4430c17a071e",
+                "description": "Tomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "57b0c46d-4116-468e-80b2-313319171638",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "fd4fe474-966e-4600-8d5d-c2939caf2fd9",
+                "description": "Multifactor certificate-based tokens (CAC) must be used when accessing the management interface.",
+                "control-id": "ia-8.(1)"
+              },
+              {
+                "uuid": "53b27f9c-7863-4584-b1af-b0ef08810874",
+                "description": "Multifactor certificate-based tokens (CAC) must be used when accessing the management interface.",
+                "control-id": "ia-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "47162863-e9a0-4491-a765-6a2d265b1cc0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "c6363ef8-0ca2-4489-85c3-0a1ee4f6e163",
+                "description": "Idle timeout for management application must be set to 10 minutes.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "4c7b9a21-2bab-44a6-97eb-7485df9cb380",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "a6efabc3-ebc9-4326-8e87-d68ef070d943",
+                "description": "Access to JMX management interface must be restricted.\nAccess to Tomcat manager application must be restricted.",
+                "control-id": "sc-2."
+              }
+            ]
+          },
+          {
+            "uuid": "7acb18be-5cc2-4556-894b-99e21a3752d6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "0f8f5fed-5b80-4815-84bf-0bec2fe80a48",
+                "description": "The application server, when categorized as a high availability system within RMF, must be in a high-availability (HA) cluster.\nTomcat server must be patched for security vulnerabilities.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "3e131f03-49c5-4801-bc69-1510ff56a32d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "3c6c386d-d460-4c32-85a4-26e91898d9ac",
+                "description": "TLS 1.2 must be used on secured HTTP connectors.\nTomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "0cec9cc2-e54b-4fd9-9133-a41f5de2bfef",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "23499ec7-6074-40c9-a377-d84fb631f8aa",
+                "description": "Tomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4db6ad02-bf48-42d9-9442-84b59834db9f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "implemented-requirements": [
+              {
+                "uuid": "fb8b301c-5676-41f5-bfd1-a1fd82d81e1b",
+                "description": "Application servers must use NIST-approved or NSA-approved key management technology and processes.",
+                "control-id": "sc-13."
+              }
+            ]
+          },
+          {
+            "uuid": "99b95382-bdc0-467b-a7b0-9341994f39ec",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "implemented-requirements": [
+              {
+                "uuid": "d00c7c85-abe0-4314-85f5-5a238b709a62",
+                "description": "Tomcat servers must mutually authenticate proxy or load balancer connections.",
+                "control-id": "sc-23."
+              }
+            ]
+          },
+          {
+            "uuid": "e4667823-dcd2-4bba-9081-82616793011f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "87b02702-c624-426e-8eef-3d3203fccc58",
+                "description": "Tomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "sc-23.(3)"
+              },
+              {
+                "uuid": "6ee43081-b67d-4a8b-b193-184253f3bab1",
+                "description": "Tomcat must be configured to limit data exposure between applications.",
+                "control-id": "sc-23.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "90b951c3-ebec-4ef4-90cb-3803c4b12243",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "219e401f-b5ca-4256-94a4-d993eb9a5b05",
+                "description": "Certificates in the trust store must be issued/signed by an approved CA.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "d1113ea3-8455-4ba7-9822-184e33670f52",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "1dce6586-9796-4053-be0a-554db429d217",
+                "description": "Clusters must operate on a trusted network.",
+                "control-id": "sc-24."
+              }
+            ]
+          },
+          {
+            "uuid": "26b97ed9-bbf0-4ff4-bb99-a62fecfe6957",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "256c78eb-2286-40ea-bd37-e539a0212e80",
+                "description": "Tomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "sc-28.(1)"
+              },
+              {
+                "uuid": "0dc097c1-a92d-4898-b7c9-cb31bf15eae6",
+                "description": "Tomcat must use FIPS-validated ciphers on secured connectors.",
+                "control-id": "sc-28.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "888e802b-3558-4333-840f-ac449fae6939",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "4f9abd64-6d0e-4173-b113-0c31dc6c5a14",
+                "description": "Tomcat server must be patched for security vulnerabilities.",
+                "control-id": "si-2."
+              }
+            ]
+          },
+          {
+            "uuid": "9923fd64-340a-42b6-96f1-767391c91776",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "bff4ae1b-bddf-4993-b177-e58ba400de40",
+                "description": "Default error pages for manager application must be customized.\nErrorReportValve showReport must be set to false.\nTomcat server version must not be sent with warnings and errors.",
+                "control-id": "si-11."
+              },
+              {
+                "uuid": "ca68ac49-c3f7-4e37-b0d0-be13aef6cb1c",
+                "description": "ErrorReportValve showServerInfo must be set to false.",
+                "control-id": "si-11."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

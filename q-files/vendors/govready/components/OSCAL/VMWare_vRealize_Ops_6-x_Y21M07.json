@@ -1,0 +1,97 @@
+{
+  "component-definition": {
+    "uuid": "1d3d71aa-563b-4e3b-8581-60f6806bcb22",
+    "metadata": {
+      "title": "VMWare vRealize Ops 6-x Y21M07",
+      "last-modified": "2022-06-10T12:50:58",
+      "version": "2022-06-10T12:50:58",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "eb366705-a84e-4fc5-954a-8e4df67b975e",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "9421fc40-6ad9-4e4f-8874-5bd9262d55a7",
+        "type": "software",
+        "title": "VMWare vRealize Ops 6-x Y21M07",
+        "description": "Sed dolore tempora velit.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "eb366705-a84e-4fc5-954a-8e4df67b975e"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "caa9969d-043f-440c-b476-e053c3034e66",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "2236f3a6-992d-4243-99af-2124cc6b9761",
+                "description": "The vRealize Operations appliance must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "172792cd-fa84-4edb-96da-7dd890439a42",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "3395aa6d-8213-41f5-8c0b-c0a6334445eb",
+                "description": "The vRealize Operations server must use an enterprise user management system to uniquely identify and authenticate users (or processes acting on behalf of organizational users).",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "52170d1e-8a13-4df6-815d-8024400cf861",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ad11f368-3019-4a91-bbb8-40a0dc5d1160",
+                "description": "The vRealize Operations server session timeout must be configured.",
+                "control-id": "sc-23.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "dbeb6930-267a-477f-854b-1cfffe10e64c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "0dff5698-2e99-414c-a305-5983d11eb827",
+                "description": "The vRealize Operations server must only allow the use of DoD PKI-established certificate authorities for verification of the establishment of protected sessions.",
+                "control-id": "sc-23.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "54a6229a-b72a-43a8-b7eb-6c9fb34d6305",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "implemented-requirements": [
+              {
+                "uuid": "2815b1e8-0274-427e-953a-61ea9b1bfea6",
+                "description": "The vRealize Operations server must be configured to perform complete application deployments.",
+                "control-id": "sc-24."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

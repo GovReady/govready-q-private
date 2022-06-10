@@ -1,0 +1,735 @@
+{
+  "component-definition": {
+    "uuid": "6b1a317c-c965-4360-99f1-2dce993a8209",
+    "metadata": {
+      "title": "RHEL 8 V1R5",
+      "last-modified": "2022-06-10T12:50:50",
+      "version": "2022-06-10T12:50:50",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "84fcba58-40ee-43f3-936e-cac08f3f084f",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "91babb8d-b517-4e46-9aab-0c7ea19fce76",
+        "type": "software",
+        "title": "RHEL 8 V1R5",
+        "description": "Quaerat est adipisci dolor.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "84fcba58-40ee-43f3-936e-cac08f3f084f"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "9c474e57-307a-4520-a36a-f63cba9e013e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "e6f6c008-3603-4dd2-a326-cdf5d2d22000",
+                "description": "RHEL 8 emergency accounts must be automatically removed or disabled after the crisis is resolved or within 72 hours.",
+                "control-id": "ac-2.(2)"
+              },
+              {
+                "uuid": "1c01ee3d-c26a-41e4-a5b7-d31b4ff329d4",
+                "description": "RHEL 8 temporary user accounts must be provisioned with an expiration time of 72 hours or less.",
+                "control-id": "ac-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "d1dd1f34-a599-4879-bb71-2263be071b00",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "79862e51-40e3-42f9-9aa5-95560a118fbe",
+                "description": "RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user mode and maintenance.\nRHEL 8 operating systems booted with a BIOS must require authentication upon booting into single-user and maintenance modes.\nRHEL 8 operating systems must require authentication upon booting into rescue mode.\nRHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require a unique superusers name upon booting into single-user mode and maintenance.\nRHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes.\nRHEL 8 operating systems must require authentication upon booting into emergency mode.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "09798f21-dd1d-44e6-9a12-3dc618268e70",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "83b2321f-a33e-4137-a8f3-a994b08974b5",
+                "description": "RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks.\nRHEL 8 must enable kernel parameters to enforce discretionary access control on hardlinks.",
+                "control-id": "ac-3.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "445054bb-f6e7-47fe-ac5a-e538fac8eec5",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "0d84a3dd-9fe4-48f0-8e5d-65931ec7c7aa",
+                "description": "RHEL 8 must use the invoking user's password for privilege escalation when using \"sudo\".",
+                "control-id": "ac-6.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "7e7fbe3a-3d53-4f47-8161-c3aae501db0a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(8).",
+            "implemented-requirements": [
+              {
+                "uuid": "efec3e49-cb55-4f58-a504-9ef9605b3abb",
+                "description": "The RHEL 8 audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software.",
+                "control-id": "ac-6.(8)"
+              }
+            ]
+          },
+          {
+            "uuid": "53e0e580-aaa0-4d87-8358-75acc21cf85c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "cdc9ee06-d478-49fc-81e9-cd36dc52c16c",
+                "description": "RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur.\nRHEL 8 must automatically lock an account when three unsuccessful logon attempts occur.\nRHEL 8 must automatically lock an account when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must automatically lock an account when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must ensure account lockouts persist.\nRHEL 8 must ensure account lockouts persist.\nRHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur.\nRHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur.\nRHEL 8 must log user name information when unsuccessful logon attempts occur.\nRHEL 8 must log user name information when unsuccessful logon attempts occur.\nRHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.\nRHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/system-auth file.\nRHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/password-auth file.\nRHEL 8 systems, versions 8.2 and above, must configure SELinux context type to allow the use of a non-default faillock tally directory.\nRHEL 8 systems below version 8.2 must configure SELinux context type to allow the use of a non-default faillock tally directory.",
+                "control-id": "ac-7."
+              },
+              {
+                "uuid": "a411b48b-a4df-4743-842a-895b46683e06",
+                "description": "RHEL 8 systems, versions 8.2 and above, must configure SELinux context type to allow the use of a non-default faillock tally directory.\nRHEL 8 systems below version 8.2 must configure SELinux context type to allow the use of a non-default faillock tally directory.",
+                "control-id": "ac-7."
+              }
+            ]
+          },
+          {
+            "uuid": "7464b6ef-6a0b-4871-b9d5-a4d31443e320",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "1c07e5f1-b25d-4e3d-ba96-75002b6ec4ac",
+                "description": "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon.\nRHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.\nRHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.\nRHEL 8 must display a banner before granting local or remote access to the system via a graphical user logon.",
+                "control-id": "ac-8."
+              }
+            ]
+          },
+          {
+            "uuid": "6508f59e-53ea-4ed5-95ba-6d8a74dbdef6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "b17c45d4-3711-4f7c-80b7-098f9be5ab1a",
+                "description": "RHEL 8 must limit the number of concurrent sessions to ten for all accounts and/or account types.",
+                "control-id": "ac-10."
+              }
+            ]
+          },
+          {
+            "uuid": "5462c9d4-f886-4be7-b8f8-0c15391fdb1f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "343ea39c-2267-4ccb-8808-ac29c980828e",
+                "description": "RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for graphical user sessions.\nRHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for command line sessions.\nRHEL 8 must ensure session control is automatically started at shell initialization.\nRHEL 8 must prevent users from disabling session control mechanisms.\nRHEL 8 must be able to initiate directly a session lock for all connection types using smartcard when the smartcard is removed.\nRHEL 8 must have the tmux package installed.",
+                "control-id": "ac-11."
+              },
+              {
+                "uuid": "1a5872fc-d4ac-432a-b2ae-97f8dbd0979b",
+                "description": "RHEL 8 must automatically lock graphical user sessions after 15 minutes of inactivity.\nRHEL 8 must automatically lock command line user sessions after 15 minutes of inactivity.\nRHEL 8 must prevent a user from overriding the session lock-delay setting for the graphical user interface.\nRHEL 8 must initiate a session lock for graphical user interfaces when the screensaver is activated.\nRHEL 8 must prevent a user from overriding the session idle-delay setting for the graphical user interface.\nRHEL 8 must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface.",
+                "control-id": "ac-11."
+              }
+            ]
+          },
+          {
+            "uuid": "143b6e7a-133d-45cb-8a15-ddbf465c1420",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "280a8f1a-8fbd-44bf-bf51-421a7e770931",
+                "description": "All RHEL 8 remote access methods must be monitored.",
+                "control-id": "ac-17.(1)"
+              },
+              {
+                "uuid": "a61e3185-2e3f-41b5-a17e-206fc95a4735",
+                "description": "A RHEL 8 firewall must employ a deny-all, allow-by-exception policy for allowing connections to other systems.\nA firewall must be installed on RHEL 8.\nA firewall must be active on RHEL 8.",
+                "control-id": "ac-17.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "67167a51-2670-442e-a10f-9c894d228400",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "768c9b8f-d5b2-4540-ae25-58261ef056f5",
+                "description": "The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms.\nThe RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH server connections.\nThe RHEL 8 operating system must implement DoD-approved encryption in the OpenSSL package.\nThe RHEL 8 operating system must implement DoD-approved TLS encryption in the OpenSSL package.\nThe RHEL 8 operating system must implement DoD-approved TLS encryption in the GnuTLS package.\nThe RHEL 8 SSH daemon must be configured to use system-wide crypto policies.",
+                "control-id": "ac-17.(2)"
+              },
+              {
+                "uuid": "3f03670d-2c12-414b-ac82-6611f50bd859",
+                "description": "RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.\nRHEL 8 must force a frequent session key renegotiation for SSH connections to the server.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "8d42141d-cb22-4ced-8891-05556b751cee",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-18.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "1a45ca42-19f6-4891-a9d5-7a9e2ad51314",
+                "description": "RHEL 8 Bluetooth must be disabled.",
+                "control-id": "ac-18.(1)"
+              },
+              {
+                "uuid": "fd4ae6f8-b1f5-425c-aaf5-48d95dd2b65c",
+                "description": "RHEL 8 wireless network adapters must be disabled.",
+                "control-id": "ac-18.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "0cdd7485-3fe9-4fca-beba-6ef507ed5d1c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "281f7486-2d62-4180-93ae-632adb1b4146",
+                "description": "RHEL 8 must allocate an audit_backlog_limit of sufficient size to capture processes that start prior to the audit daemon.\nRHEL 8 must allocate audit record storage capacity to store at least one week of audit records, when audit records are not immediately sent to a central audit record storage facility.",
+                "control-id": "au-4."
+              }
+            ]
+          },
+          {
+            "uuid": "6fabfe27-7cbb-4aba-9a9e-18a64f393cb6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "ed110db9-d49d-4115-ad5d-715abe7b999c",
+                "description": "RHEL 8 must label all off-loaded audit logs before sending them to the central log server.\nThe RHEL 8 audit records must be off-loaded onto a different system or storage media from the system being audited.\nRHEL 8 must take appropriate action when the internal event queue is full.\nRHEL 8 must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.\nRHEL 8 must authenticate the remote logging server for off-loading audit logs.",
+                "control-id": "au-4.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "327a1af0-7462-4277-8fa3-ca5dbd32f407",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "659a906c-95e0-47e2-96c8-fe67f9395af9",
+                "description": "The RHEL 8 System must take appropriate action when an audit processing failure occurs.\nThe RHEL 8 audit system must take appropriate action when the audit storage volume is full.",
+                "control-id": "au-5."
+              },
+              {
+                "uuid": "2f470192-4dc2-4576-afa2-3a5b3c96f9ca",
+                "description": "The RHEL 8 System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) must be alerted of an audit processing failure event.\nThe RHEL 8 Information System Security Officer (ISSO) and System Administrator (SA) (at a minimum) must have mail aliases to be notified of an audit processing failure.",
+                "control-id": "au-5."
+              }
+            ]
+          },
+          {
+            "uuid": "a523635a-81c9-4af2-a78f-69e6e981bc90",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "e35c98e5-84c5-46b3-a282-dd92e02245b7",
+                "description": "RHEL 8 must take action when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity.\nRHEL 8 must notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated audit record storage volume 75 percent utilization.",
+                "control-id": "au-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ab42991a-83b3-449c-9927-d674d6c5a4a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "6a35c7ba-1457-4480-bfb0-d24034fd0b06",
+                "description": "RHEL 8 must securely compare internal information system clocks at least every 24 hours with a server synchronized to an authoritative time source, such as the United States Naval Observatory (USNO) time servers, or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).",
+                "control-id": "au-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "4f887edc-71d6-45ff-b712-06368eb8290f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "4fa1b51a-97b3-4751-b400-3f3156cacaf5",
+                "description": "RHEL 8 audit logs must have a mode of 0600 or less permissive to prevent unauthorized read access.\nRHEL 8 audit logs must be owned by root to prevent unauthorized read access.\nRHEL 8 audit logs must be group-owned by root to prevent unauthorized read access.\nRHEL 8 audit log directory must be owned by root to prevent unauthorized read access.\nRHEL 8 audit log directory must be group-owned by root to prevent unauthorized read access.\nRHEL 8 audit log directory must have a mode of 0700 or less permissive to prevent unauthorized read access.\nRHEL 8 audit system must protect auditing rules from unauthorized change.\nRHEL 8 audit system must protect logon UIDs from unauthorized change.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "ed0130de-b963-45df-940b-8a0092fc76a7",
+                "description": "RHEL 8 audit tools must have a mode of 0755 or less permissive.\nRHEL 8 audit tools must be owned by root.\nRHEL 8 audit tools must be group-owned by root.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "c246f09a-4842-44f7-a5f7-7bd23a5a132e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "eccd80cc-3407-4760-93c5-7ddf8ce6b9c9",
+                "description": "RHEL 8 must use cryptographic mechanisms to protect the integrity of audit tools.",
+                "control-id": "au-9.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "cdd5977b-be48-4e37-8eaf-f931b624f296",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "156fda9b-b428-456e-b97c-66e7667d579d",
+                "description": "RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
+                "control-id": "au-12."
+              },
+              {
+                "uuid": "2d290558-c557-4521-a775-bbbcebcd9272",
+                "description": "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.\nRHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.d/.\nThe RHEL 8 audit package must be installed.\nSuccessful/unsuccessful uses of the su command in RHEL 8 must generate an audit record.\nThe RHEL 8 audit system must be configured to audit any usage of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls.\nSuccessful/unsuccessful uses of the chage command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the passwd command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the mount command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the umount command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the mount syscall in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the unix_update in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of postdrop in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of postqueue in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of semanage in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of setfiles in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of unix_chkpwd in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the ssh-keysign in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the setfacl command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the pam_timestamp_check command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the newgrp command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the init_module and finit_module system calls in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the rename, unlink, rmdir, renameat, and unlinkat system calls in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the gpasswd command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the truncate, ftruncate, creat, open, openat, and open_by_handle_at system calls in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the chown, fchown, fchownat, and lchown system calls in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the chacl command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record.\nSuccessful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record.\nRHEL 8 must enable auditing of processes that start prior to the audit daemon.\nRHEL 8 must enable Linux audit logging for the USBGuard daemon.\nRHEL 8 audit records must contain information to establish what type of events occurred, the source of events, where events occurred, and the outcome of events.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "e404d82a-809f-4bf6-a328-006926f1956f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-3.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "782631d8-90de-4346-94b5-69c4d3fb55d7",
+                "description": "The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency.",
+                "control-id": "cm-3.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "b12df375-b50e-4eb6-aefc-578b1de8962d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "ffcb78c6-610f-430a-ad9a-75095ece5f38",
+                "description": "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.\nRHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.\nRHEL 8 must prevent the loading of a new kernel for later execution.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "34795b6c-376f-4003-90a5-75a453b59a11",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "730e101c-4c4d-432e-b76c-0fb05b5837a5",
+                "description": "RHEL 8 system commands must have mode 755 or less permissive.\nRHEL 8 system commands must be owned by root.\nRHEL 8 system commands must be group-owned by root or a system account.\nRHEL 8 library files must have mode 755 or less permissive.\nRHEL 8 library files must be owned by root.\nRHEL 8 library files must be group-owned by root or a system account.\nRHEL 8 library directories must have mode 755 or less permissive.\nRHEL 8 library directories must be owned by root.\nRHEL 8 library directories must be group-owned by root or a system account.",
+                "control-id": "cm-5.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "82378733-edbb-4d27-b3fe-c13dc7f7f26c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "892d5848-fdda-4be2-a889-0b3d1257620e",
+                "description": "RHEL 8 must be a vendor-supported release.\nRHEL 8 vendor packaged system security patches and updates must be installed and up to date.\nRHEL 8 must ensure the SSH server uses strong entropy.\nThere must be no shosts.equiv files on the RHEL 8 operating system.\nThere must be no .shosts files on the RHEL 8 operating system.\nRHEL 8 must enable the hardware random number generator entropy gatherer service.\nThe RHEL 8 SSH public host key files must have mode 0644 or less permissive.\nThe RHEL 8 SSH private host key files must have mode 0600 or less permissive.\nThe RHEL 8 SSH daemon must perform strict mode checking of home directory configuration files.\nThe RHEL 8 SSH daemon must not allow compression or must only allow compression after successful authentication.\nThe RHEL 8 SSH daemon must not allow authentication using known host\u2019s authentication.\nThe RHEL 8 SSH daemon must not allow Kerberos authentication, except to fulfill documented and validated mission requirements.\nRHEL 8 must use a separate file system for /var.\nRHEL 8 must use a separate file system for /var/log.\nRHEL 8 must use a separate file system for the system audit data path.\nA separate RHEL 8 filesystem must be used for the /tmp directory.\nThe rsyslog service must be running in RHEL 8.\nRHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that contain user home directories.\nRHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot directory.\nRHEL 8 must prevent special devices on non-root local partitions.\nRHEL 8 must prevent code from being executed on file systems that contain user home directories.\nRHEL 8 must prevent special devices on file systems that are used with removable media.\nRHEL 8 must prevent code from being executed on file systems that are used with removable media.\nRHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.\nRHEL 8 must prevent code from being executed on file systems that are imported via Network File System (NFS).\nRHEL 8 must prevent special devices on file systems that are imported via Network File System (NFS).\nRHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are imported via Network File System (NFS).\nLocal RHEL 8 initialization files must not execute world-writable programs.\nRHEL 8 must disable kernel dumps unless needed.\nRHEL 8 must disable the kernel.core_pattern.\nRHEL 8 must disable acquiring, saving, and processing core dumps.\nRHEL 8 must disable core dumps for all users.\nRHEL 8 must disable storing core dumps.\nRHEL 8 must disable core dump backtraces.\nFor RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured.\nExecutable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory.\nAll RHEL 8 world-writable directories must be owned by root, sys, bin, or an application user.\nAll RHEL 8 world-writable directories must be group-owned by root, sys, bin, or an application group.\nAll RHEL 8 local interactive users must have a home directory assigned in the /etc/passwd file.\nAll RHEL 8 local interactive user home directories must have mode 0750 or less permissive.\nAll RHEL 8 local interactive user home directories must be group-owned by the home directory owner\u2019s primary group.\nAll RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist.\nAll RHEL 8 local interactive user accounts must be assigned a home directory upon creation.\nAll RHEL 8 local initialization files must have mode 0740 or less permissive.\nAll RHEL 8 local files and directories must have a valid owner.\nAll RHEL 8 local files and directories must have a valid group owner.\nA separate RHEL 8 filesystem must be used for user home directories (such as /home or an equivalent).\nUnattended or automatic logon via the RHEL 8 graphical user interface must not be allowed.\nRHEL 8 must not allow users to override SSH environment variables.\nRHEL 8 must ensure the password complexity module is enabled in the password-auth file.\nRHEL 8 must prevent the use of dictionary words for passwords.\nRHEL 8 must enforce a delay of at least four seconds between logon prompts following a failed logon attempt.\nRHEL 8 must not have unnecessary accounts.\nRHEL 8 must not allow accounts configured with blank or null passwords.\nRHEL 8 must display the date and time of the last successful account logon upon logon.\nRHEL 8 must display the date and time of the last successful account logon upon an SSH logon.\nRHEL 8 must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.\nRHEL 8 must set the umask value to 077 for all local interactive user accounts.\nRHEL 8 must define default permissions for logon and non-logon shells.\nCron logging must be implemented in RHEL 8.\nThe RHEL 8 audit system must audit local events.\nRHEL 8 must resolve audit information before writing to disk.\nRHEL 8 must have the packages required for offloading audit logs installed.\nRHEL 8 must have the packages required for encrypting offloaded audit logs installed.\nThe x86 Ctrl-Alt-Delete key sequence must be disabled on RHEL 8.\nThe x86 Ctrl-Alt-Delete key sequence in RHEL 8 must be disabled if a graphical user interface is installed.\nThe systemd Ctrl-Alt-Delete burst key sequence in RHEL 8 must be disabled.\nThe debug-shell systemd service must be disabled on RHEL 8.\nThe Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for RHEL 8 operational support.\nThe root account must be the only account having unrestricted access to the RHEL 8 system.\nRHEL 8 must prevent IPv6 Internet Control Message Protocol (ICMP) redirect messages from being accepted.\nRHEL 8 must not send Internet Control Message Protocol (ICMP) redirects.\nRHEL 8 must not respond to Internet Control Message Protocol (ICMP) echoes sent to a broadcast address.\nRHEL 8 must not forward IPv6 source-routed packets.\nRHEL 8 must not forward IPv6 source-routed packets by default.\nRHEL 8 must not enable IPv6 packet forwarding unless the system is a router.\nRHEL 8 must not accept router advertisements on all IPv6 interfaces.\nRHEL 8 must not accept router advertisements on all IPv6 interfaces by default.\nRHEL 8 must not allow interfaces to perform Internet Control Message Protocol (ICMP) redirects by default.\nRHEL 8 must ignore IPv6 Internet Control Message Protocol (ICMP) redirect messages.\nRHEL 8 must disable access to network bpf syscall from unprivileged processes.\nRHEL 8 must restrict usage of ptrace to descendant  processes.\nRHEL 8 must restrict exposed kernel pointer addresses access.\nRHEL 8 must disable the use of user namespaces.\nRHEL 8 must use reverse path filtering on all IPv4 interfaces.\nRHEL 8 must be configured to prevent unrestricted mail relaying.\nThe RHEL 8 file integrity tool must be configured to verify extended attributes.\nThe RHEL 8 file integrity tool must be configured to verify Access Control Lists (ACLs).\nThe graphical display manager must not be installed on RHEL 8 unless approved.\nRHEL 8 network interfaces must not be in promiscuous mode.\nRHEL 8 remote X connections for interactive users must be disabled unless to fulfill documented and validated mission requirements.\nThe RHEL 8 SSH daemon must prevent remote hosts from connecting to the proxy display.\nIf the Trivial File Transfer Protocol (TFTP) server is required, the RHEL 8 TFTP daemon must be configured to operate in secure mode.\nA File Transfer Protocol (FTP) server package must not be installed unless mission essential on RHEL 8.\nThe iprutils package must not be installed unless mission essential on RHEL 8.\nThe tuned package must not be installed unless mission essential on RHEL 8.\nRHEL 8 must restrict privilege elevation to authorized personnel.\nRHEL 8 must have the packages required to use the hardware random number generator entropy gatherer service.\nThe RHEL 8 SSH daemon must not allow GSSAPI authentication, except to fulfill documented and validated mission requirements.\nRHEL 8 must use a separate file system for /var/tmp.\nRHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot/efi directory.\nAll RHEL 8 local interactive user home directory files must have mode 0750 or less permissive.\nRHEL 8 must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member.\nRHEL 8 must disable the user list at logon for graphical user interfaces.\nRHEL 8 must not allow blank or null passwords in the system-auth file.\nRHEL 8 must not allow blank or null passwords in the password-auth file.\nRHEL 8 must prevent IPv4 Internet Control Message Protocol (ICMP) redirect messages from being accepted.\nRHEL 8 must not forward IPv4 source-routed packets.\nRHEL 8 must not forward IPv4 source-routed packets by default.\nRHEL 8 must ignore IPv4 Internet Control Message Protocol (ICMP) redirect messages.\nRHEL 8 must enable hardening for the Berkeley Packet Filter Just-in-time compiler.\nRHEL 8 must not enable IPv4 packet forwarding unless the system is a router.\nThe RHEL 8 operating system must not have accounts configured with blank or null passwords.\nRHEL 8 must specify the default \"include\" directory for the /etc/sudoers file.\nRHEL 8 must ensure the password complexity module is enabled in the system-auth file.\nRHEL 8 systems below version 8.4 must ensure the password complexity module in the system-auth file is configured for three retries or less.\nRHEL 8 systems below version 8.4 must ensure the password complexity module in the password-auth file is configured for three retries or less.\nRHEL 8 systems, version 8.4 and above, must ensure the password complexity module is configured for three retries or less.\nThe graphical display manager must not be the default target on RHEL 8 unless approved.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "b8f389ab-9c2e-4d6b-83fb-cfed49a09460",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "1af644dc-271f-4413-8214-ba04ea4b5e1e",
+                "description": "RHEL 8 must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management (PPSM) Category Assignments List (CAL) and vulnerability assessments.",
+                "control-id": "cm-7."
+              },
+              {
+                "uuid": "f2281ab4-4724-4d6c-9310-4484054a0d2d",
+                "description": "RHEL 8 must disable the chrony daemon from acting as a server.\nRHEL 8 must disable network management of the chrony daemon.\nRHEL 8 must not have the telnet-server package installed.\nRHEL 8 must not have any automated bug reporting tools installed.\nRHEL 8 must not have the sendmail package installed.\nRHEL 8 must enable mitigations against processor-based vulnerabilities.\nRHEL 8 must not have the rsh-server package installed.\nRHEL 8 must cover or disable the built-in or attached camera when not in use.\nRHEL 8 must disable the asynchronous transfer mode (ATM) protocol.\nRHEL 8 must disable the controller area network (CAN) protocol.\nRHEL 8 must disable the stream control transmission protocol (SCTP).\nRHEL 8 must disable the transparent inter-process communication (TIPC) protocol.\nRHEL 8 must disable mounting of cramfs.\nRHEL 8 must disable IEEE 1394 (FireWire) Support.\nThe gssproxy package must not be installed unless mission essential on RHEL 8.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "6ce47461-2e10-4f6a-9b86-67b54f26c62e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "5719545f-4df1-470a-856f-951b2ad7672b",
+                "description": "RHEL 8 must mount /dev/shm with the nodev option.\nRHEL 8 must mount /dev/shm with the nosuid option.\nRHEL 8 must mount /dev/shm with the noexec option.\nRHEL 8 must mount /tmp with the nodev option.\nRHEL 8 must mount /tmp with the nosuid option.\nRHEL 8 must mount /tmp with the noexec option.\nRHEL 8 must mount /var/log with the nodev option.\nRHEL 8 must mount /var/log with the nosuid option.\nRHEL 8 must mount /var/log with the noexec option.\nRHEL 8 must mount /var/log/audit with the nodev option.\nRHEL 8 must mount /var/log/audit with the nosuid option.\nRHEL 8 must mount /var/log/audit with the noexec option.\nRHEL 8 must mount /var/tmp with the nodev option.\nRHEL 8 must mount /var/tmp with the nosuid option.\nRHEL 8 must mount /var/tmp with the noexec option.\nThe RHEL 8 fapolicy module must be installed.\nThe RHEL 8 fapolicy module must be enabled.\nThe RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs.",
+                "control-id": "cm-7.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "51eba1a0-5c14-4c57-82a5-8b3b0ce22446",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "4d27e6a8-7428-44aa-b285-b12adc801ac8",
+                "description": "RHEL 8 duplicate User IDs (UIDs) must not exist for interactive users.",
+                "control-id": "ia-2."
+              }
+            ]
+          },
+          {
+            "uuid": "b3885311-b011-4b80-9f24-d67aa6415019",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "c29cd845-7605-451b-a606-8a23832b48b0",
+                "description": "RHEL 8 must implement smart card logon for multifactor authentication for access to interactive accounts.",
+                "control-id": "ia-2.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "2cd6730e-f21e-433a-a0f5-df12b5e221f2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "implemented-requirements": [
+              {
+                "uuid": "c6bd42c2-d7b0-4392-900a-1ba354494634",
+                "description": "RHEL 8 must not permit direct logons to the root account using remote access via SSH.",
+                "control-id": "ia-2.(5)"
+              }
+            ]
+          },
+          {
+            "uuid": "76269736-02e7-420d-a685-98481e1990a2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(11).",
+            "implemented-requirements": [
+              {
+                "uuid": "7a8081d1-f33a-4f87-bc7a-3d358393c2af",
+                "description": "RHEL 8 must have the packages required for multifactor authentication installed.\nRHEL 8 must implement certificate status checking for multifactor authentication.",
+                "control-id": "ia-2.(11)"
+              }
+            ]
+          },
+          {
+            "uuid": "ff0dadac-fb96-4fc7-b58e-6840b17272f1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "4fca9f0f-1f97-4601-afa1-6a0f3bfd99bf",
+                "description": "RHEL 8 must accept Personal Identity Verification (PIV) credentials.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "73f7dc06-65cd-425e-96e3-b6caca39d358",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "25d07f16-b4db-4d66-bd09-5e17e770d1dd",
+                "description": "RHEL 8 must block unauthorized peripherals before establishing a connection.\nRHEL 8 must have the USBGuard installed.\nRHEL 8 must enable the USBGuard.",
+                "control-id": "ia-3."
+              },
+              {
+                "uuid": "d8e886d1-1c5e-41ce-b1ba-13b9ab27c9c0",
+                "description": "The RHEL 8 file system automounter must be disabled unless required.\nRHEL 8 must be configured to disable USB mass storage.",
+                "control-id": "ia-3."
+              }
+            ]
+          },
+          {
+            "uuid": "6cafda91-a983-4560-8f7c-3875f4aadd57",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "73603c9b-c71a-4963-bc15-8399558f244b",
+                "description": "RHEL 8 account identifiers (individuals, groups, roles, and devices) must be disabled after 35 days of inactivity.",
+                "control-id": "ia-4."
+              }
+            ]
+          },
+          {
+            "uuid": "35f244c8-3bb7-4b8b-8cb0-d74b1b440450",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "cdb00816-91db-46e2-a40e-468b5c8c1afd",
+                "description": "RHEL 8 must enforce password complexity by requiring that at least one lower-case character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "d9d95d04-77e9-445f-b171-e6a1777514c8",
+                "description": "RHEL 8 must encrypt all stored passwords with a FIPS 140-2 approved cryptographic hashing algorithm.\nRHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords.\nThe RHEL 8 shadow password suite must be configured to use a sufficient number of hashing rounds.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "50b17018-4a4e-440a-a68c-3e15a4bf6fc8",
+                "description": "RHEL 8 passwords must have a 24 hours/1 day minimum password lifetime restriction in /etc/shadow.\nRHEL 8 passwords for new users or password changes must have a 24 hours/1 day minimum password lifetime restriction in /etc/logins.def.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "69a66ca8-5e49-4e74-8b0f-42d82d691c4f",
+                "description": "RHEL 8 passwords must have a minimum of 15 characters.\nRHEL 8 passwords for new users must have a minimum of 15 characters.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "773df523-bad0-4abc-9892-89c1d30f55ad",
+                "description": "RHEL 8 user account passwords must have a 60-day maximum password lifetime restriction.\nRHEL 8 user account passwords must be configured so that existing passwords are restricted to a 60-day maximum lifetime.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "25721678-d7b0-4f14-9f7e-438d22affe19",
+                "description": "RHEL 8 must be configured in the password-auth file to prohibit password reuse for a minimum of five generations.\nRHEL 8 must be configured in the system-auth file to prohibit password reuse for a minimum of five generations.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "62d167fb-6490-4f0e-8f57-e828d1d0f93b",
+                "description": "RHEL 8 must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "10f3d7fe-f03d-4d91-8586-0c847738d971",
+                "description": "RHEL 8 must enforce password complexity by requiring that at least one numeric character be used.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "1528ded3-1862-46f9-b150-951c2bd7236b",
+                "description": "All RHEL 8 passwords must contain at least one special character.",
+                "control-id": "ia-5.(1)"
+              },
+              {
+                "uuid": "fea4f08d-eb85-4474-88f7-4d94b24d6101",
+                "description": "RHEL 8 must require the maximum number of repeating characters of the same character class be limited to four when passwords are changed.\nRHEL 8 must require the maximum number of repeating characters be limited to three when passwords are changed.\nRHEL 8 must require the change of at least four character classes when passwords are changed.\nRHEL 8 must require the change of at least 8 characters when passwords are changed.",
+                "control-id": "ia-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "ecb1aa12-3247-408e-8fbf-2cf5e8240caa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "6375d50a-bb4f-4ae3-ba04-0f6efdad53c5",
+                "description": "RHEL 8, for certificate-based authentication, must enforce authorized access to the corresponding private key.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "d2496690-5ed4-42a1-bbc2-ede40f09ea58",
+                "description": "RHEL 8 must map the authenticated identity to the user or group account for PKI-based authentication.",
+                "control-id": "ia-5.(2)"
+              },
+              {
+                "uuid": "3fd4efe5-33b8-48f2-a60f-26dbf8eccd06",
+                "description": "RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
+                "control-id": "ia-5.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "ca256928-7575-4d7f-b935-08e4631386b4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "implemented-requirements": [
+              {
+                "uuid": "81e5b343-653e-44fd-8fb4-349875e2e439",
+                "description": "RHEL 8 must prohibit the use of cached authentications after one day.",
+                "control-id": "ia-5.(13)"
+              }
+            ]
+          },
+          {
+            "uuid": "91392e03-86c7-497b-8abc-b4c1515b2df3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "0b23238f-fac3-4545-b77f-751072a6fed8",
+                "description": "The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.\nRHEL 8 must prevent system daemons from using Kerberos for authentication.\nThe krb5-workstation package must not be installed on RHEL 8.\nThe krb5-server package must not be installed on RHEL 8.\nThe RHEL 8 pam_unix.so module must be configured in the system-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.",
+                "control-id": "ia-7."
+              }
+            ]
+          },
+          {
+            "uuid": "772a6355-2aea-4f48-8afb-16c51cfdaa0d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "2b26239d-d1d6-41fb-a3d9-ede67ba88e1a",
+                "description": "RHEL 8 must require users to provide a password for privilege escalation.\nRHEL 8 must require users to reauthenticate for privilege escalation.\nRHEL 8 must require re-authentication when using the \"sudo\" command.\nThe RHEL 8 operating system must not be configured to bypass password requirements for privilege escalation.",
+                "control-id": "ia-11."
+              }
+            ]
+          },
+          {
+            "uuid": "1d982735-4f41-4ba5-a5de-0f4e5a2e2d35",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "322aa0c8-b021-4e4c-bebc-9518ab2f49e9",
+                "description": "RHEL 8 must use a Linux Security Module configured to enforce limits on system services.\nRHEL 8 must have policycoreutils package installed.\nRHEL 8 must clear the page allocator to prevent use-after-free attacks.\nRHEL 8 must disable virtual syscalls.\nRHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks.",
+                "control-id": "sc-3."
+              }
+            ]
+          },
+          {
+            "uuid": "23065b44-3d42-430c-b69c-11a856a16da0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "implemented-requirements": [
+              {
+                "uuid": "8f6b1631-e0d2-4a88-bb71-48a9fa6f2d7d",
+                "description": "A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources.\nRHEL 8 must restrict access to the kernel message buffer.\nRHEL 8 must prevent kernel profiling by unprivileged users.",
+                "control-id": "sc-4."
+              }
+            ]
+          },
+          {
+            "uuid": "eda34cd5-ab1c-4d90-bf6f-22fddeaab59c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "ee0e27cc-6fdf-456e-9b2c-0e99ccc82409",
+                "description": "A firewall must be able to protect against or limit the effects of Denial of Service (DoS) attacks by ensuring RHEL 8 can implement rate-limiting measures on impacted network interfaces.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "057f8da4-7412-4008-9039-8c1a1028f9e0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "e5e247fc-37af-4318-963b-bc1809fef439",
+                "description": "All RHEL 8 networked systems must have and implement SSH to protect the confidentiality and integrity of transmitted and received information, as well as information during preparation for transmission.\nAll RHEL 8 networked systems must have SSH installed.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "7cdc6912-1528-4f9c-884c-69209c367b3f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "implemented-requirements": [
+              {
+                "uuid": "436dd8f9-5f9d-4c1d-95fc-7ac3faf812ea",
+                "description": "RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements.\nThe RHEL 8 SSH daemon must be configured with a timeout interval.",
+                "control-id": "sc-10."
+              }
+            ]
+          },
+          {
+            "uuid": "1ca0c86a-d87d-4632-86e8-0b52d40f28a6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "implemented-requirements": [
+              {
+                "uuid": "52c6c238-3c11-42ac-9dba-be4cd9c15514",
+                "description": "All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection.",
+                "control-id": "sc-28."
+              }
+            ]
+          },
+          {
+            "uuid": "47639da5-d0f5-400c-b319-54d0ff621eab",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "ecaf3d34-c641-41ca-ae15-2f0e8018c384",
+                "description": "The RHEL 8 operating system must implement the Endpoint Security for Linux Threat Prevention tool.",
+                "control-id": "si-2.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "1ee9c9f6-31af-449f-9f0d-bfa454d07dce",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.(6).",
+            "implemented-requirements": [
+              {
+                "uuid": "08d2196d-8b07-48cc-9004-b9e190de634b",
+                "description": "YUM must remove all software components after updated versions have been installed on RHEL 8.",
+                "control-id": "si-2.(6)"
+              }
+            ]
+          },
+          {
+            "uuid": "4ab73de4-1f51-4bc6-b7b0-f24e4b076966",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "aecd1340-4c0a-4733-92db-6c43c12607a2",
+                "description": "RHEL 8 must enable the SELinux targeted policy.\nThe RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.",
+                "control-id": "si-6."
+              }
+            ]
+          },
+          {
+            "uuid": "0da5a6d8-86ac-4882-ba6a-281afecae3b3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "implemented-requirements": [
+              {
+                "uuid": "49135496-0933-417b-b146-90901ebebeb7",
+                "description": "The RHEL 8 /var/log/messages file must have mode 0640 or less permissive.\nThe RHEL 8 /var/log/messages file must be owned by root.\nThe RHEL 8 /var/log/messages file must be group-owned by root.\nThe RHEL 8 /var/log directory must have mode 0755 or less permissive.\nThe RHEL 8 /var/log directory must be owned by root.\nThe RHEL 8 /var/log directory must be group-owned by root.",
+                "control-id": "si-11."
+              }
+            ]
+          },
+          {
+            "uuid": "3a11874b-400f-44fe-8aca-595d566e9c9a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-16..",
+            "implemented-requirements": [
+              {
+                "uuid": "ba6b0b61-8c6c-43ab-b62f-79c58c5fc0fa",
+                "description": "RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution.\nRHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution.",
+                "control-id": "si-16."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

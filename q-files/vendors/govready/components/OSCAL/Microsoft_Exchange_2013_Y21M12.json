@@ -1,0 +1,280 @@
+{
+  "component-definition": {
+    "uuid": "5771b200-82d5-4bb4-ad9e-ba087e9963d6",
+    "metadata": {
+      "title": "Microsoft Exchange 2013 Y21M12",
+      "last-modified": "2022-06-10T12:50:51",
+      "version": "2022-06-10T12:50:51",
+      "oscal-version": "1.0.0",
+      "parties": [
+        {
+          "uuid": "ed340b50-7dc1-4b36-b895-37914a6b6e6e",
+          "type": "organization",
+          "name": "Example Organization"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "85ea5cae-01b0-4923-8847-298254f18708",
+        "type": "software",
+        "title": "Microsoft Exchange 2013 Y21M12",
+        "description": "Voluptatem quisquam eius dolorem. Dolore est neque quiquia etincidunt velit ut numquam. Consectetur tempora velit etincidunt velit adipisci dolor etincidunt.",
+        "responsible-roles": [
+          {
+            "role-id": "supplier",
+            "party-uuids": [
+              "ed340b50-7dc1-4b36-b895-37914a6b6e6e"
+            ]
+          }
+        ],
+        "props": [],
+        "control-implementations": [
+          {
+            "uuid": "6c3a7734-af21-4f5d-ab07-b76e4bf39ed4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "64f34def-0d73-4e1e-9aa2-0b3cef2580f5",
+                "description": "Exchange must have Administrator audit logging enabled.",
+                "control-id": "ac-2.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "fed12169-9458-4eae-a6cc-f2278d0955a7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "implemented-requirements": [
+              {
+                "uuid": "06eb267c-da84-4377-9797-fdbc81e29ccf",
+                "description": "Exchange must have authenticated access set to Integrated Windows Authentication only.\nExchange Servers must use approved DoD certificates.\nExchange ActiveSync (EAS) must only use certificate-based authentication to access email.\nExchange must have IIS map client certificates to an approved certificate server.",
+                "control-id": "ac-3."
+              }
+            ]
+          },
+          {
+            "uuid": "95d51cc6-3a5b-46de-a33f-252e3cc11f1f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "3ddec752-283d-4d51-8071-7304f40c537b",
+                "description": "Exchange must use Encryption for RPC client access.\nExchange must use Encryption for OWA access.\nExchange must have Forms-based Authentication disabled.",
+                "control-id": "ac-17.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "71e05047-ef9f-4fb2-8fd4-edcd967d38a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-6.(4).",
+            "implemented-requirements": [
+              {
+                "uuid": "df4305f2-9620-4264-b511-f7a9c27f5179",
+                "description": "Exchange must have Queue monitoring configured with threshold and action.",
+                "control-id": "au-6.(4)"
+              }
+            ]
+          },
+          {
+            "uuid": "e5e4ac6e-eb36-4bc0-a21a-5ea3d00abb74",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "implemented-requirements": [
+              {
+                "uuid": "ee558b7b-f8c1-49c8-8eab-ffb3db852958",
+                "description": "Exchange must have Audit data protected against unauthorized read access.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "23b277a6-3663-4b3c-809b-8681d4b7b184",
+                "description": "Exchange must have audit data protected against unauthorized deletion.",
+                "control-id": "au-9."
+              },
+              {
+                "uuid": "b959d130-10ab-48aa-9291-64b4321ffa29",
+                "description": "Exchange must have Audit data protected against unauthorized modification.",
+                "control-id": "au-9."
+              }
+            ]
+          },
+          {
+            "uuid": "18d22be2-ace9-48e4-8672-503869917d43",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "c4c9b36a-a310-4ed9-84cd-34b139f7b68c",
+                "description": "Exchange must have Audit data on separate partitions.",
+                "control-id": "au-9.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "269801f7-a081-4c80-9c5b-f80028f1fce8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "implemented-requirements": [
+              {
+                "uuid": "aa02cc41-f130-4aee-84d3-655e8c65f892",
+                "description": "Exchange Email Diagnostic log level must be set to lowest level.\nExchange must have Audit record parameters set.",
+                "control-id": "au-12."
+              }
+            ]
+          },
+          {
+            "uuid": "5514f3b8-1419-490c-b7de-58106f29145c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "a75c61eb-cd51-4f6d-b290-3c6d109ba308",
+                "description": "Exchange software baseline copy must exist.",
+                "control-id": "cm-5.(1)"
+              },
+              {
+                "uuid": "bbcd8d0b-57ea-45fa-9a30-a402ba587861",
+                "description": "Exchange software must be monitored for unauthorized changes.",
+                "control-id": "cm-5.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "e8a87000-35bb-48fc-aa38-a1dad7a8fb5d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "implemented-requirements": [
+              {
+                "uuid": "f4783d74-02a8-4f1b-9ae6-bbc31aff8f6f",
+                "description": "Exchange Local machine policy must require signed scripts.",
+                "control-id": "cm-5.(3)"
+              }
+            ]
+          },
+          {
+            "uuid": "432302f3-6129-4cc8-b374-6acaa24c16e3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "implemented-requirements": [
+              {
+                "uuid": "8e83f4bc-a632-4856-bc50-e0ae61dfa7d0",
+                "description": "Exchange must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6."
+              }
+            ]
+          },
+          {
+            "uuid": "6aa02ee0-4b0a-4118-9509-81dd74ff8f97",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "implemented-requirements": [
+              {
+                "uuid": "8a0301da-5315-4190-bd94-086ffcd4b0c8",
+                "description": "Exchange must have Send Fatal Errors to Microsoft disabled.\nExchange must not send Customer Experience reports to Microsoft.\nExchange IMAP4 service must be disabled.\nExchange POP3 service must be disabled.\nExchange must have the Public Folder virtual directory removed if not in use by the site.\nExchange must have the Microsoft Active Sync directory removed.",
+                "control-id": "cm-7."
+              }
+            ]
+          },
+          {
+            "uuid": "9729dfc2-eacc-4fa6-819a-a5f7bf267c24",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "3d9cef07-bfb4-4268-8bc5-649d9e4ed513",
+                "description": "Exchange services must be documented and unnecessary services must be removed or disabled.",
+                "control-id": "cm-7.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "71427b8e-727b-4aad-bbb4-05e9806b86a8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "implemented-requirements": [
+              {
+                "uuid": "25093bc2-d8b2-46ff-b21f-06a49d6b4665",
+                "description": "Exchange application directory must be protected from unauthorized access.",
+                "control-id": "cm-11.(2)"
+              }
+            ]
+          },
+          {
+            "uuid": "cde21ddf-f2af-4337-8ba0-0fcb7b70020d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "implemented-requirements": [
+              {
+                "uuid": "ab07cd7e-0bc6-4f4e-a919-b95aabec6135",
+                "description": "Exchange Outlook Anywhere (OA) clients must use NTLM authentication to access email.",
+                "control-id": "ia-2.(12)"
+              }
+            ]
+          },
+          {
+            "uuid": "68d94cdd-cfca-4c45-87ab-227c2b690a06",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "implemented-requirements": [
+              {
+                "uuid": "fa0d7794-aa4a-494d-be94-6baa2d61d944",
+                "description": "Exchange must provide redundancy.",
+                "control-id": "sc-5."
+              }
+            ]
+          },
+          {
+            "uuid": "08453899-afe0-4879-8890-abc092987fbc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "implemented-requirements": [
+              {
+                "uuid": "d0a72edf-13d5-4f00-970d-4703645b28b4",
+                "description": "Exchange OWA must use https.",
+                "control-id": "sc-8."
+              }
+            ]
+          },
+          {
+            "uuid": "f9a63382-2122-4c9d-ada8-392da2cce811",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "implemented-requirements": [
+              {
+                "uuid": "f5149cbc-de03-4e66-9a18-5cae887aa0c7",
+                "description": "Exchange OWA must have S/MIME Certificates enabled.",
+                "control-id": "sc-8.(1)"
+              }
+            ]
+          },
+          {
+            "uuid": "1ad33ccc-f702-4320-b2b0-80c4a6a9716a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39..",
+            "implemented-requirements": [
+              {
+                "uuid": "c652eb89-2370-4372-93c8-1ea571ba21f6",
+                "description": "Exchange software must be installed on a separate partition from the OS.",
+                "control-id": "sc-39."
+              }
+            ]
+          },
+          {
+            "uuid": "25d3dd7e-e31c-4367-8d9c-ca40ed39e4a2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "implemented-requirements": [
+              {
+                "uuid": "0e2b5f7b-3a09-4280-b4d4-8c5f4b52cff4",
+                "description": "Exchange must have the most current, approved service pack installed.",
+                "control-id": "si-2."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
