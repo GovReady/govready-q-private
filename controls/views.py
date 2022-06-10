@@ -1203,6 +1203,7 @@ class ComponentImporter(object):
             all_tag_ids = [tag.id for tag in new_tags] + [tag['id'] for tag in existing_tags]
             new_component.add_tags(all_tag_ids)
             new_component.save()
+        created_statements = []
         control_implementation_statements = component_json.get('control-implementations', None)
         # If there data exists the OSCAL component's control-implementations key
         if control_implementation_statements:
