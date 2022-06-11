@@ -34,10 +34,6 @@ Remove contextbar from top of page
             <a id="edit-portfolio" href='{% url "edit_portfolio" portfolio.id %}' class="btn btn-success" aria-label="Edit portfolio">Edit Portfolio</a>
         {% endif %}
         <a id="new-project-detail-link" href="{% url 'store' %}?portfolio={{ portfolio.id }}" class="btn btn-success">Start a project</a>
-        {% if can_invite_to_portfolio %}
-            <a href="#" onclick="invite_user_into_portfolio(); return false;" id="grant-portfolio-access"
-               class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Grant access to member</a>
-        {% endif %}
     </div>
 
     <h2 class="">{{ portfolio.title }}</h2>
@@ -94,7 +90,13 @@ Remove contextbar from top of page
       <div id="portfolio-members" class="container pull-right" style="margin-top: 80px;width: 340px;">
         <div class="row portfolio-project-top">
           <!-- <p id="portfolio-members"></p> -->
-          <div style="border-bottom: 0.5px solid #888;">There are {{ users_with_perms|length }} users with acces to this portfolio</div>
+          <div style="border-bottom: 0.5px solid #888;">
+            Users with acces to this portfolio
+            {% if can_invite_to_portfolio %}
+              <a href="#" onclick="invite_user_into_portfolio(); return false;" id="grant-portfolio-access"
+               class="btn"><i class="glyphicon glyphicon-plus"></i> Add</a>
+            {% endif %}
+          </div>
           {% for user in users_with_perms %}
             <div id="portfolio-member-{{user.name}}">
               <div class="inline" style="margin-left: 12px;"> {{user.name|truncatechars:22}}
