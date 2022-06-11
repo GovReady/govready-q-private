@@ -192,7 +192,6 @@ class User(AbstractUser, BaseModel):
             object={"object": "portfolio", "id": portfolio.id, "title": portfolio.title},
             user={"id": self.id, "username": self.username}
         )
-        portfolio.assign_owner_permissions(self)
         logger.info(
             event="new_portfolio assign_owner_permissions",
             object={"object": "portfolio", "id": portfolio.id, "title": portfolio.title},

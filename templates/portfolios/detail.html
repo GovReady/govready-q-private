@@ -96,24 +96,6 @@ Remove contextbar from top of page
 
       {% endfor %}
 
-      {% if projects|length < 2 %}
-      <div class="container">
-        <div class="row portfolio-project-top">
-          <div class="col-md-2"></div>
-          <div class="col-md-5">
-            <h2>A portfolio is a collection of projects.</h2>
-
-            <p>Think of a portfolio like a folder for your projects.</p>
-
-            <p>The owners of the portfolio can manage portfolio members.</p>
-          </div>
-          <div class="col-md-3">
-            <div class="glyphicon glyphicon-folder-open portfolio-glyphicons"></div>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
-      {% endif %}
 
       {% if users_with_perms is not None %}
       <div id="portfolio-members" class="container">
