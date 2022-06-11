@@ -399,7 +399,7 @@ class Portfolio(BaseModel):
             name = user.name if user.name else str(user)
             user = {'name': name, 'id': user.id, 'owner': owner}
             users.append(user)
-        sorted_users = sorted(users, key=lambda k: (-k['owner'], k['name'].lower()))
+        sorted_users = sorted(users, key=lambda k: (k['name'].lower()))
         return sorted_users
 
     def can_invite_others(self, user):

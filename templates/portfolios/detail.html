@@ -42,16 +42,15 @@ Remove contextbar from top of page
 
     <h2 class="">{{ portfolio.title }}</h2>
     <small class="portfolio-small">Portfolio ID: {{ portfolio.id }}</small>
-
     {% if projects|length > 0 %}
     <p>This portfolio has {{ projects|length }} project{{ projects|pluralize }}</p>
 
     <div class="container">
       <div class="row">
         <!-- <div class="col-sm-1">&nbsp;</div> -->
-        <div class="col-xs-10 col-md-5">Project</div>
+        <div class="col-xs-10 col-md-4">Project</div>
         <div class="col-xs-6 col-sm-1">ID</div>
-        <div class="col-xs-6 col-sm-2">Portfolio</div>
+        <div class="col-xs-6 col-sm-3">Portfolio</div>
         <div class="col-xs-6 col-sm-2">Role</div>
         <div class="col-xs-12 col-md-2">Updated</div>
       </div>
@@ -70,14 +69,12 @@ Remove contextbar from top of page
           {% endif %}
         </div> -->
 
-        <div class="col-xs-10 col-md-5">
-          <a href="{{project.get_absolute_url}}" class="portfolio-project-link">{{project.title}}</a>
+        <div class="col-xs-10 col-md-4">
+          <a href="{{project.get_absolute_url}}" class="portfolio-project-link">{{project.title|truncatechars:60}}</a>
         </div>
 
         <div class="col-xs-6 col-sm-1">{{project.id}}</div>
-        <div class="col-xs-6 col-sm-2">{{project.portfolio.title}}</div>
-
-
+        <div class="col-xs-6 col-sm-3">{{project.portfolio.title|truncatechars:22}}</div>
 
         {% if perms.siteapp.delete_project %}
         <div class="col-xs-6 col-sm-2">Owner</div>
@@ -87,65 +84,62 @@ Remove contextbar from top of page
         <div class="col-xs-6 col-sm-2">Portfolio Member</div>
         {% endif %}
 
-
-        <div class="col-md-2">
-            {{project.root_task.updated|naturaltime}}
-        </div>
+        <div class="col-md-2">{{project.root_task.updated|naturaltime}}</div>
+      </div>
+      {% endfor %}
 
       </div>
 
-      {% endfor %}
-
-
       {% if users_with_perms is not None %}
-      <div id="portfolio-members" class="container">
+      <div id="portfolio-members" class="container pull-right" style="margin-top: 80px;width: 340px;">
         <div class="row portfolio-project-top">
-          <p id="portfolio-members"></p>
-          <p> <b>Users With Access:</b></p>
+          <!-- <p id="portfolio-members"></p> -->
+          <div style="border-bottom: 0.5px solid #888;">There are {{ users_with_perms|length }} users with acces to this portfolio</div>
           {% for user in users_with_perms %}
-          <div id="portfolio-member-{{user.name}}">
-          <p class="inline"> {{user.name}}
-            {% if user.owner %}
-            (Owner)
-            {% if can_invite_to_portfolio and request.user.id != user.id %}
-            <form id="{{user.name}}_remove_permissions" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
-                {% csrf_token %}
-                <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
-                <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
-                <input type="hidden" id="permission" name="permission" value="remove_owner_permissions">
-                <input type="hidden" name="next" value="{{ request.path }}">
-                <input type="submit" value="Remove Ownership" class="btn btn-sm btn-danger" />
-            </form>
-            {%endif%}
-        </p>
-          {% elif can_invite_to_portfolio %}
-          <form id="{{user.name}}_remove_permissions" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
-            {% csrf_token %}
-            <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
-            <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
-            <input type="hidden" id="permission" name="permission" value="remove_permissions">
-            <input type="hidden" name="next" value="{{ request.path }}">
-            <input type="submit" value="Remove" class="btn btn-sm btn-danger" />
-          </form>
-          <form id="{{user.name}}_grant_owner_permission" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
-            {% csrf_token %}
-            <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
-            <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
-            <input type="hidden" id="permission" name="permission" value="grant_owner_permission">
-            <input type="hidden" name="next" value="{{ request.path }}">
-            <input type="submit" value="Make Owner" class="btn btn-sm btn-success" />
-          </form>
-          {%endif%}
-          </p>
-          </div>
+            <div id="portfolio-member-{{user.name}}">
+              <div class="inline" style="margin-left: 12px;"> {{user.name|truncatechars:22}}
+              {% if user.owner %}
+                (Owner)
+                {% if can_invite_to_portfolio and request.user.id != user.id %}
+                <form id="{{user.name}}_remove_permissions" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
+                    {% csrf_token %}
+                    <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
+                    <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
+                    <input type="hidden" id="permission" name="permission" value="remove_owner_permissions">
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <a href="#" onclick="document.getElementById('{{user.name}}_remove_permissions').submit();"><span class="small glyphicon glyphicon-circle-arrow-down" style="color:#888;" title="Remove ownership"></span></a>
+                </form>
+                {%endif%}
+              {% elif can_invite_to_portfolio %}
+                <form id="{{user.name}}_grant_owner_permission" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
+                  {% csrf_token %}
+                  <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
+                  <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
+                  <input type="hidden" id="permission" name="permission" value="grant_owner_permission">
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <a href="#" onclick="document.getElementById('{{user.name}}_grant_owner_permission').submit();"><span class="small glyphicon glyphicon-circle-arrow-up" style="color:#888;" title="Make owner"></span></a>
+                </form>
+                <form id="{{user.name}}_remove_permissions" name="assign_owner_permissions" method="post" action="{% url 'update_permissions' %}" class="inline">
+                  {% csrf_token %}
+                  <input type="hidden" id="portfolio_id" name="portfolio_id" value={{portfolio.id}}>
+                  <input type="hidden" id="user_id" name="user_id" value={{user.id}}>
+                  <input type="hidden" id="permission" name="permission" value="remove_permissions">
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <a href="#" onclick="document.getElementById('{{user.name}}_remove_permissions').submit();"><span class="small glyphicon glyphicon-trash" style="color:#888;" title="Remove"></span></a>
+                </form>
+              {%endif%}
+              </div>
+            </div>
           {% endfor %}
         </div>
       </div>
       {% endif %}
+
       {{ block.super }}
+
       {% endblock %}
 
-{% block scripts %}
+      {% block scripts %}
       <script>
         var project_invitation_info = {{ send_invitation| json}};
         function invite_user_into_portfolio() {
@@ -163,4 +157,10 @@ Remove contextbar from top of page
           return false;
         }
       </script>
+
+      {% if projects|length > 0 %}
+      </div>
+      {% endif %}
+
       {% endblock %}
+
