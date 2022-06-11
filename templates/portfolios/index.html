@@ -21,12 +21,13 @@ Your Compliance Portfolios
     </div>
 
     <h2 class="">Portfolios</h2>
-    <p>&nbsp;</p>
     {% if portfolios|length > 0 %}
     <p>You have access to {{ portfolios|length }} portfolio{{ portfolios|pluralize }}</p>
     {% else %}
     <p>You do not have access to any portfolios.</p>
     {% endif %}
+
+    <p>&nbsp;</p>
 
     {% include "portfolios/portfolios_table.html" with portfolios=portfolios %}
 
