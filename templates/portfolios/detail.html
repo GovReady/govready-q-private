@@ -36,8 +36,8 @@ Remove contextbar from top of page
         <a id="new-project-detail-link" href="{% url 'store' %}?portfolio={{ portfolio.id }}" class="btn btn-success">Start a project</a>
     </div>
 
-    <h2 class="">{{ portfolio.title }}</h2>
-    <small class="portfolio-small">Portfolio ID: {{ portfolio.id }}</small>
+    <h2 class="">Portfolios &gt; {{ portfolio.title }}</h2>
+    <p>&nbsp;</p>
     {% if projects|length > 0 %}
     <p>This portfolio has {{ projects|length }} project{{ projects|pluralize }}</p>
 
