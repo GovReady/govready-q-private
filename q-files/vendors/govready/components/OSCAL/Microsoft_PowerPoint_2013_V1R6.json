@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "2e2fb7d5-4782-4dc2-8171-d4d8e4d32eac",
+    "uuid": "54fdc952-7050-4f53-b6b4-1207f59cc969",
     "metadata": {
       "title": "Microsoft PowerPoint 2013 V1R6",
-      "last-modified": "2022-06-10T12:50:49",
-      "version": "2022-06-10T12:50:49",
+      "last-modified": "2022-06-12T11:06:44",
+      "version": "2022-06-12T11:06:44",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "5745048f-050c-41c4-8d6e-a383a3321058",
+          "uuid": "7733c965-b78b-4a58-b2f7-810ef1db6076",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,111 +16,111 @@
     },
     "components": [
       {
-        "uuid": "be3dcdaa-3cd4-4d8b-bb11-66991d8b5d86",
+        "uuid": "b59dd3b5-56cb-4e84-8c5f-9440a65fc600",
         "type": "software",
         "title": "Microsoft PowerPoint 2013 V1R6",
-        "description": "Dolorem amet consectetur adipisci quiquia magnam porro.",
+        "description": "Non eius quaerat velit.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "5745048f-050c-41c4-8d6e-a383a3321058"
+              "7733c965-b78b-4a58-b2f7-810ef1db6076"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "1f99840b-10e8-4479-94d1-bc8a13b332c0",
+            "uuid": "0090d7d3-45ad-48d9-aab7-6466ab73439c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "0145f0d0-fc76-4c98-9b14-db91d2bd8759",
+                "uuid": "22e8013b-0cd7-4fe2-a036-138117888639",
                 "description": "Trust Bar Notifications for unsigned application add-ins must be blocked.\nAdd-ins to Office applications must be signed by a Trusted Publisher.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "997caabf-3e38-4481-942b-2a464a6f9cf9",
+            "uuid": "07f3ffcc-565c-4004-8831-f0111874a950",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "115891d6-b08d-43ef-837c-8b2ed1f9488a",
+                "uuid": "cbce0890-d55a-401d-b959-2dca564322cb",
                 "description": "Hidden markup options must be visible.\nThe configuration for Slide Update with counterparts must be disallowed.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "3f7e4e86-f91d-41ce-b78b-222b8b7d85b2",
+            "uuid": "540deba0-3e11-45b5-a395-2f11ae264a52",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "544342e9-e479-4a5b-80e7-0561b804051b",
+                "uuid": "9f2c3dcd-ed74-4c4f-b261-0ae5305dab1d",
                 "description": "The Save commands default file format must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "2fdf2bdc-8f0e-4468-b711-cb1f0804fb91",
+            "uuid": "77d8482a-b1d2-4461-a96d-52509b09b3d0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.2.",
             "implemented-requirements": [
               {
-                "uuid": "37d9d3d0-cbce-4b33-91d1-2a25cc34f1bd",
+                "uuid": "8e23aef6-41a3-4c0e-8e05-f6550672e9d0",
                 "description": "The opening of pre-release versions of file formats new to PowerPoint 2013 through the Compatibility Pack for Office 2013 and PowerPoint 2013 Converter must be blocked.",
-                "control-id": "cm-7.(2)"
+                "control-id": "cm-7.2"
               }
             ]
           },
           {
-            "uuid": "44f86a4f-f84f-467b-9cdf-db98cef0f5c6",
+            "uuid": "40fa3e80-c443-4c2a-bfa8-db52eb98ce4f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "f9fc90a2-84f0-43dc-a431-17eb9b9d28a4",
+                "uuid": "4946bcd0-0a68-4db9-a24c-3ecffe0f7b73",
                 "description": "Links that invoke instances of Internet Explorer from within an Office product must be blocked in PowerPoint.\nAdd-on Management functionality must be allowed in PowerPoint.\nBlocking as default file block opening behavior must be enforced.\nFiles from the Internet zone must be opened in Protected View.\nFile Links that invoke instances of Internet Explorer from within an Office product must be blocked in PowerPoint Viewer.\nAdd-on Management functionality must be allowed in PowerPoint Viewer.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "602790d1-886d-426b-bcb0-2134989d74d9",
+            "uuid": "def67c9c-3ce6-4a27-885b-c045997b2924",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "1d32f836-c2dd-46a4-8aed-2dcff59efaa7",
-                "description": "Automatic download of linked images must be disallowed.\nFile Downloads must be configured for proper restrictions in PowerPoint.\nFile Downloads must be configured for proper restrictions in PowerPoint Viewer.",
-                "control-id": "sc-18.(3)"
-              },
-              {
-                "uuid": "2dda935a-2e12-44e3-ad2a-606533a1cc70",
+                "uuid": "70615883-6625-4aa8-970e-ed235061b786",
                 "description": "The Internet Explorer Bind to Object functionality must be enabled in PowerPoint.\nProtection from zone elevation must be enforced in PowerPoint.\nScripted Window Security must be enforced in PowerPoint.\nConfiguration for file validation must be enforced.\nProtection from zone elevation must be enforced in PowerPoint Viewer.\nThe Internet Explorer Bind to Object functionality must be enabled in PowerPoint Viewer.\nScripted Window Security must be enforced in PowerPoint Viewer.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
+              },
+              {
+                "uuid": "9f67dcca-96ac-4ae3-8762-ca159f79e60f",
+                "description": "Automatic download of linked images must be disallowed.\nFile Downloads must be configured for proper restrictions in PowerPoint.\nFile Downloads must be configured for proper restrictions in PowerPoint Viewer.",
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "44149243-64d2-4e2e-b6e4-6f4f618eb9c5",
+            "uuid": "44bd17e5-7e08-4e8e-88fd-ee741a6c460d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "7a1e3fd0-6729-466c-8ded-c14d6ab9d758",
-                "description": "ActiveX Installs must be configured for proper restriction in PowerPoint.\nActiveX Installs must be configured for proper restriction in PowerPoint Viewer.",
-                "control-id": "sc-18.(4)"
+                "uuid": "d498512d-cd38-4bd8-a660-8e4cefa6a031",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced in PowerPoint.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint.\nAll automatic loading from Trusted Locations must be disabled.\nEnforce encrypted macros to be scanned in open XML documents must be determined and configured.\nDisallowance of Trusted Locations on the network must be enforced.\nThe ability to run programs from a PowerPoint presentation must be disallowed.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nDisabling of user name and password syntax from being used in URLs must be enforced in PowerPoint Viewer.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint Viewer.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint Viewer.\nMacros must be blocked from running in Office 2013 files from the Internet.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "ca4e0a38-86e7-4623-9d7d-f86a87f379cb",
-                "description": "Disabling of user name and password syntax from being used in URLs must be enforced in PowerPoint.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint.\nAll automatic loading from Trusted Locations must be disabled.\nEnforce encrypted macros to be scanned in open XML documents must be determined and configured.\nDisallowance of Trusted Locations on the network must be enforced.\nThe ability to run programs from a PowerPoint presentation must be disallowed.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nDisabling of user name and password syntax from being used in URLs must be enforced in PowerPoint Viewer.\nThe Saved from URL mark must be selected to enforce Internet zone processing in PowerPoint Viewer.\nNavigation to URLs embedded in Office products must be blocked in PowerPoint Viewer.\nMacros must be blocked from running in Office 2013 files from the Internet.",
-                "control-id": "sc-18.(4)"
+                "uuid": "e057822a-edf7-4103-97fe-9d3ed985ec39",
+                "description": "ActiveX Installs must be configured for proper restriction in PowerPoint.\nActiveX Installs must be configured for proper restriction in PowerPoint Viewer.",
+                "control-id": "sc-18.4"
               }
             ]
           }

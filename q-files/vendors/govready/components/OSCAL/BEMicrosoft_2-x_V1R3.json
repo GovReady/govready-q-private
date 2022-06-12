@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "72cd24a5-d984-48c8-8d2a-2545d257bf17",
+    "uuid": "8d7bbd9b-1ec3-4b58-9951-ae4a0888d9ea",
     "metadata": {
       "title": "BEMicrosoft 2-x V1R3",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "bfe480a7-6d26-428e-9ca3-c14554a260af",
+          "uuid": "59b8fecc-b218-405f-8e0f-a5b283629fb0",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,140 +16,140 @@
     },
     "components": [
       {
-        "uuid": "278f3353-cece-44d4-881f-3504e715319e",
+        "uuid": "17f0af1a-da57-480b-9b49-4b45b4a301b2",
         "type": "software",
         "title": "BEMicrosoft 2-x V1R3",
-        "description": "Sit aliquam quiquia dolore aliquam modi ipsum. Non dolorem velit numquam.",
+        "description": "Amet tempora sit neque adipisci. Quaerat porro modi velit ipsum etincidunt labore tempora.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "bfe480a7-6d26-428e-9ca3-c14554a260af"
+              "59b8fecc-b218-405f-8e0f-a5b283629fb0"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "1c7478f7-f6f7-48db-865a-a4ac757abf26",
+            "uuid": "fdf7f4b6-a88c-4896-8ce1-082246a06b43",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "25742ad9-f11c-4f50-8da9-89a5b9066dc6",
+                "uuid": "18dfadb0-de63-4c8d-a292-86764a5d5e86",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must be configured to have at least one user in the following Administrator roles: Server primary administrator, auditor.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "9de1515a-129d-407b-96af-eb059df03b3e",
+            "uuid": "7559a607-73c4-43fa-8ad7-0f80b040757e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "28035786-7209-4ffc-bd9e-c706c2c8f552",
+                "uuid": "e571b5b0-3fe6-438a-939e-557f754c8822",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must be configured with an inactivity timeout of 15 minutes or less.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "f296dce6-bb29-4223-9419-0fc01de941cc",
+            "uuid": "4b1479c1-6e99-4ef7-8c34-4676d91c037c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "e386d67a-27cc-43f8-a9d1-e851108dc95c",
+                "uuid": "7fd1c12c-b1f6-4c8c-8701-bc2234662ea6",
                 "description": "If the BlackBerry Docs service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to enable audit logs.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "210e6465-a2ec-4863-bc71-85739b984edf",
+            "uuid": "00a439a5-a26b-495e-819b-6baeb1c373a9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "fa1bb7f6-348a-4757-bf1d-f1d33c214b8e",
+                "uuid": "af61feec-7718-4698-b278-ca1b3ebf6c30",
                 "description": "If the BlackBerry Connect service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to enable SSL support for BlackBerry Proxy and use only DoD approved certificates.\nIf the BlackBerry Docs service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use SSL for LDAP lookup to connect to the Office Web App Server (e.g., SharePoint).",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
               },
               {
-                "uuid": "388878ee-7988-46f7-8326-1ee6621c0f62",
+                "uuid": "6718c815-c935-43bf-ac71-9b41302d33a4",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must be configured to use HTTPS.\nIf the Mail service (Push Notifications support for BlackBerry Work) is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to Enable SSL LDAP when using LDAP Lookup for users.\nIf the Mail service (Push Notifications support for BlackBerry Work) is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to Enable SSL LDAP for certificate directory lookup.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "212ccd47-9566-4a31-a9b8-4779e0d83fa8",
+            "uuid": "e92d9dfb-eb26-4040-b2e0-152d26957947",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "41676bb0-bc1c-4b57-8804-0425c7c92420",
-                "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect log information from unauthorized deletion.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "23a9dddc-7877-46af-ae8c-6161471ac40f",
-                "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect log information from unauthorized modification.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "48bf6756-1528-4b62-8cfb-f8ef8392d2a1",
+                "uuid": "b6dc618b-2270-43df-8182-bd2cdf321fe9",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect log information from any type of unauthorized read access.",
-                "control-id": "au-9."
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "dfa1f381-5434-4a62-8cbd-4b64971dabc6",
+                "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect log information from unauthorized deletion.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "0efca162-5325-45e3-90d4-299b2c0dae48",
+                "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect log information from unauthorized modification.",
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "1b58732b-ab01-4926-a055-35704638c99c",
+            "uuid": "5fc20d12-0ba9-4bc7-8040-867eb4010000",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "7b9a6a6a-29cc-4215-b781-9543f698ec60",
+                "uuid": "3901935a-b0c6-41fe-98ee-49c3af65249e",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) platform must be protected by a DoD-approved firewall.\nThe firewall protecting the BlackBerry Enterprise Mobility Server (BEMS) must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support BEMS functions.\nThe firewall protecting the BlackBerry Enterprise Mobility Server (BEMS) must be configured so that only DoD-approved ports, protocols, and services are enabled. See the DoD Ports, Protocols, Services Management (PPSM) Category Assurance Levels (CAL) list for DoD-approved ports, protocols, and services.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "5e4be8cc-f86a-4af0-992b-fb4eb91867e7",
+            "uuid": "67f5a343-38c4-4a90-a540-9db8d565d236",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
             "implemented-requirements": [
               {
-                "uuid": "ada8fcf8-7c73-4d0e-8c62-779cbbeb60f8",
+                "uuid": "829716b6-e20a-4fef-bcf6-c426194b8289",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must be configured to use Windows Authentication for the database connection.\nIf the Mail service (Push Notifications support for BlackBerry Work) is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use Windows Authentication for the database connection.\nIf the Mail service (Push Notifications support for BlackBerry Work) is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use Windows Integrated Authentication for the Exchange connection.\nIf the BlackBerry Connect service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use Windows Authentication for the database connection.\nIf the BlackBerry Docs service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use Windows Authentication for the database connection.\nIf the BlackBerry Docs service is installed on the BlackBerry Enterprise Mobility Server (BEMS), it must be configured to use NTLM authentication.",
-                "control-id": "ia-2."
+                "control-id": "ia-2"
               }
             ]
           },
           {
-            "uuid": "5b6ac98d-483c-486a-84e4-2827c0e8e230",
+            "uuid": "adc94623-a7e1-4c52-a61c-657a72dc77c2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "13804273-0b0e-4460-9dde-e9e52fdc69be",
+                "uuid": "688eb32d-dcf5-4797-9028-0f468508cc06",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must protect the confidentiality and integrity of transmitted information through the use of an approved TLS version.\nThe BlackBerry Enterprise Mobility Server (BEMS) must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "8288e826-55d7-420d-a71b-73e3830eadee",
+            "uuid": "eadbbfa3-a11a-4dd0-9d8b-0ab45ef718ef",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "dc97a1a9-0603-4d1d-a736-247de0da147f",
+                "uuid": "291d8b2f-2e36-4e08-9b73-690f55f335ad",
                 "description": "The BlackBerry Enterprise Mobility Server (BEMS) must be configured to use DoD certificates for SSL.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           }

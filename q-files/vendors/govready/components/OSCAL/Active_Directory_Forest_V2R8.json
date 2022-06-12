@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "b9ed813a-b898-49e0-a3c6-92587c9969e7",
+    "uuid": "2ccef033-33b3-49a1-8ed3-8f77bed56dda",
     "metadata": {
       "title": "Active Directory Forest V2R8",
-      "last-modified": "2022-06-10T12:50:50",
-      "version": "2022-06-10T12:50:50",
+      "last-modified": "2022-06-12T11:06:46",
+      "version": "2022-06-12T11:06:46",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "3c5b4ecf-6599-471d-830e-e67f7a959a44",
+          "uuid": "4b3693b3-9a1f-42a7-a886-82efd8e7a368",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,53 +16,53 @@
     },
     "components": [
       {
-        "uuid": "d2cbc6b3-cb1d-4732-b2d7-09ba0b30d09b",
+        "uuid": "939614af-afc4-483b-9d0f-82796e855a36",
         "type": "software",
         "title": "Active Directory Forest V2R8",
-        "description": "Dolorem dolorem dolore quiquia. Est dolore porro est dolore. Numquam neque ut magnam.",
+        "description": "Etincidunt ut tempora quisquam dolorem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "3c5b4ecf-6599-471d-830e-e67f7a959a44"
+              "4b3693b3-9a1f-42a7-a886-82efd8e7a368"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "b986fc14-5541-403b-8893-d3dbbafbdf15",
+            "uuid": "d7bb6d59-f697-438c-9052-d511855730a8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "889ab516-0a8c-4db7-b211-4e9b861358af",
+                "uuid": "d2a430b7-d236-4289-a385-8ef4f0361912",
                 "description": "Update access to the directory schema must be restricted to appropriate accounts.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "0a02e0c4-6da6-437b-8f66-dc46d3696344",
+            "uuid": "a7e6da1b-4f58-4789-bd7d-0dd60154c73f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "f0b65088-918a-47fb-bf0e-daa3d4e1a3aa",
+                "uuid": "ccde16c1-fce4-4096-b92b-237c3c58881e",
                 "description": "The Windows Time Service on the forest root PDC Emulator must be configured to acquire its time from an external time source.",
-                "control-id": "au-8.(1)"
+                "control-id": "au-8.1"
               }
             ]
           },
           {
-            "uuid": "373b32ea-530e-4a90-8dd8-3f45f2d85d9f",
+            "uuid": "a93d75dc-9a4c-4761-a597-a9406dfedf8b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "92ed11a3-8655-45db-9cee-83f5ae7c4ca3",
+                "uuid": "254af6d7-99dc-479b-a838-484b5e0016b0",
                 "description": "Changes to the AD schema must be subject to a documented configuration management process.\nAnonymous Access to AD forest data above the rootDSE level must be disabled.\nMembership to the Schema Admins group must be limited.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           }

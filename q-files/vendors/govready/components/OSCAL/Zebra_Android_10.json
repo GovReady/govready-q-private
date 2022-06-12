@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "14db1e9c-2280-40b7-a3ac-0ba0da5315dc",
+    "uuid": "60b52210-ab42-45ae-a930-c6d33e1cff37",
     "metadata": {
       "title": "Zebra Android 10",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "43d98c98-6d97-4755-ae6b-9f2c1c18b03c",
+          "uuid": "0f5823eb-c292-47ec-aa4a-b1f3f757217e",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,185 +16,185 @@
     },
     "components": [
       {
-        "uuid": "22ffb19f-7246-48e3-bac3-352051decd5c",
+        "uuid": "464744db-2b82-4005-bad1-09f8eee7f8cb",
         "type": "software",
         "title": "Zebra Android 10",
-        "description": "Magnam ut modi sit neque labore dolor eius. Ipsum tempora eius quisquam adipisci non est dolorem. Quisquam porro sed velit non dolorem est.",
+        "description": "Quaerat voluptatem voluptatem modi porro labore. Est est adipisci eius modi quaerat quaerat.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "43d98c98-6d97-4755-ae6b-9f2c1c18b03c"
+              "0f5823eb-c292-47ec-aa4a-b1f3f757217e"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "d8f0d8e5-b5fd-4f39-9925-92e81e7ccd77",
+            "uuid": "1f12195a-0187-4c1e-8447-485dfec327a5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.",
             "implemented-requirements": [
               {
-                "uuid": "b41c3d2c-f7f1-4e04-b5a5-4445a2163f80",
+                "uuid": "2bb244ff-8028-42b4-aab5-aeba91a121c5",
                 "description": "Zebra Android 10 must be configured to disable multi-user modes.",
-                "control-id": "ac-2."
+                "control-id": "ac-2"
               }
             ]
           },
           {
-            "uuid": "99951f36-956e-4d4d-85a1-b9cfe83fd92f",
+            "uuid": "c912aa32-8b69-467b-8508-30692a256057",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "331aba37-02de-4320-a2fc-651391001f06",
+                "uuid": "f77dedf7-f762-45fa-bd73-018282a00666",
                 "description": "Zebra Android 10 must be configured to not allow more than 10 consecutive failed authentication attempts.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "063d8d1b-cf36-4ab3-9366-30a698b5f752",
+            "uuid": "2bdbf93a-38b7-4adb-aa9b-fb8772ac2759",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "6b9fbad2-b688-42dd-a319-aec0906d191e",
+                "uuid": "d66d9e85-e0b8-4daf-94a9-c79874a27011",
                 "description": "Zebra Android 10 must be configured to display the DoD advisory warning message at startup or each time the user unlocks the device.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "d8a1c500-07a7-42e6-bcc8-3844326731a9",
+            "uuid": "f2525a02-16ec-4912-91b1-97ade34ecab3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.",
             "implemented-requirements": [
               {
-                "uuid": "5d4d4fc9-0f76-4b72-abe2-dd7f21776a94",
+                "uuid": "d5a3953b-bfce-480a-a734-4d577f9513fb",
                 "description": "Zebra Android 10 must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\nZebra Android 10 must be configured to lock the display after 15 minutes (or less) of inactivity.",
-                "control-id": "ac-11."
+                "control-id": "ac-11"
               }
             ]
           },
           {
-            "uuid": "8708cb11-5187-4016-b0b5-88a53a2a5ded",
+            "uuid": "333fc1b0-fe68-4418-b651-6f02cf0c9d78",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.2.",
             "implemented-requirements": [
               {
-                "uuid": "a133d38e-9aff-4b08-bef5-bca8dd378a6f",
+                "uuid": "ab9875ed-1fb5-4ffe-a251-33c28e206fbb",
                 "description": "Zebra Android 10 must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
-                "control-id": "ac-20.(2)"
+                "control-id": "ac-20.2"
               }
             ]
           },
           {
-            "uuid": "df2e5a3d-9f0c-44af-ba3a-5fa78f4d773a",
+            "uuid": "97fd405b-22e7-47c7-b1a1-f08322ba9dbc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-20.3.",
             "implemented-requirements": [
               {
-                "uuid": "a8890f40-7238-413c-ac6f-66cf4c22e4c4",
+                "uuid": "c0e7450b-4fcf-4a34-bbf1-a6995dd98fbb",
                 "description": "Zebra Android 10 must be configured to not allow backup of all applications and configuration data to remote systems.",
-                "control-id": "ac-20.(3)"
+                "control-id": "ac-20.3"
               }
             ]
           },
           {
-            "uuid": "1dd9ffbc-8cf2-4d13-8b33-73804fd52f70",
+            "uuid": "e944a0b8-eb43-4868-bcd7-a4272055ab7e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "85d0bcec-f2e9-45e8-840c-38d68a2700eb",
+                "uuid": "f5d595b7-9f03-4cfa-a735-17f8c9ed3021",
                 "description": "Zebra Android 10 must be configured to enable audit logging.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "0265be80-9636-4284-a0aa-ebdb22b9ec71",
+            "uuid": "de42bdff-9f8a-40bd-bf2a-7ae0be37b618",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "fa9c4c00-e374-4b74-8375-8962f8eacf22",
+                "uuid": "e4ea2fab-2cb5-4ed7-a431-21b424fc9af4",
                 "description": "Zebra Android 10 must be configured to generate audit records for the following auditable events: detected integrity violations.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "65b489ad-8d3c-4f16-8425-e6913975f8d4",
+            "uuid": "81ef795b-f6c7-4a1f-a43d-a1987709da43",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "2682ded5-8dc2-475d-92fe-e6d77a0fd51e",
+                "uuid": "e890472d-fd41-4958-aa01-71c174f31a65",
                 "description": "Zebra Android 10 must be configured to not allow passwords that include more than two repeating or sequential characters.\nZebra Android 10 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nZebra Android 10 must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nZebra Android 10 whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services);\n- transmit MD diagnostic data to non-DoD servers;\n- voice assistant application if available when MD is locked;\n- voice dialing application if available when MD is locked;\n- allows synchronization of data or applications between devices associated with user; and\n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nZebra Android 10 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), HandsFree Profile (HFP), and Serial Port Profile (SPP).\nZebra Android 10 must be configured to disable trust agents.\nZebra Android 10 must be configured to disable multi-user modes.\nZebra Android 10 must be configured to enable audit logging.\nZebra Android 10 users must complete required training.\nZebra Android 10 must be configured to enforce that Wi-Fi Sharing is disabled.\nZebra Android 10 must have the DoD root and intermediate PKI certificates installed.\nZebra Android 10 must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.\nZebra Android 10 Work Profile must be configured to disable automatic completion of work space internet browser text input.\nZebra Android 10 Work Profile must be configured to disable the autofill services.\nZebra Android 10 must be configured to disallow configuration of date and time.\nZebra Android 10 devices must have the latest available Zebra Android 10 operating system installed.\nZebra Android 10 devices must be configured to disable the use of third-party keyboards.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "e06b1eee-1ad8-412a-959e-de100f60ee76",
+            "uuid": "d2a2cc6e-01ae-408e-90dc-16c581ffcd3f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.1.",
             "implemented-requirements": [
               {
-                "uuid": "19c14c0b-d2cb-4709-b60d-688b9ececbdb",
+                "uuid": "fc823766-9bdd-433e-9eae-2bfad8a8a250",
                 "description": "Zebra Android 10 must be configured to disable trust agents.\nZebra Android 10 must be configured to enable audit logging.\nZebra Android 10 must allow only the administrator (MDM) to install/remove DoD root and intermediate PKI certificates.",
-                "control-id": "cm-6.(1)"
+                "control-id": "cm-6.1"
               }
             ]
           },
           {
-            "uuid": "9764c437-2e60-49cb-8175-0d4fc611fa8c",
+            "uuid": "ae7e708d-e32a-4676-9b19-57f02c81c87a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "c5337dc3-20d7-41a4-8c70-693fb7f2fc3a",
+                "uuid": "89fc0b75-4a00-4233-97bb-22e06157c69a",
                 "description": "Zebra Android 10 must be configured to disable trust agents.\nZebra Android 10 must be configured to disable developer modes.\nZebra Android 10 must be configured to disable USB mass storage mode.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "e5adf933-59ab-4a55-83a5-20d0089d246f",
+            "uuid": "9680a9fe-b602-43b7-9d06-4af0e4ab0367",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "28cc721f-a363-4601-b8b3-6f7f686b5407",
+                "uuid": "c5e24d61-dc4a-453a-9f32-ab9afa3e3749",
                 "description": "Zebra Android 10 must be configured to disable Bluetooth or configured via User Based Enforcement (UBE) to allow Bluetooth for only Headset Profile (HSP), HandsFree Profile (HFP), and Serial Port Profile (SPP).",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "72d9b0fc-e178-410e-a114-38c86f0570c7",
+            "uuid": "9a068aac-f5b0-4711-92ba-6d354e7b1d41",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.",
             "implemented-requirements": [
               {
-                "uuid": "57ea2ea8-ede0-44c0-afe0-01889d331534",
+                "uuid": "bf28f03c-4438-4473-8918-e53377b1cea5",
                 "description": "Zebra Android 10 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nZebra Android 10 must be configured to enforce an application installation policy by specifying an application whitelist that restricts applications by the following characteristics: [selection: list of digital signatures, cryptographic hash values, names, application version].\nZebra Android 10 whitelist must be configured to not include applications with the following characteristics: \n\n- back up MD data to non-DoD cloud servers (including user and application access to cloud backup services);\n- transmit MD diagnostic data to non-DoD servers;\n- voice assistant application if available when MD is locked;\n- voice dialing application if available when MD is locked;\n- allows synchronization of data or applications between devices associated with user; and\n- allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.",
-                "control-id": "cm-11."
+                "control-id": "cm-11"
               }
             ]
           },
           {
-            "uuid": "332194cc-ffc6-4e6d-a8e5-17c7c7345d78",
+            "uuid": "07d32a5a-2274-4a59-aa4b-cfc5831697e2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "a1c06c53-a1c0-445a-8b27-8bbd7214ce25",
+                "uuid": "cd53aaeb-2c75-4731-b06f-933b4f5ca3d3",
                 "description": "Zebra Android 10 must be configured to enforce a minimum password length of six characters.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               }
             ]
           }

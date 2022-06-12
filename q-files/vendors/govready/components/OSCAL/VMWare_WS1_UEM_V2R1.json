@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "83dbf7c5-9f70-4352-adc6-1a090a2ab68c",
+    "uuid": "03fa6b05-776e-4c91-843b-6f379b28d10a",
     "metadata": {
       "title": "VMWare WS1 UEM V2R1",
-      "last-modified": "2022-06-10T12:50:51",
-      "version": "2022-06-10T12:50:51",
+      "last-modified": "2022-06-12T11:06:46",
+      "version": "2022-06-12T11:06:46",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "31e68137-f621-495e-8bb7-c2eccdd3d28a",
+          "uuid": "f4cb962a-4a7a-47cd-a7c9-c77511bcecb3",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,200 +16,200 @@
     },
     "components": [
       {
-        "uuid": "fce81a08-86ff-4272-b391-7b3c78b7fb68",
+        "uuid": "9330e0a0-0e1c-47b1-90ae-7d3cf441cfdb",
         "type": "software",
         "title": "VMWare WS1 UEM V2R1",
-        "description": "Dolorem etincidunt consectetur velit etincidunt amet. Amet velit tempora quisquam dolorem adipisci ut. Quaerat amet quiquia non ipsum.",
+        "description": "Consectetur quisquam sed adipisci sit amet sed magnam. Dolore non ut modi sit tempora quiquia quiquia.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "31e68137-f621-495e-8bb7-c2eccdd3d28a"
+              "f4cb962a-4a7a-47cd-a7c9-c77511bcecb3"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "73d0f6bf-9ffd-4353-a88e-ceb41a51da63",
+            "uuid": "8c3cb255-aaf8-423f-9d8f-aa768c41098e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.1.",
             "implemented-requirements": [
               {
-                "uuid": "68f882b9-329c-4df7-a528-42935681b085",
+                "uuid": "e240b729-542b-48ee-b960-0d4500b93c59",
                 "description": "The Workspace ONE UEM server must be configured to leverage the MDM platform user and administrator accounts and groups for Workspace ONE UEM server user identification and authentication.\nAuthentication of MDM platform accounts must be configured so they are implemented via an enterprise directory service.",
-                "control-id": "ac-2.(1)"
+                "control-id": "ac-2.1"
               }
             ]
           },
           {
-            "uuid": "c49c141a-de0f-48ac-8f96-8e6e241557b5",
+            "uuid": "7646ac2c-53d2-4f0f-ab36-a4904a63a489",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.5.",
             "implemented-requirements": [
               {
-                "uuid": "e1c0c2c6-243c-440d-a3e9-92484b35dac2",
+                "uuid": "bb6961a5-fdc2-49b7-8072-17a8bde88429",
                 "description": "The Workspace ONE UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.",
-                "control-id": "ac-6.(5)"
+                "control-id": "ac-6.5"
               },
               {
-                "uuid": "7bb93424-4b0a-4fb2-938e-43fa308e48b0",
+                "uuid": "c997dd07-4343-4d55-b2a3-d331fde70abe",
                 "description": "The Workspace ONE UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.",
-                "control-id": "ac-6.(5)"
+                "control-id": "ac-6.5"
               }
             ]
           },
           {
-            "uuid": "abd33c14-8447-4267-b2b0-909f55065ded",
+            "uuid": "2ad947ab-953c-4261-b3ed-8411cc11746c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "998fa579-cc02-43a9-9634-ff020aa29dba",
+                "uuid": "c931d7bc-a4f4-4829-a85f-f4048120a72b",
                 "description": "The Workspace ONE UEM must enforce the limit of three consecutive invalid logon attempts by a user.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "c3e661fe-6a3f-4d81-afbd-0b2323d7c61f",
+            "uuid": "314ad376-669d-4592-89c5-984346f1e4e1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "b2e586ff-2f02-4ed5-914d-d49eed38c7da",
+                "uuid": "89959915-a9ef-43f9-95a0-bc6f2e1375ec",
                 "description": "The Workspace ONE UEM server must be configured to display the required DoD warning banner upon administrator logon.\n\nNote: This requirement is not applicable if the TOE platform is selected in FTA_TAB.1.1 in the Security Target (ST).",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "d8b2a63c-bc9d-4eab-9a7a-102817c2fcc1",
+            "uuid": "918f874b-9145-45bf-b8d7-046ecd083ab4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.",
             "implemented-requirements": [
               {
-                "uuid": "cc4fb3ed-6521-4595-b78b-acaaa9d65c2b",
+                "uuid": "3d05e33d-d551-49d0-8554-55d448d6d1cf",
                 "description": "The Workspace ONE UEM server or platform must be configured to initiate a session lock after a 15-minute period of inactivity.",
-                "control-id": "ac-11."
+                "control-id": "ac-11"
               }
             ]
           },
           {
-            "uuid": "2bf9b6e0-5a5b-422e-bcf0-f9e6fbe8c122",
+            "uuid": "3fa85b0f-50e7-48a1-8a0c-3bc714e68c5f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "f560557a-9241-4e6e-a353-1d901936a9fd",
+                "uuid": "bb615e62-f7e2-4a06-abe6-356882db4b33",
                 "description": "The Workspace ONE UEM server must be configured to transfer Workspace ONE UEM server logs to another server for storage, analysis, and reporting.\n\nNote: Workspace ONE UEM server logs include logs of MDM events and logs transferred to the Workspace ONE UEM server by MDM agents of managed devices.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "0a8d9a33-cdc4-4f58-855b-c9d13d1360ce",
+            "uuid": "3edd3d15-bbe3-456a-b559-0fe8c7a5c3c4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-6.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-6.4.",
             "implemented-requirements": [
               {
-                "uuid": "c4279c73-dce4-4154-ab24-dba43d1d354b",
+                "uuid": "7350d74e-7ead-43f9-84f2-254f31efb44d",
                 "description": "The MDM Agent must be configured to enable the following function: [selection: read audit logs of the MD].\n\nThis requirement is inherently met if the function is automatically implemented during MDM Agent install/device enrollment.",
-                "control-id": "au-6.(4)"
+                "control-id": "au-6.4"
               }
             ]
           },
           {
-            "uuid": "fd1890cb-b642-44a8-8e25-64ac86f9b8c6",
+            "uuid": "ac0623bf-4db2-41db-959b-d213f783731f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.1.",
             "implemented-requirements": [
               {
-                "uuid": "8ac05b0b-6992-4d28-b486-d1f9e675b012",
+                "uuid": "32af6010-3d45-49c3-89f5-30123b70b14b",
                 "description": "The Workspace ONE UEM local accounts must be configured with password maximum lifetime of 60 days.",
-                "control-id": "au-12.(1)"
+                "control-id": "au-12.1"
               }
             ]
           },
           {
-            "uuid": "cf3039cc-2805-4924-bddb-cf3a20735ee8",
+            "uuid": "a7634b46-1cad-4b7d-9c11-bb7698c801b9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "3afbf64b-f8be-4e6e-838b-f7571a3300dd",
+                "uuid": "eb3cc4fb-b72e-4500-a2cd-1fe381465b74",
                 "description": "The Workspace ONE UEM server must be configured with an enterprise certificate for signing policies (if function is not automatically implemented during Workspace ONE UEM server install).\nThe Workspace ONE UEM server must be configured to have at least one user in the following Administrator roles: Server primary administrator, security configuration administrator, device user group administrator, or auditor.\nThe Workspace ONE UEM server must be maintained at a supported version.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "3c2f1074-5c3b-4cfd-93aa-dc53005ca505",
+            "uuid": "3734ff1d-5c0b-470d-ab59-343be5cc218c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "2cad6641-c4d4-40af-87da-8736078b774e",
+                "uuid": "fd2d3ef1-a1d6-41aa-a437-55b0a46997d8",
                 "description": "The Workspace ONE UEM server must be protected by a DoD-approved firewall.\nThe firewall protecting the Workspace ONE UEM server must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support MDM server and platform functions.\nThe firewall protecting the Workspace ONE UEM server must be configured so that only DoD-approved ports, protocols, and services are enabled. (See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services).",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "8a0cda9b-3209-458c-8076-07c09f0469ef",
+            "uuid": "f4fe0b90-81a0-41ca-9cca-0d985f06b9eb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
             "implemented-requirements": [
               {
-                "uuid": "aaa301ff-4625-4ec4-9309-c758ca9e9e73",
+                "uuid": "7a318864-2634-487d-b9f5-8728af1dfc86",
                 "description": "All Workspace ONE UEM server local accounts created during application installation and configuration must be disabled or removed.",
-                "control-id": "ia-2."
+                "control-id": "ia-2"
               }
             ]
           },
           {
-            "uuid": "cf8147b0-fa62-4d26-9bce-7e85eb20f877",
+            "uuid": "a0e60801-5de1-4b4c-a9f8-a096aebbb39d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.3.",
             "implemented-requirements": [
               {
-                "uuid": "a64c102c-289e-419b-86bb-c6f22c298ad2",
+                "uuid": "003e654a-77e8-45b8-afe5-075ff482bf07",
                 "description": "The Workspace ONE UEM must use multifactor authentication for local access to privileged accounts.",
-                "control-id": "ia-2.(3)"
+                "control-id": "ia-2.3"
               }
             ]
           },
           {
-            "uuid": "d8d51c86-b7bb-4fe9-9604-2cd5980cc795",
+            "uuid": "008d2fbe-c136-413a-a646-bae9739a2ccc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "f3cf177a-fd53-4df3-822c-ec3188e1b31e",
+                "uuid": "30dcfb93-3fb0-4140-aeed-8cdd5c8b1872",
                 "description": "The Workspace ONE UEM local accounts must be configured with at least one lowercase character, one uppercase character, one number, and one special character.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "16c1dad4-512e-47c8-b9e6-8c377bd7b74e",
-                "description": "The Workspace ONE UEM local accounts password must be configured with length of 15 characters.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "01366e78-3ad6-4745-9a8b-d1f75651da04",
+                "uuid": "1cce7adf-eacc-4fe6-b896-6cd0135ece65",
                 "description": "The Workspace ONE UEM local accounts must prohibit password reuse for a minimum of five generations.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "187e3b3f-48ac-4cc0-b7c6-83c2f2cf7d16",
+                "description": "The Workspace ONE UEM local accounts password must be configured with length of 15 characters.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "406019a5-b048-4673-af7e-e63c28a2ce79",
+            "uuid": "a1052624-c09f-4cd1-b89c-00aed8d9a2d0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6.",
             "implemented-requirements": [
               {
-                "uuid": "c149790d-1000-4d38-944e-813abc662a04",
+                "uuid": "5b353e1c-7530-412c-913f-21dec4cdaacb",
                 "description": "The Workspace ONE UEM server must be configured with a periodicity for reachable events of six hours or less for the following commands to the agent: \n- query connectivity status;\n- query the current version of the MD firmware/software;\n- query the current version of installed mobile applications;\n- read audit logs kept by the MD.",
-                "control-id": "si-6."
+                "control-id": "si-6"
               }
             ]
           }

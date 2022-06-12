@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "980ddc03-c44c-4eb9-bdfd-6ed4b0f54478",
+    "uuid": "6520886e-46ca-4af5-8605-373a78e7d00d",
     "metadata": {
       "title": "Microsoft Excel 2016 V1R2",
-      "last-modified": "2022-06-10T12:50:52",
-      "version": "2022-06-10T12:50:52",
+      "last-modified": "2022-06-12T11:06:47",
+      "version": "2022-06-12T11:06:47",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "72163f68-97f2-49a2-a94e-c344cafe9f30",
+          "uuid": "2f475816-62a3-4a87-9cd3-57d8564d6e77",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,87 +16,87 @@
     },
     "components": [
       {
-        "uuid": "71454e05-c1e2-4021-b098-c42b93f71713",
+        "uuid": "c7638a29-8e63-4f3d-a0cc-d9679e3ec113",
         "type": "software",
         "title": "Microsoft Excel 2016 V1R2",
-        "description": "Non etincidunt neque quisquam modi sit dolor quisquam. Dolor eius modi etincidunt est etincidunt. Dolore dolore est numquam labore.",
+        "description": "Velit sit ut dolorem. Tempora modi magnam labore adipisci dolore labore.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "72163f68-97f2-49a2-a94e-c344cafe9f30"
+              "2f475816-62a3-4a87-9cd3-57d8564d6e77"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "61294802-d559-4ecd-8b68-0ab72d9f49a1",
+            "uuid": "53a2780a-c5a8-4d39-bb26-0c88cc7e6774",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "5479e6f1-1c19-4160-a0df-1a1274455e3f",
+                "uuid": "483106fb-ef00-41f3-849a-22a73e8a8ee0",
                 "description": "Add-ins to Office applications must be signed by a Trusted Publisher.\nTrust Bar Notifications for unsigned application add-ins must be blocked.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "4903be02-46c2-4e18-b2e5-39394387dac4",
+            "uuid": "a32a4d78-9ed0-4a64-8c62-a8b46c31a6aa",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "f288a8ea-812c-436e-8975-de3a230b7be9",
+                "uuid": "baa60b6a-65fd-4611-b404-7f36edeb889a",
                 "description": "The Save commands default file format must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "4c797e28-b910-4c03-a2c7-f77093fe3f05",
+            "uuid": "57216820-a376-4114-bd34-4c476977d69f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "3e5a892f-3fc6-4e46-9bdd-034e9dd3dd6e",
+                "uuid": "e3cf2a04-be90-43ae-b6aa-0a8bdf6085b6",
                 "description": "Open/Save actions for Excel 4 macrosheets and add-in files must be blocked.\nOpen/Save actions for Excel 4 workbooks must be blocked.\nOpen/Save actions for Excel 4 worksheets must be blocked.\nActions for Excel 95 workbooks must be configured to edit in Protected View.\nActions for Excel 95-97 workbooks and templates must be configured to edit in Protected View.\nBlocking as default file block opening behavior must be enforced.\nOpen/Save actions for Dif and Sylk files must be blocked.\nOpen/Save actions for Excel 2 macrosheets and add-in files must be blocked.\nOpen/Save actions for Excel 2 worksheets must be blocked.\nOpen/Save actions for Excel 3 macrosheets and add-in files must be blocked.\nOpen/Save actions for Excel 3 worksheets must be blocked.\nOpen/Save actions for web pages and Excel 2003 XML spreadsheets must be blocked.\nFiles from the Internet zone must be opened in Protected View.\nOpen/Save actions for dBase III / IV files must be blocked.\nAdd-on Management functionality must be allowed.\nLinks that invoke instances of Internet Explorer from within an Office product must be blocked.\nWEBSERVICE functions must be disabled.\nCorrupt workbook options must be disallowed.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "51576f4f-7689-494d-85c6-16c37ac68022",
+            "uuid": "278da084-5b41-43a6-bd66-ed46b1e07f1e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "2fba6153-031e-408d-9bf9-07dd2394ba37",
-                "description": "File Downloads must be configured for proper restrictions.",
-                "control-id": "sc-18.(3)"
-              },
-              {
-                "uuid": "202c8351-9dca-4188-a080-1880ec3c14bc",
+                "uuid": "dc3f9511-e900-434d-8dd4-21585788c9a2",
                 "description": "Enabling IE Bind to Object functionality must be present.\nConfiguration for file validation must be enforced.\nScripted Window Security must be enforced.\nProtection from zone elevation must be enforced.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
+              },
+              {
+                "uuid": "9d8ec3bd-eaf2-4862-ab92-8afec9d82543",
+                "description": "File Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "221210fc-454c-48cf-8ad4-0a259e98a557",
+            "uuid": "5477dd95-b949-4f60-8531-84b78c0dae6a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "fea51f16-e4b2-46a2-b613-6b19149352e8",
-                "description": "ActiveX Installs must be configured for proper restriction.",
-                "control-id": "sc-18.(4)"
+                "uuid": "a5ca942b-99d3-4ca3-9dfb-71bf1ffd7fa9",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nDisallowance of trusted locations on the network must be enforced.\nThe scanning of encrypted macros in open XML documents must be enforced.\nMacro storage must be in personal macro workbooks.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nExcel attachments opened from Outlook must be in Protected View.\nMacros must be blocked from running in Office files from the Internet.\nFiles on local Intranet UNC must be opened in Protected View.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "04af6c7a-5f62-46fb-8a30-974581458318",
-                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nDisallowance of trusted locations on the network must be enforced.\nThe scanning of encrypted macros in open XML documents must be enforced.\nMacro storage must be in personal macro workbooks.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nExcel attachments opened from Outlook must be in Protected View.\nMacros must be blocked from running in Office files from the Internet.\nFiles on local Intranet UNC must be opened in Protected View.",
-                "control-id": "sc-18.(4)"
+                "uuid": "c89d74dc-fbe5-4abd-aeb3-75f6db689533",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.4"
               }
             ]
           }

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "039440a8-11e3-4158-b32d-153fb7efe1d8",
+    "uuid": "1f790a09-7db1-4cea-b4ce-3591c930925e",
     "metadata": {
       "title": "VMWare vSphere 6-5 Y21M10",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "f1b5d9c4-a469-49e4-aad6-ac8fe646d0a4",
+          "uuid": "182a5343-422e-47da-ae08-6ea6a273921e",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,243 +16,243 @@
     },
     "components": [
       {
-        "uuid": "63c7d665-d386-4748-b0a7-9226313b13c5",
+        "uuid": "017f1f60-c7e5-4080-8200-f16ff12e7e14",
         "type": "software",
         "title": "VMWare vSphere 6-5 Y21M10",
-        "description": "Tempora etincidunt sed quisquam.",
+        "description": "Quaerat eius aliquam quisquam.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "f1b5d9c4-a469-49e4-aad6-ac8fe646d0a4"
+              "182a5343-422e-47da-ae08-6ea6a273921e"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "36519ab7-113e-4132-840e-c7b442339ccf",
+            "uuid": "49125a2c-7089-46dc-b0b7-9398ceaf157d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "170f7714-abc6-4480-aec3-6d87a076b6a9",
-                "description": "The ESXi host must enforce the unlock timeout of 15 minutes after a user account is locked out.",
-                "control-id": "ac-7."
-              },
-              {
-                "uuid": "c16c6a93-1923-46af-a43c-7e751dc44f46",
+                "uuid": "f5f1e29e-9e9f-452e-ba6e-a044d631c39b",
                 "description": "The ESXi host must enforce the limit of three consecutive invalid logon attempts by a user.",
-                "control-id": "ac-7."
-              }
-            ]
-          },
-          {
-            "uuid": "bc0a0ebf-eb96-4a40-9131-6f65d5ac7fc3",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
-            "implemented-requirements": [
-              {
-                "uuid": "87e2649f-ca31-45e1-a819-2c1f9978c2fb",
-                "description": "The ESXi host must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.\nThe ESXi host must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.\nThe ESXi host SSH daemon must be configured with the Department of Defense (DoD) login banner.",
-                "control-id": "ac-8."
-              }
-            ]
-          },
-          {
-            "uuid": "7d6e69fd-07f7-41f6-87eb-bab210128afa",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
-            "implemented-requirements": [
-              {
-                "uuid": "5b034916-6c3b-489f-8cd0-f930f5bbed4d",
-                "description": "The ESXi host must limit the number of concurrent sessions to ten for all accounts and/or account types by enabling lockdown mode.",
-                "control-id": "ac-10."
-              }
-            ]
-          },
-          {
-            "uuid": "add00490-d774-4172-92e2-4a8799c03b64",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "fecdf44e-c5fb-4005-b9d0-b58dfe39325e",
-                "description": "Remote logging for ESXi hosts must be configured.",
-                "control-id": "ac-17.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "ee4f41ac-1390-4257-8503-cc8401fedd77",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
-            "implemented-requirements": [
-              {
-                "uuid": "835a2090-31c0-4170-a1f7-0d2bddaafd1a",
-                "description": "The ESXi host SSH daemon must use DoD-approved encryption to protect the confidentiality of remote access sessions.\nThe ESXi host SSH daemon must be configured to use only the SSHv2 protocol.",
-                "control-id": "ac-17.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "46dd47f7-6da5-4631-a606-afbd796bec75",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
-            "implemented-requirements": [
-              {
-                "uuid": "fdf2d005-a00c-4ba4-af16-0d70f9bfcd31",
-                "description": "The ESXi host must produce audit records containing information to establish what type of events occurred.",
-                "control-id": "au-3."
-              }
-            ]
-          },
-          {
-            "uuid": "bc1480b5-1dbd-44b6-b09a-289fcf7cfd9a",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
-            "implemented-requirements": [
-              {
-                "uuid": "6b3aba49-efe0-4222-a3df-5bb9136e58fa",
-                "description": "The ESXi host must enable a persistent log location for all locally stored logs.",
-                "control-id": "au-4."
-              }
-            ]
-          },
-          {
-            "uuid": "9d3afa26-c051-495b-bca7-c7f60fa21180",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "2db4d050-770a-4700-9dc0-66c5c1428df5",
-                "description": "The ESXi host must configure NTP time synchronization.",
-                "control-id": "au-8.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "1ac81a33-ba23-422c-9fc6-bfdba5dec3f1",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
-            "implemented-requirements": [
-              {
-                "uuid": "05692cde-5c72-4297-9a7b-38e71ee0ef35",
-                "description": "The ESXi Image Profile and VIB Acceptance Levels must be verified.",
-                "control-id": "cm-5.(3)"
-              }
-            ]
-          },
-          {
-            "uuid": "ae0197cb-9ef0-4cfc-a75d-10f6ab7311fa",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
-            "implemented-requirements": [
-              {
-                "uuid": "c2420cc6-802b-43cd-b118-0579ee3be8f4",
-                "description": "The ESXi host must verify the DCUI.Access list.\nThe ESXi host must verify the exception users list for lockdown mode.\nThe ESXi host SSH daemon must not allow host-based authentication.\nThe ESXi host SSH daemon must not permit root logins.\nThe ESXi host SSH daemon must not allow authentication using an empty password.\nThe ESXi host SSH daemon must not permit user environment settings.\nThe ESXi host SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms.\nThe ESXi host SSH daemon must not permit GSSAPI authentication.\nThe ESXi host SSH daemon must not permit Kerberos authentication.\nThe ESXi host SSH daemon must perform strict mode checking of home directory configuration files.\nThe ESXi host SSH daemon must not allow compression or must only allow compression after successful authentication.\nThe ESXi host SSH daemon must be configured to not allow gateway ports.\nThe ESXi host SSH daemon must be configured to not allow X11 forwarding.\nThe ESXi host SSH daemon must not accept environment variables from the client.\nThe ESXi host SSH daemon must not permit tunnels.\nThe ESXi host SSH daemon must set a timeout count on idle sessions.\nThe ESXi hostSSH daemon must set a timeout interval on idle sessions.\nThe ESXi host SSH daemon must limit connections to a single session.\nThe ESXi host must remove keys from the SSH authorized_keys file.\nThe password hashes stored on the ESXi host must have been generated using a FIPS 140-2 approved cryptographic hashing algorithm.\nSNMP must be configured properly on the ESXi host.\nThe ESXi host must enable bidirectional CHAP authentication for iSCSI traffic.\nThe ESXi host must disable Inter-VM transparent page sharing.\nThe ESXi host must configure the firewall to restrict access to services running on the host.\nThe ESXi host must configure the firewall to block network traffic by default.\nThe ESXi host must enable BPDU filter on the host to prevent being locked out of physical switch ports with Portfast and BPDU Guard enabled.\nThe virtual switch Forged Transmits policy must be set to reject on the ESXi host.\nThe virtual switch MAC Address Change policy must be set to reject on the ESXi host.\nThe virtual switch Promiscuous Mode policy must be set to reject on the ESXi host.\nThe ESXi host must prevent unintended use of the dvFilter network APIs.\nFor the ESXi host all port groups must be configured to a value other than that of the native VLAN.\nFor the ESXi host all port groups must not be configured to VLAN 4095 unless Virtual Guest Tagging (VGT) is required.\nFor the ESXi host all port groups must not be configured to VLAN values reserved by upstream physical switches.\nFor physical switch ports connected to the ESXi host, the non-negotiate option must be configured for trunk links between external physical switches and virtual switches in VST mode.\nAll ESXi host-connected physical switch ports must be configured with spanning tree disabled.\nAll ESXi host-connected virtual switch VLANs must be fully documented and have only the required VLANs.\nThe ESXi host must not provide root/administrator level access to CIM-based hardware monitoring tools or other third-party applications.\nThe ESXi host must verify the integrity of the installation media before installing ESXi.\nThe ESXi host must have all security patches and updates installed.\nThe ESXi host must enable Secure Boot.\nThe ESXi host must use DoD-approved certificates.",
-                "control-id": "cm-6."
-              }
-            ]
-          },
-          {
-            "uuid": "85518494-f027-4d88-8b35-0060ecee0214",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
-            "implemented-requirements": [
-              {
-                "uuid": "c36910d6-1cad-4e74-aeb0-59d468ad4357",
-                "description": "The ESXi host must disable the Managed Object Browser (MOB).\nThe ESXi host must be configured to disable non-essential capabilities by disabling SSH.\nThe ESXi host must disable ESXi Shell unless needed for diagnostics or troubleshooting.",
-                "control-id": "cm-7."
-              }
-            ]
-          },
-          {
-            "uuid": "6eed519f-8196-43ef-bbc2-511eb1a7f2c5",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
-            "implemented-requirements": [
-              {
-                "uuid": "f0fa453b-e7dd-40e8-be51-8cddb41dc6df",
-                "description": "The ESXi host must use Active Directory for local user authentication.\nThe ESXi host must use the vSphere Authentication Proxy to protect passwords when adding ESXi hosts to Active Directory.\nActive Directory ESX Admin group membership must not be used when adding ESXi hosts to Active Directory.",
-                "control-id": "ia-2."
-              }
-            ]
-          },
-          {
-            "uuid": "d3f682ea-d2ce-41f9-85f0-012f25bd7a3c",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
-            "implemented-requirements": [
-              {
-                "uuid": "30607676-6e3b-4763-828e-a6ef840b6ff4",
-                "description": "The ESXi host SSH daemon must ignore .rhosts files.\nThe ESXi host must use multifactor authentication for local access to privileged accounts.",
-                "control-id": "ia-2.(3)"
-              }
-            ]
-          },
-          {
-            "uuid": "0dea9280-cead-4dca-b76a-903781a30b9a",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
-            "implemented-requirements": [
-              {
-                "uuid": "b048edb3-3946-479d-9e00-3b199c3243e5",
-                "description": "The ESXi host must require individuals to be authenticated with an individual authenticator prior to using a group authenticator by using Active Directory for local user authentication.",
-                "control-id": "ia-2.(5)"
-              }
-            ]
-          },
-          {
-            "uuid": "f393bd2f-91ac-40a8-b60f-61dcd2682ed7",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "eb13d217-8704-42ef-9b87-951b46693b45",
-                "description": "The ESXi host must prohibit the reuse of passwords within five iterations.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ac-7"
               },
               {
-                "uuid": "1d586e0f-343f-4514-8c51-6366a11dd8da",
+                "uuid": "ac5abc4f-37de-4f3a-b02e-113442eaab68",
+                "description": "The ESXi host must enforce the unlock timeout of 15 minutes after a user account is locked out.",
+                "control-id": "ac-7"
+              }
+            ]
+          },
+          {
+            "uuid": "f5b821c8-d9e1-4d6a-af51-718f0147fc2f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
+            "implemented-requirements": [
+              {
+                "uuid": "c0745bad-9666-4574-bd62-59f867ed9f9d",
+                "description": "The ESXi host must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.\nThe ESXi host must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.\nThe ESXi host SSH daemon must be configured with the Department of Defense (DoD) login banner.",
+                "control-id": "ac-8"
+              }
+            ]
+          },
+          {
+            "uuid": "27ff3de0-904a-47d2-afec-e5dfec2c6469",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
+            "implemented-requirements": [
+              {
+                "uuid": "8162dcf6-3632-4c25-b319-e37a98d057d5",
+                "description": "The ESXi host must limit the number of concurrent sessions to ten for all accounts and/or account types by enabling lockdown mode.",
+                "control-id": "ac-10"
+              }
+            ]
+          },
+          {
+            "uuid": "9902e0a4-621b-4ccd-a7a7-fe1f97f539f2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "59303d54-8a4d-47ab-9ce9-3eb7b2c7c681",
+                "description": "Remote logging for ESXi hosts must be configured.",
+                "control-id": "ac-17.1"
+              }
+            ]
+          },
+          {
+            "uuid": "f25f0cc1-bfac-4e02-87b8-780c88c7887f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
+            "implemented-requirements": [
+              {
+                "uuid": "b72465f1-2604-4bf5-9f6f-b5c730af2356",
+                "description": "The ESXi host SSH daemon must use DoD-approved encryption to protect the confidentiality of remote access sessions.\nThe ESXi host SSH daemon must be configured to use only the SSHv2 protocol.",
+                "control-id": "ac-17.2"
+              }
+            ]
+          },
+          {
+            "uuid": "4b1c115e-5dc0-4499-89d4-b251677d47b6",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
+            "implemented-requirements": [
+              {
+                "uuid": "6c7d164e-bab8-4cd0-bf32-b4fa2dab67aa",
+                "description": "The ESXi host must produce audit records containing information to establish what type of events occurred.",
+                "control-id": "au-3"
+              }
+            ]
+          },
+          {
+            "uuid": "cec81423-da56-40d1-bf2b-21b91602e5b4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
+            "implemented-requirements": [
+              {
+                "uuid": "836fc2c1-a6c5-4651-8aa0-61bc31fefda1",
+                "description": "The ESXi host must enable a persistent log location for all locally stored logs.",
+                "control-id": "au-4"
+              }
+            ]
+          },
+          {
+            "uuid": "f50e01fe-9585-4285-a4d1-0e24c8d35b1f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "540d293c-0461-490d-9dad-e01c6d53a063",
+                "description": "The ESXi host must configure NTP time synchronization.",
+                "control-id": "au-8.1"
+              }
+            ]
+          },
+          {
+            "uuid": "cc869882-97b3-43ce-8dff-208e415bae25",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
+            "implemented-requirements": [
+              {
+                "uuid": "5e6f999f-b61f-482a-915d-b32149bfe607",
+                "description": "The ESXi Image Profile and VIB Acceptance Levels must be verified.",
+                "control-id": "cm-5.3"
+              }
+            ]
+          },
+          {
+            "uuid": "bcac5b20-f603-4db1-8606-f632eaa196e2",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
+            "implemented-requirements": [
+              {
+                "uuid": "f0cfb12a-f5f0-426f-95a7-e0812a3a7de0",
+                "description": "The ESXi host must verify the DCUI.Access list.\nThe ESXi host must verify the exception users list for lockdown mode.\nThe ESXi host SSH daemon must not allow host-based authentication.\nThe ESXi host SSH daemon must not permit root logins.\nThe ESXi host SSH daemon must not allow authentication using an empty password.\nThe ESXi host SSH daemon must not permit user environment settings.\nThe ESXi host SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms.\nThe ESXi host SSH daemon must not permit GSSAPI authentication.\nThe ESXi host SSH daemon must not permit Kerberos authentication.\nThe ESXi host SSH daemon must perform strict mode checking of home directory configuration files.\nThe ESXi host SSH daemon must not allow compression or must only allow compression after successful authentication.\nThe ESXi host SSH daemon must be configured to not allow gateway ports.\nThe ESXi host SSH daemon must be configured to not allow X11 forwarding.\nThe ESXi host SSH daemon must not accept environment variables from the client.\nThe ESXi host SSH daemon must not permit tunnels.\nThe ESXi host SSH daemon must set a timeout count on idle sessions.\nThe ESXi hostSSH daemon must set a timeout interval on idle sessions.\nThe ESXi host SSH daemon must limit connections to a single session.\nThe ESXi host must remove keys from the SSH authorized_keys file.\nThe password hashes stored on the ESXi host must have been generated using a FIPS 140-2 approved cryptographic hashing algorithm.\nSNMP must be configured properly on the ESXi host.\nThe ESXi host must enable bidirectional CHAP authentication for iSCSI traffic.\nThe ESXi host must disable Inter-VM transparent page sharing.\nThe ESXi host must configure the firewall to restrict access to services running on the host.\nThe ESXi host must configure the firewall to block network traffic by default.\nThe ESXi host must enable BPDU filter on the host to prevent being locked out of physical switch ports with Portfast and BPDU Guard enabled.\nThe virtual switch Forged Transmits policy must be set to reject on the ESXi host.\nThe virtual switch MAC Address Change policy must be set to reject on the ESXi host.\nThe virtual switch Promiscuous Mode policy must be set to reject on the ESXi host.\nThe ESXi host must prevent unintended use of the dvFilter network APIs.\nFor the ESXi host all port groups must be configured to a value other than that of the native VLAN.\nFor the ESXi host all port groups must not be configured to VLAN 4095 unless Virtual Guest Tagging (VGT) is required.\nFor the ESXi host all port groups must not be configured to VLAN values reserved by upstream physical switches.\nFor physical switch ports connected to the ESXi host, the non-negotiate option must be configured for trunk links between external physical switches and virtual switches in VST mode.\nAll ESXi host-connected physical switch ports must be configured with spanning tree disabled.\nAll ESXi host-connected virtual switch VLANs must be fully documented and have only the required VLANs.\nThe ESXi host must not provide root/administrator level access to CIM-based hardware monitoring tools or other third-party applications.\nThe ESXi host must verify the integrity of the installation media before installing ESXi.\nThe ESXi host must have all security patches and updates installed.\nThe ESXi host must enable Secure Boot.\nThe ESXi host must use DoD-approved certificates.",
+                "control-id": "cm-6"
+              }
+            ]
+          },
+          {
+            "uuid": "5b30de2d-316a-4ac5-8084-69eb4a142959",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
+            "implemented-requirements": [
+              {
+                "uuid": "a4f46cd4-f67a-4d8a-9548-35801a3f6991",
+                "description": "The ESXi host must disable the Managed Object Browser (MOB).\nThe ESXi host must be configured to disable non-essential capabilities by disabling SSH.\nThe ESXi host must disable ESXi Shell unless needed for diagnostics or troubleshooting.",
+                "control-id": "cm-7"
+              }
+            ]
+          },
+          {
+            "uuid": "5a2fedcb-e543-4d85-b50d-f6f473a75fac",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
+            "implemented-requirements": [
+              {
+                "uuid": "e8f2fdd5-db53-4c86-8277-31f1c26948fb",
+                "description": "The ESXi host must use Active Directory for local user authentication.\nThe ESXi host must use the vSphere Authentication Proxy to protect passwords when adding ESXi hosts to Active Directory.\nActive Directory ESX Admin group membership must not be used when adding ESXi hosts to Active Directory.",
+                "control-id": "ia-2"
+              }
+            ]
+          },
+          {
+            "uuid": "1ec23a96-4180-4ba7-b265-8e56e057db47",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.3.",
+            "implemented-requirements": [
+              {
+                "uuid": "9c0462dc-1edf-4fd9-b364-58a34773f315",
+                "description": "The ESXi host SSH daemon must ignore .rhosts files.\nThe ESXi host must use multifactor authentication for local access to privileged accounts.",
+                "control-id": "ia-2.3"
+              }
+            ]
+          },
+          {
+            "uuid": "b0fff803-1595-4bf6-9687-9e1964bf7e63",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.5.",
+            "implemented-requirements": [
+              {
+                "uuid": "3e6a8cbe-1dbf-4149-a5e6-12122cd8d6e9",
+                "description": "The ESXi host must require individuals to be authenticated with an individual authenticator prior to using a group authenticator by using Active Directory for local user authentication.",
+                "control-id": "ia-2.5"
+              }
+            ]
+          },
+          {
+            "uuid": "451f2c3e-565b-447e-a7be-14902c953c23",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "f2a69c7f-c239-42d7-b8b5-919d32da23ab",
                 "description": "The ESXi host  must enforce password complexity by requiring that at least one upper-case character be used.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "f6a7754f-b1e0-4c1e-8cdc-68b3c0520fc3",
+                "description": "The ESXi host must prohibit the reuse of passwords within five iterations.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "062f1d33-ea5d-4909-a363-01dbc925189c",
+            "uuid": "b6da6d76-7e0d-4fac-99cd-34709060bd0a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "93c53cbc-14bc-44fa-9a2d-3840c91845b5",
+                "uuid": "289dde79-3264-47e5-b6f4-36add46e5440",
                 "description": "The ESXi host must protect the confidentiality and integrity of transmitted information by isolating vMotion traffic.\nThe ESXi host must protect the confidentiality and integrity of transmitted information by protecting IP based management traffic.\nThe ESXi host must protect the confidentiality and integrity of transmitted information by utilizing different TCP/IP stacks where possible.\nThe ESXi host must protect the confidentiality and integrity of transmitted information.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "38d89a9c-dffd-4fea-8282-20639a77bcd3",
+            "uuid": "45175f79-19cf-40a6-9930-259c68322025",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10.",
             "implemented-requirements": [
               {
-                "uuid": "6e59372f-8771-4e69-a5c2-849daa3517ea",
+                "uuid": "87d2d495-7ae4-4f79-8095-a8e266f96b80",
                 "description": "The ESXi host must set a timeout to automatically disable idle sessions after 10 minutes.\nThe ESXi host must terminate shell services after 10 minutes.\nThe ESXi host must logout of the console UI after 10 minutes.",
-                "control-id": "sc-10."
+                "control-id": "sc-10"
               }
             ]
           },
           {
-            "uuid": "2fedd064-8f18-4217-92fc-60173683f462",
+            "uuid": "7d3308f1-4c54-4dff-9689-2e588c93a316",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
             "implemented-requirements": [
               {
-                "uuid": "3cbf9559-81b4-4f31-94ce-f189d7ce5aa2",
+                "uuid": "e9687f26-7eac-4f8e-ba57-830a407ca0ca",
                 "description": "The ESXi host must enable kernel core dumps.",
-                "control-id": "sc-24."
+                "control-id": "sc-24"
               }
             ]
           }

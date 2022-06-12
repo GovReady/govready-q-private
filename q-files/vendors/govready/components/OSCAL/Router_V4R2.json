@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "9ffba0eb-6dd7-4767-b145-f7b3540cd195",
+    "uuid": "ea09c2a4-0bb0-40a8-8c24-6185c0290f73",
     "metadata": {
       "title": "Router V4R2",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "314fcf20-d68c-4687-8299-b048b76456ff",
+          "uuid": "239b6fdc-15d3-436a-a607-d25b963582c6",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,224 +16,224 @@
     },
     "components": [
       {
-        "uuid": "95734b12-3de7-4342-9b38-648fd6c257d3",
+        "uuid": "03ea1293-f884-442d-b293-abae59a2a299",
         "type": "software",
         "title": "Router V4R2",
-        "description": "Dolore neque velit magnam. Sit quaerat sed modi amet.",
+        "description": "Quaerat quaerat neque numquam ut tempora.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "314fcf20-d68c-4687-8299-b048b76456ff"
+              "239b6fdc-15d3-436a-a607-d25b963582c6"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "f52acb5e-0489-4bf8-9b90-9c3b6371c04e",
+            "uuid": "c53318ee-8ac1-4fb3-89fb-ba462e48c069",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.",
             "implemented-requirements": [
               {
-                "uuid": "a92fcbfb-b290-42d5-8873-7b8435a85e7d",
-                "description": "The router must be configured to disable the auxiliary port unless it is connected to a secured modem providing encryption and authentication.\nThe perimeter router must be configured to enforce approved authorizations for controlling the flow of information between interconnected networks in accordance with applicable policy.\nThe multicast router must be configured to disable Protocol Independent Multicast (PIM) on all interfaces that are not required to support multicast routing.\nThe multicast router must be configured to bind a Protocol Independent Multicast (PIM) neighbor filter to interfaces that have PIM enabled.\nThe multicast edge router must be configured to establish boundaries for administratively scoped multicast traffic.\nThe router must be configured to have all inactive interfaces disabled.\nThe perimeter router must be configured to protect an enclave connected to an alternate gateway by using an inbound filter that only permits packets with destination addresses within the sites address space.\nThe perimeter router must be configured to not be a Border Gateway Protocol (BGP) peer to an alternate gateway service provider.\nThe perimeter router must be configured to not redistribute static routes to an alternate gateway service provider into BGP or an IGP peering with the NIPRNet or to other autonomous systems.\nThe out-of-band management (OOBM) gateway router must be configured to have separate IGP instances for the managed network and management network.\nThe out-of-band management (OOBM) gateway router must be configured to not redistribute routes between the management network routing domain and the managed network routing domain.\nThe multicast Rendezvous Point (RP) router must be configured to filter Protocol Independent Multicast (PIM) Register messages received from the Designated Router (DR) for any undesirable multicast groups and sources.\nThe multicast Rendezvous Point (RP) router must be configured to filter Protocol Independent Multicast (PIM) Join messages received from the Designated Router (DR) for any undesirable multicast groups.",
-                "control-id": "ac-4."
-              },
-              {
-                "uuid": "09f0319f-e350-4143-ad54-7545ff79e032",
+                "uuid": "fedce577-4889-439a-8de4-10d8839e2f49",
                 "description": "The router must be configured to enforce approved authorizations for controlling the flow of information within the network based on organization-defined information flow control policies.\nThe BGP router must be configured to reject inbound route advertisements for any Bogon prefixes.\nThe BGP router must be configured to reject inbound route advertisements for any prefixes belonging to the local autonomous system (AS).\nThe BGP router must be configured to reject inbound route advertisements from a customer edge (CE) router for prefixes that are not allocated to that customer.\nThe BGP router must be configured to reject outbound route advertisements for any prefixes that do not belong to any customers or the local autonomous system (AS).\nThe Multicast Source Discovery Protocol (MSDP) router must be configured to filter received source-active multicast advertisements for any undesirable multicast groups and sources.\nThe Multicast Source Discovery Protocol (MSDP) router must be configured to filter source-active multicast advertisements to external MSDP peers to avoid global visibility of local-only multicast sources and groups.\nThe MSDP router must be configured to limit the amount of source-active messages it accepts on per-peer basis.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
+              },
+              {
+                "uuid": "74de59b4-3616-458d-b6f6-fd518e1b2a19",
+                "description": "The router must be configured to disable the auxiliary port unless it is connected to a secured modem providing encryption and authentication.\nThe perimeter router must be configured to enforce approved authorizations for controlling the flow of information between interconnected networks in accordance with applicable policy.\nThe multicast router must be configured to disable Protocol Independent Multicast (PIM) on all interfaces that are not required to support multicast routing.\nThe multicast router must be configured to bind a Protocol Independent Multicast (PIM) neighbor filter to interfaces that have PIM enabled.\nThe multicast edge router must be configured to establish boundaries for administratively scoped multicast traffic.\nThe router must be configured to have all inactive interfaces disabled.\nThe perimeter router must be configured to protect an enclave connected to an alternate gateway by using an inbound filter that only permits packets with destination addresses within the sites address space.\nThe perimeter router must be configured to not be a Border Gateway Protocol (BGP) peer to an alternate gateway service provider.\nThe perimeter router must be configured to not redistribute static routes to an alternate gateway service provider into BGP or an IGP peering with the NIPRNet or to other autonomous systems.\nThe out-of-band management (OOBM) gateway router must be configured to have separate IGP instances for the managed network and management network.\nThe out-of-band management (OOBM) gateway router must be configured to not redistribute routes between the management network routing domain and the managed network routing domain.\nThe multicast Rendezvous Point (RP) router must be configured to filter Protocol Independent Multicast (PIM) Register messages received from the Designated Router (DR) for any undesirable multicast groups and sources.\nThe multicast Rendezvous Point (RP) router must be configured to filter Protocol Independent Multicast (PIM) Join messages received from the Designated Router (DR) for any undesirable multicast groups.",
+                "control-id": "ac-4"
               }
             ]
           },
           {
-            "uuid": "5490784d-02c3-4d5f-8a88-7ef2190566a5",
+            "uuid": "02828ed0-78b2-4d0f-87f7-51fe3b4862bb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.(8).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.8.",
             "implemented-requirements": [
               {
-                "uuid": "808c4ba7-a1a9-4ec5-96b1-2287cb9dd1f1",
+                "uuid": "478fae23-93e8-4b03-ae57-a0c6f02ad208",
                 "description": "The BGP router must be configured to reject route advertisements from BGP peers that do not list their autonomous system (AS) number as the first AS in the AS_PATH attribute.\nThe BGP router must be configured to reject route advertisements from CE routers with an originating AS in the AS_PATH attribute that does not belong to that customer.",
-                "control-id": "ac-4.(8)"
+                "control-id": "ac-4.8"
               }
             ]
           },
           {
-            "uuid": "96bc6508-7abf-440e-833d-8ec952b84622",
+            "uuid": "12e0a1d5-105a-4125-9c07-0c9770c3a3e2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.(17).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.17.",
             "implemented-requirements": [
               {
-                "uuid": "9ba3d9d5-68f4-4b5f-80ff-1e1168fe7688",
+                "uuid": "1a80e19e-0c8e-4934-a622-6037283ffabe",
                 "description": "The router must be configured to implement message authentication for all control plane protocols.\nThe BGP router must be configured to use a unique key for each autonomous system (AS) that it peers with.\nThe router must be configured to use keys with a duration not exceeding 180 days for authenticating routing protocol messages.",
-                "control-id": "ac-4.(17)"
+                "control-id": "ac-4.17"
               }
             ]
           },
           {
-            "uuid": "6e9f1563-0f40-43fe-b170-530995ffb1f6",
+            "uuid": "646ed5ae-d67c-42ce-b1c5-5be44201f2ba",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "94b8ab2d-29d6-4d62-b197-0a3a55c459e2",
-                "description": "The router must be configured to log all packets that have been dropped.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "98a73580-7e74-4b3f-89be-f45e19ee3f5a",
-                "description": "The router must be configured to produce audit records containing information to establish the source of the events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "beea97d3-fcbf-404f-9451-9007283c522d",
+                "uuid": "bef857f2-cf79-40a2-b0ad-481efac17857",
                 "description": "The router must be configured to produce audit records containing information to establish where the events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "bf9dfb0e-c8b7-4d42-bfd6-64d5ce5822aa",
+                "description": "The router must be configured to produce audit records containing information to establish the source of the events.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "f0cd87e4-698f-4c57-97e9-223971e69d14",
+                "description": "The router must be configured to log all packets that have been dropped.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "2ea19607-2f5a-4ef9-a73f-722f740be890",
+            "uuid": "f32a9e42-361d-4258-8dd9-8f07d747a3ad",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "e773fb94-a8ec-44fa-854d-9376471aa630",
+                "uuid": "953a7202-1fac-41b5-8f67-75c7fa81db37",
                 "description": "The multicast Designated Router (DR) must be configured to increase the shortest-path tree (SPT) threshold or set it to infinity to minimalize source-group (S, G) state within the multicast topology where Any Source Multicast (ASM) is deployed.\nThe BGP router must be configured to use its loopback address as the source address for iBGP peering sessions.\nThe MPLS router must be configured to use its loopback address as the source address for LDP peering sessions.\nThe MPLS router must be configured to synchronize IGP and LDP to minimize packet loss when an IGP adjacency is established prior to LDP peers completing label exchange.\nThe MPLS router must be configured to have TTL Propagation disabled.\nThe PE router must be configured to have each Virtual Routing and Forwarding (VRF) instance bound to the appropriate physical or logical interfaces to maintain traffic separation between all MPLS L3VPNs.\nThe PE router must be configured to have each Virtual Routing and Forwarding (VRF) instance with the appropriate Route Target (RT).\nThe PE router must be configured to have each VRF with the appropriate Route Distinguisher (RD).\nThe PE router providing MPLS Virtual Private Wire Service (VPWS) must be configured to have the appropriate virtual circuit identification (VC ID) for each attachment circuit.\nThe PE router providing Virtual Private LAN Services (VPLS) must be configured to have all attachment circuits defined to the virtual forwarding instance (VFI) with the globally unique VPN ID assigned for each customer VLAN.\nThe PE router must be configured to enforce the split-horizon rule for all pseudowires within a Virtual Private LAN Services (VPLS) bridge domain.\nThe Multicast Source Discovery Protocol (MSDP) router must be configured to use its loopback address as the source address when originating MSDP traffic.\nThe router must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.\nThe router must be configured to implement message authentication for all control plane protocols.\nThe BGP router must be configured to use a unique key for each autonomous system (AS) that it peers with.\nThe router must be configured to use keys with a duration not exceeding 180 days for authenticating routing protocol messages.\nThe router must be configured to advertise a hop limit of at least 32 in Router Advertisement messages for IPv6 stateless auto-configuration deployments.\nThe router must not be configured to use IPv6 Site Local Unicast addresses.\nThe perimeter router must be configured to suppress Router Advertisements on all external IPv6-enabled interfaces.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "33dd58f8-4bfc-472d-af09-d12320691d5f",
+            "uuid": "8ddc0986-e9c5-48b8-a532-66e7154aa976",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "e50ae480-6ee6-4f6a-8bcf-77d4d858dbde",
+                "uuid": "16935c75-1e2f-41cb-988e-19a6d96ef7b3",
                 "description": "The router must be configured to have all non-essential capabilities disabled.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "5202bfdf-5a71-4f7b-bed5-28755d1c8b83",
+            "uuid": "c32ce89e-cf1e-432b-a212-de91c99aa1c0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.",
             "implemented-requirements": [
               {
-                "uuid": "ab4d1008-5625-41be-88a9-0290a9b98aca",
+                "uuid": "1b53076b-9a5e-49d9-ae3f-318e4b6baeaf",
                 "description": "The PE router providing MPLS Layer 2 Virtual Private Network (L2VPN) services must be configured to authenticate targeted Label Distribution Protocol (LDP) sessions used to exchange virtual circuit (VC) information using a FIPS-approved message authentication code algorithm.\nThe Multicast Source Discovery Protocol (MSDP) router must be configured to authenticate all received MSDP packets.",
-                "control-id": "ia-3."
+                "control-id": "ia-3"
               }
             ]
           },
           {
-            "uuid": "7c35a8ce-69c5-41b6-aa31-1e0327df6f3e",
+            "uuid": "a54701bb-adcb-45e3-bc91-9e804c620ef8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "6c7d8f8e-d136-4300-8f0c-6840f56fab26",
+                "uuid": "098383a2-07de-4d80-9f69-3a8ba5c95e26",
                 "description": "The router must be configured to use encryption for routing protocol authentication.\nThe router must be configured to authenticate all routing protocol messages using NIST-validated FIPS 198-1 message authentication code algorithm.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "39ab71c7-81e8-4d65-ab38-f0f2a9916d3b",
+            "uuid": "702910f5-9111-41a6-9960-1f8686613e7c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
             "implemented-requirements": [
               {
-                "uuid": "570b9080-9d7e-4380-a845-efb242118095",
+                "uuid": "1d80ce1d-78d6-481d-b9ee-dcd5f1a6db6e",
                 "description": "The router must not be configured to have any zero-touch deployment feature enabled when connected to an operational network.\nThe router must be configured to protect against or limit the effects of denial-of-service (DoS) attacks by employing control plane protection.\nThe router must be configured to have Gratuitous ARP disabled on all external interfaces.\nThe router must be configured to have IP directed broadcast disabled on all interfaces.\nThe router must be configured to have Internet Control Message Protocol (ICMP) unreachable notifications disabled on all external interfaces.\nThe router must be configured to have Internet Control Message Protocol (ICMP) mask replies disabled on all external interfaces.\nThe router must be configured to have Internet Control Message Protocol (ICMP) redirects disabled on all external interfaces.\nThe BGP router must be configured to use the maximum prefixes feature to protect against route table flooding and prefix de-aggregation attacks.\nThe BGP router must be configured to limit the prefix size on any inbound route advertisement to /24 or the least significant prefixes issued to the customer.\nThe PE router must be configured to implement Internet Group Management Protocol (IGMP) or Multicast Listener Discovery (MLD) snooping for each Virtual Private LAN Services (VPLS) bridge domain.\nThe multicast Rendezvous Point (RP) router must be configured to limit the multicast forwarding cache so that its resources are not saturated by managing an overwhelming number of Protocol Independent Multicast (PIM) and Multicast Source Discovery Protocol (MSDP) source-active entries.\nThe multicast Rendezvous Point (RP) must be configured to rate limit the number of Protocol Independent Multicast (PIM) Register messages.\nThe multicast Designated Router (DR) must be configured to limit the number of mroute states resulting from Internet Group Management Protocol (IGMP) and Multicast Listener Discovery (MLD) Host Membership Reports.\nThe BGP router must be configured to enable the Generalized TTL Security Mechanism (GTSM).",
-                "control-id": "sc-5."
+                "control-id": "sc-5"
               }
             ]
           },
           {
-            "uuid": "42304856-b9d5-4195-81d3-2f5e4947bfb2",
+            "uuid": "fe13b38d-18bb-45a4-a485-07c55945c25e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "94b6ddc9-0513-4893-809a-8fee795a0d48",
+                "uuid": "421f01f4-252f-468a-9d25-25959f13b3ab",
                 "description": "The PE router must be configured to limit the number of MAC addresses it can learn for each Virtual Private LAN Services (VPLS) bridge domain.\nThe perimeter router must be configured to restrict it from accepting outbound IP packets that contain an illegitimate address in the source address field via egress filter or by enabling Unicast Reverse Path Forwarding (uRPF).",
-                "control-id": "sc-5.(1)"
+                "control-id": "sc-5.1"
               }
             ]
           },
           {
-            "uuid": "e55946b4-c492-4fe0-b798-e078a5e37bce",
+            "uuid": "4b54e5db-4f21-46cf-84eb-1cb7cf5467fc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "4737ad6e-b5ed-4665-80af-b214eebe2e76",
+                "uuid": "e6bfbee5-f779-41b4-875b-9712b2826ec1",
                 "description": "The MPLS router with RSVP-TE enabled must be configured with message pacing or refresh reduction to adjust maximum number of RSVP messages to an output queue based on the link speed and input queue size of adjacent core routers.\nThe PE router providing Virtual Private LAN Services (VPLS) must be configured to have traffic storm control thresholds on CE-facing interfaces.\nThe PE router must be configured to enforce a Quality-of-Service (QoS) policy to limit the effects of packet flooding denial-of-service (DoS) attacks.\nThe PE router must be configured to enforce a Quality-of-Service (QoS) policy in accordance with the QoS DoDIN Technical Profile.\nThe P router must be configured to enforce a Quality-of-Service (QoS) policy in accordance with the QoS GIG Technical Profile.",
-                "control-id": "sc-5.(2)"
+                "control-id": "sc-5.2"
               }
             ]
           },
           {
-            "uuid": "6e0c65f6-9935-4a71-815f-2473f825795c",
+            "uuid": "f5330a92-e2d7-4684-831b-c5cc8bf37f4f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.",
             "implemented-requirements": [
               {
-                "uuid": "92307a25-bc77-45a2-a6ef-523a5dfba07d",
+                "uuid": "e631e87e-dbd2-4354-998f-1582fb9c51b8",
                 "description": "The router must be configured to restrict traffic destined to itself.\nThe router must be configured to drop all fragmented Internet Control Message Protocol (ICMP) packets destined to itself.\nThe perimeter router must be configured to filter traffic destined to the enclave in accordance with the guidelines contained in DoD Instruction 8551.1.\nThe perimeter router must be configured to filter ingress traffic at the external interface on an inbound direction.\nThe perimeter router must be configured to filter egress traffic at the internal interface on an inbound direction.\nThe BGP router must be configured to reject outbound route advertisements for any prefixes belonging to the IP core.\nThe PE router must be configured to block any traffic that is destined to IP core infrastructure.\nThe PE router must be configured with Unicast Reverse Path Forwarding (uRPF) loose mode enabled on all CE-facing interfaces..\nThe out-of-band management (OOBM) gateway must be configured to transport management traffic to the Network Operations Center (NOC) via dedicated circuit, MPLS/VPN service, or IPsec tunnel.\nThe out-of-band management (OOBM) gateway router must be configured to forward only authorized management traffic to the Network Operations Center (NOC).\nThe out-of-band management (OOBM) gateway router must be configured to block any traffic destined to itself that is not sourced from the OOBM network or the NOC.\nThe router must be configured to only permit management traffic that ingresses and egresses the OOBM interface.\nThe router providing connectivity to the NOC must be configured to forward all in-band management traffic via an IPsec tunnel.\nThe perimeter router must be configured to block all outbound management traffic.",
-                "control-id": "sc-7."
+                "control-id": "sc-7"
               }
             ]
           },
           {
-            "uuid": "e6d337aa-35d2-44bd-be52-83e535ed0b4e",
+            "uuid": "f9c5660e-fb2e-4658-b01e-97391b211b9b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.5.",
             "implemented-requirements": [
               {
-                "uuid": "f6ffb668-5b31-44cb-aa8a-37b8e6163239",
+                "uuid": "ee551f4f-3e53-460b-9cd4-1bf5d8c2324f",
                 "description": "The perimeter router must be configured to deny network traffic by default and allow network traffic by exception.",
-                "control-id": "sc-7.(5)"
+                "control-id": "sc-7.5"
               }
             ]
           },
           {
-            "uuid": "7e50f312-e794-4365-bf8f-2b59a14b2d52",
+            "uuid": "68e262d6-3ab3-479a-9c06-bb68874f0f8a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(11).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.11.",
             "implemented-requirements": [
               {
-                "uuid": "6e9d9dad-e57e-4beb-88b7-e2e376d99073",
+                "uuid": "78449a6b-df77-4120-9665-ea90de634a9f",
                 "description": "The perimeter router must be configured to only allow incoming communications from authorized sources to be routed to authorized destinations.\nThe perimeter router must be configured to block inbound packets with source Bogon IP address prefixes.\nThe perimeter router must be configured to have Link Layer Discovery Protocols (LLDPs) disabled on all external interfaces.\nThe perimeter router must be configured to have Proxy ARP disabled on all external interfaces.\nThe multicast Designated Router (DR) must be configured to filter the Internet Group Management Protocol (IGMP) and Multicast Listener Discovery (MLD) Report messages to allow hosts to join only multicast groups that have been approved by the organization.\nThe multicast Designated Router (DR) must be configured to filter the Internet Group Management Protocol (IGMP) and Multicast Listener Discovery (MLD) Report messages to allow hosts to join a multicast group only from sources that have been approved by the organization.\nThe Multicast Source Discovery Protocol (MSDP) router must be configured to only accept MSDP packets from known MSDP peers.\nThe router must not be configured to have any feature enabled that calls home to the vendor.\nThe perimeter router must be configured to block all packets with any IP options.\nThe PE router must be configured to ignore or block all packets with any IP options.\nThe perimeter router must be configured to drop IPv6 undetermined transport packets.\nThe perimeter router must be configured drop IPv6 packets with a Routing Header type 0, 1, or 3255.\nThe perimeter router must be configured to drop IPv6 packets containing a Hop-by-Hop header with invalid option type values.\nThe perimeter router must be configured to drop IPv6 packets containing a Destination Option header with invalid option type values.\nThe perimeter router must be configured to drop IPv6 packets containing an extension header with the Endpoint Identification option.\nThe perimeter router must be configured to drop IPv6 packets containing the NSAP address option within Destination Option header.\nThe perimeter router must be configured to drop IPv6 packets containing a Hop-by-Hop or Destination Option extension header with an undefined option type.",
-                "control-id": "sc-7.(11)"
+                "control-id": "sc-7.11"
               }
             ]
           },
           {
-            "uuid": "aa8b8782-b46a-42f0-9584-cceaf2afbc83",
+            "uuid": "a2f0948e-0e36-4044-9b3e-6bdfdfe4ce14",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.(18).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-7.18.",
             "implemented-requirements": [
               {
-                "uuid": "c71982b6-d15c-42e4-8d4f-1f1e2ec068a8",
+                "uuid": "ffd578e4-5e4f-43b6-867c-3be8003f2f85",
                 "description": "The router must be configured to fail securely in the event of an operational failure.",
-                "control-id": "sc-7.(18)"
+                "control-id": "sc-7.18"
               }
             ]
           },
           {
-            "uuid": "b44e4403-9b5c-46a8-97b8-732be5822508",
+            "uuid": "10fa4e41-1eeb-4c13-b582-fa689c656da3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
             "implemented-requirements": [
               {
-                "uuid": "0bc945e8-40d0-41ac-8143-5aa58c8cb5f0",
+                "uuid": "9d9cbbd3-3bc4-4f33-86c0-ac5fa4c9c729",
                 "description": "The router must be configured to stop forwarding traffic upon the failure of the following actions: system initialization, shutdown, or system abort.",
-                "control-id": "sc-24."
+                "control-id": "sc-24"
               }
             ]
           }

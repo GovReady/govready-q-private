@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "4113bd04-2bc6-4df5-8ce0-bf468087e4ad",
+    "uuid": "df7f0222-142f-4b50-a234-a316e39138c6",
     "metadata": {
       "title": "JBoss EAP 6-3 V2R3",
-      "last-modified": "2022-06-10T12:50:53",
-      "version": "2022-06-10T12:50:53",
+      "last-modified": "2022-06-12T11:06:48",
+      "version": "2022-06-12T11:06:48",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "8815c84e-9eae-4e48-b6d1-4b117c06de3c",
+          "uuid": "abf09836-4f4a-4d26-ac3f-6f925a88886a",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,454 +16,454 @@
     },
     "components": [
       {
-        "uuid": "91f9fd8e-52c7-4eab-b2e9-68dee4e0e57c",
+        "uuid": "633ffbb9-3e4c-48a7-a6b3-4f99c8cd3cb9",
         "type": "software",
         "title": "JBoss EAP 6-3 V2R3",
-        "description": "Etincidunt est quiquia labore ut sed. Amet labore etincidunt magnam porro.",
+        "description": "Adipisci magnam aliquam sed aliquam dolore etincidunt amet. Neque quaerat consectetur est sit. Tempora eius porro dolorem neque sit magnam amet.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "8815c84e-9eae-4e48-b6d1-4b117c06de3c"
+              "abf09836-4f4a-4d26-ac3f-6f925a88886a"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "10936f37-43da-4687-ae6f-10010bacd9d7",
+            "uuid": "6f1be76a-a9f3-465d-b0a0-52d41f06a2b2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "c5b7b38c-da47-426c-8f71-6e9cf174f2bd",
+                "uuid": "12488901-5daa-40d6-a6a5-aba606bcf626",
                 "description": "Java permissions must be set for hosted applications.\nThe Java Security Manager must be enabled for the JBoss application server.\nThe JBoss server must be configured with Role Based Access Controls.\nUsers in JBoss Management Security Realms must be in the appropriate role.\nSilent Authentication must be removed from the Default Application Security Realm.\nSilent Authentication must be removed from the Default Management Security Realm.\nJBoss management interfaces must be secured.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "8e9b77c2-a38d-4e99-9c45-0ec64280ce9b",
+            "uuid": "138c8f4c-d53c-4e87-9d66-bcd6a66e6ee5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.9.",
             "implemented-requirements": [
               {
-                "uuid": "a291144a-fa7c-450d-94c3-20faafe878ce",
+                "uuid": "725f41fb-9180-4f58-a9bd-1fa826dc9f8c",
                 "description": "The JBoss server must be configured to log all admin activity.",
-                "control-id": "ac-6.(9)"
+                "control-id": "ac-6.9"
               }
             ]
           },
           {
-            "uuid": "0b2499ca-9b62-425d-9167-d24ec94d77a9",
+            "uuid": "45e1826b-122f-42fe-bc7e-342d46434bb7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "16cbc148-9224-4e6b-bd12-abd4bdb168d0",
+                "uuid": "ab4b0416-75d9-415e-98fd-612b425bbe2f",
                 "description": "The application server must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "337ff81c-3c38-4fed-9436-d0bb7fa69abb",
+            "uuid": "047184b1-9259-4ae7-83d6-a626bb876739",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "7d0e0541-f0e7-46f3-9cd9-d9101e1c9448",
-                "description": "HTTPS must be enabled for JBoss web interfaces.",
-                "control-id": "ac-17.(2)"
-              },
-              {
-                "uuid": "23bfc87b-1cd0-4970-a2d8-2e46228b1624",
+                "uuid": "9ef228ec-1629-4c3e-bbb5-fcdea88fc758",
                 "description": "HTTP management session traffic must be encrypted.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
+              },
+              {
+                "uuid": "7463bc45-54b2-4236-a870-8dcc126725f6",
+                "description": "HTTPS must be enabled for JBoss web interfaces.",
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "8a2f299b-ec2f-4aab-acb7-46f11aedb5bd",
+            "uuid": "d27aba9c-149d-4ee1-b0d8-8d05e05c5052",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.9.",
             "implemented-requirements": [
               {
-                "uuid": "a6dd1e28-7d09-4671-a893-420d932d2799",
+                "uuid": "bda6b6f3-4d6d-462e-9be5-898d8d1ef73a",
                 "description": "Network access to HTTP management must be disabled on domain-enabled application servers not designated as the domain controller.",
-                "control-id": "ac-17.(9)"
+                "control-id": "ac-17.9"
               }
             ]
           },
           {
-            "uuid": "618274fe-3fe6-4953-b48b-591a91905dac",
+            "uuid": "414e1166-4739-478f-bed0-504bb81db3f1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "9f1814da-2fd2-4db1-82d7-f175252c964c",
-                "description": "The application server must produce log records that contain sufficient information to establish the outcome of events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "0ec266dd-d414-44bf-bf3d-3d5cf638fda8",
+                "uuid": "73492ecc-f240-47e1-8679-9e12e3709f0f",
                 "description": "JBoss must be configured to log the IP address of the remote system connecting to the JBoss system/cluster.\nJBoss must be configured to produce log records containing information to establish what type of events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "38e44ff1-dc49-4f43-bd18-dae18c3c1380",
-                "description": "JBoss must be configured to record the IP address and port information used by management interface network traffic.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "6e432578-2b66-438a-9b4e-06c61fc93590",
-                "description": "JBoss must be configured to produce log records that establish which hosted application triggered the events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "6dd81571-725c-4524-8064-5660efd61b71",
-                "description": "JBoss ROOT logger must be configured to utilize the appropriate logging level.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "aeac3bc6-b3de-41ee-85ad-a020f33ec465",
+                "uuid": "12b61b12-c33a-499e-b0de-cb0d36b4481f",
                 "description": "JBoss Log Formatter must be configured to produce log records that establish the date and time the events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "bd785205-7581-48a3-8e9e-6e0fb3b15516",
+                "description": "JBoss must be configured to produce log records that establish which hosted application triggered the events.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "16a66e61-9483-4fc4-b55c-e96454da00e7",
+                "description": "JBoss ROOT logger must be configured to utilize the appropriate logging level.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "cc80ea52-20ab-4cad-b175-cfc1af8fbb79",
+                "description": "JBoss must be configured to record the IP address and port information used by management interface network traffic.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "2f525810-fdf9-4993-83bc-4d0657df0bf9",
+                "description": "The application server must produce log records that contain sufficient information to establish the outcome of events.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "a03647d3-d841-4303-94ad-6d55682f5990",
+            "uuid": "10520780-1f9f-4084-8e20-7019121b81ce",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "b02a8f08-2136-491d-a2d0-1dcb8651d3cf",
+                "uuid": "8f9b34b8-d67d-4bb7-a222-58ad75e7b506",
                 "description": "The JBoss server must be configured to utilize syslog logging.\nJBoss servers must be configured to roll over and transfer logs on a minimum weekly basis.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "106f81af-760b-4f91-96c0-44fd053a424a",
+            "uuid": "6ea2429a-7458-406b-8c0e-465be7fe0d6c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "b2ffa37a-59b6-4301-b478-5e42ab6a258e",
-                "description": "File permissions must be configured to protect log information from any type of unauthorized read access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "a33a1fa1-7115-4c64-abcd-37c58ff912dd",
+                "uuid": "7dbccdf9-a6f9-4224-a8ed-2bc395bb7a5c",
                 "description": "File permissions must be configured to protect log information from unauthorized deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "4dbe09e3-69f0-4b07-af74-fc1d4352e80f",
+                "uuid": "c73ca681-3107-4c31-8736-5d92a3f7953f",
+                "description": "File permissions must be configured to protect log information from any type of unauthorized read access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "b0cbe63c-a987-48b6-8529-de59ab8743a4",
                 "description": "File permissions must be configured to protect log information from unauthorized modification.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "d758e396-2df7-4071-9240-ae99eb121233",
+            "uuid": "06308e10-3191-4c1f-aa06-6b614fa7cc50",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
             "implemented-requirements": [
               {
-                "uuid": "c28d16a5-190b-4c07-8616-352ac369c49c",
+                "uuid": "3c5d71af-a78d-45fb-b0b6-34f26e2be579",
                 "description": "JBoss log records must be off-loaded onto a different system or system component a minimum of every seven days.",
-                "control-id": "au-9.(2)"
+                "control-id": "au-9.2"
               }
             ]
           },
           {
-            "uuid": "e8ff7e1c-c6d7-4557-97d0-c87d1350bd5f",
+            "uuid": "67b382ef-1498-4242-b2b0-5a28efa04c71",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "022a5d71-9f6d-4930-a379-2887a620c336",
-                "description": "JBoss must be configured to allow only the ISSM (or individuals or roles appointed by the ISSM) to select which loggable events are to be logged.",
-                "control-id": "au-12."
-              },
-              {
-                "uuid": "0e0f255a-0465-41b8-8f71-7d7d92d50444",
+                "uuid": "fe640583-21d6-48ce-8134-e791ea2a480a",
                 "description": "JBoss must be configured to generate log records when successful/unsuccessful attempts to modify privileges occur.\nJBoss must be configured to generate log records when successful/unsuccessful attempts to delete privileges occur.\nJBoss must be configured to generate log records when successful/unsuccessful logon attempts occur.\nJBoss must be configured to generate log records for privileged activities.\nJBoss must be configured to generate log records that show starting and ending times for access to the application server management interface.\nJBoss must be configured to generate log records when concurrent logons from different workstations occur to the application server management interface.\nJBoss must be configured to generate log records for all account creations, modifications, disabling, and termination events.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               },
               {
-                "uuid": "bd9c9ba9-b921-41b3-a2d5-4eba213b7b8d",
+                "uuid": "328e74fe-73b7-4d22-afa7-4bf8c29383f0",
+                "description": "JBoss must be configured to allow only the ISSM (or individuals or roles appointed by the ISSM) to select which loggable events are to be logged.",
+                "control-id": "au-12"
+              },
+              {
+                "uuid": "b4054553-0c86-4dc9-90d5-858558d564ce",
                 "description": "The JBoss server must generate log records for access and authentication events to the management interface.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "c37cfe1b-8ebc-4d85-a1b4-82c810b69f9a",
+            "uuid": "010e2fa5-cb58-4267-99af-c49914709bc8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "71f2df76-127e-4922-9267-b864904e4df5",
+                "uuid": "acaa6cd9-e1d9-4821-aaf2-c049a4a814e1",
                 "description": "JBoss must be configured to initiate session logging upon startup.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "6cd8ceac-1530-4c82-9ae1-88c33118a001",
+            "uuid": "c7e5299f-8176-4320-96ad-6418fc58ed29",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "4b9128c4-21c1-4ba5-a94b-c4c6c44d8f07",
+                "uuid": "82fece31-37ac-42a2-bd3e-4c76e858bb6e",
                 "description": "Production JBoss servers must not allow automatic application deployment.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               },
               {
-                "uuid": "80099f70-5380-4725-b078-958df16e12ef",
+                "uuid": "68d65fdb-7be1-4210-9af3-71af3d168e89",
                 "description": "Production JBoss servers must log when failed application deployments occur.\nProduction JBoss servers must log when successful application deployments occur.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "82e89cc6-f3f1-4ef3-9934-b542a5ca0b23",
+            "uuid": "7a1af43b-20b5-481c-bd6a-7ea6991e1569",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.6.",
             "implemented-requirements": [
               {
-                "uuid": "2246f1dc-c539-4c5e-b2ab-56602cfa981e",
+                "uuid": "c811624a-44f3-45b9-b134-f6616bdb10c1",
                 "description": "mgmt-users.properties file permissions must be set to allow access to authorized users only.",
-                "control-id": "cm-5.(6)"
+                "control-id": "cm-5.6"
               }
             ]
           },
           {
-            "uuid": "a3dbf3f6-17d9-48fb-ba83-3892132d0c8f",
+            "uuid": "43aba075-044d-4e36-8779-8b5d70b37d9b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "b0890c31-b3c6-4318-8ca8-02da678a851c",
+                "uuid": "9c5e4307-b4ff-455f-9617-a0676923e0ed",
                 "description": "The JBoss server must be configured to bind the management interfaces to only management networks.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "a954876b-c365-4386-9002-e70fe700a249",
+            "uuid": "3ff5f418-a86d-40e0-80dc-88faa548af6f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "336b4169-3edc-4b53-b1b8-95cb8780cf38",
-                "description": "JBoss application and management ports must be approved by the PPSM CAL.",
-                "control-id": "cm-7."
-              },
-              {
-                "uuid": "d2d53bc3-6983-4e3d-afa0-c2fedcaeda7a",
+                "uuid": "dd97f747-6c52-47f2-8ffe-a1064ca8a4ed",
                 "description": "JBoss process owner interactive access must be restricted.\nGoogle Analytics must be disabled in EAP Console.\nJBoss process owner execution permissions must be limited.\nJBoss QuickStarts must be removed.\nRemote access to JMX subsystem must be disabled.\nWelcome Web Application must be disabled.\nAny unapproved applications must be removed.",
-                "control-id": "cm-7."
-              }
-            ]
-          },
-          {
-            "uuid": "fd99eb19-be7b-4cd4-95db-40d69959cd3b",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
-            "implemented-requirements": [
-              {
-                "uuid": "da49c9a9-c1ee-4241-8d64-23ede76b0cd3",
-                "description": "The JBoss Server must be configured to utilize a centralized authentication mechanism such as AD or LDAP.",
-                "control-id": "ia-2."
-              }
-            ]
-          },
-          {
-            "uuid": "e2bbae5a-306f-4000-918d-95d64412b2a0",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "6e270979-66b5-48f2-9c26-b3c937889814",
-                "description": "The JBoss Server must be configured to use certificates to authenticate admins.",
-                "control-id": "ia-2.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "babd1230-c8de-4d27-9d2c-cb3795261c62",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
-            "implemented-requirements": [
-              {
-                "uuid": "0d226e3b-0825-4b08-927d-3955906f0888",
-                "description": "The JBoss server must be configured to use individual accounts and not generic or shared accounts.",
-                "control-id": "ia-2.(5)"
-              }
-            ]
-          },
-          {
-            "uuid": "1b2e7864-3481-4e1d-9a68-e9055eb893ac",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
-            "implemented-requirements": [
-              {
-                "uuid": "25e016a2-5b8d-4328-a09f-38c9dcd2dd1d",
-                "description": "The JBoss server must be configured to bind the management interfaces to only management networks.",
-                "control-id": "ia-3."
-              }
-            ]
-          },
-          {
-            "uuid": "3ab4deb8-bf4d-4984-8bf5-572cf4501add",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
-            "implemented-requirements": [
-              {
-                "uuid": "16da3d05-1c89-49d9-b320-fc47c8910a89",
-                "description": "JBoss management Interfaces must be integrated with a centralized authentication mechanism that is configured to manage accounts according to DoD policy.",
-                "control-id": "ia-4."
-              }
-            ]
-          },
-          {
-            "uuid": "45d0058d-2f48-4da0-ac5d-94fce8363f13",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "505e2acc-9888-4253-91af-a3411151e1b7",
-                "description": "LDAP enabled security realm value allow-empty-passwords must be set to false.\nJBoss must utilize encryption when using LDAP for authentication.",
-                "control-id": "ia-5.(1)"
+                "control-id": "cm-7"
               },
               {
-                "uuid": "0cb54f62-a6af-4560-ae60-646b51e3c012",
+                "uuid": "41d71880-d819-4ff4-b8e7-afcf79c79922",
+                "description": "JBoss application and management ports must be approved by the PPSM CAL.",
+                "control-id": "cm-7"
+              }
+            ]
+          },
+          {
+            "uuid": "e31793d6-f20b-46dc-80a3-f7de0fd3da89",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
+            "implemented-requirements": [
+              {
+                "uuid": "b7b437a9-5f98-45e4-b469-cb2104b67cef",
+                "description": "The JBoss Server must be configured to utilize a centralized authentication mechanism such as AD or LDAP.",
+                "control-id": "ia-2"
+              }
+            ]
+          },
+          {
+            "uuid": "92346805-667d-4a7b-9e97-079f49b5301a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "e38dbacf-9f96-4063-b818-25d9e1272978",
+                "description": "The JBoss Server must be configured to use certificates to authenticate admins.",
+                "control-id": "ia-2.1"
+              }
+            ]
+          },
+          {
+            "uuid": "2dd64238-e1ed-4d2e-85e4-cdfe4cc9e425",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.5.",
+            "implemented-requirements": [
+              {
+                "uuid": "5cd2cb62-5457-427f-b850-bbc24e635ca6",
+                "description": "The JBoss server must be configured to use individual accounts and not generic or shared accounts.",
+                "control-id": "ia-2.5"
+              }
+            ]
+          },
+          {
+            "uuid": "6a121afd-7c82-416a-98ef-3715cddac10f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.",
+            "implemented-requirements": [
+              {
+                "uuid": "81d3bc8d-6426-459a-9881-817abca73d58",
+                "description": "The JBoss server must be configured to bind the management interfaces to only management networks.",
+                "control-id": "ia-3"
+              }
+            ]
+          },
+          {
+            "uuid": "6ac03c4d-3b5f-4e96-8569-7de48ef19b3f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4.",
+            "implemented-requirements": [
+              {
+                "uuid": "8af2b79c-5951-4745-8ca2-b57aedf9cbf3",
+                "description": "JBoss management Interfaces must be integrated with a centralized authentication mechanism that is configured to manage accounts according to DoD policy.",
+                "control-id": "ia-4"
+              }
+            ]
+          },
+          {
+            "uuid": "65ace3f4-381c-481a-8606-d531f284eaa1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "2f8e9cb2-225c-468c-a41d-b8a3c81fe017",
+                "description": "LDAP enabled security realm value allow-empty-passwords must be set to false.\nJBoss must utilize encryption when using LDAP for authentication.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "d2327f0c-8ffa-49d8-a608-e0f9b38ceb99",
                 "description": "The JBoss Password Vault must be used for storing passwords or other sensitive configuration information.\nJBoss KeyStore and Truststore passwords must not be stored in clear text.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "d26ad2c6-986f-4828-91ec-4357690834b8",
+            "uuid": "448e550c-2f09-4fae-9905-ac7bc52cbce0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "73c1cfdd-b1c3-4bb7-83c6-1260f1a87101",
+                "uuid": "50a4d34e-9153-4134-87ac-6255c7d5dfe5",
                 "description": "The JBoss server must be configured to restrict access to the web servers private key to authenticated system administrators.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "5d8d7dba-31ce-45aa-9737-24950d2834d1",
+            "uuid": "58ff7b52-d916-4645-8556-0fb39fe38cc8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2.",
             "implemented-requirements": [
               {
-                "uuid": "e666bc88-98bc-45ad-9c84-e79b5a13943a",
+                "uuid": "8b15ac8c-3aaf-4cb7-ba63-cea69bc3ce81",
                 "description": "The JBoss server must separate hosted application functionality from application server management functionality.",
-                "control-id": "sc-2."
+                "control-id": "sc-2"
               }
             ]
           },
           {
-            "uuid": "183fe288-d5d5-45f9-a3b2-70330ddc6c98",
+            "uuid": "1e757e87-ce2f-4189-83d7-7624bbe543be",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
             "implemented-requirements": [
               {
-                "uuid": "7d12e4fc-f799-4c7f-82ce-950adb7e952c",
+                "uuid": "cf4de231-be4b-45a8-a58c-a8f842c4c2a3",
                 "description": "The JBoss server, when hosting mission critical applications, must be in a high-availability (HA) cluster.",
-                "control-id": "sc-5."
+                "control-id": "sc-5"
               }
             ]
           },
           {
-            "uuid": "814cac6c-3657-4e9a-acf9-4c5f2278dc7d",
+            "uuid": "4f0e982f-3b50-409f-839c-ee290ea18cec",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "ae9361f0-32a7-48a2-9f5d-ce6866f0353a",
+                "uuid": "f2fab43c-ac43-4805-894d-4b32acbdeba1",
                 "description": "JBoss must be configured to use an approved TLS version.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "3d477428-86bd-444e-9cef-2a7cecd2c318",
+            "uuid": "147d2943-ff87-4183-b58a-f4d87c0194e1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "310cba7f-df68-45b7-af9e-bcc3679ac09a",
+                "uuid": "0e8d516e-ad39-4f51-a036-2d60ee683fda",
                 "description": "JBoss must be configured to use an approved cryptographic algorithm in conjunction with TLS.",
-                "control-id": "sc-8.(1)"
+                "control-id": "sc-8.1"
               }
             ]
           },
           {
-            "uuid": "28ab89aa-538a-496f-9d23-180c5f967761",
+            "uuid": "a27beac8-f9a5-435a-a39f-0bf0e5437b4f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "424418ce-a640-439a-9586-e0f4462d2a68",
+                "uuid": "f037ea4d-8218-4b92-ac6d-272506074a03",
                 "description": "The JBoss server must be configured to use DoD- or CNSS-approved PKI Class 3 or Class 4 certificates.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "35f2540d-4967-4744-b88e-15dde73d9778",
+            "uuid": "7ae73b88-9c83-4716-b44e-b49d2ba9a52d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "3fa52814-db37-43a4-bcc1-cc9b1c9df7c7",
+                "uuid": "b66de723-1eab-4d85-83b4-1e8aebe40318",
                 "description": "JBoss must be configured to use DoD PKI-established certificate authorities for verification of the establishment of protected sessions.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "5a79679c-55f5-4ce4-9c52-5d6734278568",
+            "uuid": "ace65ab8-b781-4b2b-86be-86e66c76f8de",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "94465475-9f5f-4e22-9b1b-bcce5eef5223",
+                "uuid": "55143e05-b8ff-4e24-aa59-5fea97f6b8d0",
                 "description": "JBoss file permissions must be configured to protect the confidentiality and integrity of application files.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "983d5953-2bbb-4a31-942d-8420f479a48f",
+            "uuid": "675b8db1-a8f2-4459-87e6-6406929e3b20",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "504d1438-9ae2-408d-aeff-c8cc7ccee6a3",
+                "uuid": "611d70ea-547f-461a-a018-c213b7454d3d",
                 "description": "Production JBoss servers must be supported by the vendor.\nThe JRE installed on the JBoss server must be kept up to date.",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "5a33a012-bd23-4652-9480-fc8166020789",
+            "uuid": "e11638a1-5ad2-4f90-a241-899d2b8f5891",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "9f4b6ac2-49e2-4095-84b4-14ba167655aa",
+                "uuid": "44f89b9e-226e-4fed-a679-560273d7eb30",
                 "description": "Access to JBoss log files must be restricted to authorized users.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

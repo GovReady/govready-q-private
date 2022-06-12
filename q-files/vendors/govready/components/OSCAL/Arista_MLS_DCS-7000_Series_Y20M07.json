@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "399852f8-d3b4-48ce-a352-5f29b7002e59",
+    "uuid": "1b110aac-f015-4127-aa74-598e0645a0b8",
     "metadata": {
       "title": "Arista MLS DCS-7000 Series Y20M07",
-      "last-modified": "2022-06-10T12:50:51",
-      "version": "2022-06-10T12:50:51",
+      "last-modified": "2022-06-12T11:06:46",
+      "version": "2022-06-12T11:06:46",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "47a5076d-618d-49c6-9f68-5d34a6d7d53b",
+          "uuid": "ca521c67-45eb-4234-9fa3-edd79ff7ce7f",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,75 +16,75 @@
     },
     "components": [
       {
-        "uuid": "e6200ad5-86fc-4968-9942-797ad93d99fa",
+        "uuid": "8515f62b-50f7-4fe7-a15c-b08020e93a1c",
         "type": "software",
         "title": "Arista MLS DCS-7000 Series Y20M07",
-        "description": "Eius sed consectetur eius modi dolor quaerat sed.",
+        "description": "Quiquia aliquam non modi. Quisquam labore sed magnam.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "47a5076d-618d-49c6-9f68-5d34a6d7d53b"
+              "ca521c67-45eb-4234-9fa3-edd79ff7ce7f"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "c322227f-59d4-4bce-a6d3-7156b8ec24ee",
+            "uuid": "39bc38a5-b252-4c9d-a8b1-cfdecafa2a9d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.",
             "implemented-requirements": [
               {
-                "uuid": "a431b71e-8c6d-46a1-8451-42846274c200",
+                "uuid": "16eb6156-01eb-43c2-8c90-2517df725827",
                 "description": "The Arista Multilayer Switch must enforce approved authorizations for controlling the flow of information between interconnected systems based on organization-defined information flow control policies.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
               },
               {
-                "uuid": "4eaced12-ffb1-4755-b0cb-4a5ba11f02da",
+                "uuid": "f593a66c-df42-4faf-9c41-43a273229930",
                 "description": "The Arista Multilayer Switch must enforce approved authorizations for controlling the flow of information within the network based on organization-defined information flow control policies.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
               }
             ]
           },
           {
-            "uuid": "cfc5e785-e48f-4c6c-9dd2-8e381e2e4b5d",
+            "uuid": "da839559-32ab-4f23-935e-306b4ff16459",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.",
             "implemented-requirements": [
               {
-                "uuid": "ec3347a0-41c3-46e6-ac2a-f146d796872c",
+                "uuid": "6e920264-c43e-4fa3-ab50-fdc90c9194ea",
                 "description": "The Arista Multilayer Switch must authenticate 802.1X connected devices before establishing any connection.",
-                "control-id": "ia-3."
+                "control-id": "ia-3"
               },
               {
-                "uuid": "b8b119c2-651a-46da-bccf-feec8cef4436",
+                "uuid": "3bfb0721-b7c3-4304-b98d-7cc54b31322f",
                 "description": "The Arista Multilayer Switch must uniquely identify all network-connected endpoint devices before establishing any connection.",
-                "control-id": "ia-3."
+                "control-id": "ia-3"
               }
             ]
           },
           {
-            "uuid": "4c3133f4-1c03-4b4c-bc5d-ee43bfac6fa1",
+            "uuid": "aca0ab01-b37e-44b3-b755-3ab083fb27d8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "99209391-2727-405d-8036-20d72013cb67",
+                "uuid": "d2613b8b-5bfd-4d74-9ebd-d77fb287ec3f",
                 "description": "The Arista Multilayer Switch must authenticate all endpoint devices before establishing a network connection using bidirectional authentication that is cryptographically based.\nThe Arista Multilayer Switch must re-authenticate all endpoint devices every 60 minutes or less.",
-                "control-id": "ia-3.(1)"
+                "control-id": "ia-3.1"
               }
             ]
           },
           {
-            "uuid": "7aafa111-ef20-4548-a1bf-34fc58df05eb",
+            "uuid": "ff44f0b4-7651-4ed1-85b0-94459465b2c0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11.",
             "implemented-requirements": [
               {
-                "uuid": "4ac3500d-805e-4c4d-a9b8-f0716ced420a",
+                "uuid": "75d39d1c-9558-4968-a0d7-396ea65126b5",
                 "description": "The Arista Multilayer Switch must re-authenticate 802.1X connected devices every hour.",
-                "control-id": "ia-11."
+                "control-id": "ia-11"
               }
             ]
           }

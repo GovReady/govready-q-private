@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "d303fe14-0bfb-446d-8d44-fb7effe53ead",
+    "uuid": "719ac4b9-4605-464d-a6d9-fc9ea79b08e5",
     "metadata": {
       "title": "Microsoft Word 2016 V1R1",
-      "last-modified": "2022-06-10T12:50:52",
-      "version": "2022-06-10T12:50:52",
+      "last-modified": "2022-06-12T11:06:47",
+      "version": "2022-06-12T11:06:47",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "65369f9d-cf47-4948-bda0-ee1fe225a6ef",
+          "uuid": "b55b89f8-0c65-4188-8917-62d5d7dd993d",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,87 +16,87 @@
     },
     "components": [
       {
-        "uuid": "a6a4648b-bf3f-41d8-a4c0-4182d06917d7",
+        "uuid": "dbb39476-3b0c-4b96-a2b3-0a738f2bbaba",
         "type": "software",
         "title": "Microsoft Word 2016 V1R1",
-        "description": "Voluptatem velit numquam quaerat dolor tempora magnam tempora. Numquam neque non adipisci est dolore dolore ut. Quaerat ipsum ut dolor quisquam porro velit non.",
+        "description": "Non numquam voluptatem sed. Dolore dolorem est sit quisquam dolor est. Dolore dolor amet labore est.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "65369f9d-cf47-4948-bda0-ee1fe225a6ef"
+              "b55b89f8-0c65-4188-8917-62d5d7dd993d"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "089b0a3b-d67b-4e15-9e4c-8309e92725ab",
+            "uuid": "5a76e70d-e764-488e-b29d-e57a9a11d118",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "b500ece3-8199-48ea-9fe6-e1b67929b495",
+                "uuid": "11347465-9f79-42d3-bd91-84df1a50322c",
                 "description": "Add-ins to Office applications must be signed by a Trusted Publisher.\nTrust Bar Notifications for unsigned application add-ins must be blocked.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "b4765ad8-6999-4b19-b975-196380a845df",
+            "uuid": "f2fbfbaa-50a3-4cd3-af37-1bbdaa962ec3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "af6dd4c7-afcb-4e1e-b295-5aac862f254d",
+                "uuid": "f00574aa-00ef-4043-9f79-a196016855e8",
                 "description": "The Save commands default file format must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "18284b83-9ec9-496a-83f3-106c0161cd83",
+            "uuid": "792fe299-0c26-409e-8ce2-f71cd1eaa515",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "982666d1-9c35-494e-9c32-09bdaf3e6070",
+                "uuid": "8c1677d3-a754-4cd2-8b93-d6ab22ae3c05",
                 "description": "Blocking as default file block opening behavior must be enforced.\nFiles from the Internet zone must be opened in Protected View.\nAdd-on Management functionality must be allowed.\nLinks that invoke instances of Internet Explorer from within an Office product must be blocked.\nWord 2 and earlier binary documents and templates must be blocked for open/save.\nWord 2000 binary documents and templates must be configured to edit in protected view.\nWord 6.0 binary documents and templates must be configured for block open/save actions.\nWord 95 binary documents and templates must be configured to edit in protected view.\nWord 97 binary documents and templates must be configured to edit in protected view.\nWord XP binary documents and templates must be configured to edit in protected view.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "5a62b8ed-8086-4862-a684-cdd7bb7c9aab",
+            "uuid": "ea64278e-c108-4d13-8f12-eff0c9c8d241",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "17a3f9cd-7d65-489b-8335-93cf29e2eef6",
-                "description": "File Downloads must be configured for proper restrictions.",
-                "control-id": "sc-18.(3)"
-              },
-              {
-                "uuid": "636fdea9-d787-498a-beb4-b54f2747fff6",
+                "uuid": "ab65f8bd-7b11-4f31-a05b-e8d55eb69a8e",
                 "description": "The Internet Explorer Bind to Object functionality must be enabled.\nConfiguration for file validation must be enforced.\nScripted Window Security must be enforced.\nProtection from zone elevation must be enforced.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
+              },
+              {
+                "uuid": "c3399e45-7274-49a7-b300-711e73813ba8",
+                "description": "File Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "2a4cacb9-fa21-4e3b-b77a-c369fded2f31",
+            "uuid": "26e3299c-5af0-47fe-8b4b-fe1a4010aa62",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "1cd46284-3cd5-41e0-a606-aff77a344d1d",
-                "description": "ActiveX Installs must be configured for proper restriction.",
-                "control-id": "sc-18.(4)"
+                "uuid": "db5292c3-ad90-4f1b-b178-e4db29ca4836",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nDisallowance of trusted locations on the network must be enforced.\nForce encrypted macros to be scanned in open XML documents must be determined and configured.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nThe automatically update links feature must be disabled.\nOnline translation dictionaries must not be used.\nMacros must be blocked from running in Office files from the Internet.\nFiles on local Intranet UNC must be opened in Protected View.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "cf0c5007-bb7c-4ced-a6ff-62232573a9e1",
-                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nDisallowance of trusted locations on the network must be enforced.\nForce encrypted macros to be scanned in open XML documents must be determined and configured.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nThe automatically update links feature must be disabled.\nOnline translation dictionaries must not be used.\nMacros must be blocked from running in Office files from the Internet.\nFiles on local Intranet UNC must be opened in Protected View.",
-                "control-id": "sc-18.(4)"
+                "uuid": "afe862fa-5cb4-419f-a858-44f5df7c9da8",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.4"
               }
             ]
           }

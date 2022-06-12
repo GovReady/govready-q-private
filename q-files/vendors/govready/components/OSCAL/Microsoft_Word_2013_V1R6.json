@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "e0ed4488-3a73-432b-a9d3-946fd27189b2",
+    "uuid": "573f832d-0cd0-40fb-9eec-473cceac0011",
     "metadata": {
       "title": "Microsoft Word 2013 V1R6",
-      "last-modified": "2022-06-10T12:50:58",
-      "version": "2022-06-10T12:50:58",
+      "last-modified": "2022-06-12T11:06:53",
+      "version": "2022-06-12T11:06:53",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "225dd444-65be-4c26-a296-52e08efa4893",
+          "uuid": "4cb40419-6173-4b97-bbc9-e48b7594f8b0",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,99 +16,99 @@
     },
     "components": [
       {
-        "uuid": "e5caa195-52b8-4bb0-8db2-de5c749ea350",
+        "uuid": "dafbc55c-3a44-4841-a29a-835b2496898c",
         "type": "software",
         "title": "Microsoft Word 2013 V1R6",
-        "description": "Dolorem non amet sit dolor adipisci quaerat ipsum. Labore quaerat sed adipisci dolore modi eius. Sed dolor modi numquam velit.",
+        "description": "Labore voluptatem quaerat quisquam porro. Sit amet porro numquam voluptatem quisquam consectetur.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "225dd444-65be-4c26-a296-52e08efa4893"
+              "4cb40419-6173-4b97-bbc9-e48b7594f8b0"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "b3ac6e28-55db-4c82-90f7-0603abdf6064",
+            "uuid": "58e3e4bb-61a8-424e-a1d1-cb1f35faf99c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "76ea41d9-8534-4dd6-b67a-919a7c6ab6f1",
+                "uuid": "78360dc6-b6c3-4a3b-ba83-103ad1b80dea",
                 "description": "Trust Bar Notifications for unsigned application add-ins must be blocked.\nAdd-ins to Office applications must be signed by a Trusted Publisher.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "2a0f2f12-61a1-4314-bf49-5bc34c93013a",
+            "uuid": "1727a916-6393-47fe-9dc3-29c1ba2b6400",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "fdef650b-f50e-40e5-8880-a7085b27a118",
+                "uuid": "a4e4618a-ace5-47f1-bf02-8d5697f10498",
                 "description": "A warning before printing that the document contains tracking changes must be provided.\nWord must be configured to warn when opening a document with custom XML markup.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "f4305b52-2c5d-40e5-a7ac-ac986afb21ac",
+            "uuid": "2ff235e4-9021-4d68-b77b-83e39c6bf155",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "6dec24d5-7289-433c-b69d-07b5a76df75f",
+                "uuid": "d15c3866-8df5-469c-8760-708a3da9d2cc",
                 "description": "The Save commands default file format must be configured.\nTrust access for VBA must be disallowed.\nWarning Bar settings for VBA macros must be configured.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "0b22a20d-d58a-442a-a157-dccaf1c0e02e",
+            "uuid": "4b03a147-ba87-472d-9108-b48ff5d76d29",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "f03a6127-3d4d-495a-950c-fbedf0a2460d",
+                "uuid": "9dc7c44f-3cc6-408a-9a33-de282b530ede",
                 "description": "Links that invoke instances of Internet Explorer from within an Office product must be blocked.\nAdd-on Management functionality must be allowed.\nBlocking as default file block opening behavior must be enforced.\nFiles from the Internet zone must be opened in Protected View.\nWord 2 and earlier binary documents and templates must be blocked for open/save.\nWord 2000 binary documents and templates must be configured to edit in protected view.\nWord 6.0 binary documents and templates must be configured for block open/save actions.\nWord 95 binary documents and templates must be configured to edit in protected view.\nWord 97 binary documents and templates must be configured to edit in protected view.\nWord XP binary documents and templates must be configured to edit in protected view.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "e01f2172-332a-43e1-aa79-5eed420ef11d",
+            "uuid": "321462e6-0ff8-4a13-be21-4e96d96f1f5c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "2a2275b6-1bd3-4060-b200-8cbe25591886",
-                "description": "File Downloads must be configured for proper restrictions.",
-                "control-id": "sc-18.(3)"
-              },
-              {
-                "uuid": "6cb74e3d-fc01-4097-8a4c-fbe642b8afb0",
+                "uuid": "a7642cc6-0844-43a0-8800-d28d7caea46c",
                 "description": "The Internet Explorer Bind to Object functionality must be enabled.\nProtection from zone elevation must be enforced.\nScripted Window Security must be enforced.\nConfiguration for file validation must be enforced.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
+              },
+              {
+                "uuid": "13dce28b-18f2-4492-9f8a-8fb6a4113a7a",
+                "description": "File Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "0868ca2a-81d9-4119-a56c-5e846a1a0655",
+            "uuid": "dfaaf19a-01f2-4c2f-8090-26d00cdf774c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "ff16b3f4-040f-47fb-a3cd-6e5dcca6ebd5",
-                "description": "ActiveX Installs must be configured for proper restriction.",
-                "control-id": "sc-18.(4)"
+                "uuid": "34aa2437-545b-4e07-bc13-71666ae7a384",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nThe Saved from URL mark must be selected to enforce Internet zone processing.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nForce encrypted macros to be scanned in open XML documents must be determined and configured.\nDisallowance of trusted locations on the network must be enforced.\nThe automatically update links feature must be disabled.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nOnline translation dictionaries must not be used.\nMacros must be blocked from running in Office 2013 files from the Internet.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "93591e7b-b08c-43ae-8a07-b8c4d6839b43",
-                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nThe Saved from URL mark must be selected to enforce Internet zone processing.\nNavigation to URLs embedded in Office products must be blocked.\nAll automatic loading from trusted locations must be disabled.\nForce encrypted macros to be scanned in open XML documents must be determined and configured.\nDisallowance of trusted locations on the network must be enforced.\nThe automatically update links feature must be disabled.\nFiles in unsafe locations must be opened in Protected View.\nDocument behavior if file validation fails must be set.\nAttachments opened from Outlook must be in Protected View.\nOnline translation dictionaries must not be used.\nMacros must be blocked from running in Office 2013 files from the Internet.",
-                "control-id": "sc-18.(4)"
+                "uuid": "c9191b89-e5db-4e5f-a2a6-d98bed90fff5",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.4"
               }
             ]
           }

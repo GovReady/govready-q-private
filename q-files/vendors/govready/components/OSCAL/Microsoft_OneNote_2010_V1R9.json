@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "63fc24be-d3da-4f9c-a4c2-8049f5ee85d9",
+    "uuid": "9642c022-85d6-49c4-9b7b-2aa9e2cbbf24",
     "metadata": {
       "title": "Microsoft OneNote 2010 V1R9",
-      "last-modified": "2022-06-10T12:50:53",
-      "version": "2022-06-10T12:50:53",
+      "last-modified": "2022-06-12T11:06:48",
+      "version": "2022-06-12T11:06:48",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "d2810086-4b06-45f0-bdf0-b368b267b98f",
+          "uuid": "b5cc9a14-c5a0-406c-bfbc-dfbb05cce4c3",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,63 +16,63 @@
     },
     "components": [
       {
-        "uuid": "96a0f66f-f555-4a95-a674-7fedc47661fc",
+        "uuid": "4aece9c7-50ec-418e-8563-286a40368a7e",
         "type": "software",
         "title": "Microsoft OneNote 2010 V1R9",
-        "description": "Labore tempora labore quaerat.",
+        "description": "Quiquia numquam quaerat ipsum quisquam. Numquam dolor numquam voluptatem. Etincidunt dolore labore dolorem dolor.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "d2810086-4b06-45f0-bdf0-b368b267b98f"
+              "b5cc9a14-c5a0-406c-bfbc-dfbb05cce4c3"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "6457e810-6427-432c-95b3-b77f7af03063",
+            "uuid": "87c87e9a-a15c-4ee3-bdf2-e2e495fcdcf6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "291db46a-f5fc-47ef-a685-b3d4ff2f647a",
+                "uuid": "15770efa-d9e3-4dbf-b60e-1e295380d300",
                 "description": "Links that invoke instances of IE from within an Office product must be blocked.\nAdd-on Management functionality must be allowed.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "226725cf-1961-4669-8fbe-651a5cf0a34b",
+            "uuid": "536d3e8f-d5d9-485e-b5ca-cca90de6ad6c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "a9c3e162-2d6d-40f6-8f45-6bb04555ca90",
-                "description": "File Downloads must be configured for proper restrictions.",
-                "control-id": "sc-18.(3)"
-              },
-              {
-                "uuid": "d13b072b-f141-4bd1-b2ef-0ecf546d92f0",
+                "uuid": "91d53600-e6fc-42a8-88c9-ffba6871d52b",
                 "description": "Enabling IE Bind to Object functionality must be present.\nProtection from zone elevation must be enforced.\nScripted Window Security must be enforced.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
+              },
+              {
+                "uuid": "682746ef-bdf5-4110-8037-9d5e68f5caf5",
+                "description": "File Downloads must be configured for proper restrictions.",
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "09f0ce3e-467e-4461-b191-402c1a7565fc",
+            "uuid": "fb2bb7d8-2139-44dc-a4ee-f95007a3c948",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "0e926e35-f3bb-47bf-a2e7-885e9d6354bc",
-                "description": "ActiveX Installs must be configured for proper restriction.",
-                "control-id": "sc-18.(4)"
+                "uuid": "62be64d2-d3c5-45f2-a1ee-f83989688e81",
+                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URL's embedded in Office products must be blocked.\nData Execution Prevention must be enforced.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "e8f815ae-196c-4fe9-8880-272b778f90dc",
-                "description": "Disabling of user name and password syntax from being used in URLs must be enforced.\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URL's embedded in Office products must be blocked.\nData Execution Prevention must be enforced.",
-                "control-id": "sc-18.(4)"
+                "uuid": "2d158671-71a9-44d4-ad1c-08c69e998db7",
+                "description": "ActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.4"
               }
             ]
           }

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "341c90da-3648-446b-bb9d-aad053e82692",
+    "uuid": "720192fc-dbe2-4164-a3b3-d07e501c27de",
     "metadata": {
       "title": "FN FortiGate Firewall",
-      "last-modified": "2022-06-10T12:50:49",
-      "version": "2022-06-10T12:50:49",
+      "last-modified": "2022-06-12T11:06:44",
+      "version": "2022-06-12T11:06:44",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "204821c2-201f-471d-8307-b3b550865d55",
+          "uuid": "4b19d689-d092-4289-8937-a177a29995ea",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,572 +16,572 @@
     },
     "components": [
       {
-        "uuid": "c78c5053-2a11-42ff-a22d-7df09d7e811a",
+        "uuid": "35bd0dca-7b52-4aea-8f7d-0ffac1c7a239",
         "type": "software",
         "title": "FN FortiGate Firewall",
-        "description": "Aliquam amet sed consectetur voluptatem numquam quaerat. Consectetur dolor dolorem ipsum consectetur. Ipsum dolor quisquam labore non etincidunt est.",
+        "description": "Neque modi eius quisquam. Velit voluptatem quiquia ut amet sed quiquia voluptatem. Velit eius quisquam ut quisquam amet voluptatem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "204821c2-201f-471d-8307-b3b550865d55"
+              "4b19d689-d092-4289-8937-a177a29995ea"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "eb6ec40d-da97-4f3d-8185-ef1f8d2a505e",
+            "uuid": "3aeb679f-7821-435e-a6ae-5cfb84a9c084",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.",
             "implemented-requirements": [
               {
-                "uuid": "6e1ccff1-bdb8-4d62-b1c7-078507a82aaa",
+                "uuid": "f8ac8be6-415e-4619-a3b8-ddd86c4396fe",
                 "description": "The FortiGate device must have only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
-                "control-id": "ac-2."
+                "control-id": "ac-2"
               }
             ]
           },
           {
-            "uuid": "0afa3569-d7fc-4c07-b7be-e760b2c633de",
+            "uuid": "54377d81-06fc-49df-8654-d07a59eedbe5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.4.",
             "implemented-requirements": [
               {
-                "uuid": "7aacead8-4613-4006-8477-b922a26418b5",
+                "uuid": "0c345a39-767b-4919-a7f3-1fe8968ed69a",
                 "description": "The FortiGate device must automatically audit account modification.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
               },
               {
-                "uuid": "c7ff3141-8229-46c8-b9a4-9c98ed17b70b",
-                "description": "The FortiGate device must automatically audit account removal actions.",
-                "control-id": "ac-2.(4)"
-              },
-              {
-                "uuid": "0ca99c28-03b1-4f4d-b750-74b4e364d869",
+                "uuid": "ab2fe538-a0ab-48bb-b164-31bed8b811bd",
                 "description": "The FortiGate device must automatically audit account creation.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
+              },
+              {
+                "uuid": "37ba8a07-58e4-4f1a-bb11-9fb2f07bde1c",
+                "description": "The FortiGate device must automatically audit account removal actions.",
+                "control-id": "ac-2.4"
               }
             ]
           },
           {
-            "uuid": "fb40cf87-0625-4a21-8c0d-b59861e80e14",
+            "uuid": "4f3042d8-ae83-4793-b2e0-afff1038ed1c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(7).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.7.",
             "implemented-requirements": [
               {
-                "uuid": "0e749353-c78b-46ca-a109-e29e82d2b466",
+                "uuid": "cc970b74-a799-45f4-ac07-c6c35fcb3344",
                 "description": "The FortiGate device must have only one local account to be used as the account of last resort in the event the authentication server is unavailable.",
-                "control-id": "ac-2.(7)"
+                "control-id": "ac-2.7"
               }
             ]
           },
           {
-            "uuid": "151194e4-bbf7-467b-9f4d-aeacbc60d95f",
+            "uuid": "6d0038f1-6180-4eb3-bb7c-39f91aef5a25",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.",
             "implemented-requirements": [
               {
-                "uuid": "4a44d7ff-046c-4899-902c-605b886be136",
+                "uuid": "5cf80d81-e762-44d2-9884-362bb5b46f7f",
                 "description": "The FortiGate device must allow full access to only those individuals or roles designated by the ISSM.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
               }
             ]
           },
           {
-            "uuid": "a6697d82-b4fe-4217-b0f1-e2b0820d226a",
+            "uuid": "48f41b29-5bef-45b1-94cf-a9929b587d34",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.9.",
             "implemented-requirements": [
               {
-                "uuid": "1e3ca988-ca22-4059-b3d8-0098c10e12d1",
+                "uuid": "b0787c15-5658-4c36-9d6d-e0de70382737",
                 "description": "The FortiGate device must audit the execution of privileged functions.",
-                "control-id": "ac-6.(9)"
+                "control-id": "ac-6.9"
               }
             ]
           },
           {
-            "uuid": "8f173bf6-25a6-4c29-9bee-93a72f23d553",
+            "uuid": "624efdec-1b4b-4949-88ec-aa5b6e744e74",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "43b70d5a-ea91-4ac4-979a-fc51864945e0",
+                "uuid": "177f7fa8-a69b-463e-b127-94f96ab7f2fb",
                 "description": "The FortiGate device must enforce the limit of three consecutive invalid logon attempts, after which time it must lock out the user account from accessing the device for 15 minutes.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "320fbb1d-7a18-4e2b-862b-7b13b999cf53",
+            "uuid": "6e612a48-71d3-4445-8e71-c788e1b76e97",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "843e6649-cdb9-4c7d-854c-dc2b22f6051a",
+                "uuid": "92570751-02d0-4d7c-b5e2-58202207b623",
                 "description": "The FortiGate device must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the device.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               },
               {
-                "uuid": "a5c44af8-57b2-437e-ae75-aec85d202cf8",
+                "uuid": "e166d008-d3cd-4531-b6c0-8fb04a2aa066",
                 "description": "The FortiGate device must retain the Standard Mandatory DoD Notice and Consent Banner on the screen until the administrator acknowledges the usage conditions and takes explicit actions to log on for further access.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "e3d95146-6b4c-4e60-a09d-098b841ae945",
+            "uuid": "81a29c6a-4673-4835-8b46-bd1e77d81303",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "eda3bbe7-8159-4b52-90fe-96d2b8684e26",
+                "uuid": "f8106c25-b866-49dd-8255-77dbd560ca2c",
                 "description": "The FortiGate device must limit the number of logon and user sessions.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "b003885e-bbf5-4196-80ad-d1bf4e0fd1ef",
+            "uuid": "a93ff5ec-3b16-46a7-822b-7a62b0d22880",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "40118e64-fac0-47d6-863f-7b1167774b4f",
+                "uuid": "78385433-8569-4cfa-ade7-bf4fa832c5fd",
                 "description": "The FortiGate device must generate audit records containing information that establishes the identity of any individual or process associated with the event.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "0a25b39d-2ce2-45df-a25d-82e2e1644a36",
+            "uuid": "67657d38-b05c-421f-8708-ff870eac8e1d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "5ad0318e-7818-43eb-a3d1-e31a997a3970",
+                "uuid": "650c7ad8-9b83-41bd-bc00-672d5a7cd7d9",
                 "description": "The FortiGate device must generate audit records containing the full-text recording of privileged commands.",
-                "control-id": "au-3.(1)"
+                "control-id": "au-3.1"
               }
             ]
           },
           {
-            "uuid": "49c82ca4-ce4a-4469-9530-c30251450bcf",
+            "uuid": "9116acf7-7d8e-4495-bb5c-6e58764df617",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
             "implemented-requirements": [
               {
-                "uuid": "7f151e70-a6f8-4fd3-8d3b-df5fa914849b",
+                "uuid": "998de2f4-6371-4b86-804c-c36272ec73e4",
                 "description": "The FortiGate device must allocate audit record storage capacity in accordance with organization-defined audit record storage requirements.",
-                "control-id": "au-4."
+                "control-id": "au-4"
               }
             ]
           },
           {
-            "uuid": "73cae38a-6941-4d2a-a6f0-1a04cd168489",
+            "uuid": "414f6171-e355-4c02-8862-6b5f9c680c11",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "0f1125f0-59bd-4ccc-abe0-bf9c1f93fcb2",
+                "uuid": "bb969c43-729c-4662-8ac7-e9f5872cd946",
                 "description": "The FortiGate device must off-load audit records on to a different system or media than the system being audited.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "cccd6b59-4ff2-4bb3-b3f1-6f1bdb5adb9f",
+            "uuid": "f62d5b92-b4ae-49f8-b4a1-06a6430a9ce4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "abe2a9a6-39c4-4aae-98cf-417516b7c5e8",
+                "uuid": "bfc303c1-3066-4d07-a03f-2a1eef45b6d3",
                 "description": "The FortiGate device must generate an immediate real-time alert of all audit failure events requiring real-time alerts.",
-                "control-id": "au-5.(2)"
+                "control-id": "au-5.2"
               }
             ]
           },
           {
-            "uuid": "791b6748-dc0c-4834-a078-04250c3f18d4",
+            "uuid": "576ee885-4f9f-4868-b3ff-c7c72faa6080",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.",
             "implemented-requirements": [
               {
-                "uuid": "497d012f-351b-4de9-943f-767d73094e86",
+                "uuid": "8e4a060f-25bc-4f4a-a136-76ad934c6f26",
                 "description": "The FortiGate device must record time stamps for audit records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT).",
-                "control-id": "au-8."
+                "control-id": "au-8"
               }
             ]
           },
           {
-            "uuid": "721ab01c-1194-44de-a30c-0860a5b7f354",
+            "uuid": "c7e88e5b-a0c2-428a-acfe-ce876ff7ea77",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "da89deb7-0219-4061-8624-1e44e2d8fcd1",
+                "uuid": "84873288-9a61-4493-b7d5-35692232ea86",
                 "description": "The FortiGate device must synchronize internal information system clocks using redundant authoritative time sources.",
-                "control-id": "au-8.(2)"
+                "control-id": "au-8.2"
               }
             ]
           },
           {
-            "uuid": "d7142f3f-d3b8-4eb7-b749-c34bcd56c9e9",
+            "uuid": "c9e0f5a7-7d18-4d6d-97f7-1fc379200cf4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "3cb2a17e-c813-499e-97f8-b7226dd28678",
-                "description": "The FortiGate device must protect audit tools from unauthorized access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "6298b603-1e5f-4a67-b115-0354d055bf28",
+                "uuid": "329dc873-c59e-453b-80f0-00c248b29fe1",
                 "description": "The FortiGate device must protect audit information from unauthorized deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "a7b005dc-7462-462a-b92e-b1037606d414",
+                "uuid": "b0812dcd-cee5-4ba7-96e9-71f1b2bd2c3d",
+                "description": "The FortiGate device must protect audit tools from unauthorized access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "b0b00dd8-85f8-4a7d-8c11-bdce9477a7e8",
                 "description": "The FortiGate device must protect audit tools from unauthorized modification.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "09497150-a851-40c4-af42-d5cd8b24c63d",
+            "uuid": "77412cc5-211f-431f-a31a-b17fa38559c4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.",
             "implemented-requirements": [
               {
-                "uuid": "fe73dd3a-db18-4641-93dd-a228bedbf866",
+                "uuid": "2067f8dc-27d3-4566-b544-3488ef4e8075",
                 "description": "The FortiGate device must log all user activity.",
-                "control-id": "au-10."
+                "control-id": "au-10"
               }
             ]
           },
           {
-            "uuid": "f8a882be-3229-418f-8da1-0d12bdb67967",
+            "uuid": "631f9567-4ddc-4636-aa2b-8cc981bcfa04",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "5768f93a-4bb3-4a1b-9740-c3cfe83b55ff",
+                "uuid": "0aa227e1-9cf7-4f56-872c-9314a1646de0",
                 "description": "The FortiGate device must generate audit records when successful/unsuccessful attempts to modify administrator privileges occur.\nThe FortiGate device must generate audit records when successful/unsuccessful attempts to delete administrator privileges occur.\nThe FortiGate device must generate audit records when successful/unsuccessful logon attempts occur.\nThe FortiGate device must generate audit records for privileged activities or other system-level access.\nThe FortiGate device must generate audit records showing starting and ending time for administrator access to the system.\nThe FortiGate device must generate audit records when concurrent logons from different workstations occur.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               },
               {
-                "uuid": "255d3cd6-9f0e-4bcb-b657-eba0ef3e4f96",
+                "uuid": "86cc22ec-ba37-4e9c-96ae-a64bc05c173f",
                 "description": "The FortiGate device must generate log records for a locally developed list of auditable events.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "469f1283-ad19-497d-8f9a-a39ed469b970",
+            "uuid": "47314f13-bbc3-4c2d-9cae-2ddaf31e30bc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.",
             "implemented-requirements": [
               {
-                "uuid": "628cc956-5651-4359-94e0-baa2967b942b",
+                "uuid": "03a39e83-9c20-46f1-b5a1-beef9dcf79ed",
                 "description": "The FortiGate device must enforce access restrictions associated with changes to the system components.",
-                "control-id": "cm-5."
+                "control-id": "cm-5"
               }
             ]
           },
           {
-            "uuid": "a487af94-df70-4581-8e9a-50ee5657eab7",
+            "uuid": "be7b3cd0-960b-4fe6-b21c-bece87501116",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "ce1b74d7-9b20-46f1-875d-0b2df6621885",
+                "uuid": "2aeee1eb-81c0-4d56-8386-b757c9738338",
                 "description": "The FortiGate device must enforce access restrictions associated with changes to device configuration.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "b43c8208-80ec-43c4-a84f-c18fe124f547",
+            "uuid": "43f7a31a-6980-4b87-8351-80486af6bb27",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "78753131-9013-4d63-82cc-c18f3fe75fd3",
+                "uuid": "a5ebb8d5-c787-4b0e-9ea9-6a343e880cd6",
                 "description": "The FortiGate device must only install patches or updates that are validated by the vendor via digital signature or hash.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "1fb8a109-9b07-42cd-9af9-61d0634b5c88",
+            "uuid": "83627335-3c5e-4596-a003-2f8b1931d02f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.6.",
             "implemented-requirements": [
               {
-                "uuid": "0f398da5-8fca-42ac-9111-7f1a98b80594",
+                "uuid": "70e9484c-d126-4996-a817-f8610abe5ce1",
                 "description": "The FortiGate device must limit privileges to change the software resident within software libraries.",
-                "control-id": "cm-5.(6)"
+                "control-id": "cm-5.6"
               }
             ]
           },
           {
-            "uuid": "2c3cbc01-7745-4597-8e8a-cb780a42cf2f",
+            "uuid": "4d2469b7-f168-469f-a825-2d025518dabb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "8d75cf80-097d-4ae4-86b8-b5e3bfb66972",
+                "uuid": "5ec5f193-a9eb-4877-b50d-f29cc6606675",
                 "description": "The FortiGate device must synchronize internal information system clocks using redundant authoritative time sources.\nThe FortiGate device must enforce access restrictions associated with changes to the system components.\nThe FortiGate device must use LDAP for authentication.\nThe FortiGate device must be running an operating system release that is currently supported by the vendor.\nThe FortiGate device must generate log records for a locally developed list of auditable events.\nThe FortiGate device must conduct backups of system-level information contained in the information system when changes occur.\nThe FortiGate device must support organizational requirements to conduct backups of information system documentation, including security-related documentation, when changes occur or weekly, whichever is sooner.\nFortiGate devices performing maintenance functions must restrict use of these functions to authorized personnel only.\nThe FortiGate device must use DoD-approved Certificate Authorities (CAs) for public key certificates.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "e2eabb9a-e08c-4368-b68b-64a8ecc8e3f2",
+            "uuid": "40e7b71f-6fe7-4ae9-8f10-beaa2a58019f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.1.",
             "implemented-requirements": [
               {
-                "uuid": "466c08e1-dd9f-4a6c-8075-3a5cd8d65459",
+                "uuid": "563e3791-92e0-49e6-8963-f01ccec01924",
                 "description": "The FortiGate device must use LDAP for authentication.",
-                "control-id": "cm-6.(1)"
+                "control-id": "cm-6.1"
               }
             ]
           },
           {
-            "uuid": "04a32b48-0c8f-4ce3-b5eb-6e25f4928a24",
+            "uuid": "26fe3c8b-ac36-4345-bf34-d7bc0db9a205",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "2c3edd6e-da76-43cf-870a-b9620662ccbe",
+                "uuid": "ac6389a7-6671-492e-92ca-04b18dce9181",
                 "description": "The FortiGate device must prohibit the use of all unnecessary and/or non-secure functions, ports, protocols, and/or services.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "dbeb260a-45a6-40d6-b838-74465448a51e",
+            "uuid": "e004ca71-3a1a-4b17-8476-6b30663381b8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.2.",
             "implemented-requirements": [
               {
-                "uuid": "bb888433-90ea-43c1-b202-1de7606db3da",
+                "uuid": "e5c45c79-6c12-4d19-9287-a39e9f895322",
                 "description": "The FortiGate device must prohibit installation of software without explicit privileged status.",
-                "control-id": "cm-11.(2)"
+                "control-id": "cm-11.2"
               }
             ]
           },
           {
-            "uuid": "562e96fb-6b8a-4997-923d-67accaffb2f3",
+            "uuid": "0aea1ce1-38a1-453a-a1aa-1df7d8b17965",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cp-9.",
             "implemented-requirements": [
               {
-                "uuid": "fd556161-e380-414d-9dc3-a3eee4727be3",
+                "uuid": "72fa6385-c33d-4035-bb35-398b36202218",
                 "description": "The FortiGate device must support organizational requirements to conduct backups of information system documentation, including security-related documentation, when changes occur or weekly, whichever is sooner.",
-                "control-id": "cp-9."
+                "control-id": "cp-9"
               },
               {
-                "uuid": "114c859a-8f52-4905-9938-40bd4ec03b6a",
+                "uuid": "aa232df8-c349-4b5c-a6fa-4ea772fce296",
                 "description": "The FortiGate device must conduct backups of system-level information contained in the information system when changes occur.",
-                "control-id": "cp-9."
+                "control-id": "cp-9"
               }
             ]
           },
           {
-            "uuid": "4185bc97-b0fc-4b02-a918-e135a78f4c78",
+            "uuid": "40cf51af-a5f0-461a-b00b-2103274a2167",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.8.",
             "implemented-requirements": [
               {
-                "uuid": "f3e28af2-9bdf-4209-b942-0bf0007e8124",
+                "uuid": "60486435-e728-4968-9334-8f3a663e6d3b",
                 "description": "The FortiGate device must implement replay-resistant authentication mechanisms for network access to privileged accounts.",
-                "control-id": "ia-2.(8)"
+                "control-id": "ia-2.8"
               }
             ]
           },
           {
-            "uuid": "8c3fcff2-fa6c-4ada-8268-d580d629eef9",
+            "uuid": "0f9e7ac4-e933-42c6-9339-80d22b0e0a6e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "4fe12505-ccf6-4ff8-ab83-b5520ad793b7",
+                "uuid": "47a6ae54-24b4-406d-b9c3-1b03f10f0579",
                 "description": "The FortiGate device must authenticate SNMP messages using a FIPS-validated Keyed-Hash Message Authentication Code (HMAC).\nThe FortiGate device must authenticate Network Time Protocol (NTP) sources using authentication that is cryptographically based.",
-                "control-id": "ia-3.(1)"
+                "control-id": "ia-3.1"
               }
             ]
           },
           {
-            "uuid": "6417cd6d-a01a-4538-9daa-82d09dc03445",
+            "uuid": "6dd59910-19c2-4dab-9a30-42aec9846bfd",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "6068c090-a84f-4b80-9161-e2d0a6b27f75",
-                "description": "The FortiGate device must enforce password complexity by requiring that at least one lowercase character be used.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "ecb28604-d402-4e2a-a88b-b0ff6ce303ea",
-                "description": "The FortiGate device must use LDAPS for the LDAP connection.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "ab7d3d60-64fc-4e31-b75f-3807cb724f14",
+                "uuid": "b11853e0-27b2-4d09-a879-3f98160a8617",
                 "description": "The FortiGate device must enforce a minimum 15-character password length.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "b5507c26-5513-48e5-8471-b789e5160ca7",
-                "description": "The FortiGate device must not have any default manufacturer passwords when deployed.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "33042f73-cf7f-415f-8e13-7d57ac2e4202",
-                "description": "The FortiGate device must enforce password complexity by requiring that at least one uppercase character be used.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "5f48972a-3965-4226-ad39-0d51eb771c4c",
+                "uuid": "ef2535ac-f72a-4497-9af8-a191a3278e1c",
                 "description": "The FortiGate device must enforce password complexity by requiring at least one numeric character be used.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "6cb611ae-83b4-4ea6-b03a-dc6f165a489b",
-                "description": "The FortiGate device must enforce password complexity by requiring that at least one special character be used.",
-                "control-id": "ia-5.(1)"
+                "uuid": "bf1df533-13d2-4a35-bb71-fcb32c0612fe",
+                "description": "The FortiGate device must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "6d01d367-e6d9-45b7-a2de-186ab065c50d",
+                "uuid": "a2153d9c-0327-46ae-bd37-12908924cc07",
+                "description": "The FortiGate device must use LDAPS for the LDAP connection.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "9a3a04fe-a110-450c-8df6-c154e010ab77",
                 "description": "The FortiGate device must require that when a password is changed, the characters are changed in at least eight of the positions within the password.",
-                "control-id": "ia-5.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "8b34f4a2-b48d-48c9-ae7d-c36033ce28b4",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
-            "implemented-requirements": [
-              {
-                "uuid": "4bb096db-d63b-47a6-8d1e-9931bc43a990",
-                "description": "The FortiGate device must use FIPS 140-2 approved algorithms for authentication to a cryptographic module.",
-                "control-id": "ia-7."
-              }
-            ]
-          },
-          {
-            "uuid": "09878d8e-213e-4bdd-8e55-3d9fa0951727",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-3.(4).",
-            "implemented-requirements": [
-              {
-                "uuid": "7da6f3df-fd33-4732-bca5-fc79a1987236",
-                "description": "FortiGate devices performing maintenance functions must restrict use of these functions to authorized personnel only.",
-                "control-id": "ma-3.(4)"
-              }
-            ]
-          },
-          {
-            "uuid": "f08d5ce1-ab7b-44f2-a1c9-fc173b42658b",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4..",
-            "implemented-requirements": [
-              {
-                "uuid": "5a84b148-1386-4a93-b13c-c42ef79f408d",
-                "description": "The FortiGate device must terminate idle sessions after 10 minutes of inactivity.",
-                "control-id": "ma-4."
-              }
-            ]
-          },
-          {
-            "uuid": "20c62b09-9840-43eb-a9d5-c85866ecc3e7",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
-            "implemented-requirements": [
-              {
-                "uuid": "9d088514-4f3e-46f8-9693-aec486d21414",
-                "description": "The FortiGate devices must use FIPS-validated Keyed-Hash Message Authentication Code (HMAC) to protect the integrity of nonlocal maintenance and diagnostic communications.",
-                "control-id": "ma-4.(6)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "48f5be13-f7e9-4575-820c-469ae9a127c4",
-                "description": "The FortiGate device must implement cryptographic mechanisms using a FIPS 140-2 approved algorithm to protect the confidentiality of remote maintenance sessions.",
-                "control-id": "ma-4.(6)"
+                "uuid": "f19ca205-12cc-4d0a-a3a8-3c1f5ece5706",
+                "description": "The FortiGate device must not have any default manufacturer passwords when deployed.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "8b71cef2-e146-4087-94ad-f18dd6ab382c",
+                "description": "The FortiGate device must enforce password complexity by requiring that at least one lowercase character be used.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "84eb3165-6fc3-4539-bd43-28aeb78f385b",
+                "description": "The FortiGate device must enforce password complexity by requiring that at least one special character be used.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "43c03bb4-e933-4ce2-ad83-4b2a2f96b6d4",
+            "uuid": "6e910c86-22ad-4a2f-8c11-3f788a28e67a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "92a9f0b1-b1c7-408e-98c7-dbbc2640debf",
-                "description": "The FortiGate device must protect against known types of denial-of-service (DoS) attacks by employing organization-defined security safeguards.",
-                "control-id": "sc-5."
+                "uuid": "ec73ec94-f377-4f8b-9bfe-6d064b69302c",
+                "description": "The FortiGate device must use FIPS 140-2 approved algorithms for authentication to a cryptographic module.",
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "1629d05d-dd23-4910-9dd3-cfc112d07c6d",
+            "uuid": "a6d470f3-6200-45cc-9c5c-0901c3e28114",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-3.4.",
             "implemented-requirements": [
               {
-                "uuid": "d4665660-5c51-4f6e-8533-8b00d9c98a61",
+                "uuid": "62fc3952-a674-4095-a87b-d911a72a4b27",
+                "description": "FortiGate devices performing maintenance functions must restrict use of these functions to authorized personnel only.",
+                "control-id": "ma-3.4"
+              }
+            ]
+          },
+          {
+            "uuid": "ff0767bc-345a-47df-9073-308f60b636f0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.",
+            "implemented-requirements": [
+              {
+                "uuid": "059491bd-92eb-4b2f-8518-49ddb9408bb4",
                 "description": "The FortiGate device must terminate idle sessions after 10 minutes of inactivity.",
-                "control-id": "sc-10."
+                "control-id": "ma-4"
               }
             ]
           },
           {
-            "uuid": "f4917293-c843-4ec3-bb89-bd3cfac0103c",
+            "uuid": "601bd34f-af53-426f-90eb-5140c37d5b3a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.6.",
             "implemented-requirements": [
               {
-                "uuid": "e5f549ea-1274-4af0-98ba-64d22bcea86c",
+                "uuid": "f203e54f-cd51-46d7-ad4e-43e7603e0020",
+                "description": "The FortiGate device must implement cryptographic mechanisms using a FIPS 140-2 approved algorithm to protect the confidentiality of remote maintenance sessions.",
+                "control-id": "ma-4.6"
+              },
+              {
+                "uuid": "800da5e9-3e57-4d3d-9d7a-9dd4c582b221",
+                "description": "The FortiGate devices must use FIPS-validated Keyed-Hash Message Authentication Code (HMAC) to protect the integrity of nonlocal maintenance and diagnostic communications.",
+                "control-id": "ma-4.6"
+              }
+            ]
+          },
+          {
+            "uuid": "818b99d8-db11-4893-a739-156a1ef7aae7",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
+            "implemented-requirements": [
+              {
+                "uuid": "05cf5f25-f7a2-49a2-8e39-9a2a4c7b899f",
+                "description": "The FortiGate device must protect against known types of denial-of-service (DoS) attacks by employing organization-defined security safeguards.",
+                "control-id": "sc-5"
+              }
+            ]
+          },
+          {
+            "uuid": "4f026568-24cc-4f4d-b4fd-705fe24d1ded",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10.",
+            "implemented-requirements": [
+              {
+                "uuid": "b4c66780-47a5-45e1-a905-4789d9227147",
+                "description": "The FortiGate device must terminate idle sessions after 10 minutes of inactivity.",
+                "control-id": "sc-10"
+              }
+            ]
+          },
+          {
+            "uuid": "aea09d5b-6b34-4421-a8cc-47f5aab76b60",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-17.",
+            "implemented-requirements": [
+              {
+                "uuid": "f11644a2-09fe-4783-8daa-e737f107964f",
                 "description": "The FortiGate device must use DoD-approved Certificate Authorities (CAs) for public key certificates.",
-                "control-id": "sc-17."
+                "control-id": "sc-17"
               }
             ]
           },
           {
-            "uuid": "26cd64aa-023f-4250-9712-943e976bf211",
+            "uuid": "9a1d419b-044d-4d1b-8736-ea38c2bed0b2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
             "implemented-requirements": [
               {
-                "uuid": "e7fd87a3-4472-4380-b396-3e51e91ba069",
+                "uuid": "dfd8331e-db25-42e9-a65e-a877a0564974",
                 "description": "The FortiGate device must generate unique session identifiers using a FIPS 140-2-approved random number generator.",
-                "control-id": "sc-23.(3)"
+                "control-id": "sc-23.3"
               }
             ]
           },
           {
-            "uuid": "3d76b798-4d13-45b5-a1ff-64835a34c150",
+            "uuid": "d7856bf6-2849-4ea5-9df0-fd94bc05d6e3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "66202c6b-6413-4802-9e07-22a059184dfe",
+                "uuid": "c3eaefb9-a5ed-4c9e-8cb5-08668da918e3",
                 "description": "The FortiGate device must only allow authorized administrators to view or change the device configuration, system files, and other files stored either in the device or on removable media (such as a flash drive).",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "ee431a78-b8d4-4510-a785-e788ebe84e53",
+            "uuid": "ed368163-fce4-4a59-942c-67de31fbb227",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "1108677e-8a76-4603-95e3-21f5db3ec8d0",
+                "uuid": "ab90652b-2976-47f5-8089-1cb461234397",
                 "description": "The FortiGate device must be configured to send log data to a central log server for the purpose of forwarding alerts to the administrators and the ISSO.",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           }

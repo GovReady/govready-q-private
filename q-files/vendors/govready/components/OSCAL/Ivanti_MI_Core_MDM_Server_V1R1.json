@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "5e6b0f26-61f3-45a4-9d9b-bf1f85540a76",
+    "uuid": "6c8208cc-347d-46a0-8059-84a32dc91a3e",
     "metadata": {
       "title": "Ivanti MI Core MDM Server V1R1",
-      "last-modified": "2022-06-10T12:50:53",
-      "version": "2022-06-10T12:50:53",
+      "last-modified": "2022-06-12T11:06:48",
+      "version": "2022-06-12T11:06:48",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "d5e0b0ae-ad31-402f-b87f-ef9f2016dcf3",
+          "uuid": "2f854772-f281-47ef-ab60-6a7409fa35af",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,251 +16,251 @@
     },
     "components": [
       {
-        "uuid": "2a8f0648-b9f4-4a0e-afda-d7f08d90e0e7",
+        "uuid": "535260e9-714a-4a40-9899-e974f46fc7f9",
         "type": "software",
         "title": "Ivanti MI Core MDM Server V1R1",
-        "description": "Voluptatem velit etincidunt ipsum adipisci. Neque labore ipsum velit.",
+        "description": "Modi neque dolor labore porro numquam quisquam.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "d5e0b0ae-ad31-402f-b87f-ef9f2016dcf3"
+              "2f854772-f281-47ef-ab60-6a7409fa35af"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "26106989-a023-4fbf-9954-2ffce114fff6",
+            "uuid": "926a2e80-3235-4b1f-80cf-8d5821d736e3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "510b20f3-3e6d-4edc-917d-ab6815ebdb55",
-                "description": "The Ivanti MobileIron Core server must configured to lock administrator accounts after three unsuccessful login attempts.\nThe Ivanti MobileIron Core server must be configured to lock an administrator's account for at least 15 minutes after the account has been locked because the maximum number of unsuccessful login attempts has been exceeded.",
-                "control-id": "ac-7."
-              },
-              {
-                "uuid": "00ad407e-4e5f-4f42-8a0f-bd4a0119ead4",
+                "uuid": "c7983f41-058d-48dd-8a8a-a1ec320e7ff4",
                 "description": "The Ivanti MobileIron Core server must enforce the limit of three consecutive invalid logon attempts by a user during a 15-minute time period.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
+              },
+              {
+                "uuid": "56786e3e-f335-4baa-a1ff-6dafe5b055d4",
+                "description": "The Ivanti MobileIron Core server must configured to lock administrator accounts after three unsuccessful login attempts.\nThe Ivanti MobileIron Core server must be configured to lock an administrator's account for at least 15 minutes after the account has been locked because the maximum number of unsuccessful login attempts has been exceeded.",
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "1553fb6b-8302-46c2-8a52-b1fa85f0cad5",
+            "uuid": "c0da86aa-e6ac-47fc-9910-1cf46a267089",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "04eef379-f5a2-4af4-b681-f4284dad8113",
+                "uuid": "4e1300ba-3d14-483f-b9b5-097f2e8e0b52",
                 "description": "The Ivanti MobileIron Core server must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the application.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "36550f2d-77e0-4d8d-89fe-ee8823f111d8",
+            "uuid": "a08e8fc6-78ab-481d-ba69-3119d58ac824",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "5284291e-c274-43d4-b4eb-8bf85c878b34",
+                "uuid": "99bc5cfd-a27d-4504-b748-fea54c0cbe20",
                 "description": "The Ivanti MobileIron Core server must limit the number of concurrent sessions per privileged user account to three or less concurrent sessions.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "e4509914-eeda-4c55-b426-0900da299ff2",
+            "uuid": "d2b23dac-38bf-44f8-b4c6-b15bc3e59f10",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.",
             "implemented-requirements": [
               {
-                "uuid": "9d7614af-c159-48c2-9836-be4466dfc898",
+                "uuid": "a55091c4-caf4-4f55-9214-7ba146a9ec15",
                 "description": "The Ivanti MobileIron Core server must initiate a session lock after a 15-minute period of inactivity.",
-                "control-id": "ac-11."
+                "control-id": "ac-11"
               }
             ]
           },
           {
-            "uuid": "4240e892-7c22-4b27-8c3b-148b23430d8a",
+            "uuid": "f70ce9a1-0e78-420a-a26b-c2110aa47cb3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "b4e636ce-66ec-418d-8b7f-d9ba223e0393",
+                "uuid": "4b9ceaee-60a6-42f4-9ae6-6304491f45a7",
                 "description": "The Ivanti MobileIron Core server must automatically terminate a user session after an organization-defined period of user inactivity.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "b387a13f-94fa-4793-852e-907ad31b8429",
+            "uuid": "68174888-e1b0-4b89-b18b-32db7cb3cfa4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "cb9350ff-f2a2-4c32-95cf-aa3a94355216",
+                "uuid": "0bbe4ad5-3eca-4ef7-a5c0-c0527527f154",
                 "description": "The Ivanti MobileIron Core server must be configured to transfer Ivanti MobileIron Core server logs to another server for storage, analysis, and reporting. Note: Ivanti MobileIron Core server logs include logs of UEM events and logs transferred to the Ivanti MobileIron Core server by UEM agents of managed devices.\nThe Ivanti MobileIron Core server must, at a minimum, off-load audit logs of interconnected systems in real time and off-load standalone systems weekly.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "e3b0f38e-2e78-45c6-a23e-b16cc3488387",
+            "uuid": "5f6ebd5e-7fb3-440e-a3da-588c2e7df95d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.",
             "implemented-requirements": [
               {
-                "uuid": "c6d9cab1-f074-43a0-ad57-a63336564f0a",
+                "uuid": "b96fc53b-8d61-4276-b1ae-9b8fe79b67a9",
                 "description": "The Ivanti MobileIron Core server must alert the ISSO and SA (at a minimum) in the event of an audit processing failure.",
-                "control-id": "au-5."
+                "control-id": "au-5"
               }
             ]
           },
           {
-            "uuid": "e68b520b-0e15-4c94-a5a3-ecb6615cbde7",
+            "uuid": "11dd7533-0bd7-4b1d-88d5-acc3006c2316",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
             "implemented-requirements": [
               {
-                "uuid": "fe265f72-aa86-471e-a9c7-e8ac777ce4ef",
+                "uuid": "cf2ce34e-8fd8-4e74-8177-02b2c3354314",
                 "description": "The Ivanti MobileIron Core server must back up audit records at least every seven days onto a log management server.",
-                "control-id": "au-9.(2)"
+                "control-id": "au-9.2"
               }
             ]
           },
           {
-            "uuid": "2fdc00fd-5a02-4dcf-a646-82c9eeb6ee30",
+            "uuid": "8f8f9c23-ffd0-44b0-972b-043a229cb4e8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "4c202a63-b538-48db-9386-5fbc70edbfc9",
+                "uuid": "b149d8f1-2440-4480-8c31-25dc0638ffe5",
                 "description": "The Ivanti MobileIron Core server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "d6ae9b72-2ad9-447c-880f-dc3d123cae7e",
+            "uuid": "c970d996-763c-4a17-a33a-0d4a1db95ded",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.1.",
             "implemented-requirements": [
               {
-                "uuid": "d59b978c-7958-4f31-ad19-b5860fb655fa",
+                "uuid": "3118b6db-420c-4e8f-816c-500225c3b379",
                 "description": "The Ivanti MobileIron Core server must be configured to use a DoD Central Directory Service to provide multifactor authentication for network access to privileged and non-privileged accounts.",
-                "control-id": "ia-2.(1)"
+                "control-id": "ia-2.1"
               }
             ]
           },
           {
-            "uuid": "12c3a7f6-860b-4af9-bc93-4973320d0371",
+            "uuid": "b439c3c1-dde9-4c74-b2d1-492ce472e84d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "5f5c5c0e-9251-4d23-ac9a-c304c5c65182",
-                "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one lowercase character be used.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "c24e0c69-14ea-4af3-aeb9-1215e2e02db3",
+                "uuid": "7c7f91f5-f73b-420b-b66c-a5cb58af1984",
                 "description": "The Ivanti MobileIron Core server must enforce a minimum 15-character password length.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "36ac94cc-f64e-496a-b46e-39944a18c017",
-                "description": "The Ivanti MobileIron Core server must prohibit password reuse for a minimum of four generations.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "ab8ed438-097b-47d9-ac0c-c0d6ab5a53d9",
-                "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one uppercase character be used.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "020ccb51-44b0-4adf-9372-81f5e6c1751d",
+                "uuid": "abc37542-e032-4511-8cbd-9858d3abc5c8",
                 "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one numeric character be used.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "5f879061-3b54-4f0b-b537-acb509971fae",
+                "uuid": "ff5c86fd-f1c8-402d-be3e-34d3ab5d8baa",
+                "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one uppercase character be used.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "7690a4e3-c590-47de-98ba-d1578fe5350c",
+                "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one lowercase character be used.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "717faaf2-038f-4084-9ded-698a3e6642be",
                 "description": "The Ivanti MobileIron Core server must enforce password complexity by requiring that at least one special character be used.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "dade3eae-d79c-4395-a79e-c05aca5dd56b",
+                "description": "The Ivanti MobileIron Core server must prohibit password reuse for a minimum of four generations.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "53495680-5b18-4d88-aeb8-bbd79bb7a4d0",
+            "uuid": "39dd2ca8-6489-41e3-99db-52603014f604",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "26f1decf-f50c-4416-9328-de523938928a",
+                "uuid": "988d113d-d3ff-49f8-a2b3-a608b24084ac",
                 "description": "The Ivanti MobileIron Core server must use FIPS-validated SHA-2 or higher hash function to protect the integrity of keyed-hash message authentication code (HMAC), Key Derivation Functions (KDFs), Random Bit Generation, and hash-only applications.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "faf344d1-9370-4adf-bc50-52b44d9d5ced",
+            "uuid": "1134beee-7e9a-4773-936e-254a267064d1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.6.",
             "implemented-requirements": [
               {
-                "uuid": "21e6f09a-4ea5-475f-a334-dbb079fa8399",
+                "uuid": "011046fb-1cb2-452a-bd61-39d15ae30261",
                 "description": "The Ivanti MobileIron Core server must configure web management tools with FIPS-validated Advanced Encryption Standard (AES) cipher block algorithm to protect the confidentiality of maintenance and diagnostic communications for nonlocal maintenance sessions.",
-                "control-id": "ma-4.(6)"
+                "control-id": "ma-4.6"
               }
             ]
           },
           {
-            "uuid": "3709e708-a96d-4b0e-b827-0c55e2cadedb",
+            "uuid": "f210bb55-39e0-4c0b-925d-0fd756bc424b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "32cbb7a2-5b60-40a5-b39c-353e8c196062",
+                "uuid": "55788f1e-2031-4ec0-9c70-129f9c7ad691",
                 "description": "The Ivanti MobileIron Core server must use a FIPS-validated cryptographic module to generate cryptographic hashes.\nThe Ivanti MobileIron Core server must be configured to implement FIPS 140-2 mode for all server and agent encryption.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "c95f1d7e-8b60-4b6e-a13b-160708334eff",
+            "uuid": "b2c22e75-5e92-4a54-b8f0-be955f217f52",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "7c1f095e-a0ec-4efc-89de-a394c3d2dc7a",
+                "uuid": "41369065-2cdf-469b-91e5-628a9fc10ccf",
                 "description": "The Ivanti MobileIron Core server must only allow the use of DoD PKI established certificate authorities for verification of the establishment of protected sessions.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "2a10b3f2-f293-4d71-90ff-5f2a1fafa534",
+            "uuid": "e980ec77-5afa-443e-bedf-409f14bbc3d7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "d5d709f9-04d4-42d6-856b-92d4db810181",
+                "uuid": "8ef959a3-bd4a-4f95-a86f-4b085b95c32d",
                 "description": "The Ivanti MobileIron Core server must be maintained at a supported version.",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "e334bfdd-4090-4bcc-aa70-88a846920513",
+            "uuid": "7896bb78-1748-4b81-a88a-9283f00b3283",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-6.",
             "implemented-requirements": [
               {
-                "uuid": "6c127536-8207-464e-8c0f-158199146255",
+                "uuid": "f6bd6f1d-14e8-4cb0-a6b2-5bd090f6e9f2",
                 "description": "The Ivanti MobileIron Core server must be configured with the periodicity of the following commands to the agent of six hours or less: - query connectivity status - query the current version of the managed device firmware/software - query the current version of installed mobile applications - read audit logs kept by the managed device.",
-                "control-id": "si-6."
+                "control-id": "si-6"
               }
             ]
           }

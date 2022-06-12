@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "a43914e0-ced7-4b4a-bb10-71ca531dc4c9",
+    "uuid": "2da78a6a-0f5a-4146-9096-27db35396a74",
     "metadata": {
       "title": "Google Chrome V2R5",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "cd8fb21f-1047-4f79-802d-0fac42686289",
+          "uuid": "57327e67-d02b-4e75-bf62-486f3dacd233",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,197 +16,197 @@
     },
     "components": [
       {
-        "uuid": "56d869a6-f4c6-4c26-8707-2fb139ac6ede",
+        "uuid": "1904f860-205c-45f9-a1fe-f5008d9f3c91",
         "type": "software",
         "title": "Google Chrome V2R5",
-        "description": "Sit dolor labore voluptatem dolorem etincidunt. Est consectetur consectetur adipisci modi ipsum numquam.",
+        "description": "Dolorem dolore velit non. Quiquia amet amet ipsum quaerat amet eius. Consectetur etincidunt tempora amet magnam dolorem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "cd8fb21f-1047-4f79-802d-0fac42686289"
+              "57327e67-d02b-4e75-bf62-486f3dacd233"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "df9fb6b3-b18b-416d-9116-47a39c161ffb",
+            "uuid": "bee7bd67-ccb0-4100-88f5-c8bb3774114f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.",
             "implemented-requirements": [
               {
-                "uuid": "be6cea46-8ec5-4b74-bd01-f050b4343b16",
+                "uuid": "ced1ff45-1d4e-4c18-860f-059012c9e5cf",
                 "description": "Firewall traversal from remote host must be disabled.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
               }
             ]
           },
           {
-            "uuid": "47da831d-0e0f-4e6d-bac5-b010ba7db80a",
+            "uuid": "5d28d4a0-69ec-4eb0-b05a-6caa8ff902a2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.(15).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.15.",
             "implemented-requirements": [
               {
-                "uuid": "21350319-0cba-4d49-827b-0c3287f69e68",
+                "uuid": "dcbecce6-28fd-44d2-a961-920d85aae7ba",
                 "description": "Google Data Synchronization must be disabled.\nCloud print sharing must be disabled.",
-                "control-id": "ac-4.(15)"
+                "control-id": "ac-4.15"
               }
             ]
           },
           {
-            "uuid": "fcf4836b-0fd0-4867-be1a-4bd44ba0aa67",
+            "uuid": "d758633b-7fd8-471d-a41c-dccf8ef2081b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.",
             "implemented-requirements": [
               {
-                "uuid": "e9e42d40-2d5c-48d0-a1ef-10ba2d94da31",
+                "uuid": "72a69038-8f4e-4fa7-bd4f-45300d358a48",
                 "description": "Incognito mode must be disabled.\nSession only based cookies must be disabled.",
-                "control-id": "au-10."
+                "control-id": "au-10"
               }
             ]
           },
           {
-            "uuid": "ac616976-63d5-4e05-b921-b08948a7effe",
+            "uuid": "76553fbd-b5b2-4085-ae89-129801ac123e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "2ed66ad2-77a4-4315-93cb-54049bcb0639",
+                "uuid": "cb4f65d3-4f33-4725-9d4a-97f48034d716",
                 "description": "Extensions installation must be blocklisted by default.\nDeletion of browser history must be disabled.\nPrompt for download location must be enabled.\nDownload restrictions must be configured.\nChrome Cleanup must be disabled.\nChrome Cleanup reporting must be disabled.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "48d62b9e-fe71-4483-bdfb-48cf6cfe54bf",
+            "uuid": "edf13f0c-d713-4ce8-b76a-c58ffa4ce89b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "0e9b8699-03c8-48fb-a257-6b5f50247ecc",
+                "uuid": "12884d66-37e5-4dec-8a91-ab1e2fb7f185",
                 "description": "Network prediction must be disabled.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "77b6bd2e-5be0-4607-8855-bf7a7e93f73b",
+            "uuid": "db317b50-7a84-4f8a-b86d-59c11145cf8e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "b00d17f7-d446-408f-a291-d505175c8126",
+                "uuid": "4ea01696-bf3e-4af3-8212-aaf5c24fe5ba",
                 "description": "Sites ability to show pop-ups must be disabled.\nThe default search providers name must be set.\nThe default search provider URL must be set to perform encrypted searches.\nDefault search provider must be enabled.\nThe Password Manager must be disabled.\nThe URL protocol schema javascript must be disabled.\nMetrics reporting to Google must be disabled.\nSearch suggestions must be disabled.\nImporting of saved passwords must be disabled.\nWebUSB must be disabled.\nGoogle Cast must be disabled.\nAutoplay must be disabled.\nWeb Bluetooth API must be disabled.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "786416c3-4354-4056-91bb-da78e7109f79",
+            "uuid": "882adc1c-613b-44fa-8377-858055a54e93",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "eedc52a9-76e2-4a86-93c5-cb0e4f38df80",
+                "uuid": "38463ef4-f773-48aa-8c4c-d6bd858b8740",
                 "description": "Use of the QUIC protocol must be disabled.",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "9307fdc2-2128-4010-b056-7febdafc5cb0",
+            "uuid": "a13563c3-afed-44f0-aef3-b1e618f7b04f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "693aebd6-d8d2-4893-9026-d487f6c87fa4",
+                "uuid": "8bae6b71-c1ad-4403-bbf3-3194147eef05",
                 "description": "Online revocation checks must be performed.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "871c8e36-5f44-4b32-8b86-8eb1623c09f5",
+            "uuid": "aceed817-939a-4221-b9b7-4590a742e4c3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "3a57df20-f9ff-4b68-af8e-d8f959e3dde3",
+                "uuid": "8b73415f-3103-4904-9883-97cc8aa94422",
                 "description": "Chrome must be configured to allow only TLS.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "11381ec1-fa9a-4d21-99bc-c6787fa66d56",
+            "uuid": "af29b373-5094-4d21-ac7d-250e5417d925",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "849e4a1d-e07f-4fdc-96ec-c29b702ada8a",
+                "uuid": "15db90c6-db48-4345-af78-a33fe12d6255",
                 "description": "Site tracking users location must be disabled.\nSafe Browsing must be enabled,\nSafe Browsing Extended Reporting must be disabled.\nAnonymized data collection must be disabled.\nCollection of WebRTC event logs must be disabled.\nGuest Mode must be disabled.\nAutoFill for credit cards must be disabled.\nAutoFill for addresses must be disabled.\nImport AutoFill form data must be disabled.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "93947a9f-f3f7-4577-8f01-7523f7aefb65",
+            "uuid": "ff948f94-72b3-403b-a661-663bfe62c0da",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "399248bb-d541-44e5-b813-43c7f139f84b",
+                "uuid": "b5c331b3-e18f-4eb7-bf7b-e80a906c4f5f",
                 "description": "Background processing must be disabled.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "eab3e2df-fde4-466a-b84b-d40c1554ba70",
+            "uuid": "6d77c54c-5d22-487c-bf49-6aa41354ecab",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "82d84cff-b6f7-40f5-bcb0-0df8b8c2f608",
+                "uuid": "e8d887d9-3065-4f1d-b279-004484f8a6e6",
                 "description": "Extensions that are approved for use must be allowlisted.\nURLs must be allowlisted for Autoplay use.",
-                "control-id": "sc-18.(4)"
+                "control-id": "sc-18.4"
               }
             ]
           },
           {
-            "uuid": "4a090428-200b-4b5b-a300-bd4bfc07091c",
+            "uuid": "72f1d8da-a3bf-4279-9940-8a832336d750",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "996eaf11-6fe2-441f-92e2-9634c327b727",
+                "uuid": "b2822eb5-4a38-4410-9377-ca8c54199c43",
                 "description": "Browser history must be saved.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "3ca64ec8-8f4e-463e-bffe-a85484b53888",
+            "uuid": "233e0276-b1f0-4e13-b444-57210479df92",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "468b3674-b76e-47a5-950b-332cec652992",
+                "uuid": "4ab6011e-86cb-4d8d-a7d0-d7836d06bba0",
                 "description": "The version of Google Chrome running on the system must be a supported version.",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "8c9ad638-ade7-4fc7-9cbd-dba91f750fb3",
+            "uuid": "bee68e3d-2766-4ad4-8c62-493ecb5f33e4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "40c57452-45c8-4b8a-8478-b59d45f780ae",
+                "uuid": "724ebdfc-189a-4955-9857-7f80a24f1b7e",
                 "description": "Chrome development tools must be disabled.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

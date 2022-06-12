@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "b2bd7c53-1f98-4bdf-912f-bc2becc7e41c",
+    "uuid": "10e3f9bf-ac4f-4a3f-9328-837724a7a7a0",
     "metadata": {
       "title": "Application Server V3R2",
-      "last-modified": "2022-06-10T12:50:57",
-      "version": "2022-06-10T12:50:57",
+      "last-modified": "2022-06-12T11:06:52",
+      "version": "2022-06-12T11:06:52",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "7446f268-d43b-47aa-8e0f-a38e245163fd",
+          "uuid": "a63272b2-8c23-4c2f-8d65-9608693a0ab6",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,1020 +16,1020 @@
     },
     "components": [
       {
-        "uuid": "d591990d-c420-498b-90c5-009015672a6b",
+        "uuid": "2b1d9ad2-eb36-4a48-aa89-541ece3433dc",
         "type": "software",
         "title": "Application Server V3R2",
-        "description": "Non ipsum sit voluptatem quiquia adipisci adipisci modi. Numquam sed sed dolore ut.",
+        "description": "Magnam consectetur tempora ut neque dolorem. Dolore consectetur neque sit ut. Neque numquam amet adipisci tempora.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "7446f268-d43b-47aa-8e0f-a38e245163fd"
+              "a63272b2-8c23-4c2f-8d65-9608693a0ab6"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "f8bb4695-cd50-4156-a100-a672a98b7072",
+            "uuid": "125eeb67-1cbc-4e56-ab7b-eed7a7039be6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "ef3f230a-d0db-4e4f-93c6-21480d94046d",
+                "uuid": "28a67ea7-3295-4c63-b065-498edc3c5ed7",
                 "description": "The application server must enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "10f82086-d4ef-4788-a2f7-211ff9acadc9",
+            "uuid": "686dbf47-9578-4557-b662-4f3280eaef01",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.9.",
             "implemented-requirements": [
               {
-                "uuid": "a5f527d3-7d26-41e2-a3f7-ef13b84fb4e4",
+                "uuid": "d50b8452-29e8-49c1-881e-566e42431e76",
                 "description": "The application server must provide access logging that ensures users who are granted a privileged role (or roles) have their privileged activity logged.",
-                "control-id": "ac-6.(9)"
+                "control-id": "ac-6.9"
               }
             ]
           },
           {
-            "uuid": "7dc6aad6-0a88-4fe4-9e9e-ea3e6e6436eb",
+            "uuid": "00707c67-67f4-403b-a849-caaa271fe467",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "41f7ad57-4a7c-4a73-84be-256ae7c480eb",
+                "uuid": "24f79580-cb84-40ab-bb0f-19738ddb94d9",
                 "description": "The application server must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "3b6ba3d9-d3ed-435c-8d8d-e40719f83a59",
+            "uuid": "4d1fefda-3e1e-468b-89de-3dca3d86fbf1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "c901f09d-a517-48e0-a5af-04aea71b3761",
+                "uuid": "622c64a7-f0bd-4dd2-8629-5e1301eb66fa",
                 "description": "The application server management interface must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               },
               {
-                "uuid": "61857884-78a5-4c1d-9990-1ad68d419ed5",
+                "uuid": "984832d8-a32f-4523-96d8-7e396749b955",
                 "description": "The application server management interface must retain the Standard Mandatory DoD Notice and Consent Banner on the screen until users acknowledge the usage conditions and take explicit actions to log on for further access.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "25efabb1-6f90-4993-9f36-072786c2a2a5",
+            "uuid": "cbc61bcc-d30f-4542-8be8-c03683902b29",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "d885435b-deb1-416d-bd70-413061658b88",
+                "uuid": "4472200d-e741-4ca7-bf5b-61fa6d0a2594",
                 "description": "The application server must limit the number of concurrent sessions to an organization-defined number for all accounts and/or account types.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "c1ed3f00-d1fd-485d-9d62-a70bb88c756f",
+            "uuid": "ec111ba4-c395-4244-b8b6-f61a900043b2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "383af22b-7947-4ea0-a98f-40beae1f1d6e",
+                "uuid": "0fc6aaab-28cf-40ad-b1f8-444bedb62944",
                 "description": "The application server must automatically terminate a user session after organization-defined conditions or trigger events requiring a session disconnect.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "bc9ba8a3-0616-4a54-addb-7c229dd32c45",
+            "uuid": "505f7436-becc-4b94-a02e-d177dee03373",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.1.",
             "implemented-requirements": [
               {
-                "uuid": "f406fce1-283a-44e3-ab5d-9475abb10ff5",
-                "description": "The application server management interface must provide a logout capability for user-initiated communication session.",
-                "control-id": "ac-12.(1)"
-              },
-              {
-                "uuid": "d03991ed-ba4f-4e01-9f43-df0e9c6368a8",
+                "uuid": "c8df7026-f342-4923-85ab-32a45b831b5d",
                 "description": "The application server management interface must display an explicit logout message to users indicating the reliable termination of authenticated communications sessions.",
-                "control-id": "ac-12.(1)"
+                "control-id": "ac-12.1"
+              },
+              {
+                "uuid": "de9c357a-5c35-4fed-a94a-a4449258a218",
+                "description": "The application server management interface must provide a logout capability for user-initiated communication session.",
+                "control-id": "ac-12.1"
               }
             ]
           },
           {
-            "uuid": "d5e85c7d-e848-4cbd-b764-0d11085c5834",
+            "uuid": "07171730-dae2-4fe9-8fa2-3145f25889c8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16.",
             "implemented-requirements": [
               {
-                "uuid": "3dcc74e9-1c1e-4e3f-a685-2c62de25c144",
-                "description": "The application server must associate organization-defined types of security attributes having organization-defined security attribute values with information in transmission.",
-                "control-id": "ac-16."
-              },
-              {
-                "uuid": "7b3f582a-accc-4b2b-8fb6-fb4a4eb997da",
+                "uuid": "2745ff93-d86f-4628-ad5b-034e1e8f41b3",
                 "description": "The application server must associate organization-defined types of security attributes having organization-defined security attribute values with information in process.",
-                "control-id": "ac-16."
+                "control-id": "ac-16"
+              },
+              {
+                "uuid": "92c1ffcc-3629-4237-9934-00fdd7ceb5a1",
+                "description": "The application server must associate organization-defined types of security attributes having organization-defined security attribute values with information in transmission.",
+                "control-id": "ac-16"
               }
             ]
           },
           {
-            "uuid": "e4ada87b-6daa-4185-a262-d8879e4522ff",
+            "uuid": "45efa7b2-93af-45c4-aad1-cb96cd2360ce",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "b3e5e942-6376-4e3d-a747-241acad56ec5",
+                "uuid": "08b5051f-fd33-4722-ba91-bb2420419221",
                 "description": "The application server must ensure remote sessions for accessing security functions and security-relevant information are logged.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               },
               {
-                "uuid": "5cc78f6f-a7b0-4164-b686-374ba82e828a",
+                "uuid": "c2a1eff8-8cf3-41ec-a77b-63f0ed38a12a",
                 "description": "The application server must control remote access methods.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "3ff5b49e-6e3b-4ffb-9ff6-e3cdab25019f",
+            "uuid": "9663a395-9e3c-4fff-9359-1e0ac21a3414",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "c18a6249-ded3-4cf6-85ee-e99d2949a434",
-                "description": "The application server must use encryption strength in accordance with the categorization of the management data during remote access management sessions.",
-                "control-id": "ac-17.(2)"
-              },
-              {
-                "uuid": "64bbc846-76f4-484d-ae26-04270ba3be8b",
+                "uuid": "fa2156c9-9fa7-4f8e-b958-1ce3dca894ed",
                 "description": "The application server must implement cryptography mechanisms to protect the integrity of the remote access session.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
+              },
+              {
+                "uuid": "3df89443-e9d8-48da-b75c-70021003cc37",
+                "description": "The application server must use encryption strength in accordance with the categorization of the management data during remote access management sessions.",
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "4fcbb94e-7b5e-44f1-89cd-c0dc0adeedf1",
+            "uuid": "8565b40b-e2af-4bae-ac43-8f82c39261f2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.9.",
             "implemented-requirements": [
               {
-                "uuid": "fb8e1cc8-91ae-4e0e-8011-11f2e83cad8b",
+                "uuid": "0adeede8-7c8a-4739-a03d-363401e66109",
                 "description": "The application server must provide the capability to immediately disconnect or disable remote access to the management interface.",
-                "control-id": "ac-17.(9)"
+                "control-id": "ac-17.9"
               }
             ]
           },
           {
-            "uuid": "8b069d9e-c75e-4e71-baae-3f110100d404",
+            "uuid": "d387b380-2811-447f-9ba6-3a710a3f313b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "271b2854-ae8d-4d95-bfde-305ac2320c75",
-                "description": "The application server must produce log records containing information to establish what type of events occurred.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "fb760dea-ba29-4ae6-9cb3-7895906f757f",
-                "description": "The application server must produce log records containing sufficient information to establish where the events occurred.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "d4d4f279-ebe4-44eb-9f82-6d5b2dfca711",
-                "description": "The application server must generate log records containing information that establishes the identity of any individual or process associated with the event.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "3c4b4375-c126-4921-807f-ad7353c71877",
+                "uuid": "9b290e2c-2a61-44c1-8101-73e512642c9f",
                 "description": "The application server must produce log records containing sufficient information to establish when (date and time) the events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "b127c006-4e16-4055-8863-a29937c8800f",
-                "description": "The application server must produce log records that contain sufficient information to establish the outcome of events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "7cb1a0b7-dce8-4f38-830f-2d762183142d",
+                "uuid": "7298cafe-a526-4506-a64b-95b608e349d9",
                 "description": "The application server must produce log records containing sufficient information to establish the sources of the events.",
-                "control-id": "au-3."
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "86ecaf01-57e1-462c-bf2b-6f5b444c34c3",
+                "description": "The application server must produce log records containing information to establish what type of events occurred.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "f84b8e1f-cc87-49fb-b11e-6b950b8afd69",
+                "description": "The application server must produce log records that contain sufficient information to establish the outcome of events.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "ffcd01bf-e4e8-4fda-9b69-b7dafc516c44",
+                "description": "The application server must produce log records containing sufficient information to establish where the events occurred.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "0296cc24-4f32-42d9-8c99-4da9dcc67004",
+                "description": "The application server must generate log records containing information that establishes the identity of any individual or process associated with the event.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "d131d94d-260f-4bd7-9255-1808b2d80561",
+            "uuid": "2cd03fa1-fdd1-4db5-b207-31b6e26fbf4d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "50258ca2-ff8e-4ad8-99cf-e1b4a0b66fd6",
+                "uuid": "7e3ecf38-4e7b-4313-99ac-87486ac5fe4b",
                 "description": "The application server must generate log records containing the full-text recording of privileged commands or the individual identities of group account users.",
-                "control-id": "au-3.(1)"
+                "control-id": "au-3.1"
               }
             ]
           },
           {
-            "uuid": "5f7e6ab1-5303-496f-97cc-bfa08a6e5d2c",
+            "uuid": "152733ea-a28c-4850-a281-fa0e31f778d1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.2.",
             "implemented-requirements": [
               {
-                "uuid": "967e26dc-e7d9-4221-99ed-18ee5a365a1b",
+                "uuid": "af4df058-89a3-40c5-9e0e-7b550eaec121",
                 "description": "The application server must provide centralized management and configuration of the content to be captured in log records generated by all application components.",
-                "control-id": "au-3.(2)"
+                "control-id": "au-3.2"
               }
             ]
           },
           {
-            "uuid": "7294190c-325c-41f3-a103-942bd0e23638",
+            "uuid": "5cce957a-2c01-45bd-9173-f16ba6663e83",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
             "implemented-requirements": [
               {
-                "uuid": "cc2309d8-bf01-40c8-8948-ffab3a72b81b",
+                "uuid": "baddf12c-6686-4a56-8584-a4b06260d10b",
                 "description": "The application server must allocate log record storage capacity in accordance with organization-defined log record storage requirements.",
-                "control-id": "au-4."
+                "control-id": "au-4"
               }
             ]
           },
           {
-            "uuid": "9e9707cf-53be-4ec2-bce6-e89a3a266235",
+            "uuid": "015571b8-f114-4da7-a7ee-b6cefc69a6f3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "81f8f1eb-e587-473f-94bc-fe6228203ecd",
+                "uuid": "8c962d25-50df-4c99-aed4-393fd8fa7cb6",
                 "description": "The application server must off-load log records onto a different system or media from the system being logged.\nThe application server must, at a minimum, transfer the logs of interconnected systems in real time, and transfer the logs of standalone systems weekly.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "38133da9-ba59-431f-a0f5-7f3e99447fb7",
+            "uuid": "ab4a92ce-d993-45ad-aae2-ef1a94e00071",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.",
             "implemented-requirements": [
               {
-                "uuid": "a2b9d49c-129a-40eb-a79a-7f33797619b7",
-                "description": "The application server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.",
-                "control-id": "au-5."
-              },
-              {
-                "uuid": "89b7a23b-e701-4f8a-a523-ea1101b165df",
+                "uuid": "e1bd1ec1-3f46-49dd-a4d0-2827653f7ef5",
                 "description": "The application server must shut down by default upon log failure (unless availability is an overriding concern).\nThe application server must be configured to fail over to another system in the event of log subsystem failure.",
-                "control-id": "au-5."
+                "control-id": "au-5"
+              },
+              {
+                "uuid": "c9fc9bb4-fcc2-425a-97bf-41cc0f00293a",
+                "description": "The application server must alert the SA and ISSO, at a minimum, in the event of a log processing failure.",
+                "control-id": "au-5"
               }
             ]
           },
           {
-            "uuid": "58bce45c-82cb-4e87-962b-7c6f54123b66",
+            "uuid": "97d78207-7b27-4404-b1b7-a38c681ef20b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "aa6e36b1-6f22-49b5-a115-3c7afeb71296",
+                "uuid": "864161a3-244b-46ef-a221-99bb6eeca85f",
                 "description": "The application server must provide an immediate warning to the SA and ISSO, at a minimum, when allocated log record storage volume reaches 75% of maximum log record storage capacity.",
-                "control-id": "au-5.(1)"
+                "control-id": "au-5.1"
               }
             ]
           },
           {
-            "uuid": "56704a70-4c1f-4fae-8500-673fa2cc1b0d",
+            "uuid": "61f5cd13-bd43-4a2d-b3b8-99435f81821c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "56f3fdca-f0bb-4535-8ec5-e4c1c9c487bd",
+                "uuid": "9dbed94e-f402-4f81-9188-77242adce306",
                 "description": "The application server must provide an immediate real-time alert to authorized users of all log failure events requiring real-time alerts.",
-                "control-id": "au-5.(2)"
+                "control-id": "au-5.2"
               }
             ]
           },
           {
-            "uuid": "372be166-0bb6-4253-9288-60e7cb29cc96",
+            "uuid": "62929c99-97a6-4ff2-a0b0-a3d90eedaa02",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-7.",
             "implemented-requirements": [
               {
-                "uuid": "e7b5002a-436c-4acb-8a2e-6dbdd7c88f29",
+                "uuid": "a21db4e5-5edb-4e4f-b99e-df1414289348",
                 "description": "The application server must provide a log reduction capability that supports on-demand reporting requirements.",
-                "control-id": "au-7."
+                "control-id": "au-7"
               }
             ]
           },
           {
-            "uuid": "86aa880f-f038-4244-85d5-136749f97bbb",
+            "uuid": "fadb40c3-f004-4b4f-885d-530421fd5870",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.",
             "implemented-requirements": [
               {
-                "uuid": "bd287266-b458-4bcd-be26-39345d110e32",
-                "description": "The application server must use internal system clocks to generate time stamps for log records.",
-                "control-id": "au-8."
-              },
-              {
-                "uuid": "a3b4fc79-c1ad-49bf-8d62-4d3ce0cceed4",
-                "description": "The application server must record time stamps for log records that meet a granularity of one second for a minimum degree of precision.",
-                "control-id": "au-8."
-              },
-              {
-                "uuid": "55d4df90-7f33-4406-9404-216bb94b457d",
+                "uuid": "d1b99769-7e30-4400-b09c-4d7af3a5d589",
                 "description": "The application server must record time stamps for log records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT).",
-                "control-id": "au-8."
+                "control-id": "au-8"
+              },
+              {
+                "uuid": "e7a4e305-a260-432b-b999-81658dc958a3",
+                "description": "The application server must use internal system clocks to generate time stamps for log records.",
+                "control-id": "au-8"
+              },
+              {
+                "uuid": "4f19247b-2fb3-4f96-adbd-e91b607fd362",
+                "description": "The application server must record time stamps for log records that meet a granularity of one second for a minimum degree of precision.",
+                "control-id": "au-8"
               }
             ]
           },
           {
-            "uuid": "4cc63a36-9297-405a-a22b-9d9336f9f276",
+            "uuid": "a7e8211f-7ca9-4873-908a-060049a3bcac",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "83da0ff0-fda2-40c0-9de1-16565406bf30",
+                "uuid": "98b63390-a7cb-48c9-842c-325699840fc9",
                 "description": "The application server must synchronize internal application server clocks to an authoritative time source when the time difference is greater than the organization-defined time period.",
-                "control-id": "au-8.(1)"
+                "control-id": "au-8.1"
               },
               {
-                "uuid": "b1ef5a43-8862-44e2-a2aa-6c2b727d4f52",
+                "uuid": "2e75996e-ca42-4bee-99e8-badd98733281",
                 "description": "The application server must compare internal application server clocks at least every 24 hours with an authoritative time source.",
-                "control-id": "au-8.(1)"
+                "control-id": "au-8.1"
               }
             ]
           },
           {
-            "uuid": "2369ae29-5ae6-47a3-8d07-36cfb737f142",
+            "uuid": "7d6254eb-985d-4176-a5df-3fb2bf18b6f6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "2f24c61e-4e8c-43a0-bf0e-a4419dc24b59",
-                "description": "The application server must protect log tools from unauthorized deletion.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "b6dfbc05-7a36-430f-869f-f9a59d694ec9",
-                "description": "The application server must protect log information from unauthorized deletion.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "c9462983-a013-46c3-8d35-00ddda98f87c",
-                "description": "The application server must protect log tools from unauthorized modification.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "4fe2c776-d354-49cb-8f06-33c0ce2fba11",
-                "description": "The application server must protect log tools from unauthorized access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "81266a62-0a14-4340-ac3a-064c29552230",
-                "description": "The application server must protect log information from any type of unauthorized read access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "43011ac5-3803-4233-9cfe-eca4bea20a9b",
+                "uuid": "8f8dc916-a5a9-4b8f-afa0-b991807e338f",
                 "description": "The application server must protect log information from unauthorized modification.",
-                "control-id": "au-9."
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "8c98a0be-4b42-4ec9-a815-5c51f56467bb",
+                "description": "The application server must protect log tools from unauthorized deletion.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "19854438-e939-4bdc-af5a-fb9dd5d0151f",
+                "description": "The application server must protect log tools from unauthorized access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "428378f4-e48f-43fb-902c-c5d5d79f9507",
+                "description": "The application server must protect log information from unauthorized deletion.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "510bddd6-a962-4136-b56d-109e02fe3d15",
+                "description": "The application server must protect log information from any type of unauthorized read access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "64b6dd45-c58d-4cbc-b879-2de01fe3f0cb",
+                "description": "The application server must protect log tools from unauthorized modification.",
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "1ae82e8c-7b95-4a5f-9e8f-525dbe946cc9",
+            "uuid": "c33a3b19-acf5-40c3-90c3-ff6092f98ca5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
             "implemented-requirements": [
               {
-                "uuid": "40d1a7fe-d54a-401a-be3e-9f500af6ba43",
+                "uuid": "55df2680-76fc-49b9-839b-c78c45a10853",
                 "description": "The application server must back up log records at least every seven days onto a different system or system component than the system or component being logged.",
-                "control-id": "au-9.(2)"
+                "control-id": "au-9.2"
               }
             ]
           },
           {
-            "uuid": "95b4165b-32cd-4748-a004-458a1a71e488",
+            "uuid": "98160492-71ee-4796-9825-336fb62ebd47",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.3.",
             "implemented-requirements": [
               {
-                "uuid": "407d7533-6706-4a65-b74a-776168c84182",
+                "uuid": "ba02ae68-5cd1-4db8-a2c9-87669d0a11f4",
                 "description": "The application server must use cryptographic mechanisms to protect the integrity of log tools.",
-                "control-id": "au-9.(3)"
+                "control-id": "au-9.3"
               },
               {
-                "uuid": "bfb4a3ea-d97c-494e-9102-274643b59a23",
+                "uuid": "0e6cea97-6740-42af-ac3e-ca6e564cf129",
                 "description": "The application server must use cryptographic mechanisms to protect the integrity of log information.",
-                "control-id": "au-9.(3)"
+                "control-id": "au-9.3"
               }
             ]
           },
           {
-            "uuid": "eb740e03-9b7e-492f-8e16-fb6b8985c86d",
+            "uuid": "b43821e5-82d6-48ad-bf5b-f2239a9a48dd",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.",
             "implemented-requirements": [
               {
-                "uuid": "c654b2de-cbde-4180-8c80-7aea12c2e1be",
+                "uuid": "db33125b-467e-4a71-bc8e-e2ec0f72b6d6",
                 "description": "The application server must protect against an individual (or process acting on behalf of an individual) falsely denying having performed organization-defined actions to be covered by non-repudiation.",
-                "control-id": "au-10."
+                "control-id": "au-10"
               }
             ]
           },
           {
-            "uuid": "7108bf31-3360-4161-9455-9a7d77576913",
+            "uuid": "929bb8b3-8063-4f96-b4f3-04442855347b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "820d37d3-1ddd-4c95-b563-b3e46806d511",
-                "description": "The application server must generate log records when successful/unsuccessful attempts to access subject privileges occur.\nThe application server must generate log records when successful/unsuccessful attempts to modify privileges occur.\nThe application server must generate log records when successful/unsuccessful attempts to delete privileges occur.\nThe application server must generate log records when successful/unsuccessful logon attempts occur.\nThe application server must generate log records for privileged activities.\nThe application must generate log records showing starting and ending times for user access to the application server management interface.\nThe application server must generate log records when concurrent logons from different workstations occur to the application server management interface.\nThe application server must generate log records for all account creations, modifications, disabling, and termination events.",
-                "control-id": "au-12."
-              },
-              {
-                "uuid": "82e2aef9-5764-4fce-8d0d-2031f0c8daa3",
-                "description": "The application server must generate log records for access and authentication events.",
-                "control-id": "au-12."
-              },
-              {
-                "uuid": "2babf6a2-abe5-48a5-a92b-cd8505137f1c",
+                "uuid": "c3fe8124-fbed-471d-b57a-34aeb470fa61",
                 "description": "The application server must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which logable events are to be logged.",
-                "control-id": "au-12."
+                "control-id": "au-12"
+              },
+              {
+                "uuid": "c272a8fe-5995-4a37-974c-b015cef49c5c",
+                "description": "The application server must generate log records when successful/unsuccessful attempts to access subject privileges occur.\nThe application server must generate log records when successful/unsuccessful attempts to modify privileges occur.\nThe application server must generate log records when successful/unsuccessful attempts to delete privileges occur.\nThe application server must generate log records when successful/unsuccessful logon attempts occur.\nThe application server must generate log records for privileged activities.\nThe application must generate log records showing starting and ending times for user access to the application server management interface.\nThe application server must generate log records when concurrent logons from different workstations occur to the application server management interface.\nThe application server must generate log records for all account creations, modifications, disabling, and termination events.",
+                "control-id": "au-12"
+              },
+              {
+                "uuid": "3ee727f6-3285-46ea-917b-978585625770",
+                "description": "The application server must generate log records for access and authentication events.",
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "b48c9294-32bc-4acc-ad02-1bdf691f749b",
+            "uuid": "cfc438e1-5cd6-4ce0-aec0-6ef17134e053",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.1.",
             "implemented-requirements": [
               {
-                "uuid": "4f0dfcdb-fd5e-4c31-9dd7-003276033473",
+                "uuid": "30afda36-3638-457e-adcf-8456feb69145",
                 "description": "For application servers providing log record aggregation, the application server must compile log records from organization-defined information system components into a system-wide log trail that is time-correlated with an organization-defined level of tolerance for the relationship between time stamps of individual records in the log trail.",
-                "control-id": "au-12.(1)"
+                "control-id": "au-12.1"
               }
             ]
           },
           {
-            "uuid": "2b91db7e-76b3-4419-b939-8736703dd4b8",
+            "uuid": "93ac8ff1-e1ad-404d-9516-7eb9effbd6e5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "f1ef446d-c0c6-4b08-a216-2058f2aad50b",
+                "uuid": "38581c2b-b411-4fb8-adf7-62706b2d80c4",
                 "description": "The application server must initiate session logging upon startup.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "520bf52b-613f-4d57-acaf-b4a252fd24ab",
+            "uuid": "a60e2209-9429-4f09-ad5f-0dc6211dcaf9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "2f7ba01b-3452-40a1-9940-4337e7258b02",
-                "description": "The application server must log the enforcement actions used to restrict access associated with changes to the application server.",
-                "control-id": "cm-5.(1)"
-              },
-              {
-                "uuid": "e128c216-92a0-4877-b02e-165ef43c040f",
+                "uuid": "8b6f01f4-db6c-4274-ba5f-d0c6e67d6863",
                 "description": "The application server must enforce access restrictions associated with changes to application server configuration.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
+              },
+              {
+                "uuid": "a48de777-66d8-4caa-bc23-8d9989a3b36c",
+                "description": "The application server must log the enforcement actions used to restrict access associated with changes to the application server.",
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "4d37943d-38dc-4d71-8fb1-3236ec11db6e",
+            "uuid": "7f2bf39e-5c5f-4c38-b06c-b020a86e2103",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "34ef6d7b-1e32-4989-8945-88a5b8496cc4",
+                "uuid": "e1d63813-cd40-41b0-ad4a-fdd875e1a967",
                 "description": "The application server must prevent the installation of patches, service packs, or application components without verification the software component has been digitally signed using a certificate that is recognized and approved by the organization.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "7553c75e-6d40-4ba7-8d24-33b7d36459ca",
+            "uuid": "87ce913b-24c6-4ab4-a4ed-28fe01c8b113",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.6.",
             "implemented-requirements": [
               {
-                "uuid": "9c801444-1638-4499-90e7-78e47284c5b9",
+                "uuid": "cb973c95-6af0-4cd6-9ab9-6deae69140b5",
                 "description": "The application server must limit privileges to change the software resident within software libraries.",
-                "control-id": "cm-5.(6)"
+                "control-id": "cm-5.6"
               }
             ]
           },
           {
-            "uuid": "757d0833-41d9-41e9-bba5-720b7ff94564",
+            "uuid": "7e692460-7adc-4891-b89c-516f15f1689d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "43114ddf-7cdc-4904-b239-cac956bc5140",
+                "uuid": "417c7cae-95b7-44fd-8511-92ca7b00f266",
                 "description": "The application server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "cdaef48e-3e7b-4f01-bdaf-dff45a649df7",
+            "uuid": "dd0e2818-3c80-43f4-87c2-cdd2885f924e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "35819e6d-44f3-43eb-8e62-a0244527b703",
-                "description": "The application server must prohibit or restrict the use of nonsecure ports, protocols, modules, and/or services as defined in the PPSM CAL and vulnerability assessments.",
-                "control-id": "cm-7."
-              },
-              {
-                "uuid": "7b33a6e8-d26f-4ba1-8ed7-9df257ff11c4",
+                "uuid": "86c7401e-4406-43eb-afeb-ef2ab040b542",
                 "description": "The application server must adhere to the principles of least functionality by providing only essential capabilities.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
+              },
+              {
+                "uuid": "a2b05a41-e62f-459b-9acb-5bb93bd0257d",
+                "description": "The application server must prohibit or restrict the use of nonsecure ports, protocols, modules, and/or services as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "3428e488-a8e0-4ddb-aa33-b1a8b142e4eb",
+            "uuid": "0572c4eb-9e02-459a-ba77-92d702e925d2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
             "implemented-requirements": [
               {
-                "uuid": "7af79215-d4e3-4404-b672-781984a8fb71",
+                "uuid": "3200cf6f-4a35-40bb-918c-7a06c9f2f603",
                 "description": "The application server must use an enterprise user management system to uniquely identify and authenticate users (or processes acting on behalf of organizational users).",
-                "control-id": "ia-2."
+                "control-id": "ia-2"
               }
             ]
           },
           {
-            "uuid": "ab0aecfe-1f32-4f52-a631-8abd4cb885f1",
+            "uuid": "3a2d508b-7abd-4549-ba8d-e8379dbb68dc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.1.",
             "implemented-requirements": [
               {
-                "uuid": "6cb0a17f-62b5-453d-ab9f-8831b07ac552",
+                "uuid": "2c645abd-f1a4-40e9-b33f-0ae5484ab957",
                 "description": "The application server must use multifactor authentication for network access to privileged accounts.",
-                "control-id": "ia-2.(1)"
+                "control-id": "ia-2.1"
               }
             ]
           },
           {
-            "uuid": "592018f0-e3fc-4f71-b673-bb4699c92127",
+            "uuid": "a15013c4-57a4-442a-9495-c72c52c68fe8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.3.",
             "implemented-requirements": [
               {
-                "uuid": "ffd1f632-72da-4eb2-928d-bc0c532811c1",
+                "uuid": "fc13447a-49fc-4823-90cb-e254690b4de8",
                 "description": "The application server must use multifactor authentication for local access to privileged accounts.",
-                "control-id": "ia-2.(3)"
+                "control-id": "ia-2.3"
               }
             ]
           },
           {
-            "uuid": "7535e559-738b-453a-89e8-11a06f5f0682",
+            "uuid": "80ec1f75-e2ef-456c-b018-bb2b3599a8a6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.5.",
             "implemented-requirements": [
               {
-                "uuid": "b849900e-a249-4b92-ba31-031103d40dce",
+                "uuid": "ccaf9c9a-f513-4d78-8f20-cfa3f9b1995f",
                 "description": "The application server must authenticate users individually prior to using a group authenticator.",
-                "control-id": "ia-2.(5)"
+                "control-id": "ia-2.5"
               }
             ]
           },
           {
-            "uuid": "b38525ad-5d73-4a39-90ea-f256a604a49e",
+            "uuid": "59e22d88-2ad7-4ce3-a0af-f86b8d7705e1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.8.",
             "implemented-requirements": [
               {
-                "uuid": "9da090a9-1be3-4140-95dc-52ff15372c9e",
+                "uuid": "10b7e792-3869-43c0-93ef-7ccc3437fd3d",
                 "description": "The application server must provide security extensions to extend the SOAP protocol and provide secure authentication when accessing sensitive data.",
-                "control-id": "ia-2.(8)"
+                "control-id": "ia-2.8"
               }
             ]
           },
           {
-            "uuid": "f2452625-8183-495c-9a40-f999b79f39ee",
+            "uuid": "acffc52c-e4c0-4b35-a99f-1594a3c8474a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.12.",
             "implemented-requirements": [
               {
-                "uuid": "6750cfb5-0575-4fda-9d4c-969678bf7d8c",
-                "description": "The application server must accept Personal Identity Verification (PIV) credentials to access the management interface.",
-                "control-id": "ia-2.(12)"
-              },
-              {
-                "uuid": "29505495-6595-4a47-a9c4-d48c3fbdcc09",
+                "uuid": "c5372c7a-ecf0-4752-b087-d7dfc6b44410",
                 "description": "The application server must electronically verify Personal Identity Verification (PIV) credentials for access to the management interface.",
-                "control-id": "ia-2.(12)"
+                "control-id": "ia-2.12"
+              },
+              {
+                "uuid": "a2785102-7326-4acf-ab17-90ac3a7a5778",
+                "description": "The application server must accept Personal Identity Verification (PIV) credentials to access the management interface.",
+                "control-id": "ia-2.12"
               }
             ]
           },
           {
-            "uuid": "ad3b0d94-9c84-4f8c-b57c-685769291d30",
+            "uuid": "8b94fe16-b7d4-4a86-a4f9-c61dc57aaeea",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4.",
             "implemented-requirements": [
               {
-                "uuid": "d5522126-b484-4b80-9705-ab78422797d7",
+                "uuid": "fd025a2e-ca37-493f-8655-8420a238b110",
                 "description": "The application server must disable identifiers (individuals, groups, roles, and devices) after 35 days of inactivity.",
-                "control-id": "ia-4."
+                "control-id": "ia-4"
               }
             ]
           },
           {
-            "uuid": "2cda2036-900a-4ffa-94a2-2e136db7d434",
+            "uuid": "fed4c76f-d0cd-46da-850a-0d5b8059be89",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "0e9a6edc-e0a2-491d-b087-f53cb6c8d3c0",
-                "description": "The application server must transmit only encrypted representations of passwords.\nThe application server must utilize encryption when using LDAP for authentication.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "e087e777-3614-4815-b34c-8fbfed683a4b",
+                "uuid": "4cfc0146-371d-4271-bd05-f27fcd3681b5",
                 "description": "The application server must store only encrypted representations of passwords.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "b0fc872e-7c9b-4c76-969b-a89a9251ab34",
+                "description": "The application server must transmit only encrypted representations of passwords.\nThe application server must utilize encryption when using LDAP for authentication.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "f8ccf5e8-d537-4050-8d0c-cb35b2f1ad15",
+            "uuid": "5fb387c4-f8a8-40b9-9182-cc3d94e8f400",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "b16234bc-591f-4bd2-bb17-06dac14b0a62",
-                "description": "The application server, for PKI-based authentication, must implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.",
-                "control-id": "ia-5.(2)"
-              },
-              {
-                "uuid": "c71f849a-082d-47ce-b639-d7839a8678cf",
+                "uuid": "85871817-881e-4302-b814-3fa797bfbdd0",
                 "description": "The application server must map the authenticated identity to the individual user or group account for PKI-based authentication.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               },
               {
-                "uuid": "fbf30628-3b72-44e3-aef3-35354cb50da2",
+                "uuid": "dcb21b7e-3707-4d98-9e7c-7a61d34e9ee6",
+                "description": "The application server, for PKI-based authentication, must implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.",
+                "control-id": "ia-5.2"
+              },
+              {
+                "uuid": "8efa6b22-f758-4f74-93c7-1ec8e4ebbdd8",
                 "description": "Only authenticated system administrators or the designated PKI Sponsor for the application server must have access to the web servers private key.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               },
               {
-                "uuid": "7a574c1c-c5a5-43f9-843f-85e29b5b7660",
+                "uuid": "535302ee-36a2-43e8-9991-4b1917faafb3",
                 "description": "The application server must perform RFC 5280-compliant certification path validation.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "59178124-9c05-4a88-88c0-05968c9b7eaf",
+            "uuid": "83d36aa4-839f-46dd-9595-4db608202a45",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.13.",
             "implemented-requirements": [
               {
-                "uuid": "e7c58eeb-be81-4f99-bcc9-8a7af7051b37",
+                "uuid": "49b4eecf-c002-4a8c-b4d1-5826dca83027",
                 "description": "The application server must prohibit the use of cached authenticators after an organization-defined time period.",
-                "control-id": "ia-5.(13)"
+                "control-id": "ia-5.13"
               }
             ]
           },
           {
-            "uuid": "d9e4d0b8-3766-4a90-acc9-aabe03ce9cb6",
+            "uuid": "cbb55779-8f25-4a7b-8d3e-cb7629adf53e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6.",
             "implemented-requirements": [
               {
-                "uuid": "cc5537dd-b221-4532-9617-f6336011cf5e",
+                "uuid": "274f965c-03d1-476d-8c18-87145acc7adc",
                 "description": "The application server must obscure feedback of authentication information during the authentication process to protect the information from possible exploitation/use by unauthorized individuals.",
-                "control-id": "ia-6."
+                "control-id": "ia-6"
               }
             ]
           },
           {
-            "uuid": "7b276521-dbaf-4dc4-8f7b-be7b9072a90e",
+            "uuid": "5d5a3943-39a2-43dc-9c5e-2762d42456a0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "6880855e-04ad-4cf4-8afd-b9ac60b61849",
+                "uuid": "4c6f2a95-f8b9-4426-853d-d3f0205019f8",
                 "description": "The application server must utilize FIPS 140-2 approved encryption modules when authenticating users and processes.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "2ecf679d-e277-47a7-858e-d806ab7f49fa",
+            "uuid": "893a1611-bfe5-4c25-b3c9-d678c1a44c0d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "c80faed1-01be-49f7-bba2-cf786975ff24",
+                "uuid": "9781666d-0d42-4b1f-8262-a1ec6c04863a",
                 "description": "The application server must electronically verify Personal Identity Verification (PIV) credentials from other federal agencies to access the management interface.",
-                "control-id": "ia-8.(1)"
+                "control-id": "ia-8.1"
               },
               {
-                "uuid": "3bdb74f3-2732-43e5-afe7-ef263d9f3142",
+                "uuid": "b6a0009f-91ea-47e6-a5d2-94ca70a6700f",
                 "description": "The application server must accept Personal Identity Verification (PIV) credentials from other federal agencies to access the management interface.",
-                "control-id": "ia-8.(1)"
+                "control-id": "ia-8.1"
               }
             ]
           },
           {
-            "uuid": "ada7e55d-dcca-41e8-9924-1e9d954a46a3",
+            "uuid": "1a1585f9-d8be-45e2-9f13-ece5a8bb6db8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "c82eb8e2-91a4-4758-8ce6-b72e17388aed",
+                "uuid": "960a79b1-b7d1-4ec8-8dd9-4eecdd366d6b",
                 "description": "The application server must accept FICAM-approved third-party credentials.",
-                "control-id": "ia-8.(2)"
+                "control-id": "ia-8.2"
               }
             ]
           },
           {
-            "uuid": "31e47ae6-29ce-4ca0-a841-5a59e628d659",
+            "uuid": "d5e0a90d-dbdc-4451-b157-8cf02ad981be",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.4.",
             "implemented-requirements": [
               {
-                "uuid": "9fbc6c1e-b822-4352-ac6c-7f7d03e53a8b",
+                "uuid": "40670387-d760-48b3-831a-dec43981a2e4",
                 "description": "The application server must conform to FICAM-issued profiles.",
-                "control-id": "ia-8.(4)"
+                "control-id": "ia-8.4"
               }
             ]
           },
           {
-            "uuid": "381b0db7-d63f-4e3c-ac06-0978dc8ada7a",
+            "uuid": "47c3e977-aec7-4b18-84d9-6b70d2f4c202",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11.",
             "implemented-requirements": [
               {
-                "uuid": "81faf41c-82cb-490e-a866-34d0a74d0c7a",
+                "uuid": "78c3f1ec-8067-4cf0-9147-8bd0516f52de",
                 "description": "The application server must require devices to re-authenticate when organization-defined circumstances or situations require re-authentication.",
-                "control-id": "ia-11."
+                "control-id": "ia-11"
               },
               {
-                "uuid": "596bd6a6-5ff1-4d8a-b19b-cc0eaab801e4",
+                "uuid": "0b178eb0-924a-4262-bf9c-e1f6b556c23d",
                 "description": "The application server must require users to re-authenticate when organization-defined circumstances or situations require re-authentication.",
-                "control-id": "ia-11."
+                "control-id": "ia-11"
               }
             ]
           },
           {
-            "uuid": "8aca5f9b-df16-46e4-a359-eeb8832703ac",
+            "uuid": "4d1e7b88-5997-4c18-895c-443cf224e68a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2.",
             "implemented-requirements": [
               {
-                "uuid": "1d92cd6b-9174-4073-aae6-dcb688dd9f02",
+                "uuid": "338aa366-404c-44df-8b5e-dd8e5ed1c699",
                 "description": "The application server must separate hosted application functionality from application server management functionality.",
-                "control-id": "sc-2."
+                "control-id": "sc-2"
               }
             ]
           },
           {
-            "uuid": "d48d7517-670b-489a-8309-67a2d75fdc41",
+            "uuid": "501a1952-98dd-48fa-bc54-b881e2c3c108",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
             "implemented-requirements": [
               {
-                "uuid": "bf13c5bd-8de7-44fc-9b76-c3f8341e0dc9",
+                "uuid": "19366c2a-f076-4c22-ac96-9e604f8c35cd",
                 "description": "The application server, when a MAC I system, must be in a high-availability (HA) cluster.\nThe application server must protect against or limit the effects of all types of Denial of Service (DoS) attacks by employing organization-defined security safeguards.",
-                "control-id": "sc-5."
+                "control-id": "sc-5"
               }
             ]
           },
           {
-            "uuid": "58174497-3fb5-42a3-a67b-fceff25b2777",
+            "uuid": "e3d2996a-7430-450a-81aa-7266c7cbd416",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "70c07e1b-c5d8-4044-9826-c7abf709443b",
+                "uuid": "a211f75b-b6ad-4c28-a5ae-3d00e9cec140",
                 "description": "The application server must protect the confidentiality and integrity of transmitted information through the use of an approved TLS version.\nThe application server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "eeb6bdf5-ba3c-4ce2-83cd-bb88e2076d5f",
+            "uuid": "cdf1b2b2-49c6-4fbf-92dc-bf6af5e9eac8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "12a75332-560d-4995-af27-52cc28846cb7",
+                "uuid": "a60eb767-3e1f-4b2a-84ba-0e9ab358fd7c",
                 "description": "The application server must employ approved cryptographic mechanisms to prevent unauthorized disclosure of information and/or detect changes to information during transmission.",
-                "control-id": "sc-8.(1)"
+                "control-id": "sc-8.1"
               }
             ]
           },
           {
-            "uuid": "154204bb-ff44-4b4a-b25b-047fdf13825d",
+            "uuid": "ac18390e-98be-4764-9b2b-57a39c586aca",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "f74d0602-5c61-4adc-b10b-a9ec7a762e21",
-                "description": "The application server must maintain the confidentiality and integrity of information during preparation for transmission.",
-                "control-id": "sc-8.(2)"
-              },
-              {
-                "uuid": "9c9d8d63-3c35-4a54-82af-50f60ad1edb0",
+                "uuid": "f117a61f-d4b2-488e-ae3a-ade4aeb20833",
                 "description": "The application server must maintain the confidentiality and integrity of information during reception.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
+              },
+              {
+                "uuid": "f671ad86-1069-44fa-a099-404334be97b7",
+                "description": "The application server must maintain the confidentiality and integrity of information during preparation for transmission.",
+                "control-id": "sc-8.2"
               }
             ]
           },
           {
-            "uuid": "423776db-a8c5-4d87-924d-214366592577",
+            "uuid": "b01fcccb-386b-4dbf-bc74-cd45f34d8849",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "90025288-2478-466f-b128-ba15ef9eae65",
+                "uuid": "5809609e-a287-4fa1-a2b0-34ddd7a43565",
                 "description": "Application servers must use NIST-approved or NSA-approved key management technology and processes.\nThe application server must use DoD- or CNSS-approved PKI Class 3 or Class 4 certificates.\nThe application server must implement NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "799df419-f9ad-492f-b24f-7a05e6898d65",
+            "uuid": "7db8af74-3aa1-4584-99ab-4cd971688cea",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "f0f28a3b-7260-4d3f-aa77-8a93fb092f5e",
+                "uuid": "71cccc2f-b86e-4ef6-a331-f38293702fb0",
                 "description": "The application server must identify prohibited mobile code.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "fd14d33e-7e1c-45d9-a852-a5412f5c66ac",
+            "uuid": "a89be095-f5fb-4799-83e3-4a5fc8b54e93",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.",
             "implemented-requirements": [
               {
-                "uuid": "82851d22-1a2c-4223-95f1-f6d8b6d395f2",
+                "uuid": "c4d55a68-7fa8-447b-b94c-76e02f3b11e3",
                 "description": "The application server must be configured to mutually authenticate connecting proxies, application servers or gateways.",
-                "control-id": "sc-23."
+                "control-id": "sc-23"
               }
             ]
           },
           {
-            "uuid": "a3daede4-a382-43db-82ee-7529aa7bc3ed",
+            "uuid": "6dd76755-bb9a-4c71-9d9c-d7b91d58e90f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.1.",
             "implemented-requirements": [
               {
-                "uuid": "515409b5-aa8a-4f51-b10a-7a2028afb9f6",
+                "uuid": "9a3f4075-f2ae-4227-b41f-a165e269eaa2",
                 "description": "The application server must invalidate session identifiers upon user logout or other session termination.",
-                "control-id": "sc-23.(1)"
+                "control-id": "sc-23.1"
               }
             ]
           },
           {
-            "uuid": "27795063-44ac-4392-9908-d28d280bf1fe",
+            "uuid": "e3d7a76e-0f29-4c4f-9578-dc21d067a269",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
             "implemented-requirements": [
               {
-                "uuid": "e900152e-fae1-41a5-9efa-e63bcd950fff",
+                "uuid": "15d2fefb-7202-4e15-a413-f0eb5644981c",
                 "description": "The application server must generate a unique session identifier using a FIPS 140-2 approved random number generator.",
-                "control-id": "sc-23.(3)"
+                "control-id": "sc-23.3"
               },
               {
-                "uuid": "69cf4719-5b14-4470-bff7-0d0b5198fdaf",
+                "uuid": "531ffcfd-9fd9-4f61-bc07-df96c9e08a23",
                 "description": "The application server must generate a unique session identifier for each session.\nThe application server must recognize only system-generated session identifiers.",
-                "control-id": "sc-23.(3)"
+                "control-id": "sc-23.3"
               }
             ]
           },
           {
-            "uuid": "e550959e-2c1b-4845-b5ea-2b289fe04f4a",
+            "uuid": "78f71a6b-c8a3-4429-a746-fbd8bed8c185",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "26aceaa7-7dde-47cc-85d5-2578142423d0",
+                "uuid": "fc18a9a7-053d-418a-95f3-9b94cbcdd406",
                 "description": "The application server must only allow the use of DoD PKI-established certificate authorities for verification of the establishment of protected sessions.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "8c6b7dc9-6c67-4644-8724-c3c99d31fa34",
+            "uuid": "78f2e914-0807-490a-b161-2f956c6f6969",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
             "implemented-requirements": [
               {
-                "uuid": "12639c88-671e-4ddf-a5eb-d344c7efccb7",
+                "uuid": "2d25b86e-4a74-498c-984c-c4f5fcf84fc0",
                 "description": "The application server must be capable of reverting to the last known good configuration in the event of failed installations and upgrades.\nThe application server must be configured to perform complete application deployments.\nThe application server must provide a clustering capability.\nThe application server must fail to a secure state if system initialization fails, shutdown fails, or aborts fail.",
-                "control-id": "sc-24."
+                "control-id": "sc-24"
               }
             ]
           },
           {
-            "uuid": "72f170e9-1046-4af2-8304-2f89aabdf7ff",
+            "uuid": "b41186f5-b454-44e6-904d-633db099d1e9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "6ace06b6-76f6-4321-93cf-b353b33e7c12",
+                "uuid": "0959ad76-45a1-4aec-85be-db3e1c1e9de9",
                 "description": "The application server must protect the confidentiality and integrity of all information at rest.\nThe application server must employ cryptographic mechanisms to ensure confidentiality and integrity of all information at rest when stored off-line.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "d104fd34-cda3-4b66-b460-7c21a2fbb09c",
+            "uuid": "c830a76c-90cf-4fae-93f9-bea35297ce29",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.1.",
             "implemented-requirements": [
               {
-                "uuid": "d801fbd7-4d46-49ca-bc47-66d775d8c9ef",
+                "uuid": "5ec9913e-35a9-4629-b552-bb553aa8812a",
                 "description": "The application must implement cryptographic mechanisms to prevent unauthorized disclosure of organization-defined information at rest on organization-defined information system components.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               },
               {
-                "uuid": "d1889739-1124-4369-875d-02d849953145",
+                "uuid": "1964c4d7-9d75-42db-85fe-f1ec79382f04",
                 "description": "The application server must implement cryptographic mechanisms to prevent unauthorized modification of organization-defined information at rest on organization-defined information system components.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               }
             ]
           },
           {
-            "uuid": "a566833a-9551-410a-821c-5a5277703af9",
+            "uuid": "e537aa94-6887-4db1-bc9e-a7d6e66b9148",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "33585adf-0a3c-40d5-b695-0cfd66df3fd8",
+                "uuid": "a024d4e7-bcd4-4aa8-9146-385078c29867",
                 "description": "The application server must install security-relevant software updates within the time period directed by an authoritative source (e.g. IAVM, CTOs, DTMs, and STIGs).",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "9f2003ea-2f26-4d76-8cf1-53b5460fa11e",
+            "uuid": "b7caa7ca-c1c3-46ad-a415-42b720bf27c9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.6.",
             "implemented-requirements": [
               {
-                "uuid": "3b539298-ddf5-4801-8086-358f30f6701d",
+                "uuid": "ab794a39-239f-4394-918f-86c2498d54c1",
                 "description": "The application server must remove organization-defined software components after updated versions have been installed.",
-                "control-id": "si-2.(6)"
+                "control-id": "si-2.6"
               }
             ]
           },
           {
-            "uuid": "e07fbeb6-b09a-4fd5-90fd-f9b511ecddf7",
+            "uuid": "6e7c6b1b-7e45-4769-ae84-a06e3fd1d4d3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.",
             "implemented-requirements": [
               {
-                "uuid": "e2ee25c3-4705-4e3b-a8e2-b132eb951441",
+                "uuid": "975a4103-e7d6-4ee9-b013-211bb0861ff6",
                 "description": "The application server must check the validity of all data inputs to the management interface, except those specifically identified by the organization.",
-                "control-id": "si-10."
+                "control-id": "si-10"
               }
             ]
           },
           {
-            "uuid": "7886f480-b666-45a3-8812-c7679de29d10",
+            "uuid": "4fffaf58-81f8-48e1-bf91-aa6530b7a982",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.3.",
             "implemented-requirements": [
               {
-                "uuid": "316faaba-405f-46ac-9831-1726ab02e7e4",
+                "uuid": "8c5f0053-eb34-4420-be24-116a9551e9a6",
                 "description": "The application server must behave in a predictable and documented manner that reflects organizational and system objectives when invalid inputs are received.",
-                "control-id": "si-10.(3)"
+                "control-id": "si-10.3"
               }
             ]
           },
           {
-            "uuid": "5f0dbfbe-2143-4f0d-9c2b-5cd3024a60d5",
+            "uuid": "b5056200-d8a0-4e4c-a09b-d7bfb715eb60",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "53e8a011-a692-4e5a-9e03-16cfc3cee1be",
+                "uuid": "36c0a5db-efba-4746-9fbe-960e8cfdefca",
                 "description": "The application server must restrict error messages only to authorized users.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               },
               {
-                "uuid": "8ec3eeca-9f87-41a2-8f71-ab1655a51e7c",
+                "uuid": "0a51a14c-c8ce-41e0-ba0a-cb0d25a7ad53",
                 "description": "The application server must identify potentially security-relevant error conditions.\nThe application server must only generate error messages that provide information necessary for corrective actions without revealing sensitive or potentially harmful information in error logs and administrative messages.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

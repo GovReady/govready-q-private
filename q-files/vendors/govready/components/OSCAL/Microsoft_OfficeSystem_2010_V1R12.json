@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "2d7d16c4-9229-4355-bbf1-5d164bd65912",
+    "uuid": "9964861f-a413-4f71-b66a-ff361914df63",
     "metadata": {
       "title": "Microsoft OfficeSystem 2010 V1R12",
-      "last-modified": "2022-06-10T12:50:55",
-      "version": "2022-06-10T12:50:55",
+      "last-modified": "2022-06-12T11:06:50",
+      "version": "2022-06-12T11:06:50",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "83f3bd1b-b38b-425b-b412-b0f1876b0b0f",
+          "uuid": "4353f5a9-50b4-437c-9cd6-7bec986ea38e",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,142 +16,142 @@
     },
     "components": [
       {
-        "uuid": "2ba01e6b-ca1c-45bc-98bb-6463feac67ec",
+        "uuid": "4ca1ef50-6e30-45d3-89a4-034f05a2a228",
         "type": "software",
         "title": "Microsoft OfficeSystem 2010 V1R12",
-        "description": "Porro adipisci neque aliquam est ipsum sed amet.",
+        "description": "Neque etincidunt dolorem etincidunt amet amet.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "83f3bd1b-b38b-425b-b412-b0f1876b0b0f"
+              "4353f5a9-50b4-437c-9cd6-7bec986ea38e"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "ad97c17e-0ef5-45d4-bc08-8fcb7aba938b",
+            "uuid": "2dc65573-6541-415b-b509-be28948669d4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "3783e8d3-fbf2-45f0-ae0c-c20f89cc0a92",
+                "uuid": "9ec27ecd-b65f-4d16-9b02-ce469b3624bf",
                 "description": "Office client polling of Sharepoint servers published links must be disabled.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "b46f061a-d604-43de-879c-1e4ca5e965b0",
+            "uuid": "d7849153-ad69-46ab-8611-00a16433ded1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.4.",
             "implemented-requirements": [
               {
-                "uuid": "42f726c4-35ff-495b-b132-292c6ffb6962",
+                "uuid": "ad251117-018e-4bf5-bec1-e6fd00f73274",
                 "description": "Office must be configured to not allow read with browsers.\nChanging permissions on rights managed content for users must be enforced.",
-                "control-id": "ac-3.(4)"
+                "control-id": "ac-3.4"
               }
             ]
           },
           {
-            "uuid": "36b5c981-64eb-4ce4-b798-4c1433a44200",
+            "uuid": "08041b9e-e13f-4502-8014-ab71e7c31b2a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "e96fc03a-2b9d-4b95-b930-b1d98f6df403",
+                "uuid": "58055100-1f69-48d6-af33-5a6171acf5a3",
                 "description": "Connection verification of permissions must be enforced.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "90eb5dc9-3caf-4731-be30-0ec72364b52b",
+            "uuid": "07023064-23d8-4561-b5e9-b4dfd879e3a7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "daea51f0-c9a9-475e-8113-93570155f5b8",
+                "uuid": "561852b6-c844-4fb8-ba91-4c4b75e33311",
                 "description": "Access to updates, add-ins, and patches on Office.com must be disabled.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "6fe5f91a-2c1c-4e94-8ccf-b66b5a6b1876",
+            "uuid": "af1c7e4c-1d90-4018-a3c1-e43e9c0180a0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "70f55f6d-d07c-4947-8ae6-2af90261dab6",
+                "uuid": "051d72b7-2a40-4f46-b481-d0a4cd9ae2e4",
                 "description": "A mix of policy and user locations for Office Products must be disallowed.\nBlogging entries created from inside Office products must be configured for Sharepoint only.\nThe Help Improve Proofing Tools feature for Office must be configured.\nInclusion of document properties for PDF and XPS output must be disallowed.\nSmart Documents use of Manifests in Office must be disallowed.\nLegacy format signatures must be enabled.\nUpload of document templates to Office Online must be prevented.\nExternal Signature Services Menu for Office must be suppressed.\nKey Usage Filtering must be allowed.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "0f2b0f65-a4c9-404a-b5df-18e229db675f",
+            "uuid": "3acb5500-88ba-45b0-8e53-e2d8a7e13c40",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "c1ed3e9e-6255-4a1d-a66f-720167d9f222",
+                "uuid": "dd041219-8423-499b-b74d-3c255460e144",
                 "description": "The Customer Experience Improvement Program for Office must be disabled.\nThe Internet Fax Feature must be disabled.\nMicrosoft passport Service for content must be disallowed.\nThe Opt-In Wizard must be disabled.\nAutomatic receiving of small updates to improve reliability must be disallowed.\nHyperlinks to web templates in File | New and task panes must be disabled.\nOffice Live Workspace Integration must be off.\nOnline content options must be configured for offline content availability.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "623fad2d-9cb4-47a7-a673-1115bc6e2917",
+            "uuid": "ea3cbbb4-9deb-4be6-990c-246b67a8db64",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "af39a226-190f-4140-acf2-9fce08f38cf5",
+                "uuid": "bbd10c65-a260-4678-9218-3766111181af",
                 "description": "Trust Bar notifications for Security messages must be enforced.\nLoad controls in forms3 must be disabled from loading.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "1ab73b25-00a4-486a-88f5-c766a375ef75",
+            "uuid": "824c143d-24af-4280-a0ae-3531d00853dd",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "ba48b49a-9cd8-49ff-93d4-e65d4742f4a1",
-                "description": "ActiveX control initialization must be disabled.\nDocument Information panel Beaconing must show UI.\nHyperlink warnings for Office must be configured for use.",
-                "control-id": "sc-18.(4)"
+                "uuid": "cfdf7219-68b4-4269-9f7b-0b76718b008a",
+                "description": "Automation Security to enforce macro level security in Office documents must be configured.\nDocuments must be configured to not open as Read Write when browsing.\nVector markup Language (VML) for displaying graphics in browsers must be disallowed.\nCustomer-submitted templates downloads from Office.com must be disallowed.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "0c86e480-44a2-4972-a8f5-c7e1a1ce44a4",
-                "description": "Automation Security to enforce macro level security in Office documents must be configured.\nDocuments must be configured to not open as Read Write when browsing.\nVector markup Language (VML) for displaying graphics in browsers must be disallowed.\nCustomer-submitted templates downloads from Office.com must be disallowed.",
-                "control-id": "sc-18.(4)"
+                "uuid": "4e66d26d-d204-4d1b-99a9-74d08761fbee",
+                "description": "ActiveX control initialization must be disabled.\nDocument Information panel Beaconing must show UI.\nHyperlink warnings for Office must be configured for use.",
+                "control-id": "sc-18.4"
               }
             ]
           },
           {
-            "uuid": "810aee80-c365-4e5f-bafd-ff86df1d4c2f",
+            "uuid": "02b7b7b2-5b00-484d-a899-a94191fa7ec1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "165e2a41-a9b4-46bd-b946-b7b6a35be357",
+                "uuid": "29a758fa-4039-4a9a-85b2-39c0cf50656b",
                 "description": "The encryption type for password protected Office 97 thru Office 2003 must be set.\nThe encryption type for password protected Open XML files must be set.\nPasswords for secured documents must be enforced.\nDocument metadata for password protected files must be protected.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "11831c86-d3f9-4d8a-8f94-e26cc30c460b",
+            "uuid": "fc349c51-876c-49aa-acfd-fd75d9b6d836",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.1.",
             "implemented-requirements": [
               {
-                "uuid": "bc5a5a00-522e-4b87-bb95-296a796f6bd3",
+                "uuid": "61f86190-ad3d-4733-a2bb-3d3be94ca136",
                 "description": "Rights managed Office Open XML files must be protected.\nEncrypt document properties must be configured for OLE documents.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               }
             ]
           }

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "1fdc1682-14f8-4f53-a379-8250dd5eefb5",
+    "uuid": "b2e28350-09d4-4573-85ce-39d785821750",
     "metadata": {
       "title": "ArcGIS Server 10-3 V1R3",
-      "last-modified": "2022-06-10T12:50:57",
-      "version": "2022-06-10T12:50:57",
+      "last-modified": "2022-06-12T11:06:52",
+      "version": "2022-06-12T11:06:52",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "e5027a18-2880-4b69-9d07-c9acc88c4cc3",
+          "uuid": "e7fa27d8-3432-4ac0-b65c-1b89fedc1d7c",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,789 +16,789 @@
     },
     "components": [
       {
-        "uuid": "e7f71daa-fb83-4831-9ffa-1d65566c630f",
+        "uuid": "e8343608-6253-4411-8ae9-c173946a93d3",
         "type": "software",
         "title": "ArcGIS Server 10-3 V1R3",
-        "description": "Quaerat etincidunt adipisci quaerat modi. Non modi est sed sit dolorem velit. Quiquia amet sed sit.",
+        "description": "Magnam porro porro magnam voluptatem magnam.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "e5027a18-2880-4b69-9d07-c9acc88c4cc3"
+              "e7fa27d8-3432-4ac0-b65c-1b89fedc1d7c"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "dc7f3d86-cc60-4721-9bab-da91f4d74c2a",
+            "uuid": "cedc2709-f76e-46d8-8064-9d4e90871df2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.1.",
             "implemented-requirements": [
               {
-                "uuid": "2683cef0-9acc-465e-88bb-31ab55eac850",
+                "uuid": "4792aaf5-b5f0-476d-b4f9-214b12a62be4",
                 "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ac-2.(1)"
+                "control-id": "ac-2.1"
               }
             ]
           },
           {
-            "uuid": "db77dda3-ce27-4e91-94ec-575b79115b34",
+            "uuid": "5220ea78-f7b9-492d-acd6-bc8d6d768c3f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.2.",
             "implemented-requirements": [
               {
-                "uuid": "deb2f67b-4ab9-4e08-b1b3-4e6a4b276194",
+                "uuid": "b53ff78a-b9c0-4091-b914-35baa5f0b9fd",
                 "description": "The ArcGIS Server must be configured such that emergency accounts are never automatically removed or disabled.",
-                "control-id": "ac-2.(2)"
+                "control-id": "ac-2.2"
               }
             ]
           },
           {
-            "uuid": "46a1316b-f592-4f5a-9c5a-9d44bff57a4e",
+            "uuid": "22014d2f-84f4-4609-ac45-41e5bf32fa17",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.3.",
             "implemented-requirements": [
               {
-                "uuid": "90b70ba5-b3df-43e2-b846-7456cecf64d7",
+                "uuid": "f2f729a8-e8f0-4a08-a70b-3bc0f7d13d98",
                 "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ac-2.(3)"
+                "control-id": "ac-2.3"
               }
             ]
           },
           {
-            "uuid": "f8766360-355b-40d6-970f-6979744c7684",
+            "uuid": "aa6874be-84e9-4504-8b26-e1c8d090f7a9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.4.",
             "implemented-requirements": [
               {
-                "uuid": "c35f3c28-1f70-405d-baa5-f2e275acfa88",
+                "uuid": "51680d89-1394-4d99-be95-41cb0111468e",
+                "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
+                "control-id": "ac-2.4"
+              },
+              {
+                "uuid": "c0f44937-76fc-4cef-b83f-867ab60616b6",
                 "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
               },
               {
-                "uuid": "affe29bd-0ff3-43cd-a97c-d8b0b8f5e987",
+                "uuid": "c95e06a1-d58d-41d6-b3a5-8d97b3144e6d",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
               },
               {
-                "uuid": "5dc52696-0212-4ec3-b102-6f2abb630498",
+                "uuid": "b0e367e3-e772-4147-b217-fb31152871ae",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
               },
               {
-                "uuid": "7905ed3e-5ac2-40db-bec8-cfcf9e6ccc8e",
+                "uuid": "d250594e-1969-4afb-8eaf-76e7de08b6ae",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-2.(4)"
-              },
-              {
-                "uuid": "c2e04fa4-596d-4adb-a89d-686518555b54",
-                "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-2.(4)"
+                "control-id": "ac-2.4"
               }
             ]
           },
           {
-            "uuid": "33eb13c9-5120-4edb-b04a-1f48b9b8d049",
+            "uuid": "8d96f24d-7cd2-4996-b0d9-579d385860ef",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.10.",
             "implemented-requirements": [
               {
-                "uuid": "3dc25f6f-76d8-4815-b21d-9b785d58b883",
+                "uuid": "c29e6554-0df7-4256-9780-db047a5d1442",
                 "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ac-2.(10)"
+                "control-id": "ac-2.10"
               }
             ]
           },
           {
-            "uuid": "6eee2d02-93e4-421e-816c-d9ca21bc7426",
+            "uuid": "20a3f230-f427-405a-9d9e-2c6e9416a3f6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "c22b9fa3-06c1-4bb1-b2c9-828d71641c83",
+                "uuid": "7c12e21e-e357-4c95-bd37-341204b781b6",
                 "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "3e3ce7c0-15c1-43ba-9759-3fe4f4877f01",
+            "uuid": "b3b9720b-a708-46d9-9c16-d1f74202994a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-4.",
             "implemented-requirements": [
               {
-                "uuid": "3e5a227a-ec56-4d03-801e-2f7c3cf45780",
+                "uuid": "2db110ee-ce06-41b2-82eb-51d32fb04ffd",
                 "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ac-4."
+                "control-id": "ac-4"
               }
             ]
           },
           {
-            "uuid": "ce859326-3e7f-414d-bcc3-a278ae85a04d",
+            "uuid": "a63ef035-4a61-462d-be3f-6e9428e95a3d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.9.",
             "implemented-requirements": [
               {
-                "uuid": "dafb69b6-2eb7-477e-ae99-df935078953b",
+                "uuid": "04884220-a10f-4b59-a098-7b9d6488d97c",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-6.(9)"
+                "control-id": "ac-6.9"
               }
             ]
           },
           {
-            "uuid": "3382f0b5-44ce-4330-9f0f-42860d3148d2",
+            "uuid": "cb0e7fff-fbfa-4878-8ce5-23dd14c02f05",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "af0e6926-892e-4289-a3b2-585726300e16",
-                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ac-7."
+                "uuid": "554ca3b2-ea9c-4dbd-afff-4a950e3cb7b5",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ac-7"
               },
               {
-                "uuid": "38dab7c8-3ed4-435c-81c4-28e50599f67c",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ac-7."
+                "uuid": "307c23a4-0be2-46ae-8f76-37077fbcdc91",
+                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "88e1f31e-0e20-4d5b-be18-ba4deaf62545",
+            "uuid": "aac9e65c-d63e-4d36-a197-78003d7dfb68",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "33ea0ad8-ca4a-4799-97e9-3d686630e3f4",
+                "uuid": "9019110f-aada-4275-b5d1-36d10971a3a8",
                 "description": "The ArcGIS Server must implement replay-resistant authentication mechanisms for network access to privileged accounts and non-privileged accounts.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "7af326b4-a7bc-4aca-b272-d37a303cce87",
+            "uuid": "51541643-a064-4b03-8687-e4524344e14a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "76e089da-1a6d-404b-9bb9-ee9c9416cbe0",
+                "uuid": "fc7b594c-2b69-45aa-9ca4-59f9d3adc746",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "870c48be-6fc6-47f9-ab22-c1466e8bc71c",
+            "uuid": "38e86e58-1587-4d4f-a27a-9566e127b3da",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "f6a7f08f-5f74-48ad-bb77-94caa37a5752",
-                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
-                "control-id": "ac-17.(2)"
-              },
-              {
-                "uuid": "8092ee8e-4300-4ba3-b91d-266f43445355",
+                "uuid": "41136e18-7b26-4f73-a4e3-a820c4e77c9b",
                 "description": "The ArcGIS Server must protect the integrity of remote access sessions by enabling HTTPS with DoD-approved certificates.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
+              },
+              {
+                "uuid": "d6646316-ab8d-4543-abf2-0cad24a145ea",
+                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "6dc3ae4b-d688-49ca-be3c-9c285e9beb8a",
+            "uuid": "bbb7c170-e0b7-4339-a57d-7bc18ef507f8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "c7061990-0420-458c-8a86-c3fec71e2f40",
+                "uuid": "ba0cc400-0c99-446e-a220-6a84c0c9d717",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "a259a055-c331-4429-9471-b2e6d28e80e8",
+                "uuid": "8049f1cc-12e2-43ef-85c1-880cea7174f7",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "aa5f161d-9408-45e5-9ee7-f73e2e8b4320",
+                "uuid": "f41c791e-e80d-445e-9aad-a1997885f855",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "54b5a9e2-3d20-4270-b1ba-6f480baac400",
+                "uuid": "5252fa7d-a4ab-432c-a2eb-28f6f3161d7e",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "226f169d-43a1-4660-b57f-396dcca9c374",
+                "uuid": "825c8785-7864-4555-96ff-946713fa8e67",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "8951e19e-3a5d-49a6-a60a-bf4dcacbf7ac",
+            "uuid": "5fc43f1d-9a8a-4463-88ec-ac3984c9c1b9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "482623b9-d9e6-46f5-a3db-7d91d84ea660",
+                "uuid": "40ba45fd-8b2b-4d90-ad57-bcedab50f2ce",
                 "description": "The ArcGIS Server must protect audit information from any type of unauthorized read access, modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "a1cb2912-b4e8-42ef-95d5-5c2664be6bf8",
+                "uuid": "e780e328-9c7d-49a4-a6ee-813eeab3d09c",
                 "description": "The ArcGIS Server must protect audit information from any type of unauthorized read access, modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "0b3cf357-9baf-47bb-9897-17680ab6cefd",
+                "uuid": "7d090349-3033-4416-8fec-f311174e5393",
                 "description": "The ArcGIS Server must protect audit information from any type of unauthorized read access, modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "5ba2b8a8-6af7-4670-86b3-74ffdd82a967",
+            "uuid": "eff36da2-44f7-4092-9dec-a5f934dd3eed",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.",
             "implemented-requirements": [
               {
-                "uuid": "f35df722-4bd3-4a98-9468-79ee9d07ab46",
+                "uuid": "4b6112ce-558c-4e2f-be03-4c5cf274ab34",
                 "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "au-10."
+                "control-id": "au-10"
               }
             ]
           },
           {
-            "uuid": "d73d1970-b838-447f-a2cf-d95641411536",
+            "uuid": "706b6e41-5c5c-4f43-878d-19e835ee7b8a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "5ad7044e-aaa0-47a5-9298-b73f899586b3",
+                "uuid": "16452790-5f3d-4b62-983d-895117f19584",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               },
               {
-                "uuid": "2b7d69c7-2718-47db-920b-7282f603d1ff",
+                "uuid": "0eadf954-b91d-48ab-94e4-a6ccc800bc47",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "be4f0283-a691-4c06-96d4-c505d4ba3bae",
+            "uuid": "d23ec88f-a86f-4048-a7d7-da05dce22b54",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "923ffe50-78d8-43be-acad-1a2cd28c51b9",
-                "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "cm-5.(1)"
-              },
-              {
-                "uuid": "989e08f7-e470-4b9f-bde3-6cf8b1ebe063",
+                "uuid": "05547e21-3872-40c9-8db7-d980382e78c2",
                 "description": "The ArcGIS Server must enforce access restrictions associated with changes to application configuration.",
-                "control-id": "cm-5.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "40ffd546-f6cb-4dbb-8ee5-a270022b02dd",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
-            "implemented-requirements": [
-              {
-                "uuid": "0e8de929-4bdb-4528-b8e0-48af72f14581",
-                "description": "The ArcGIS Server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
-                "control-id": "cm-6."
-              }
-            ]
-          },
-          {
-            "uuid": "36841906-190a-4ae6-8837-02274742ac11",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
-            "implemented-requirements": [
-              {
-                "uuid": "6869d7e8-43fe-4c99-93d9-c20711183bb1",
-                "description": "The ArcGIS Server must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
-                "control-id": "cm-7."
+                "control-id": "cm-5.1"
               },
               {
-                "uuid": "14552dbf-eb36-4519-a94f-ae67e23a5f7c",
-                "description": "The ArcGIS Server must be configured to disable non-essential capabilities.",
-                "control-id": "cm-7."
-              }
-            ]
-          },
-          {
-            "uuid": "394efd04-4244-4753-9f12-3a4df68169ad",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "fc54ae4d-3604-47e9-81d9-fd0a7a1dfa24",
-                "description": "The organization must disable organization-defined functions, ports, protocols, and services within the ArcGIS Server deemed to be unnecessary and/or nonsecure.",
-                "control-id": "cm-7.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "53d63336-06eb-4f4f-af30-218e9d7b93af",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
-            "implemented-requirements": [
-              {
-                "uuid": "e11e879e-2ccf-438f-a2fc-407b84293e0b",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2."
-              }
-            ]
-          },
-          {
-            "uuid": "995a6211-5c98-46eb-9862-5d487f7aa325",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "cb4df8ee-6289-4a47-a595-11a1f1cbad44",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "736b215c-32aa-463a-8c62-bc63deab0244",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(2).",
-            "implemented-requirements": [
-              {
-                "uuid": "24886403-0782-49a7-a555-11c2dae89d4c",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "3a0e7d8e-35cd-471b-8f2c-2588ed120723",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(3).",
-            "implemented-requirements": [
-              {
-                "uuid": "8c35abf9-3b1f-464f-b718-862bc6fdc043",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2.(3)"
-              }
-            ]
-          },
-          {
-            "uuid": "7f5ac638-506c-48b4-8b9c-10f0014be146",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(4).",
-            "implemented-requirements": [
-              {
-                "uuid": "77afdbe9-5e54-4c17-9db5-7d0e1950a5b6",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2.(4)"
-              }
-            ]
-          },
-          {
-            "uuid": "fcac0f86-a23b-4e0f-880e-73aa2ee8c5d6",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(5).",
-            "implemented-requirements": [
-              {
-                "uuid": "eccafad6-82f1-48c7-aa82-16c40abd6efb",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-2.(5)"
-              }
-            ]
-          },
-          {
-            "uuid": "2cee3336-e043-48f4-bb53-96aaa919d38f",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(8).",
-            "implemented-requirements": [
-              {
-                "uuid": "e3b532da-aace-4fcb-a0dc-66cef3419dc4",
-                "description": "The ArcGIS Server must implement replay-resistant authentication mechanisms for network access to privileged accounts and non-privileged accounts.",
-                "control-id": "ia-2.(8)"
-              }
-            ]
-          },
-          {
-            "uuid": "76ff7fe8-2744-4bdb-9b5f-d51ba33045fe",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(9).",
-            "implemented-requirements": [
-              {
-                "uuid": "5875ca36-a3ca-442f-bde8-57f041769dbe",
-                "description": "The ArcGIS Server must implement replay-resistant authentication mechanisms for network access to privileged accounts and non-privileged accounts.",
-                "control-id": "ia-2.(9)"
-              }
-            ]
-          },
-          {
-            "uuid": "800eb4c5-09b9-453a-90fa-cbbe580fc60f",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
-            "implemented-requirements": [
-              {
-                "uuid": "ceef2c0d-0015-42a2-be37-b448866394cd",
-                "description": "The ArcGIS Server must accept and electronically verify Personal Identity Verification (PIV) credentials.",
-                "control-id": "ia-2.(12)"
-              },
-              {
-                "uuid": "68ace252-f7cf-49f2-9025-ec08ebb5ccf9",
-                "description": "The ArcGIS Server must accept and electronically verify Personal Identity Verification (PIV) credentials.",
-                "control-id": "ia-2.(12)"
-              }
-            ]
-          },
-          {
-            "uuid": "b642c4b9-a884-449b-8e3c-775985fe29ad",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
-            "implemented-requirements": [
-              {
-                "uuid": "3bb95252-8a98-4ecb-8f87-539949790df7",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-3."
-              },
-              {
-                "uuid": "4c8809e3-0f6d-49f4-8e92-bb9a4f522d88",
-                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ia-3."
-              }
-            ]
-          },
-          {
-            "uuid": "888630a5-f443-407f-9661-349719352c58",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "d0ff033e-3d65-4a18-a799-e742a61bfa1c",
-                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ia-3.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "a2620c7b-3c86-4f1a-a022-0fd30c84ce47",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4..",
-            "implemented-requirements": [
-              {
-                "uuid": "df3a193e-29be-43a7-87fa-f4228210f07a",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-4."
-              }
-            ]
-          },
-          {
-            "uuid": "2ae3460f-1f55-4af1-ab53-62c56a888d51",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "cfc468fa-b90b-4e1a-a19d-1ab00061c8ec",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "06efff57-7b84-42d0-a539-bde7ab3559b4",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "a4fd22e3-ebb6-478a-8973-856e5e2a5df4",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "a58f1945-4e76-436e-b899-d24d553ff028",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "ab617d32-1c69-4d8b-8305-39e25b477b51",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "5407d991-e009-4bda-8c26-534302c7fa23",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "8dd890b9-e489-46c1-82c1-f254d2919db3",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "21a99c2e-f022-464d-81b9-63985040344f",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "4b60a35f-0ebb-4746-8176-109abc804d3c",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "4367dc09-6c2d-4c0c-9a99-d3ec802cee32",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "7309409d-853d-4f2d-9334-6fe90018537c",
-                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
-                "control-id": "ia-5.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "1a657dd3-45fd-460b-b0b2-b7fb88f0d188",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
-            "implemented-requirements": [
-              {
-                "uuid": "249e9f01-ac92-41f7-9cdf-87325ba93f95",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-5.(2)"
-              },
-              {
-                "uuid": "e48b3033-2ff2-4d3d-8650-71c1fa0779f7",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-5.(2)"
-              },
-              {
-                "uuid": "1739cc79-b3df-4628-b141-89c600fed833",
-                "description": "The ArcGIS Server, when using PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
-                "control-id": "ia-5.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "08fd3114-889e-4681-b127-5a389417a0ea",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6..",
-            "implemented-requirements": [
-              {
-                "uuid": "08438fc3-7ab7-4ff8-bb55-3da2ba307bf6",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-6."
-              }
-            ]
-          },
-          {
-            "uuid": "4e50003f-2334-44bd-9ff3-548fd8b9558f",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
-            "implemented-requirements": [
-              {
-                "uuid": "e04ebfea-8010-4155-93d1-b03bdf844a14",
-                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
-                "control-id": "ia-7."
-              }
-            ]
-          },
-          {
-            "uuid": "13dd64b3-865b-4988-8174-56ea7a902d41",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8..",
-            "implemented-requirements": [
-              {
-                "uuid": "4b2ab6a4-71fe-40e6-ba7e-c3a2e4961f9d",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ia-8."
-              }
-            ]
-          },
-          {
-            "uuid": "28abf8de-db25-4513-87e3-3a21cd2e5fa6",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
-            "implemented-requirements": [
-              {
-                "uuid": "1e6c2407-4953-49b2-b102-55cbaf7fde79",
-                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ia-11."
-              },
-              {
-                "uuid": "25c55833-4d9e-4dba-ae93-b34c63276a31",
-                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
-                "control-id": "ia-11."
-              }
-            ]
-          },
-          {
-            "uuid": "76e09a58-2dc5-4fbd-9c81-f7e570724490",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
-            "implemented-requirements": [
-              {
-                "uuid": "cde3f7ea-a5b3-44aa-813a-3b3ce9c09b57",
-                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-8."
-              }
-            ]
-          },
-          {
-            "uuid": "a30c9923-160c-4339-a1cb-21ef36844a54",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "a4738518-930a-4585-958b-67f64a9098ec",
-                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-8.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "4ddea783-a3d4-46cb-9699-f4087f13c7f5",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
-            "implemented-requirements": [
-              {
-                "uuid": "378a1634-9b41-44fd-af81-7fb73935e777",
-                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-8.(2)"
-              },
-              {
-                "uuid": "c6d58bfa-b389-486e-bd08-13d85fb1f192",
-                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-8.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "9d934f93-2ef3-44bd-9783-367ca7be20d3",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10..",
-            "implemented-requirements": [
-              {
-                "uuid": "9127f938-c381-4936-a427-f71445044f5e",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "sc-10."
-              }
-            ]
-          },
-          {
-            "uuid": "348683b1-2891-4848-bfbf-681fa62aa262",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
-            "implemented-requirements": [
-              {
-                "uuid": "41b18789-c592-4870-925e-cc5f23b5f668",
-                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
-                "control-id": "sc-13."
-              }
-            ]
-          },
-          {
-            "uuid": "410eb0ed-4577-4e03-bafa-68e2fa472639",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
-            "implemented-requirements": [
-              {
-                "uuid": "d7774421-5e44-498a-b261-98a417bf7e4f",
-                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
-                "control-id": "sc-23."
-              }
-            ]
-          },
-          {
-            "uuid": "0ef0ea41-3a54-44ac-abbe-80b93e49b47e",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "9ae3e683-c419-47d6-83a2-3bdb6e154806",
-                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "sc-23.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "fef25df4-861e-4a98-8a67-2e025a452847",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
-            "implemented-requirements": [
-              {
-                "uuid": "e2f8d214-dea1-46da-ba3b-083732701ae2",
-                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
-                "control-id": "sc-23.(3)"
-              },
-              {
-                "uuid": "6e258f34-4865-4de5-ae31-09202b90d060",
-                "description": "The ArcGIS Server must recognize only system-generated session identifiers.",
-                "control-id": "sc-23.(3)"
-              }
-            ]
-          },
-          {
-            "uuid": "a0db7eb8-4d89-4ea2-af09-948f54dc2696",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
-            "implemented-requirements": [
-              {
-                "uuid": "af0e7c75-144c-4021-aeee-512f648d30d2",
-                "description": "The ArcGIS Server keystores must only contain certificates of PKI established certificate authorities for verification of protected sessions.",
-                "control-id": "sc-23.(5)"
-              }
-            ]
-          },
-          {
-            "uuid": "918fc7e4-0c82-404b-8297-b74ea6e4142d",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
-            "implemented-requirements": [
-              {
-                "uuid": "40a212ed-dca7-42d6-b99a-37c81d840444",
+                "uuid": "e93155dd-5ba7-4cbd-b3e4-f917059f6fc4",
                 "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
-                "control-id": "sc-24."
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "37878168-3d83-460c-83aa-221c352ad00c",
+            "uuid": "2ef03c95-ba31-45b7-af01-e24c18593624",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "bfd38894-7311-4b32-9a4d-57242f41f226",
+                "uuid": "abf2b806-50ee-46aa-a677-924a3c65e18b",
+                "description": "The ArcGIS Server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.",
+                "control-id": "cm-6"
+              }
+            ]
+          },
+          {
+            "uuid": "43bd37b7-e9c0-42f9-8b47-a19bc761c6fa",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
+            "implemented-requirements": [
+              {
+                "uuid": "4630836d-216d-4a2e-b67e-d6fc9b31cb38",
+                "description": "The ArcGIS Server must be configured to disable non-essential capabilities.",
+                "control-id": "cm-7"
+              },
+              {
+                "uuid": "952d78e0-0b8b-41d1-a1fd-ba96d01d4c3c",
+                "description": "The ArcGIS Server must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7"
+              }
+            ]
+          },
+          {
+            "uuid": "e8d5d109-98dd-4523-aa78-6a118ab7d705",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "837b2c1e-1b38-433c-b9e4-767c1a10b7c7",
+                "description": "The organization must disable organization-defined functions, ports, protocols, and services within the ArcGIS Server deemed to be unnecessary and/or nonsecure.",
+                "control-id": "cm-7.1"
+              }
+            ]
+          },
+          {
+            "uuid": "9fa4e0ff-1df5-401f-a9fc-3b3cc368ffb4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
+            "implemented-requirements": [
+              {
+                "uuid": "4482125c-35ea-488f-b730-744b848057ed",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2"
+              }
+            ]
+          },
+          {
+            "uuid": "052ded25-05ab-4d3f-91bc-32b1dc3e842e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "84b80f7d-d95c-44a1-93b9-2166c9af44f8",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2.1"
+              }
+            ]
+          },
+          {
+            "uuid": "956dd08b-a2e2-4578-b3a4-fa608ac205bc",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.2.",
+            "implemented-requirements": [
+              {
+                "uuid": "44ab40cc-9ad9-4d4e-ad0b-aea7351e0061",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2.2"
+              }
+            ]
+          },
+          {
+            "uuid": "661be769-b18e-4546-a8ca-6da061238786",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.3.",
+            "implemented-requirements": [
+              {
+                "uuid": "4580caf1-37bf-4f9c-b52e-ecfba9ce9265",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2.3"
+              }
+            ]
+          },
+          {
+            "uuid": "5eaa8e9b-db6c-478d-b7fa-bbc64ad3a10e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.4.",
+            "implemented-requirements": [
+              {
+                "uuid": "54b5fb4d-ee50-4961-9607-0754eb08dd3e",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2.4"
+              }
+            ]
+          },
+          {
+            "uuid": "f9122ce8-4404-4cc1-bfd9-94330249ba25",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.5.",
+            "implemented-requirements": [
+              {
+                "uuid": "dcf29dbe-f7b1-4e04-93a4-39b9280a9ffa",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-2.5"
+              }
+            ]
+          },
+          {
+            "uuid": "17eeb831-ee11-4e78-88ba-e1c59dc9bc7a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.8.",
+            "implemented-requirements": [
+              {
+                "uuid": "b7afe412-1c0f-43ce-b147-b278f97b67f8",
+                "description": "The ArcGIS Server must implement replay-resistant authentication mechanisms for network access to privileged accounts and non-privileged accounts.",
+                "control-id": "ia-2.8"
+              }
+            ]
+          },
+          {
+            "uuid": "63743608-ec97-426b-9c3d-2e29a9740e37",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.9.",
+            "implemented-requirements": [
+              {
+                "uuid": "32db3e51-d07f-4cf9-b516-b68d42e2949e",
+                "description": "The ArcGIS Server must implement replay-resistant authentication mechanisms for network access to privileged accounts and non-privileged accounts.",
+                "control-id": "ia-2.9"
+              }
+            ]
+          },
+          {
+            "uuid": "ccc02b7f-7779-4586-8461-13116758bc3c",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.12.",
+            "implemented-requirements": [
+              {
+                "uuid": "5a11fd1f-5131-4e8e-a8f2-b3d1b80318e7",
+                "description": "The ArcGIS Server must accept and electronically verify Personal Identity Verification (PIV) credentials.",
+                "control-id": "ia-2.12"
+              },
+              {
+                "uuid": "c87c54d1-4162-4753-a5fc-352a8578ec46",
+                "description": "The ArcGIS Server must accept and electronically verify Personal Identity Verification (PIV) credentials.",
+                "control-id": "ia-2.12"
+              }
+            ]
+          },
+          {
+            "uuid": "7431c743-efca-4a72-b522-f33dc671f098",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.",
+            "implemented-requirements": [
+              {
+                "uuid": "4be48f33-ebff-471b-86cb-e6c2f50790f3",
+                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-3"
+              },
+              {
+                "uuid": "e0a47a29-e278-48fd-92f4-3390799a4736",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-3"
+              }
+            ]
+          },
+          {
+            "uuid": "26f70598-f254-4711-a46b-b12717954179",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "825a8875-daf5-477e-b096-dd5d9f7123d0",
+                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-3.1"
+              }
+            ]
+          },
+          {
+            "uuid": "645dfacb-0e1e-492f-8ada-9329459fbaf1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-4.",
+            "implemented-requirements": [
+              {
+                "uuid": "4fcdd3fa-c047-4ff9-8af5-d6a49f5c081e",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-4"
+              }
+            ]
+          },
+          {
+            "uuid": "b8c074b8-19fb-449b-a386-e97249cc160e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "bf5c3faa-a177-4873-bebe-72a4ec34a1f6",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "47940a48-8052-4da6-b0de-64d6bbe23775",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "79529efd-26f4-42f3-8c05-70de9784a49c",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "f0de1ef3-f5d2-4943-9c0b-d0569d25e79e",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "793f3f49-2119-4c23-8951-8682b3b47fa5",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "12f966fa-91e3-419c-b9ef-1aeb408ddb60",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "c5c486ae-2ed1-483d-84ca-76aac2556bf6",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "995fdcec-5f19-4cf4-bcd2-cd55ce6175a9",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "f7970c69-1cba-429d-a333-98eab2e6ee49",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "5fb31c20-c6d7-4bd4-bf0e-ed1b547c62a6",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "3ea84614-4373-4aae-9d9a-337e00bc5a72",
+                "description": "The ArcGIS Server must use Windows authentication for supporting account management functions.",
+                "control-id": "ia-5.1"
+              }
+            ]
+          },
+          {
+            "uuid": "9f6b4102-0877-43ac-b589-0b5148efaf5b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
+            "implemented-requirements": [
+              {
+                "uuid": "f0d22610-618b-401d-8e25-36035b9431ee",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-5.2"
+              },
+              {
+                "uuid": "86172af5-4180-4a1f-a3a7-205437049111",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-5.2"
+              },
+              {
+                "uuid": "8317651e-1b28-4da0-b157-4438e77f74fc",
+                "description": "The ArcGIS Server, when using PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
+                "control-id": "ia-5.2"
+              }
+            ]
+          },
+          {
+            "uuid": "6c25c011-bd86-4924-9291-58ddb9d10a5b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6.",
+            "implemented-requirements": [
+              {
+                "uuid": "a4849356-c8ae-4a98-a7e3-42dc35d8046d",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-6"
+              }
+            ]
+          },
+          {
+            "uuid": "3a2c708d-4052-4038-bc05-3a1271f28b6e",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
+            "implemented-requirements": [
+              {
+                "uuid": "ebc0f9bd-add8-4a2f-bfe6-81521791808b",
+                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
+                "control-id": "ia-7"
+              }
+            ]
+          },
+          {
+            "uuid": "bc3c5bb8-2a03-4fe7-8f46-cd1b7827718a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.",
+            "implemented-requirements": [
+              {
+                "uuid": "89d473cb-28b6-430e-85c3-5bf8ed5c140c",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "ia-8"
+              }
+            ]
+          },
+          {
+            "uuid": "94870032-6d0d-48db-95a9-0cf8d4be2bb3",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11.",
+            "implemented-requirements": [
+              {
+                "uuid": "f2b24afc-9d40-4999-9f0b-d6a67501e9e4",
+                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-11"
+              },
+              {
+                "uuid": "2d252d45-dfa6-40c2-8bb4-cf24ca264dee",
+                "description": "The ArcGIS Server Windows authentication must authenticate all endpoint devices before establishing a local, remote, and/or network connection using bidirectional authentication that is cryptographically based.",
+                "control-id": "ia-11"
+              }
+            ]
+          },
+          {
+            "uuid": "52ff8ae0-a27f-463a-acbc-ac22dc233402",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
+            "implemented-requirements": [
+              {
+                "uuid": "569408ae-62f2-4286-b070-20ebe85e379a",
+                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-8"
+              }
+            ]
+          },
+          {
+            "uuid": "62206ab3-732a-4880-a104-08eede2ba55d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "762dba14-ed0b-4336-bc75-929f368914d1",
+                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-8.1"
+              }
+            ]
+          },
+          {
+            "uuid": "29e1b09a-4e51-4386-a296-240f8feaed62",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.2.",
+            "implemented-requirements": [
+              {
+                "uuid": "6803b17f-f952-4f60-b5ce-0d84ee5170fa",
+                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-8.2"
+              },
+              {
+                "uuid": "c0fc8e6d-51ba-417f-84d2-005a5ccdd5e7",
+                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-8.2"
+              }
+            ]
+          },
+          {
+            "uuid": "a74029bf-14af-422a-8e2c-3a770c7e0a51",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-10.",
+            "implemented-requirements": [
+              {
+                "uuid": "3faecd96-05d4-44da-b655-ae14ad7796af",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "sc-10"
+              }
+            ]
+          },
+          {
+            "uuid": "83c49166-297c-4476-8818-09c9f3e342e9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
+            "implemented-requirements": [
+              {
+                "uuid": "96325c72-f1b2-4647-a425-0e1cdba601ec",
+                "description": "The ArcGIS Server SSL settings must use NSA-approved cryptography to protect classified information in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+                "control-id": "sc-13"
+              }
+            ]
+          },
+          {
+            "uuid": "ca9ba375-a9cc-436a-a7b0-2405b3832f8a",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.",
+            "implemented-requirements": [
+              {
+                "uuid": "d5374ca0-1e13-4aaf-8640-d80f209bc676",
+                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
+                "control-id": "sc-23"
+              }
+            ]
+          },
+          {
+            "uuid": "9a89f40d-f2ea-4a12-9347-ad0c69f6ee6b",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "35469fdd-cd4c-4b62-aaff-2375bee47f70",
+                "description": "The ArcGIS Server must use Windows authentication to enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+                "control-id": "sc-23.1"
+              }
+            ]
+          },
+          {
+            "uuid": "95fac5e8-699a-4d3a-8cca-b76b4a0de419",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
+            "implemented-requirements": [
+              {
+                "uuid": "e1224094-fca3-40e3-bfd8-5b175e7ee7dc",
+                "description": "The ArcGIS Server must use mechanisms meeting the requirements of applicable federal laws, Executive orders, directives, policies, regulations, standards, and guidance for authentication to a cryptographic module.",
+                "control-id": "sc-23.3"
+              },
+              {
+                "uuid": "89cebf93-b314-41f5-90a8-d639d920bd86",
+                "description": "The ArcGIS Server must recognize only system-generated session identifiers.",
+                "control-id": "sc-23.3"
+              }
+            ]
+          },
+          {
+            "uuid": "8b947af0-0732-443d-9bcf-8ea703efabb8",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
+            "implemented-requirements": [
+              {
+                "uuid": "78fd12a7-dd25-49f4-b4b9-52c1abdfa18d",
+                "description": "The ArcGIS Server keystores must only contain certificates of PKI established certificate authorities for verification of protected sessions.",
+                "control-id": "sc-23.5"
+              }
+            ]
+          },
+          {
+            "uuid": "51144824-85e4-4d77-831c-8d87e21bb5f9",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
+            "implemented-requirements": [
+              {
+                "uuid": "353f63a2-9b47-4cd6-a58d-f0cb93887475",
+                "description": "The ArcGIS Server must provide audit record generation capability for DoD-defined auditable events within all application components.",
+                "control-id": "sc-24"
+              }
+            ]
+          },
+          {
+            "uuid": "cef89844-83b9-4fdc-a614-4335d83c8bbd",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
+            "implemented-requirements": [
+              {
+                "uuid": "03b03e02-1c39-453b-a7f9-5049e93167c6",
                 "description": "The ArcGIS Server must use a full disk encryption solution to protect the confidentiality and integrity of all information.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "73b51107-e0d0-4c29-9686-9ca87e8ee168",
+            "uuid": "fd89f30c-8c96-4bd5-8231-1c9a305229fc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39.",
             "implemented-requirements": [
               {
-                "uuid": "0865d64c-39e3-4ad6-8614-24633d09558e",
+                "uuid": "c7e4e2b2-a9e8-4c31-985a-767096bd14ec",
                 "description": "The ArcGIS Server must maintain a separate execution domain for each executing process.",
-                "control-id": "sc-39."
+                "control-id": "sc-39"
               }
             ]
           },
           {
-            "uuid": "0e301f02-321c-4d49-9ec5-f341552d25d5",
+            "uuid": "e9483e37-837c-4210-b62a-a2e65836ede8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "fdd7225e-efab-43ad-95fd-e2437058d0a6",
+                "uuid": "ecf59437-e34a-413d-92a8-c1d3ad7a8379",
                 "description": "The ArcGIS Server must reveal error messages only to the ISSO, ISSM, and SA.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "f9eec677-f557-443f-84bc-7f3b3b5675de",
+    "uuid": "24c53d26-03b3-42df-8234-35f9c3be1311",
     "metadata": {
       "title": "VMWare Horizon 7-13 V1R1",
-      "last-modified": "2022-06-10T12:50:51",
-      "version": "2022-06-10T12:50:51",
+      "last-modified": "2022-06-12T11:06:46",
+      "version": "2022-06-12T11:06:46",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "84e096e7-59f8-4009-be1e-bfd67b6fa731",
+          "uuid": "539c5604-d309-4c4b-873a-8500ba3d54c9",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,29 +16,29 @@
     },
     "components": [
       {
-        "uuid": "a3ed5df0-5796-4252-a014-f6393f8f6ee4",
+        "uuid": "97fa3ea8-bdb2-4c7d-b322-28ba535cb42b",
         "type": "software",
         "title": "VMWare Horizon 7-13 V1R1",
-        "description": "Quisquam dolore dolore numquam est adipisci. Quiquia aliquam magnam consectetur.",
+        "description": "Etincidunt consectetur adipisci voluptatem. Numquam neque est porro labore numquam ut. Eius tempora ut dolorem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "84e096e7-59f8-4009-be1e-bfd67b6fa731"
+              "539c5604-d309-4c4b-873a-8500ba3d54c9"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "babbaa7a-f5cc-42f0-9bae-808b7b0d44be",
+            "uuid": "dce527ee-73a1-4603-8149-c5ca54baafe1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "6c3c798e-7ba4-4315-97ba-787ba73eba1a",
+                "uuid": "5c3c3e15-7be6-4424-868d-6e17686c28c5",
                 "description": "The Horizon Agent must require TLS connections.\nThe Horizon Agent must only run allowed scripts on user connect.\nThe Horizon Agent must only run allowed scripts on user disconnect.\nThe Horizon Agent must only run allowed scripts on user reconnect.\nThe Horizon Agent must check the entire chain when validating certificates.\nThe Horizon Agent must set an idle timeout.\nThe Horizon Agent must block server to client clipboard actions for Blast.\nThe Horizon Agent must block server to client clipboard actions for PCoIP.\nThe Horizon Agent must not allow file transfers through HTML Access.\nThe Horizon Agent must not allow drag and drop for Blast.\nThe Horizon Agent must not allow drag and drop for PCoIP.\nThe Horizon Agent must audit clipboard actions for Blast.\nThe Horizon Agent must audit clipboard actions for PCoIP.\nThe Horizon Agent desktops must not allow client drive redirection.\nThe Horizon Agent must block USB mass storage.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           }

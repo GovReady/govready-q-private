@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "be75e866-4a24-40c8-af2a-f9cf90dd5f62",
+    "uuid": "9964fb75-9a5c-461d-add3-c418a77d507a",
     "metadata": {
       "title": "Riverbed SteelHead CX v8",
-      "last-modified": "2022-06-10T12:50:58",
-      "version": "2022-06-10T12:50:58",
+      "last-modified": "2022-06-12T11:06:53",
+      "version": "2022-06-12T11:06:53",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "7d446d74-0d4c-4997-95df-b6fc5cd13a95",
+          "uuid": "78884b64-d256-40dc-bc1d-d46ffba2e08f",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,99 +16,99 @@
     },
     "components": [
       {
-        "uuid": "571e02a5-0c64-4b71-af5a-db0af21169bc",
+        "uuid": "95c5b89e-ad66-404f-a557-32233867dc29",
         "type": "software",
         "title": "Riverbed SteelHead CX v8",
-        "description": "Quiquia aliquam adipisci porro labore velit tempora. Sed est neque est adipisci adipisci.",
+        "description": "Velit numquam non consectetur est non neque. Adipisci quisquam adipisci sit tempora dolor. Dolore eius labore velit dolor non dolor ut.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "7d446d74-0d4c-4997-95df-b6fc5cd13a95"
+              "78884b64-d256-40dc-bc1d-d46ffba2e08f"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "04f4dce5-75ad-4ab5-bc22-8d2e4fab300c",
+            "uuid": "a66dc866-e4ae-4bc6-8f46-40af1ae9aa19",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.1.",
             "implemented-requirements": [
               {
-                "uuid": "94d2d43f-4f12-4c66-9ff9-d649caae7388",
+                "uuid": "e5887029-a16c-4552-8d19-fcd8f44e5053",
                 "description": "If TLS optimization is used, the Riverbed Optimization System (RiOS) providing Signed SMB and/or Encrypted MAPI must ensure the integrity and confidentiality of data transmitted over the WAN.",
-                "control-id": "ac-11.(1)"
+                "control-id": "ac-11.1"
               }
             ]
           },
           {
-            "uuid": "5c2280d3-5a4a-4ea8-a2f0-99b5d0da7d6c",
+            "uuid": "da6ae911-27b8-45d3-8450-51fa7e31aa32",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "20cb760d-ecdb-4a6b-814c-19320fe074d2",
+                "uuid": "d5397c50-b211-465d-9f58-e5c9328817c4",
                 "description": "The Riverbed Optimization System (RiOS) must be configured to ensure inbound and outbound traffic is forwarded to be inspected by the firewall and IDPS in compliance with remote access security policies.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "9d7e0752-1d6d-41a4-978c-c677cd169cc2",
+            "uuid": "68789b24-edfc-4cbb-960d-1ffaac9fde1c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "a6f26de0-b9d8-4c28-9d85-83203017a2f0",
+                "uuid": "5557d794-4bc5-4f4e-9876-f8fa93e1ab7e",
                 "description": "The Riverbed Optimization System (RiOS) providing intermediary services for remote access communications traffic must use NIST FIPS-validated cryptography to protect the integrity of remote access sessions.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
               },
               {
-                "uuid": "49ce19e0-1baa-4a8f-a640-a67346042ecd",
+                "uuid": "7c818f6f-a64f-4408-a8e6-49db8b30b97a",
                 "description": "If TLS WAN optimization is used, Riverbed Optimization System (RiOS) providing SSL Optimization must protect private keys ensuring that they stay in the data center by ensuring end-to-end security.\nIf TLS optimization is used, the Riverbed Optimization System (RiOS) providing intermediary services for TLS communications traffic must use encryption services that implement NIST FIPS-validated cryptography to protect the confidentiality of TLS.\nIf TLS optimization is used, the Riverbed Optimization System (RiOS) that stores secret or private keys must use FIPS-approved key management technology and processes in the production and control of private/secret cryptographic keys.\nThe Riverbed Optimization System (RiOS) that provides intermediary services for TLS must be configured to comply with the required TLS settings in NIST SP 800-52.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "7607091e-2f3b-4e7d-a852-f007b83a1f0d",
+            "uuid": "7c2609d7-a390-43f3-a936-7b497ed42cfb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "36556ed2-4eda-4c0c-a077-f273a79b4e4b",
+                "uuid": "2fa6bd2b-45c5-49a9-9fb9-9eca7f9aa294",
                 "description": "The Riverbed Optimization System (RiOS) must not have unrelated or unnecessary services enabled on the host.\nRiverbed Optimization System (RiOS) must not have unnecessary services and functions enabled.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               },
               {
-                "uuid": "2f1cae64-c8a6-4a30-8c9f-9d7093956c36",
+                "uuid": "61148a06-a893-4e20-8bb2-e0dc1bdf7255",
                 "description": "The Riverbed Optimization System (RiOS) must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "24a6ca01-7225-4cc6-9a04-2aae6ffca7b8",
+            "uuid": "73826aa9-e687-494d-a5e4-d8d9f81a8eee",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "8057a8be-4c06-4d38-8f64-d3fe055fc77a",
+                "uuid": "a4cb766b-8795-4340-96be-737226e6065e",
                 "description": "The Riverbed Optimization System (RiOS) that provides intermediary services for TLS must validate certificates used for TLS functions by performing RFC 5280-compliant certification path validation.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "06165eb0-2ff2-4cde-a779-579b311746aa",
+            "uuid": "973ecece-f674-4202-9a8f-8047703798b5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.",
             "implemented-requirements": [
               {
-                "uuid": "a99b67f3-a9a6-4a1f-b6c5-9e44b72ce1dc",
+                "uuid": "2dc5b187-a154-4da3-9519-2f00c6895bf3",
                 "description": "The Riverbed Optimization System (RiOS) must protect the authenticity of communications sessions by configuring securing pairing trusts for SSL and secure protocols.",
-                "control-id": "sc-23."
+                "control-id": "sc-23"
               }
             ]
           }

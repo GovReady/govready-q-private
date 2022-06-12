@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "73e46713-516b-4cd2-b6f4-b37c52ae844a",
+    "uuid": "9a90c81a-8547-4542-8ccb-7caceada4862",
     "metadata": {
       "title": "VMWare vRealize Ops Mgr Cassandra V1R1",
-      "last-modified": "2022-06-10T12:50:51",
-      "version": "2022-06-10T12:50:51",
+      "last-modified": "2022-06-12T11:06:46",
+      "version": "2022-06-12T11:06:46",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "fdbfdad0-5005-43c1-80d7-5e3239ed7527",
+          "uuid": "e22a660b-400c-48fc-93b0-339fc8963b64",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,365 +16,365 @@
     },
     "components": [
       {
-        "uuid": "751ee82b-55fb-400d-94e4-7eb5a7421fe7",
+        "uuid": "aa1a72a5-d2d7-4792-9061-b2d0a1d9be41",
         "type": "software",
         "title": "VMWare vRealize Ops Mgr Cassandra V1R1",
-        "description": "Sed numquam neque quisquam sed ipsum dolor.",
+        "description": "Neque dolor porro tempora.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "fdbfdad0-5005-43c1-80d7-5e3239ed7527"
+              "e22a660b-400c-48fc-93b0-339fc8963b64"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "b5a3fd60-37f6-4ccb-be2d-130e741dd549",
+            "uuid": "16eccc80-24fa-4873-80b3-71d39d34c442",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "599eae47-3139-48c2-8599-96479c05b9b5",
+                "uuid": "681ad7b5-f6d9-485a-b978-3d8e09600fb8",
                 "description": "The Cassandra database must have the correct authorizer value.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "744f1077-194d-4398-8e46-397c02b8677e",
+            "uuid": "22445703-c5ae-4e91-9b82-704cb4ea007c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "73851866-0502-4f1d-bc5f-2be942ca71d9",
-                "description": "The Cassandra database must produce audit records containing sufficient information to establish the outcome (success or failure) of the events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "0db74d1c-795e-4258-af14-1e48233495e3",
+                "uuid": "34f750f6-3472-48a4-bea2-2271acd7e969",
                 "description": "The Cassandra database must produce audit records containing sufficient information to establish what type of events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "d4e4e325-79af-45ef-903a-b57e12efb555",
+                "uuid": "b3d5d447-9bb6-41f4-984d-d9af77fae6a6",
                 "description": "The Cassandra database must produce audit records containing time stamps to establish when the events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "1abe98ad-a649-4652-88a2-bc1121bebfca",
+                "description": "The Cassandra database must produce audit records containing sufficient information to establish the outcome (success or failure) of the events.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "f9fd62ac-68f3-4065-8a08-3f0fc8b0bf35",
+            "uuid": "948b6719-1563-4f31-af30-3d419ef90393",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "f7d007fd-60f8-4bd5-a070-5c1cc90c4db3",
+                "uuid": "62430611-b5de-4a35-8fc0-525a19c0fb87",
                 "description": "The Cassandra database must include additional, more detailed, organization-defined information in the audit records for audit events identified by type, location, or subject.",
-                "control-id": "au-3.(1)"
+                "control-id": "au-3.1"
               }
             ]
           },
           {
-            "uuid": "c063f8fb-c725-451c-b785-1da977a757e9",
+            "uuid": "61a53d1f-b3e1-4778-810c-6dde1ce031f3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.2.",
             "implemented-requirements": [
               {
-                "uuid": "cc844f41-87a2-41cd-a0a2-435ede374f05",
+                "uuid": "14908d07-cf49-4448-b052-f8450d121f31",
                 "description": "The Cassandra Server must utilize centralized management of the content captured in audit records generated by all components of the system.",
-                "control-id": "au-3.(2)"
+                "control-id": "au-3.2"
               }
             ]
           },
           {
-            "uuid": "862aff4e-582e-4116-9e3e-a54e7bcbac11",
+            "uuid": "8631e6d0-3d1e-4b16-b407-4485a4743b1d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "fe2a41ce-b1a1-4bb2-8315-6a70a5401a66",
+                "uuid": "e623836e-8e9a-430b-8c5e-d62927218231",
                 "description": "The Cassandra Server must off-load audit data to a separate log management facility; this must be continuous and in near real time for systems with a network connection to the storage facility and weekly or more often for stand-alone systems.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "7092fc1b-66fa-4240-9610-fa58871a20cd",
+            "uuid": "db09f615-d8f8-4c85-b76a-d229168c1dab",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.",
             "implemented-requirements": [
               {
-                "uuid": "f2632c2d-f31d-48de-8c26-fd1ead4dffe8",
-                "description": "The Cassandra Server must generate time stamps, for audit records and application data, with a minimum granularity of one second.",
-                "control-id": "au-8."
-              },
-              {
-                "uuid": "2077ace4-bfcf-4f63-a53b-03c876656fd9",
+                "uuid": "bfb0052c-d344-4ffa-86c8-83076b13918c",
                 "description": "The Cassandra Server must record time stamps, in audit records and application data that can be mapped to Coordinated Universal Time (UTC, formerly GMT).",
-                "control-id": "au-8."
+                "control-id": "au-8"
+              },
+              {
+                "uuid": "f2af0247-16ac-4180-bd4b-70fe31345127",
+                "description": "The Cassandra Server must generate time stamps, for audit records and application data, with a minimum granularity of one second.",
+                "control-id": "au-8"
               }
             ]
           },
           {
-            "uuid": "8861e2f5-fc78-4861-bc15-a11d59f53bc4",
+            "uuid": "d7bcc17e-eae0-42e6-9eea-bbdb9961ba60",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "539ed13d-7737-4e45-b913-008e701e4530",
-                "description": "The Cassandra database log configuration file must have the correct group-owner.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "17f901b5-1215-4c6f-a598-e4797f22c745",
-                "description": "The Cassandra database logs must be protected from unauthorized read access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "624d5f93-6288-4c47-b0b5-79aa8dc9fd39",
-                "description": "The Cassandra database log configuration file must be protected from unauthorized read access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "bf09d2dd-0775-46de-b7a6-0f6e568d79ca",
+                "uuid": "7d9a4ff1-e20b-4500-8ab8-e6bb6a5dbe39",
                 "description": "The Cassandra database logs must have the correct group-owner.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "126e3c75-1978-47cc-abd7-6ea2e45265cb",
-                "description": "The Cassandra database log configuration file must have the correct owner.",
-                "control-id": "au-9."
+                "uuid": "de238554-3b21-4d4f-a19d-a884c59a92e4",
+                "description": "The Cassandra database logs must be protected from unauthorized read access.",
+                "control-id": "au-9"
               },
               {
-                "uuid": "9f734a8d-fdf5-47fd-9c3f-526c522621fe",
+                "uuid": "94edc1b3-a350-4ecc-a8b1-352787cc77ae",
+                "description": "The Cassandra database log configuration file must have the correct group-owner.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "119c76ff-182e-4501-a72e-b9380c5dba6b",
+                "description": "The Cassandra database log configuration file must be protected from unauthorized read access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "e7035fb6-31f2-4074-8989-dbf931b5f6bc",
                 "description": "The Cassandra database logs must have the correct owner.",
-                "control-id": "au-9."
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "424cb441-1dbf-484c-9d34-cda38c8cdc76",
+                "description": "The Cassandra database log configuration file must have the correct owner.",
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "bc783665-621f-4a74-b89b-3a4a9653900f",
+            "uuid": "896c8bab-7acd-48be-8568-b2f826d15526",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "198e1958-a47f-46f5-a52c-74b063d2b3f4",
-                "description": "The Cassandra database must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
-                "control-id": "au-12."
-              },
-              {
-                "uuid": "f0542b45-24ff-4f47-b4b8-78906e3dc946",
+                "uuid": "3944cc37-ef64-4057-95ff-4e9b8d27b890",
                 "description": "The Cassandra database must be able to generate audit records when privileges/permissions are retrieved.\nThe Cassandra database must be able to generate audit records when unsuccessful attempts to retrieve privileges/permissions occur.\nThe Cassandra Server must be able to generate audit records when security objects are accessed.\nThe Cassandra Server must generate audit records when unsuccessful attempts to access security objects occur.\nThe Cassandra Server must generate audit records when privileges/permissions are added.\nThe Cassandra Server must generate audit records when unsuccessful attempts to add privileges/permissions occur.\nThe Cassandra Server must generate audit records when privileges/permissions are modified.\nThe Cassandra Server must generate audit records when unsuccessful attempts to modify privileges/permissions occur.\nThe Cassandra Server must generate audit records when security objects are modified.\nThe Cassandra Server must generate audit records when unsuccessful attempts to modify security objects occur.\nThe Cassandra Server must generate audit records when privileges/permissions are deleted.\nThe Cassandra Server must generate audit records when unsuccessful attempts to delete privileges/permissions occur.\nThe Cassandra Server must generate audit records when security objects are deleted.\nThe Cassandra Server must generate audit records when unsuccessful attempts to delete security objects occur.\nThe Cassandra Server must generate audit records when categories of information (e.g., classification levels/security levels) are deleted.\nThe Cassandra Server must generate audit records for all privileged activities or other system-level access.\nThe Cassandra Server must generate audit records when unsuccessful attempts to execute privileged activities or other system-level access occur.\nThe Cassandra Server must be able to generate audit records when successful accesses to objects occur.\nThe Cassandra Server must generate audit records when unsuccessful accesses to objects occur.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               },
               {
-                "uuid": "fe1ca55b-342c-4f94-ae7b-74b87b96bfd1",
+                "uuid": "38cf99fa-e334-4adf-bdf5-5b6cf84adfcc",
+                "description": "The Cassandra database must allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
+                "control-id": "au-12"
+              },
+              {
+                "uuid": "0e60307a-66ff-47ab-ab33-2a1ad643e1d4",
                 "description": "The Cassandra database must provide audit record generation capability for DoD-defined auditable events within all database components.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "6f780528-6574-422b-8181-f3d70fa124bc",
+            "uuid": "bba2da65-3e28-44b4-850b-30cf34864cfc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "b7ccdfd2-f7b8-4e92-8e64-ff7b8f8b756a",
+                "uuid": "5190cbf2-313b-4779-bb74-faf4172b013e",
                 "description": "The Cassandra database must initiate session auditing upon startup.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "3da191ff-c487-4bd7-9276-7c7d335a6380",
+            "uuid": "d5318e8a-efb5-4256-966f-9f837d6510a8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "3d4c472a-0441-4c6c-91c1-8f8388aca34e",
+                "uuid": "0a1e0950-7a2d-4785-9a46-273093b03ab7",
                 "description": "The Cassandra database must protect the truststore file.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "1566feb7-8277-4cd7-ba68-b0c34e746788",
+            "uuid": "b93116db-ee03-4de8-8764-ab0fea7e84f5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.6.",
             "implemented-requirements": [
               {
-                "uuid": "1462dbce-a4aa-46ec-9139-f43b84304e8d",
+                "uuid": "3f320b83-0adc-4ac6-b20f-72dee43bdfa2",
                 "description": "The Cassandra software, including configuration files, must be stored in dedicated directories, or direct-access storage device (DASD) pools, separate from the host OS and other applications.\nDatabase objects (including but not limited to tables, indexes, storage, stored procedures, functions, triggers, links to software external to the DBMS, etc.) must be owned by database/DBMS principals authorized for ownership.\nThe role(s)/group(s) used to modify database structure (including but not necessarily limited to tables, indexes, storage, etc.) and logic modules (stored procedures, functions, triggers, links to software external to the DBMS, etc.) must be restricted to authorized users.",
-                "control-id": "cm-5.(6)"
+                "control-id": "cm-5.6"
               }
             ]
           },
           {
-            "uuid": "3c8751bc-e758-40bb-bf4a-667188d2ed47",
+            "uuid": "136ec7f7-0bfa-4156-a4d5-4fde6c60f5ac",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "56087bf0-20dd-4ea0-bd95-6e5993fd47d2",
+                "uuid": "ce757045-142a-4ccf-9e2b-aa38125e0297",
                 "description": "The DBMS must be configured in accordance with the security configuration settings based on DoD security configuration and implementation guidance, including STIGs, NSA configuration guides, CTOs, DTMs, and IAVMs.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "f4772db0-0a34-4001-bdce-5d6243b75e08",
+            "uuid": "3c809538-4401-4646-a814-b83ad53d2965",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "0be83e8d-7823-45c0-93ef-2d2a4cdda7e8",
-                "description": "The Cassandra Server must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
-                "control-id": "cm-7."
-              },
-              {
-                "uuid": "e42b572f-9c05-4f96-9610-117e34d0bbb0",
+                "uuid": "43095a28-3ebe-4550-9701-b2346d5cb3a4",
                 "description": "Unused Cassandra database components, software, and database objects must be removed.",
-                "control-id": "cm-7."
-              }
-            ]
-          },
-          {
-            "uuid": "e7759c7f-8598-4425-8e71-7e67c99aabd9",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "e951cf53-0385-48e1-84cf-59fc15ae02b0",
-                "description": "The Cassandra Server must disable network functions, ports, protocols, and services deemed by the organization to be nonsecure, in accord with the Ports, Protocols, and Services Management (PPSM) guidance.",
-                "control-id": "cm-7.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "99835699-8ad5-4b94-b4c6-d4d4dbe07e0c",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
-            "implemented-requirements": [
-              {
-                "uuid": "780c2e2c-34ce-4775-86d2-0c6c1d7eb307",
-                "description": "The Cassandra Server must uniquely identify and authenticate organizational users (or processes acting on behalf of organizational users).",
-                "control-id": "ia-2."
-              }
-            ]
-          },
-          {
-            "uuid": "b0901f3e-908c-4e9f-8e46-acfa642fc637",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "44963d48-6bd3-4563-a3ce-b8a9b10ce660",
-                "description": "The Cassandra database log configuration file must set internode encryption.",
-                "control-id": "ia-5.(1)"
+                "control-id": "cm-7"
               },
               {
-                "uuid": "6dff5b47-de56-4aa2-a9ed-3768667ad90e",
+                "uuid": "fbbb5615-2951-4d49-8187-33a5397e9949",
+                "description": "The Cassandra Server must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7"
+              }
+            ]
+          },
+          {
+            "uuid": "2ff05b78-42cd-42e3-99e4-2cbe3aea4066",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "9a9dce58-f646-4d99-8bff-f4b0ccb16ed0",
+                "description": "The Cassandra Server must disable network functions, ports, protocols, and services deemed by the organization to be nonsecure, in accord with the Ports, Protocols, and Services Management (PPSM) guidance.",
+                "control-id": "cm-7.1"
+              }
+            ]
+          },
+          {
+            "uuid": "c6563470-2a53-4733-8698-1badf0e6d0b0",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
+            "implemented-requirements": [
+              {
+                "uuid": "738977b5-48ae-46f0-a58e-6b22e2092cfe",
+                "description": "The Cassandra Server must uniquely identify and authenticate organizational users (or processes acting on behalf of organizational users).",
+                "control-id": "ia-2"
+              }
+            ]
+          },
+          {
+            "uuid": "b3bd2e30-ca48-4f3c-afb4-7058060f158f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "155e67c8-f8aa-472f-9350-c1722f1f671a",
                 "description": "The Cassandra database must enforce the DoD standards for password complexity and lifetime.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "42dc9fd7-9d54-4d92-8684-0299ad99f6c4",
+                "description": "The Cassandra database log configuration file must set internode encryption.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "0e5de226-8748-4673-a262-77c35cb4255e",
+            "uuid": "4400830c-9237-4c29-b540-df2cd3658e30",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "ffc89737-4dea-4ea2-82b2-f8fea3ca8bb5",
+                "uuid": "c0ec3ca4-1c2a-491d-98e9-24225b984143",
                 "description": "The Cassandra Server must use NIST FIPS 140-2 validated cryptographic modules for cryptographic operations.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "6c31d528-5493-49f6-8e55-12b6749d0173",
+            "uuid": "cfa820db-6fb5-4f0d-a653-f452975bf4aa",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3.",
             "implemented-requirements": [
               {
-                "uuid": "3efe68bf-dc16-4492-bb98-803bde430afd",
+                "uuid": "953d82e4-298c-43f3-96af-e4c9598fb208",
                 "description": "The Cassandra Server must isolate security functions from non-security functions.",
-                "control-id": "sc-3."
+                "control-id": "sc-3"
               }
             ]
           },
           {
-            "uuid": "63dfead4-add2-41e1-a411-99c6c44b2096",
+            "uuid": "7e606d56-1b94-4845-9214-8c45776beac5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4.",
             "implemented-requirements": [
               {
-                "uuid": "e7caf6de-7e2a-4acb-b77e-0db271cc55dd",
+                "uuid": "57a59b01-2efa-4345-987e-2de7a2ab41e9",
                 "description": "Access to database files must be limited to relevant processes and to authorized, administrative users.",
-                "control-id": "sc-4."
+                "control-id": "sc-4"
               }
             ]
           },
           {
-            "uuid": "c3bf0874-bc6a-42b5-9cfb-fccd372d81f5",
+            "uuid": "dd325417-77ed-4fb4-933c-fb16ff7650a4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "e095a727-2b06-4a19-95ec-363e63b0a814",
+                "uuid": "5d98b0a2-59e2-45af-ab85-20a268c616ef",
                 "description": "The Cassandra Server must protect the confidentiality and integrity of all information at rest.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "5525da67-885d-4791-ab55-cb26e8caa04a",
+            "uuid": "b8ab769f-f48f-435a-9d48-13bd4fb013f0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.1.",
             "implemented-requirements": [
               {
-                "uuid": "22673154-c634-4061-b175-7c8dcf1dd680",
+                "uuid": "f7f9443d-e082-4af8-b7a2-39627f1a45f9",
                 "description": "The Cassandra Server must implement cryptographic mechanisms preventing the unauthorized disclosure of information at rest.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               }
             ]
           },
           {
-            "uuid": "3d40859a-f7b1-45b0-b70b-4ead897d9016",
+            "uuid": "04b59d69-1c34-4ff2-8dc5-57bea436c66f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "0b337fd4-dde8-4215-9e4a-9b81f0f4d5a4",
+                "uuid": "849c52f4-bcad-45a5-8c16-1b710902b892",
                 "description": "Security-relevant software updates to the Cassandra Server must be installed within the time period directed by an authoritative source (e.g., IAVM, CTOs, DTMs, and STIGs).",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "79901117-64ad-4b4d-b4e8-0f70708e6999",
+            "uuid": "8b453993-d49a-4392-81bb-2d3c6b3d2793",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.3.",
             "implemented-requirements": [
               {
-                "uuid": "21d122ef-b3b7-4000-b4d9-077cee50b087",
+                "uuid": "61ac100f-23e3-4cfd-95ca-9b237f45a99b",
                 "description": "When invalid inputs are received, the Cassandra Server must behave in a predictable and documented manner that reflects organizational and system objectives.",
-                "control-id": "si-10.(3)"
+                "control-id": "si-10.3"
               }
             ]
           },
           {
-            "uuid": "479ec26e-2a3d-4835-875e-57ca0cce5277",
+            "uuid": "f2f71c86-fe64-4c92-890f-6387154ec271",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "4794a4a1-d4bb-49a7-8eb0-9deb67f16dfd",
+                "uuid": "e2fdeef2-044d-4465-a2db-7c84ad16ebc2",
                 "description": "The Cassandra Server must reveal detailed error messages only to the ISSO, ISSM, SA, and DBA.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

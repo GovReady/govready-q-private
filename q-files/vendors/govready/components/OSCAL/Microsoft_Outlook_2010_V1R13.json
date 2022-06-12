@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "4a599052-13c6-428d-a588-55e0e621fcba",
+    "uuid": "54b30320-89be-4f1b-92b7-1d995c7cde1f",
     "metadata": {
       "title": "Microsoft Outlook 2010 V1R13",
-      "last-modified": "2022-06-10T12:50:56",
-      "version": "2022-06-10T12:50:56",
+      "last-modified": "2022-06-12T11:06:51",
+      "version": "2022-06-12T11:06:51",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "97c5ba87-4564-45ef-af61-c8a413b5c131",
+          "uuid": "fc40af10-99cc-447c-b23a-9527fb21cc3c",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,183 +16,183 @@
     },
     "components": [
       {
-        "uuid": "cf3de03e-69be-4dc3-94a2-57a6f2bcfd1a",
+        "uuid": "98378f88-83fe-47b3-bd52-7d4f8ca91c2c",
         "type": "software",
         "title": "Microsoft Outlook 2010 V1R13",
-        "description": "Velit quaerat non etincidunt. Amet neque sed consectetur. Quaerat labore dolorem voluptatem sed velit amet.",
+        "description": "Adipisci velit aliquam tempora dolore sit dolor. Dolore consectetur ipsum dolorem. Sed sit est porro ut.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "97c5ba87-4564-45ef-af61-c8a413b5c131"
+              "fc40af10-99cc-447c-b23a-9527fb21cc3c"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "eef5d5ac-49f6-4984-b1e7-0e45fb4f28a3",
+            "uuid": "46fa29d0-f11a-41e3-8d76-7a32099fad96",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "05c47f94-2bd0-4089-a93e-68d3e2e1c237",
+                "uuid": "01aa7426-7afb-4e94-8db8-b00879e27f41",
                 "description": "Permit download of content from safe zones must be configured.\nAccess restriction settings for published calendars must be configured.\nRecipients of sent email must be unable to be added to the safe sender's list.\nIE Trusted Zones assumed 'trusted' must be blocked.\nTrusted add-ins behavior for eMail must be configured.\nDisabling download full text of articles as HTML must be configured.\nHyperlinks in suspected phishing e-mail messages must be disallowed.\nJunk Mail UI must be configured.\nInternet with Safe Zones for Picture Download must be disabled.\nIntranet with Safe Zones for automatic picture downloads must be configured.\nExternal content and pictures in HTML eMail must be displayed.\nAttachments using generated name for secure temporary folders must be configured.\nAutomatically configure user profile based on Active Directory primary SMTP address  must be enforced.\nAutomatic download content for email in Safe Senders list must be disallowed.\nOutlook must be enforced as the default email, calendar, and contacts program.\nOutlook Security Mode must be configured to use Group Policy settings.\nPublishing to a Web Distributed and Authoring (DAV) server must be prevented.\nPublishing calendars to Office Online must be prevented.\nRead EMail as plain text must be enforced.\nRead signed email as plain text must be enforced.\nLevel of calendar details that a user can publish must be restricted.\nUpload method for publishing calendars to Office Online must be restricted.\nAutomatic sending  s/Mime receipt requests must be disallowed.\nAll signed messages as clear signed messages must be configured.\nTrust EMail from senders in receiver's contact list must be enforced.\nOutlook Rich Text options must be set for converting to plain text format.\nDefault message format must be set to use Plain Text.\nOutlook must be configured not to prompt users to choose security settings if default settings fail.\nReplies or forwards to signed/encrypted messages must be signed/encrypted.\nCheck e-mail addresses against addresses of certificates being used must be disallowed.\nText in Outlook that represents Internet and network paths must not be automatically turned into hyperlinks.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "1617b08f-e6ce-4849-ac30-d6302f596871",
+            "uuid": "943afae5-18a4-488d-b611-b6778fa825f6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "c3d17f1a-72b7-4e06-a347-f1bc5aefafa8",
+                "uuid": "7607bb0b-b3b7-4a9a-98fd-4e151101425f",
                 "description": "Folders in non-default stores, set as folder home pages, must be disallowed.\nDo not include Internet Calendar Integration in Outlook must be enforced.\nRSS feed synchronization with Common Feed List must be disallowed.\nRSS Feeds must be disallowed.\nDragging Unicode eMail messages to file system must be disallowed.\nUser Entries to Server List must be disallowed.\nAutomatically downloading enclosures on RSS must be disallowed.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "c1e26969-b1b8-410b-8b1f-e0f9cb89d1d0",
+            "uuid": "6a7d48f5-69e5-4ce9-80f1-3ce0ed23c42f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.",
             "implemented-requirements": [
               {
-                "uuid": "514948fb-b240-46a0-b37e-6f2434de8f89",
+                "uuid": "8fbb95fb-cfd9-42b9-b8ae-be241fed2c11",
                 "description": "Outlook Dial-up options to Warn user before allowing switch in dial-up access must be configured.",
-                "control-id": "ia-3."
+                "control-id": "ia-3"
               }
             ]
           },
           {
-            "uuid": "9d5d0b6a-9455-407f-9a86-cb3c3cc53e7d",
+            "uuid": "b5d4a8cc-f582-499a-bd5a-7732192a09c3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "65caf7dd-f5d5-4f65-9c15-f394b13d0178",
+                "uuid": "d38adf89-da66-47f6-a1e1-b8c98f2676ba",
                 "description": "RPC encryption between Outlook and Exchange server must be enforced.\nAuthentication with Exchange Server must be required.",
-                "control-id": "ia-3.(1)"
+                "control-id": "ia-3.1"
               }
             ]
           },
           {
-            "uuid": "b3308793-a9f3-4734-94ce-a47294f7f75d",
+            "uuid": "ff0bbe08-7676-47a8-8675-b19218c2b205",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "b26f7e86-8b3d-4d98-af05-1986c9048bd5",
+                "uuid": "b297e439-2a2f-4fa5-b378-8758226ff64f",
                 "description": "Missing Root Certificates warning must be enforced.\nRetrieving of CRL data must be set for online action.\nWarning about invalid signatures must be enforced.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "71519861-03db-4e34-b843-805fa506d7ef",
+            "uuid": "90ba5fed-612e-4777-8b4a-b6e8e5109ac0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.13.",
             "implemented-requirements": [
               {
-                "uuid": "b4147c1c-5df4-499c-8b7a-5efadf31f67c",
+                "uuid": "6365d075-d7f3-48d1-b007-48c9f53bf474",
                 "description": "The \"remember password\" for internet e-mail accounts must be disabled.",
-                "control-id": "ia-5.(13)"
+                "control-id": "ia-5.13"
               }
             ]
           },
           {
-            "uuid": "8efd5aaf-1c0f-4036-85e0-c1d225e05af5",
+            "uuid": "9f285c39-6849-4c03-b040-76b66472d73a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "48a80fe8-ad68-460f-a432-0ed7ef529079",
+                "uuid": "9a2ce2be-2a86-461b-be3d-eff977321c2e",
                 "description": "Message formats must be set to use SMime.\nRun in FIPS compliant mode must be enforced.\nS/Mime interoperability with external clients for message handling must be configured.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "f475c805-636f-4b95-a435-e4bff3c2b72e",
+            "uuid": "e9f72659-d3d6-4eca-80aa-322efb88e627",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "563cdc17-b909-44f7-850e-eaebd17cfead",
+                "uuid": "6fe01598-7ff5-4101-92d3-8c456fe2dd6a",
                 "description": "Plain Text Options for outbound email must be configured.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "2017e70a-8ecd-4530-ad01-fafa90a52622",
+            "uuid": "557b5ab5-cdf0-4f3f-91eb-08228dcfc261",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "eb4f464c-97c9-49fd-a1fc-4ec780e20795",
+                "uuid": "ab42a350-c067-4d52-9cee-681e7113a271",
                 "description": "Digital signatures must be allowed.\nOutlook minimum encryption key length settings must be set.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "d2349905-e465-49a6-991b-f2dab21a9a4f",
+            "uuid": "3470ea88-be74-45ec-8456-137e3faebf10",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-15..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-15.",
             "implemented-requirements": [
               {
-                "uuid": "0b0ff4cc-5193-4c54-8197-56838028c4e2",
+                "uuid": "fecdbe17-4447-48d4-ab63-de4d4bdffc49",
                 "description": "Dial-up and Hang up Options for Outlook must be configured.",
-                "control-id": "sc-15."
+                "control-id": "sc-15"
               }
             ]
           },
           {
-            "uuid": "f80cfe5a-6c4b-4369-b5b1-6bbb24358353",
+            "uuid": "07c6d6ed-5917-4d02-998f-efe759929d23",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "bc6cda0e-9f6d-4733-a03a-a46a29f14127",
+                "uuid": "86090bc2-533e-4dd8-9956-1190699e8e70",
                 "description": "Links that invoke instances of IE from within an Office product must be blocked.\nAction to demote an EMail Level 1 attachment to Level 2 must be configured.\nLevel 1 attachment close behaviors must be configured.\nPrompting behavior for Level 1 attachments on sending must be configured.\nThe ability to display level 1 attachments must be disallowed.\nLevel 1 file extensions must be blocked and not removed.\nLevel 2 file extensions must be blocked and not removed.\nAlways warn on untrusted macros must be enforced.\nAdd-on Management functionality must be allowed.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "51750603-d719-4b28-ad4e-ace3fecf9966",
+            "uuid": "cf5b685d-ac80-49cc-9dec-d676a2703145",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.3.",
             "implemented-requirements": [
               {
-                "uuid": "19c34cde-8e94-4fb0-ab32-9417743f1bf9",
+                "uuid": "e4cad854-ca89-4be9-87dd-0e57c4081c6a",
                 "description": "Automatic download of Internet Calendar appointment attachments must be disallowed.\nFile Downloads must be configured for proper restrictions.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
               },
               {
-                "uuid": "00e7127e-ead8-4d88-9cbb-c04e964810ad",
+                "uuid": "29dd9c59-ba01-4348-9378-dfad7c3adec4",
                 "description": "Enabling IE Bind to Object functionality must be present.\nProtection from zone elevation must be enforced.\nScripted Window Security must be enforced.",
-                "control-id": "sc-18.(3)"
+                "control-id": "sc-18.3"
               }
             ]
           },
           {
-            "uuid": "69b45d64-8567-4fbd-8098-7fd747b4c01c",
+            "uuid": "262f3433-b046-4955-9fb6-d96361bd2bc7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.4.",
             "implemented-requirements": [
               {
-                "uuid": "897bee96-844d-434b-9c89-e8481943c258",
-                "description": "Object Model Prompt behavior for programmatic address books must be configured.\nObject Model Prompt behavior for accessing User Property Formula must be configured.\nObject Model Prompt behavior for the SaveAs method must be configured.\nObject Model Prompt behavior for programmatic access of user address data must be configured.\nObject Model Prompt behavior for Meeting and Task Responses must be configured.\nObject Model Prompt for programmatic email send behavior must be configured.\nCustom Outlook Object Model (OOM) action execution prompts must be configured.\nActiveX Installs must be configured for proper restriction.",
-                "control-id": "sc-18.(4)"
+                "uuid": "e7492b45-a6a8-4a3a-8af3-84886e9a5737",
+                "description": "Disable user name and password syntax from being used in URLs\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URL's embedded in Office products must be blocked.\nActive X One-Off forms must be configured.\nScripts in One-Off Outlook forms must be disallowed.\nThe Add-In Trust Level must be configured.\nOutlook Object Model scripts must be disallowed to run for public folders.\nOutlook Object Model scripts must be disallowed to run for shared folders.\nUsers customizing attachment security settings must be prevented.\nData Execution Prevention must be enforced.",
+                "control-id": "sc-18.4"
               },
               {
-                "uuid": "b03a1507-e7fa-4b43-8ff9-70028ae7aea4",
-                "description": "Disable user name and password syntax from being used in URLs\nSaved from URL mark to assure Internet zone processing must be enforced.\nNavigation to URL's embedded in Office products must be blocked.\nActive X One-Off forms must be configured.\nScripts in One-Off Outlook forms must be disallowed.\nThe Add-In Trust Level must be configured.\nOutlook Object Model scripts must be disallowed to run for public folders.\nOutlook Object Model scripts must be disallowed to run for shared folders.\nUsers customizing attachment security settings must be prevented.\nData Execution Prevention must be enforced.",
-                "control-id": "sc-18.(4)"
+                "uuid": "d8d0b3a5-33b2-4d15-9cba-33a8c7f0d446",
+                "description": "Object Model Prompt behavior for programmatic address books must be configured.\nObject Model Prompt behavior for accessing User Property Formula must be configured.\nObject Model Prompt behavior for the SaveAs method must be configured.\nObject Model Prompt behavior for programmatic access of user address data must be configured.\nObject Model Prompt behavior for Meeting and Task Responses must be configured.\nObject Model Prompt for programmatic email send behavior must be configured.\nCustom Outlook Object Model (OOM) action execution prompts must be configured.\nActiveX Installs must be configured for proper restriction.",
+                "control-id": "sc-18.4"
               }
             ]
           }

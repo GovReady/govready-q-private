@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "84b5e200-be38-4c6e-836d-6dbad0864c20",
+    "uuid": "affd4cd2-113a-40bd-bfca-fa7b71a6e789",
     "metadata": {
       "title": "Microsoft IIS 8-5 Y22M01",
-      "last-modified": "2022-06-10T12:50:55",
-      "version": "2022-06-10T12:50:55",
+      "last-modified": "2022-06-12T11:06:50",
+      "version": "2022-06-12T11:06:50",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "64729a76-178b-461c-a83c-648f3c12d9fa",
+          "uuid": "e068fd62-b6a7-4fcd-b63b-a23fe850b39b",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,400 +16,400 @@
     },
     "components": [
       {
-        "uuid": "8ba51f01-70ec-44fd-80a8-db51f38c3edd",
+        "uuid": "c38e6dc5-ce3f-4568-9b61-b32ef3f0992c",
         "type": "software",
         "title": "Microsoft IIS 8-5 Y22M01",
-        "description": "Tempora quaerat adipisci modi labore amet voluptatem. Dolore labore voluptatem porro labore. Velit labore sit sit.",
+        "description": "Aliquam magnam eius consectetur sed.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "64729a76-178b-461c-a83c-648f3c12d9fa"
+              "e068fd62-b6a7-4fcd-b63b-a23fe850b39b"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "f0419809-03a6-4a75-8995-3c419913ccf4",
+            "uuid": "f7d208ee-a3c1-45eb-84d2-9151f0540c45",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "a47fb6b1-cf85-4bc0-8030-9658cbf10e92",
+                "uuid": "4e87ec81-6538-40e4-a751-77ed55358276",
                 "description": "Access to web administration tools must be restricted to the web manager and the web managers designees.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "454f25a8-db89-417c-9a8f-b5e079b13f96",
+            "uuid": "b2bf2cd5-9fd2-45f5-9ff5-16ca5079901c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "36b0b11b-02f6-45b0-90c7-66e8d7b60630",
+                "uuid": "bc3ad88d-075a-449b-aec9-b1e7a216caae",
                 "description": "IIS 8.5 web server system files must conform to minimum file permission requirements.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "35d11d2d-028d-430a-a1e9-0e0b921ad3c0",
+            "uuid": "89dff358-5359-4116-b4e2-6df72d099b72",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "f6f8d47a-6a77-46e5-886b-5148ad0d2503",
+                "uuid": "91ce8b78-08f5-40a2-9e9a-d59c2bac6765",
                 "description": "The IIS 8.5 MaxConnections setting must be configured to limit the number of allowed simultaneous session requests.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "6c60dcf9-d6da-44f5-972a-13cf8b319d96",
+            "uuid": "67fb8e0d-fccb-4b5d-93a0-e690a4a90b67",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "425ad542-f2ec-465d-b0b8-b93a2f0c4ed9",
+                "uuid": "cbfce3bc-ae6c-41dd-8ea9-f41632f76b15",
                 "description": "Remote access to the IIS 8.5 web server must follow access policy or work in conjunction with enterprise tools designed to enforce policy requirements.\nThe IIS 8.5 web server must restrict inbound connections from nonsecure zones.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "7c315f82-c4cc-448b-9241-0464b0212343",
+            "uuid": "5928ec4a-fc41-41da-be2f-bfd63fbd9787",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "38851ae3-9530-43a2-89af-89f15d9af715",
+                "uuid": "f3c07ec3-5305-4732-92a9-c71bdc5add35",
                 "description": "The IIS 8.5 web server remote authors or content providers must only use secure encrypted logons and connections to upload web server content.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "1f892234-3cac-49d6-b432-084672eca1a5",
+            "uuid": "e0c2b680-e797-4f54-b67f-3748c28c7c9d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.9.",
             "implemented-requirements": [
               {
-                "uuid": "2e2980b4-96c7-4fb7-8a02-efccf4840be2",
+                "uuid": "edd9af15-37af-46a4-9838-ce1ec7e9788d",
                 "description": "The IIS 8.5 web server must provide the capability to immediately disconnect or disable remote access to the hosted applications.",
-                "control-id": "ac-17.(9)"
+                "control-id": "ac-17.9"
               }
             ]
           },
           {
-            "uuid": "2b1786b6-b1a8-4148-92a2-ebea74186dbd",
+            "uuid": "bbf9c809-1c73-4fdc-80ae-274ac8fd69cc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "7e86c869-9752-4be5-b40c-1f08681f9c5a",
-                "description": "The IIS 8.5 web server must produce log records that contain sufficient information to establish the outcome (success or failure) of IIS 8.5 web server events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "bd813fb3-0129-49ff-ba29-90e4867ef7e1",
+                "uuid": "13bd8f87-d1d6-43e2-b2c5-c33874f82301",
                 "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "ad17d5a5-1b9a-403f-b635-7768ea6d4c4b",
-                "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.\nAn IIS 8.5 web server behind a load balancer or proxy server, must produce log records containing the source client IP and destination information.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "d3984cc3-5e51-4a0e-90a2-f2ca7b1ed243",
+                "uuid": "e9ae55e5-1eab-419d-a8d2-52d8fbe47caa",
                 "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "9f2c0f3f-7110-4cb6-b090-118e115ebfc3",
+                "uuid": "ffcb47c1-700c-4265-8b80-45e9d92be90c",
+                "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "a49b0795-11bd-446b-a064-1583b22f6bfb",
                 "description": "The IIS 8.5 web server must produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "ab1286cd-dcf6-4a95-ae3f-207b644f4331",
-                "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.",
-                "control-id": "au-3."
+                "uuid": "e1a12743-b205-4b65-9947-ebb507ecea40",
+                "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.\nAn IIS 8.5 web server behind a load balancer or proxy server, must produce log records containing the source client IP and destination information.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "f31ce6d0-e9a2-4e6b-95a9-48abeebacc59",
+                "description": "The IIS 8.5 web server must produce log records that contain sufficient information to establish the outcome (success or failure) of IIS 8.5 web server events.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "c6b32c2a-c4c1-48c6-967c-79c58d5322cb",
+            "uuid": "080e8d9c-aec9-4776-8cb8-8b19c9952b4e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
             "implemented-requirements": [
               {
-                "uuid": "bec31523-d8a9-489a-b094-b7d5b308b3c7",
+                "uuid": "e382fbf8-72bc-4230-92c6-cddb99ad5ad4",
                 "description": "The IIS 8.5 web server must use a logging mechanism that is configured to allocate log record storage capacity large enough to accommodate the logging requirements of the IIS 8.5 web server.",
-                "control-id": "au-4."
+                "control-id": "au-4"
               }
             ]
           },
           {
-            "uuid": "f0e9380a-9a26-417d-ba6b-9e8492afa009",
+            "uuid": "dbcfd74b-5070-424f-8e4a-99cddbb28f03",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "e77faaef-320e-4496-8829-3cdd145448ba",
+                "uuid": "700a7146-81e3-43d2-861d-fa1c6000b9a0",
                 "description": "Both the log file and Event Tracing for Windows (ETW) for the IIS 8.5 web server must be enabled.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "2b7edf82-19f6-4de3-8e27-80f7bf42b39d",
+            "uuid": "24ed2db1-fb75-4ac7-b0d3-58b26669bf78",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.",
             "implemented-requirements": [
               {
-                "uuid": "a54bd7d8-adcb-43ac-984a-03f58e28693a",
+                "uuid": "2f617ec1-3bf7-4b8a-b571-7eff075ffdd7",
                 "description": "Both the log file and Event Tracing for Windows (ETW) for the IIS 8.5 web server must be enabled.",
-                "control-id": "au-5."
+                "control-id": "au-5"
               }
             ]
           },
           {
-            "uuid": "d79e47d5-bd00-423d-a372-19c64ab6c280",
+            "uuid": "795919dd-857b-450d-a288-00e852c076f9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "74dc2a59-fb9d-4b6e-a3f3-23ed73a05bf1",
+                "uuid": "538f6c55-e0c0-4274-9bc3-cbcfe3b273b8",
                 "description": "The log information from the IIS 8.5 web server must be protected from unauthorized modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "3ceb7451-fa44-4b95-813f-46366916fa76",
+                "uuid": "8aae15b5-b438-49ef-acbd-3abe9eeda3f9",
                 "description": "The log information from the IIS 8.5 web server must be protected from unauthorized modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "47aa67d8-a7de-4b18-b30f-dd9d03edb217",
+                "uuid": "98564b34-b06e-4f34-84e5-a062c5dbfb36",
                 "description": "The log information from the IIS 8.5 web server must be protected from unauthorized modification or deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "c9e74923-3caa-4f0d-8441-6acd6c5851f0",
+            "uuid": "fdd8f1d4-2883-4d5d-af88-996dc0cc0c1e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
             "implemented-requirements": [
               {
-                "uuid": "21335ae1-c7a8-4ac1-8371-8f476c3a3091",
+                "uuid": "1e882a34-b119-4515-a7e3-fc75f881b886",
                 "description": "The log data and records from the IIS 8.5 web server must be backed up onto a different system or media.",
-                "control-id": "au-9.(2)"
+                "control-id": "au-9.2"
               }
             ]
           },
           {
-            "uuid": "96a84179-b720-4224-b0e6-e054707d4690",
+            "uuid": "0646a174-379b-4696-9b37-bbb822f2d4a8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "0d7798a7-4264-4f8c-a528-7cc8e3346812",
+                "uuid": "08051427-b424-4a56-b878-be4d2be53c31",
                 "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.\nBoth the log file and Event Tracing for Windows (ETW) for the IIS 8.5 web server must be enabled.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "9ce71e66-f025-42bd-b52d-79bec48ff72e",
+            "uuid": "97b55666-0939-4f6e-9fcc-cb4c6fa0f21f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.2.",
             "implemented-requirements": [
               {
-                "uuid": "3db9644b-348c-4f98-969e-59f5babb4fdc",
+                "uuid": "37743a1f-d6fe-4020-95dc-d6a0fa66e41e",
                 "description": "The enhanced logging for the IIS 8.5 web server must be enabled and capture all user and web server events.",
-                "control-id": "au-14.(2)"
+                "control-id": "au-14.2"
               }
             ]
           },
           {
-            "uuid": "db2c95da-c645-4b3b-97d5-58b99a95ad44",
+            "uuid": "b8513775-b3a4-4522-85b4-6fd9df183207",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "d1488a18-e72e-4e5c-8a68-b112f51e0835",
+                "uuid": "e0ea47e7-7097-400d-a684-b01c76114d86",
                 "description": "Access to web administration tools must be restricted to the web manager and the web managers designees.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "4bdf4538-e078-4338-8b6b-d08b812b508b",
+            "uuid": "0ca4353c-dc98-477a-befe-c502ffb09e55",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "1387e93e-c7e0-4564-b740-dfce7e51cf1e",
+                "uuid": "821305d2-47b6-4d5d-b0b1-19adcd0b93aa",
                 "description": "All accounts installed with the IIS 8.5 web server software and tools must have passwords assigned and default passwords changed.\nUnspecified file extensions on a production IIS 8.5 web server must be removed.\nThe IIS 8.5 web server must have a global authorization rule configured to restrict access.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "5db36d2a-b758-41f0-b382-b333ea855999",
+            "uuid": "dd9d665d-74fc-4038-a67f-9262a4d09e73",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "48ae6526-efdc-4e8a-87e3-679c76ccdef8",
+                "uuid": "0b2b5ed2-173f-45e4-9f27-ca2d6d445dd5",
                 "description": "The IIS 8.5 web server must not perform user management for hosted applications.\nThe IIS 8.5 web server must only contain functions necessary for operation.\nThe IIS 8.5 web server must not be both a website server and a proxy server.\nAll IIS 8.5 web server sample code, example applications, and tutorials must be removed from a production IIS 8.5 server.\nThe accounts created by uninstalled features (i.e., tools, utilities, specific, etc.) must be deleted from the IIS 8.5 server.\nThe IIS 8.5 web server must be reviewed on a regular basis to remove any Operating System features, utility programs, plug-ins, and modules not necessary for operation.\nThe IIS 8.5 web server must have Multipurpose Internet Mail Extensions (MIME) that invoke OS shell programs disabled.\nThe IIS 8.5 web server must have Web Distributed Authoring and Versioning (WebDAV) disabled.\nAn IIS Server configured to be a SMTP relay must require authentication.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "5622d7db-98f5-45ab-807e-8fe9192e65a8",
+            "uuid": "953378fc-0648-4145-bace-704dec9f5fde",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "2920940c-7043-4fa2-a759-cf4991d031ab",
+                "uuid": "9a6378ea-6693-4d79-aea9-dd5cc8e6d4f6",
                 "description": "The IIS 8.5 web server must not be running on a system providing any other role.\nThe Internet Printing Protocol (IPP) must be disabled on the IIS 8.5 web server.",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "094209b2-1610-4d82-a9b5-7ddc838f09fc",
+            "uuid": "445a05f6-dd18-482c-9d58-4d19ad884e7c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "5702764c-5aa8-4b6b-b3af-91ac0c7a4208",
+                "uuid": "f2ec7ed5-8e69-47bc-8974-6fe7f5a0a801",
                 "description": "The IIS 8.5 web server must perform RFC 5280-compliant certification path validation.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "ef1b6d97-d69f-4f72-8e6a-49f06884a18d",
+            "uuid": "58e1b52a-e6c1-432a-91d5-f13bf69f8024",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2.",
             "implemented-requirements": [
               {
-                "uuid": "3650e914-190a-4602-84f9-49161f0bf456",
+                "uuid": "9b589da7-f0e5-4e22-b6db-6a18730ad010",
                 "description": "IIS 8.5 Web server accounts accessing the directory tree, the shell, or other operating system functions and utilities must only be administrative accounts.\nThe IIS 8.5 web server must separate the hosted applications from hosted web server management functionality.",
-                "control-id": "sc-2."
+                "control-id": "sc-2"
               }
             ]
           },
           {
-            "uuid": "435c6d8e-a0d1-4502-809b-7436f4d67919",
+            "uuid": "008dac45-c13c-40a1-a129-e1adb4984562",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
             "implemented-requirements": [
               {
-                "uuid": "ac5e992c-b001-4bbb-a2a3-e946ce8b72a5",
+                "uuid": "b7e70b0f-cefc-4682-9ece-0ac7137983c6",
                 "description": "Access to web administration tools must be restricted to the web manager and the web managers designees.\nThe IIS 8.5 web server must be tuned to handle the operational requirements of the hosted application.",
-                "control-id": "sc-5."
+                "control-id": "sc-5"
               }
             ]
           },
           {
-            "uuid": "57b6a975-e8df-4447-8761-377461d65046",
+            "uuid": "53d3de91-fbc5-4320-9607-058af6b3f981",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "38446340-359f-4583-a92f-dea42358d4fb",
+                "uuid": "84d965ce-743a-431b-a367-5069616475da",
                 "description": "IIS 8.5 web server session IDs must be sent to the client using TLS.\nAn IIS 8.5 web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.\nA web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "e29fd11c-4a14-4ef4-a230-3b997b420db4",
+            "uuid": "fdfb74e7-dcb5-45b9-862c-030e94e2b379",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "d6467740-e115-4591-9bb6-a8745daac2cb",
+                "uuid": "649c9440-58f2-4c83-b12b-eba878a3f258",
                 "description": "Java software installed on a production IIS 8.5 web server must be limited to .class files and the Java Virtual Machine.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "5237b1ca-7c86-425b-b0d2-5cd3a6b91297",
+            "uuid": "d844cca6-d800-4b25-95f1-350689b90c79",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.1.",
             "implemented-requirements": [
               {
-                "uuid": "a3c69ad2-43ce-4d06-b433-1533aae276ca",
+                "uuid": "fac5692a-b0a6-4949-b3b8-7bf413cefa3b",
                 "description": "The IIS 8.5 web server must use cookies to track session state.",
-                "control-id": "sc-23.(1)"
+                "control-id": "sc-23.1"
               }
             ]
           },
           {
-            "uuid": "e93e3dda-78d7-42f7-beb3-00537ba2a090",
+            "uuid": "0a3cd99a-ef60-4676-b6c5-fbaf1bb8a312",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
             "implemented-requirements": [
               {
-                "uuid": "7915b8aa-38c6-473b-bb5d-bf40071b5fe0",
+                "uuid": "61c88343-3409-4f73-8b9b-3f32ddbeadf8",
                 "description": "The IIS 8.5 web server must use cookies to track session state.\nThe IIS 8.5 web server must limit the amount of time a cookie persists.",
-                "control-id": "sc-23.(3)"
+                "control-id": "sc-23.3"
               }
             ]
           },
           {
-            "uuid": "7339d81d-5398-4dfb-8c82-16dad7d32fc3",
+            "uuid": "d2fea170-3f9a-433c-83dd-c6ce158e3a13",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
             "implemented-requirements": [
               {
-                "uuid": "1e838d26-785b-4928-8f35-85cc53717231",
+                "uuid": "66e92467-2d0b-4f9e-b0f1-400c0ae0843b",
                 "description": "The IIS 8.5 web server must augment re-creation to a stable and known baseline.",
-                "control-id": "sc-24."
+                "control-id": "sc-24"
               }
             ]
           },
           {
-            "uuid": "0cdb75d6-d0aa-4318-948a-e94e92c98a04",
+            "uuid": "82bdbd11-3c8a-4077-8225-e934ff26d26d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "36cef6e7-9fd0-4673-8c9f-0dd8684d6907",
+                "uuid": "7c506f0f-f1f7-4e7f-8c22-e77a6e22bc22",
                 "description": "The production IIS 8.5 web server must utilize SHA2 encryption for the Machine Key.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "1e104414-c4cc-49a5-bc05-4fece2e37fce",
+            "uuid": "cdb20b6b-3342-4734-bb1b-3263c6fd89f8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.",
             "implemented-requirements": [
               {
-                "uuid": "12e5cced-5e2f-49f4-9657-0d01a5455ff2",
+                "uuid": "cf11f418-4f4d-4afe-85f5-8e4ab1d576e4",
                 "description": "Directory Browsing on the IIS 8.5 web server must be disabled.",
-                "control-id": "si-10."
+                "control-id": "si-10"
               }
             ]
           },
           {
-            "uuid": "26518d99-298f-464d-a8cd-e68055e26033",
+            "uuid": "ea371fd6-2240-452d-9795-35e93ae8ed54",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "bdd4870a-d8e7-4bee-b63f-1491794f006b",
+                "uuid": "eea8420c-be8f-4d1a-a26c-eb2f2865150f",
                 "description": "The IIS 8.5 web server Indexing must only index web content.\nWarning and error messages displayed to clients must be modified to minimize the identity of the IIS 8.5 web server, patches, loaded modules, and directory paths.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

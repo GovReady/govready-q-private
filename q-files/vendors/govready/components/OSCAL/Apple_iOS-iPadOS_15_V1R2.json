@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "8dbc17a8-3ec8-4aa7-bf47-98e44d6e5cae",
+    "uuid": "53767d12-5305-40c8-bd87-0330292e61f4",
     "metadata": {
       "title": "Apple iOS-iPadOS 15 V1R2",
-      "last-modified": "2022-06-10T12:50:53",
-      "version": "2022-06-10T12:50:53",
+      "last-modified": "2022-06-12T11:06:48",
+      "version": "2022-06-12T11:06:48",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "19926880-14ac-48bc-a80d-4a7e320c875b",
+          "uuid": "57a56909-a192-455d-8256-1a22590e2bd8",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,173 +16,173 @@
     },
     "components": [
       {
-        "uuid": "315e1d4b-1067-4fa0-bdd6-bc7bde291abc",
+        "uuid": "b81a3957-d904-4166-939f-c048ff6c75f6",
         "type": "software",
         "title": "Apple iOS-iPadOS 15 V1R2",
-        "description": "Velit sed velit tempora sed quisquam. Quiquia sit amet porro.",
+        "description": "Dolore quiquia dolor magnam. Numquam consectetur ut dolor dolorem. Quaerat sit numquam adipisci modi adipisci labore.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "19926880-14ac-48bc-a80d-4a7e320c875b"
+              "57a56909-a192-455d-8256-1a22590e2bd8"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "f5d46ddd-4d60-4ce0-ac5f-b76a74276b2d",
+            "uuid": "692d8c7d-2fcc-46db-9ca1-be217fcd1c02",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.",
             "implemented-requirements": [
               {
-                "uuid": "427b1b72-864a-413f-ba83-99a46d0bfc2f",
+                "uuid": "eab21068-a257-4fa4-99b5-7bcd14669de1",
                 "description": "Apple iOS/iPadOS 15 must be configured to disable multiuser modes.",
-                "control-id": "ac-2."
+                "control-id": "ac-2"
               }
             ]
           },
           {
-            "uuid": "723a8597-86b7-4dda-bc40-ba20c9627b83",
+            "uuid": "ac004c60-70f1-4d28-a85c-b78b2924d438",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(8).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.8.",
             "implemented-requirements": [
               {
-                "uuid": "cc6ec178-bfce-4f34-a552-9d808ae9695b",
+                "uuid": "94b4012c-1c27-4ab0-a183-30f34b8e3d75",
                 "description": "Apple iOS/iPadOS 15 must not allow non-DoD applications to access DoD data.",
-                "control-id": "ac-6.(8)"
+                "control-id": "ac-6.8"
               }
             ]
           },
           {
-            "uuid": "ddd4d666-9d8a-46c8-b02c-c627ca7fb6eb",
+            "uuid": "73417c17-6a35-4769-ab77-01149495a843",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "91bb97d6-e910-48a8-9059-b34223682b5b",
+                "uuid": "7274affc-dd7e-4b2d-bba6-f7e0fd635c07",
                 "description": "Apple iOS/iPadOS 15 must be configured to not allow more than 10 consecutive failed authentication attempts.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "63b5f0a7-0b6b-4b84-bd22-c0e5ccf4ed31",
+            "uuid": "b816f328-36ca-4059-bb90-6f7b3cd11225",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "cf169e69-0533-4d58-b38a-6d5460177328",
+                "uuid": "42968cfb-e394-4109-9a19-2cc0bb0fb336",
                 "description": "Apple iOS/iPadOS 15 must be configured to display the DoD advisory warning message at startup or each time the user unlocks the device.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "c98d2834-d055-481a-9a0a-dd7b640d3752",
+            "uuid": "eca30872-ebb9-45a2-ad83-c972084256b5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.",
             "implemented-requirements": [
               {
-                "uuid": "f05b0071-2b45-48bb-b5db-871abc339216",
+                "uuid": "d7e05b32-c7d7-4772-a543-10a9a18fd2ff",
                 "description": "Apple iOS/iPadOS 15 must be configured to enable a screen-lock policy that will lock the display after a period of inactivity.\nApple iOS/iPadOS 15 must be configured to lock the display after 15 minutes (or less) of inactivity.",
-                "control-id": "ac-11."
+                "control-id": "ac-11"
               }
             ]
           },
           {
-            "uuid": "359a4d44-d6e0-4f77-b679-74490b1b6a3f",
+            "uuid": "ad647c8e-682a-4649-b657-1d3fa95e8494",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.1.",
             "implemented-requirements": [
               {
-                "uuid": "cb0eb343-a56b-477a-8615-c93f8a1e2405",
+                "uuid": "7a199f9f-d069-416d-9b6f-25d671fa370a",
                 "description": "Apple iOS/iPadOS 15 must be configured to not display notifications when the device is locked.\nApple iOS/iPadOS 15 must not display notifications (calendar information) when the device is locked.",
-                "control-id": "ac-11.(1)"
+                "control-id": "ac-11.1"
               }
             ]
           },
           {
-            "uuid": "f938bca0-91e1-41a9-8a68-d52ec6c420f1",
+            "uuid": "edc010d0-e76e-4817-8c89-71881caa8433",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "bf3d4eb7-0737-4d4e-8bc7-09730e184374",
+                "uuid": "63e515b3-4213-4b54-b70b-93802b4333be",
                 "description": "Apple iOS/iPadOS 15 must provide the capability for the Administrator (MDM) to perform the following management function: enable/disable VPN protection across the device and [selection: other methods].\nApple iOS/iPadOS 15 must [selection: wipe protected data, wipe sensitive data] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must [selection: remove Enterprise application, remove all noncore applications (any nonfactory-installed application)] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must be configured to not allow passwords that include more than two repeating or sequential characters.\nApple iOS/iPadOS 15 must be configured to enforce an application installation policy by specifying one or more authorized application repositories, including [selection: DoD-approved commercial app repository, MDM server, mobile application store].\nApple iOS/iPadOS 15 must not include applications with the following characteristics: access to Siri when the device is locked.\nApple iOS/iPadOS 15 allow list must be configured to not include applications with the following characteristics: voice dialing application if available when MD is locked.\nApple iOS/iPadOS 15 allowlist must be configured to not include applications with the following characteristics: - back up MD data to non-DoD cloud servers (including user and application access to cloud backup services);- transmit MD diagnostic data to non-DoD servers; - allows synchronization of data or applications between devices associated with user; and - allows unencrypted (or encrypted but not FIPS 140-2 validated) data sharing with other MDs or printers.\nApple iOS/iPadOS 15 must be configured to disable multiuser modes.\nApple iOS/iPadOS 15 must be configured to [selection: wipe protected data, wipe sensitive data] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must be configured to [selection: remove Enterprise applications, remove all noncore applications (any nonfactory installed application)] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must require a valid password be successfully entered before the mobile device data is unencrypted.\nApple iOS/iPadOS 15 must implement the management setting: limit Ad Tracking.\nApple iOS/iPadOS 15 must implement the management setting: not allow automatic completion of Safari browser passcodes.\nApple iOS/iPadOS 15 must implement the management setting: Encrypt iTunes backups/Encrypt local backup.\nApple iOS/iPadOS 15 must implement the management setting: not allow use of Handoff.\nApple iOS/iPadOS 15 must implement the management setting: require the user to enter a password when connecting to an AirPlay-enabled device for the first time.\nApple iOS/iPadOS 15 must implement the management setting: Disable Allow MailDrop.\nApple iOS/iPadOS 15 must implement the management setting: Disable Allow Shared Albums.\niPhone and iPad must have the latest available iOS/iPadOS operating system installed.\nApple iOS/iPadOS 15 must implement the management setting: use SSL for Exchange ActiveSync.\nApple iOS/iPadOS 15 must implement the management setting: not allow messages in an ActiveSync Exchange account to be forwarded or moved to other accounts in the Apple iOS/iPadOS 15 Mail app.\nApple iOS/iPadOS 15 must implement the management setting: Treat AirDrop as an unmanaged destination.\nApple iOS/iPadOS 15 must implement the management setting: not have any Family Members in Family Sharing.\nApple iOS/iPadOS 15 must implement the management setting: not share location data through iCloud.\nApple iOS/iPadOS 15 must implement the management setting: force Apple Watch wrist detection.\nApple iOS/iPadOS 15 users must complete required training.\nA managed photo app must be used to take and store work-related photos.\nApple iOS/iPadOS 15 must implement the management setting: enable USB Restricted Mode.\nApple iOS/iPadOS 15 must not allow managed apps to write contacts to unmanaged contacts accounts.\nApple iOS/iPadOS 15 must not allow unmanaged apps to read contacts from managed contacts accounts.\nApple iOS/iPadOS 15 must implement the management setting: disable AirDrop.\nApple iOS/iPadOS 15 must implement the management setting: disable paired Apple Watch.\nApple iOS/iPadOS 15 must disable Password AutoFill in browsers and applications.\nApple iOS/iPadOS 15 must disable allow setting up new nearby devices.\nApple iOS/iPadOS 15 must disable password proximity requests.\nApple iOS/iPadOS 15 must disable password sharing.\nApple iOS/iPadOS 15 must disable Find My Friends in the Find My app.\nThe Apple iOS/iPadOS 15 must be supervised by the MDM.\nApple iOS/iPadOS 15 must disable \"Allow USB drive access in Files app\" if the Authorizing Official (AO) has not approved the use of DoD-approved USB storage drives with iOS/iPadOS devices.\nThe Apple iOS must be configured to disable automatic transfer of diagnostic data to an external device other than an MDM service with which the device has enrolled.\nApple iOS must implement the management setting: not allow a user to remove Apple iOS configuration profiles that enforce DoD security requirements.\nApple iOS/iPadOS 15 must disable \"Allow network drive access in Files access\".\nApple iOS/iPadOS 15 must disable connections to Siri servers for the purpose of dictation.\nApple iOS/iPadOS 15 must disable connections to Siri servers for the purpose of translation.\nApple iOS/iPadOS 15 must disable copy/paste of data from managed to unmanaged applications.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "2fcb5cd3-456c-4780-9c47-613a5266b82c",
+            "uuid": "9606b616-7433-4e6c-aa0b-8c03315b6fa0",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.1.",
             "implemented-requirements": [
               {
-                "uuid": "167a83e9-9ab5-4906-9bed-5754c9062784",
+                "uuid": "2f46f6ff-6584-4535-bf2f-af9b89fbc61c",
                 "description": "Apple iOS/iPadOS 15 must provide the capability for the Administrator (MDM) to perform the following management function: enable/disable VPN protection across the device and [selection: other methods].\nApple iOS/iPadOS 15 must [selection: wipe protected data, wipe sensitive data] upon unenrollment from MDM.",
-                "control-id": "cm-6.(1)"
+                "control-id": "cm-6.1"
               }
             ]
           },
           {
-            "uuid": "888391ab-0d73-43ef-9265-ca4c0e8b93c0",
+            "uuid": "c55044c7-a26b-4ccb-93d5-cc4a561ad53e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "96bfe9ee-6f48-4d2c-ac77-69bbe1867a56",
+                "uuid": "51cd58b0-b927-4882-81bf-69a24026ff5c",
                 "description": "Apple iOS/iPadOS 15 must be configured to enforce a minimum password length of six characters.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "46a971fd-1815-4eaa-90fd-0287623c0e2d",
+            "uuid": "ad600448-cfe7-4daf-a0dd-58d5f5bc1c85",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement mp-6.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement mp-6.3.",
             "implemented-requirements": [
               {
-                "uuid": "7d8cb9ca-403b-450d-8b3f-10931d62c398",
+                "uuid": "745ed590-b9a0-4a09-a272-0a45ef79940a",
                 "description": "Apple iOS/iPadOS 15 must [selection: wipe protected data, wipe sensitive data] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must [selection: remove Enterprise application, remove all noncore applications (any nonfactory-installed application)] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must be configured to [selection: wipe protected data, wipe sensitive data] upon unenrollment from MDM.\nApple iOS/iPadOS 15 must be configured to [selection: remove Enterprise applications, remove all noncore applications (any nonfactory installed application)] upon unenrollment from MDM.",
-                "control-id": "mp-6.(3)"
+                "control-id": "mp-6.3"
               }
             ]
           },
           {
-            "uuid": "ff1e6d3d-1480-45d3-8ae3-8727626b981a",
+            "uuid": "686d373b-85f3-49ba-846b-2f11b9b2b608",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4.",
             "implemented-requirements": [
               {
-                "uuid": "c9733afe-2d82-4b77-831f-b38fa7b20b1f",
+                "uuid": "fa1aa51c-6d30-44e4-a4f5-c243d49ea0f9",
                 "description": "Apple iOS/iPadOS 15 must not allow backup to remote systems (iCloud).\nApple iOS/iPadOS 15 must not allow backup to remote systems (iCloud document and data synchronization).\nApple iOS/iPadOS 15 must not allow backup to remote systems (iCloud Keychain).\nApple iOS/iPadOS 15 must not allow backup to remote systems (My Photo Stream).\nApple iOS/iPadOS 15 must not allow backup to remote systems (iCloud Photo Sharing, also known as Shared Photo Streams).\nApple iOS/iPadOS 15 must not allow backup to remote systems (managed applications data stored in iCloud).\nApple iOS/iPadOS 15 must not allow backup to remote systems (enterprise books).\nApple iOS/iPadOS 15 must be configured to not allow backup of [all applications, configuration data] to locally connected systems.",
-                "control-id": "sc-4."
+                "control-id": "sc-4"
               }
             ]
           },
           {
-            "uuid": "1038fbb0-068f-4f75-bea4-05e98a2cc49a",
+            "uuid": "2abf52a2-e5c5-43f7-8716-e24fb63432f5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39.",
             "implemented-requirements": [
               {
-                "uuid": "f281ce10-367f-47b9-9615-b5f284fd608e",
+                "uuid": "419150b6-ca71-4f7b-9c03-f9cf32ca3976",
                 "description": "Apple iOS/iPadOS 15 must not allow non-DoD applications to access DoD data.",
-                "control-id": "sc-39."
+                "control-id": "sc-39"
               }
             ]
           },
           {
-            "uuid": "baca8d6d-25e0-4e46-a936-a02a31d165cb",
+            "uuid": "61bea596-30b4-4b3c-8e6b-45b2eaf9c69c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-40..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-40.",
             "implemented-requirements": [
               {
-                "uuid": "cc285fef-249b-4336-918d-edbb6e1912f2",
+                "uuid": "b244327f-a5a1-4120-b338-8b09b318ae02",
                 "description": "Apple iOS/iPadOS 15 must be configured to disable ad hoc wireless client-to-client connection capability.",
-                "control-id": "sc-40."
+                "control-id": "sc-40"
               }
             ]
           }

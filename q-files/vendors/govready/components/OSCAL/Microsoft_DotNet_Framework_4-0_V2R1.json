@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "ec3092b7-ee3c-413a-99da-1eac966d8303",
+    "uuid": "08dc063e-09d8-4444-8d1b-9c93c80c556e",
     "metadata": {
       "title": "Microsoft DotNet Framework 4-0 V2R1",
-      "last-modified": "2022-06-10T12:50:54",
-      "version": "2022-06-10T12:50:54",
+      "last-modified": "2022-06-12T11:06:49",
+      "version": "2022-06-12T11:06:49",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "14b05c18-e6bf-43c0-9eab-83a02418595c",
+          "uuid": "fe153f00-24ab-467d-8ba8-ee9f1f195c7b",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,118 +16,118 @@
     },
     "components": [
       {
-        "uuid": "e491888e-ddea-4463-9103-1dccae033cc2",
+        "uuid": "7ba5d440-c956-4be3-8e2f-3ad087ab6abe",
         "type": "software",
         "title": "Microsoft DotNet Framework 4-0 V2R1",
-        "description": "Sit non modi dolor. Dolor amet sed non magnam. Sed sit dolore non est magnam tempora.",
+        "description": "Quisquam velit ipsum amet tempora. Sed dolor dolorem tempora tempora voluptatem labore voluptatem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "14b05c18-e6bf-43c0-9eab-83a02418595c"
+              "fe153f00-24ab-467d-8ba8-ee9f1f195c7b"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "6b705c8c-fa5f-4497-8670-0eb1909d2ef1",
+            "uuid": "392b14f3-43d2-466f-b8db-b341f2902552",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "d5f9b051-be05-4101-bfef-e512561a085e",
+                "uuid": "0b8bc561-4b1d-47d2-8f52-2b3b5b47e914",
                 "description": "Event tracing for Windows (ETW) for Common Language Runtime events must be enabled.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "df273dbb-9a8b-4f5f-9531-cfaa945a5336",
+            "uuid": "31143bef-8df6-4c74-b55e-c0b00af8a677",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "79a6a5f6-ed1a-4bbe-88c6-8ff909e878c8",
+                "uuid": "36120d67-cc99-4f18-ac48-fcc4dbb94195",
                 "description": "CAS and policy configuration files must be backed up.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "cd02f2b3-0c5f-4b92-9d41-772e767de1c0",
+            "uuid": "56423e60-e4b5-4579-bd98-a249398a528f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "f0b24ba2-3961-46fe-b6e8-9e9e379bc9bd",
+                "uuid": "b2570694-9c3b-4e51-a7d8-bb923b8f6ad9",
                 "description": ".Net Framework versions installed on the system must be supported.\n.Net applications that invoke NetFx40_LegacySecurityPolicy must apply previous versions of .NET STIG guidance.\n.NET default proxy settings must be reviewed and approved.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "cfedc8a4-fba1-43b2-aeb6-fae5b70facd1",
+            "uuid": "70de82d2-6240-4910-bec9-32f3854e4b67",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "7004d3ad-b38c-40de-ac8a-a11514971914",
+                "uuid": "775eb750-0c33-4dec-87e0-6c49eb532634",
                 "description": "Disable TLS RC4 cipher in .Net",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "7406006d-bbd8-4848-9b76-b47b3a415003",
+            "uuid": "8a3fb18a-5a54-4d02-8a70-ace9bab9d313",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "beb9b9b2-dfb6-4efa-8e5f-8b37174fb50c",
+                "uuid": "e3eef07a-7cb6-47c2-9794-d14d4e4effe0",
                 "description": "Encryption keys used for the .NET Strong Name Membership Condition must be protected.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               },
               {
-                "uuid": "913ca6f9-ce80-45b6-86da-bd7bc4fce5be",
+                "uuid": "ca4e1e06-8b3c-4937-8733-2fd6aec91583",
                 "description": "Digital signatures assigned to strongly named assemblies must be verified.\nThe Trust Providers Software Publishing State must be set to 0x23C00.\nDeveloper certificates used with the .NET Publisher Membership Condition must be approved by the IAO.\n.NET must be configured to validate strong names on full-trust assemblies.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "d24b661e-5436-43c0-9ee3-c2e339547830",
+            "uuid": "38899d49-9a1f-489b-aa32-a465ac0d251e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "872372a2-8010-4517-883d-e5c245d1ef08",
+                "uuid": "b28ac1cc-17f1-4773-a344-f505f3f53e55",
                 "description": "The .NET CLR must be configured to use FIPS approved encryption modules.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "90358ab9-218f-4897-ad1e-f6f361b16857",
+            "uuid": "f0dc3d29-1c5f-4c71-91c9-cd2a090e8410",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.",
             "implemented-requirements": [
               {
-                "uuid": "c0864195-b877-46ba-aaf1-85f459286913",
+                "uuid": "8cbe40d6-9650-4d3e-9e82-442def1fe62d",
                 "description": "Remoting Services HTTP channels must utilize authentication and encryption.\nRemoting Services TCP channels must utilize authentication and encryption.",
-                "control-id": "sc-23."
+                "control-id": "sc-23"
               }
             ]
           },
           {
-            "uuid": "48f3cbcb-b375-4560-9873-d3f774d14fee",
+            "uuid": "2679c771-d8f3-46c8-b05b-6876197ca3ad",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-39.",
             "implemented-requirements": [
               {
-                "uuid": "637cdaf4-88cc-4962-91a1-43d6f63e580f",
+                "uuid": "112d17d0-6d7e-44d4-acb6-fbe4629e213b",
                 "description": "Trust must be established prior to enabling the loading of remote code in .Net 4.\nSoftware utilizing .Net 4.0 must be identified and relevant access controls configured.",
-                "control-id": "sc-39."
+                "control-id": "sc-39"
               }
             ]
           }

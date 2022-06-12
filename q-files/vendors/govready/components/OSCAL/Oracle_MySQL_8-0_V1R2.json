@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "ebd688e3-c307-437d-a9ea-c2bede221949",
+    "uuid": "eb02fc07-c0fe-46fc-8f5d-ad3326d2a47a",
     "metadata": {
       "title": "Oracle MySQL 8-0 V1R2",
-      "last-modified": "2022-06-10T12:50:49",
-      "version": "2022-06-10T12:50:49",
+      "last-modified": "2022-06-12T11:06:44",
+      "version": "2022-06-12T11:06:44",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "7f436afe-fc6a-4919-84ef-956c315be5b6",
+          "uuid": "5f37a9bd-bf0b-462e-8093-24d104a31dce",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,637 +16,637 @@
     },
     "components": [
       {
-        "uuid": "8ac12a81-1bcd-4ff2-8e35-899129c602b7",
+        "uuid": "b04074d4-59ba-47e1-a4e5-f1b60e7f27eb",
         "type": "software",
         "title": "Oracle MySQL 8-0 V1R2",
-        "description": "Est eius quaerat tempora modi sed ut.",
+        "description": "Consectetur dolore ut amet voluptatem quiquia ut quiquia.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "7f436afe-fc6a-4919-84ef-956c315be5b6"
+              "5f37a9bd-bf0b-462e-8093-24d104a31dce"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "c470776d-704a-498a-9348-209a2c950107",
+            "uuid": "9d0ddad8-ef45-4865-81df-ba6765352bd9",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-2.1.",
             "implemented-requirements": [
               {
-                "uuid": "4fd754a7-1b70-4651-8a08-517cb14a4500",
+                "uuid": "8a94aa44-0934-4401-9854-483f1c4e2faa",
                 "description": "MySQL Database Server 8.0 must integrate with an organization-level authentication/access mechanism providing account management and automation for all users, groups, roles, and any other principals.",
-                "control-id": "ac-2.(1)"
+                "control-id": "ac-2.1"
               }
             ]
           },
           {
-            "uuid": "a4d0fad8-99fc-4c3a-91c6-c3d7f428d494",
+            "uuid": "8f8c8214-7015-4630-8485-a36f7f6025f2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "5b172825-1960-4d01-8b9b-377d60c2eff5",
+                "uuid": "972fd5d5-0506-466b-adf2-1cf9234f2094",
                 "description": "The MySQL Database Server 8.0 must enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "58271eab-1572-49bf-b5ca-2e32e07d9549",
+            "uuid": "1d8699aa-00dd-4afb-8973-96bd7805c544",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.(4).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.4.",
             "implemented-requirements": [
               {
-                "uuid": "c38f278d-42e3-4eb7-9490-ee43ea10a4a4",
+                "uuid": "c30cbf87-422d-4a6a-b782-c52765be6703",
                 "description": "The MySQL Database Server 8.0 must enforce discretionary access control policies, as defined by the data owner, over defined subjects and objects.",
-                "control-id": "ac-3.(4)"
+                "control-id": "ac-3.4"
               }
             ]
           },
           {
-            "uuid": "59881dd9-f996-47a5-8d9b-2d26384e649d",
+            "uuid": "611df7c8-1c5e-4f97-b5b6-1f84e283fbc3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(8).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.8.",
             "implemented-requirements": [
               {
-                "uuid": "54c3bfea-0454-4f6e-94e4-64711af522d7",
+                "uuid": "40c09523-dd9f-4927-bd57-b888a9b898de",
                 "description": "Execution of software modules (to include stored procedures, functions, and triggers) with elevated privileges must be restricted to necessary cases only.",
-                "control-id": "ac-6.(8)"
+                "control-id": "ac-6.8"
               }
             ]
           },
           {
-            "uuid": "10015a69-97af-42ff-b9b9-553170e555ee",
+            "uuid": "799431f4-89c1-4cb6-a3ca-4bd78d1c5df2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "0ac950eb-b093-490f-8416-f01315167f22",
+                "uuid": "78cd5374-24c9-41eb-9685-f545be1f4725",
                 "description": "The MySQL Database Server 8.0 must prevent non-privileged users from executing privileged functions, to include disabling, circumventing, or altering implemented security safeguards/countermeasures.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "15acdaeb-e3c1-4af2-81e9-aad2055f16e1",
+            "uuid": "585a0142-eb83-4a03-b83d-adb82bfca0c3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "ea042538-483d-4215-8d4b-e4bc3ca274c9",
+                "uuid": "293eda32-efe8-4eba-b53a-40164b383abc",
                 "description": "MySQL Database Server 8.0  must limit the number of concurrent sessions to an organization-defined number per user for all accounts and/or account types.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "39bae79a-9d83-49a6-be71-4802eb9d4bf8",
+            "uuid": "c6347f22-368c-4b2f-a950-8ba36075dedb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "ef1be4a8-2f74-48ba-81cf-bdc0c8218bb7",
+                "uuid": "9b3c2c8a-6d95-47ce-99ae-42ef73066075",
                 "description": "The MySQL Database Server 8.0 must automatically terminate a user session after organization-defined conditions or trigger events requiring session disconnect.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "43c85443-788c-4dcc-9e2b-888d98296101",
+            "uuid": "41d26c4e-9ea0-4565-a96e-460427c920b3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-16.",
             "implemented-requirements": [
               {
-                "uuid": "d3fffe38-fb03-4a20-9d9b-310ae2f33740",
-                "description": "The MySQL Database Server 8.0 must associate organization-defined types of security labels having organization-defined security label values with information in transmission.",
-                "control-id": "ac-16."
-              },
-              {
-                "uuid": "68fffb19-1cbb-4f46-a43e-ddadae94caea",
-                "description": "The MySQL Database Server 8.0 must associate organization-defined types of security labels having organization-defined security label values with information in storage.",
-                "control-id": "ac-16."
-              },
-              {
-                "uuid": "770df81b-cb1a-4930-952a-f3bd1090bf8b",
+                "uuid": "ea09b39f-ff40-431b-9b78-e462927aaab4",
                 "description": "The MySQL Database Server 8.0 must associate organization-defined types of security labels having organization-defined security label values with information in process.",
-                "control-id": "ac-16."
+                "control-id": "ac-16"
+              },
+              {
+                "uuid": "f345ccdc-0b4f-4551-b09f-7f2996fd1e7c",
+                "description": "The MySQL Database Server 8.0 must associate organization-defined types of security labels having organization-defined security label values with information in transmission.",
+                "control-id": "ac-16"
+              },
+              {
+                "uuid": "37b29de5-093b-4770-bfb8-19df967a7774",
+                "description": "The MySQL Database Server 8.0 must associate organization-defined types of security labels having organization-defined security label values with information in storage.",
+                "control-id": "ac-16"
               }
             ]
           },
           {
-            "uuid": "b5e92d66-68e8-44bc-8eab-d6d972a6ba99",
+            "uuid": "0071d63a-380a-4a16-b6fe-83a6faa3d44d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "34428f3d-bd47-43d4-98fe-48469e1ee118",
+                "uuid": "4d296713-3461-4800-b24c-3116cf1d9cd7",
                 "description": "MySQL Database Server 8.0  must produce audit records containing sufficient information to establish what type of events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "03d34bfa-0687-4fe2-9c7b-de046dfcafbe",
+            "uuid": "fb51a2c5-0eb7-43c9-a8ed-3a3e30e2bec4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "d29b2bcd-ab69-4e75-a879-af10919612bf",
+                "uuid": "fbc6167f-3476-43bc-b486-8ca72006e4cd",
                 "description": "The MySQL Database Server 8.0 must include additional, more detailed, organizationally defined information in the audit records for audit events identified by type, location, or subject.",
-                "control-id": "au-3.(1)"
+                "control-id": "au-3.1"
               }
             ]
           },
           {
-            "uuid": "0c8bb027-cd90-4471-bc84-db161ca950d6",
+            "uuid": "0b96cc24-a3fd-4583-9213-6563e5242371",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.2.",
             "implemented-requirements": [
               {
-                "uuid": "1644e6a6-4dc5-4720-9675-471f765f24db",
+                "uuid": "ad63e371-63f4-4ea4-86d6-c80c6b927c75",
                 "description": "The MySQL Database Server 8.0 must utilize centralized management of the content captured in audit records generated by all components of the MySQL Database Server 8.0.\nThe MySQL Database Server 8.0 must provide centralized configuration of the content to be captured in audit records generated by all components of the MySQL Database Server 8.0.",
-                "control-id": "au-3.(2)"
+                "control-id": "au-3.2"
               }
             ]
           },
           {
-            "uuid": "227a1475-9992-44d9-807b-7123a9732dfe",
+            "uuid": "6ca70b3b-cead-40fc-a434-16f638237d1a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
             "implemented-requirements": [
               {
-                "uuid": "39672586-706e-4973-9f9b-15d5c63a55bd",
+                "uuid": "94116174-4cb2-423e-b3b2-17b97dd46a0e",
                 "description": "The MySQL Database Server 8.0 must allocate audit record storage capacity in accordance with organization-defined audit record storage requirements.",
-                "control-id": "au-4."
+                "control-id": "au-4"
               }
             ]
           },
           {
-            "uuid": "3e1dcfc3-afb8-412c-bef5-d16c0b9b772c",
+            "uuid": "b3bdb1bc-f94b-4ef1-b9f7-6994651b7180",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "21c3cdec-187f-4aef-b864-ab5a4515f507",
+                "uuid": "5e8e9807-7956-43f6-85c0-e6e32be2220c",
                 "description": "The MySQL Database Server 8.0 must off-load audit data to a separate log management facility; this must be continuous and in near real time for systems with a network connection to the storage facility and weekly or more often for stand-alone systems.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "8a73abad-8506-4677-b8bb-bdc8837d8440",
+            "uuid": "7b21c9d2-838b-43ac-94a4-11891f465524",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "d59f52b5-2c8b-4837-b422-e3f78c36c69e",
+                "uuid": "4e2b0571-2f85-4331-b157-edf7e77e61c0",
                 "description": "The MySQL Database Server 8.0 must provide a warning to appropriate support staff when allocated audit record storage volume reaches 75 percent of maximum audit record storage capacity.",
-                "control-id": "au-5.(1)"
+                "control-id": "au-5.1"
               }
             ]
           },
           {
-            "uuid": "63aa3db9-9206-49ac-91a6-01e70ca2f74f",
+            "uuid": "f475198f-ce2a-4004-ba74-5bf8e7682ef5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "3be5dc4b-5e3b-4081-9979-eb717aaf9d2d",
+                "uuid": "96b66171-6fb3-4a89-9cfa-3c08ed2805ab",
                 "description": "The MySQL Database Server 8.0 must provide an immediate real-time alert to appropriate support staff of all audit log failures.",
-                "control-id": "au-5.(2)"
+                "control-id": "au-5.2"
               }
             ]
           },
           {
-            "uuid": "2b9db060-87e6-4065-a3dc-36fc4ffdbd9f",
+            "uuid": "4a028dc2-313b-4384-b6dd-e6651d3ea4aa",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "e3a30e99-ac14-418a-8006-7601d216a9c4",
-                "description": "The MySQL Database Server 8.0 must protect its audit features from unauthorized removal.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "d3ca7d7f-6f6c-448d-88c4-a4e9ee94acfe",
-                "description": "The audit information produced by the MySQL Database Server 8.0 must be protected from unauthorized read access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "042f7f1b-1b6c-47a6-98a4-839d8b85e93e",
-                "description": "The MySQL Database Server 8.0 must protect its audit features from unauthorized access.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "c8b006df-59d0-4e58-be9e-2399b955746a",
+                "uuid": "54895305-b161-43c0-98bb-8bf78635a3e4",
                 "description": "The audit information produced by the MySQL Database Server 8.0 must be protected from unauthorized deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "e79e3bef-8692-4ec6-a5d6-b81ea45c0b11",
-                "description": "The MySQL Database Server 8.0 must protect its audit configuration from unauthorized modification.",
-                "control-id": "au-9."
+                "uuid": "b5b14b75-49e7-49d6-a49e-3a7e0b1373d2",
+                "description": "The audit information produced by the MySQL Database Server 8.0 must be protected from unauthorized read access.",
+                "control-id": "au-9"
               },
               {
-                "uuid": "372f036f-f5e3-4786-a4b0-25c790ec19b1",
+                "uuid": "5156af05-9294-4531-9da1-07c3cefe94fb",
+                "description": "The MySQL Database Server 8.0 must protect its audit features from unauthorized removal.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "444b94d9-2360-470b-a107-64abc0277840",
+                "description": "The MySQL Database Server 8.0 must protect its audit features from unauthorized access.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "c10e490a-b453-471d-9c0c-4aa26f1c44ff",
                 "description": "The audit information produced by the MySQL Database Server 8.0 must be protected from unauthorized modification.",
-                "control-id": "au-9."
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "ac785ef1-5c85-45cb-aedd-537692618afd",
+                "description": "The MySQL Database Server 8.0 must protect its audit configuration from unauthorized modification.",
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "e19f7127-c5e0-471b-b334-32d1830e8372",
+            "uuid": "11a5dd99-6d3a-447e-a8be-e27008230ec1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-10.",
             "implemented-requirements": [
               {
-                "uuid": "5b1fde67-3440-4ea6-8afa-128c7f624ce3",
+                "uuid": "f04e2c67-8caf-4ddc-8cc6-6e212b6c3106",
                 "description": "The MySQL Database Server 8.0 must protect against a user falsely repudiating having performed organization-defined actions.",
-                "control-id": "au-10."
+                "control-id": "au-10"
               }
             ]
           },
           {
-            "uuid": "0ac494f0-3ed3-493c-a632-a14c8adf493b",
+            "uuid": "ca560a5a-dd81-40d7-8ac5-06902e46d974",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "65b78e28-2a72-44e0-9810-ddb12f128135",
-                "description": "The MySQL Database Server 8.0 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
-                "control-id": "au-12."
-              },
-              {
-                "uuid": "31eefcf6-5257-4739-b020-e129659ccae7",
+                "uuid": "d941ef79-e04f-4a4f-a38a-c73793c95269",
                 "description": "The MySQL Database Server 8.0 must be able to generate audit records when privileges/permissions are retrieved.\nThe MySQL Database Server 8.0 must be able to generate audit records when unsuccessful attempts to retrieve privileges/permissions occur.\nThe MySQL Database Server 8.0 must be able to generate audit records when security objects are accessed.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to access security objects occur.\nThe MySQL Database Server 8.0 must generate audit records when categories of information (e.g., classification levels/security levels) are accessed.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to access categories of information (e.g., classification levels/security levels) occur.\nThe MySQL Database Server 8.0 must generate audit records when privileges/permissions are added.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to add privileges/permissions occur.\nThe MySQL Database Server 8.0 must generate audit records when privileges/permissions are modified.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to modify privileges/permissions occur.\nThe MySQL Database Server 8.0 must generate audit records when security objects are modified.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to modify security objects occur.\nThe MySQL Database Server 8.0 must generate audit records when categories of information (e.g., classification levels/security levels) are modified.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to modify categories of information (e.g., classification levels/security levels) occur.\nThe MySQL Database Server 8.0 must generate audit records when privileges/permissions are deleted.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to delete privileges/permissions occur.\nThe MySQL Database Server 8.0 must generate audit records when security objects are deleted.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to delete security objects occur.\nThe MySQL Database Server 8.0 must generate audit records when categories of information (e.g., classification levels/security levels) are deleted.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to delete categories of information (e.g., classification levels/security levels) occur.\nThe MySQL Database Server 8.0 must generate audit records when successful logons or connections occur.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful logons or connection attempts occur.\nThe MySQL Database Server 8.0 must generate audit records for all privileged activities or other system-level access.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful attempts to execute privileged activities or other system-level access occur.\nThe MySQL Database Server 8.0 must generate audit records showing starting and ending time for user access to the database(s).\nThe MySQL Database Server 8.0 must generate audit records when concurrent logons/connections by the same user from different workstations.\nThe MySQL Database Server 8.0 must be able to generate audit records when successful accesses to objects occur.\nThe MySQL Database Server 8.0 must generate audit records when unsuccessful accesses to objects occur.\nThe MySQL Database Server 8.0 must generate audit records for all direct access to the database(s).",
-                "control-id": "au-12."
+                "control-id": "au-12"
               },
               {
-                "uuid": "49bf12e3-cc4a-484b-a636-4078771a8959",
+                "uuid": "74f75fc2-6043-495d-b89a-49144997857b",
+                "description": "The MySQL Database Server 8.0 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.",
+                "control-id": "au-12"
+              },
+              {
+                "uuid": "af27033a-00ac-4fe2-82a1-70bdb9f5134c",
                 "description": "The MySQL Database Server 8.0 must be configured to provide audit record generation capability for DoD-defined auditable events within all database components.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "d95a1dd8-84cb-4af1-aec2-0b5adde91ddb",
+            "uuid": "6986b4cf-d530-4e5f-918e-e60a10e6d1aa",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "f2f28f83-c5fb-4711-8624-f623e701ac72",
+                "uuid": "b6bc4cb7-8dc1-4be4-93dc-56eff0c4fb05",
                 "description": "The MySQL Database Server 8.0 must initiate session auditing upon startup.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "bb71f900-29f6-4a1f-8fab-0d4020f240ab",
+            "uuid": "95ed7a15-48cb-4235-a628-5fca8452c23e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "4bbf6c1e-34d5-4f9e-b6c3-fb34899c1f6b",
+                "uuid": "7cde01f6-2e61-41f0-ba56-1fea715685e6",
                 "description": "The MySQL Database Server 8.0 must enforce access restrictions associated with changes to the configuration of the MySQL Database Server 8.0 or database(s).",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               },
               {
-                "uuid": "865c091c-f5c3-45e4-9262-68b02804aea1",
+                "uuid": "c55b6ba8-9c9d-4697-9e83-7acac2d26f34",
                 "description": "The MySQL Database Server 8.0 must produce audit records of its enforcement of access restrictions associated with changes to the configuration of the MySQL Database Server 8.0 or database(s).",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "270ef9d7-85ca-476e-a13b-874fc90f8750",
+            "uuid": "10973263-168d-4ccb-b68c-037cf5a85986",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.6.",
             "implemented-requirements": [
               {
-                "uuid": "74ac12fb-5691-4963-8830-f7ed7333247c",
+                "uuid": "1d1a0dbd-755a-47ed-a624-43485c60ffbf",
                 "description": "The MySQL Database Server 8.0 must limit privileges to change software modules, to include stored procedures, functions and triggers, and links to software external to the MySQL Database Server 8.0.\nThe MySQL Database Server 8.0 software installation account must be restricted to authorized users.\nDatabase software, including MySQL Database Server 8.0 configuration files, must be stored in dedicated directories, or DASD pools (remove), separate from the host OS and other applications.\nThe role(s)/group(s) used to modify database structure (including but not necessarily limited to tables, indexes, storage, etc.) and logic modules (stored procedures, functions, triggers, links to software external to the MySQL Database Server 8.0, etc.) must be restricted to authorized users.",
-                "control-id": "cm-5.(6)"
+                "control-id": "cm-5.6"
               }
             ]
           },
           {
-            "uuid": "ce20f209-6935-470c-95df-b780c83c4803",
+            "uuid": "54801bbe-421b-4351-a75b-510c06f92399",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "dc5940c6-e68e-4474-9140-3b41d94d069a",
+                "uuid": "adc4f76f-48bd-4e0e-b9c6-48438c972e4b",
                 "description": "The MySQL Database Server 8.0 must be configured in accordance with the security configuration settings based on DoD security configuration and implementation guidance, including STIGs, NSA configuration guides, CTOs, DTMs, and IAVMs.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "c3bc5a77-1df3-44fb-b6e5-94e8128d6c8d",
+            "uuid": "0c5c11e7-dba7-4a87-bb21-96c0f304f67a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "b2149361-4a93-44d4-8709-ea0d9fdf66fe",
-                "description": "The MySQL Database Server 8.0 must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
-                "control-id": "cm-7."
-              },
-              {
-                "uuid": "cc378d4a-4cd5-4968-9e2d-fcf8f9990f22",
+                "uuid": "34ab5c6e-04c3-4e06-821f-60e747b5ee0d",
                 "description": "Default demonstration and sample databases, database objects, and applications must be removed.\nUnused database components, MySQL Database Server 8.0 software, and database objects must be removed.\nUnused database components which are integrated in the MySQL Database Server 8.0 and cannot be uninstalled must be disabled.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
+              },
+              {
+                "uuid": "af4cab97-54c2-404e-9ae6-955229b5caca",
+                "description": "The MySQL Database Server 8.0 must be configured to prohibit or restrict the use of organization-defined functions, ports, protocols, and/or services, as defined in the PPSM CAL and vulnerability assessments.",
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "d03025b5-c131-45b8-88b7-4987b3c012d8",
+            "uuid": "fc2c7169-12dc-421b-81c5-808681612633",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "c3387955-5bac-44d2-afbb-432ef46fadcb",
+                "uuid": "2e212607-a348-4f8d-85e7-b2dd89302257",
                 "description": "The MySQL Database Server 8.0 must disable network functions, ports, protocols, and services deemed by the organization to be nonsecure, in accord with the Ports, Protocols, and Services Management (PPSM) guidance.",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "f7e8c8d6-6ba2-44ea-8799-277f489624cb",
+            "uuid": "a5826e64-71f8-4f40-883e-c3e180e3b4ab",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-11.2.",
             "implemented-requirements": [
               {
-                "uuid": "ef3f8162-f2fc-4152-8e9a-a90f5b533de0",
+                "uuid": "3421b0f6-49b2-4ff8-8b5e-fbdec505e254",
                 "description": "The MySQL Database Server 8.0 must prohibit user installation of logic modules (stored procedures, functions, triggers, views, etc.) without explicit privileged status.",
-                "control-id": "cm-11.(2)"
+                "control-id": "cm-11.2"
               }
             ]
           },
           {
-            "uuid": "00572522-f9c9-4051-9527-58dfe0595bb2",
+            "uuid": "f1d3f1a7-2010-44e9-b9a2-b0038ea140fe",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
             "implemented-requirements": [
               {
-                "uuid": "96765948-6aec-4742-96c8-7890a8e954f8",
+                "uuid": "cc18fdff-4e3f-457e-9ba5-6f7fb1514b5d",
                 "description": "The MySQL Database Server 8.0 must uniquely identify and authenticate organizational users (or processes acting on behalf of organizational users).",
-                "control-id": "ia-2."
+                "control-id": "ia-2"
               }
             ]
           },
           {
-            "uuid": "5287c0b1-617f-44d8-ab3a-955191765706",
+            "uuid": "210d5d88-32fa-4f31-8ee7-ecde8bc2b2c8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "35eaebc8-a90b-47e4-a3a0-6bd97800bbfc",
-                "description": "If passwords are used for authentication, the MySQL Database Server 8.0 must transmit only encrypted representations of passwords.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "8bd39d82-5299-4f25-be57-56bb6dff7791",
-                "description": "If passwords are used for authentication, the MySQL Database Server 8.0 must store only hashed, salted representations of passwords.",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "acf6cbe2-79f5-4ea3-9b5f-5e939645f610",
+                "uuid": "cf83bae3-a464-4146-9438-784f46329c7a",
                 "description": "If Database Management System (DBMS) authentication using passwords is employed, the DBMS must enforce the DoD standards for password complexity and lifetime.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "6184a007-d994-4af7-9a3d-fbaf2bdb8e5d",
+                "description": "If passwords are used for authentication, the MySQL Database Server 8.0 must transmit only encrypted representations of passwords.",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "c01294f9-35b2-4372-84cf-8a323edc20cb",
+                "description": "If passwords are used for authentication, the MySQL Database Server 8.0 must store only hashed, salted representations of passwords.",
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "2d2530e7-0ce8-44d0-a9b6-c87019754221",
+            "uuid": "c9f56683-9dfd-4bd8-b362-ff6630656b7c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "6ad9c779-1ad3-48a4-8339-c4166807485d",
-                "description": "The MySQL Database Server 8.0 must enforce authorized access to all PKI private keys stored/utilized by the MySQL Database Server 8.0.",
-                "control-id": "ia-5.(2)"
-              },
-              {
-                "uuid": "c3120af6-e0d2-439a-bb3a-85e39d861038",
+                "uuid": "f5419259-efeb-4e79-af60-ee752c5a5bcc",
                 "description": "The MySQL Database Server 8.0 must map the PKI-authenticated identity to an associated user account.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               },
               {
-                "uuid": "ceccd4f7-8768-4a0a-8191-3f222c2e3a8a",
+                "uuid": "250b7517-e6d6-476b-9002-a5dfe1cded07",
+                "description": "The MySQL Database Server 8.0 must enforce authorized access to all PKI private keys stored/utilized by the MySQL Database Server 8.0.",
+                "control-id": "ia-5.2"
+              },
+              {
+                "uuid": "a7b53290-33ee-4311-a071-176dbcebdd97",
                 "description": "The MySQL Database Server 8.0, when utilizing PKI-based authentication, must validate certificates by performing RFC 5280-compliant certification path validation.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "78d4631b-b2f4-44e3-ae87-0de7f5472f4a",
+            "uuid": "d997edef-dc66-48ef-bb7f-0b1d81795929",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(13).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.13.",
             "implemented-requirements": [
               {
-                "uuid": "9230d996-7dc4-4314-8b25-b48c53d283de",
+                "uuid": "63c6ea1f-4bb6-4276-96e6-2449afd8463e",
                 "description": "The MySQL Database Server 8.0 must prohibit the use of cached authenticators after an organization-defined time period.",
-                "control-id": "ia-5.(13)"
+                "control-id": "ia-5.13"
               }
             ]
           },
           {
-            "uuid": "078839ec-6d97-4591-8a6e-c093caaed72f",
+            "uuid": "94dc6e30-d91a-444f-b73e-38174b88ac06",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-6.",
             "implemented-requirements": [
               {
-                "uuid": "f844adc8-6352-4822-8ef6-502adb2b2ed3",
+                "uuid": "510b3285-3c5b-43b7-8feb-2c44b7b95160",
                 "description": "The MySQL Database Server 8.0 must obscure feedback of authentication information during the authentication process to protect the information from possible exploitation/use by unauthorized individuals.",
-                "control-id": "ia-6."
+                "control-id": "ia-6"
               }
             ]
           },
           {
-            "uuid": "26493571-2eab-4332-bb1a-010442db8a7b",
+            "uuid": "22df35ed-b5f1-49ff-a8d8-c7668c8d3157",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "ca82aafd-7963-4151-9017-c7f7bcb3f599",
+                "uuid": "9a42454e-6027-4b8d-99a3-a20c35190ea4",
                 "description": "The MySQL Database Server 8.0 must use NIST FIPS 140-2 validated cryptographic modules for cryptographic operations.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "0eaac96d-5213-49ea-9005-ff6459208ba5",
+            "uuid": "b70ee82c-bf92-4d4d-853a-5ffd99d63ee7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-8.",
             "implemented-requirements": [
               {
-                "uuid": "9eae1d5a-f880-4894-a79a-00f0ab840f67",
+                "uuid": "869cad68-f764-4ca3-9b6e-fd19dcdf3776",
                 "description": "The MySQL Database Server 8.0 must uniquely identify and authenticate non-organizational users (or processes acting on behalf of non-organizational users).",
-                "control-id": "ia-8."
+                "control-id": "ia-8"
               }
             ]
           },
           {
-            "uuid": "78421152-4521-423b-85b0-a19068ea47e7",
+            "uuid": "4162cd31-a00a-4315-81cd-19fbad36d1a7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-11.",
             "implemented-requirements": [
               {
-                "uuid": "4a5ef787-85f0-415e-84a9-7aa2d32694ee",
+                "uuid": "1d447662-6268-4ae9-adfb-0a1c321b617a",
                 "description": "The MySQL Database Server 8.0 must require users to reauthenticate when organization-defined circumstances or situations require reauthentication.",
-                "control-id": "ia-11."
+                "control-id": "ia-11"
               }
             ]
           },
           {
-            "uuid": "80aab723-d4ae-4e9c-b9ff-0a1ffc438394",
+            "uuid": "0205dbe8-bdff-469f-9232-75511a509e30",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2.",
             "implemented-requirements": [
               {
-                "uuid": "e01f8092-6c8d-4967-82c7-7a8d2a7a273f",
+                "uuid": "49066456-b66d-407f-a0da-72ff4b5f8d7d",
                 "description": "The MySQL Database Server 8.0 must separate user functionality (including user interface services) from database management functionality.",
-                "control-id": "sc-2."
+                "control-id": "sc-2"
               }
             ]
           },
           {
-            "uuid": "9bff6ee6-0784-4446-a524-dc58955fdd0b",
+            "uuid": "5faad0f5-5a67-4e95-b8b7-b2fe5ea7449a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3.",
             "implemented-requirements": [
               {
-                "uuid": "06ffea4c-bf53-4282-bbae-33740909d192",
+                "uuid": "8b37da54-a2cf-4f52-8e21-23676228a469",
                 "description": "The MySQL Database Server 8.0 must isolate security functions from non-security functions.",
-                "control-id": "sc-3."
+                "control-id": "sc-3"
               }
             ]
           },
           {
-            "uuid": "0da69a1b-9e68-43d1-90c6-27901079f621",
+            "uuid": "ba2e3a64-c91a-406a-99d6-b91f6048713e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-4.",
             "implemented-requirements": [
               {
-                "uuid": "feb95a87-65f6-4a6d-9f85-56acb2946687",
+                "uuid": "d8ac651a-b189-48aa-964c-5e1cd5feffba",
                 "description": "Database contents must be protected from unauthorized and unintended information transfer by enforcement of a data-transfer policy.\nAccess to database files must be limited to relevant processes and to authorized, administrative users.",
-                "control-id": "sc-4."
+                "control-id": "sc-4"
               }
             ]
           },
           {
-            "uuid": "f4224c0f-c9c3-4cfd-9e04-566b1dcb17b8",
+            "uuid": "ecda2407-dd8c-4119-b9b3-122e432ecb75",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "24883cde-8e9a-4a2e-b8bc-bb641f4988cf",
+                "uuid": "dd5bbfa3-d6c2-47eb-bfe3-bc6e9927d443",
                 "description": "The MySQL Database Server 8.0 must maintain the confidentiality and integrity of information during preparation for transmission.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
               }
             ]
           },
           {
-            "uuid": "5440fafb-513f-4dc0-a27d-6d8ad3898f98",
+            "uuid": "a06d119d-45f5-43f6-ae21-8f386a6e2ce5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "bc70e3ec-d03b-44d3-b3b8-226c8544214b",
+                "uuid": "70f028d4-f526-4b8a-b422-a8f71bf70c23",
                 "description": "The MySQL Database Server 8.0 must use NSA-approved cryptography to protect classified information in accordance with the data owner's requirements.\nThe MySQL Database Server 8.0 must implement NIST FIPS 140-2 validated cryptographic modules to provision digital signatures.\nThe MySQL Database Server 8.0 must implement NIST FIPS 140-2 validated cryptographic modules to generate and validate cryptographic hashes.\nThe MySQL Database Server 8.0 must implement NIST FIPS 140-2 validated cryptographic modules to protect unclassified information requiring confidentiality and cryptographic protection, in accordance with the data owner's requirements.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "f7bf16c5-c252-48bb-b99b-b2a4ed465775",
+            "uuid": "e30fed60-0a4a-49fe-91f1-c448a1ba4132",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
             "implemented-requirements": [
               {
-                "uuid": "ea9f0983-7f77-4185-bcc5-70d15b802138",
+                "uuid": "5aa33614-26e9-4ff9-81a1-6ab121425ad8",
                 "description": "The MySQL Database Server 8.0 must maintain the authenticity of communications sessions by guarding against man-in-the-middle attacks that guess at Session ID values.",
-                "control-id": "sc-23.(3)"
+                "control-id": "sc-23.3"
               }
             ]
           },
           {
-            "uuid": "dc71c53e-aa71-44e3-8a66-f27e16171e6d",
+            "uuid": "b3d46050-04d4-466f-b2b2-de74c78d6ec8",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "735e209d-a688-4f33-b142-1714ffd1c7ae",
+                "uuid": "ea1b26b0-0958-4314-b9bc-93d309632674",
                 "description": "The MySQL Database Server 8.0 must only accept end entity certificates issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs) for the establishment of all encrypted sessions.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "51c13b9e-f0ca-452d-8aba-44bf2ac5de70",
+            "uuid": "8f45eda1-6037-4e76-92f8-7216a05b1865",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "96f4f7cd-18e6-404a-80fd-d9eeb07c3d91",
+                "uuid": "178019d3-5b81-4405-8e42-d32466dfe569",
                 "description": "The MySQL Database Server 8.0 must protect the confidentiality and integrity of all information at rest.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "25979d35-9985-426b-8623-7d3692b29025",
+            "uuid": "ea902dc0-09e6-4c45-a44f-56c330775233",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.1.",
             "implemented-requirements": [
               {
-                "uuid": "7f90641f-0558-4f0f-95c8-ea42da9adf54",
+                "uuid": "74b07821-fc0d-453e-8d4e-295c0f33ee17",
                 "description": "The MySQL Database Server 8.0 must implement cryptographic mechanisms to prevent unauthorized modification of organization-defined information at rest (to include, at a minimum, PII and classified information) on organization-defined information system components.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               },
               {
-                "uuid": "d685209d-e6ff-49cb-a60f-891753d06bfe",
+                "uuid": "8190869a-db64-433d-9fad-2d1672360ff4",
                 "description": "The MySQL Database Server 8.0 must implement cryptographic mechanisms preventing the unauthorized disclosure of organization-defined information at rest on organization-defined information system components.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               }
             ]
           },
           {
-            "uuid": "16d0e959-28ec-4c95-9909-3163ead0d004",
+            "uuid": "e2e67735-8ef2-4a2b-9d18-853293ac6041",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "9a55c191-3e91-4c2c-ae31-59cb09d1b1a6",
+                "uuid": "3e064531-f295-4a0b-9cc8-6c6db0f23c5e",
                 "description": "Security-relevant software updates to the MySQL Database Server 8.0 must be installed within the time period directed by an authoritative source (e.g., IAVM, CTOs, DTMs, and STIGs).",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "f6acd857-63d5-429e-8b6d-ca7034be7f67",
+            "uuid": "91ae62c7-53a9-4aa9-9570-6866c1769658",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.",
             "implemented-requirements": [
               {
-                "uuid": "8bda0a7d-3ebf-4745-a15c-08ff8915b5cb",
+                "uuid": "e223665d-3875-464a-a789-b349d47fd181",
                 "description": "The MySQL Database Server 8.0 must check the validity of all data inputs except those specifically identified by the organization.\nThe MySQL Database Server 8.0 and associated applications must reserve the use of dynamic code execution for situations that require it.\nThe MySQL Database Server 8.0 and associated applications, when making use of dynamic code execution, must scan input data for invalid values that may indicate a code injection attack.",
-                "control-id": "si-10."
+                "control-id": "si-10"
               }
             ]
           },
           {
-            "uuid": "b55ca658-a2e9-447b-92af-5cfcb88ac97b",
+            "uuid": "29c6b027-1d77-44f4-a2f8-b70ea2c59a37",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.3.",
             "implemented-requirements": [
               {
-                "uuid": "0f8a4c5a-f62d-474b-a751-683ba787347f",
+                "uuid": "7c516a3e-8d0a-410e-b7d8-1e494e32b1b0",
                 "description": "When invalid inputs are received, the MySQL Database Server 8.0 must behave in a predictable and documented manner that reflects organizational and system objectives.",
-                "control-id": "si-10.(3)"
+                "control-id": "si-10.3"
               }
             ]
           }

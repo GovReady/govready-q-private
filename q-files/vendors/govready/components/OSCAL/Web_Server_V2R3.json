@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "f335701a-ca5b-4504-b136-8a247f4eaead",
+    "uuid": "b6e20334-0c12-42b4-a3fc-9747b97d5942",
     "metadata": {
       "title": "Web Server V2R3",
-      "last-modified": "2022-06-10T12:50:52",
-      "version": "2022-06-10T12:50:52",
+      "last-modified": "2022-06-12T11:06:47",
+      "version": "2022-06-12T11:06:47",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "94461b68-8c39-457a-9a37-bcf19b304499",
+          "uuid": "52567a90-a888-4e38-9323-0c7b8fb8d21e",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,620 +16,620 @@
     },
     "components": [
       {
-        "uuid": "48008cb3-f1aa-43fe-97c7-c520ed16a09d",
+        "uuid": "e995632d-cf5b-4d86-a0f6-44f82cd5d140",
         "type": "software",
         "title": "Web Server V2R3",
-        "description": "Quaerat consectetur sit quaerat sit porro ut. Adipisci ipsum consectetur tempora amet magnam labore eius.",
+        "description": "Neque tempora sit porro velit. Velit sit amet amet.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "94461b68-8c39-457a-9a37-bcf19b304499"
+              "52567a90-a888-4e38-9323-0c7b8fb8d21e"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "d1adc848-49cf-4598-b78f-552bcccd5f21",
+            "uuid": "227f37b0-107c-4bf6-89b7-c2b108a8936b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-3.",
             "implemented-requirements": [
               {
-                "uuid": "ebb12718-ee64-43e9-970a-2dd326ff3d5f",
+                "uuid": "ce8e813e-043a-409c-b3ce-7c4669169729",
                 "description": "The web server must enforce approved authorizations for logical access to hosted applications and resources in accordance with applicable access control policies.",
-                "control-id": "ac-3."
+                "control-id": "ac-3"
               }
             ]
           },
           {
-            "uuid": "bfcc63ed-0763-4bff-9571-b6e2ceed6c5b",
+            "uuid": "5f92332a-5668-40aa-a59a-9ccbf9483c95",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.(10).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-6.10.",
             "implemented-requirements": [
               {
-                "uuid": "bf3a6850-4eb2-410a-84b3-342baae36efc",
+                "uuid": "1b87467c-7053-4629-af56-371eee180a57",
                 "description": "Non-privileged accounts on the hosting system must only access web server security-relevant information and functions through a distinct administrative account.",
-                "control-id": "ac-6.(10)"
+                "control-id": "ac-6.10"
               }
             ]
           },
           {
-            "uuid": "cf4eb1b5-4fd7-4dd9-83bc-f6840efced2f",
+            "uuid": "e336ad00-e5c7-4283-93c6-7f04eb16a82f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "29567bbd-662b-4a2c-a85d-d9eec4ad88b8",
+                "uuid": "57ca44e7-c4d0-4578-bb38-f6ca02e91944",
                 "description": "The web server must limit the number of allowed simultaneous session requests.\nThe web server must perform server-side session management.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "9346fd41-cf73-49e9-aa37-f468de2d6be2",
+            "uuid": "5a838d87-92c8-48e7-81e4-50cc4501443e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-12.",
             "implemented-requirements": [
               {
-                "uuid": "052fdc43-9a22-4ef2-9cfc-d856af352ed2",
+                "uuid": "5f9691df-4fa5-4b6c-8289-391a77ef38e8",
                 "description": "The web server must set an inactive timeout for sessions.\nThe web server must set an absolute timeout for sessions.",
-                "control-id": "ac-12."
+                "control-id": "ac-12"
               }
             ]
           },
           {
-            "uuid": "71eeb6db-58fc-4e59-ad7a-94ec0db4128e",
+            "uuid": "f23c84e0-4688-427a-821d-eb55cf64d63c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.1.",
             "implemented-requirements": [
               {
-                "uuid": "b14808b0-0625-46d3-8584-f20b61aa243e",
-                "description": "The web server must generate information to be used by external applications or entities to monitor and control remote access.",
-                "control-id": "ac-17.(1)"
-              },
-              {
-                "uuid": "64dc00cd-6da7-4ba1-8569-5b587164662f",
+                "uuid": "48d143f5-38b3-459b-8900-c9ec2333cff6",
                 "description": "Remote access to the web server must follow access policy or work in conjunction with enterprise tools designed to enforce policy requirements.\nThe web server must restrict inbound connections from nonsecure zones.",
-                "control-id": "ac-17.(1)"
+                "control-id": "ac-17.1"
+              },
+              {
+                "uuid": "3c843461-8ccd-43c6-9f0f-a92a5c570675",
+                "description": "The web server must generate information to be used by external applications or entities to monitor and control remote access.",
+                "control-id": "ac-17.1"
               }
             ]
           },
           {
-            "uuid": "769a21ac-e24b-4ab9-a64c-36ccc8e1a7a9",
+            "uuid": "25b1a44e-1f7d-4269-808b-ce00f5f3ef87",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "223ae3c3-743f-46cf-a4e8-78147f839f3b",
-                "description": "The web server must use cryptography to protect the integrity of remote sessions.",
-                "control-id": "ac-17.(2)"
-              },
-              {
-                "uuid": "9d02cf7a-25b9-4575-b944-7f676a09dbe4",
+                "uuid": "0245f163-a8a7-4b8d-8742-742c88f39e5e",
                 "description": "The web server must use encryption strength in accordance with the categorization of data hosted by the web server when remote connections are provided.",
-                "control-id": "ac-17.(2)"
+                "control-id": "ac-17.2"
+              },
+              {
+                "uuid": "6d29eb63-16a4-49fd-b023-8a5f3c0082c0",
+                "description": "The web server must use cryptography to protect the integrity of remote sessions.",
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "e15d2fd4-6049-46ba-8151-41ca1c194a1b",
+            "uuid": "9b55b3a1-15a0-4de9-af2e-d038773c5a56",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(9).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.9.",
             "implemented-requirements": [
               {
-                "uuid": "e764cee2-367e-42ac-a054-b96db3534f15",
+                "uuid": "23a10cfb-920f-4c68-942b-d06d78adfe72",
                 "description": "The web server must provide the capability to immediately disconnect or disable remote access to the hosted applications.",
-                "control-id": "ac-17.(9)"
+                "control-id": "ac-17.9"
               }
             ]
           },
           {
-            "uuid": "f741c917-768b-482c-a7a8-f44626d77b33",
+            "uuid": "cddab5a8-9402-451f-8f42-c97369ca1cb6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.",
             "implemented-requirements": [
               {
-                "uuid": "f2263e0e-e795-4294-a35c-a6db4fa85d1e",
-                "description": "The web server must produce log records that contain sufficient information to establish the outcome (success or failure) of events.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "20e38fb8-0d0d-4e36-b186-39e66a7275cd",
+                "uuid": "854d007e-d432-43a2-a2ea-45abd611db4a",
                 "description": "The web server must produce log records containing sufficient information to establish what type of events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
               },
               {
-                "uuid": "1b59d5aa-b3f6-494d-bc46-8f43558caf32",
-                "description": "The web server must produce log records containing sufficient information to establish the source of events.\nA web server, behind a load balancer or proxy server, must produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "026a305e-d827-4690-a950-54fc6fec3593",
-                "description": "The web server must produce log records containing sufficient information to establish where within the web server the events occurred.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "d449968a-6254-437e-8b96-eeaff25035fb",
-                "description": "The web server must produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.",
-                "control-id": "au-3."
-              },
-              {
-                "uuid": "405063da-c6da-4fad-bed2-040d20b8db2e",
+                "uuid": "772b1f25-60e4-4a24-a27b-879dfd5c5888",
                 "description": "The web server must produce log records containing sufficient information to establish when (date and time) events occurred.",
-                "control-id": "au-3."
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "0bb8eb82-ca80-4557-b301-ef4769e96d14",
+                "description": "The web server must produce log records containing sufficient information to establish where within the web server the events occurred.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "4f371004-e151-42a3-b6af-575db78ec412",
+                "description": "The web server must produce log records containing sufficient information to establish the identity of any user/subject or process associated with an event.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "98ab7594-d562-43a0-ac87-927e4cac2dfb",
+                "description": "The web server must produce log records containing sufficient information to establish the source of events.\nA web server, behind a load balancer or proxy server, must produce log records containing the client IP information as the source and destination and not the load balancer or proxy IP information with each event.",
+                "control-id": "au-3"
+              },
+              {
+                "uuid": "cbe3e06e-0d8c-4eee-b24a-dd54b9ec4942",
+                "description": "The web server must produce log records that contain sufficient information to establish the outcome (success or failure) of events.",
+                "control-id": "au-3"
               }
             ]
           },
           {
-            "uuid": "1a284d7c-e555-45ba-946f-c2e3ec8360ed",
+            "uuid": "1a46e23b-2b5f-4776-8adf-78ef0c748e3a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.2.",
             "implemented-requirements": [
               {
-                "uuid": "f4cbcbf8-ca01-4efa-adcd-38b20b8eafb5",
+                "uuid": "8197f9c0-f1b6-416d-905b-14e8d83b01dc",
                 "description": "A web server that is part of a web server cluster must route all remote management through a centrally managed access control point.",
-                "control-id": "au-3.(2)"
+                "control-id": "au-3.2"
               }
             ]
           },
           {
-            "uuid": "e11269d6-bb0b-4a20-994b-3160045a5d7f",
+            "uuid": "6f9229ca-dc61-44af-9a51-38c37a085be4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.",
             "implemented-requirements": [
               {
-                "uuid": "e4f2dd86-4b5f-4244-a601-4d70133990a5",
+                "uuid": "921be47c-12ef-4792-b905-953caad02076",
                 "description": "The web server must use a logging mechanism that is configured to allocate log record storage capacity large enough to accommodate the logging requirements of the web server.",
-                "control-id": "au-4."
+                "control-id": "au-4"
               }
             ]
           },
           {
-            "uuid": "925c608e-9855-4831-b7c6-b165304185f7",
+            "uuid": "a78b40df-5bed-4f0e-adbe-e3b02302a984",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
             "implemented-requirements": [
               {
-                "uuid": "0772e085-4f73-4571-b4ba-cfcf52a30f62",
+                "uuid": "76292348-9425-40f2-9833-df433a67e238",
                 "description": "The web server must not impede the ability to write specified log record content to an audit log server.\nThe web server must be configurable to integrate with an organizations security infrastructure.",
-                "control-id": "au-4.(1)"
+                "control-id": "au-4.1"
               }
             ]
           },
           {
-            "uuid": "ca9f44a2-5e5a-4a3d-a4df-1702b65f9866",
+            "uuid": "df5148ee-4cd5-4906-bb28-32fea76a592c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.",
             "implemented-requirements": [
               {
-                "uuid": "7db726aa-7b3e-4764-8e94-2b85a31ce51e",
+                "uuid": "d14c2222-ae64-4a76-9078-0cdb2911d3f1",
                 "description": "The web server must use a logging mechanism that is configured to alert the ISSO and SA in the event of a processing failure.",
-                "control-id": "au-5."
+                "control-id": "au-5"
               }
             ]
           },
           {
-            "uuid": "9a417f22-3964-4cf5-9d7a-01ae3c0b2eb2",
+            "uuid": "574c1a0b-a973-4c71-94fb-faf051a68ece",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "62d933a0-5aa8-42f8-a3dd-be5e59d16270",
+                "uuid": "cb2a2e61-f966-4bd7-be14-9dbd224fae2c",
                 "description": "The web server must use a logging mechanism that is configured to provide a warning to the ISSO and SA when allocated record storage volume reaches 75% of maximum log record storage capacity.",
-                "control-id": "au-5.(1)"
+                "control-id": "au-5.1"
               }
             ]
           },
           {
-            "uuid": "796b3df4-996d-46ca-a611-1d08e4f94905",
+            "uuid": "0d58d66a-0213-493e-9a28-b618b5427509",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-8.",
             "implemented-requirements": [
               {
-                "uuid": "6a50213f-43a0-4671-b6fa-81b0d6071006",
-                "description": "The web server must record time stamps for log records to a minimum granularity of one second.",
-                "control-id": "au-8."
-              },
-              {
-                "uuid": "622944f7-1cbe-4221-93d3-bd1e33c0b304",
+                "uuid": "e679a3b6-03bd-45a6-8600-d22bfea545ce",
                 "description": "The web server must use the internal system clock to generate time stamps for log records.",
-                "control-id": "au-8."
+                "control-id": "au-8"
               },
               {
-                "uuid": "276dcb3d-657f-4edb-aa44-e64cf21a0ae7",
+                "uuid": "748306d0-ddf5-4fb0-ba56-d02cbef1228d",
                 "description": "The web server must generate log records that can be mapped to Coordinated Universal Time (UTC) or Greenwich Mean Time (GMT).",
-                "control-id": "au-8."
+                "control-id": "au-8"
+              },
+              {
+                "uuid": "8619050a-c15f-47ec-9405-ef2379745f8d",
+                "description": "The web server must record time stamps for log records to a minimum granularity of one second.",
+                "control-id": "au-8"
               }
             ]
           },
           {
-            "uuid": "5d7daa1b-8384-4434-99fb-1ab61bf672cb",
+            "uuid": "eba2746d-d0cd-411d-9963-211f6b5f3e3c",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.",
             "implemented-requirements": [
               {
-                "uuid": "e44414ef-ec01-47d1-80c2-5f10da1ae6eb",
-                "description": "Web server log files must only be accessible by privileged users.",
-                "control-id": "au-9."
-              },
-              {
-                "uuid": "52a92e24-b465-4451-87d6-9174e06ddc02",
+                "uuid": "5e6dca2f-9286-4a8e-987a-2dd2fa1b302d",
                 "description": "The log information from the web server must be protected from unauthorized deletion.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               },
               {
-                "uuid": "dfe867cf-cec9-4c44-acda-2ba344532b05",
+                "uuid": "7ed0c779-a03a-4699-a798-2541e729ee26",
+                "description": "Web server log files must only be accessible by privileged users.",
+                "control-id": "au-9"
+              },
+              {
+                "uuid": "9d45fb00-fa26-49e7-89d2-e62d73a228aa",
                 "description": "The log information from the web server must be protected from unauthorized modification.",
-                "control-id": "au-9."
+                "control-id": "au-9"
               }
             ]
           },
           {
-            "uuid": "0aedda7a-5ff2-461a-a1dd-a9567f161fb0",
+            "uuid": "7c58cafa-b3bf-4d9c-a3fe-4d59fb4d26fe",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
             "implemented-requirements": [
               {
-                "uuid": "6d132e12-25ec-4061-9b1c-85cd0e02d0da",
+                "uuid": "38851b5c-8a53-4d5e-ab6d-2d53476bd28c",
                 "description": "The log data and records from the web server must be backed up onto a different system or media.",
-                "control-id": "au-9.(2)"
+                "control-id": "au-9.2"
               }
             ]
           },
           {
-            "uuid": "6ec42be0-17cf-43ca-81ab-e3a0c8f296a4",
+            "uuid": "86e016dd-8270-4e5c-9079-d7b173106ecb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
             "implemented-requirements": [
               {
-                "uuid": "cb793a8f-78b1-4d95-9dfc-9ee98fd792c3",
+                "uuid": "5ac8f511-1cbf-4c18-b3c8-cca886e9dfbd",
                 "description": "The web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.",
-                "control-id": "au-12."
+                "control-id": "au-12"
               }
             ]
           },
           {
-            "uuid": "32f782c8-556b-40a0-b8c0-f95b8aa8d450",
+            "uuid": "4253808b-e897-4967-b8e2-1da7ce4cc912",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.1.",
             "implemented-requirements": [
               {
-                "uuid": "274d5d88-6abd-4dee-a1f0-3527711f0df5",
+                "uuid": "9f1f7cf4-1910-4a91-9a2a-64dd43cc5cfd",
                 "description": "The web server must initiate session logging upon start up.",
-                "control-id": "au-14.(1)"
+                "control-id": "au-14.1"
               }
             ]
           },
           {
-            "uuid": "e4d767e7-e600-45d4-9922-a7b667875fc1",
+            "uuid": "b1a32184-b078-4d5d-9a1f-215b2a3c1031",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-14.2.",
             "implemented-requirements": [
               {
-                "uuid": "4888f817-5d15-4eab-9e34-c1e15de028c7",
+                "uuid": "4c6645d7-a3d5-4de9-bfda-4cfd5a211b7f",
                 "description": "The web server must capture, record, and log all content related to a user session.",
-                "control-id": "au-14.(2)"
+                "control-id": "au-14.2"
               }
             ]
           },
           {
-            "uuid": "d49a8b31-9e32-4340-80fe-ec6f682d3dfd",
+            "uuid": "97884d83-f9cd-40a4-a81e-755e9487f3ba",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "603b8f85-ab50-435e-8b77-760c8f6ef3b4",
+                "uuid": "36b90c3b-304c-40d5-8924-9ebfdf804fb2",
                 "description": "The web server application, libraries, and configuration files must only be accessible to privileged users.",
-                "control-id": "cm-5.(1)"
+                "control-id": "cm-5.1"
               }
             ]
           },
           {
-            "uuid": "ff9c8884-94df-4076-b164-89a03930e13a",
+            "uuid": "69c05350-96d8-4ead-8bed-00d8b97ef06d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.3.",
             "implemented-requirements": [
               {
-                "uuid": "5a08d063-e3ce-43f6-a1a5-a939812fdb34",
+                "uuid": "31433643-1bab-4e3b-8374-ddd8f24a77be",
                 "description": "Expansion modules must be fully reviewed, tested, and signed before they can exist on a production web server.\nAll web server files must be verified for their integrity (e.g., checksums and hashes) before becoming part of the production web server.",
-                "control-id": "cm-5.(3)"
+                "control-id": "cm-5.3"
               }
             ]
           },
           {
-            "uuid": "6258d450-6d29-4293-aee6-74fb1a84bdfd",
+            "uuid": "86ab7179-09bb-4353-8fe4-f220fe2f4b2e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
             "implemented-requirements": [
               {
-                "uuid": "33673ff9-3160-49aa-aeaa-5b8a495b2f91",
+                "uuid": "5bf4887f-eb01-499b-9eaa-254e0203b208",
                 "description": "The web server must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.\nAll accounts installed with the web server software and tools must have passwords assigned and default passwords changed.",
-                "control-id": "cm-6."
+                "control-id": "cm-6"
               }
             ]
           },
           {
-            "uuid": "5cc6bfd8-ebfc-4222-83d6-626ddf190aca",
+            "uuid": "0e746785-eb61-4fd3-9db4-17ba407296a7",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
             "implemented-requirements": [
               {
-                "uuid": "34fa927c-a120-4c60-91b8-6bf21f17b8a1",
-                "description": "The web server must be configured to use a specified IP address and port.",
-                "control-id": "cm-7."
-              },
-              {
-                "uuid": "df5f0569-ec82-4ac8-87bd-48d8439f4504",
+                "uuid": "43e89542-a05c-43fc-bc50-42020f28cfab",
                 "description": "The web server must only contain services and functions necessary for operation.\nThe web server must not be a proxy server.\nThe web server must provide install options to exclude the installation of documentation, sample code, example applications, and tutorials.\nWeb server accounts not utilized by installed features (i.e., tools, utilities, specific services, etc.) must not be created and must be deleted when the web server feature is uninstalled.\nThe web server must provide install options to exclude installation of utility programs, services, plug-ins, and modules not necessary for operation.\nThe web server must have Multipurpose Internet Mail Extensions (MIME) that invoke OS shell programs disabled.\nThe web server must allow the mappings to unused and vulnerable scripts to be removed.\nThe web server must have resource mappings set to disable the serving of certain file types.\nThe web server must have Web Distributed Authoring (WebDAV) disabled.\nThe web server must protect system resources and privileged operations from hosted applications.\nUsers and scripts running on behalf of users must be contained to the document root or home directory tree of the web server.\nThe web server must not perform user management for hosted applications.",
-                "control-id": "cm-7."
+                "control-id": "cm-7"
+              },
+              {
+                "uuid": "ab374806-67d9-40e0-8014-1ce8a414d9ae",
+                "description": "The web server must be configured to use a specified IP address and port.",
+                "control-id": "cm-7"
               }
             ]
           },
           {
-            "uuid": "2e5e2e95-1253-4e2f-a7ab-4b98baab423a",
+            "uuid": "56b7ab24-b43d-4146-a255-a63fd64cfed4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
             "implemented-requirements": [
               {
-                "uuid": "f0edee26-0326-4c21-b5ea-09534831d8b1",
+                "uuid": "3eb3843b-586a-4e2b-bf67-572fa2c48a4e",
                 "description": "The web server must prohibit or restrict the use of nonsecure or unnecessary ports, protocols, modules, and/or services.",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "b2572c07-fbb5-4b09-b8fd-1d11e5214be3",
+            "uuid": "896bc9ee-db52-4592-901e-565eb064da4f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "ced1ba37-3de3-45f4-a9a0-95a9fa976c13",
+                "uuid": "8c5d5561-31bc-4bac-a44c-925fd3cc7762",
                 "description": "The web server must encrypt passwords during transmission.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "c231d0ca-573c-44bd-a9c8-6bacde9680c6",
+            "uuid": "7659591a-fb5f-455c-88ed-2372a019b301",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "861e42fa-d764-415a-9475-8271ce9c3306",
-                "description": "The web server must perform RFC 5280-compliant certification path validation.",
-                "control-id": "ia-5.(2)"
-              },
-              {
-                "uuid": "5c190a1e-bcd7-484c-86dc-f6f1486420a5",
+                "uuid": "baae2de5-005e-40fe-9141-dcaa9c4e4d71",
                 "description": "Only authenticated system administrators or the designated PKI Sponsor for the web server must have access to the web servers private key.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
+              },
+              {
+                "uuid": "fab2c8a6-3a00-47e1-9433-dd00a48ba85e",
+                "description": "The web server must perform RFC 5280-compliant certification path validation.",
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "02652d95-2c52-475b-9d99-cc98d5dd9d1b",
+            "uuid": "bea1fa64-ca61-41a7-8e68-e295930a0c77",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "3b59b31f-75db-4586-8158-a160f9e1f85d",
+                "uuid": "0fb3bf96-45fd-4342-b3d4-0c373aba8ae7",
                 "description": "The web server must use cryptographic modules that meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting stored data.\nThe web server must use cryptographic modules that meet the requirements of applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance for such authentication.",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "84687b43-25f4-4b8d-8d31-7f71b653bf57",
+            "uuid": "d5629acc-55b5-43ab-aa20-a46b912e9cf4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-2.",
             "implemented-requirements": [
               {
-                "uuid": "0376d93b-0218-4735-8dcb-8b4642e7175b",
+                "uuid": "edd5054b-2b44-4dc6-bb6e-f2c37618e291",
                 "description": "The web server must separate the hosted applications from hosted web server management functionality.\nAnonymous user access to the web server application directories must be prohibited.\nWeb server accounts accessing the directory tree, the shell, or other operating system functions and utilities must only be administrative accounts.",
-                "control-id": "sc-2."
+                "control-id": "sc-2"
               }
             ]
           },
           {
-            "uuid": "8f532fb6-58e1-4cc9-ba00-3e4fa5b9c0da",
+            "uuid": "d9543a0a-ef96-44de-b2fb-fe073ff29a3a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-3.",
             "implemented-requirements": [
               {
-                "uuid": "f5f58075-3639-4630-8c5e-316aca939f41",
+                "uuid": "8e555aec-8ae2-40f4-8e69-5cb1d028911f",
                 "description": "The web server document directory must be in a separate partition from the web servers system files.",
-                "control-id": "sc-3."
+                "control-id": "sc-3"
               }
             ]
           },
           {
-            "uuid": "a3d63700-16cc-48bb-b795-f30752a60159",
+            "uuid": "b0b1a7c9-c35d-4ce5-8482-59b3d5068010",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.",
             "implemented-requirements": [
               {
-                "uuid": "1f103d86-035c-4eb4-bc75-8caca9cd2236",
+                "uuid": "04760083-1b88-422c-9544-ca5ffd0151b3",
                 "description": "The web server must be tuned to handle the operational requirements of the hosted application.\nThe web server must be protected from being stopped by a non-privileged user.",
-                "control-id": "sc-5."
+                "control-id": "sc-5"
               }
             ]
           },
           {
-            "uuid": "57d3e2cc-9685-499f-a54c-de28c0a38d0d",
+            "uuid": "4b6afd02-8eb4-49e2-a5d4-b1b4330ff7d6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "ec93a693-3b6c-4f25-8d1c-7211d0a0d115",
+                "uuid": "5356616a-662f-4454-9c8a-3068380cd39c",
                 "description": "The web server must restrict the ability of users to launch Denial of Service (DoS) attacks against other information systems or networks.",
-                "control-id": "sc-5.(1)"
+                "control-id": "sc-5.1"
               }
             ]
           },
           {
-            "uuid": "1e461a52-23bd-4a87-9739-2d1cc6b6790e",
+            "uuid": "32123833-05f2-405b-884d-18f412b307ba",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "a1d55232-9ffd-4356-b445-9076b9a07ccf",
+                "uuid": "9fefb599-6206-4d27-9a16-ec2cbf92afdf",
                 "description": "The web server must employ cryptographic mechanisms (TLS/DTLS/SSL) preventing the unauthorized disclosure of information during transmission.\nWeb server session IDs must be sent to the client using SSL/TLS.\nWeb server cookies, such as session cookies, sent to the client using SSL/TLS must not be compressed.\nCookies exchanged between the web server and the client, such as session cookies, must have cookie properties set to prohibit client-side scripts from reading the cookie data.\nCookies exchanged between the web server and the client, such as session cookies, must have cookie properties set to force the encryption of cookies.\nA web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version.\nThe web server must remove all export ciphers to protect the confidentiality and integrity of transmitted information.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "a4c63efe-6652-4325-a8a6-ebad55f5bd10",
+            "uuid": "0d96b924-9912-4a18-b171-802eb5604b03",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "5a9456c7-057d-4cd0-8b88-c71e836f6d33",
+                "uuid": "f58c10eb-3c52-4552-86cc-3dbd16d63c4b",
                 "description": "The web server must maintain the confidentiality and integrity of information during reception.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
               },
               {
-                "uuid": "70648d6b-7164-4c08-8ea9-fc093b7a0bfd",
+                "uuid": "8cc32b19-f66c-49a7-966a-7daa833cb328",
                 "description": "The web server must maintain the confidentiality and integrity of information during preparation for transmission.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
               }
             ]
           },
           {
-            "uuid": "bdeddc2a-6092-4170-90f9-02d8170e3ed2",
+            "uuid": "3321819b-2364-4156-8602-e967a8dd1bed",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "8792ca61-912d-496c-90c8-bb20b7d39f60",
+                "uuid": "6df96d56-e3ea-4187-aa77-4c8933d4286c",
                 "description": "The web server must implement required cryptographic protections using cryptographic modules complying with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance when encrypting data that must be compartmentalized.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "ba115505-90d5-4094-b3e4-de38a83f2d68",
+            "uuid": "34c3d640-ec59-46f8-bd09-3095dffcc4b5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-18.1.",
             "implemented-requirements": [
               {
-                "uuid": "910af677-c3ce-462d-8602-e49bc882f47c",
+                "uuid": "57995762-b88f-410d-aa29-5fe4d0b5a6b0",
                 "description": "A web server utilizing mobile code must meet DoD-defined mobile code requirements.",
-                "control-id": "sc-18.(1)"
+                "control-id": "sc-18.1"
               }
             ]
           },
           {
-            "uuid": "a9f95850-eb12-4fec-b370-fc57b6816225",
+            "uuid": "abe8151f-d283-459e-9c8e-3d519fa75f41",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.1.",
             "implemented-requirements": [
               {
-                "uuid": "8814392a-2000-459b-a915-b537b4a1fbd5",
+                "uuid": "87a116c3-bd36-49aa-aa1d-ac7040b56890",
                 "description": "The web server must invalidate session identifiers upon hosted application user logout or other session termination.",
-                "control-id": "sc-23.(1)"
+                "control-id": "sc-23.1"
               }
             ]
           },
           {
-            "uuid": "a058e47c-309e-4a29-84ab-97d2473a1ae3",
+            "uuid": "e16204b8-1bf1-4164-819a-c3e729f3a713",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(3).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.3.",
             "implemented-requirements": [
               {
-                "uuid": "a2c239ef-db6c-456d-b7d8-a4e52b4f03ae",
-                "description": "The web server must generate unique session identifiers that cannot be reliably reproduced.\nThe web server must generate a session ID long enough that it cannot be guessed through brute force.\nThe web server must generate a session ID using as much of the character set as possible to reduce the risk of brute force.\nThe web server must generate unique session identifiers with definable entropy.\nThe web server must generate a unique session identifier for each session using a FIPS 140-2 approved random number generator.",
-                "control-id": "sc-23.(3)"
+                "uuid": "e7c7d4f2-106b-4124-8205-4d083ac9736e",
+                "description": "The web server must accept only system-generated session identifiers.\nCookies exchanged between the web server and client, such as session cookies, must have security settings that disallow cookie access outside the originating web server and hosted application.",
+                "control-id": "sc-23.3"
               },
               {
-                "uuid": "e40ebc99-a93f-4349-be9a-f20f015947b6",
-                "description": "The web server must accept only system-generated session identifiers.\nCookies exchanged between the web server and client, such as session cookies, must have security settings that disallow cookie access outside the originating web server and hosted application.",
-                "control-id": "sc-23.(3)"
+                "uuid": "1898c0e1-93de-4c3d-8345-bcec239ca035",
+                "description": "The web server must generate unique session identifiers that cannot be reliably reproduced.\nThe web server must generate a session ID long enough that it cannot be guessed through brute force.\nThe web server must generate a session ID using as much of the character set as possible to reduce the risk of brute force.\nThe web server must generate unique session identifiers with definable entropy.\nThe web server must generate a unique session identifier for each session using a FIPS 140-2 approved random number generator.",
+                "control-id": "sc-23.3"
               }
             ]
           },
           {
-            "uuid": "e0b480cc-c6b9-45af-affa-9d80cedb4e07",
+            "uuid": "658e140c-d31c-4af7-9ab8-f972bc47fbd5",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "16df68c5-a964-4301-b4b2-1a656ecb1fcc",
+                "uuid": "f8ac0958-5dfa-4b5d-825d-5879ea447288",
                 "description": "The web server must only accept client certificates issued by DoD PKI or DoD-approved PKI Certification Authorities (CAs).",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "5563b461-1aed-4c75-b2a6-e01fffcf0e76",
+            "uuid": "49e26781-8299-494a-9faa-5e839534b388",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-24.",
             "implemented-requirements": [
               {
-                "uuid": "8cee98d6-18e8-4ff3-b338-a079d24a094c",
+                "uuid": "3930aedf-f4c5-42c3-9a5c-830ea38a90f6",
                 "description": "The web server must be built to fail to a known safe state if system initialization fails, shutdown fails, or aborts fail.\nThe web server must provide a clustering capability.\nThe web server must augment re-creation to a stable and known baseline.",
-                "control-id": "sc-24."
+                "control-id": "sc-24"
               }
             ]
           },
           {
-            "uuid": "c83125e7-fda1-4373-a055-efde375a91b0",
+            "uuid": "ad309776-1b4e-42ba-99fe-bc6d1ed9c6c3",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.",
             "implemented-requirements": [
               {
-                "uuid": "40db58aa-6ff0-46a6-a751-08b964c77286",
+                "uuid": "1cc47cd8-1ed4-424a-a550-982fbd9e4677",
                 "description": "Information at rest must be encrypted using a DoD-accepted algorithm to protect the confidentiality and integrity of the information.",
-                "control-id": "sc-28."
+                "control-id": "sc-28"
               }
             ]
           },
           {
-            "uuid": "85167bed-3093-4fce-b7cf-364d80f01392",
+            "uuid": "29fc5327-7434-4c8c-ac2d-d6220bcd4606",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-28.1.",
             "implemented-requirements": [
               {
-                "uuid": "284f9446-ba19-4550-84d7-90bac4e50509",
+                "uuid": "1d392a70-ca8b-44ef-91b1-a75b12246463",
                 "description": "The web server must encrypt user identifiers and passwords.",
-                "control-id": "sc-28.(1)"
+                "control-id": "sc-28.1"
               }
             ]
           },
           {
-            "uuid": "128fd577-d6b4-4567-bd96-6b04c6f62adc",
+            "uuid": "ce8b4af8-e924-457e-905e-b550d54c284a",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "8ae9bc9a-8100-4c62-86e7-c29edf7e354c",
+                "uuid": "0056b028-30c6-499b-a9da-da42a7f4a9b0",
                 "description": "The web server must install security-relevant software updates within the configured time period directed by an authoritative source (e.g., IAVM, CTOs, DTMs, and STIGs).",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           },
           {
-            "uuid": "e90f29ed-7a14-4a64-8202-72145e2a4835",
+            "uuid": "365abd2e-34be-4e26-a3f2-574eb1e3693d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-10.",
             "implemented-requirements": [
               {
-                "uuid": "8e0ce046-5292-4bf1-84f2-d1b8ce0396fd",
+                "uuid": "27a2329f-ac2a-4888-8077-756b1dd0403d",
                 "description": "The web server must limit the character set used for data entry.",
-                "control-id": "si-10."
+                "control-id": "si-10"
               }
             ]
           },
           {
-            "uuid": "efb050f6-fc8d-4cac-973c-1f165154dede",
+            "uuid": "cd55265e-966c-4bed-883b-b2e7cbcd062b",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-11.",
             "implemented-requirements": [
               {
-                "uuid": "a079eee6-0892-4e53-af78-66688b73f5bb",
+                "uuid": "24e62401-9d52-45e0-a94c-aeb3bc4d4e1a",
                 "description": "Warning and error messages displayed to clients must be modified to minimize the identity of the web server, patches, loaded modules, and directory paths.\nDebugging and trace information used to diagnose the web server must be disabled.\nThe web server must display a default hosted application web page, not a directory listing, when a requested web page cannot be found.",
-                "control-id": "si-11."
+                "control-id": "si-11"
               }
             ]
           }

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "353735b2-a50c-4eda-bf94-b1b1112f183f",
+    "uuid": "7e9bf5a1-5509-4b2b-aabb-bc24c3d667c6",
     "metadata": {
       "title": "Traditional Security Manual Checklist V2R1",
-      "last-modified": "2022-06-10T12:50:53",
-      "version": "2022-06-10T12:50:53",
+      "last-modified": "2022-06-12T11:06:48",
+      "version": "2022-06-12T11:06:48",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "ba24bff0-e5ad-4326-a84d-d88c21663248",
+          "uuid": "f174d2ca-38e9-45db-8338-ea7bba0f5460",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,15 +16,15 @@
     },
     "components": [
       {
-        "uuid": "6d605d1c-76d8-4381-90e2-c8ab1d04f40e",
+        "uuid": "6ca7ba2f-6339-4f30-ae53-cfb7b4dc85fe",
         "type": "software",
         "title": "Traditional Security Manual Checklist V2R1",
-        "description": "Sit non ipsum porro eius. Ipsum modi consectetur dolorem eius labore dolorem. Dolor eius velit etincidunt aliquam.",
+        "description": "Est quaerat porro velit ut. Modi sit numquam quiquia numquam. Modi modi ipsum quiquia quaerat magnam ipsum dolorem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "ba24bff0-e5ad-4326-a84d-d88c21663248"
+              "f174d2ca-38e9-45db-8338-ea7bba0f5460"
             ]
           }
         ],

@@ -1,14 +1,14 @@
 {
   "component-definition": {
-    "uuid": "4f985c35-52bf-446e-932a-9a4c949eb8c2",
+    "uuid": "9df1aeb3-f696-4908-ab9c-8289cf91622e",
     "metadata": {
       "title": "ISEC7 Sphere V2R1",
-      "last-modified": "2022-06-10T12:50:57",
-      "version": "2022-06-10T12:50:57",
+      "last-modified": "2022-06-12T11:06:53",
+      "version": "2022-06-12T11:06:53",
       "oscal-version": "1.0.0",
       "parties": [
         {
-          "uuid": "a1de028f-cc56-4487-8c24-d36dfc7a6167",
+          "uuid": "5ca309b4-e5b8-4b4a-a6a1-c8c7312542e5",
           "type": "organization",
           "name": "Example Organization"
         }
@@ -16,366 +16,366 @@
     },
     "components": [
       {
-        "uuid": "c93ed90b-0e71-42f9-9e05-afbf88427a16",
+        "uuid": "b0ff78d6-f8da-4c3f-954c-98d76147c708",
         "type": "software",
         "title": "ISEC7 Sphere V2R1",
-        "description": "Quisquam magnam magnam quisquam. Magnam sit quisquam voluptatem.",
+        "description": "Non velit sit quisquam quisquam. Non neque dolor ut non aliquam. Dolor eius dolore aliquam dolorem.",
         "responsible-roles": [
           {
             "role-id": "supplier",
             "party-uuids": [
-              "a1de028f-cc56-4487-8c24-d36dfc7a6167"
+              "5ca309b4-e5b8-4b4a-a6a1-c8c7312542e5"
             ]
           }
         ],
         "props": [],
         "control-implementations": [
           {
-            "uuid": "aad7a182-58ab-4ede-a5a2-5fd8f75dc86f",
+            "uuid": "c2120d9b-705f-48a1-825d-1f8e9191865f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-7.",
             "implemented-requirements": [
               {
-                "uuid": "0800bb5a-df82-4c76-ac3f-ac9b516e0398",
+                "uuid": "6db394bf-6079-421f-8d05-868d4ffbfec7",
                 "description": "The LockOutRealm must be configured with a login failure count of 3.",
-                "control-id": "ac-7."
+                "control-id": "ac-7"
               }
             ]
           },
           {
-            "uuid": "2a191d03-bd31-494a-948a-dedaeefd69be",
+            "uuid": "8a1e3ce6-06d2-4bb7-9f30-350a057b476e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-8.",
             "implemented-requirements": [
               {
-                "uuid": "0a9e8620-f694-4a67-9b89-2288302c5498",
+                "uuid": "effb7a60-cb2c-47eb-9093-1b2c953dba14",
                 "description": "The ISEC7 EMM Suite must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the ISEC7 EMM Suite.",
-                "control-id": "ac-8."
+                "control-id": "ac-8"
               }
             ]
           },
           {
-            "uuid": "ce6f7bb4-8c01-4f3e-8a7b-0923cbbb6cf4",
+            "uuid": "87e524ad-5474-44a3-baf5-723bbb84ab20",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-10.",
             "implemented-requirements": [
               {
-                "uuid": "1d80264a-a228-43dd-bac2-44fae0fbc0ef",
+                "uuid": "54b8d12d-fd8d-4e59-9c80-da75cb7ae2f9",
                 "description": "The ISEC7 EMM Suite must limit the number of concurrent sessions to an organization-defined number for all accounts and/or account types.",
-                "control-id": "ac-10."
+                "control-id": "ac-10"
               }
             ]
           },
           {
-            "uuid": "bccb9c36-8768-4c32-a886-90e4d2c7dfc9",
+            "uuid": "ca7675dc-bc35-46cd-a74f-3d2a18e73821",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-11.",
             "implemented-requirements": [
               {
-                "uuid": "fa4f9bcd-57cd-4f9b-8f25-f58aeb880942",
+                "uuid": "43c52a96-0f9a-4e7f-8b3d-189d6b4b302b",
                 "description": "The ISEC7 EMM Suite must initiate a session lock after a 15-minute period of inactivity.",
-                "control-id": "ac-11."
+                "control-id": "ac-11"
               }
             ]
           },
           {
-            "uuid": "27ab88a1-f9eb-4aee-825f-83870888214a",
+            "uuid": "a6034c2e-77ef-431c-ba1d-21ab454678cb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ac-17.2.",
             "implemented-requirements": [
               {
-                "uuid": "3e03c3d6-6552-4f11-8a53-da074a140214",
-                "description": "If cipher suites using pre-shared keys are used for device authentication, the ISEC7 EMM Suite must have a minimum security strength of 112 bits or higher, must only be used in networks where both the client and server are Government systems, must prohibit client negotiation to TLS 1.1, TLS 1.0, SSL 2.0, or SSL 3.0 and must prohibit or restrict the use of protocols that transmit unencrypted authentication information or use flawed cryptographic algorithm for transmission.",
-                "control-id": "ac-17.(2)"
-              },
-              {
-                "uuid": "0aff6be6-4656-4724-af3f-e5c46d2ade14",
+                "uuid": "da7f5cbf-f602-4e40-aed9-25b8729e9617",
                 "description": "The ISEC7 EMM Suite must use TLS 1.2, at a minimum, to protect the confidentiality of sensitive data during electronic dissemination using remote access.",
-                "control-id": "ac-17.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "8a81726b-e5b3-4b78-99f6-2e51c36df199",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.(2).",
-            "implemented-requirements": [
+                "control-id": "ac-17.2"
+              },
               {
-                "uuid": "bed41567-32b3-487b-b34c-0d5d3517f686",
-                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
-                "control-id": "au-3.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "2f6179a7-1a4a-4093-93e8-ae5eac6b2f94",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "1dc24e67-747b-4460-b59b-c8917d339e1f",
-                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
-                "control-id": "au-4.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "015c0ff5-cca9-4569-a3f8-696e0b4630fa",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5..",
-            "implemented-requirements": [
-              {
-                "uuid": "c942e847-9d04-4eed-9699-1881bf2eb8fd",
-                "description": "The ISEC7 EMM Suite must alert the ISSO and SA (at a minimum) in the event of an audit processing failure.",
-                "control-id": "au-5."
-              }
-            ]
-          },
-          {
-            "uuid": "3c38373c-a216-42f4-9bdc-c85398d16753",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.(2).",
-            "implemented-requirements": [
-              {
-                "uuid": "6568a754-4590-4364-8e16-b628ae351f56",
-                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
-                "control-id": "au-9.(2)"
-              }
-            ]
-          },
-          {
-            "uuid": "84fd6434-17a4-47d9-8488-72e031aa6910",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12..",
-            "implemented-requirements": [
-              {
-                "uuid": "610ba60b-3b8d-401a-b21f-c5f36d4279c4",
-                "description": "The ISEC7 EMM Suite server must be configured to have at least one user in the following Administrator roles: Security Administrator, Site Administrator, Help Desk User.\nA manager role must be assigned to the Apache Tomcat Web apps (Manager, Host-Manager).",
-                "control-id": "au-12."
-              }
-            ]
-          },
-          {
-            "uuid": "8ad3aaf1-7c1a-4282-b0ee-ee711ca734b3",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.(1).",
-            "implemented-requirements": [
-              {
-                "uuid": "e3ff8d1c-45e8-4eb0-a1ae-dd1b9c915468",
-                "description": "The Apache Tomcat shutdown port must be disabled.\nThe ISEC7 EMM Suite must remove any unnecessaryusers or groups that have permissions to the server.xml file in Apache Tomcat.",
-                "control-id": "cm-5.(1)"
-              }
-            ]
-          },
-          {
-            "uuid": "6bb7b720-83f9-4fa1-aa0d-47d1371ae524",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6..",
-            "implemented-requirements": [
-              {
-                "uuid": "00ad3e30-954d-4e6d-a973-b36b7d0d8fdd",
-                "description": "The ISEC7 EMM Suite must be configured to leverage the enterprise directory service accounts and groups for ISEC7 EMM Suite server admin identification and authentication.\nThe ISEC7 EMM Suite must configure the timeout for the console to be 15 minutes or less.\nThe ISEC7 EMM Suite, Tomcat installation, and ISEC7 Suite monitor must be configured to use the Windows Trust Store for the storage of digital certificates and keys.\nThe LockOutRealm must be configured with a login lockout time of 15 minutes.",
-                "control-id": "cm-6."
-              }
-            ]
-          },
-          {
-            "uuid": "35a38aa2-401c-47cc-b217-990a2f7a696d",
-            "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7..",
-            "implemented-requirements": [
-              {
-                "uuid": "a18ce4af-7b63-4072-b528-715730ae156d",
+                "uuid": "f1a69bfa-a2c0-4694-8725-cb5edb06a545",
                 "description": "If cipher suites using pre-shared keys are used for device authentication, the ISEC7 EMM Suite must have a minimum security strength of 112 bits or higher, must only be used in networks where both the client and server are Government systems, must prohibit client negotiation to TLS 1.1, TLS 1.0, SSL 2.0, or SSL 3.0 and must prohibit or restrict the use of protocols that transmit unencrypted authentication information or use flawed cryptographic algorithm for transmission.",
-                "control-id": "cm-7."
+                "control-id": "ac-17.2"
               }
             ]
           },
           {
-            "uuid": "69ff94c9-5810-493b-89ef-0618c14b5d7e",
+            "uuid": "afaf9fe2-d871-4f65-a15a-9da6b8991098",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-3.2.",
             "implemented-requirements": [
               {
-                "uuid": "1395e543-fd07-4e1d-980c-b3495e1c72a2",
+                "uuid": "97e27786-c3e7-49df-ac92-d5f89ca5a1b7",
+                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
+                "control-id": "au-3.2"
+              }
+            ]
+          },
+          {
+            "uuid": "1134e8e6-714d-4f5e-8c69-8696d46a73a4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-4.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "647f210c-2d62-4923-9339-0cb0829e1093",
+                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
+                "control-id": "au-4.1"
+              }
+            ]
+          },
+          {
+            "uuid": "cb3a822c-12f4-4b92-9450-fbbea0a7bfa4",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-5.",
+            "implemented-requirements": [
+              {
+                "uuid": "08fa0df3-805c-4188-a2fd-8786dc728310",
+                "description": "The ISEC7 EMM Suite must alert the ISSO and SA (at a minimum) in the event of an audit processing failure.",
+                "control-id": "au-5"
+              }
+            ]
+          },
+          {
+            "uuid": "c0a798fb-9b33-410e-be1e-0f40ecf9ca6f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-9.2.",
+            "implemented-requirements": [
+              {
+                "uuid": "da2f11d3-0455-43ef-825f-217fc39ee0b5",
+                "description": "The ISEC7 EMM Suite must back up audit records at least every seven days onto a different system or system component than the system or component being audited, provide centralized management and configuration of the content to be captured in audit records generated by all ISEC7 EMM Suite components, and off-load audit records onto a different system or media than the system being audited.",
+                "control-id": "au-9.2"
+              }
+            ]
+          },
+          {
+            "uuid": "ce8fd770-42bd-489d-9c0e-a1f8e193a10f",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement au-12.",
+            "implemented-requirements": [
+              {
+                "uuid": "4a67a442-3d7f-4b9f-94b0-b82160c00d62",
+                "description": "The ISEC7 EMM Suite server must be configured to have at least one user in the following Administrator roles: Security Administrator, Site Administrator, Help Desk User.\nA manager role must be assigned to the Apache Tomcat Web apps (Manager, Host-Manager).",
+                "control-id": "au-12"
+              }
+            ]
+          },
+          {
+            "uuid": "cd5f2d12-c465-43ee-aa7c-c48f1b666d09",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-5.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "8930e362-ac34-4872-842e-5c55f50a83e6",
+                "description": "The Apache Tomcat shutdown port must be disabled.\nThe ISEC7 EMM Suite must remove any unnecessaryusers or groups that have permissions to the server.xml file in Apache Tomcat.",
+                "control-id": "cm-5.1"
+              }
+            ]
+          },
+          {
+            "uuid": "42ea31c4-2f2d-4edc-9c09-014dcd952e9d",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-6.",
+            "implemented-requirements": [
+              {
+                "uuid": "a741145c-6b29-4acb-9e30-e7b9f4a6bb33",
+                "description": "The ISEC7 EMM Suite must be configured to leverage the enterprise directory service accounts and groups for ISEC7 EMM Suite server admin identification and authentication.\nThe ISEC7 EMM Suite must configure the timeout for the console to be 15 minutes or less.\nThe ISEC7 EMM Suite, Tomcat installation, and ISEC7 Suite monitor must be configured to use the Windows Trust Store for the storage of digital certificates and keys.\nThe LockOutRealm must be configured with a login lockout time of 15 minutes.",
+                "control-id": "cm-6"
+              }
+            ]
+          },
+          {
+            "uuid": "bf6f0e7f-1eb0-4be6-b391-dfb12d7493f1",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.",
+            "implemented-requirements": [
+              {
+                "uuid": "c4b80e80-d9ea-4c30-b182-605606536522",
+                "description": "If cipher suites using pre-shared keys are used for device authentication, the ISEC7 EMM Suite must have a minimum security strength of 112 bits or higher, must only be used in networks where both the client and server are Government systems, must prohibit client negotiation to TLS 1.1, TLS 1.0, SSL 2.0, or SSL 3.0 and must prohibit or restrict the use of protocols that transmit unencrypted authentication information or use flawed cryptographic algorithm for transmission.",
+                "control-id": "cm-7"
+              }
+            ]
+          },
+          {
+            "uuid": "132ef757-5d87-4166-b8a6-3dd227d0aeac",
+            "source": "NIST_SP-800-53_rev4",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement cm-7.1.",
+            "implemented-requirements": [
+              {
+                "uuid": "53209739-9f71-41f9-a939-f233a5561130",
                 "description": "All Web applications included with Apache Tomcat that are not required must be removed.\nLockOutRealm must not be removed from Apache Tomcat.\nThe version number of Apache Tomcat must be removed from the CATALINA_HOME/lib/catalina.jar file.\nStack tracing must be disabled in Apache Tomcat.",
-                "control-id": "cm-7.(1)"
+                "control-id": "cm-7.1"
               }
             ]
           },
           {
-            "uuid": "ba8e13a4-b46e-4de9-b672-a6b7ac6a91b6",
+            "uuid": "57163969-2b66-40f5-9726-0e4fc9ebe13d",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.",
             "implemented-requirements": [
               {
-                "uuid": "456494c3-da8b-47ec-9744-9c82544600f4",
+                "uuid": "8e0f2ac1-c6e6-4f58-82e6-8612823bc994",
                 "description": "ISEC7 EMM Suite must disable or delete local account created during application installation and configuration.",
-                "control-id": "ia-2."
+                "control-id": "ia-2"
               }
             ]
           },
           {
-            "uuid": "ce671c10-8494-477f-8895-22cadf714ce7",
+            "uuid": "f484c78e-8e80-40ae-9de8-90090cac6cc2",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.(12).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-2.12.",
             "implemented-requirements": [
               {
-                "uuid": "3eb04549-5c31-4d6b-bd17-ebd66f7f869d",
+                "uuid": "94de5768-5b8a-4af9-aab7-93e0b3b51ddb",
                 "description": "The ISEC7 EMM Suite must accept Personal Identity Verification (PIV) credentials.",
-                "control-id": "ia-2.(12)"
+                "control-id": "ia-2.12"
               }
             ]
           },
           {
-            "uuid": "445bb578-c05f-4545-b1ba-1f1cc83f8c11",
+            "uuid": "0e4301d8-9954-4a8d-ba6c-3b39a6bae0dc",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-3.1.",
             "implemented-requirements": [
               {
-                "uuid": "1e9c35ac-bf2a-4ea6-b410-049108b3cdf2",
+                "uuid": "5fdcc0aa-5633-4a30-af71-c82541cef53e",
                 "description": "Before establishing a local, remote, and/or network connection with any endpoint device, the ISEC7 EMM Suite must use a bidirectional authentication mechanism configured with a FIPS-validated Advanced Encryption Standard (AES) cipher block algorithm to authenticate with the device.\nIf cipher suites using pre-shared keys are used for device authentication, the ISEC7 EMM Suite must have a minimum security strength of 112 bits or higher, must only be used in networks where both the client and server are Government systems, must prohibit client negotiation to TLS 1.1, TLS 1.0, SSL 2.0, or SSL 3.0 and must prohibit or restrict the use of protocols that transmit unencrypted authentication information or use flawed cryptographic algorithm for transmission.",
-                "control-id": "ia-3.(1)"
+                "control-id": "ia-3.1"
               }
             ]
           },
           {
-            "uuid": "950d0643-21ed-45a3-ad40-90a58f7ff755",
+            "uuid": "9545ac74-0123-4dcf-affa-e5670a323a60",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.1.",
             "implemented-requirements": [
               {
-                "uuid": "9186c795-a967-4b0b-8bcf-6b9deebc85ef",
+                "uuid": "593202b8-cb80-47f4-9055-ba129be4a2d6",
+                "description": "The Manager Web app password must be configured as follows: -15 or more characters -at least one lower case letter -at least one upper case letter -at least one number -at least one special character",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "976f8685-5c0f-466f-893f-8da25e4eca4e",
+                "description": "The Manager Web app password must be configured as follows: -15 or more characters -at least one lower case letter -at least one upper case letter -at least one number -at least one special character",
+                "control-id": "ia-5.1"
+              },
+              {
+                "uuid": "9e4d89d1-c79a-4dd0-8bf5-10fa98d0f8c7",
                 "description": "The Apache Tomcat Manager Web app password must be cryptographically hashed with a DoD approved algorithm.",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               },
               {
-                "uuid": "5e2cb569-21ba-431a-b671-c71eb1c0dda1",
+                "uuid": "6ac9a47c-61d0-4f7e-aab4-77ddef85929b",
                 "description": "The Manager Web app password must be configured as follows: -15 or more characters -at least one lower case letter -at least one upper case letter -at least one number -at least one special character",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "a858117c-933f-41bb-9293-d2b399a22a12",
-                "description": "The Manager Web app password must be configured as follows: -15 or more characters -at least one lower case letter -at least one upper case letter -at least one number -at least one special character",
-                "control-id": "ia-5.(1)"
-              },
-              {
-                "uuid": "469e29ba-1cda-4e53-9706-133564c9ce40",
-                "description": "The Manager Web app password must be configured as follows: -15 or more characters -at least one lower case letter -at least one upper case letter -at least one number -at least one special character",
-                "control-id": "ia-5.(1)"
+                "control-id": "ia-5.1"
               }
             ]
           },
           {
-            "uuid": "e7dc7336-245b-44dc-a208-fa760e15b00d",
+            "uuid": "22e239e0-05d7-4635-801f-5f03c0cf1c08",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-5.2.",
             "implemented-requirements": [
               {
-                "uuid": "3584a814-5fa3-41a1-9404-cffc80b16f89",
+                "uuid": "32aaaaf5-b3ce-4e66-8746-bfc350e7977e",
                 "description": "When using PKI-based authentication for user access, the ISEC7 EMM Suite must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
-                "control-id": "ia-5.(2)"
+                "control-id": "ia-5.2"
               }
             ]
           },
           {
-            "uuid": "ab7ed842-ae87-4716-9897-1eae92aa0c9f",
+            "uuid": "a59fa678-5493-41ea-82d7-566dc2640b22",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ia-7.",
             "implemented-requirements": [
               {
-                "uuid": "f2bc9326-0460-4af3-9f94-25ba4f3865d1",
+                "uuid": "9c6c75ba-4243-4856-bfba-a9b89d5fa875",
                 "description": "The ISEC7 EMM Suite must use FIPS-validated SHA-2 or higher hash function for digital signature generation and verification (non-legacy use).",
-                "control-id": "ia-7."
+                "control-id": "ia-7"
               }
             ]
           },
           {
-            "uuid": "7ba1560b-5147-4b41-920b-0e5b2932b5cd",
+            "uuid": "811ec8c9-45e5-43c7-ac25-62b13795dd8f",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.(6).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement ma-4.6.",
             "implemented-requirements": [
               {
-                "uuid": "68382f52-2f5f-4b7e-8d7f-d75bb03a384b",
+                "uuid": "309b6a16-9d3d-45be-b83e-c57a1dcd559f",
                 "description": "The ISEC7 EMM Suite must use a FIPS-validated cryptographic module to provision digital signatures.",
-                "control-id": "ma-4.(6)"
+                "control-id": "ma-4.6"
               }
             ]
           },
           {
-            "uuid": "e311d789-83f5-4d28-b057-36a44413874a",
+            "uuid": "be95b0cc-40e4-42ce-84a2-e6d23208e2f6",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.",
             "implemented-requirements": [
               {
-                "uuid": "9f2b0501-8064-4361-af82-2b7e74443e10",
+                "uuid": "5f1229f9-e492-447d-9e70-9cdfdaaf819c",
                 "description": "The ISEC7 EMM Suite must protect the confidentiality and integrity of transmitted information during preparation for transmission and during reception using cryptographic mechanisms.\nThe ISEC7 EMM Suite must configure Enable HTTPS to use HTTP over SSL in Apache Tomcat.\nSSL must be enabled on Apache Tomcat.\nTomcat SSL must be restricted except for ISEC7 EMM Suite tasks.",
-                "control-id": "sc-8."
+                "control-id": "sc-8"
               }
             ]
           },
           {
-            "uuid": "ae4081ae-2ec2-41f4-896c-553290ffe9cc",
+            "uuid": "8cd06b39-b680-4b7b-bc33-17f780b1bd2e",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(1).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.1.",
             "implemented-requirements": [
               {
-                "uuid": "22597bf7-2432-4ad1-8cfa-34ee735b69ee",
+                "uuid": "37b47aec-a1b6-4698-ad30-d386f1d84d04",
                 "description": "The ISEC7 EMM Suite must protect the confidentiality and integrity of transmitted information during preparation for transmission and during reception using cryptographic mechanisms.",
-                "control-id": "sc-8.(1)"
+                "control-id": "sc-8.1"
               }
             ]
           },
           {
-            "uuid": "a8d7284e-d343-4a4e-a81e-4e1587e7a931",
+            "uuid": "f5570806-99ab-4632-a306-3ddb87d729f4",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.(2).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-8.2.",
             "implemented-requirements": [
               {
-                "uuid": "56163063-70f0-4fbd-a8a6-3bb75dfe5c4f",
+                "uuid": "274a002b-48c9-44ae-b963-f2f851e98bd4",
                 "description": "The ISEC7 EMM Suite must protect the confidentiality and integrity of transmitted information during preparation for transmission and during reception using cryptographic mechanisms.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
               },
               {
-                "uuid": "444fbcdb-94b0-4db8-98f7-fb09b7fd924e",
+                "uuid": "67f2d8e6-2183-497b-8f85-8e7f76688104",
                 "description": "The ISEC7 EMM Suite must protect the confidentiality and integrity of transmitted information during preparation for transmission and during reception using cryptographic mechanisms.",
-                "control-id": "sc-8.(2)"
+                "control-id": "sc-8.2"
               }
             ]
           },
           {
-            "uuid": "8e08cb39-1a55-48d8-aaa0-5f4d3fb5b684",
+            "uuid": "c8ac7470-bb6a-435e-9d15-f127972c6ff1",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-13.",
             "implemented-requirements": [
               {
-                "uuid": "6b51e101-ac87-4bc5-91bd-3aa6508e91b8",
+                "uuid": "4a325ca8-238f-45bb-88f2-ba3aa4378042",
                 "description": "The ISEC7 EMM Suite must use a FIPS-validated cryptographic module to provision digital signatures.\nThe ISEC7 EMM Suite must use a FIPS 140-2-validated cryptographic module to implement encryption services for unclassified information requiring confidentiality, generate cryptographic hashes, and to configure web management tools with FIPS-validated Advanced Encryption Standard (AES) cipher block algorithm to protect the confidentiality of maintenance and diagnostic communications for nonlocal maintenance sessions.",
-                "control-id": "sc-13."
+                "control-id": "sc-13"
               }
             ]
           },
           {
-            "uuid": "5b9a6666-4a6a-4848-a4ab-fc1eee9d7419",
+            "uuid": "38dc8465-4347-4ae0-8e12-e63a304969cb",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.(5).",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement sc-23.5.",
             "implemented-requirements": [
               {
-                "uuid": "d56efbf8-f95c-406b-a1b7-2a2a7dddf396",
+                "uuid": "898872d3-ac8e-4a68-bf05-253b1e2a04f9",
                 "description": "The ISEC7 EMM Suite must allow the use of DoD PKI established certificate authorities for verification of the establishment of protected sessions.",
-                "control-id": "sc-23.(5)"
+                "control-id": "sc-23.5"
               }
             ]
           },
           {
-            "uuid": "dfdb4315-81cf-45bb-b552-249db06a6829",
+            "uuid": "f68709e2-938e-457a-bd41-feaeb741c3fe",
             "source": "NIST_SP-800-53_rev4",
-            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2..",
+            "description": "This is a partial implementation of the NIST_SP-800-53_rev4 catalog, focusing on the control enhancement si-2.",
             "implemented-requirements": [
               {
-                "uuid": "0be0dd44-6f8d-4377-85d7-61bbaec2ee1a",
+                "uuid": "242490f1-9e3b-4b6d-b901-b583db73badf",
                 "description": "The ISEC7 Sphere server must be maintained at a supported version.",
-                "control-id": "si-2."
+                "control-id": "si-2"
               }
             ]
           }
