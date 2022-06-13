@@ -507,14 +507,6 @@ def component_library(request):
     }
 
     return render(request, "components/component_library.html", context)
-    
-def opposite(true_false_statement):
-    """
-    Returns opposite of the true_false_statement
-    """
-    if true_false_statement:
-        json_obj = {'key': not true_false_statement}
-    return JsonResponse(json_obj)
 
 def diff_components_prettyHtml(smt1, smt2):
     """Generate a diff of two statements of type `control_implementation`"""
