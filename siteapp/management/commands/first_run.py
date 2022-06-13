@@ -172,8 +172,12 @@ class Command(BaseCommand):
                     # Read component json file as text
                     if component_file.endswith(".json"):
                         with open(os.path.join(path, component_file)) as f:
+                            print(f"[INFO] Imported sample generic component {component_file}.")
                             oscal_component_json = f.read()
                             result = ComponentImporter().import_components_as_json(import_name, oscal_component_json)
+            print("[INFO] Imported sample generic components.")
+        else:
+            print("[INFO] Components exists. Skipping sample generic components import.")
 
         # Create initial roles only once
         # TODO: Probably need a field to indicate if first_run has been run to avoid recreating roles that
