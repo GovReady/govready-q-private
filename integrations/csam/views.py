@@ -14,7 +14,8 @@ from integrations.models import Integration, Endpoint
 from .communicate import CSAMCommunication
 from controls.models import System, Element
 from siteapp.models import Organization, Portfolio, Folder
-from siteapp.views import get_compliance_apps_catalog_for_user, start_app
+from siteapp.utils.views_helper import project_context, start_app, get_compliance_apps_catalog, \
+    get_compliance_apps_catalog_for_user, get_compliance_apps_catalog_for_user
 from guidedmodules.models import AppSource
 from guidedmodules.app_loading import ModuleDefinitionError
 
@@ -185,17 +186,10 @@ def get_paired_remote_system_info_using_local_system_id(request, system_id=2):
         integration=INTEGRATION,
         endpoint_path=endpoint
     )
-    # TODO: Refresh data if empty
-    if created:
-        # Cache not available
-        data = communication.get_response(endpoint)
-        # Cache remote data locally in database
-        ep.data = data
-        ep.save()
-    else:
-        # Cache available
-        cached = True
-        pass
+    data = communication.get_response(endpoint)
+    # Cache remote data locally in database
+    ep.data = data
+    ep.save()
 
     context = {
         "integration_name": INTEGRATION_NAME,
@@ -429,13 +423,13 @@ def create_system_from_remote(request):
         if name_suffix == "":
             nsre.name = ep.data['name']
         else:
-            nsre.name = f"{ep.data['name']} {name_suffix}"
+            nsre.name = f"{ep.data['name']}{name_suffix}"
         nsre.save()
         # Update System Project title to CSAM system name
         prt = project.root_task
-        prt.title_override = ep.data['name']
+        prt.title_override = nsre.name
         prt.save()
-        logger.info(event=f"change_system_from_remote remote_service {INTEGRATION_NAME} remote_system_id {csam_system_id}",
+        logger.info(event=f"create_system_from_remote remote_service {INTEGRATION_NAME} remote_system_id {csam_system_id}",
                 object={"object": "system", "id": new_system.id},
                 user={"id": request.user.id, "username": request.user.username})
         messages.add_message(request, messages.INFO, f"Created new System in GovReady based on {INTEGRATION_NAME} system id {csam_system_id}.")

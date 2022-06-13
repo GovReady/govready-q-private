@@ -46,6 +46,8 @@ urlpatterns = [
     url(r'^(?P<system_id>.*)/aspen/summary$', views.system_summary_aspen, name="system_summary"),
     url(r'^(?P<system_id>.*)/aspen/integrations$', views.system_integrations_aspen, name="system_integrations"),
 
+    url(r'^new', views.create_system_from_string, name="create_system_from_string"),
+
     # Systems Assessment Results
     url(r'^(?P<system_id>.*)/assessments$', views.system_assessment_results_list, name="system_assessment_results_list"),
     url(r'^(?P<system_id>.*)/assessments/new/wazuh$', views.new_system_assessment_result_wazuh, name="new_system_assessment_result_wazuh"),

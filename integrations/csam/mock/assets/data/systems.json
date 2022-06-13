@@ -40,7 +40,7 @@
         "fismaReportable": true,
         "criticalInfrastructure": true,
         "missionCritical": true,
-        "purpose": "This is a system with a purpose and a <p>paragraph new</p>",
+        "purpose": "Updated purpose",
         "ombExhibit": "string",
         "uiiCode": "string",
         "investmentName": "string",
