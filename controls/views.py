@@ -1655,11 +1655,12 @@ def component_library_component_copy(request, element_id):
     element = Element.objects.get(id=element_id)
     count = Element.objects.filter(uuid=element.uuid).count()
 
+    import ipdb; ipdb.set_trace()
     if count > 0:
         e_copy = element.copy(name=element.name + " copy ("+str(count+1)+')')
     else:
         e_copy = element.copy()
-
+    e_copy.assign_owner_permissions(request.user)
     # Create message to display to user
     messages.add_message(request, messages.INFO,
                          'Component "{}" copied to "{}".'.format(element.name, e_copy.name))
