@@ -1655,7 +1655,6 @@ def component_library_component_copy(request, element_id):
     element = Element.objects.get(id=element_id)
     count = Element.objects.filter(uuid=element.uuid).count()
 
-    import ipdb; ipdb.set_trace()
     if count > 0:
         e_copy = element.copy(name=element.name + " copy ("+str(count+1)+')')
     else:
