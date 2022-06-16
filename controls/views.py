@@ -37,12 +37,14 @@ from urllib.parse import quote
 
 from api.siteapp.serializers.tags import SimpleTagSerializer
 from guidedmodules.models import Task, Module, AppVersion, AppSource
+from guidedmodules.app_loading import ModuleDefinitionError
 from siteapp.model_mixins.tags import TagView
 from simple_history.utils import update_change_reason
 
-from siteapp.models import Project, Organization, Tag, User
+from siteapp.models import Project, Organization, Folder, Portfolio, Tag, User, Role, Party, Appointment, Request, Proposal
 from siteapp.settings import GOVREADY_URL
-from siteapp.utils.views_helper import project_context
+from siteapp.utils.views_helper import project_context, start_app, get_compliance_apps_catalog, \
+    get_compliance_apps_catalog_for_user, get_compliance_apps_catalog_for_user
 from system_settings.models import SystemSettings
 from .forms import ElementEditForm, ElementEditAccessManagementForm
 from .forms import ImportOSCALComponentForm, SystemAssessmentResultForm
@@ -50,7 +52,6 @@ from .forms import StatementPoamForm, PoamForm, ElementForm, DeploymentForm, Sta
 from .models import *
 from .utilities import *
 from siteapp.utils.views_helper import project_context
-from siteapp.models import Role, Party, Appointment, Request, Proposal
 from integrations.models import Integration
 from integrations.utils.integration import get_control_data_enhancements
 
@@ -569,11 +570,25 @@ class SelectedComponentsListAspen(ListView):
 @login_required
 def component_library(request):
     """Display the library of components"""
+    owned_elements_id = []
 
+    for element in Element.objects.all().exclude(element_type='system').distinct():
+        if element.is_owner(request.user):
+            owned_elements_id.append(element.id)
+    
+    owned_elements_list = Element.objects.filter(id__in=owned_elements_id)
+    
     query = request.GET.get('search')
+    # Setting a breakpoint in the code.
     if query:
         try:
-            element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
+            if request.GET.get('owner'):
+                # Search by owner
+                element_list = Element.objects.filter(id__in=owned_elements_id)
+                element_list = element_list.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
+            else:
+                element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
+
         except:
             logger.info(f"Ah, you are not using Postgres for your Database!")
             element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
@@ -588,17 +603,23 @@ def component_library(request):
 
     # Pagination
     ele_paginator = Paginator(element_list_private_removed, 15)
+    owned_ele_paginator = Paginator(owned_elements_list, 15)
     page_number = request.GET.get('page')
 
     try:
         page_obj = ele_paginator.page(page_number)
+        owned_page_obj = owned_ele_paginator.page(page_number)
     except PageNotAnInteger:
         page_obj = ele_paginator.page(1)
+        owned_page_obj = owned_ele_paginator.page(1)
     except EmptyPage:
         page_obj = ele_paginator.page(ele_paginator.num_pages)
-
+        owned_page_obj = owned_ele_paginator.page(owned_ele_paginator.num_pages)
+    
     context = {
         "page_obj": page_obj,
+        "owned_page_obj": owned_page_obj,
+        "start": False,
         "import_form": ImportOSCALComponentForm(),
         "total_comps": Element.objects.exclude(element_type='system').count(),
     }
@@ -1203,6 +1224,7 @@ class ComponentImporter(object):
             all_tag_ids = [tag.id for tag in new_tags] + [tag['id'] for tag in existing_tags]
             new_component.add_tags(all_tag_ids)
             new_component.save()
+        created_statements = []
         control_implementation_statements = component_json.get('control-implementations', None)
         # If there data exists the OSCAL component's control-implementations key
         if control_implementation_statements:
@@ -1299,8 +1321,6 @@ def system_element(request, system_id, element_id):
                     hasSentRequest = True
             except Proposal.DoesNotExist:
                 proposal = None
-            
-                
 
             # Retrieve control ids
             catalog_controls = Catalog.GetInstance(catalog_key=catalog_key).get_controls_all()
@@ -1616,20 +1636,11 @@ def component_library_component(request, element_id):
         listOfContacts.append(user)
 
     get_all_parties = element.appointments.all()
-    total_number_of_requests = element.requests.count()
-    # status=RequestStatusEnum.PENDING.name
-    # req_instance = Request.objects.create(user=user, element=element, status="pending")
-    # req_instance.system.set(system)
-    # req_instance.save()
+    total_number_of_requests = element.requests.filter(status__in=["Open", "Pending", "In Progress", "Reject", "Approve"]).count()
 
     contacts = []
     for poc in get_all_parties:
         contacts.append(poc.party)
-
-
-    @register.filter
-    def get_item(dictionary, key):
-        return dictionary.get(key)
     
     criteria_results = element.statements_produced.filter(statement_type=StatementTypeEnum.COMPONENT_APPROVAL_CRITERIA.name)
     if len(criteria_results) > 0:
@@ -1757,7 +1768,7 @@ def component_library_component_copy(request, element_id):
         e_copy = element.copy(name=element.name + " copy ("+str(count+1)+')')
     else:
         e_copy = element.copy()
-
+    e_copy.assign_owner_permissions(request.user)
     # Create message to display to user
     messages.add_message(request, messages.INFO,
                          'Component "{}" copied to "{}".'.format(element.name, e_copy.name))
@@ -3789,15 +3800,44 @@ def get_integrations_system_info(request, system_id):
             #  'nextFyFunding': 0,
             #  'categorization': 'string',
             #  'fundingImportStatus': 'string'}
-            purpose = f"{csam_data['purpose']}"
-            organization_name = f"{csam_data['organization']} {csam_data['subOrganization']}"
-            other_id = f"{csam_data['id']}"
-            system_type = f"{csam_data['systemType']}"
-            status = f"{csam_data['operationalStatus']}"
-            impact = f"{csam_data['categorization']}"
+            purpose = f"{csam_data.get('purpose_short', 'Missing')}"
+            organization_name = f"{csam_data.get('organization', 'Missing')} {csam_data.get('subOrganization', 'Missing')}"
+            other_id = f"{csam_data.get('id', 'Missing')}"
+            system_type = f"{csam_data.get('systemType', 'Missing')}"
+            status = f"{csam_data.get('operationalStatus', 'Missing')}"
+            impact = f"{csam_data.get('categorization', 'Missing')}"
         else:
-            # retreive fresh data from CSAM
-            pass
+            csam_data = {'id': 111,
+             'externalId': 'string',
+             'name': 'System A',
+             'description': 'This is a simple test system',
+             'acronym': 'string',
+             'organization': 'string',
+             'subOrganization': 'string',
+             'operationalStatus': 'string',
+             'systemType': 'string',
+             'financialSystem': 'string',
+             'classification': 'string',
+             'contractorSystem': True,
+             'fismaReportable': True,
+             'criticalInfrastructure': True,
+             'missionCritical': True,
+             'purpose': 'string',
+             'ombExhibit': 'string',
+             'uiiCode': 'string',
+             'investmentName': 'string',
+             'portfolio': 'string',
+             'priorFyFunding': 0,
+             'currentFyFunding': 0,
+             'nextFyFunding': 0,
+             'categorization': 'string',
+             'fundingImportStatus': 'string'}
+            purpose = f"{csam_data.get('purpose_short', 'Missing')}"
+            organization_name = f"{csam_data.get('organization', 'Missing')} {csam_data.get('subOrganization', 'Missing')}"
+            other_id = f"{csam_data.get('id', 'Missing')}"
+            system_type = f"{csam_data.get('systemType', 'Missing')}"
+            status = f"{csam_data.get('operationalStatus', 'Missing')}"
+            impact = f"{csam_data.get('categorization', 'Missing')}"
     else:
         # Couldn't find CSAM system
         # Sample systems from DHS SORNs
@@ -3917,6 +3957,98 @@ def get_integrations_system_events(request, system_id):
     ]
     return system_events
 
+
+@login_required
+def create_system_from_string(request):
+    """Create a system in GovReady-Q based on info from a URL"""
+
+    # communication = set_integration()
+    print("request", request.GET)
+    new_system_str = request.GET.get("s", None)
+    new_system_name = new_system_str.replace("https://", "").replace("http://", "")
+    new_system_description = f"System created from url."
+
+    # Examine remote site for information
+    # Handle error case of no URL
+
+    # Check if system aleady exists with domain name
+    # if not System.objects.filter(Q(info__contains={"csam_system_id": csam_system_id})).exists():
+    if True:
+        # Create new system
+        # What is default template?
+        source_slug = "govready-q-files-startpack"
+        app_name = "speedyssp"
+        # can user start the app?
+        # Is this a module the user has access to? The app store
+        # does some authz based on the organization.
+        catalog = get_compliance_apps_catalog_for_user(request.user)
+        for app_catalog_info in catalog:
+            if app_catalog_info["key"] == source_slug + "/" + app_name:
+                # We found it.
+                break
+        else:
+            raise Http404()
+        # Start the most recent version of the app.
+        appver = app_catalog_info["versions"][0]
+        organization = Organization.objects.first()  # temporary
+        default_folder_name = "Started Apps"
+        folder = Folder.objects.filter(
+            organization=organization,
+            admin_users=request.user,
+            title=default_folder_name,
+        ).first()
+        if not folder:
+            folder = Folder.objects.create(organization=organization, title=default_folder_name)
+            folder.admin_users.add(request.user)
+        task = None
+        q = None
+        # Get portfolio project should be included in.
+        if request.GET.get("portfolio"):
+            portfolio = Portfolio.objects.get(id=request.GET.get("portfolio"))
+        else:
+            if not request.user.default_portfolio:
+                request.user.create_default_portfolio_if_missing()
+            portfolio = request.user.default_portfolio
+        # import ipdb; ipdb.set_trace()
+        try:
+            project = start_app(appver, organization, request.user, folder, task, q, portfolio)
+        except ModuleDefinitionError as e:
+            error = str(e)
+        # Associate System with CSAM system
+        new_system = project.system 
+        new_system.info = {
+            "created_from_input": new_system_str,
+            "system_description": new_system_description
+        }
+        new_system.save()
+        # Update System name to URL system name
+        nsre = new_system.root_element
+        # Make sure system root element name is unique
+        name_suffix = ""
+        while Element.objects.filter(name=f"{new_system_name}{name_suffix}").exists():
+            # Element exists with that name
+            if name_suffix == "":
+                name_suffix = 1
+            else:
+                name_suffix = str(int(name_suffix)+1)
+        if name_suffix == "":
+            nsre.name = new_system_name
+        else:
+            nsre.name = f"{new_system_name}{name_suffix}"
+        nsre.save()
+        # Update System Project title to CSAM system name
+        prt = project.root_task
+        prt.title_override = nsre.name
+        prt.save()
+        logger.info(event=f"create_system_from_url url {new_system_name}",
+                object={"object": "system", "id": new_system.id},
+                user={"id": request.user.id, "username": request.user.username})
+        messages.add_message(request, messages.INFO, f"Created new System in GovReady based on URL {new_system_name}.")
+
+        # Redirect to the new system/project.
+        return HttpResponseRedirect(project.get_absolute_url())   
+        # return HttpResponseRedirect(f"/system/{new_system.id}/aspen/summary")
+
 @login_required
 def system_summary_1_aspen(request, system_id):
     """System Summary page experiment 1"""
@@ -3942,7 +4074,7 @@ def system_summary_1_aspen(request, system_id):
     context = {
         "system": system_summary,
         #"project": project,
-        "project": projects,
+        "projects": projects,
         "system_events": system_events,
         # "deployments": deployments,
         "display_urls": project_context(project)
