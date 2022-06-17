@@ -112,19 +112,20 @@ class Communication(HelperMixin, ABC):
 def get_control_data_enhancements(request, catalog_key, cl_id):
     """Return additional data about control"""
 
-    # integration_module = importlib.import_module(f'integrations.controlmatrix')
-    # communication_class = integration_module.views.set_integration()
-    # extracted_data = communication_class.extract_data(authentication=None, identifiers=[cl_id])
-    # control_matrix = extracted_data[0]
+    integration_module = importlib.import_module(f'integrations.controlmatrix')
+    communication_class = integration_module.views.set_integration()
+    extracted_data = communication_class.extract_data(authentication=None, identifiers=[cl_id])
+    control_matrix = extracted_data[0]
+    return control_matrix
     # Return data first matching integration
     # TODO: Better to loop through all integrations and expand data dictionary returned
-    for i in Integration.objects.all():
-        im = importlib.import_module(f'integrations.{i.name}')
-        cc = im.views.set_integration()
-        control_data = (cc.extract_data(None,["ac-3"]))
-        if control_data is not None:
-            print(i.name, control_data)
-            break
-    return control_data[0]
+    # for i in Integration.objects.all():
+    #     im = importlib.import_module(f'integrations.{i.name}')
+    #     cc = im.views.set_integration()
+    #     control_data = (cc.extract_data(None,["ac-3"]))
+    #     if control_data is not None:
+    #         print(i.name, control_data)
+    #         break
+    # return control_data[0]
 
 

@@ -65,9 +65,6 @@ class ControlmatrixCommunication(Communication):
         """Extract data"""
         try:
             data = []
-
-            # import pandas
-            # import pathlib
             rows_list = []
             # TODO: Fix file path
             fn = "integrations/controlmatrix/assets/data/controls_matrix.xlsx"
@@ -108,7 +105,7 @@ class ControlmatrixCommunication(Communication):
                     # logger.error(f"Other error reading file {fn}: {e}")
                     print(f"Other error reading file {fn}: {e}")
             else:
-                print(f"Faiiled to find or open file '{fn}'.")
+                print(f"Failed to find or open file '{fn}'.")
             
             print(f"identifiers: ", identifiers)
             # for ctl in rows_list:

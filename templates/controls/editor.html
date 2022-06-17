@@ -165,7 +165,7 @@
                     When hosted in the cloud, responsibility for {{ control.id_display|upper }} is likely {% if control_matrix.CLOUD_SHARED == 'YES' %} shared between you and{% else %}inherited from{% endif %} your cloud service provider. 
                 </p>
             {% else %}
-                <p>No information on monitoring is available.</p>
+                <p>Monitoring information for {{ control.id_display|upper }} is not available.</p>
             {% endif %}
             <hr/>
         {% else %}
