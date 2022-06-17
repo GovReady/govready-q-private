@@ -16,6 +16,28 @@
     max-width: 950px;
     margin: auto;
   }
+
+  a { color: #666; }
+
+  .control-text-modal {
+      white-space: pre-wrap;
+      font-size: 11pt;
+      font-family: sans-serif;
+      /* text-align: justify; */
+      /* text-justify: inter-word; */
+      /* line-height: 18px; */
+  }
+
+  .modal-content {
+      position: fixed;
+      margin: auto;
+      width: 130%;
+      /* height: calc(100% - 53px); */
+      -webkit-transform: translate3d(0%, 0, 0);
+          -ms-transform: translate3d(0%, 0, 0);
+          -o-transform: translate3d(0%, 0, 0);
+              transform: translate3d(0%, 0, 0);
+  }
 </style>
 
 {% endblock %}
@@ -35,7 +57,7 @@ Remove contextbar from top of page
         <div style="float: left;">
           {% if control.title is not None %}
           <h2 id="control-heading" class="">
-            {{ control.id_display }} {{ control.title }}
+            {{ control.id_display }} ({{ control.title }})
           </h2>
           {% else %}
             Control was not found in the catalog.
@@ -52,38 +74,67 @@ Remove contextbar from top of page
         </div>
       </div>
     </div><!--/row-->
-    <p>&nbsp;</p>
-
-    <div id="tab-content" class="row rows-header" style="">
-        <div id="" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">Official Control Text</div>
-    </div>
 
     <div id="tab-content" class="row">
       {% if control.title is not None %}
-      <div id="tab-content" class="row row-control" style="">
-        <div id="" class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
-          <div id="control-description" class="control-text"><h3>Description</h3>{% if control.description %}{{ control.description }}{% else %}No description provided.{% endif %}</div>
-          <div id="control-guidance" class="control-text"><h3>Guidance</h3>{% if control.guidance %}{{ control.guidance }}{% else %}No guidance provided.{% endif %}
-          </div>
-          <div id="control-guidance"  class="">
-            <h4>Links</h4>
-            {% if links %}
-            <ul>
-              {% for link in links %}
-                <li><a href="{{ link.href }}" target="_blank">{{ link.catalog }} {{ link.text }}</a></li>
-              {% endfor %}
-            </ul>
+        <div role="" class="" id="control" style="">
+          {% if control.title is not None %}
+            <small style="color: #888;">Description</small>
+            <p>
+              {% if control.description|wordcount < 50 %}{{ control.description }}{% else %}{{ control.description|truncatewords:65 }}{% endif %}
+              &nbsp;&nbsp;<a href="" onClick="show_control_description_modal();return false;">&gt;&gt;&gt;View full control</a>
+            </p>
+            <hr/>
+            <small style="color: #888;">Part of</small>
+            <p><b>{{ control.family_title }}</b> ({{ catalog.catalog_key_display }})</p>
+            <small style="color: #888;">Conntinuous Monitoring</small>
+            {% if control_matrix is not None %}
+              <p>
+                The required control monitoring for {{ control.id_display|upper }} is <u>{{ control_matrix.REVIEW_FREQUENCY|lower }} {% if control_matrix.AUTOMATED == 'YES' %} and automated{% endif %}</u>. {{ control_matrix_doc.discussion }}
+              </p>
+              <small style="color: #888;">Responsibility</small>
+              <p>
+                When hosted in the cloud, responsibility for {{ control.id_display|upper }} is likely {% if control_matrix.CLOUD_SHARED == 'YES' %} shared between you and{% else %}inherited from{% endif %} your cloud service provider. 
+              </p>
             {% else %}
-              No links provided.
+              <p>Monitoring information for {{ control.id_display|upper }} is not available.</p>
             {% endif %}
-          </div>
+            <small style="color: #888;">Guidance</small>
+            {% if control.guidance %}
+              <p>
+                {% if control.guidance|wordcount < 50 %}{{ control.guidance }}{% else %}{{ control.guidance|truncatewords:55 }}{% endif %}
+                &nbsp;&nbsp;<a href="" onClick="show_control_description_modal();return false;">&gt;&gt;&gt;View full control</a>
+              </p>
+              <hr/>
+            {% else %}
+              <p>No guidance provided.</p>
+            {% endif %}
+          {% else %}
+              <div id="control-message">
+                  <p>The control {{ control.id }} was not found in the control catalog.</p>
+              </div>
+          {% endif %}
         </div>
-      </div>
+        <div id="control-guidance"  class="hidden">
+          <h4>Links</h4>
+          {% if links %}
+          <ul>
+            {% for link in links %}
+              <li><a href="{{ link.href }}" target="_blank">{{ link.catalog }} {{ link.text }}</a></li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            No links provided.
+          {% endif %}
+        </div>
       {% else %}
       <div id="control-message">
         <p>Control is not found in the control catalog.</p>
       </div>
       {% endif %}
+
+      {% if control.title is not None %}{% include "control-description-modal.html" %}{% endif %}
+
     </div>
 
   </div>
