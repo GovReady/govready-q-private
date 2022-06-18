@@ -129,7 +129,7 @@ div.question-answer[data-reviewed] a { text-decoration: underline; }
 .project-status-finished {color:#444444; font-size:.8em;}
 .project-status-inprogress {color:#444444; font-size:.8em;}
 
-.glyphicon-pencil:before { color:#555555;}
+/*.glyphicon-pencil:before { color:#555555;}*/
 
 .navbar-inverse .navbar-nav>li>a { color:#ccc;}
 
@@ -366,6 +366,8 @@ form #id_appsource_compapp { width: 100%; overflow: auto !important; }
 .support-top { margin-top: 30px; }
 .support-row { margin: auto; padding-top: 24px; margin: auto; }
 
+/* component permissions*/
+.permissible-row { border-top: 1px solid #aaa; padding: 8px 0px 8px 0px; }
 
 /* MISC */
 .love-assessments { max-width: 650px; }

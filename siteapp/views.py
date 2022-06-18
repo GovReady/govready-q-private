@@ -1,5 +1,4 @@
 import json
-import logging
 import random
 import os.path
 import yaml
@@ -22,6 +21,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from api.siteapp.serializers.tags import SimpleTagSerializer
 from guardian.core import ObjectPermissionChecker
@@ -51,11 +51,13 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+import logging
 logging.basicConfig()
 import structlog
 from structlog import get_logger
 from structlog.stdlib import LoggerFactory
-from .utils.views_helper import project_context
+from .utils.views_helper import project_context, start_app, get_compliance_apps_catalog, \
+    get_compliance_apps_catalog_for_user, get_compliance_apps_catalog_for_user
 
 structlog.configure(logger_factory=LoggerFactory())
 structlog.configure(processors=[structlog.processors.JSONRenderer()])
@@ -64,13 +66,32 @@ logger = get_logger()
 LOGIN = "login"
 SIGNUP = "signup"
 
+def banner(request):
+    if request.method == "GET":
+        if "accounts/login/?next=" in request.META.get('HTTP_REFERER', ""):
+            request.session["_post_banner_url"] = request.META.get('HTTP_REFERER').split("next=")[-1]
+        elif request.path != "/warningmessage/":
+            request.session["_post_banner_url"] = request.path
+        else:
+            request.session = "/"
+        return render(request, "warning_message.html")
+    
+    request.session["_banner_checked"] = True
+    redirect_url = request.session.get("_post_banner_url", "/")
+    if "_post_banner_url" in request.session.keys():
+        del request.session["_post_banner_url"]
+    return HttpResponseRedirect(redirect_url)
 
 def home_user(request):
     # If the user is logged in, then redirect them to the projects page.
     if not request.user.is_authenticated:
-        if settings.OKTA_CONFIG:
+        if settings.OKTA_CONFIG or settings.OIDC_CONFIG:
             return HttpResponseRedirect("/oidc/authenticate")
         return HttpResponseRedirect("/login")
+    
+    isInternet = False
+    if('Trident' in request.META['HTTP_USER_AGENT']):
+        isInternet = True
 
     portfolio = request.user.portfolio_list().first()
     return render(request, "home-user.html", {
@@ -79,6 +100,7 @@ def home_user(request):
         "projects_access": Project.get_projects_with_read_priv(request.user, excludes={"contained_in_folders": None}),
         "import_project_form": ImportProjectForm(),
         "portfolios": request.user.portfolio_list(),
+        "isInternetExplorer": isInternet,
     })
 
 
@@ -95,6 +117,10 @@ def homepage(request):
 
     signup_form = SignupForm()
     login_form = LoginForm()
+
+    isInternet = False
+    if('Trident' in request.META['HTTP_USER_AGENT']):
+        isInternet = True
 
     # The allauth forms have 'autofocus' set on their widgets that draw the
     # focus in a way that doesn't make sense here.
@@ -129,7 +155,7 @@ def homepage(request):
                         messages.error(request,
                                        "[ERROR] new_user '{}' did not authenticate during account creation. Account not created. Report error to System Administrator. {}".format(
                                            new_user.username, vars(new_user)))
-                        return HttpResponseRedirect("/")
+                        return HttpResponseRedirect("/warningmessage")
                 else:
                     user = request.user
                 # Create user's default portfolio
@@ -160,7 +186,7 @@ def homepage(request):
         from django.contrib.auth import logout
         logout(request)
         return HttpResponseRedirect('/')  # reload
-    if settings.OKTA_CONFIG:
+    if settings.OKTA_CONFIG or settings.OIDC_CONFIG:
         return HttpResponseRedirect("/oidc/authenticate")
     return render(request, "index.html", {
         "hide_registration": SystemSettings.hide_registration,
@@ -168,6 +194,7 @@ def homepage(request):
         "signup_form": signup_form,
         "login_form": login_form,
         "member_of_orgs": Organization.get_all_readable_by(request.user) if request.user.is_authenticated else None,
+        "isInternetExplorer": isInternet,
     })
 
 
@@ -270,7 +297,7 @@ def assign_project_lifecycle_stage(projects):
             project.lifecycle_stage = lifecycle_stage_code_mapping["none_none"]
 
 
-class ProjectList(ListView):
+class ProjectList(LoginRequiredMixin, ListView):
     """
     Get all of the projects that the user can see *and* that are in a folder, which indicates it is top-level.
     """
@@ -281,27 +308,22 @@ class ProjectList(ListView):
     # won't always appear in that order, but it will determine
     # the overall order of the page in a stable way.
     ordering = ['created']
-    paginate_by = 10
+    paginate_by = 15
 
     def get_queryset(self):
-        """
-        Return the projects after assigning lifecycles
-        """
+        query = self.request.GET.get('search', "")
         projects = Project.get_projects_with_read_priv(
             self.request.user,
+            filters={"system__root_element__name__icontains": query},
             excludes={"contained_in_folders": None})
-
-        # Log listing
-        logger.info(
-            event="project_list",
-            user={"id": self.request.user.id, "username": self.request.user.username}
-        )
         return list(projects)
 
     def get_context_data(self, **kwargs):
+        query = self.request.GET.get('search', "")
         context = super().get_context_data(**kwargs)
         context['projects_access'] = Project.get_projects_with_read_priv(
             self.request.user,
+            filters={"system__root_element__name__icontains": query},
             excludes={"contained_in_folders": None})
         return context
 
@@ -338,138 +360,6 @@ def project_list_lifecycle(request):
         "lifecycles": lifecycles,
         "projects": projects,
     })
-
-
-def get_compliance_apps_catalog_for_user(user):
-    # Each organization that the user is in sees a different set of compliance
-    # apps. Since a user may be a member of multiple organizations, merge the
-    # catalogs across all of the organizations they are a member of, but
-    # remember which organizations generated which apps.
-    from siteapp.models import Organization
-    catalog = {}
-    for org in Organization.get_all_readable_by(user):
-        apps = get_compliance_apps_catalog(org, user.id)
-        for app in apps:
-            # Add to merged catalog.
-            catalog.setdefault(app['key'], app)
-
-            # Merge organization list.
-            catalog[app["key"]]["organizations"].add(org)
-
-    # Turn the organization sets into a list because the templates use |first.
-    catalog = catalog.values()
-    for app in catalog:
-        # print("\n\n app",app)
-        app["organizations"] = sorted(app["organizations"], key=lambda org: org.name)
-
-    return catalog
-
-
-def get_compliance_apps_catalog(organization, userid):
-    # Load the compliance apps available to the given organization.
-
-    from guidedmodules.models import AppVersion
-    from collections import defaultdict
-
-    appvers = AppVersion.get_startable_apps(organization, userid)
-
-    # Group the AppVersions into apps. An app is a unique source+appname pair.
-    # For each app, one or more versions may be available.
-    apps = defaultdict(lambda: [])
-    for av in appvers:
-        apps[(av.source, av.appname)].append(av)
-
-    # Replace each app entry with a list of AppVersions sorted by reverse database
-    # row created date (since we don't necessarily have sortable version numbers).
-    apps = [
-        sorted(appvers, key=lambda av: av.created, reverse=True)
-        for appvers in apps.values()
-    ]
-
-    # Collect catalog display metadata for each app from the most recent version
-    # of each app.
-    apps = [
-        render_app_catalog_entry(appvers[0], appvers, organization)
-        for appvers in apps
-    ]
-
-    return apps
-
-
-def render_app_catalog_entry(appversion, appversions, organization):
-    from guidedmodules.module_logic import render_content
-    from guidedmodules.models import image_to_dataurl
-
-    key = "{source}/{name}".format(source=appversion.source.slug, name=appversion.appname)
-
-    catalog = appversion.catalog_metadata
-    if not isinstance(catalog, dict): catalog = {}
-
-    app_module = appversion.modules.filter(module_name="app").first()
-
-    return {
-        # app identification
-        "appversion_id": appversion.id,
-        "appsource_id": appversion.source.id,
-        "key": key,
-
-        # main display fields
-        "title": catalog.get('title') or appversion.appname,
-        "description": {  # rendered as markdown
-            "short": render_content(
-                {
-                    "template": catalog.get("description", {}).get("short") or "",
-                    "format": "markdown",
-                },
-                None,
-                "html",
-                "%s %s" % (key, "short description")
-            ),
-            "long": render_content(
-                {
-                    "template": catalog.get("description", {}).get("long")
-                                or catalog.get("description", {}).get("short")
-                                or "",
-                    "format": "markdown",
-                },
-                None,
-                "html",
-                "%s %s" % (key, "short description")
-            )
-        },
-
-        # catalog page metadata
-        "categories": catalog.get("categories", [catalog.get("category")]),
-        "search_haystak": "".join([  # free text search uses this
-            appversion.appname,
-            catalog.get('title', ""),
-            catalog.get("vendor", ""),
-            catalog.get("description", {}).get("short", ""),
-            catalog.get("description", {}).get("long", ""),
-        ]),
-        # "icon": None if "icon" not in catalog
-        # else image_to_dataurl(appversion.get_asset(catalog["icon"]), 128),
-        "icon": None,
-        "protocol": app_module.spec.get("protocol", []) if app_module else [],
-
-        # catalog detail page metadata
-        "vendor": catalog.get("vendor"),
-        "vendor_url": catalog.get("vendor_url"),
-        "source_url": catalog.get("source_url"),
-        "status": catalog.get("status"),
-        "version": appversion.version_number,
-        "recommended_for": catalog.get("recommended_for", []),
-
-        # versions that can be started
-        "versions": appversions,
-
-        # organizations that can launch this app
-        "organizations": {organization},
-
-        # placeholder for future logic
-        "authz": "none",
-    }
-
 
 def get_task_question(request):
     # Filter catalog by apps that satisfy the right protocol.
@@ -793,144 +683,6 @@ def apps_catalog_item_zip(request, source_slug, app_name):
     resp['Content-Disposition'] = 'inline; filename=' + filename
     return resp
 
-
-def start_app(appver, organization, user, folder, task, q, portfolio):
-    # Begin a transaction to create the Module and Task instances for the app.
-    with transaction.atomic():
-        # Create project.
-        project = Project()
-        project.organization = organization
-        project.portfolio = portfolio
-
-        # Save and add to folder
-        project.save()
-        project.set_root_task(appver.modules.get(module_name="app"), user)
-        # Update default name to be unique by using project.id
-        project.root_task.title_override = project.title + " " + str(project.id)
-        project.root_task.save()
-        if folder:
-            folder.projects.add(project)
-
-        # Log start app / new project
-        logger.info(
-            event="start_app",
-            object={"task": "project", "id": project.root_task.id, "title": project.root_task.title_override},
-            user={"id": user.id, "username": user.username}
-        )
-        logger.info(
-            event="new_project",
-            object={"object": "project", "id": project.id, "title": project.title},
-            user={"id": user.id, "username": user.username}
-        )
-
-        # Create a new System element and link to project?
-        # Top level apps should be linked to a system
-        # Create element to serve as system's root_element
-        # Element names must be unique. Use unique project title set above.
-        element = Element()
-        element.name = project.title
-        element.element_type = "system"
-        element.save()
-        # Create system
-        system = System(root_element=element)
-        system.save()
-        # Link system to project
-        project.system = system
-        project.save()
-        # Log start app / new project
-        logger.info(
-            event="new_element new_system",
-            object={"object": "element", "id": element.id, "name": element.name},
-            user={"id": user.id, "username": user.username}
-        )
-
-        # Add user as the first admin of project.
-        ProjectMembership.objects.create(
-            project=project,
-            user=user,
-            is_admin=True)
-        # Grant owner permissions on root_element to user
-        element.assign_owner_permissions(user)
-        # Log ownership assignment
-        logger.info(
-            event="new_element new_system assign_owner_permissions",
-            object={"object": "element", "id": element.id, "name": element.name},
-            user={"id": user.id, "username": user.username}
-        )
-        system.assign_owner_permissions(user)
-        # Log ownership assignment
-        logger.info(
-            event="new_system assign_owner_permissions",
-            object={"object": "system", "id": system.root_element.id, "name": system.root_element.name},
-            user={"id": user.id, "username": user.username}
-        )
-
-        # Add default deployments to system
-        deployment = Deployment(name="Blueprint", description="Reference system archictecture design", system=system)
-        deployment.save()
-        deployment = Deployment(name="Dev", description="Development environment deployment", system=system)
-        deployment.save()
-        deployment = Deployment(name="Stage", description="Stage/Test environment deployment", system=system)
-        deployment.save()
-        deployment = Deployment(name="Prod", description="Production environment deployment", system=system)
-        deployment.save()
-
-        # Assign default control catalog and control profile
-        # Use from App catalog settings
-        try:
-            # Get default catalog key
-            parameters = project.root_task.module.app.catalog_metadata['parameters']
-            catalog_key = [p for p in parameters if p['id'] == 'catalog_key'][0]['value']
-            # Get default profile/baseline
-            baseline_name = [p for p in parameters if p['id'] == 'baseline'][0]['value']
-            # Assign profile/baseline
-            assign_results = system.root_element.assign_baseline_controls(user, catalog_key, baseline_name)
-            # Log result if successful
-            if assign_results:
-                # Log start app / new project
-                logger.info(
-                    event="assign_baseline",
-                    object={"object": "system", "id": system.root_element.id, "title": system.root_element.name},
-                    baseline={"catalog_key": catalog_key, "baseline_name": baseline_name},
-                    user={"id": user.id, "username": user.username}
-                )
-        except:
-            # TODO catch error and return error message
-            print("[INFO] App could not assign catalog_key or profile/baseline.\n")
-
-        # Assign default organization components for a system
-        if user.has_perm('change_system', system):
-            # Get the components from the import records of the app version
-            import_records = appver.input_artifacts.all()
-            for import_record in import_records:
-                add_selected_components(system, import_record)
-
-        else:
-            # User does not have write permissions
-            logger.info(
-                event="change_system permission_denied",
-                user={"id": user.id, "username": user.username}
-            )
-
-        # TODO: Assign default org parameters
-
-        if task and q:
-            # It will also answer a task's question.
-            ans, is_new = task.answers.get_or_create(question=q)
-            ansh = ans.get_current_answer()
-            if q.spec["type"] == "module" and ansh and ansh.answered_by_task.count():
-                raise ValueError('The question %s already has an app associated with it.'
-                                 % q.spec["title"])
-            ans.save_answer(
-                None,  # not used for module-type questions
-                list([] if not ansh else ansh.answered_by_task.all()) + [project.root_task],
-                None,
-                user,
-                "web")
-
-        return project
-
-
 def project_read_required(f):
     @login_required
     def g(request, project_id, project_url_suffix=None):
@@ -954,18 +706,7 @@ def project_read_required(f):
 
 @project_read_required
 def project(request, project):
-    # TODO: Lifecycles is part of the kanban style version of presenting projects that hasn't been optimized & fully implemented
-    # Get this project's lifecycle stage, which is shown below the project title.
-    # assign_project_lifecycle_stage([project])
-    # if project.lifecycle_stage[0]["id"] == "none":
-    #     # Kill it if it's the default lifecycle.
-    #     project.lifecycle_stage = None
-    # else:
-    #     # Mark the stages up to the active one as completed.
-    #     for stage in project.lifecycle_stage[0]["stages"]:
-    #         stage["complete"] = True
-    #         if stage == project.lifecycle_stage[1]:
-    #             break
+    """View Project home page"""
 
     # Pre-load the answers to project root task questions and impute answers so
     # that we know which questions are suppressed by imputed values.
@@ -983,25 +724,31 @@ def project(request, project):
     for m in modules:
         module_dict[m.id] = m
 
-    # Collect all of the questions and answers, i.e. the sub-tasks, that we'll display.
-    # Create a "question" record for each question that is displayed by the template.
-    # For module-set questions, create one record to start new entries and separate
-    # records for each answered module.
+    # Collect the Project's questions and answers.
+    # Create a "question" instance for each question displayed by the template.
+    # For module-set questions, create one instance to start new entries and separate
+    # instances for each answered module.
     from collections import OrderedDict
     questions = OrderedDict()
     can_start_any_apps = False
     for (mq, is_answered, answer_obj, answer_value) in (
-    root_task_answers.answertuples.values() if root_task_answers else []):
+        root_task_answers.answertuples.values() if root_task_answers else []):
         # Display module/module-set questions only. Other question types in a project
         # module are not valid.
+        # mq: ModuleQuestion (the question itself)
+        # is_answered: has the ModuleQuestion been answered?
+        # answer_obj: TaskAnswerHistory object that is the most recent
+        # answer_value: TaskAnswerHistory.stored_value
+
+        # Skip any question that is not of type module or module-set.
         if mq.spec.get("type") not in ("module", "module-set"):
             continue
 
-        # Skip questions that are imputed.
+        # Skip questions with imputed answers.
         if is_answered and not answer_obj:
             continue
 
-        # Create a "question" record for all Task answers to this question.
+        # Create a "question" instance for all Task answers to this question.
         if answer_value is None:
             # Question is unanswered - there are no sub-tasks.
             answer_value = []
@@ -1022,7 +769,7 @@ def project(request, project):
         #     icon = None
 
         for i, module_answers in enumerate(answer_value):
-            # Create template context dict for this question.
+            # Create context dict for this question for display template.
             key = mq.id
             if mq.spec["type"] == "module-set":
                 key = (mq.id, i)
@@ -1036,8 +783,8 @@ def project(request, project):
                 "module": module_dict[mq.spec['module-id']]
             }
 
-        # Create a "question" record for the question itself it is is unanswered or if
-        # this is a module-set question, and only if the user has permission to start tasks.
+        # If user has permission to start tasks then create a "question" instance
+        # for the question itself it is unanswered or if this is a module-set question
         if can_start_task and (len(answer_value) == 0 or mq.spec["type"] == "module-set"):
             questions[mq.id] = {
                 "question": mq,
@@ -1065,8 +812,10 @@ def project(request, project):
     # Assign questions in main_area_questions to groups
     question_groups = OrderedDict()
     for q in main_area_questions:
-        mq = q["question"]
-        groupname = mq.spec.get("group")
+        # v0.9.13 organizes all questions into a single group
+        # mq = q["question"]
+        # groupname = mq.spec.get("group")
+        groupname = "Modules"
         group = question_groups.setdefault(groupname, {
             "title": groupname,
             "questions": [],
