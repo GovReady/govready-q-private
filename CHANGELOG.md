@@ -27,6 +27,7 @@ Release adds support for private components and integrations with third party se
 * Display the control framework along side of controls in component control listing page.
 * Remove icons from project listing.
 * Add Component search filter to filter results to components owned by user.
+* Display project control text partially on page with modal for full text.
 
 **Developer changes**
 
@@ -49,6 +50,7 @@ Release adds support for private components and integrations with third party se
 * Assign owners to components imported via OSCAL. If no user is identified during component (element creation) assign first Superuser (administrator) as component owner.
 * Support navigating to specific tab on component library component page using URL hash (#) reference.
 * Protype integrations System Summary page.
+* Add Django admin command to create shell integration directory.
 * Refactor and OIDC authentication for proper testing of admin and not admin roles.
 * Create a new system via name given by a string in URL.
 * Add a large set of sample components (150+) generated from STIGs.

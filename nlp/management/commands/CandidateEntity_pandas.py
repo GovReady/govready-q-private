@@ -3,10 +3,6 @@
 
 from django.core.management.base import BaseCommand
 
-from controls.enums.statements import StatementTypeEnum
-from controls.models import Statement, ImportRecord
-from controls.utilities import oscalize_control_id
-from siteapp.models import User, Project, Organization
 # import xlsxio
 import os
 

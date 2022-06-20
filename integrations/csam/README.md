@@ -1,6 +1,6 @@
 ## Configure
 
-Create an Integration record in Django admin:
+### Step 1: Create an Integration record in Django admin:
 
 Name: csam
 Description: Integration to support CSAM version 4.10

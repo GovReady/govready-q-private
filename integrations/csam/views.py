@@ -157,7 +157,6 @@ def get_system_info(request, system_id=2):
 
 def get_paired_remote_system_info_using_local_system_id(request, system_id=2):
     """Retrieve the system information from CSAM"""
-
     system = get_object_or_404(System, pk=system_id)
     # try:
     #     # system = System.objects.get(pk=system_id)

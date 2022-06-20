@@ -24,7 +24,7 @@
 
         h3 {
             color: #888;
-            #font-weight: bold;
+            /* font-weight: bold; */
             margin-top: 20px;
         }
 
@@ -33,14 +33,13 @@
             margin: auto;
         }
 
-        .control-text {
+        .control-text-modal {
             white-space: pre-wrap;
             font-size: 11pt;
-            /*max-width: 700px;*/
-            font-family: trebuchet ms, sans-serif;
-            text-align: justify;
-            /*text-justify: inter-word;*/
-            line-height: 24px;
+            font-family: sans-serif;
+            /* text-align: justify; */
+            /* text-justify: inter-word; */
+            /* line-height: 18px; */
         }
 
         #control-lookup input {
@@ -59,9 +58,7 @@
             resize: vertical;
         }
 
-        a {
-            color: #666;
-        }
+        a { color: #666; }
 
         #common-tab-count, #component-tab-count {
             display: inline-block;
@@ -98,6 +95,22 @@
             border-radius: 0px;
             padding: 0px 0px 8px 12px;
         }
+        .modal-content {
+            position: fixed;
+            margin: auto;
+            width: 130%;
+            /* height: calc(100% - 53px); */
+            -webkit-transform: translate3d(0%, 0, 0);
+                -ms-transform: translate3d(0%, 0, 0);
+                -o-transform: translate3d(0%, 0, 0);
+                    transform: translate3d(0%, 0, 0);
+        }
+
+        @media screen and (max-width: 700px) {
+            #control_description_modal {
+                width: 400px;
+            }
+        }
     </style>
 {% endblock %}
 
@@ -107,14 +120,7 @@
         <div id="above-tab-content" class="row">
             <div class="systems-control-heading">
                 <h2 class="control-heading">
-                    System Control: {{ control.id_display|upper }} {{ control.title }}
-                </h2>
-                <h2 class="control-heading" style="">
-                    {% if control.title is not None %}
-                        <small style="color: #888;">{{ catalog.catalog_key_display }}</small>
-                    {% else %}
-                        <p>The control {{ control.id }} was not found in the control catalog.</p>
-                    {% endif %}
+                    {{ control.id_display|upper }} <span>({{ control.title }})</span>
                 </h2>
             </div>
             <!-- Control Lookup-->
@@ -134,22 +140,30 @@
         </div>
     </div>
 
-    <div role="" class="hidden" id="control" style="">
+    <div role="" class="" id="control" style="">
         {% if control.title is not None %}
-        <details>
-            <summary>
-                <div id="control-description" class="control-text"><h3>View Control Description</h3></div>
-            </summary>
-            <div class="control-text">{{ control.description }}</div>
-        </details>
+            <small style="color: #888;">Description</small>
+            <p>
+                {% if control.description|wordcount < 50 %}{{ control.description }}{% else %}{{ control.description|truncatewords:45 }}{% endif %}
+                &nbsp;&nbsp;<a href="" onClick="show_control_description_modal();return false;">&gt;&gt;&gt;View full control</a>
+            </p>
+            <hr/>
+            <small style="color: #888;">Part of</small>
+            <p><b>{{ control.family_title }}</b> ({{ catalog.catalog_key_display }})</p>
+            <small style="color: #888;">Conntinuous Monitoring</small>
 
-        <details>
-            <summary>
-                <div id="control-guidance" class="control-text"><h3>View Control Guidance</h3></div>
-            </summary>
-            <div class="control-text">{{ control.guidance }}</div>
-        </details>
-
+            {% if control_matrix is not None %}
+                <p>
+                    The required control monitoring for {{ control.id_display|upper }} is <u>{{ control_matrix.REVIEW_FREQUENCY|lower }} {% if control_matrix.AUTOMATED == 'YES' %} and automated{% endif %}</u>. {{ control_matrix_doc.discussion }}
+                </p>
+                <small style="color: #888;">Responsibility</small>
+                <p>
+                    When hosted in the cloud, responsibility for {{ control.id_display|upper }} is likely {% if control_matrix.CLOUD_SHARED == 'YES' %} shared between you and{% else %}inherited from{% endif %} your cloud service provider. 
+                </p>
+            {% else %}
+                <p>Monitoring information for {{ control.id_display|upper }} is not available.</p>
+            {% endif %}
+            <hr/>
         {% else %}
             <div id="control-message">
                 <p>The control {{ control.id }} was not found in the control catalog.</p>
@@ -180,9 +194,7 @@
                     </div>
                     {% endif %}
 
-                    <div class="row">
-                        <div id="control-description" class="col-md-10 control-text"><h3>{{ impl_smts|length }} associated Componented Control Implementations Statements</h3></div>
-                    </div><!-- Needed for proper styling -->
+                    <div class="row">&nbsp;</div><!-- Needed for proper styling -->
 
                     <div class="row statement-column-headings" style="">
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">Component</div>

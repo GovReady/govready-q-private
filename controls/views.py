@@ -1,6 +1,5 @@
 import functools
 import logging
-import operator
 import pathlib
 import random
 import shutil
@@ -54,6 +53,7 @@ from .models import *
 from .utilities import *
 from siteapp.utils.views_helper import project_context
 from integrations.models import Integration
+from integrations.utils.integration import get_control_data_enhancements
 
 logging.basicConfig()
 import structlog
@@ -2298,7 +2298,8 @@ def editor(request, system_id, catalog_key, cl_id):
         # Define status options
         impl_statuses = ["Not implemented", "Planned", "Partially implemented", "Implemented", "Unknown"]
 
-      # Only elements for the given control id, sid, and statement type
+        # Only elements for the given control id, sid, and statement type
+        control_matrix = get_control_data_enhancements(request, catalog_key, cl_id)
 
         elements =  Element.objects.all().exclude(element_type='system')
 
@@ -2307,6 +2308,7 @@ def editor(request, system_id, catalog_key, cl_id):
             "project": project,
             "catalog": catalog,
             "control": cg_flat[cl_id.lower()],
+            "control_matrix": control_matrix,
             "impl_smts": impl_smts,
             "impl_statuses": impl_statuses,
             "impl_smts_legacy": impl_smts_legacy,
@@ -4072,7 +4074,7 @@ def system_summary_1_aspen(request, system_id):
     context = {
         "system": system_summary,
         #"project": project,
-        "project": projects,
+        "projects": projects,
         "system_events": system_events,
         # "deployments": deployments,
         "display_urls": project_context(project)

@@ -1,24 +1,15 @@
-import sys
 import os.path
-
 from django.core.management import call_command
-from django.core.management.base import BaseCommand, CommandError
-from django.db import transaction, models
-from django.db.utils import OperationalError
-from django.conf import settings
+from django.core.management.base import BaseCommand
 from pathlib import Path
-from pathlib import PurePath
-from django.utils.text import slugify
 
 # from siteapp.models import User, Organization, Portfolio
-from controls.models import Element, Statement
 # from controls.views import system_element_download_oscal_json
-from controls.views import OSCALComponentSerializer, ComponentImporter
-
-import fs, fs.errors
+from controls.views import ComponentImporter
 
 
 class Command(BaseCommand):
+    """Import directory of component files"""
     help = 'Import directory of component files.'
 
     def add_arguments(self, parser):
@@ -27,7 +18,6 @@ class Command(BaseCommand):
         parser.add_argument('--importname', metavar='importname', nargs='?', default="Batch component import", help="Name to identify the batch import")
         parser.add_argument('--stopinvalid', default=True, action='store_true')
         parser.add_argument('--no-stopinvalid', dest='stopinvalid', action='store_false')
-
 
     def handle(self, *args, **options):
 
