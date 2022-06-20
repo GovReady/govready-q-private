@@ -161,127 +161,137 @@ def control(request, catalog_key, cl_id):
     }
     return render(request, "controls/detail.html", context)
 
-@functools.lru_cache()
-def controls_selected_aspen(request, system_id):
-    """Display System's selected controls view"""
+def system_and_controls_selected_info(request, system_id):
+    """Return information on controls selected for system"""
 
     # Retrieve identified System
     system = System.objects.get(id=system_id)
-    # if not request.user.has_perm('view_system', system):
-    #     raise Http404
+    if not request.user.has_perm('view_system', system):
+        raise Http404
+    system_summary = get_integrations_system_info(request, system_id)
+    # system_events = get_integrations_system_events(request, system_id)
 
     # Retrieve primary system Project
     # Temporarily assume only one project and get first project
     project = system.projects.all()[0]
-
-    system_summary = get_integrations_system_info(request, system_id)
-    # system_events = get_integrations_system_events(request, system_id)
-
     # Fix menu data for old vertical menu
     project.system.root_element.name = system_summary['name']
     project.root_task.title_override = system_summary['name']
+    controls = system.root_element.controls.all()
+    impl_smts = system.root_element.statements_consumed.all()
 
-    # Retrieve related selected controls if user has permission on system
-    if request.user.has_perm('view_system', system):
-        # Retrieve primary system Project
-        # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
-        controls = system.root_element.controls.all()
-        impl_smts = system.root_element.statements_consumed.all()
+    # sort controls
+    controls = list(controls)
+    controls.sort(key=lambda control: control.get_flattened_oscal_control_as_dict()['sort_id'])
 
-        # sort controls
-        controls = list(controls)
-        controls.sort(key=lambda control: control.get_flattened_oscal_control_as_dict()['sort_id'])
+    # Determine if a legacy statement exists for the control
+    impl_smts_legacy = Statement.objects.filter(consumer_element=system.root_element, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name)
+    impl_smts_legacy_dict = {}
+    for legacy_smt in impl_smts_legacy:
+        impl_smts_legacy_dict[legacy_smt.sid] = legacy_smt
 
-        # Determine if a legacy statement exists for the control
-        impl_smts_legacy = Statement.objects.filter(consumer_element=system.root_element, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name)
-        impl_smts_legacy_dict = {}
-        for legacy_smt in impl_smts_legacy:
-            impl_smts_legacy_dict[legacy_smt.sid] = legacy_smt
+    # Get count of componentes (e.g., producer_elements) associated with a control
+    impl_smts_cmpts_count = {}
+    ikeys = system.smts_control_implementation_as_dict.keys()
+    for c in controls:
+        impl_smts_cmpts_count[c.oscal_ctl_id] = 0
+        if c.oscal_ctl_id in ikeys:
+            impl_smts_cmpts_count[c.oscal_ctl_id] = len(set([s.producer_element for s in system.smts_control_implementation_as_dict[c.oscal_ctl_id]['control_impl_smts']]))
 
-        # Get count of componentes (e.g., producer_elements) associated with a control
-        impl_smts_cmpts_count = {}
-        ikeys = system.smts_control_implementation_as_dict.keys()
-        for c in controls:
-            impl_smts_cmpts_count[c.oscal_ctl_id] = 0
-            if c.oscal_ctl_id in ikeys:
-                impl_smts_cmpts_count[c.oscal_ctl_id] = len(set([s.producer_element for s in system.smts_control_implementation_as_dict[c.oscal_ctl_id]['control_impl_smts']]))
+    # Get control family/group information
+    families_dict = {}
+    for control in controls:
+        family_id = control.get_flattened_oscal_control_as_dict()['family_id']
+        family_title = control.get_flattened_oscal_control_as_dict()['family_title']
+        if family_id in families_dict.keys():
+            families_dict[family_id]['control_total'] += 1
+        else:
+            family = {
+                'family_id': family_id,
+                'family_title': family_title,
+                'control_total': 1
+            }
+            families_dict[family_id] = family
+    families = [families_dict[key] for key in families_dict.keys()]
 
-        # Get list of catalog objects
-        catalog_list = Catalogs().list_catalogs()
-        # Remove the 3 nist catalogs that are hard-coded already in template
-        external_catalogs = [catalog for catalog in catalog_list if catalog.catalog_key not in ['NIST_SP-800-53_rev4', 'NIST_SP-800-53_rev5', 'NIST_SP-800-171_rev1', 'CMMC_ver1' ]]
+    return system, system_summary, project, controls, impl_smts, impl_smts_cmpts_count, impl_smts_legacy_dict, families
 
-        # Return the controls
-        context = {
-            "system": system,
-            "system_summary": system_summary,
-            "project": project,
-            "controls": controls,
-            "external_catalogs": external_catalogs,
-            "impl_smts_cmpts_count": impl_smts_cmpts_count,
-            "impl_smts_legacy_dict": impl_smts_legacy_dict,
-            "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
-            "display_urls": project_context(project)
-        }
-        return render(request, "systems/controls_selected_aspen.html", context)
-    else:
-        # User does not have permission to this system
-        raise Http404
+@functools.lru_cache()
+def controls_selected_aspen(request, system_id):
+    """Display System's selected controls view"""
 
+    # Retrieve system and related selected controls if user has permission on system
+    system, system_summary, project, controls, impl_smts, impl_smts_cmpts_count, impl_smts_legacy_dict, families  = system_and_controls_selected_info(request, system_id)
+
+    # Get list of catalog objects
+    catalog_list = Catalogs().list_catalogs()
+    # Remove the 3 nist catalogs that are hard-coded already in template
+    external_catalogs = [catalog for catalog in catalog_list if catalog.catalog_key not in ['NIST_SP-800-53_rev4', 'NIST_SP-800-53_rev5', 'NIST_SP-800-171_rev1', 'CMMC_ver1' ]]
+
+    context = {
+        "system": system,
+        "system_summary": system_summary,
+        "project": project,
+        "controls": controls,
+        "families": families,
+        "external_catalogs": external_catalogs,
+        "impl_smts_cmpts_count": impl_smts_cmpts_count,
+        "impl_smts_legacy_dict": impl_smts_legacy_dict,
+        "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
+        "display_urls": project_context(project)
+    }
+    return render(request, "systems/controls_selected_aspen.html", context)
+
+@functools.lru_cache()
+def controls_selected2_aspen(request, system_id):
+    """Display System's selected controls view"""
+
+    # Retrieve system and related selected controls if user has permission on system
+    system, system_summary, project, controls, impl_smts, impl_smts_cmpts_count, impl_smts_legacy_dict, families  = system_and_controls_selected_info(request, system_id)
+
+    # Get list of catalog objects
+    catalog_list = Catalogs().list_catalogs()
+    # Remove the 3 nist catalogs that are hard-coded already in template
+    external_catalogs = [catalog for catalog in catalog_list if catalog.catalog_key not in ['NIST_SP-800-53_rev4', 'NIST_SP-800-53_rev5', 'NIST_SP-800-171_rev1', 'CMMC_ver1' ]]
+
+    context = {
+        "system": system,
+        "system_summary": system_summary,
+        "project": project,
+        "controls": controls,
+        "families": families,
+        "external_catalogs": external_catalogs,
+        "impl_smts_cmpts_count": impl_smts_cmpts_count,
+        "impl_smts_legacy_dict": impl_smts_legacy_dict,
+        "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
+        "display_urls": project_context(project)
+    }
+    return render(request, "systems/controls_selected2_aspen.html", context)
 
 @functools.lru_cache()
 def controls_selected(request, system_id):
     """Display System's selected controls view"""
 
-    # Retrieve identified System
-    system = System.objects.get(id=system_id)
-    # Retrieve related selected controls if user has permission on system
-    if request.user.has_perm('view_system', system):
-        # Retrieve primary system Project
-        # Temporarily assume only one project and get first project
-        project = system.projects.all()[0]
-        controls = system.root_element.controls.all()
-        impl_smts = system.root_element.statements_consumed.all()
+    # Retrieve system and related selected controls if user has permission on system
+    system, system_summary, project, controls, impl_smts, impl_smts_cmpts_count, impl_smts_legacy_dict, families  = system_and_controls_selected_info(request, system_id)
 
-        # sort controls
-        controls = list(controls)
-        controls.sort(key=lambda control: control.get_flattened_oscal_control_as_dict()['sort_id'])
+    # Get list of catalog objects
+    catalog_list = Catalogs().list_catalogs()
+    # Remove the 3 nist catalogs that are hard-coded already in template
+    external_catalogs = [catalog for catalog in catalog_list if catalog.catalog_key not in ['NIST_SP-800-53_rev4', 'NIST_SP-800-53_rev5', 'NIST_SP-800-171_rev1', 'CMMC_ver1' ]]
 
-        # Determine if a legacy statement exists for the control
-        impl_smts_legacy = Statement.objects.filter(consumer_element=system.root_element, statement_type=StatementTypeEnum.CONTROL_IMPLEMENTATION_LEGACY.name)
-        impl_smts_legacy_dict = {}
-        for legacy_smt in impl_smts_legacy:
-            impl_smts_legacy_dict[legacy_smt.sid] = legacy_smt
-
-        # Get count of componentes (e.g., producer_elements) associated with a control
-        impl_smts_cmpts_count = {}
-        ikeys = system.smts_control_implementation_as_dict.keys()
-        for c in controls:
-            impl_smts_cmpts_count[c.oscal_ctl_id] = 0
-            if c.oscal_ctl_id in ikeys:
-                impl_smts_cmpts_count[c.oscal_ctl_id] = len(set([s.producer_element for s in system.smts_control_implementation_as_dict[c.oscal_ctl_id]['control_impl_smts']]))
-
-        # Get list of catalog objects
-        catalog_list = Catalogs().list_catalogs()
-        # Remove the 3 nist catalogs that are hard-coded already in template
-        external_catalogs = [catalog for catalog in catalog_list if catalog.catalog_key not in ['NIST_SP-800-53_rev4', 'NIST_SP-800-53_rev5', 'NIST_SP-800-171_rev1', 'CMMC_ver1' ]]
-
-        # Return the controls
-        context = {
-            "system": system,
-            "project": project,
-            "controls": controls,
-            "external_catalogs": external_catalogs,
-            "impl_smts_cmpts_count": impl_smts_cmpts_count,
-            "impl_smts_legacy_dict": impl_smts_legacy_dict,
-            "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
-            "display_urls": project_context(project)
-        }
-        return render(request, "systems/controls_selected.html", context)
-    else:
-        # User does not have permission to this system
-        raise Http404
+    context = {
+        "system": system,
+        "project": project,
+        "controls": controls,
+        "families": families,
+        "external_catalogs": external_catalogs,
+        "impl_smts_cmpts_count": impl_smts_cmpts_count,
+        "impl_smts_legacy_dict": impl_smts_legacy_dict,
+        "enable_experimental_opencontrol": SystemSettings.enable_experimental_opencontrol,
+        "display_urls": project_context(project)
+    }
+    return render(request, "systems/controls_selected.html", context)
 
 @login_required
 def system_controls_add(request, system_id):
