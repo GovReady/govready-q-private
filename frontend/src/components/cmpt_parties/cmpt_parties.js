@@ -112,6 +112,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
   });
   const [tempRoleToAdd, setTempRoleToAdd] = useState([]);
   const [partyNamesList, setPartyNamesList] = useState([]);
+  const [allPartiesNames, setAllPartiesNames] = useState([]);
   const editToolTip = (<Tooltip placement="top" id='tooltip-edit'> Edit role</Tooltip>)
   const deleteToolTip = (<Tooltip placement="top" id='tooltip-edit'> Delete role</Tooltip>)
 
@@ -124,16 +125,24 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
   }
 
   useEffect(() => {
-      axios(`/api/v2/elements/${elementId}/`).then(response => {
-        setData(response.data.parties);
-        let names = [];
-        response.data.parties.map(party => {
-          names.push(party.name);
-        });
-        setPartyNamesList(names);
+    axios(`/api/v2/elements/${elementId}/`).then(response => {
+      setData(response.data.parties);
+      let names = [];
+      response.data.parties.map(party => {
+        names.push(party.name.toLowerCase());
       });
-      
+      setPartyNamesList(names);
+    });
 
+    axios(`/api/v2/parties/`).then((response) => {
+      let names = [];
+      
+      response.data.data.map(party => {
+        names.push(party.name.toLowerCase());
+      });
+      setAllPartiesNames(names);
+    }); 
+      
   }, []);
 
   useEffect(() => {
@@ -617,7 +626,34 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
       }
     }
 
-    if (partyNamesList.includes(createNewParty.name)){
+    if (partyNamesList.includes(createNewParty.name.toLowerCase()) || allPartiesNames.includes(createNewParty.name.toLowerCase())){
+      if(validated.name === 'error'){
+        return 'error';
+      } else {
+        setValidated((prev) => ({...prev, name: 'error'}));
+        return 'error';
+      }
+    } else {
+      if(validated.name !== 'success'){
+        setValidated((prev) => ({...prev, name: 'success'}));
+        return 'success';
+      } else {
+        return 'success';
+      }
+    }
+  }
+
+  const getExistingPartyNameValidation = () => {    
+    if(createNewParty.name === ''){
+      if(validated.name === 'warning'){
+        return 'warning';
+      } else {
+        setValidated((prev) => ({...prev, name: 'warning'}));
+        return 'warning';
+      }
+    }
+    
+    if (partyNamesList.includes(createNewParty.name.toLowerCase())){
       if(validated.name === 'error'){
         return 'error';
       } else {
@@ -651,6 +687,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
       }
     }
   }
+
   const getPartyEmailValidation = () => {
     const emailRegex = RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
     if (createNewParty.email.length === 0) {
@@ -714,6 +751,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
       }
     }
   }
+
   const getPartyMobilePhoneValidation = () => {
     if (createNewParty.mobile_phone.length === 0) {
       if(validated.mobile_phone === null){
@@ -753,7 +791,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
     if(data.length > 0 && currentParty.name !== undefined) {
 
       const initialCurrentParty = data[currentParty.id-1];
-      const updatedPartyList = partyNamesList.filter((party) => party !== initialCurrentParty.name)
+      const updatedAllPartiesNames = allPartiesNames.filter((party) => party !== initialCurrentParty.name)
 
       if(currentParty.name === ''){
         if(editValidated.name === 'warning'){
@@ -763,15 +801,15 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
           return 'warning';
         }
       }
-
-      if(initialCurrentParty.name === currentParty.name){
+      
+      if(initialCurrentParty.name.toLowerCase() === currentParty.name.toLowerCase()){
         if(editValidated.name === 'success'){
           return 'success';
         } else {
           setEditValidated((prev) => ({...prev, name: 'success'}));
           return 'success';
         }
-      } else if (updatedPartyList.includes(currentParty.name)){
+      } else if (updatedAllPartiesNames.includes(currentParty.name.toLowerCase())){
         if(editValidated.name === 'error'){
           return 'error';
         } else {
@@ -856,7 +894,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
       }
     }
   }
-
+  
   return (
     <div style={{ maxHeight: '2000px', width: '100%' }}>
       <Grid className="poc-data-grid" sx={{ minHeight: '500px' }}>
@@ -1136,7 +1174,7 @@ export const ComponentParties = ({ elementId, poc_users, isOwner }) => {
                       </Col>
                     </Row>
                   </FormGroup>
-                  <FormGroup validationState={createNewParty.id !== undefined ? getPartyNameValidation() : getEditPartyNameValidation()}>
+                  <FormGroup validationState={createNewParty.id !== undefined ? getExistingPartyNameValidation() : getPartyNameValidation()}>
                     <Row>
                       <Col componentClass={ControlLabel} sm={4} style={{ paddingLeft: '5rem', textAlign: 'left' }}>
                         {'Name'}
