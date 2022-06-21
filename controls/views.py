@@ -3979,8 +3979,8 @@ def create_system_from_string(request):
             # print(f"2 key, title: {app['key']}, {app['title']}")
             for category in app["categories"]:
                 catalog_by_category[category]["title"] = (category or "Uncategorized")
-                # Test for inclusion here...
-                from siteapp.models import Organization
+                # Only get default apps
+                # TODO: Refactor this code
                 organization = Organization.objects.first()  # temporary
                 # if app['title'] in ['Blank Project', 'Speedy SSP', 'General IT System ATO for 800-53 (low)']:
                 if app['title'] in organization.extra.get('default_appversion_name_list', []): # temporary
@@ -4085,7 +4085,7 @@ def create_system_from_string(request):
 
     # Redirect to the new system/project.
     # return HttpResponseRedirect(project.get_absolute_url())
-    return HttpResponseRedirect(f"/system/{new_system.id}/aspen/summary")
+    return redirect(reverse('system_summary', args=[new_system.id]))
 
 @login_required
 def system_summary_1_aspen(request, system_id):
