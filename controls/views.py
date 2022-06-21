@@ -4072,7 +4072,8 @@ def system_summary_1_aspen(request, system_id):
     context = {
         "system": system_summary,
         #"project": project,
-        "project": projects,
+        "projects": projects,
+        "project": project,
         "system_events": system_events,
         # "deployments": deployments,
         "display_urls": project_context(project)
@@ -4103,7 +4104,7 @@ def system_summary_aspen(request, system_id):
 
     context = {
         "system": system_summary,
-        #"project": project,
+        "project": project,
         "projects": projects,
         "system_events": system_events,
         # "deployments": deployments,

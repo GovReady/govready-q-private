@@ -157,7 +157,6 @@ def get_system_info(request, system_id=2):
 
 def get_paired_remote_system_info_using_local_system_id(request, system_id=2):
     """Retrieve the system information from CSAM"""
-
     system = get_object_or_404(System, pk=system_id)
     # try:
     #     # system = System.objects.get(pk=system_id)
@@ -279,6 +278,53 @@ def match_system_from_remote(request, remote_system_id):
     """Match a system in GovReady-Q based on info from integrated service"""
 
     print("Match a system in GovReady-Q based on info from integrated service")
+
+    communication = set_integration()
+    csam_system_id = int(remote_system_id)
+    endpoint = f'/v1/systems/{csam_system_id}'
+    # is there local information?
+    ep, created = Endpoint.objects.get_or_create(
+        integration=INTEGRATION,
+        endpoint_path=endpoint
+    )
+    # TODO: Refresh data if empty
+    if created:
+        # Cache not available
+        data = communication.get_response(endpoint)
+        # Cache remote data locally in database
+        ep.data = data
+        ep.save()
+    else:
+        # Cache available
+        cached = True
+        pass
+    # Check if remote_system_name matches name of a system in GovReady-Q
+    if System.objects.filter(Q(root_element__name=ep.data['name'])).exists():
+        #name matches
+        matched_systems = System.objects.filter(Q(root_element__name=ep.data['name']))
+        if len(matched_systems) == 1:
+            matched_system = matched_systems[0]
+            if matched_system.info == {}:
+                matched_system.info = {"csam_system_id": csam_system_id }
+                matched_system.save()
+                msg = f"Matched existing System {matched_system.id} in GovReady based on CSAM system name {ep.data['name']}."
+            else:
+                msg = f"System {matched_system.id} in GovReady already matched to CSAM system id for \"{ep.data['name']}\"."
+        else:
+            msg = f"More than one system in GovReady matched to CSAM system name \"{ep.data['name']}\"."
+    else:
+        msg = f"No system in GovReady matched to CSAM system name \"{ep.data['name']}\"."
+    return HttpResponse(
+        f"<html><body><p>{msg}</p>"
+        f"<p>now: {datetime.now()}</p>"
+        f"<p>Returned data:</p>"
+        f"<pre>{json.dumps(ep.data,indent=4)}</pre>"
+        f"</body></html>")
+
+def create_system_from_remote(request, remote_system_id):
+    """Create a system in GovReady-Q based on info from integrated service"""
+
+    print("Create a system in GovReady-Q based on info from integrated service")
 
     communication = set_integration()
     csam_system_id = int(remote_system_id)

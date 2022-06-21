@@ -22,6 +22,7 @@ urlpatterns = [
 
     url(r"^local/system/(?P<system_id>.*)$", views.get_paired_remote_system_info_using_local_system_id, name=f'{INTEGRATION_NAME}_csam_system_info'),
 
+    url(r"^match_system_from_remote/(?P<remote_system_id>.*)$", views.match_system_from_remote, name='match_system_from_remote'),
     url(r"^create_system_from_remote/$", views.create_system_from_remote, name=f'{INTEGRATION_NAME}_create_system_from_remote'),
     url(r"^create_system_from_remote/(?P<remote_system_id>.*)$", views.create_system_from_remote, name=f'{INTEGRATION_NAME}_create_system_from_remote'),
     
