@@ -577,17 +577,19 @@ def component_library(request):
             owned_elements_id.append(element.id)
     
     owned_elements_list = Element.objects.filter(id__in=owned_elements_id)
-    
+    start = False
     query = request.GET.get('search')
     # Setting a breakpoint in the code.
     if query:
         try:
-            if request.GET.get('owner'):
+            if request.GET.get('owned'):
                 # Search by owner
                 element_list = Element.objects.filter(id__in=owned_elements_id)
                 element_list = element_list.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
+                start = True
             else:
                 element_list = Element.objects.filter(Q(name__icontains=query) | Q(tags__label__icontains=query)).exclude(element_type='system').distinct()
+                start = False
 
         except:
             logger.info(f"Ah, you are not using Postgres for your Database!")
@@ -619,7 +621,7 @@ def component_library(request):
     context = {
         "page_obj": page_obj,
         "owned_page_obj": owned_page_obj,
-        "start": False,
+        "start": start,
         "import_form": ImportOSCALComponentForm(),
         "total_comps": Element.objects.exclude(element_type='system').count(),
     }

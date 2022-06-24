@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <div class="input-group" id="searchbox-input">
                             <input id="searchbox" name="search" value="{{ request.GET.search }}" type="text" placeholder="search components" spellcheck="false" aria-labelledby="searchbox-input" />
-                            <input id="owner" type="checkbox" name="owner" {% if start %}checked{% endif %} />
+                            <input id="owned" type="checkbox" name="owned" {% if start %}checked{% endif %} />
                             <span id="searchicon" class="glyphicon glyphicon-search" href="{% url 'component_library' %}"></span>
                             {% if request.GET.search %}
                                 <a id="searchclear" class="glyphicon glyphicon-remove" href="{% url 'component_library' %}"></a>
@@ -48,9 +48,14 @@
                 </div>
             </form>
             <div id="switch-to-owner-components" style="float:right;margin-right:1rem;">
-                <button onclick="return switchData();">
-                    Toggle to owned Components
-                </button>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class={% if not start %}"btn btn-primary active"{% else %} "btn btn-primary"{% endif %} onclick="return enableAllComponentsList();">
+                      <input id="all-components-input" type="radio" name="options" id="option1"  {% if not start %}checked{% endif %}> All
+                    </label>
+                    <label class={% if start %}"btn btn-primary active"{% else %} "btn btn-primary"{% endif %} onclick="return enableOwnedComponentsList();">
+                      <input id="owned-components-input" type="radio" name="options" id="option2" {% if start %}checked{% endif %}> Owned
+                    </label>
+                </div>
             </div>
             {% if page_obj|length > 0 %}
                 <p>You have access to {{ total_comps }} components.</p>
@@ -140,41 +145,37 @@
 {% block scripts %}
 <script>
 
-function switchData(){
-    var $owned_submit = $("#owned-components-list")
-    var $all_list = $("#components-list")
-    var $owner = $("#owner")
-    
-    if(document.getElementById("owner").checked){
-        let data_val = document.getElementById("owner").checked = false;
-        $owned_submit.toggle();
-        $all_list.toggle();
-        $owned_cbs = $('input[name="owner"]').click(function () {
-            $owned_submit.toggle();
-            $all_list.toggle();
-        });
-        localStorage.clear()
-        select_all(false)
-        return true;
+    function enableAllComponentsList(){
+        var $owned_submit = $("#owned-components-list")
+        var $all_list = $("#components-list")
 
-    } else {
-        let data_val = document.getElementById("owner").checked = true;
-        $owned_submit.toggle();
-        $all_list.toggle();
-        $owned_cbs = $('input[name="owner"]').click(function () {
+        if(!document.getElementById("all-components-input").checked){
             $owned_submit.toggle();
             $all_list.toggle();
-        });
-        localStorage.clear()
-        select_all(false)
-        return false;
+            let data_val = document.getElementById("owned").checked = false;
+
+            localStorage.clear()
+            select_all(false)
+        }
     }
-}
+    function enableOwnedComponentsList(){
+        var $owned_submit = $("#owned-components-list")
+        var $all_list = $("#components-list")
+
+        if(!document.getElementById("owned-components-input").checked){
+            $owned_submit.toggle();
+            $all_list.toggle();
+            let data_val = document.getElementById("owned").checked = true;
+
+            localStorage.clear()
+            select_all(false)
+        }
+    }
 
 //Hide submit button until 1 checkbox is checked
 $(document).ready(function () {
     var $owned_submit = $("#owned-components-list").hide()
-    var $owner_input = $("#owner").hide()
+    var $owner_input = $("#owned").hide()
     var checkBoxValues = JSON.parse(localStorage.getItem('checkBoxValues'))
     // If are no previously checked components then hide button
     var $submit = $("#compare-components").hide()
@@ -197,7 +198,7 @@ function select_all(val) {
     var $ownedCheckboxes = $("#owned-checkbox-container :checkbox");//$('input[type=checkbox]')
     $ownedCheckboxes.prop('checked', val);
 
-    if(document.getElementById("owner").checked){
+    if(document.getElementById("owned").checked){
         addStorage($ownedCheckboxes, checkBoxValues)
     } else {
         addStorage($checkboxes, checkBoxValues)
@@ -217,7 +218,7 @@ function addCheck() {
     var $checkboxes = $("#checkbox-container :checkbox");
     var $owned_checkboxes = $("#owned-checkbox-container :checkbox");
 
-    if(document.getElementById("owner").checked){
+    if(document.getElementById("owned").checked){
         addStorage($owned_checkboxes, checkBoxValues)
     } else {
         addStorage($checkboxes, checkBoxValues)
