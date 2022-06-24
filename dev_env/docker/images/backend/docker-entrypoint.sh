@@ -44,6 +44,8 @@ FILE=/opt/govready-q/siteapp/management/commands/upgrade_aspen.py
 if test -f "$FILE"; then
     echo "[ + ] Applying Aspen configuration upgrades"
     ./manage.py aspen_upgrade --non-interactive
+else
+    echo "[ + ] Skipping applying Aspen configuration upgrades"
 fi
 
 echo "[ + ] Starting server"
