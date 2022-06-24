@@ -40,7 +40,7 @@ if [[ ! -f "/usr/src/app/local/first_run.lock" ]]; then
 fi
 
 # Aspen upgrades if installing aspen version
-FILE=/opt/govready-q/siteapp/management/commands/upgrade_aspen.py
+FILE=/usr/src/app/siteapp/management/commands/upgrade_aspen.py
 if test -f "$FILE"; then
     echo "[ + ] Applying Aspen configuration upgrades"
     ./manage.py aspen_upgrade --non-interactive
