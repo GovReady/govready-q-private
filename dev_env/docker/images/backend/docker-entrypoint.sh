@@ -32,12 +32,18 @@ if [[ ! -f "/usr/src/app/local/first_run.lock" ]]; then
     echo "[ + ] Preparing Data"
     ./manage.py load_modules
     ./manage.py first_run --non-interactive
-    ./manage.py aspen_upgrade --non-interactive
 
     echo "[ + ] Setting up GovReady-Q sample project if none exists"
     ./manage.py load_govready_ssp
 
     touch /usr/src/app/local/first_run.lock
+fi
+
+# Aspen upgrades if installing aspen version
+FILE=/opt/govready-q/siteapp/management/commands/upgrade_aspen.py
+if test -f "$FILE"; then
+    echo "[ + ] Applying Aspen configuration upgrades"
+    ./manage.py aspen_upgrade --non-interactive
 fi
 
 echo "[ + ] Starting server"
