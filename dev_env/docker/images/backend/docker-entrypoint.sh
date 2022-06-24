@@ -43,7 +43,7 @@ fi
 FILE=/usr/src/app/siteapp/management/commands/upgrade_aspen.py
 if test -f "$FILE"; then
     echo "[ + ] Applying Aspen configuration upgrades"
-    ./manage.py aspen_upgrade --non-interactive
+    python3 manage.py upgrade_aspen --non-interactive
 else
     echo "[ + ] Skipping applying Aspen configuration upgrades"
 fi
