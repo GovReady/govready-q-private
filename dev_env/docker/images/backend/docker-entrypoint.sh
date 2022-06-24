@@ -32,6 +32,7 @@ if [[ ! -f "/usr/src/app/local/first_run.lock" ]]; then
     echo "[ + ] Preparing Data"
     ./manage.py load_modules
     ./manage.py first_run --non-interactive
+    ./manage.py aspen_upgrade --non-interactive
 
     echo "[ + ] Setting up GovReady-Q sample project if none exists"
     ./manage.py load_govready_ssp
