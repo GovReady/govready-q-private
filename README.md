@@ -1,5 +1,8 @@
 [![CircleCI](https://circleci.com/gh/GovReady/govready-q/tree/main.svg?style=svg)](https://circleci.com/gh/GovReady/govready-q/tree/main)
 
+**THIS REPO HAS BEEN REPLACED BY [https://github.com/GovReady/govready-q](https://github.com/GovReady/govready-q)**
+
+
 # GovReady-Q Compliance Server
 
 The GovReady-Q Compliance Server is an open source GRC platform for highly automated, user-friendly, self-service compliance assessments and documentation. It's perfect for DevSecOps.
